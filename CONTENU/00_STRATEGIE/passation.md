@@ -24,17 +24,17 @@ Où on en est :
   - Ivy, le seul personnage IA de marque. Elle est ouvertement une IA, et chaque reel où elle apparaît porte l'étiquette « AI info ». Ses prompts sont prêts ;
   - la charte et le générateur de carrousels `slides.py` ;
   - une liste de 13 comptes Instagram à surveiller.
-- **Verbatims** : la recherche lancée dans la 1re session n'a peut-être pas abouti. Si `docs/VERBATIMS/verbatims.md` n'existe pas ou contient moins de 80 citations, refais la recherche :
-  - sources gratuites seulement ;
-  - citations mot pour mot, avec leur URL ;
-  - classées par thème et par avatar.
+- **Verbatims** : `docs/VERBATIMS/verbatims.md` contient 153 citations et il est importé dans `CLAUDE.md`. Ses limites :
+  - Reddit était bloqué depuis le cloud, et 111 citations viennent du forum Manychat Community. La voix des coachs manque, en particulier sur les soirées passées dans les DM, les setters qui disparaissent et les appels non honorés. Les trous sont listés en fin de fichier.
+  - Certaines lignes viennent d'agences ou d'éditeurs d'outils : elles sont marquées dans le fichier et ne doivent jamais être présentées comme la voix d'un client.
+  - Les extraits Trustpilot sont coupés à 125 caractères : vérifie chaque citation mot pour mot avant de la publier.
 - **Zernio** :
   - Il est connecté, mais ne voit qu'un compte Instagram : @gregoire.system (« Gregoire Bourdin | THE SYSTEM™ »), et aucune Page Facebook. **Ne publie et ne programme rien dessus** tant que je n'ai pas dit si c'est le compte de ManySetter.
   - Pour héberger les médias, Zernio fournit un lien d'upload (`media_generate_upload_link`).
 - **Instagram bloque les requêtes venant du cloud.** La veille se fait donc dans le navigateur intégré de l'appli de bureau.
 
 À faire, une chose à la fois et dans cet ordre :
-1. **Les verbatims**, si besoin (voir plus haut).
+1. **Compléter les verbatims** avec la voix des coachs, depuis l'appli de bureau (pages publiques, sans connexion), jusqu'à ce que les motifs se répètent.
 2. **La veille** :
    - relever les 12 derniers posts de chaque compte suivi et calculer la médiane de chaque compte ;
    - analyser image par image, avec la grille de la méthode, les reels qui font au moins 2 fois la médiane de leur compte ;

@@ -15,6 +15,7 @@ Ce dépôt est séparé du site. **Ne jamais écrire dans le dépôt `many-sette
 
 @CONTENU/00_STRATEGIE/retours-validation.md
 @CONTENU/00_STRATEGIE/brief-de-marque.md
+@docs/VERBATIMS/verbatims.md
 
 ## Règles d'écriture (toujours)
 
