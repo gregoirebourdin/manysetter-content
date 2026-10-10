@@ -101,3 +101,16 @@ Format d'une règle :
 - Règle : le décor est un **vrai bureau d'appartement, brut et vécu** (bureau encombré, câbles, tasse, étagère, plante, fenêtre en lumière du jour, canapé derrière), filmé comme au téléphone posé, jamais un décor de studio propre.
 - Règle : le hook part de **ce que les publicités du marché martèlent** (`veille/2026-10-10_pubs-actives.md`) et le **contredit** de façon choquante.
 - Règle : on fabrique **une vidéo à la fois** tant que le fondateur n'a pas validé le rendu de Seth en mouvement.
+- Retour : « Je veux qu'il y ait une énergie de dingue quand il parle, qu'il soit genre énervé et/ou frustré que les autres ne comprennent pas ce qu'il va dire, ou à l'inverse saoulé et désespéré. »
+- Règle : Seth parle avec une **énergie très haute** : agacé, frustré que personne ne comprenne, ou au contraire saoulé et désespéré. Jamais neutre ni « présentateur ». Le jeu est écrit plan par plan dans le script (émotion, gestes, regard) avant de générer.
+- Retour (sur l'image de départ, plan large au bureau) : « Non, je veux qu'il soit plus près, et limite il se filme en selfie. »
+- Règle : les reels parlés de Seth sont **cadrés serré, en selfie** : il tient le téléphone lui-même à bout de bras (caméra frontale, léger grand-angle, petit mouvement de main), le visage occupe une grande partie de l'image, l'autre main reste libre pour parler. Le décor d'appartement se voit derrière lui, un peu flou.
+- Demande : « Donne-moi une image que je peux mettre en photo de profil, mais qui fait vraiment humain, pas IA. »
+- Retour : « Je veux que derrière on ne voie pas trop ce qu'il y a : je veux vraiment que ce soit lui qui marche en selfie dans son appart, mais on voit à peine ce qu'il y a derrière lui. »
+- Règle : Seth **marche dans son appartement en se filmant en selfie** ; le cadre est très serré sur lui, le décor derrière est **à peine lisible** (flou, en mouvement, mur, coin de porte, lumière de fenêtre). Le sujet, c'est lui, jamais la pièce.
+- Retour : « Je veux qu'il y ait des cuts au montage, des zooms secs quand il dit des trucs importants et des booms sur les mots importants. »
+- Règle : le montage des reels parlés coupe les blancs et les respirations (jump cuts), fait un **zoom sec** (punch-in d'environ 115 à 130 %, sans transition) sur chaque phrase importante, et pose un **« boom »** (impact grave synthétisé, libre de droits) sur les mots clés. Les mots clés et les zooms sont notés dans `script.json` avant le montage.
+- Retour : « Je veux que tu écrives un texte au-dessus de sa tête en mode Instagram style : fond blanc avec texte noir, et le mot important en orange. »
+- Règle : le titre des reels est une **étiquette blanche arrondie façon Instagram** posée au-dessus de la tête (dans la zone sûre, sous les 270 px du haut), texte noir, **mot important en orange** (#ff611d). Il reste affiché tout le reel.
+- Retour : « J'ai que 50 crédits. » Choix : « 2 plans en Fast ».
+- Règle : budget Flow du fondateur = **50 crédits** à ce jour. On annonce le coût de chaque génération vidéo avant de la lancer (Lite 10, Fast 20, Quality 100 crédits par variante de 8 s) et on ne dépasse jamais ce qui a été accordé. Les images Nano Banana ne coûtent rien.
