@@ -25,7 +25,14 @@ Le panneau du navigateur intégré ne permet pas de capture quand il n'est pas a
 
 Puis l'outil Playwright « run code » avec `planche_reel.js` (remplacer les codes). Pour chaque reel : durée, nombre de plans et durée moyenne d'un plan (coupes détectées automatiquement), et une planche de 21 images enregistrée dans `.playwright-mcp/` (dossier ignoré par Git : les images des autres comptes ne sont jamais versionnées).
 
-**Aucune vidéo n'est téléchargée** : la page charge déjà la vidéo, on la lit. La voix n'est donc pas transcrite ; seuls les sous-titres incrustés et la légende sont lus. Transcrire (faster-whisper) demanderait de télécharger le fichier : décision du fondateur.
+Les planches ne téléchargent rien : la page charge déjà la vidéo, on la lit.
+
+## 4. Transcrire la voix (accord du fondateur du 10/10/2026)
+
+1. Dans l'outil Playwright, sur la page de chaque reel retenu, lire `performance.getEntriesByType('resource')` : la piste audio est le `.mp4` du CDN Instagram dont le paramètre `efg` (base64) contient un `vencode_tag` en `…_audio`. Retirer `bytestart` et `byteend` de l'adresse.
+2. Ranger les adresses dans `localStorage`, puis les sauver avec l'outil « evaluate » et son paramètre `filename` (`.playwright-mcp/audio_urls.json`).
+3. Les télécharger avec `curl` dans un dossier de travail hors du dépôt, puis `.venv/bin/python CONTENU/06_GABARITS/reel.py --transcribe <fichier> --out <texte>`.
+4. Dans la note de veille, ne reprendre que de courts extraits : la transcription complète reste hors Git (droits d'auteur).
 
 ## 4. Écrire les notes
 

@@ -21,6 +21,7 @@ Source : `veille/2026-10-10_veille.md` et `veille/2026-10-10_releve.csv`.
 - **V4 · Les reels gagnants de la niche durent 40 à 60 s**, avec peu de coupes (un plan toutes les 4 à 14 s) mais des sous-titres mot à mot très visibles. Seule la micro-interview de Manychat coupe toutes les 2 s (25 s).
 - **V5 · À format égal, le sujet fait la différence.** Les extraits de podcast de Cole Gordon vont de ×0,4 à ×11,4 avec le même montage ; le plus haut parle d'un sujet d'actualité qui divise (le « vibe coding »).
 - **V6 · Les récits de transformation chiffrés marchent (Stan, ×6,6), mais nous sont interdits** tant qu'aucun résultat client n'existe. Le récit personnel sans chiffre marche aussi (Jenna Kutcher, ×8,2) : c'est la voie pour nos avatars d'écriture.
+- **V8 · Un concurrent dit déjà « répondre selon l'intention »** (Inrō, reel à ×5 : « it is replying based on their intent »). Notre différence doit porter sur ce que le setter fait ensuite : attendre la fin du message, qualifier une question à la fois, n'envoyer l'agenda qu'aux bons leads, relancer, passer la main.
 - **V7 · Le démonstrateur du mot-clé** : le reel épinglé « comment PURSE » de Manychat (2 390 likes, 683 commentaires) explique le mécanisme et finit par « Comment PURSE and see it in action ». C'est notre « le CTA est une démo », déjà validé chez eux.
 
 ## Apprentissages confirmés
