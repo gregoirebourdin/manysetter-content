@@ -31,9 +31,9 @@ Vérifier avant de valider : il ne fait pas « banal » (retour du 10/10), le vi
 
 ## Étape 2 · Le pack de 3 références pour Google Flow
 
-Joindre `seth_planche.png` à chaque prompt.
+Joindre `seth/seth_planche.jpg` (planche E validée le 10/10/2026) à chaque prompt.
 
-**Fichier : `seth_ref_visage.png`**
+**Fichier : `seth_ref_visage.jpg`**
 
 ```
 Square 1:1 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, facial details, skin tone, platinum buzz cut, dark beard, paper airplane neck tattoo, white t-shirt and orange watch exactly as on the sheet.
@@ -43,17 +43,17 @@ Tight head-and-shoulders portrait, facing the camera straight on, eye level, sof
 Photorealistic, natural skin texture, true-to-life colors. No text, no letters, no logos, no watermarks.
 ```
 
-**Fichier : `seth_ref_buste.png`**
+**Fichier : `seth_ref_buste.jpg`**
 
 ```
 Vertical 4:5 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, facial details, skin tone, platinum buzz cut, dark beard, paper airplane neck tattoo, white t-shirt and orange watch exactly as on the sheet.
 
-Three-quarter view from mid-chest up, body turned slightly to his right, face toward the camera, soft natural light, warm home interior softly blurred behind him. Slight amused smile.
+Three-quarter view from the waist up, body turned slightly to his right, face toward the camera, the paper airplane tattoo clearly visible on the side of his neck, one hand resting near his chin so the orange watch shows, soft natural light, warm home interior softly blurred behind him. Slight amused smile.
 
 Photorealistic, natural skin texture, realistic hands with five fingers, true-to-life colors. No text, no letters, no logos, no watermarks.
 ```
 
-**Fichier : `seth_ref_pied.png`**
+**Fichier : `seth_ref_pied.jpg`**
 
 ```
 Vertical 9:16 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, facial details, skin tone, platinum buzz cut, dark beard, paper airplane neck tattoo, white t-shirt and orange watch, dark jeans and white sneakers exactly as on the sheet.
