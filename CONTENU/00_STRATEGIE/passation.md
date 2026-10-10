@@ -28,7 +28,7 @@ Où on en est :
   - une liste de 13 comptes Instagram à surveiller.
 - **Verbatims** : faits. `docs/VERBATIMS/verbatims.md` contient 287 citations vérifiées mot pour mot (par script ou dans le navigateur), classées en 13 thèmes et par avatar, avec les motifs qui reviennent, les mots que la cible tape et les trous restants. Il est généré depuis `verbatims.jsonl` par `build_verbatims.py` et importé dans `CLAUDE.md`. Les lignes d'agences, d'experts ou d'éditeurs et les lignes interdites en publication sont marquées.
 - **Zernio** :
-  - Il a été connecté dans la session cloud, pas dans l'appli de bureau (à ajouter en connecteur personnalisé). Il ne voit qu'un compte Instagram : @gregoire.system (« Gregoire Bourdin | THE SYSTEM™ »), et aucune Page Facebook. **Ne publie et ne programme rien dessus** tant que je n'ai pas dit si c'est le compte de ManySetter.
+  - Il est connecté (ses outils se chargent à la demande : chercher « zernio » avant de dire qu'il manque). Il voit un compte Instagram : @gregoire.system (« Gregoire Bourdin | THE SYSTEM™ »), une chaîne YouTube « manysetter », et aucune Page Facebook. **Ne publie et ne programme rien dessus** tant que je n'ai pas dit si c'est le compte de ManySetter.
   - Pour héberger les médias, Zernio fournit un lien d'upload (`media_generate_upload_link`).
 - **Publicités actives** : regardées le 10/10 dans la bibliothèque publicitaire Meta, sans connexion (`veille/2026-10-10_pubs-actives.md`).
 - **Instagram bloque les requêtes venant du cloud.** La veille se fait donc dans le navigateur intégré de l'appli de bureau.

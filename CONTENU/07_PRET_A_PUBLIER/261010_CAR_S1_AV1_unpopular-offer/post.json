@@ -1,0 +1,129 @@
+{
+  "id": "261010_CAR_S1_AV1_unpopular-offer",
+  "statut": "à valider",
+  "format": "carrousel",
+  "funnel": "TOFU",
+  "style": "éditorial (compte de référence du fondateur)",
+  "segment": "S1",
+  "avatar": "AV1",
+  "role_grille": "TOFU, référence : Alex Hormozi, $100M Offers",
+  "biais": [
+    "contre-pied (« unpopular opinion »)",
+    "autorité (Hormozi)",
+    "écart de curiosité",
+    "aversion à la perte (« worth $0 »)"
+  ],
+  "sources": [
+    {
+      "ref": "Alex Hormozi, $100M Offers: How To Make Offers So Good People Feel Stupid Saying No (livre)",
+      "verif": "le titre et le sous-titre du livre, cités tels quels ; « Grand Slam Offer » est le nom que le livre donne à ce type d'offre",
+      "url": "https://www.acquisition.com/books"
+    }
+  ],
+  "verbatims": [
+    "rd13",
+    "rd91",
+    "rd22",
+    "rd14",
+    "rd93"
+  ],
+  "cta": "enregistrer + commenter, puis lien en bio (ManySetter pas encore branché sur le compte)",
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "unpopular opinion: you don't need a better *offer*"
+        },
+        {
+          "text": "sorry alex hormozi, give me eight slides to explain.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "first, *credit* where it's due"
+        },
+        {
+          "text": "alex hormozi wrote a whole book called **$100M Offers: How To Make Offers So Good People Feel Stupid Saying No.**\n\nit's a great book. if you haven't read it, go read it, i'll wait right here."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "but here's what i *see*"
+        },
+        {
+          "text": "in most coach inboxes, the offer never even comes up.\n\nthe conversation dies before that, usually at one of these three moments."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "list": [
+            "someone asks \"how much?\". you send the price, then nothing happens for two days.",
+            "someone asks \"is this for beginners?\". an automation fires the booking link.",
+            "someone says \"i'll think about it\". nobody ever follows up."
+          ]
+        },
+        {
+          "caption": "your offer was perfect all three times, and nobody heard it.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "a grand slam offer nobody hears is worth *$0*"
+        },
+        {
+          "text": "the offer is the destination. **the conversation is the road.**",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what i'd fix *first*"
+        },
+        {
+          "list": [
+            "answer while they still care, within the hour, not two days later.",
+            "ask one question before the offer, so it lands on the right person.",
+            "only send your calendar to people who fit. everyone else gets something useful."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the boring part, *automated*"
+        },
+        {
+          "text": "i built ManySetter, an AI setter for Manychat. it learns your offer from your sales page, then handles the conversation that gets people to it."
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/setter-sources-offre.png",
+          "width": 560
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "where do your leads go *quiet*?"
+        },
+        {
+          "text": "after the price, after the link, or after \"i'll think about it\"? tell me in the comments.\n\nand yes, still read hormozi.\n\n**build your setter free, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

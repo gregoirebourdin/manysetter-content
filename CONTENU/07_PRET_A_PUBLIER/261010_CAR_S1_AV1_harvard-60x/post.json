@@ -1,0 +1,178 @@
+{
+  "id": "261010_CAR_S1_AV1_harvard-60x",
+  "statut": "à valider",
+  "format": "carrousel",
+  "funnel": "TOFU",
+  "style": "éditorial (compte de référence du fondateur)",
+  "segment": "S1",
+  "avatar": "AV1",
+  "role_grille": "TOFU, référence : étude Harvard Business Review",
+  "biais": [
+    "autorité (Harvard)",
+    "chiffre précis (60x, 2,241, 23 %)",
+    "écart de curiosité (« one boring thing »)",
+    "aversion à la perte",
+    "contre-pied (« posting more won't fix a slow inbox »)"
+  ],
+  "sources": [
+    {
+      "ref": "James B. Oldroyd, Kristina McElheran, David Elkington, « The Short Life of Online Sales Leads », Harvard Business Review, mars 2011",
+      "url": "https://hbr.org/2011/03/the-short-life-of-online-sales-leads",
+      "verif": "article payant : chiffres vérifiés mot pour mot dans deux reprises indépendantes qui citent le texte (SmartCompany, 1/7/2011 : https://www.smartcompany.com.au/marketing/20110704-are-you-letting-online-leads-go-cold/ ; Venture Harbour : https://ventureharbour.com/how-fast-do-marketing-leads-turn-cold-and-how-to-stop-it-happening/)",
+      "chiffres": [
+        "audit de 2 241 entreprises US avec un faux lead web",
+        "37 % ont répondu en moins d'une heure, 16 % entre 1 et 24 h, 24 % après 24 h, 23 % jamais",
+        "réponse moyenne de 42 h (parmi celles qui ont répondu sous 30 jours)",
+        "étude séparée : 1,25 million de leads de 42 entreprises (29 B2C, 13 B2B)",
+        "contact en moins d'une heure : près de 7 fois plus de chances de qualifier le lead (conversation utile avec un décideur) qu'une heure plus tard, plus de 60 fois plus qu'après 24 h ou plus"
+      ]
+    }
+  ],
+  "verbatims": [
+    "rd06",
+    "rd19",
+    "rd63"
+  ],
+  "cta": "enregistrer + commenter, puis lien en bio (ManySetter pas encore branché sur le compte)",
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "a lead is *60x* more likely to talk to you if you do one boring thing"
+        },
+        {
+          "caption": "it's from a harvard study, not my opinion, so swipe.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "harvard business review, march 2011"
+        },
+        {
+          "heading": "the *study*"
+        },
+        {
+          "text": "researchers looked at 1.25 million sales leads from 42 US companies.\n\nfirms that answered within an hour were **nearly 7x more likely** to get a real conversation with the decision maker than firms that waited just one more hour.\n\ncompared to firms that waited a day or more, it was **more than 60x**."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "chart": "dots",
+          "rows": [
+            {
+              "label": "answered within an hour",
+              "total": 60,
+              "filled": 60,
+              "caption": ""
+            },
+            {
+              "label": "waited 24 hours or more",
+              "total": 60,
+              "filled": 1,
+              "caption": "yes, that's one dot vs sixty, on the same scale."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the boring thing is *answering*"
+        },
+        {
+          "text": "it's not a better hook or a fancier funnel. it's replying while they still care.\n\ni know, you were hoping for a secret."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and it gets *worse*"
+        },
+        {
+          "text": "harvard also sent a fake lead to 2,241 companies, just to time the reply.\n\n**23% never answered at all.** the ones who did took 42 hours on average."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "chart": "compare",
+          "groups": [
+            {
+              "label": "how 2,241 companies answered",
+              "rows": [
+                {
+                  "w": 0.92,
+                  "text": "within an hour · 37%"
+                },
+                {
+                  "w": 0.4,
+                  "text": "1 to 24 hours · 16%"
+                },
+                {
+                  "w": 0.6,
+                  "text": "after 24 hours · 24%"
+                },
+                {
+                  "w": 0.58,
+                  "text": "never · 23%",
+                  "strong": true
+                }
+              ],
+              "caption": "harvard business review, march 2011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "posting more won't fix a slow *inbox*"
+        },
+        {
+          "text": "a viral Reel just means **more people waiting** for an answer.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "now, the *DM* version"
+        },
+        {
+          "text": "that study was about web forms and emails, back in 2011.\n\ntoday your leads show up in your DMs at 11:47 pm, straight from a Reel, with the attention span of a goldfish on espresso.\n\ni'd bet the clock runs even faster there."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "fast, but not *creepy*"
+        },
+        {
+          "text": "being fast doesn't mean replying in 0.3 seconds with a link. that's just a faster way to sound like a bot.\n\nwhat i'd do: answer within the hour, wait until they finish typing, then ask **one question** about them."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so, how long do your DMs *wait*?"
+        },
+        {
+          "text": "comment your average reply time below. no judgment, i've probably seen worse.\n\ni built ManySetter, an AI setter for Manychat, so your DMs get an answer while they still care, in your voice.\n\n**save this for the next time someone tells you to just post more. build your setter free, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

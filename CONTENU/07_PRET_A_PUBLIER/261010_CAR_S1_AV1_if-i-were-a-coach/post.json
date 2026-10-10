@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_if-i-were-a-coach",
-  "statut": "à valider",
+  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; à programmer une fois le compte de publication choisi",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S1 et S2",
@@ -306,5 +306,6 @@
         }
       ]
     }
-  ]
+  ],
+  "funnel": "MOFU/BOFU"
 }

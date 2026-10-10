@@ -16,7 +16,8 @@ Blocs : {"title": txt, "size": 118} (couverture, centré) · {"heading": txt} (t
 · {"label": txt} · {"caption": txt} · {"spacer": px} · {"image": chemin, "width": px}
 · {"collage": [chemin, chemin]} · {"chart": "quadrant" | "curve" | "compare" | "dots", ...}
 · {"vote": {"incoming": message reçu, "options": [réponse 1, réponse 2, ...]}}
-· {"list": [élément, ...], "start": 1} (liste numérotée, chiffres en serif orange).
+· {"list": [élément, ...], "start": 1} (liste numérotée, chiffres en serif orange)
+· {"chat": [{"from": "lead" | "me", "text": ...}, ...]} (bulles : le lead en gris à gauche, la réponse en orange à droite).
 Gros mot masqué : écrire \\* dans la fiche (« h\\*ll ») pour un astérisque visible.
 Les chemins d'images partent de la racine du dépôt.
 """
@@ -153,9 +154,16 @@ def rich_tokens(text: str):
     out = []
     text = text.replace("\\*", LIT)
     for i, part in enumerate(re.split(r"\*\*(.+?)\*\*", text)):
-        for w in part.split(" "):
-            if w:
-                out.append((w.replace(LIT, "*"), i % 2 == 1))
+        for j, w in enumerate(part.split(" ")):
+            if not w:
+                continue
+            w = w.replace(LIT, "*")
+            # ponctuation collée juste après un passage en gras : elle reste sur la même ligne
+            if j == 0 and out and not part.startswith(" ") and re.fullmatch(r"[.,!?;:)»\"']+", w):
+                pw, pb = out.pop()
+                out.append((pw + w, pb))
+            else:
+                out.append((w, i % 2 == 1))
     return out
 
 
@@ -289,6 +297,8 @@ def smooth(pts: list, steps: int = 14) -> list:
 def chart(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
     kind = spec["chart"]
     h = int(spec.get("height", 700) * min(k, 1.3))
+    if kind in ("dots", "compare"):
+        h = 2400                      # recadré à la fin sur le contenu
     im = Image.new("RGBA", (W, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     fb, fs = font(SANS_B, int(26 * k)), font(SANS, int(22 * k))
@@ -369,18 +379,19 @@ def chart(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
     elif kind == "dots":
         y = 0
         for row in spec["rows"]:
-            lab = label(row["label"], c)
+            lab = label(row["label"], c, size=int(23 * k))
             im.alpha_composite(lab, (0, y))
-            y += 52
-            per = 17
+            y += int(52 * k)
+            step, rr = 50 * k, 11 * k
+            per = max(1, int((CW - 24) // step) + 1)
             for i in range(row["total"]):
-                cx = MX + 12 + (i % per) * 50
-                cy = y + 12 + (i // per) * 46
+                cx = MX + 12 + (i % per) * step
+                cy = y + 12 * k + (i // per) * 46 * k
                 filled = i >= row["total"] - row["filled"]
-                d.ellipse([cx - 11, cy - 11, cx + 11, cy + 11], fill=c["fg"] if filled else c["soft"])
-            y += ((row["total"] - 1) // per + 1) * 46 + 10
+                d.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], fill=c["fg"] if filled else c["soft"])
+            y += int(((row["total"] - 1) // per + 1) * 46 * k + 10)
             d.text((MX, y), row.get("caption", ""), font=fs, fill=c["muted"])
-            y += 70
+            y += int(70 * k)
         im = im.crop((0, 0, W, y))
     return im
 
@@ -400,7 +411,7 @@ def _wrap(text: str, f, width: int) -> list[str]:
 
 
 def vote(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
-    f = font(SANS, int(min(29 * k, 40)))
+    f = font(SANS, int(min(29 * k, 44)))
     lh = int(f.size * 1.35)
     im = Image.new("RGBA", (W, 2000), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
@@ -425,6 +436,27 @@ def vote(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
             d.text((bx + pad, y + 17 + j * lh), l, font=f, fill=c["fg"])
         y += bh + 20
     return im.crop((0, 0, W, y - 20))
+
+
+def chat(msgs: list[dict], c: dict, k: float = 1.0) -> Image.Image:
+    """Bulles de conversation : le lead à gauche en gris, la réponse à droite en orange."""
+    f = font(SANS, int(min(30 * k, 50)))
+    lh = int(f.size * 1.35)
+    im = Image.new("RGBA", (W, 2400), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    y = 0
+    for m in msgs:
+        mine = m.get("from") == "me"
+        lines = _wrap(m["text"], f, int(CW * 0.74))
+        bw = max(f.getlength(l) for l in lines) + 60
+        bh = len(lines) * lh + 36
+        x0 = W - MX - bw if mine else MX
+        fill = ORANGE if mine else ("#ecebe9" if c["bg"] == WHITE else "#2a2826")
+        d.rounded_rectangle([x0, y, x0 + bw, y + bh], radius=32, fill=fill)
+        for i, l in enumerate(lines):
+            d.text((x0 + 30, y + 18 + i * lh), l, font=f, fill=WHITE if mine else c["fg"])
+        y += bh + 18
+    return im.crop((0, 0, W, y - 18))
 
 
 def numbered(items: list[str], c: dict, start: int = 1, size: int = 33) -> Image.Image:
@@ -453,17 +485,17 @@ def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
     """Dessine un bloc ; k agrandit le texte (et les images) quand la slide a de la place."""
     z = lambda v, cap=None: int(min(v * k, cap) if cap else v * k)
     if "title" in b:
-        return serif_title(b["title"], z(b.get("size", 118), 168), c)
+        return serif_title(b["title"], z(b.get("size", 118), 176), c)
     if "heading" in b:
-        return serif_title(b["heading"], z(b.get("size", 86), 128), c)
+        return serif_title(b["heading"], z(b.get("size", 86), 140), c)
     if "lead" in b:
-        return paragraph(b["lead"], z(b.get("size", 39), 56), c, bold_all=True, align=b.get("align", "left"))
+        return paragraph(b["lead"], z(b.get("size", 39), 64), c, bold_all=True, align=b.get("align", "left"))
     if "text" in b:
-        return paragraph(b["text"], z(b.get("size", 36), 52), c, align=b.get("align", "left"))
+        return paragraph(b["text"], z(b.get("size", 36), 62), c, align=b.get("align", "left"))
     if "label" in b:
-        return label(b["label"], c, size=z(23, 30), align=b.get("align", "left"))
+        return label(b["label"], c, size=z(23, 34), align=b.get("align", "left"))
     if "caption" in b:
-        return paragraph(b["caption"], z(25, 34), c, color=c["muted"], align=b.get("align", "left"))
+        return paragraph(b["caption"], z(25, 38), c, color=c["muted"], align=b.get("align", "left"))
     # le texte d'abord : les images ne grandissent qu'à peine, les graphiques grossissent leurs légendes
     zi = lambda v, cap: int(min(v * k ** 0.35, cap))
     if "image" in b:
@@ -471,18 +503,20 @@ def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
     if "collage" in b:
         return collage(b["collage"], zi(b.get("width", 520), 600))
     if "chart" in b:
-        return chart(b, c, min(k, 1.35))
+        return chart(b, c, min(k, 1.6))
     if "vote" in b:
         return vote(b["vote"], c, k)
+    if "chat" in b:
+        return chat(b["chat"], c, k)
     if "list" in b:
-        return numbered(b["list"], c, b.get("start", 1), z(b.get("size", 36), 52))
+        return numbered(b["list"], c, b.get("start", 1), z(b.get("size", 36), 60))
     if "spacer" in b:
         return Image.new("RGBA", (W, z(b["spacer"])), (0, 0, 0, 0))
     raise ValueError(f"bloc inconnu : {b}")
 
 
 MARGIN = 104                      # marge haute et basse minimale
-SCALES = [x / 100 for x in range(160, 84, -5)]   # 1,60 → 0,85
+SCALES = [x / 100 for x in range(200, 84, -5)]   # 2,00 → 0,85
 
 
 def compose(s: dict) -> Image.Image:

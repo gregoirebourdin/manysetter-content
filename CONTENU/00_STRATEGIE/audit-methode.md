@@ -8,12 +8,12 @@
 | Outil | État | Ce qu'il faut |
 | --- | --- | --- |
 | Claude, appli de bureau | ✅ | |
-| **Zernio** | ❌ **pas connecté dans cette session de bureau** : il n'apparaît pas dans les connecteurs (il était branché dans la session cloud du matin). Sans lui : pas de lien d'upload des médias, pas de programmation, pas de statistiques, pas de musique des reels | 🔒 Paramètres → Connecteurs → Ajouter un connecteur personnalisé, nom `Zernio`, URL `https://mcp.zernio.com/mcp`, puis se connecter. Choisir le compte Instagram de publication et y relier la Page Facebook (option de connexion « Facebook » pour la musique) |
-| Hébergement des médias | ❌ jamais testé (passe par Zernio) | après Zernio |
+| **Zernio** | ✅ **connecté** (je l'avais déclaré absent à tort : erreur corrigée le 10/10, règle ajoutée). Deux comptes en bonne santé : Instagram @gregoire.system (« Gregoire Bourdin \| THE SYSTEM™ », jeton valable jusqu'au 9/12/2026) et YouTube « manysetter » | 🔒 choisir le compte Instagram de publication ; s'il faut un compte ManySetter dédié, le créer puis le connecter à Zernio ; Page Facebook pour la musique |
+| Hébergement des médias | ⚠️ disponible (lien d'upload Zernio), pas encore testé | au premier post programmé |
 | Navigateur intégré | ✅ veille Instagram sans connexion ; les captures image par image passent par un Chromium local sans fenêtre (le panneau ne capture pas quand il est caché) | |
 | BrandSearch | ❌ pas connecté | 🔒 selon abonnement (budget). En attendant : la bibliothèque publicitaire Meta, gratuite, dans le navigateur |
 | Apify | ❌ pas connecté | normal : seulement sur accord, jamais en routine |
-| ChatGPT, Google Flow | ❌ côté humain : **aucune image ni vidéo d'Ivy n'existe encore** | 🔒 générer la planche d'Ivy (étape 1 de `prompts-ivy.md`), puis le pack et les plans test |
+| ChatGPT, Google Flow | ⚠️ le fondateur a un compte Flow (gregoire@funail.com) ; le navigateur intégré n'y est pas connecté. Aucune image d'Ivy n'existe encore | 🔒 choisir la particularité physique d'Ivy, puis se connecter à Flow dans le navigateur intégré pour que Claude génère la planche |
 | ffmpeg, faster-whisper, Pillow | ✅ installés en local (faster-whisper dans `.venv`) | |
 
 ## 3. Le dossier projet ✅
@@ -87,6 +87,6 @@ Retours notés en règles avant correction, mémoire de Claude tenue à jour, ri
 
 ## Ce qui débloque tout le reste (fondateur)
 
-1. Connecter Zernio dans l'appli de bureau et choisir le compte de publication.
+1. Choisir le compte Instagram de publication (Zernio est déjà connecté).
 2. Générer la planche d'Ivy (étape 1 de `prompts-ivy.md`).
 3. Choisir la voix d'Ivy.

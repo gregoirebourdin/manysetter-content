@@ -1,0 +1,189 @@
+{
+  "id": "261010_CAR_S2_AV2_ziglar-5-reasons",
+  "statut": "à valider",
+  "format": "carrousel",
+  "funnel": "TOFU",
+  "style": "éditorial (compte de référence du fondateur)",
+  "segment": "S2",
+  "avatar": "AV2",
+  "role_grille": "TOFU, référence : Zig Ziglar, Secrets of Closing the Sale",
+  "biais": [
+    "contre-pied (« i'll think about it » n'est pas une réflexion)",
+    "autorité (Zig Ziglar)",
+    "liste qui ouvre une boucle (on veut voir les 5)",
+    "pertinence pour soi (les phrases que le coach reçoit)"
+  ],
+  "sources": [
+    {
+      "ref": "Zig Ziglar, Secrets of Closing the Sale, Berkley Books, 1984, p. 28",
+      "citation": "There are five basic reasons people will not buy from you. These are: no need, no money, no hurry, no desire, and no trust.",
+      "verif": "texte du livre relevé par Barry Popik, qui retrace l'origine de la citation : https://barrypopik.com/blog/every_sale_has_five_basic (la version « Every sale has five basic obstacles » est plus tardive, on ne l'utilise pas)"
+    }
+  ],
+  "verbatims": [
+    "rd14",
+    "rd91",
+    "rd93",
+    "rd78",
+    "rd13"
+  ],
+  "cta": "enregistrer + commenter, puis lien en bio (ManySetter pas encore branché sur le compte)",
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "*\"i'll think about it\"* is almost never about thinking"
+        },
+        {
+          "text": "a sales legend explained why, back in 1984.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "zig ziglar, secrets of closing the sale, 1984"
+        },
+        {
+          "lead": "\"There are five basic reasons people will not buy from you. These are: no need, no money, no hurry, no desire, and no trust.\""
+        },
+        {
+          "text": "42 years later, your DMs still hit all five. they just come with emojis now.\n\nhere's what each one looks like in an inbox, and the one question i'd ask."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "reason 1 · no need"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "just looking around for now"
+            },
+            {
+              "from": "me",
+              "text": "that's totally fair, what made you click today?"
+            }
+          ]
+        },
+        {
+          "text": "they don't see the problem yet. so i'd let them say it in their own words."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "reason 2 · no money"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "how much is it?"
+            },
+            {
+              "from": "me",
+              "text": "it's $1,500, or 3 payments of $550. what result are you hoping for?"
+            }
+          ]
+        },
+        {
+          "text": "a price alone sounds expensive. a price next to their goal sounds like a plan."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "reason 3 · no hurry"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "maybe after the holidays"
+            },
+            {
+              "from": "me",
+              "text": "that makes total sense. what happens if nothing changes by then?"
+            }
+          ]
+        },
+        {
+          "text": "no hurry usually means no deadline. a gentle question gives them one, without pushing."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "reason 4 · no desire"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "sounds cool, i'll check it out"
+            },
+            {
+              "from": "me",
+              "text": "thanks for checking it out! what have you already tried so far?"
+            }
+          ]
+        },
+        {
+          "text": "\"cool\" is polite for \"meh\". find out what they want before you pitch what you have."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "reason 5 · no trust"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is this actually legit? i've been burned before"
+            },
+            {
+              "from": "me",
+              "text": "totally fair, thanks for saying it. what happened last time?"
+            }
+          ]
+        },
+        {
+          "text": "never argue with a bad experience. answer the worry first, then listen."
+        },
+        {
+          "caption": "these are example replies, adapt them to your offer, your price and your voice.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "the fix is never a better pitch. it's a better *question*"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "which one do you hear the *most*?"
+        },
+        {
+          "text": "comment the number, 1 to 5.\n\ni built ManySetter, an AI setter for Manychat that asks those questions for you, one at a time, in your voice.\n\n**save this for your next \"i'll think about it\". build your setter free, link in bio.**"
+        }
+      ]
+    }
+  ]
+}
