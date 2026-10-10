@@ -43,8 +43,8 @@ Une grosse vague, partie il y a 3 jours. Même structure partout :
 1. **« Remplacer ton setter humain » est l'angle de tout le monde.** SetSmart, Isaac, Zalo, Omnifusion, Aaron : tous disent « vire ton setter, l'IA ne dort jamais ». On ne se bat pas sur ce terrain. Notre angle reste celui du brief et de H4 : **garde tes flows Manychat, ajoute un setter qui sonne comme toi, attend la fin du message, pose une question à la fois et te repasse les conversations importantes.**
 2. **La vitesse est déjà prise** (Manychat : « Quick replies », SetSmart : « in seconds, 24/7 »). Notre contenu dit plutôt que la vitesse ne suffit pas : c'est le **deuxième message** qui perd le lead (carrousel « if i were a coach », reel « how much »).
 3. **La cible a déjà été déçue par des outils** (publicité d'Aaron Stephenson). Sujet de carrousel : « why most DM tools sound like robots » (sans nommer personne), avec les verbatims du motif 7 (« un message automatique fait fuir »).
-4. **Le hook « POV: » domine** les publicités fraîches de SetSmart. À tester en titre de reel d'Ivy (« POV: someone asks "how much?" at 11:47 pm »), en une seule variable à la fois.
-5. **Les créateurs partenaires portent les publicités de Manychat** : ça confirme V1 (ce qui marche est porté par une personne). Pour nous, c'est Ivy, puis plus tard des coachs clients avec accord écrit.
+4. **Le hook « POV: » domine** les publicités fraîches de SetSmart. À tester en titre de reel de Seth (« POV: someone asks "how much?" at 11:47 pm »), en une seule variable à la fois.
+5. **Les créateurs partenaires portent les publicités de Manychat** : ça confirme V1 (ce qui marche est porté par une personne). Pour nous, c'est Seth, puis plus tard des coachs clients avec accord écrit.
 6. **Pas de témoignage chiffré chez nous** tant qu'on n'a pas de vrais résultats clients (SetSmart en a un ; nous n'avons que « Tested by 100+ marketing agencies »).
 
 ## À refaire

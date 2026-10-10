@@ -12,7 +12,7 @@ Avant toute chose, lis dans cet ordre :
 2. `CONTENU/00_STRATEGIE/methode-source.md` : ma méthode complète, mot pour mot. C'est ton plan de travail.
 3. `CONTENU/00_STRATEGIE/guide-expert.md` : la méthode adaptée à ManySetter.
 4. `CONTENU/00_STRATEGIE/retours-validation.md`, `brief-de-marque.md` et `checklist-demarrage.md`.
-5. `CONTENU/02_AVATARS/personnage-marque.md` et `prompts-ivy.md` : Ivy, notre personnage IA de marque.
+5. `CONTENU/02_AVATARS/personnage-marque.md` et `prompts-seth.md` : Seth, notre personnage IA de marque.
 6. `docs/VERBATIMS/verbatims.md` s'il existe, `CONTENU/00_STRATEGIE/veille/comptes-suivis.md` et `CONTENU/06_GABARITS/README.md`.
 
 Où on en est :
@@ -21,7 +21,7 @@ Où on en est :
   - le brief de marque, tiré du site ;
   - le guide expert ;
   - 3 avatars d'écriture, jamais montrés à l'image ;
-  - Ivy, le seul personnage IA de marque. Elle est ouvertement une IA, et chaque reel où elle apparaît porte l'étiquette « AI info ». Ses prompts sont prêts ;
+  - Seth, le seul personnage IA de marque. Il est ouvertement une IA, et chaque reel où il apparaît porte l'étiquette « AI info ». Ses prompts sont prêts ;
   - la charte et le générateur de carrousels `carrousel.py`, dans le style du compte de référence (instagram.com/p/Dcgl8i7CvDT) : titres étirés, surligneur orange, images épurées, ton parlé (`slides.py` ne sert plus qu'aux écrans DM) ;
   - les captures du produit tirées du site public, dans `03_PRODUIT_REF/site/` ;
   - l'audit de la méthode, partie par partie : `00_STRATEGIE/audit-methode.md` ;
@@ -44,14 +44,14 @@ Où on en est :
    - fabrique avec `carrousel.py` celles que je valide ;
    - ajoute une maquette du profil et une page de revue.
 4. ~~Le profil~~ : proposé le 10/10/2026 (`profil.md`), à valider : le nom de profil avec mot-clé, la bio et le plan des 3 épingles.
-5. **Ivy** (10/10/2026 : 3 scripts réécrits avec Ivy à l'image et 3 idées « méthode B » dans `00_STRATEGIE/reels-proposition-2026-10-10.md`, banque de 17 prompts dans `02_AVATARS/banque-plans-ivy.md` ; planche toujours attendue) :
-   - quand je dépose sa planche dans `CONTENU/02_AVATARS/ivy/`, vérifie-la, puis guide-moi pour le pack de références et les 3 plans test ;
-   - ensuite, écris 3 scripts de reels d'Ivy et lance la banque de plans HOOK, BODY et CTA.
-6. ~~`reel.py`~~ fait le 10/10/2026. **Jamais de maquette sans Ivy à l'image** (retour du 10/10) : tant que ses plans n'existent pas, montrer le script et la liste des plans. Pour mémoire, **`reel.py`** : le script qui découpe les silences de la voix off, place les sous-titres et cale les plans, en 1080 × 1920.
+5. **Seth** (10/10/2026 : 3 scripts réécrits avec Seth à l'image et 3 idées « méthode B » dans `00_STRATEGIE/reels-proposition-2026-10-10.md`, banque de 17 prompts dans `02_AVATARS/banque-plans-seth.md` ; planche toujours attendue) :
+   - quand je dépose sa planche dans `CONTENU/02_AVATARS/seth/`, vérifie-la, puis guide-moi pour le pack de références et les 3 plans test ;
+   - ensuite, écris 3 scripts de reels de Seth et lance la banque de plans HOOK, BODY et CTA.
+6. ~~`reel.py`~~ fait le 10/10/2026. **Jamais de maquette sans Seth à l'image** (retour du 10/10) : tant que ses plans n'existent pas, montrer le script et la liste des plans. Pour mémoire, **`reel.py`** : le script qui découpe les silences de la voix off, place les sous-titres et cale les plans, en 1080 × 1920.
 7. **Les routines** (consignes prêtes dans `routines.md`) : les stats chaque matin, l'analyse et la production chaque lundi. Seulement une fois le compte de publication décidé.
 
 **Décisions qui m'appartiennent** (ne les prends jamais à ma place) :
-- valider Ivy : son nom, son look, sa voix ;
+- valider Seth : son nom, son look, sa voix ;
 - choisir le compte Instagram où l'on publie ;
 - brancher ManySetter sur ce compte, pour que « Comment SETTER » lance une vraie conversation avec le setter ;
 - la Page Facebook ;

@@ -72,10 +72,10 @@ Avant d'écrire, relire dans cet ordre : `retours-validation.md`, `docs/VERBATIM
 
 La leçon de la méthode tient encore plus ici : **une vraie personne filmée qui fait quelque chose** bat toute démo produit.
 
-- **Le visage : Ivy, un seul personnage IA de marque** (décision du fondateur, 10/10/2026, fiche `02_AVATARS/personnage-marque.md`). Elle est ouvertement l'AI setter de ManySetter en personne : c'est la seule façon honnête de faire parler une IA pour vendre une IA, et l'étiquette « AI info » d'Instagram, obligatoire, devient une partie de la blague.
-- **Méthode A (banque de plans + voix off)** : plans d'Ivy en trois familles, HOOK (son téléphone qui vibre sans arrêt, un sourcil levé face caméra), BODY (elle lit, tape, montre un écran de conversation), CTA (elle met son casque orange, désigne les commentaires). Les écrans de conversation viennent du vrai produit ou des maquettes `product-ui` du site, incrustés au montage.
+- **Le visage : Seth, un seul personnage IA de marque** (décision du fondateur, 10/10/2026, fiche `02_AVATARS/personnage-marque.md`). Il est ouvertement l'AI setter de ManySetter en personne : c'est la seule façon honnête de faire parler une IA pour vendre une IA, et l'étiquette « AI info » d'Instagram, obligatoire, devient une partie de la blague.
+- **Méthode A (banque de plans + voix off)** : plans de Seth en trois familles, HOOK (son téléphone qui vibre sans arrêt, un sourcil levé face caméra), BODY (il lit, tape, montre un écran de conversation), CTA (il met son casque orange, désigne les commentaires). Les écrans de conversation viennent du vrai produit ou des maquettes `product-ui` du site, incrustés au montage.
 - **Méthode B (copie plan par plan)** : seulement à partir de reels relevés dans la veille, en citant source et chiffres, proposés avant fabrication.
-- **Trois modèles de départ** : face caméra « Do you have a… ? », « 4 replies » chiffré, « Things coaches do before… ». Les séries d'Ivy sont détaillées dans sa fiche.
+- **Trois modèles de départ** : face caméra « Do you have a… ? », « 4 replies » chiffré, « Things coaches do before… ». Les séries de Seth sont détaillées dans sa fiche.
 
 ## 8. Les garde-fous propres à ManySetter
 
@@ -100,8 +100,8 @@ La liste complète est dans `brief-de-marque.md` (partie 7). Les plus faciles à
 ## 10. Ce qui appartient au fondateur (on ne décide jamais à sa place)
 
 - Brancher ManySetter sur le compte Instagram de la marque (le CTA démo).
-- ~~Qui apparaît dans les reels~~ : décidé le 10/10/2026, Ivy, personnage IA de marque, étiquette « AI info » sur chaque reel.
-- Le nom, le look et la voix d'Ivy (proposés par Claude, à valider avant toute génération).
+- ~~Qui apparaît dans les reels~~ : décidé le 10/10/2026, Seth, personnage IA de marque, étiquette « AI info » sur chaque reel.
+- Le nom, le look et la voix de Seth (proposés par Claude, à valider avant toute génération).
 - L'offre et les promesses montrées (essai, prix, durée d'installation).
 - Ce qu'on dit d'une limite du produit.
 - Tout budget (outils payants, générations payantes, Apify).

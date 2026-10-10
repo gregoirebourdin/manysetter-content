@@ -44,7 +44,7 @@ For coaches who sell on a call 👇
 | --- | --- | --- | --- |
 | 1 | Présentation par la valeur, « if i were a coach selling in my DMs » (se termine par la « quick pause » qui présente ManySetter) | `261010_CAR_S1_AV1_if-i-were-a-coach` | refait le 10/10 dans le style du compte de référence, à valider |
 | 2 | Le meilleur post | Au départ, le vote `261010_CAR_S2_AV2_which-reply-books` (le format qui devrait le plus faire commenter, hypothèse H2). Remplacé par le vrai meilleur post après 2 à 3 semaines de statistiques | fabriqué, à valider |
-| 3 | Le produit ou une preuve réelle | Idée n° 12 : « ManySetter is not for you if you get a few DMs a month. Here's who it's for. », avec les 4 étapes et "Tested by 100+ marketing agencies". Plus tard, un reel d'Ivy qui montre une vraie conversation de test | à fabriquer dans le prochain lot |
+| 3 | Le produit ou une preuve réelle | Idée n° 12 : « ManySetter is not for you if you get a few DMs a month. Here's who it's for. », avec les 4 étapes et "Tested by 100+ marketing agencies". Plus tard, un reel de Seth qui montre une vraie conversation de test | à fabriquer dans le prochain lot |
 
 ## 4. Ce qui reste au fondateur
 

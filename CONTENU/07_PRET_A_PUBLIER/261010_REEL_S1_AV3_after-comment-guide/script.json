@@ -1,6 +1,6 @@
 {
   "id": "261010_REEL_S1_AV3_after-comment-guide",
-  "statut": "script à valider ; plans d'Ivy à générer après validation de sa planche (aucune maquette montrée sans elle)",
+  "statut": "script à valider ; plans de Seth à générer après validation de sa planche (aucune maquette montrée sans lui)",
   "format": "reel",
   "modele_veille": "question en titre fixe (R4 Cole Gordon, ×11,4 la médiane)",
   "segment": "S1 et S3",
@@ -18,11 +18,11 @@
   "lines": [
     {
       "text": "People comment GUIDE, Manychat sends the guide.",
-      "shot": "HOOK/ivy_HOOK_04_montre-telephone.mp4"
+      "shot": "HOOK/seth_HOOK_04_montre-telephone.mp4"
     },
     {
       "text": "Then what? Nobody talks about this part.",
-      "shot": "BODY/ivy_BODY_05_hausse-epaules.mp4"
+      "shot": "BODY/seth_BODY_05_hausse-epaules.mp4"
     },
     {
       "text": "They reply with a real question, like this.",
@@ -31,41 +31,41 @@
     },
     {
       "text": "And most funnels just stop there.",
-      "shot": "BODY/ivy_BODY_02_grimace.mp4"
+      "shot": "BODY/seth_BODY_02_grimace.mp4"
     },
     {
       "text": "The question goes cold like leftover pizza.",
-      "shot": "BODY/ivy_BODY_09_pose-telephone.mp4"
+      "shot": "BODY/seth_BODY_09_pose-telephone.mp4"
     },
     {
       "text": "That's where my shift starts.",
-      "shot": "CTA/ivy_CTA_01_met-le-casque.mp4"
+      "shot": "CTA/seth_CTA_01_met-le-casque.mp4"
     },
     {
       "text": "I wait until they finish typing.",
-      "shot": "BODY/ivy_BODY_07_ecoute-casque.mp4"
+      "shot": "BODY/seth_BODY_07_ecoute-casque.mp4"
     },
     {
       "text": "No interrupting. Unlike your uncle.",
-      "shot": "HOOK/ivy_HOOK_03_sourcil-leve.mp4"
+      "shot": "HOOK/seth_HOOK_03_sourcil-leve.mp4"
     },
     {
       "text": "Then I answer from your offer.",
-      "shot": "BODY/ivy_BODY_01_tape-vite.mp4"
+      "shot": "BODY/seth_BODY_01_tape-vite.mp4"
     },
     {
       "text": "One question at a time.",
-      "shot": "BODY/ivy_BODY_08_leve-un-doigt.mp4"
+      "shot": "BODY/seth_BODY_08_leve-un-doigt.mp4"
     },
     {
       "text": "The big ones, I hand back to you.",
-      "shot": "BODY/ivy_BODY_06_designe-cote.mp4"
+      "shot": "BODY/seth_BODY_06_designe-cote.mp4"
     },
     {
-      "text": "Keep your Manychat. I'm Ivy, your AI setter, link in bio.",
-      "shot": "CTA/ivy_CTA_03_clin-doeil.mp4"
+      "text": "Keep your Manychat. I'm Seth, your AI setter, link in bio.",
+      "shot": "CTA/seth_CTA_03_clin-doeil.mp4"
     }
   ],
-  "regles": "Ivy à l'image sur au moins 80 % des plans, hook visuel et texte à 0 s, une coupe toutes les 2 à 3 s, moins de 30 s, 2 inserts d'écran au plus",
+  "regles": "Seth à l'image sur au moins 80 % des plans, hook visuel et texte à 0 s, une coupe toutes les 2 à 3 s, moins de 30 s, 2 inserts d'écran au plus",
   "duree_estimee_s": 30.0
 }

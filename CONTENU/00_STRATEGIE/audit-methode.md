@@ -13,7 +13,7 @@
 | Navigateur intégré | ✅ veille Instagram sans connexion ; les captures image par image passent par un Chromium local sans fenêtre (le panneau ne capture pas quand il est caché) | |
 | BrandSearch | ❌ pas connecté | 🔒 selon abonnement (budget). En attendant : la bibliothèque publicitaire Meta, gratuite, dans le navigateur |
 | Apify | ❌ pas connecté | normal : seulement sur accord, jamais en routine |
-| ChatGPT, Google Flow | ⚠️ le fondateur a un compte Flow (gregoire@funail.com) ; le navigateur intégré n'y est pas connecté. Aucune image d'Ivy n'existe encore | 🔒 choisir la particularité physique d'Ivy, puis se connecter à Flow dans le navigateur intégré pour que Claude génère la planche |
+| ChatGPT, Google Flow | ⚠️ le fondateur a un compte Flow (gregoire@funail.com) ; le navigateur intégré n'y est pas connecté. Aucune image de Seth n'existe encore | 🔒 choisir la particularité physique de Seth, puis se connecter à Flow dans le navigateur intégré pour que Claude génère la planche |
 | ffmpeg, faster-whisper, Pillow | ✅ installés en local (faster-whisper dans `.venv`) | |
 
 ## 3. Le dossier projet ✅
@@ -26,7 +26,7 @@ Arborescence et `CLAUDE.md` en place ; les verbatims sont importés dans `CLAUDE
 | --- | --- |
 | 1. Brief de marque | ✅ tiré du site · 🔒 validation du fondateur |
 | 2. Verbatims | ✅ 287 citations vérifiées mot pour mot |
-| 3. Avatars et planches | ⚠️ 3 avatars d'écriture + Ivy décidée ; **aucune planche de référence générée** 🔒 |
+| 3. Avatars et planches | ⚠️ 3 avatars d'écriture + Seth décidée ; **aucune planche de référence générée** 🔒 |
 | 4. Veille | ✅ 12 comptes, médianes, 8 reels lus et transcrits |
 | 5. Grille de départ, 9 à 12 carrousels, maquette du profil | ✅ 3 carrousels **refaits le 10/10** dans le style du compte de référence (`carrousel.py`), page de revue republiée · 🔒 validation post par post. Maquette du profil ✅ |
 | 6. Bio et épingles | ✅ proposées · 🔒 choix A/B |
@@ -35,17 +35,17 @@ Arborescence et `CLAUDE.md` en place ; les verbatims sont importés dans `CLAUDE
 
 ## 5. La trame qualité
 
-- ✅ **« Un hook avec du contexte : la photo de la scène et une phrase »** : corrigé le 10/10. Chaque couverture a sa scène (boîte de réception « how much? », note « DM replies (do not delete) ») ou un titre de vécu, et chaque carrousel alterne slides de texte et visuels épurés (graphiques, écrans DM, captures du produit). Les photos d'Ivy viendront s'y ajouter une fois sa planche validée.
+- ✅ **« Un hook avec du contexte : la photo de la scène et une phrase »** : corrigé le 10/10. Chaque couverture a sa scène (boîte de réception « how much? », note « DM replies (do not delete) ») ou un titre de vécu, et chaque carrousel alterne slides de texte et visuels épurés (graphiques, écrans DM, captures du produit). Les photos de Seth viendront s'y ajouter une fois sa planche validée.
 - ⚠️ **« Maximiser les posts photo en piochant d'abord dans l'existant »** : les captures du produit sont rassemblées (`03_PRODUIT_REF/site/`, 5 maquettes du site en haute définition, déjà utilisées dans les 3 carrousels). Reste à demander au fondateur les fichiers d'origine des visuels LinkedIn et de la vidéo « From 126 unanswered DMs to booked calls ».
 - ✅ verbatims à la 1re personne, raison de commenter, produit en dernier, légendes pensées pour la recherche, 3 hashtags maximum.
 - ✅ pas de tiret cadratin ; ⚠️ phrases de 2 ou 3 mots : à revérifier slide par slide dans la nouvelle version.
 
 ## 6. Les reels
 
-- ❌ **La règle n°1 n'était pas respectée** : « une vraie personne filmée qui fait quelque chose ». Ma maquette était faite d'écrans et de cartons, sans Ivy : refusée, à juste titre. Plus aucune vidéo ne sera montrée sans Ivy à l'image.
-- ✅ Les 3 scripts **réécrits le 10/10** : Ivy sur 10 à 11 plans sur 12, une coupe toutes les 2,5 s, 29 à 30 s, titre fixe dès 0 s, une blague par reel. Découpage plan par plan dans `reels-proposition-2026-10-10.md` · 🔒 validation, puis plans d'Ivy à générer.
+- ❌ **La règle n°1 n'était pas respectée** : « une vraie personne filmée qui fait quelque chose ». Ma maquette était faite d'écrans et de cartons, sans Seth : refusée, à juste titre. Plus aucune vidéo ne sera montrée sans Seth à l'image.
+- ✅ Les 3 scripts **réécrits le 10/10** : Seth sur 10 à 11 plans sur 12, une coupe toutes les 2,5 s, 29 à 30 s, titre fixe dès 0 s, une blague par reel. Découpage plan par plan dans `reels-proposition-2026-10-10.md` · 🔒 validation, puis plans de Seth à générer.
 - ✅ **Méthode B proposée le 10/10** : 3 copies plan par plan (R8 Brian Mark ×2,3, R1 Inrō ×5,0, R5 Neil Patel × HighLevel ×12,6), avec source et chiffres, rien de fabriqué · 🔒 choix du fondateur.
-- ✅ `reel.py` : découpe des silences, horaire des mots, calage des plans et des sous-titres (la chaîne de la méthode), mais inutile tant que les plans d'Ivy n'existent pas.
+- ✅ `reel.py` : découpe des silences, horaire des mots, calage des plans et des sous-titres (la chaîne de la méthode), mais inutile tant que les plans de Seth n'existent pas.
 
 ## 8. La veille
 
@@ -72,7 +72,7 @@ Nom avec mot-clé, bio, 3 épingles : proposés dans `profil.md`, maquette dans 
 
 ## 13. Les prompts
 
-✅ prompts d'Ivy un par un avec nom de fichier. ❌ aucun prompt d'image de feed pour les carrousels : à donner pour les images d'Ivy une fois sa planche validée.
+✅ prompts de Seth un par un avec nom de fichier. ❌ aucun prompt d'image de feed pour les carrousels : à donner pour les images de Seth une fois sa planche validée.
 
 ## 14. Façon de travailler ✅
 
@@ -82,11 +82,11 @@ Retours notés en règles avant correction, mémoire de Claude tenue à jour, ri
 
 1. ~~Refaire les 3 carrousels dans le style du compte de référence et republier la page de revue~~ : fait le 10/10.
 2. ~~Rassembler les captures du produit dans `03_PRODUIT_REF/`~~ : fait le 10/10.
-3. ~~Réécrire les 3 scripts de reels avec Ivy à l'image, et proposer 3 copies « méthode B »~~ : fait le 10/10 (`reels-proposition-2026-10-10.md`).
+3. ~~Réécrire les 3 scripts de reels avec Seth à l'image, et proposer 3 copies « méthode B »~~ : fait le 10/10 (`reels-proposition-2026-10-10.md`).
 4. ~~Regarder les publicités actives des concurrents dans la bibliothèque publicitaire Meta~~ : fait le 10/10.
 
 ## Ce qui débloque tout le reste (fondateur)
 
 1. Choisir le compte Instagram de publication (Zernio est déjà connecté).
-2. Générer la planche d'Ivy (étape 1 de `prompts-ivy.md`).
-3. Choisir la voix d'Ivy.
+2. Générer la planche de Seth (étape 1 de `prompts-seth.md`).
+3. Choisir la voix de Seth.

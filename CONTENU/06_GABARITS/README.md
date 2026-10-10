@@ -42,7 +42,7 @@ Dépendance : Pillow (`pip install pillow`). Polices dans `fonts/` (Nohemi pour 
 }
 ```
 
-`theme` vaut `light` (fond `ink-50`) ou `dark` (fond `ink-950`). Chaque slide peut le surcharger. Une slide `hook` peut recevoir `"photo": "chemin/relatif/a/la/fiche.png"` : la photo remplit la slide, un dégradé sombre monte du bas et le texte s'y pose en clair (les images d'Ivy prévoient une zone calme en bas pour ça). Dans un titre, `*ces mots*` sont soulignés en orange (1 à 3 mots, pas sur chaque slide).
+`theme` vaut `light` (fond `ink-50`) ou `dark` (fond `ink-950`). Chaque slide peut le surcharger. Une slide `hook` peut recevoir `"photo": "chemin/relatif/a/la/fiche.png"` : la photo remplit la slide, un dégradé sombre monte du bas et le texte s'y pose en clair (les images de Seth prévoient une zone calme en bas pour ça). Dans un titre, `*ces mots*` sont soulignés en orange (1 à 3 mots, pas sur chaque slide).
 
 | Type | Champs | Usage |
 | --- | --- | --- |
@@ -80,5 +80,5 @@ Voix off (`voix.wav` dans le dossier du post) → découpe des blancs de plus de
 - `--transcribe` : transcrit n'importe quelle vidéo ou voix (veille).
 - Les vidéos et fichiers de travail (`_build/`) restent hors Git.
 
-La fiche `script.json` : `title` (titre fixe, option), `voice`, `lines[]` = `{text, shot, fit, zoom}`. Un plan `HOOK/…`, `BODY/…`, `CTA/…` vient de `04_BANQUE_BROLL` (liste et prompts : `02_AVATARS/banque-plans-ivy.md`).
+La fiche `script.json` : `title` (titre fixe, option), `voice`, `lines[]` = `{text, shot, fit, zoom}`. Un plan `HOOK/…`, `BODY/…`, `CTA/…` vient de `04_BANQUE_BROLL` (liste et prompts : `02_AVATARS/banque-plans-seth.md`).
 

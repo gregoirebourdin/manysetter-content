@@ -1,6 +1,6 @@
 {
   "id": "261010_REEL_S1_AV1_how-much-dms",
-  "statut": "script à valider ; plans d'Ivy à générer après validation de sa planche (aucune maquette montrée sans elle)",
+  "statut": "script à valider ; plans de Seth à générer après validation de sa planche (aucune maquette montrée sans lui)",
   "format": "reel",
   "modele_veille": "plainte « DM life » face caméra avec gag visuel (R1 Inrō, ×5,0 la médiane)",
   "segment": "S1",
@@ -18,7 +18,7 @@
   "lines": [
     {
       "text": "Most DMs I read just say how much.",
-      "shot": "HOOK/ivy_HOOK_02_entre-dans-le-cadre.mp4"
+      "shot": "HOOK/seth_HOOK_02_entre-dans-le-cadre.mp4"
     },
     {
       "text": "Every single inbox looks like this.",
@@ -28,41 +28,41 @@
     },
     {
       "text": "The price isn't the problem.",
-      "shot": "HOOK/ivy_HOOK_03_sourcil-leve.mp4"
+      "shot": "HOOK/seth_HOOK_03_sourcil-leve.mp4"
     },
     {
       "text": "The silence after it is.",
-      "shot": "BODY/ivy_BODY_02_grimace.mp4"
+      "shot": "BODY/seth_BODY_02_grimace.mp4"
     },
     {
       "text": "You send it, then nothing for two days.",
-      "shot": "BODY/ivy_BODY_09_pose-telephone.mp4"
+      "shot": "BODY/seth_BODY_09_pose-telephone.mp4"
     },
     {
       "text": "That's a lot of staring at seen.",
-      "shot": "BODY/ivy_BODY_05_hausse-epaules.mp4"
+      "shot": "BODY/seth_BODY_05_hausse-epaules.mp4"
     },
     {
       "text": "So I send the price and one question.",
-      "shot": "BODY/ivy_BODY_01_tape-vite.mp4"
+      "shot": "BODY/seth_BODY_01_tape-vite.mp4"
     },
     {
       "text": "How many clients do you have right now?",
-      "shot": "BODY/ivy_BODY_08_leve-un-doigt.mp4"
+      "shot": "BODY/seth_BODY_08_leve-un-doigt.mp4"
     },
     {
       "text": "If it's a fit, they get your calendar.",
-      "shot": "BODY/ivy_BODY_04_compte-doigts.mp4"
+      "shot": "BODY/seth_BODY_04_compte-doigts.mp4"
     },
     {
       "text": "How many this week? Tell me below.",
-      "shot": "CTA/ivy_CTA_02_designe-bas.mp4"
+      "shot": "CTA/seth_CTA_02_designe-bas.mp4"
     },
     {
-      "text": "I'm Ivy, an AI setter. Link in bio.",
-      "shot": "CTA/ivy_CTA_03_clin-doeil.mp4"
+      "text": "I'm Seth, an AI setter. Link in bio.",
+      "shot": "CTA/seth_CTA_03_clin-doeil.mp4"
     }
   ],
-  "regles": "Ivy à l'image sur au moins 80 % des plans, hook visuel et texte à 0 s, une coupe toutes les 2 à 3 s, moins de 30 s, 2 inserts d'écran au plus",
+  "regles": "Seth à l'image sur au moins 80 % des plans, hook visuel et texte à 0 s, une coupe toutes les 2 à 3 s, moins de 30 s, 2 inserts d'écran au plus",
   "duree_estimee_s": 28.9
 }
