@@ -1,33 +1,21 @@
 {
-  "duree_s": 6.73,
+  "duree_s": 3.26,
   "segments": [
     {
       "de": 0.0,
-      "a": 1.36,
-      "zoom": 1.0,
-      "texte": "I'm literally an AI"
-    },
-    {
-      "de": 1.36,
-      "a": 3.34,
-      "zoom": 1.12,
-      "texte": "setter and I'm begging you,"
-    },
-    {
-      "de": 3.34,
-      "a": 4.87,
+      "a": 1.58,
       "zoom": 1.26,
       "texte": "do not fire"
     },
     {
-      "de": 4.87,
-      "a": 6.73,
+      "de": 1.58,
+      "a": 3.26,
       "zoom": 1.38,
       "texte": "your human setter."
     }
   ],
   "booms_s": [
-    2.34,
-    4.05
+    0.74,
+    2.08
   ]
 }

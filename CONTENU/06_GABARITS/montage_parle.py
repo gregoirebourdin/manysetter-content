@@ -13,6 +13,9 @@ Ce que fait le script (retours du fondateur du 10/10/2026) :
 6. sous-titres mot à mot (1 à 3 mots, blanc contour noir, mots clés en orange) dans la zone sûre ;
 7. titre fixe façon Instagram au-dessus de la tête : étiquette blanche, texte noir, `*mot*` en orange.
 
+`plans[].garder` : [début, fin] en secondes pour ne garder qu'une partie d'un plan.
+Voix : passe-haut, présence, compression, -13 LUFS (niveau des pubs qui tournent dans la niche).
+
 Sortie : `reel.mp4` dans le dossier du post (fichier vidéo hors Git), et `montage.json` (les coupes).
 """
 
@@ -70,8 +73,13 @@ def font(size: int) -> ImageFont.FreeTypeFont:
 def tokens(text: str):
     out = []
     for i, part in enumerate(re.split(r"\*(.+?)\*", text)):
-        for wd in part.split():
-            out.append((wd, i % 2 == 1))
+        for j, wd in enumerate(part.split()):
+            # ponctuation collée au mot marqué qui précède (« *setter*? » → « setter? »)
+            if j == 0 and out and not part.startswith(" ") and re.fullmatch(r"[.,!?;:)]+", wd):
+                pw, pm = out.pop()
+                out.append((pw + wd, pm))
+            else:
+                out.append((wd, i % 2 == 1))
     return out
 
 
@@ -190,9 +198,11 @@ def build(script_path: Path, model: str = "small.en") -> Path:
 
     # 1. bout à bout, format commun
     norm_clips = []
+    keeps = [p.get("garder") for p in s["plans"] if p.get("video")]
     for i, c in enumerate(clips):
         o = work / f"plan_{i + 1}.mp4"
-        run(["ffmpeg", "-y", "-i", str(c), "-vf",
+        cut = ["-ss", str(keeps[i][0]), "-to", str(keeps[i][1])] if keeps[i] else []
+        run(["ffmpeg", "-y", *cut, "-i", str(c), "-vf",
              f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS}",
              "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", "-c:a", "aac", "-ar", "48000", "-ac", "1", str(o)])
         norm_clips.append(o)
@@ -206,6 +216,12 @@ def build(script_path: Path, model: str = "small.en") -> Path:
     words = transcribe(brut, model)
     if not words:
         sys.exit("Aucun mot reconnu dans la voix.")
+    # l'orthographe vient du script (Whisper peut entendre « center » pour « setter ») quand le compte de mots colle
+    script_words = " ".join(p.get("ligne_gardee") or p.get("ligne", "") for p in s["plans"] if p.get("video")).split()
+    if len(script_words) == len(words):
+        words = [(sw, a, b) for sw, (_, a, b) in zip(script_words, words)]
+    else:
+        print(f"Attention : {len(words)} mots entendus pour {len(script_words)} dans le script, sous-titres tels qu'entendus.")
     segs = segments(words, total)
     mont = s.get("montage", {})
     zooms = mont.get("zooms_secs", [])
@@ -290,6 +306,11 @@ def build(script_path: Path, model: str = "small.en") -> Path:
                   + f"amix=inputs={len(boom_times) + 1}:normalize=0:duration=first[am]")
         audio_last = "am"
 
+    # voix qui porte (retour du 10/10/2026) : passe-haut, présence, compression, -13 LUFS
+    fc.append(f"[{audio_last}]highpass=f=75,equalizer=f=3200:t=q:w=1.2:g=3.5,equalizer=f=180:t=q:w=1:g=1.5,"
+              "acompressor=threshold=-22dB:ratio=3.5:attack=4:release=90:makeup=4,"
+              "loudnorm=I=-13:TP=-1.0:LRA=6[afin]")
+    audio_last = "afin"
     out = post / "reel.mp4"
     run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(fc), "-map", f"[{last}]", "-map", f"[{audio_last}]",
          "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p",

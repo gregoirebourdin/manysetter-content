@@ -1,6 +1,6 @@
 {
   "id": "261010_REEL_S2_AV2_dont-fire-your-setter",
-  "statut": "en fabrication : 2 plans en Veo 3.1 Fast (40 crédits accordés sur 50), hook d'abord",
+  "statut": "hook v2 monté (plan 1 recoupé, voix -13 LUFS) ; plan 2 à générer après accord (Veo Fast, 20 crédits, 30 restants)",
   "format": "reel",
   "methode": "Seth parle face caméra (Veo 3.1, Google Flow), 3 plans de 8 s depuis la même image de départ",
   "segment": "S2",
@@ -15,7 +15,7 @@
   "ai_label": true,
   "cta": "lien en bio",
   "hook": {
-    "titre_fixe": "an AI setter begging you: don't *fire* your setter",
+    "titre_fixe": "about to fire your *setter*?",
     "biais": [
       "contre-pied total des publicités du marché (veille/2026-10-10_pubs-actives.md : « remplace ton setter humain »)",
       "ironie (c'est une IA qui le dit)",
@@ -34,13 +34,23 @@
         "modele": "Veo 3.1 Fast",
         "credits": 20,
         "note": "1er essai refusé par Flow (« prominent people », faux positif, remboursé) ; 2e essai sans le prénom dans le prompt : OK"
-      }
+      },
+      "garder": [
+        3.55,
+        6.95
+      ],
+      "ligne_gardee": "do not fire your human setter."
     },
     {
       "n": 2,
       "secondes": "8-16",
-      "ligne": "Every ad says I'll replace them. I can't even make coffee. I'll take your 11 p.m. DMs, they take the calls.",
-      "jeu": "Walking selfie, fed up and exasperated: rolls his eyes on 'every ad', incredulous half laugh and open palm on 'make coffee', then calmer and firm, counts with his fingers on '11 p.m. DMs', and a decisive hand chop on 'they take the calls'."
+      "ligne": "Every ad says replace your setter with AI. Let the AI take the 11 p.m. \"how much\", your human takes the calls. That's exactly why we built ManySetter.",
+      "jeu": "Walking selfie, then he stops abruptly and brings the phone closer; rolls his eyes on 'every ad', counts on his fingers on '11 p.m.', firm hand chop on 'takes the calls', then a confident half smile. Talks fast, no pauses, casual and natural.",
+      "insert": {
+        "image": "CONTENU/03_PRODUIT_REF/site/pourquoi-cette-reponse.png",
+        "sur": "your human takes the calls",
+        "duree_s": 1.0
+      }
     }
   ],
   "voix": "His voice: warm American male voice, mid-low pitch, relaxed but quick and confident delivery, dry playful humor, clear diction, natural pauses, no vocal fry, General American accent.",
@@ -49,14 +59,13 @@
     "jump_cuts": true,
     "zooms_secs": [
       "do not fire your human setter",
-      "I can't even make coffee",
-      "they take the calls"
+      "your human takes the calls"
     ],
     "booms": [
-      "begging",
       "fire",
-      "coffee",
-      "calls"
+      "human",
+      "calls",
+      "ManySetter"
     ],
     "titre": "étiquette blanche Instagram, texte noir, mot clé en orange"
   },
