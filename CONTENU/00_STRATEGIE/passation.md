@@ -30,6 +30,7 @@ Où on en est :
 - **Zernio** :
   - Il a été connecté dans la session cloud, pas dans l'appli de bureau (à ajouter en connecteur personnalisé). Il ne voit qu'un compte Instagram : @gregoire.system (« Gregoire Bourdin | THE SYSTEM™ »), et aucune Page Facebook. **Ne publie et ne programme rien dessus** tant que je n'ai pas dit si c'est le compte de ManySetter.
   - Pour héberger les médias, Zernio fournit un lien d'upload (`media_generate_upload_link`).
+- **Publicités actives** : regardées le 10/10 dans la bibliothèque publicitaire Meta, sans connexion (`veille/2026-10-10_pubs-actives.md`).
 - **Instagram bloque les requêtes venant du cloud.** La veille se fait donc dans le navigateur intégré de l'appli de bureau.
 
 À faire, une chose à la fois et dans cet ordre :
@@ -43,7 +44,7 @@ Où on en est :
    - fabrique avec `carrousel.py` celles que je valide ;
    - ajoute une maquette du profil et une page de revue.
 4. ~~Le profil~~ : proposé le 10/10/2026 (`profil.md`), à valider : le nom de profil avec mot-clé, la bio et le plan des 3 épingles.
-5. **Ivy** (10/10/2026 : 3 scripts et banque de 13 prompts prêts, `02_AVATARS/banque-plans-ivy.md` ; planche toujours attendue) :
+5. **Ivy** (10/10/2026 : 3 scripts réécrits avec Ivy à l'image et 3 idées « méthode B » dans `00_STRATEGIE/reels-proposition-2026-10-10.md`, banque de 17 prompts dans `02_AVATARS/banque-plans-ivy.md` ; planche toujours attendue) :
    - quand je dépose sa planche dans `CONTENU/02_AVATARS/ivy/`, vérifie-la, puis guide-moi pour le pack de références et les 3 plans test ;
    - ensuite, écris 3 scripts de reels d'Ivy et lance la banque de plans HOOK, BODY et CTA.
 6. ~~`reel.py`~~ fait le 10/10/2026. **Jamais de maquette sans Ivy à l'image** (retour du 10/10) : tant que ses plans n'existent pas, montrer le script et la liste des plans. Pour mémoire, **`reel.py`** : le script qui découpe les silences de la voix off, place les sous-titres et cale les plans, en 1080 × 1920.
