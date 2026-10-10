@@ -1,7 +1,7 @@
 # Le personnage de marque : Ivy
 
 > Décision du fondateur (10/10/2026) : un seul personnage IA qui parle, pour porter la marque.
-> Proposition de Claude, à valider : le nom, le look et la voix. **Une fois la planche de référence validée, elle ne change plus.**
+> Look validé par le fondateur le 10/10/2026 (buzz cut platine). Restent à valider : la planche générée et la voix. **Une fois la planche de référence validée, elle ne change plus.**
 
 ## 1. Le concept
 
@@ -13,7 +13,7 @@
 
 ## 2. L'identité visuelle (fixe)
 
-- **Visage** : femme de 28 ans environ, peau mate brun clair, yeux marron foncé, cheveux bruns bouclés aux épaules, taches de rousseur légères sur le nez et les pommettes, sourcils naturels et fournis, maquillage très léger.
+- **Visage** : femme de 28 ans environ, peau mate brun clair, yeux marron foncé, **buzz cut platine** (cheveux rasés très courts, décolorés presque blancs : sa particularité physique, choisie par le fondateur le 10/10/2026), sourcils foncés, naturels et fournis, taches de rousseur légères sur le nez et les pommettes, maquillage très léger. Des cheveux très courts restent identiques d'un plan vidéo à l'autre, ce qui aide Flow à garder le personnage.
 - **Signature** : un **casque audio orange** (`#ff611d`) toujours autour du cou. C'est sa silhouette, on la reconnaît en vignette, et l'orange de la marque est à l'image.
 - **Tenue** : toujours la même, un pull col rond en maille épaisse couleur crème, manches un peu longues, et de petites créoles dorées. Une tenue constante aide le générateur à garder le personnage identique.
 - **Son décor** : un bureau à la maison, le soir, lumière chaude d'une lampe de bureau, un téléphone posé sur un support, un ordinateur portable ouvert (écran flou, rien de lisible), une plante, une tasse. Arrière-plan doux, sans logo.
