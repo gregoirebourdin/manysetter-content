@@ -12,20 +12,20 @@
 ```
 Character reference sheet, landscape 3:2, plain warm light-gray seamless background, soft even studio light, photorealistic.
 
-The character: Seth, a man around 30 years old, warm light-brown skin, dark brown eyes, a very short bleached platinum buzz cut (almost white, even length all over the head, clean natural hairline), a short, neatly trimmed dark brown beard that contrasts strongly with the platinum hair, strong dark natural eyebrows, a small silver hoop in his left ear, friendly and slightly amused expression. He always wears an oversized cream chunky-knit crewneck sweater with slightly long sleeves and bright orange over-ear headphones (hex #ff611d) resting around his neck. Dark straight-leg jeans and white sneakers.
+The character: Seth, a man around 30 years old with an athletic, muscular fitness-coach build: broad shoulders, defined chest, muscular arms and forearms, lean, not a bodybuilder. Warm light-brown skin with real, unretouched detail: visible pores, light freckles across his nose and cheekbones, a small mole on his left cheekbone, a thin pale scar through the outer end of his right eyebrow, faint smile lines, a slightly asymmetric smile. Dark brown eyes. A very short bleached platinum buzz cut (almost white, even length all over the head, clean natural hairline) and a short, neatly trimmed dark brown beard that contrasts strongly with the platinum hair, strong dark natural eyebrows. A small silver hoop in his left ear. A small fine-line black tattoo of a paper airplane on the left side of his neck, below the ear, no text. He always wears a plain, slightly fitted crisp white crew-neck t-shirt (no print, no logo), a chunky sports watch with a bright orange silicone strap (hex #ff611d) on his left wrist, and bright orange over-ear headphones (hex #ff611d) resting around his neck. Dark straight-leg jeans and white sneakers.
 
-Layout, all the same person with identical face, platinum buzz cut, dark beard, skin tone, outfit and headphones:
+Layout, all the same person with identical face, facial details, platinum buzz cut, dark beard, neck tattoo, skin tone, white t-shirt, orange watch and headphones:
 1. head and shoulders, facing camera, neutral friendly expression
 2. head and shoulders, three-quarter view left
 3. head and shoulders, profile right
-4. full body standing, facing camera, relaxed pose
+4. full body standing, facing camera, relaxed pose, arms slightly away from the body so the orange watch and the muscular arms are visible
 5. a row of 4 small close-up expressions: laughing, raised eyebrow, skeptical squint, warm smile
 
 Photorealistic, natural skin texture, realistic hands with five fingers, true-to-life colors.
 No text, no letters, no labels, no logos, no watermarks, no brand names on any object.
 ```
 
-Vérifier avant de valider : le visage est identique dans les 5 vues, le buzz cut est bien platine et très court partout, la barbe courte reste bien foncée (le contraste est sa signature), l'anneau argent est à l'oreille gauche, le casque est bien orange vif, les mains ont cinq doigts, aucun texte n'apparaît.
+Vérifier avant de valider : il ne fait pas « banal » (retour du 10/10), le visage et ses détails sont identiques dans les 5 vues, le tatouage avion en papier est au même endroit, la montre est orange, le buzz cut est bien platine et très court partout, la barbe courte reste bien foncée (le contraste est sa signature), l'anneau argent est à l'oreille gauche, le casque est bien orange vif, les mains ont cinq doigts, aucun texte n'apparaît.
 
 ---
 
@@ -36,7 +36,7 @@ Joindre `seth_planche.png` à chaque prompt.
 **Fichier : `seth_ref_visage.png`**
 
 ```
-Square 1:1 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, skin tone, platinum buzz cut, dark beard, cream knit sweater and orange headphones around his neck exactly as on the sheet.
+Square 1:1 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, skin tone, platinum buzz cut, dark beard, white t-shirt, orange watch and orange headphones around his neck exactly as on the sheet.
 
 Tight head-and-shoulders portrait, facing the camera straight on, eye level, soft natural window light from the left, neutral warm background slightly out of focus. Relaxed friendly expression, mouth closed.
 
@@ -46,7 +46,7 @@ Photorealistic, natural skin texture, true-to-life colors. No text, no letters, 
 **Fichier : `seth_ref_buste.png`**
 
 ```
-Vertical 4:5 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, skin tone, platinum buzz cut, dark beard, cream knit sweater and orange headphones around his neck exactly as on the sheet.
+Vertical 4:5 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, skin tone, platinum buzz cut, dark beard, white t-shirt, orange watch and orange headphones around his neck exactly as on the sheet.
 
 Three-quarter view from mid-chest up, body turned slightly to his right, face toward the camera, soft natural light, warm home interior softly blurred behind him. Slight amused smile.
 
@@ -56,7 +56,7 @@ Photorealistic, natural skin texture, realistic hands with five fingers, true-to
 **Fichier : `seth_ref_pied.png`**
 
 ```
-Vertical 9:16 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, skin tone, platinum buzz cut, dark beard, cream knit sweater, orange headphones around his neck, dark jeans and white sneakers exactly as on the sheet.
+Vertical 9:16 photo. Use the attached character sheet as the only identity reference: this is Seth. Keep his face, skin tone, platinum buzz cut, dark beard, white t-shirt, orange watch, orange headphones around his neck, dark jeans and white sneakers exactly as on the sheet.
 
 Full body, standing in a cozy home office in the evening, warm desk lamp light, a wooden desk with a laptop and a phone on a stand behind him. He holds his phone in one hand at waist height, looking at the camera with a half smile.
 
@@ -132,7 +132,7 @@ Keep Seth's face, hair, outfit and orange headphones exactly as in the starting 
 Pour la 1re slide d'un carrousel (`"photo"` dans la fiche). Joindre les 3 références, remplacer la scène entre crochets. **Fichier : `CONTENU/05_BANQUE_IMAGES/seth_<slug>.png`**
 
 ```
-Vertical 4:5 photo, 1080x1350. Seth, exactly as in the reference images (same face, platinum buzz cut, dark beard, cream knit sweater, orange headphones around his neck).
+Vertical 4:5 photo, 1080x1350. Seth, exactly as in the reference images (same face, platinum buzz cut, dark beard, white t-shirt, orange watch, orange headphones around his neck).
 
 Scene: [a candid smartphone photo of Seth at his desk, what he does, his expression, 2 or 3 telling objects].
 
