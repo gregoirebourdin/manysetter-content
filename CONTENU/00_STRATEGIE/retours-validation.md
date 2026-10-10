@@ -31,3 +31,14 @@ Format d'une règle :
 ## 2026-10-10 · Rythme de travail
 - Retour : « Continue à fond et suis le plan. »
 - Règle : enchaîner les étapes du plan sans attendre entre deux, en ne s'arrêtant que pour une décision qui appartient au fondateur (Ivy, compte de publication, branchement de ManySetter, Page Facebook, budget) ou une validation de post.
+
+## 2026-10-10 · Maquette de reel et style des carrousels (retour fort)
+- Retour : « La vidéo, il n'y a même pas d'avatar IA […] C'est moche. Ça ne ressemble pas à un réel. Il n'y a pas de hook. Il n'y a rien. »
+- Règle : **un reel montre toujours le personnage (Ivy) qui fait quelque chose à l'image**, presque tout le temps, avec un hook visuel et texte dès la 1re seconde et une coupe toutes les 2 à 3 s (méthode, parties 6 et 9). Les écrans (conversations) ne sont que de courts inserts ou des incrustations au-dessus d'Ivy, jamais l'essentiel du reel.
+- Règle : **on ne montre jamais au fondateur un montage sans le personnage** (cartons, voix système) comme s'il s'agissait d'un reel. Tant que les plans d'Ivy n'existent pas, on montre le script et le découpage plan par plan, pas une vidéo.
+- Règle : les idées de reels se **proposent avant de fabriquer**, en citant le reel source de la veille et ses chiffres (méthode B).
+- Retour : « Pour les carrousels, je vais te donner un compte que je veux que tu copies en termes de structure et de style […] garde mes couleurs, le fait de souligner en orange, c'est ma marque […] pour les titres, il prend la fonte et il augmente la hauteur pour plus de lisibilité […] de temps en temps il rajoute des images pour montrer, c'est épuré, stylé, il y a de la valeur […] il parle vraiment comme un humain, des fois il dit des gros mots et il met des astérisques pour cacher. »
+- Règle : les carrousels **copient la structure et le style du compte de référence** (post https://www.instagram.com/p/Dcgl8i7CvDT/) : titres dans une fonte étirée en hauteur, quantité et type de texte par slide, images d'illustration épurées. On garde les couleurs ManySetter (`ink`, orange `brand`) et le **soulignement orange**, signature de la marque.
+- Règle : **ton humain**, comme on parle : gros mots autorisés à condition d'être masqués par des astérisques (« sh*t », « f*cking »), décision du fondateur.
+- Retour : « Je vais te remettre le prompt de base […] je veux que tu le suives. »
+- Règle : avant chaque livraison, on vérifie la méthode source partie par partie (`methode-source.md`) et on dit franchement ce qui n'est pas encore fait ou pas connecté.
