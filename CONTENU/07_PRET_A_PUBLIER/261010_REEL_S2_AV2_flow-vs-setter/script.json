@@ -1,0 +1,21 @@
+{
+  "id": "261010_REEL_S2_AV2_flow-vs-setter",
+  "statut": "script à valider (plans d'Ivy à générer après validation de sa planche)",
+  "format": "reel",
+  "modele_veille": "sketch « X vs Y » en un plan (Brian Mark, ×2,3) adapté en voix off + écrans",
+  "segment": "S2", "avatar": "AV2",
+  "verbatims": ["mc07", "rd22", "mc11", "rd38"],
+  "ai_label": true,
+  "cta": "lien en bio",
+  "title": "Your keyword flow vs your setter, same DM",
+  "voice": "voix.wav",
+  "lines": [
+    {"text": "Same DM, two very different replies, and only one of them books the call.", "shot": "HOOK/ivy_HOOK_01_lit-son-telephone.mp4"},
+    {"text": "A lead writes: is this for beginners? I've been burned by coaches before.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/flow-beginners/slide-01.png", "fit": "contain"},
+    {"text": "The keyword flow sees the word beginners and sends the booking link.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/flow-beginners/slide-01.png", "fit": "contain", "zoom": "in"},
+    {"text": "Respectfully, that answers the keyword, not the question.", "shot": "BODY/ivy_BODY_02_grimace.mp4"},
+    {"text": "I answer the worry first, then I ask one question.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-beginners/slide-01.png", "fit": "contain"},
+    {"text": "And your calendar only goes out once it's actually a fit.", "shot": "BODY/ivy_BODY_01_tape-vite.mp4"},
+    {"text": "Which reply would you rather get? Tell me in the comments. I'm Ivy, the AI setter, link in bio.", "shot": "CTA/ivy_CTA_02_designe-bas.mp4"}
+  ]
+}

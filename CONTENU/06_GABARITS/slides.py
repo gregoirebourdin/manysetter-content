@@ -252,6 +252,35 @@ def slide_dm(d, t, s, k):
     return y
 
 
+def slide_inbox(d, t, s, k):
+    """Liste de conversations façon messagerie (plan « écran » des reels).
+    Chaque ligne : {name, text, time}. Dans `text`, *mots* passent en orange (le mot qui revient)."""
+    y = 0
+    if s.get("label"):
+        d.text((MARGIN_X, y), s["label"], font=font(BODY_MEDIUM, round(28 * k)), fill=t["muted"])
+        y += round(60 * k)
+    y = title(d, t, s.get("title", "Messages"), y, round(60 * k), 1.14) + round(30 * k)
+    av = round(84 * k)
+    fn, fp, ft = font(BODY_SEMIBOLD, round(36 * k)), font(BODY, round(34 * k)), font(BODY, round(28 * k))
+    for row in s["rows"]:
+        d.ellipse([MARGIN_X, y, MARGIN_X + av, y + av], fill=BRAND[100])
+        fi = font(HEADING_MEDIUM, round(38 * k))
+        ini = row["name"][0].upper()
+        d.text((MARGIN_X + av / 2 - fi.getlength(ini) / 2, y + av * 0.24), ini, font=fi, fill=BRAND[700])
+        x = MARGIN_X + av + round(28 * k)
+        d.text((x, y + round(4 * k)), row["name"], font=fn, fill=t["fg"])
+        tw = ft.getlength(row.get("time", ""))
+        d.text((W - MARGIN_X - tw, y + round(8 * k)), row.get("time", ""), font=ft, fill=t["muted"])
+        cx, py = x, y + round(48 * k)
+        for word, hl in tokens(row["text"]):
+            d.text((cx, py), word, font=fp, fill=BRAND[500] if hl else t["body"])
+            cx += fp.getlength(word + " ")
+        dot = round(16 * k)
+        d.ellipse([W - MARGIN_X - dot, py + round(12 * k), W - MARGIN_X, py + round(12 * k) + dot], fill=BRAND[500])
+        y += av + round(44 * k)
+    return y
+
+
 def slide_vote(d, t, s, k):
     y = 0
     if s.get("kicker"):
@@ -318,7 +347,7 @@ def signature(d, t, s):
 
 RENDERERS = {
     "hook": slide_hook, "text": slide_text, "list": slide_list, "notes": slide_notes,
-    "dm": slide_dm, "vote": slide_vote, "cta": slide_cta,
+    "dm": slide_dm, "vote": slide_vote, "cta": slide_cta, "inbox": slide_inbox,
 }
 TOP_ALIGNED = {"notes"}
 MAX_SCALE = {"hook": 1.1, "notes": 1.0}

@@ -1,0 +1,5 @@
+{"id":"ecran_price-then-question","theme":"light","slides":[{"type":"dm","label":"Example conversation · AI setter","contact":"Dani","messages":[
+{"from":"lead","text":"ok this sounds like exactly what I need, how much is it?"},
+{"from":"setter","text":"It's $1,500, or 3 payments of $550. Before I send times, how many clients are you working with right now?"},
+{"from":"lead","text":"4 right now, I want to get to 10 by spring"},
+{"from":"setter","text":"That's exactly who the program is for. I have Tuesday at 2:00 pm or Wednesday at 11:00 am, which one works better?"}]}]}

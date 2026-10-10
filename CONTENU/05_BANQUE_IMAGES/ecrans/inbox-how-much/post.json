@@ -1,0 +1,7 @@
+{"id":"ecran_inbox-how-much","theme":"light","slides":[{"type":"inbox","label":"Example inbox","title":"Messages","rows":[
+{"name":"Dani","text":"*how much?*","time":"2m"},
+{"name":"Marco","text":"hey *how much* is it","time":"14m"},
+{"name":"Sienna","text":"*price?*","time":"1h"},
+{"name":"Jules","text":"*how much* for the 12 weeks?","time":"3h"},
+{"name":"Ana","text":"what's the *price*","time":"5h"},
+{"name":"Theo","text":"*how much*","time":"1d"}]}]}

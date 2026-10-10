@@ -1,0 +1,49 @@
+{
+  "sortie": "reel_maquette.mp4",
+  "duree_s": 27.39,
+  "maquette": true,
+  "plans": [
+    {
+      "texte": "Same DM, two very different replies, and only one of them books the call.",
+      "plan": "HOOK/ivy_HOOK_01_lit-son-telephone.mp4",
+      "debut": 0.0,
+      "fin": 4.24
+    },
+    {
+      "texte": "A lead writes: is this for beginners? I've been burned by coaches before.",
+      "plan": "CONTENU/05_BANQUE_IMAGES/ecrans/flow-beginners/slide-01.png",
+      "debut": 4.24,
+      "fin": 8.19
+    },
+    {
+      "texte": "The keyword flow sees the word beginners and sends the booking link.",
+      "plan": "CONTENU/05_BANQUE_IMAGES/ecrans/flow-beginners/slide-01.png",
+      "debut": 8.19,
+      "fin": 11.46
+    },
+    {
+      "texte": "Respectfully, that answers the keyword, not the question.",
+      "plan": "BODY/ivy_BODY_02_grimace.mp4",
+      "debut": 11.46,
+      "fin": 14.84
+    },
+    {
+      "texte": "I answer the worry first, then I ask one question.",
+      "plan": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-beginners/slide-01.png",
+      "debut": 14.84,
+      "fin": 18.0
+    },
+    {
+      "texte": "And your calendar only goes out once it's actually a fit.",
+      "plan": "BODY/ivy_BODY_01_tape-vite.mp4",
+      "debut": 18.0,
+      "fin": 21.11
+    },
+    {
+      "texte": "Which reply would you rather get? Tell me in the comments. I'm Ivy, the AI setter, link in bio.",
+      "plan": "CTA/ivy_CTA_02_designe-bas.mp4",
+      "debut": 21.11,
+      "fin": 27.39
+    }
+  ]
+}

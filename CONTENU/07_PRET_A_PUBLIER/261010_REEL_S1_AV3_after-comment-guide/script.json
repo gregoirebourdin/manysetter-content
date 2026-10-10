@@ -1,0 +1,21 @@
+{
+  "id": "261010_REEL_S1_AV3_after-comment-guide",
+  "statut": "script à valider (plans d'Ivy à générer après validation de sa planche)",
+  "format": "reel",
+  "modele_veille": "question en titre fixe (Cole Gordon, jusqu'à ×11,4)",
+  "segment": "S1 et S3", "avatar": "AV3",
+  "verbatims": ["mc47", "mc01", "mc10", "rd65"],
+  "ai_label": true,
+  "cta": "lien en bio",
+  "title": "What happens after someone comments GUIDE?",
+  "voice": "voix.wav",
+  "lines": [
+    {"text": "You post, people comment GUIDE, and Manychat sends the guide. And then what happens next?", "shot": "HOOK/ivy_HOOK_03_sourcil-leve.mp4"},
+    {"text": "They reply with a real question, like this one.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/guide-real-question/slide-01.png", "fit": "contain", "zoom": "in"},
+    {"text": "And that's where most funnels stop, the conversation just sits there.", "shot": "BODY/ivy_BODY_05_hausse-epaules.mp4"},
+    {"text": "That's where my shift starts. I wait until they finish typing, then I answer from your offer, in your voice.", "shot": "BODY/ivy_BODY_07_ecoute-casque.mp4"},
+    {"text": "One question at a time, and your calendar only goes to the right people.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-one-question/slide-01.png", "fit": "contain"},
+    {"text": "And when it really matters, I hand the conversation over to you.", "shot": "BODY/ivy_BODY_06_designe-cote.mp4"},
+    {"text": "Keep your Manychat, add the setter. I'm Ivy, link in bio.", "shot": "CTA/ivy_CTA_03_clin-doeil.mp4"}
+  ]
+}

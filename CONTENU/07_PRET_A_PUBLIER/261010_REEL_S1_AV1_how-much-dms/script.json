@@ -1,0 +1,21 @@
+{
+  "id": "261010_REEL_S1_AV1_how-much-dms",
+  "statut": "script à valider (plans d'Ivy à générer après validation de sa planche)",
+  "format": "reel",
+  "modele_veille": "plainte « DM life » face caméra avec gag visuel (Inrō, ×5)",
+  "segment": "S1", "avatar": "AV1",
+  "verbatims": ["rd13", "rd91", "rd88", "rd05"],
+  "ai_label": true,
+  "cta": "lien en bio",
+  "title": "",
+  "voice": "voix.wav",
+  "lines": [
+    {"text": "Be honest, how many of your DMs this week just said how much?", "shot": "HOOK/ivy_HOOK_02_entre-dans-le-cadre.mp4"},
+    {"text": "I read a lot of inboxes, and it's always the same two words.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/inbox-how-much/slide-01.png", "fit": "contain", "zoom": "in"},
+    {"text": "The price question isn't the problem, what happens after it is.", "shot": "HOOK/ivy_HOOK_03_sourcil-leve.mp4"},
+    {"text": "You send the price, and then nothing, for two whole days.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/price-no-reply/slide-01.png", "fit": "contain"},
+    {"text": "I send the price too, then I ask one question that keeps the conversation going.", "shot": "BODY/ivy_BODY_01_tape-vite.mp4"},
+    {"text": "If it's a fit, they get two times on your calendar. If not, they get something useful instead.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/price-then-question/slide-01.png", "fit": "contain"},
+    {"text": "How many did you get this week? Tell me in the comments. I'm Ivy, the AI setter, link in bio.", "shot": "CTA/ivy_CTA_01_met-le-casque.mp4"}
+  ]
+}

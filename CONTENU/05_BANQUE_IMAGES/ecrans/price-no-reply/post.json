@@ -1,0 +1,4 @@
+{"id":"ecran_price-no-reply","theme":"light","slides":[{"type":"dm","label":"Example conversation","contact":"Marco","messages":[
+{"from":"lead","text":"hey how much is it"},
+{"from":"setter","text":"It's $1,500 for the 12 weeks!"},
+{"note":"No reply · 2 days"}]}]}
