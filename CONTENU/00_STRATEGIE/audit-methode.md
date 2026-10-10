@@ -51,7 +51,7 @@ Arborescence et `CLAUDE.md` en place ; les verbatims sont importés dans `CLAUDE
 
 - ✅ relevé, médianes, grille d'analyse, transcription.
 - ⚠️ étape 5 : récupérer aussi la piste vidéo en meilleure qualité (seul l'audio a été téléchargé ; les images ont été lues dans la page).
-- ❌ publicités actives : pas encore regardées (bibliothèque publicitaire Meta, gratuite).
+- ✅ publicités actives regardées le 10/10 dans la bibliothèque publicitaire Meta, sans connexion (`veille/2026-10-10_pubs-actives.md`) : tout le marché vend « remplace ton setter humain » et la vitesse ; on garde notre angle. À refaire chaque lundi.
 - ❌ sons tendance : attend Zernio.
 
 ## 9. Specs ⚠️
@@ -83,7 +83,7 @@ Retours notés en règles avant correction, mémoire de Claude tenue à jour, ri
 1. ~~Refaire les 3 carrousels dans le style du compte de référence et republier la page de revue~~ : fait le 10/10.
 2. ~~Rassembler les captures du produit dans `03_PRODUIT_REF/`~~ : fait le 10/10.
 3. ~~Réécrire les 3 scripts de reels avec Ivy à l'image, et proposer 3 copies « méthode B »~~ : fait le 10/10 (`reels-proposition-2026-10-10.md`).
-4. Regarder les publicités actives des concurrents dans la bibliothèque publicitaire Meta.
+4. ~~Regarder les publicités actives des concurrents dans la bibliothèque publicitaire Meta~~ : fait le 10/10.
 
 ## Ce qui débloque tout le reste (fondateur)
 

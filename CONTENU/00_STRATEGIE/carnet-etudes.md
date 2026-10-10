@@ -24,6 +24,9 @@ Source : `veille/2026-10-10_veille.md` et `veille/2026-10-10_releve.csv`.
 - **V7 · Le démonstrateur du mot-clé** : le reel épinglé « comment PURSE » de Manychat (2 390 likes, 683 commentaires) explique le mécanisme et finit par « Comment PURSE and see it in action ». C'est notre « le CTA est une démo », déjà validé chez eux.
 - **V8 · Un concurrent dit déjà « répondre selon l'intention »** (Inrō, reel à ×5 : « it is replying based on their intent »). Notre différence doit porter sur ce que le setter fait ensuite : attendre la fin du message, qualifier une question à la fois, n'envoyer l'agenda qu'aux bons leads, relancer, passer la main.
 
+- **V9 · En publicité, tout le marché vend « remplace ton setter humain » et la vitesse** (SetSmart : 10 publicités lancées le 7/10, « in seconds, 24/7 » ; Manychat : « Quick replies = more sales »). Notre terrain libre : garder Manychat, la réponse qui sonne comme toi, une question à la fois, le passage de main. Source : `veille/2026-10-10_pubs-actives.md`.
+- **V10 · La cible a déjà été déçue par des outils de DM** (« you've already tried half a dozen software tools… », publicité d'un setter IA pour coachs). Sujet à traiter de front, sans nommer personne.
+
 ## Apprentissages confirmés
 
 _(aucun pour l'instant : il faut nos propres statistiques)_
