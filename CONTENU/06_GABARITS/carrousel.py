@@ -17,7 +17,9 @@ Blocs : {"title": txt, "size": 118} (couverture, centré) · {"heading": txt} (t
 · {"collage": [chemin, chemin]} · {"chart": "quadrant" | "curve" | "compare" | "dots", ...}
 · {"vote": {"incoming": message reçu, "options": [réponse 1, réponse 2, ...]}}
 · {"list": [élément, ...], "start": 1} (liste numérotée, chiffres en serif orange)
-· {"chat": [{"from": "lead" | "me", "text": ...}, ...]} (bulles : le lead en gris à gauche, la réponse en orange à droite).
+· {"chat": [{"from": "lead" | "me", "text": ...}, ...]} (bulles : le lead en gris à gauche, la réponse en orange à droite)
+· {"photo": chemin, "handle": "@compte", "width": 560, "ratio": 1.1} (portrait arrondi ; cadre « photo à déposer » si le fichier manque)
+· {"versus": [{"photo": chemin, "handle": "@a"}, {"photo": chemin, "handle": "@b"}]} (deux visages et « vs »).
 Gros mot masqué : écrire \\* dans la fiche (« h\\*ll ») pour un astérisque visible.
 Les chemins d'images partent de la racine du dépôt.
 """
@@ -364,16 +366,19 @@ def chart(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
             lab = label(g["label"], c, size=int(23 * k))
             im.alpha_composite(lab, (0, y))
             y += int(52 * k)
+            widest = max((fb_big if r.get("strong") else fr_big).getlength(r["text"]) for r in g["rows"])
+            bar_max = max(60, min(460, int(CW - widest - 30)))
             for row in g["rows"]:
-                bw = int(row["w"] * 460)
+                bw = max(8, int(row["w"] * bar_max))
                 bh = int(40 * k)
                 d.rectangle([MX, y, MX + bw, y + bh], fill=c["fg"] if row.get("strong") else c["soft"])
                 d.text((MX + bw + 24, y + bh / 2), row["text"], font=fb_big if row.get("strong") else fr_big,
                        fill=c["fg"], anchor="lm")
                 y += int(66 * k)
             if g.get("caption"):
-                d.text((MX, y + 2), g["caption"], font=font(SANS, int(25 * k)), fill=c["muted"])
-                y += int(50 * k)
+                cap = paragraph(g["caption"], int(25 * k), c, color=c["muted"])
+                im.alpha_composite(cap, (0, y + 2))
+                y += cap.height + int(10 * k)
             y += int(34 * k)
         im = im.crop((0, 0, W, y))
     elif kind == "dots":
@@ -436,6 +441,72 @@ def vote(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
             d.text((bx + pad, y + 17 + j * lh), l, font=f, fill=c["fg"])
         y += bh + 20
     return im.crop((0, 0, W, y - 20))
+
+
+def _find_photo(path: str) -> Path | None:
+    """Accepte le chemin tel quel, ou la même photo en .jpg / .jpeg / .png / .webp."""
+    base = ROOT / path
+    for cand in [base] + [base.with_suffix(s) for s in (".jpg", ".jpeg", ".png", ".webp")]:
+        if cand.exists():
+            return cand
+    return None
+
+
+def portrait(path: str, handle: str, width: int, ratio: float, c: dict) -> Image.Image:
+    """Photo recadrée (centrée, un peu vers le haut), coins arrondis, @ en légende.
+    Sans fichier : un cadre gris qui dit quelle photo déposer."""
+    h = int(width * ratio)
+    f = _find_photo(path)
+    if f:
+        im = Image.open(f).convert("RGB")
+        s = max(width / im.width, h / im.height)
+        im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
+        left = (im.width - width) // 2
+        top = int((im.height - h) * 0.3)
+        im = im.crop((left, top, left + width, top + h)).convert("RGBA")
+    else:
+        im = Image.new("RGBA", (width, h), "#e9e7e5" if c["bg"] == WHITE else "#2a2826")
+        d = ImageDraw.Draw(im)
+        fs = font(SANS_SB, max(20, width // 18))
+        for i, line in enumerate(["photo à déposer", Path(path).stem + ".jpg"]):
+            d.text((width / 2, h / 2 + (i - 0.5) * fs.size * 1.5), line, font=fs, fill=GREY, anchor="mm")
+    mask = Image.new("L", im.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, width - 1, h - 1], radius=34, fill=255)
+    out = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    out.paste(im, (0, 0), mask)
+    return out
+
+
+def photo_block(b: dict, c: dict, k: float) -> Image.Image:
+    width = int(min(b.get("width", 560) * k ** 0.3, CW))
+    ph = portrait(b["photo"], b.get("handle", ""), width, b.get("ratio", 1.1), c)
+    lab = label(b.get("handle", ""), c, size=int(22 * min(k, 1.4)), align="center") if b.get("handle") else None
+    hh = ph.height + (lab.height + 14 if lab else 0)
+    out = Image.new("RGBA", (W, hh), (0, 0, 0, 0))
+    out.alpha_composite(ph, ((W - ph.width) // 2, 0))
+    if lab:
+        out.alpha_composite(lab, (0, ph.height + 14))
+    return out
+
+
+def versus(people: list[dict], c: dict, k: float) -> Image.Image:
+    """Deux visages côte à côte avec « vs » en serif orange entre les deux."""
+    gap = 120
+    width = (CW - gap) // 2
+    ratio = 1.25
+    a = portrait(people[0]["photo"], people[0].get("handle", ""), width, ratio, c)
+    b2 = portrait(people[1]["photo"], people[1].get("handle", ""), width, ratio, c)
+    fl = int(22 * min(k, 1.4))
+    hh = a.height + int(fl * 2.6)
+    out = Image.new("RGBA", (W, hh), (0, 0, 0, 0))
+    out.alpha_composite(a, (MX, 0))
+    out.alpha_composite(b2, (W - MX - width, 0))
+    d = ImageDraw.Draw(out)
+    d.text((W / 2, a.height / 2), "vs", font=font(SERIF_I, 120), fill=ORANGE, anchor="mm")
+    f = font(SANS_SB, fl)
+    for x, pp in ((MX + width / 2, people[0]), (W - MX - width / 2, people[1])):
+        d.text((x, a.height + fl * 1.3), pp.get("handle", "").upper(), font=f, fill=c["muted"], anchor="mm")
+    return out
 
 
 def chat(msgs: list[dict], c: dict, k: float = 1.0) -> Image.Image:
@@ -508,6 +579,10 @@ def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
         return vote(b["vote"], c, k)
     if "chat" in b:
         return chat(b["chat"], c, k)
+    if "photo" in b:
+        return photo_block(b, c, k)
+    if "versus" in b:
+        return versus(b["versus"], c, k)
     if "list" in b:
         return numbered(b["list"], c, b.get("start", 1), z(b.get("size", 36), 60))
     if "spacer" in b:

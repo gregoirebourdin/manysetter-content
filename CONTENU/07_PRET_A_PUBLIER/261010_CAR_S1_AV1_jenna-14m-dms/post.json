@@ -1,0 +1,188 @@
+{
+  "id": "261010_CAR_S1_AV1_jenna-14m-dms",
+  "statut": "à valider ; photo(s) à déposer par le fondateur (voir 05_BANQUE_IMAGES/personnalites/README.md)",
+  "format": "carrousel",
+  "funnel": "TOFU",
+  "style": "éditorial, décryptage d'un gros compte US",
+  "segment": "S1",
+  "avatar": "AV1",
+  "role_grille": "TOFU, décryptage d'un gros compte US",
+  "biais": [
+    "autorité (Jenna Kutcher)",
+    "argent et chiffre précis ($1.4 million, 9,456)",
+    "écart de curiosité (« let's break it down »)",
+    "aversion à la perte (le travail que personne ne filme)"
+  ],
+  "sources": [
+    {
+      "ref": "Jenna Kutcher, « This ONE Strategy Earned Me An Extra 1 Million Dollars Last Year », jennakutcherblog.com, 29/01/2024",
+      "citations": [
+        "Chat funnels have generated $1.4 million in revenue for my business.",
+        "In just this year alone, we have collected over 52,000 new emails for my business from chat funnels.",
+        "We had 85% of people who commented on our posts give us their email in the DMs."
+      ],
+      "url": "https://jennakutcherblog.com/natashawillis2"
+    },
+    {
+      "ref": "post « Comment BIOHACK » de @jennakutcher, 10/09/2026, lu le 10/10/2026",
+      "faits": [
+        "4,121 likes, 9,456 commentaires",
+        "175 fois sa médiane de commentaires (environ 54)"
+      ],
+      "url": "https://www.instagram.com/p/DdIVBUNDGvh/"
+    }
+  ],
+  "photos": [
+    "CONTENU/05_BANQUE_IMAGES/personnalites/jennakutcher.jpg"
+  ],
+  "verbatims": [
+    "mc01",
+    "mc47",
+    "rd13"
+  ],
+  "cta": "commenter, puis lien en bio (ManySetter pas encore branché sur le compte)",
+  "slides": [
+    {
+      "blocks": [
+        {
+          "photo": "CONTENU/05_BANQUE_IMAGES/personnalites/jennakutcher.jpg",
+          "handle": "@jennakutcher",
+          "width": 540,
+          "ratio": 1.0
+        },
+        {
+          "title": "jenna kutcher says her DMs made her *$1.4 million*"
+        },
+        {
+          "caption": "her words, on her own blog. let's break it down.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "jennakutcherblog.com, january 29, 2024"
+        },
+        {
+          "lead": "\"Chat funnels have generated $1.4 million in revenue for my business.\""
+        },
+        {
+          "text": "a chat funnel is simple: people comment a word, and they get a DM with the thing they wanted.\n\nshe also says over 52,000 new emails came from them, in a single year."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "it still works *today*"
+        },
+        {
+          "text": "on september 10, she posted \"Comment BIOHACK\".\n\nit got **9,456 comments**, when her usual post gets about 54."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*175x* her usual comments"
+        },
+        {
+          "chart": "compare",
+          "groups": [
+            {
+              "label": "comments on her posts",
+              "rows": [
+                {
+                  "w": 0.02,
+                  "text": "a usual post · 54"
+                },
+                {
+                  "w": 0.95,
+                  "text": "Comment BIOHACK · 9,456",
+                  "strong": true
+                }
+              ],
+              "caption": "@jennakutcher, public numbers read on october 10, 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and here's the *crazy* part"
+        },
+        {
+          "text": "on one launch, 85% of the people who commented gave their email in the DMs.\n\nno landing page, just a conversation in the DMs."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "a comment is a raised *hand*"
+        },
+        {
+          "text": "the DM is where you **shake it**.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the part nobody *films*"
+        },
+        {
+          "text": "an automation sends the link. then people start replying."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is this for beginners?"
+            },
+            {
+              "from": "lead",
+              "text": "how much is it?"
+            },
+            {
+              "from": "lead",
+              "text": "can i ask you something real quick?"
+            }
+          ]
+        },
+        {
+          "text": "at 9,456 comments, someone has to answer all of that. it's not a funnel anymore, it's a full-time job."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "your *version*"
+        },
+        {
+          "list": [
+            "pick one word per offer, and put it in your bio too.",
+            "send the free thing first, then ask one question.",
+            "answer every reply within the hour, so the conversation never goes cold."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what word would you *use*?"
+        },
+        {
+          "text": "comment it below, i'll tell you if it's a good one.\n\ni built ManySetter, an AI setter for Manychat, for step 3. not affiliated with jenna, just very impressed.\n\n**build your setter free, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

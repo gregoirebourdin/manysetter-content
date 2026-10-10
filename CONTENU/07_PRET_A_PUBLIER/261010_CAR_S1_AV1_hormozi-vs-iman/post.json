@@ -1,0 +1,175 @@
+{
+  "id": "261010_CAR_S1_AV1_hormozi-vs-iman",
+  "statut": "à valider ; photo(s) à déposer par le fondateur (voir 05_BANQUE_IMAGES/personnalites/README.md)",
+  "format": "carrousel",
+  "funnel": "TOFU",
+  "style": "éditorial, décryptage d'un gros compte US",
+  "segment": "S1",
+  "avatar": "AV1",
+  "role_grille": "TOFU, battle d'infopreneurs US",
+  "biais": [
+    "autorité (deux stars)",
+    "contraste / battle (identité : « team »)",
+    "chiffres précis",
+    "écart de curiosité (« who's right? »)"
+  ],
+  "sources": [
+    {
+      "ref": "profil public @hormozi, lu le 10/10/2026 sans connexion",
+      "faits": [
+        "5M followers, 4,497 publications",
+        "les 9 derniers posts (hors épinglés) datent du 7 au 9 octobre 2026",
+        "un seul des 9 demande un commentaire : « Comment dentist to watch this episode… », 243 commentaires, médiane des 9 : 139"
+      ],
+      "url": "https://www.instagram.com/hormozi/"
+    },
+    {
+      "ref": "profil public @imangadzhi, lu le 10/10/2026 sans connexion",
+      "faits": [
+        "3M followers, 114 publications",
+        "les 12 posts visibles vont du 30 juin 2023 au 25 août 2026",
+        "bio : « Owner: @consulting (Est. 2016) », « Co-Owner: @whop »"
+      ],
+      "url": "https://www.instagram.com/imangadzhi/"
+    }
+  ],
+  "photos": [
+    "CONTENU/05_BANQUE_IMAGES/personnalites/hormozi.jpg",
+    "CONTENU/05_BANQUE_IMAGES/personnalites/imangadzhi.jpg"
+  ],
+  "verbatims": [
+    "rd06",
+    "rd17"
+  ],
+  "cta": "commenter, puis lien en bio (ManySetter pas encore branché sur le compte)",
+  "slides": [
+    {
+      "blocks": [
+        {
+          "versus": [
+            {
+              "photo": "CONTENU/05_BANQUE_IMAGES/personnalites/hormozi.jpg",
+              "handle": "@hormozi"
+            },
+            {
+              "photo": "CONTENU/05_BANQUE_IMAGES/personnalites/imangadzhi.jpg",
+              "handle": "@imangadzhi"
+            }
+          ]
+        },
+        {
+          "title": "hormozi posted 9 times in 3 days. iman gadzhi, 12 times in 3 *years*"
+        },
+        {
+          "caption": "both have millions of followers, so who's right?",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "@hormozi · 5M followers"
+        },
+        {
+          "heading": "team *hormozi*"
+        },
+        {
+          "text": "4,497 posts on his profile, and 9 of them between october 7 and 9.\n\nshort sentences, a face, a punchline. almost never a call to action.\n\nonly one of those 9 asked for a comment, \"Comment dentist\". it got 243 comments, about 1.7x his usual."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "@imangadzhi · 3M followers"
+        },
+        {
+          "heading": "team *iman*"
+        },
+        {
+          "text": "114 posts in total. his last 12 go from june 2023 to august 2026.\n\nno daily tips, no carousels of advice. big announcements and moments of his life.\n\nhis bio does the selling: it points to his businesses, @consulting and @whop."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "hormozi has *39x* more posts"
+        },
+        {
+          "chart": "compare",
+          "groups": [
+            {
+              "label": "posts on their profile",
+              "rows": [
+                {
+                  "w": 0.95,
+                  "text": "@hormozi · 4,497",
+                  "strong": true
+                },
+                {
+                  "w": 0.03,
+                  "text": "@imangadzhi · 114"
+                }
+              ],
+              "caption": "public profiles, read on october 10, 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so who's *right*?"
+        },
+        {
+          "text": "honestly, both of them, which is the annoying answer.\n\nhormozi plays volume: so many posts that some of them always hit. iman plays rarity: every post feels like an event."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "you're not hormozi, and you're not iman *either*"
+        },
+        {
+          "text": "you don't have millions of followers. so **every single DM counts.**",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "if you post like *hormozi*"
+        },
+        {
+          "text": "lots of posts means lots of DMs, every single day.\n\nthe risk isn't a lack of leads. it's leads waiting two days for an answer while you film the next post."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "if you post like *iman*"
+        },
+        {
+          "text": "few posts means few leads.\n\nlosing one of them to a slow reply hurts way more, because there's no new post tomorrow to make up for it."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "team hormozi or team *iman*?"
+        },
+        {
+          "text": "comment your team below. i'm team \"answer your DMs\", which is way less catchy.\n\ni built ManySetter, an AI setter for Manychat that answers your leads while they still care, in your voice, whichever team you're on.\n\n**build your setter free, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

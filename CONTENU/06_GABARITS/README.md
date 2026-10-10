@@ -17,7 +17,7 @@ Le style :
 - une idée = une slide de texte, souvent suivie d'une slide visuelle épurée : graphique (`quadrant`, `curve` avec `gap`, `compare`, `dots`), capture du produit (`03_PRODUIT_REF/site/`), écran DM (`05_BANQUE_IMAGES/ecrans/`), collage de deux images ;
 - une slide noire pour la phrase choc ; une « quick pause » qui présente ManySetter avec une capture ; ni numéro de slide ni logo ; CTA en texte à la dernière slide (« build your setter free, link in bio » tant que ManySetter n'est pas branché sur le compte).
 
-Une slide : `{"bg": "white" | "black", "blocks": [...]}`. Blocs : `title` (+ `size`), `heading`, `lead`, `text` (+ `align`), `label`, `caption`, `spacer`, `image` (+ `width`), `collage` (+ `width`), `chart`, `vote` (`incoming`, `options`), `list` (+ `start`). Détail dans l'en-tête du script ; exemples : les 3 carrousels du 10/10 dans `07_PRET_A_PUBLIER/`.
+Une slide : `{"bg": "white" | "black", "blocks": [...]}`. Blocs : `title` (+ `size`), `heading`, `lead`, `text` (+ `align`), `label`, `caption`, `spacer`, `image` (+ `width`), `collage` (+ `width`), `chart`, `vote` (`incoming`, `options`), `list` (+ `start`), `chat` (bulles lead / réponse), `photo` (portrait arrondi + @, cadre « photo à déposer » si le fichier manque), `versus` (deux visages et « vs », pour les battles). Détail dans l'en-tête du script ; exemples : les 3 carrousels du 10/10 dans `07_PRET_A_PUBLIER/`.
 
 ## `slides.py` : écrans DM et ancien style
 

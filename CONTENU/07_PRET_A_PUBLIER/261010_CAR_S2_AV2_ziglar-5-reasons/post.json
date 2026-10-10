@@ -32,6 +32,12 @@
     {
       "blocks": [
         {
+          "photo": "CONTENU/05_BANQUE_IMAGES/personnalites/zigziglar.jpg",
+          "handle": "zig ziglar · photo BrokenSphere, CC BY-SA 3.0",
+          "width": 500,
+          "ratio": 1.0
+        },
+        {
           "title": "*\"i'll think about it\"* is almost never about thinking"
         },
         {
@@ -184,6 +190,13 @@
           "text": "comment the number, 1 to 5.\n\ni built ManySetter, an AI setter for Manychat that asks those questions for you, one at a time, in your voice.\n\n**save this for your next \"i'll think about it\". build your setter free, link in bio.**"
         }
       ]
+    }
+  ],
+  "photos": [
+    {
+      "fichier": "CONTENU/05_BANQUE_IMAGES/personnalites/zigziglar.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Zig_Ziglar_at_Get_Motivated_Seminar,_Cow_Palace_2009-3-24_3.JPG",
+      "licence": "CC BY-SA 3.0, auteur BrokenSphere (crédit sur la slide)"
     }
   ]
 }

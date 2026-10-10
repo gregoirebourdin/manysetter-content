@@ -1,0 +1,149 @@
+{
+  "id": "261010_CAR_S2_AV2_miner-comment-cold",
+  "statut": "à valider ; photo(s) à déposer par le fondateur (voir 05_BANQUE_IMAGES/personnalites/README.md)",
+  "format": "carrousel",
+  "funnel": "TOFU",
+  "style": "éditorial, décryptage d'un gros compte US",
+  "segment": "S2",
+  "avatar": "AV2",
+  "role_grille": "TOFU, décryptage d'un gros compte US",
+  "biais": [
+    "ironie / contre-pied (le roi du cold call vit de l'inbound)",
+    "autorité (Jeremy Miner)",
+    "chiffre précis (622, 39x)",
+    "écart de curiosité"
+  ],
+  "sources": [
+    {
+      "ref": "post « Comment COLD » de @jeremyleeminer, 04/10/2026, lu le 10/10/2026",
+      "faits": [
+        "1,686 likes, 622 commentaires",
+        "38,9 fois sa médiane de commentaires (environ 16)",
+        "légende : « Comment COLD and I'll send you a masterclass on how to col… »",
+        "1M followers ; reels du même mois sur le cold calling (« You have to sound different when you're cold calling… », 09/10/2026)"
+      ],
+      "url": "https://www.instagram.com/p/DeFMU4JGp9N/"
+    }
+  ],
+  "photos": [
+    "CONTENU/05_BANQUE_IMAGES/personnalites/jeremyleeminer.jpg"
+  ],
+  "verbatims": [
+    "rd57",
+    "rd65",
+    "mc03"
+  ],
+  "cta": "commenter, puis lien en bio (ManySetter pas encore branché sur le compte)",
+  "slides": [
+    {
+      "blocks": [
+        {
+          "photo": "CONTENU/05_BANQUE_IMAGES/personnalites/jeremyleeminer.jpg",
+          "handle": "@jeremyleeminer",
+          "width": 540,
+          "ratio": 1.0
+        },
+        {
+          "title": "he teaches cold calling to 1M people. his best post asked for a *comment*"
+        },
+        {
+          "caption": "jeremy miner, october 2026. swipe for the numbers.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "@jeremyleeminer · 1M followers"
+        },
+        {
+          "text": "jeremy miner is a sales trainer. his reels are about cold calling, objections and sounding different on the phone.\n\non october 4, he posted a carousel that starts with **\"Comment COLD and I'll send you a masterclass\"**."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*39x* his usual comments"
+        },
+        {
+          "chart": "compare",
+          "groups": [
+            {
+              "label": "comments on his posts",
+              "rows": [
+                {
+                  "w": 0.03,
+                  "text": "a usual post · 16"
+                },
+                {
+                  "w": 0.95,
+                  "text": "Comment COLD · 622",
+                  "strong": true
+                }
+              ],
+              "caption": "about 39x his usual, public numbers read on october 10, 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *irony*"
+        },
+        {
+          "text": "the guy who teaches you to call strangers gets his leads by letting them raise their hand first.\n\nthat's not a contradiction. it might be the smartest thing on his whole profile."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "nobody wants your cold call. everybody wants a free *masterclass*"
+        },
+        {
+          "text": "a comment is an invitation. **a cold call is an interruption.**",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "but the comment is just the *start*"
+        },
+        {
+          "text": "622 people raised their hand. each of them gets a DM, and some of them reply.\n\nthat reply is where the sale really starts. a link with no follow up is just a very polite cold email."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what i'd copy from *him*"
+        },
+        {
+          "list": [
+            "one keyword and one free thing, in the first line of the caption.",
+            "deliver it in the DM right away, not tomorrow.",
+            "then ask one question about them, before you ever pitch a call."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "cold calls or *622 comments*?"
+        },
+        {
+          "text": "be honest in the comments, i think i already know your answer.\n\ni built ManySetter, an AI setter for Manychat that picks up the conversation after the comment, one question at a time. not affiliated with jeremy.\n\n**build your setter free, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

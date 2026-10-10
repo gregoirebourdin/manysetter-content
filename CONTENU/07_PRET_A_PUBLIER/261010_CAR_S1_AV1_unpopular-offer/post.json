@@ -32,6 +32,12 @@
     {
       "blocks": [
         {
+          "photo": "CONTENU/05_BANQUE_IMAGES/personnalites/hormozi.jpg",
+          "handle": "@hormozi",
+          "width": 500,
+          "ratio": 1.0
+        },
+        {
           "title": "unpopular opinion: you don't need a better *offer*"
         },
         {
@@ -125,5 +131,8 @@
         }
       ]
     }
+  ],
+  "photos": [
+    "CONTENU/05_BANQUE_IMAGES/personnalites/hormozi.jpg"
   ]
 }
