@@ -17,8 +17,7 @@
     {
       "blocks": [
         {
-          "title": "someone DMs you *\"how much?\"* which reply actually books the *call*?",
-          "size": 112
+          "title": "someone DMs you *\"how much?\"* which reply actually books the *call*?"
         },
         {
           "image": "CONTENU/05_BANQUE_IMAGES/ecrans/inbox-how-much/slide-01.png",
@@ -43,7 +42,7 @@
           }
         },
         {
-          "caption": "1, 2, 3 or 4? say it in the comments before you swipe.",
+          "caption": "1, 2, 3 or 4? comment before you swipe. no cheating.",
           "align": "center"
         }
       ]
@@ -57,19 +56,19 @@
           "label": "reply 1 · the calendar for everyone"
         },
         {
-          "text": "sounds efficient. then your week fills up with calls from people who were never a fit, and you're tired as h\\*ll by thursday."
+          "text": "sounds efficient. then your week fills up with calls from people who were never a fit. by thursday you're tired as h\\*ll."
         },
         {
           "label": "reply 2 · the link in bio"
         },
         {
-          "text": "you just sent a warm lead out of the chat, right when they were ready to talk. a lot of them don't come back to ask twice."
+          "text": "you just sent a warm lead out of the chat, right when they wanted to talk. a lot of them never come back to ask twice."
         },
         {
           "label": "reply 3 · the dodge"
         },
         {
-          "text": "no price, just a question. people can smell a script from a mile away, and a dodge smells exactly like one."
+          "text": "no price, just a question. people smell a script from a mile away. a dodge smells exactly like one."
         }
       ]
     },
@@ -126,13 +125,11 @@
       "bg": "black",
       "blocks": [
         {
-          "title": "answer the price. then ask *one* question",
-          "size": 108
+          "title": "answer the price. then ask *one* question"
         },
         {
           "text": "the price shows you're honest. **the question keeps the conversation yours.**",
-          "align": "center",
-          "size": 34
+          "align": "center"
         }
       ]
     },
@@ -142,7 +139,7 @@
           "heading": "*reply 4*, in real life"
         },
         {
-          "text": "the lead answers the question, because it's about them. now you know if the call is worth booking, and they feel heard instead of sold to."
+          "text": "the lead answers, because the question is about them. people love talking about themselves. i mean, look at instagram.\n\nand now you know if the call is worth booking."
         },
         {
           "image": "CONTENU/05_BANQUE_IMAGES/ecrans/price-then-question/slide-01.png",
@@ -156,7 +153,7 @@
           "heading": "and that's where it *ends up*"
         },
         {
-          "text": "price answered, one question, two times offered. the call is booked in the DM, with the notes already written for you."
+          "text": "price answered, one question, two times offered. the call gets booked right in the DM, with the notes already written. you just show up."
         },
         {
           "image": "CONTENU/03_PRODUIT_REF/site/appel-reserve.png",
@@ -171,11 +168,10 @@
     {
       "blocks": [
         {
-          "heading": "which number did you *pick*?",
-          "size": 80
+          "heading": "which number did you *pick*?"
         },
         {
-          "text": "be honest, most of us have sent reply 1 at least once.\n\nreply 4 is the kind of answer our AI setter gives, from your offer and in your voice. it's ManySetter, an AI setter for Manychat: your flow sends the first message, the setter handles what comes after.\n\n**tell me your number in the comments. build your setter free, link in bio.**"
+          "text": "be honest. i've seen reply 1 more times than i can count. no judgment. ok, a little.\n\nreply 4 is what my AI setter writes. i built it, it's called ManySetter: your Manychat flow sends the first message, the setter handles what comes after.\n\n**tell me your number in the comments. build your setter free, link in bio.**"
         }
       ]
     }

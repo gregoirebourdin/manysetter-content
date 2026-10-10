@@ -91,18 +91,30 @@ def title_tokens(text: str):
 def serif_title(text: str, size: int, c: dict, align: str = "center") -> Image.Image:
     fr, fi = font(SERIF, size), font(SERIF_I, size)
     space = fr.getlength(" ")
-    lines, cur, cur_w = [], [], 0.0
-    for w, m in title_tokens(text):
-        ww = (fi if m else fr).getlength(w)
-        add = ww + (space if cur else 0)
-        if cur and cur_w + add > CW:
-            lines.append(cur)
-            cur, cur_w = [], 0.0
-            add = ww
-        cur.append((w, m, ww))
-        cur_w += add
-    if cur:
-        lines.append(cur)
+    toks = title_tokens(text)
+
+    def wrap(width):
+        lines, cur, cur_w = [], [], 0.0
+        for w, m in toks:
+            ww = (fi if m else fr).getlength(w)
+            add = ww + (space if cur else 0)
+            if cur and cur_w + add > width:
+                lines.append(cur)
+                cur, cur_w = [], 0.0
+                add = ww
+            cur.append((w, m, ww))
+            cur_w += add
+        return lines + ([cur] if cur else [])
+
+    lines = wrap(CW)
+    # pas de mot tout seul sur la dernière ligne : on resserre jusqu'à équilibrer
+    width = CW
+    while len(lines) > 1 and len(lines[-1]) == 1 and width > CW * 0.6:
+        width -= 20
+        tried = wrap(width)
+        if len(tried) > len(lines):
+            break
+        lines = tried
     lh = int(size * 0.98)
     imgs = []
     for line in lines:
@@ -247,13 +259,13 @@ def collage(paths: list[str], width: int = 520) -> Image.Image:
 
 # --- Graphiques épurés ---------------------------------------------------------------
 
-def _axes(d, c, x0, y0, x1, y1, xl, yl):
+def _axes(d, c, x0, y0, x1, y1, xl, yl, k=1.0):
     d.line([x0, y1, x1, y1], fill=c["line"], width=3)
     d.line([x0, y0, x0, y1], fill=c["line"], width=3)
-    f = font(SANS_SB, 22)
+    f = font(SANS_SB, int(22 * k))
     t = xl.upper()
-    d.text(((x0 + x1) / 2, y1 + 66), t, font=f, fill=c["muted"], anchor="mm")
-    lab = Image.new("RGBA", (int(f.getlength(yl.upper())) + 40, 34), (0, 0, 0, 0))
+    d.text(((x0 + x1) / 2, y1 + int(66 * k)), t, font=f, fill=c["muted"], anchor="mm")
+    lab = Image.new("RGBA", (int(f.getlength(yl.upper())) + 40, int(34 * k)), (0, 0, 0, 0))
     ImageDraw.Draw(lab).text((20, 4), yl.upper(), font=f, fill=c["muted"])
     return lab.rotate(90, expand=True)
 
@@ -274,29 +286,29 @@ def smooth(pts: list, steps: int = 14) -> list:
     return out + [pts[-1]]
 
 
-def chart(spec: dict, c: dict) -> Image.Image:
+def chart(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
     kind = spec["chart"]
-    h = spec.get("height", 700)
+    h = int(spec.get("height", 700) * min(k, 1.3))
     im = Image.new("RGBA", (W, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    fb, fs = font(SANS_B, 26), font(SANS, 22)
+    fb, fs = font(SANS_B, int(26 * k)), font(SANS, int(22 * k))
     if kind in ("quadrant", "curve"):
-        x0, y0, x1, y1 = MX + 60, 20, W - MX, h - 80
-        lab = _axes(d, c, x0, y0, x1, y1, spec.get("x", ""), spec.get("y", ""))
+        x0, y0, x1, y1 = MX + 60, 20, W - MX, h - int(84 * k)
+        lab = _axes(d, c, x0, y0, x1, y1, spec.get("x", ""), spec.get("y", ""), k)
         im.alpha_composite(lab, (MX - 10, int((y0 + y1) / 2 - lab.height / 2)))
         X = lambda v: x0 + v * (x1 - x0)
         Y = lambda v: y1 - v * (y1 - y0)
         if kind == "quadrant":
-            for k in range(0, int(x1 - x0), 18):
-                d.line([x0 + k, Y(0.5), x0 + k + 8, Y(0.5)], fill=c["line"], width=2)
-            for k in range(0, int(y1 - y0), 18):
-                d.line([X(0.5), y0 + k, X(0.5), y0 + k + 8], fill=c["line"], width=2)
+            for q in range(0, int(x1 - x0), 18):
+                d.line([x0 + q, Y(0.5), x0 + q + 8, Y(0.5)], fill=c["line"], width=2)
+            for q in range(0, int(y1 - y0), 18):
+                d.line([X(0.5), y0 + q, X(0.5), y0 + q + 8], fill=c["line"], width=2)
             for note in spec.get("corners", []):
                 pos = {"tl": (X(0.03), Y(0.96), "la"), "br": (X(0.97), Y(0.04), "rd"),
                        "tr": (X(0.97), Y(0.96), "ra"), "bl": (X(0.03), Y(0.04), "ld")}[note["at"]]
                 d.text(pos[:2], note["text"], font=fs, fill=c["muted"], anchor=pos[2])
             for p in spec["points"]:
-                r = 22 if p.get("strong") else 15
+                r = int((22 if p.get("strong") else 15) * k)
                 cx, cy = X(p["x"]), Y(p["y"])
                 d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=ORANGE if p.get("strong") else c["fg"])
                 anchor = p.get("anchor", "lm")
@@ -306,7 +318,10 @@ def chart(spec: dict, c: dict) -> Image.Image:
             if spec.get("ref"):
                 ref = spec["ref"]
                 d.line([X(0), Y(ref["y0"]), X(1), Y(ref["y1"])], fill=c["line"], width=4)
-                d.text((X(1), Y(ref["y1"]) - 22), ref["label"], font=fs, fill=c["muted"], anchor="rb")
+                if ref.get("label_at") == "below-left":
+                    d.text((X(0.06), Y(ref["y0"]) + int(14 * k)), ref["label"], font=fs, fill=c["muted"], anchor="la")
+                else:
+                    d.text((X(1), Y(ref["y1"]) - int(22 * k)), ref["label"], font=fs, fill=c["muted"], anchor="rb")
             pts = smooth([(X(x), Y(y)) for x, y in spec["points"]])
             if spec.get("gap") and spec.get("ref"):
                 # zone surlignée entre la courbe et la ligne de référence (au-dessus de la ligne)
@@ -322,33 +337,34 @@ def chart(spec: dict, c: dict) -> Image.Image:
             if a:
                 ax, ay = X(a["x"]), Y(a["y"])
                 d.ellipse([ax - 16, ay - 16, ax + 16, ay + 16], fill=ORANGE)
-                if ay - 150 >= 0:
-                    d.line([ax, ay - 20, ax, ay - 90], fill=c["fg"], width=2)
-                    d.text((ax + 12, ay - 150), a["title"], font=fb, fill=c["fg"])
-                    d.text((ax + 12, ay - 116), a["sub"], font=fs, fill=c["muted"])
+                if ay - 150 * k >= 0:
+                    d.line([ax, ay - 20, ax, ay - int(90 * k)], fill=c["fg"], width=2)
+                    d.text((ax + 12, ay - int(152 * k)), a["title"], font=fb, fill=c["fg"])
+                    d.text((ax + 12, ay - int(118 * k)), a["sub"], font=fs, fill=c["muted"])
                 else:
                     d.line([ax + 20, ay, ax + 70, ay], fill=c["fg"], width=2)
-                    d.text((ax + 84, ay - 30), a["title"], font=fb, fill=c["fg"])
+                    d.text((ax + 84, ay - int(32 * k)), a["title"], font=fb, fill=c["fg"])
                     d.text((ax + 84, ay + 4), a["sub"], font=fs, fill=c["muted"])
             for xv, t in spec.get("ticks", []):
                 d.text((X(xv), y1 + 14), t, font=fs, fill=c["muted"], anchor="ma")
     elif kind == "compare":
         y = 0
+        fr_big, fb_big = font(SANS, int(29 * k)), font(SANS_B, int(29 * k))
         for g in spec["groups"]:
-            lab = label(g["label"], c)
+            lab = label(g["label"], c, size=int(23 * k))
             im.alpha_composite(lab, (0, y))
-            y += 52
-            fr_big, fb_big = font(SANS, 29), font(SANS_B, 29)
+            y += int(52 * k)
             for row in g["rows"]:
                 bw = int(row["w"] * 460)
-                d.rectangle([MX, y, MX + bw, y + 40], fill=c["fg"] if row.get("strong") else c["soft"])
-                d.text((MX + bw + 24, y + 20), row["text"], font=fb_big if row.get("strong") else fr_big,
+                bh = int(40 * k)
+                d.rectangle([MX, y, MX + bw, y + bh], fill=c["fg"] if row.get("strong") else c["soft"])
+                d.text((MX + bw + 24, y + bh / 2), row["text"], font=fb_big if row.get("strong") else fr_big,
                        fill=c["fg"], anchor="lm")
-                y += 66
+                y += int(66 * k)
             if g.get("caption"):
-                d.text((MX, y + 2), g["caption"], font=font(SANS, 25), fill=c["muted"])
-                y += 50
-            y += 34
+                d.text((MX, y + 2), g["caption"], font=font(SANS, int(25 * k)), fill=c["muted"])
+                y += int(50 * k)
+            y += int(34 * k)
         im = im.crop((0, 0, W, y))
     elif kind == "dots":
         y = 0
@@ -383,41 +399,44 @@ def _wrap(text: str, f, width: int) -> list[str]:
     return lines + [cur]
 
 
-def vote(spec: dict, c: dict) -> Image.Image:
-    f = font(SANS, 29)
-    lh = 39
-    im = Image.new("RGBA", (W, 1300), (0, 0, 0, 0))
+def vote(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
+    f = font(SANS, int(min(29 * k, 40)))
+    lh = int(f.size * 1.35)
+    im = Image.new("RGBA", (W, 2000), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     y = 0
     if spec.get("incoming"):
-        lines = _wrap(spec["incoming"], f, 560)
+        lines = _wrap(spec["incoming"], f, int(CW * 0.72))
         bw = max(f.getlength(l) for l in lines) + 56
         bh = len(lines) * lh + 34
         d.rounded_rectangle([MX, y, MX + bw, y + bh], radius=30, fill="#ecebe9" if c["bg"] == WHITE else "#2a2826")
         for i, l in enumerate(lines):
             d.text((MX + 28, y + 17 + i * lh), l, font=f, fill=c["fg"])
         y += bh + 40
-    num = font(SERIF, 78)
+    num = font(SERIF, int(f.size * 2.7))
+    bx = MX + int(f.size * 2.6)          # début des cadres de réponse
+    pad = int(f.size * 0.9)
     for i, opt in enumerate(spec["options"], 1):
-        lines = _wrap(opt, f, CW - 130)
+        lines = _wrap(opt, f, W - MX - bx - 2 * pad)
         bh = len(lines) * lh + 34
         d.text((MX + 4, y + bh / 2 + 4), str(i), font=num, fill=ORANGE, anchor="lm")
-        d.rounded_rectangle([MX + 76, y, W - MX, y + bh], radius=22, outline=c["line"], width=2)
-        for k, l in enumerate(lines):
-            d.text((MX + 102, y + 17 + k * lh), l, font=f, fill=c["fg"])
+        d.rounded_rectangle([bx, y, W - MX, y + bh], radius=22, outline=c["line"], width=2)
+        for j, l in enumerate(lines):
+            d.text((bx + pad, y + 17 + j * lh), l, font=f, fill=c["fg"])
         y += bh + 20
     return im.crop((0, 0, W, y - 20))
 
 
 def numbered(items: list[str], c: dict, start: int = 1, size: int = 33) -> Image.Image:
     """Liste numérotée : chiffres en serif orange, texte parlé à droite."""
-    num = font(SERIF, 84)
+    num = font(SERIF, int(size * 2.5))
+    ind = int(size * 2.9)
     parts = []
     for i, it in enumerate(items, start):
-        p = paragraph(it, size, c, width=CW - 96)
-        row = Image.new("RGBA", (W, max(p.height, 80)), (0, 0, 0, 0))
-        row.alpha_composite(p, (96, 0))
-        ImageDraw.Draw(row).text((MX + 4, -14), str(i), font=num, fill=ORANGE)
+        p = paragraph(it, size, c, width=CW - ind)
+        row = Image.new("RGBA", (W, max(p.height, int(size * 2.4))), (0, 0, 0, 0))
+        row.alpha_composite(p, (ind, 0))
+        ImageDraw.Draw(row).text((MX + 4, -int(size * 0.42)), str(i), font=num, fill=ORANGE)
         parts.append(row)
     h = sum(p.height for p in parts) + 30 * (len(parts) - 1)
     out = Image.new("RGBA", (W, h), (0, 0, 0, 0))
@@ -430,43 +449,56 @@ def numbered(items: list[str], c: dict, start: int = 1, size: int = 33) -> Image
 
 # --- Montage d'une slide ------------------------------------------------------------
 
-def block_image(b: dict, c: dict) -> Image.Image:
+def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
+    """Dessine un bloc ; k agrandit le texte (et les images) quand la slide a de la place."""
+    z = lambda v, cap=None: int(min(v * k, cap) if cap else v * k)
     if "title" in b:
-        return serif_title(b["title"], b.get("size", 118), c)
+        return serif_title(b["title"], z(b.get("size", 118), 168), c)
     if "heading" in b:
-        return serif_title(b["heading"], b.get("size", 86), c)
+        return serif_title(b["heading"], z(b.get("size", 86), 128), c)
     if "lead" in b:
-        return paragraph(b["lead"], b.get("size", 36), c, bold_all=True, align=b.get("align", "left"))
+        return paragraph(b["lead"], z(b.get("size", 39), 56), c, bold_all=True, align=b.get("align", "left"))
     if "text" in b:
-        return paragraph(b["text"], b.get("size", 33), c, align=b.get("align", "left"))
+        return paragraph(b["text"], z(b.get("size", 36), 52), c, align=b.get("align", "left"))
     if "label" in b:
-        return label(b["label"], c, align=b.get("align", "left"))
+        return label(b["label"], c, size=z(23, 30), align=b.get("align", "left"))
     if "caption" in b:
-        return paragraph(b["caption"], 23, c, color=c["muted"], align=b.get("align", "left"))
+        return paragraph(b["caption"], z(25, 34), c, color=c["muted"], align=b.get("align", "left"))
+    # le texte d'abord : les images ne grandissent qu'à peine, les graphiques grossissent leurs légendes
+    zi = lambda v, cap: int(min(v * k ** 0.35, cap))
     if "image" in b:
-        return image_block(b)
+        return image_block({**b, "width": zi(b.get("width", 760), CW)})
     if "collage" in b:
-        return collage(b["collage"], b.get("width", 520))
+        return collage(b["collage"], zi(b.get("width", 520), 600))
     if "chart" in b:
-        return chart(b, c)
+        return chart(b, c, min(k, 1.35))
     if "vote" in b:
-        return vote(b["vote"], c)
+        return vote(b["vote"], c, k)
     if "list" in b:
-        return numbered(b["list"], c, b.get("start", 1), b.get("size", 33))
+        return numbered(b["list"], c, b.get("start", 1), z(b.get("size", 36), 52))
     if "spacer" in b:
-        return Image.new("RGBA", (W, b["spacer"]), (0, 0, 0, 0))
+        return Image.new("RGBA", (W, z(b["spacer"])), (0, 0, 0, 0))
     raise ValueError(f"bloc inconnu : {b}")
 
 
+MARGIN = 104                      # marge haute et basse minimale
+SCALES = [x / 100 for x in range(160, 84, -5)]   # 1,60 → 0,85
+
+
 def compose(s: dict) -> Image.Image:
+    """Choisit la plus grande taille de texte qui tient : une slide n'a jamais de grand vide
+    (retour du fondateur du 10/10/2026 : « écris plus gros, ça se lit mieux »)."""
     c = colors(s.get("bg", "white"))
-    parts = [block_image(b, c) for b in s["blocks"]]
-    gaps = [s.get("gap", GAP)] * (len(parts) - 1)
-    total = sum(p.height for p in parts) + sum(gaps)
-    top_min, bottom_min = 96, 96
-    if total > H - top_min - bottom_min:
-        raise SystemExit(f"Slide trop chargée ({total} px pour {H - top_min - bottom_min}) : {s['blocks'][0]}")
-    y = top_min if s.get("valign") == "top" else (H - total) // 2
+    avail = H - 2 * MARGIN
+    for k in ([s["scale"]] if "scale" in s else SCALES):
+        parts = [block_image(b, c, k) for b in s["blocks"]]
+        gaps = [int(s.get("gap", GAP) * max(1.0, k ** 0.5))] * (len(parts) - 1)
+        total = sum(p.height for p in parts) + sum(gaps)
+        if total <= avail:
+            break
+    else:
+        raise SystemExit(f"Slide trop chargée ({total} px pour {avail}) : {s['blocks'][0]}")
+    y = MARGIN if s.get("valign") == "top" else (H - total) // 2
     img = Image.new("RGBA", (W, H), c["bg"])
     for p, g in zip(parts, gaps + [0]):
         img.alpha_composite(p, (0, y))

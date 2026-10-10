@@ -20,8 +20,7 @@
     {
       "blocks": [
         {
-          "title": "if i were a coach selling in my *DMs*, here's how i'd handle my *inbox*",
-          "size": 132
+          "title": "if i were a coach selling in my *DMs*, here's how i'd handle my *inbox*"
         }
       ]
     },
@@ -31,10 +30,10 @@
           "heading": "*boring as h\\*ll*"
         },
         {
-          "text": "but it's where your money sits.\n\nyour Reel worked. the comments came in. and now the real job starts in your DMs, at 11:47 pm, from the couch.\n\nwhat i see in almost every coach's inbox:"
+          "text": "but it's where your money is.\n\nyour Reel worked. the comments came in. now the real job starts in your DMs, usually at 11:47 pm, from the couch.\n\nhere's what i see in almost every coach's inbox:"
         },
         {
-          "lead": "the same 3 questions + replies that come too late = leads that quietly go cold."
+          "lead": "the same 3 questions, answered too late, by someone who's exhausted."
         },
         {
           "spacer": 6
@@ -67,7 +66,7 @@
           "lead": "i'd stop sending the price and then going quiet."
         },
         {
-          "text": "someone writes \"how much is it?\". you send the price. then nothing, for two whole days.\n\nthe price isn't the problem. the silence after it is. so i'd send the price **and one question** in the same message."
+          "text": "someone writes \"how much is it?\". you send the price. then nothing happens for two whole days.\n\nthat's a long time to stare at \"seen\".\n\nso i'd send the price **and one question** in the same message."
         },
         {
           "image": "CONTENU/05_BANQUE_IMAGES/ecrans/price-no-reply/slide-01.png",
@@ -157,7 +156,7 @@
           "lead": "i'd answer the question, not the keyword."
         },
         {
-          "text": "a lead writes \"is this for beginners? i've been burned before\". a keyword flow sees \"beginners\" and sends the booking link.\n\nrespectfully, that's how you lose someone who was ready to talk."
+          "text": "a lead writes \"is this for beginners? i've been burned before\". a keyword flow sees \"beginners\" and sends the booking link.\n\nthat's like answering \"i'm scared of dogs\" with a puppy."
         },
         {
           "collage": [
@@ -172,13 +171,11 @@
       "bg": "black",
       "blocks": [
         {
-          "title": "a lead rarely ghosts you over the *price*",
-          "size": 108
+          "title": "a lead rarely ghosts you over the *price*"
         },
         {
           "text": "they ghost when the **second message** never gets an answer.",
-          "align": "center",
-          "size": 34
+          "align": "center"
         }
       ]
     },
@@ -191,7 +188,7 @@
           "lead": "i'd only send my calendar to the right people."
         },
         {
-          "text": "\"this week i had 6 consult calls booked. none of them turned into a real client.\" sound familiar?\n\nbefore the link, i'd check what they want and if the budget is real. the others get something useful instead. no call."
+          "text": "\"this week i had 6 consult calls booked. none of them turned into a real client.\" sound familiar?\n\nbefore the link, i'd check what they want and if the budget is real. everyone else gets something useful. just not your tuesday afternoon."
         },
         {
           "image": "CONTENU/03_PRODUIT_REF/site/pourquoi-cette-reponse.png",
@@ -254,15 +251,14 @@
           "heading": "*quick pause*"
         },
         {
-          "text": "you're probably wondering who's writing this.\n\nwe build ManySetter, an AI setter for Manychat. your first message still goes out from Manychat. when the lead replies, the setter takes over: it learns your offer, asks one question at a time, and hands the important conversations back to you."
+          "text": "you're probably wondering who's writing this.\n\nhi, i built ManySetter, an AI setter for Manychat. your flow still sends the first message. when the lead replies, my setter takes over. it learns your offer, asks one question at a time, and hands the big conversations back to you."
         },
         {
           "image": "CONTENU/03_PRODUIT_REF/site/setter-sources-offre.png",
           "width": 720
         },
         {
-          "lead": "follow if you want the next ones.",
-          "size": 33
+          "lead": "follow for the next ones. they're less boring than your inbox, promise."
         }
       ]
     },
@@ -306,7 +302,7 @@
           ]
         },
         {
-          "text": "how many of the 3 do you already do? tell me in the comments.\n\nbuild your setter free, link in bio."
+          "text": "how many of the 3 do you already do? tell me in the comments. zero is a valid answer.\n\n**build your setter free, link in bio.**"
         }
       ]
     }

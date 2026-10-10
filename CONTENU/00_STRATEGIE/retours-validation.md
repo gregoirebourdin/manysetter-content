@@ -42,3 +42,12 @@ Format d'une règle :
 - Règle : **ton humain**, comme on parle : gros mots autorisés à condition d'être masqués par des astérisques (« sh*t », « f*cking »), décision du fondateur.
 - Retour : « Je vais te remettre le prompt de base […] je veux que tu le suives. »
 - Règle : avant chaque livraison, on vérifie la méthode source partie par partie (`methode-source.md`) et on dit franchement ce qui n'est pas encore fait ou pas connecté.
+
+## 2026-10-10 · Carrousels refaits dans le style du compte de référence (2e retour)
+- Retour : « Okay j'aime beaucoup plus. »
+- Règle : le style éditorial de `carrousel.py` (titres serif étirés, surligneur orange, visuels épurés, slide noire, « quick pause ») est la base des carrousels. On ne revient pas à l'ancien gabarit.
+- Retour : « Je veux que tu parles à la première personne et que tu utilises des phrases simples et drôles de temps en temps, je ne veux pas d'un truc trop sérieux. »
+- Règle : **les carrousels parlent à la première personne** (« i »), du début à la fin, y compris la présentation de ManySetter (« i built ManySetter », jamais « we » ni la marque qui parle d'elle à la 3e personne). Le « i » est le fondateur, sans le nommer tant qu'il ne l'a pas demandé.
+- Règle : **phrases simples**, une idée par phrase, et **une blague ou une phrase drôle de temps en temps** (au moins une par carrousel, sur la slide qui s'y prête). Le ton reste léger, jamais professoral.
+- Retour : « Des fois il reste plein de place dans les carrousels et il y a des gros espaces blancs : dans ces cas-là, écris plus gros, ça se lit mieux. »
+- Règle : **le texte remplit la slide**. Quand une slide a de la place, le texte grossit jusqu'à la remplir (`carrousel.py` le fait seul : il essaie la plus grande taille qui tient). Une slide à moitié vide est un défaut à corriger avant livraison.

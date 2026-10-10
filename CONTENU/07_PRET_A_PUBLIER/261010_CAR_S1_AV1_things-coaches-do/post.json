@@ -19,8 +19,7 @@
     {
       "blocks": [
         {
-          "title": "things every coach has done to *keep up* with their DMs",
-          "size": 124
+          "title": "things every coach has done to *keep up* with their DMs"
         },
         {
           "image": "CONTENU/05_BANQUE_IMAGES/ecrans/notes-dm-replies/slide-01.png",
@@ -35,9 +34,9 @@
         },
         {
           "list": [
-            "i DM'd 40 people by hand after a good post. my thumbs still haven't forgiven me.",
-            "i paid a friend $50 a month to answer my DMs.",
-            "i sent voice notes so i'd sound more human."
+            "you DM'd 40 people by hand after one good post. your thumbs still hate you.",
+            "you paid a friend $50 a month to answer your DMs. that friend now knows way too much.",
+            "you sent voice notes to sound more human. then you heard your own voice. ugh."
           ]
         }
       ]
@@ -46,9 +45,9 @@
       "blocks": [
         {
           "list": [
-            "i kept a notes app full of replies to copy and paste.",
-            "i answered \"how much?\" from the couch at 11:47 pm.",
-            "i followed up once, then felt too d\\*mn desperate to do it again."
+            "you kept a notes app full of replies to copy and paste. the title is in caps.",
+            "you answered \"how much?\" from the couch at 11:47 pm, in your pajamas.",
+            "you followed up once, then felt too d\\*mn desperate to do it again."
           ],
           "start": 4
         },
@@ -68,7 +67,8 @@
           "ref": {
             "y0": 0.3,
             "y1": 0.3,
-            "label": "what one person can answer"
+            "label": "what one person can answer",
+            "label_at": "below-left"
           },
           "points": [
             [
@@ -132,23 +132,21 @@
       "bg": "black",
       "blocks": [
         {
-          "title": "none of this is a *character flaw*",
-          "size": 112
+          "title": "none of this is a *character flaw*"
         },
         {
-          "text": "it's what happens when a post works and **one person has to answer everyone.** the leads are real, and so is your bedtime.",
-          "align": "center",
-          "size": 34
+          "text": "it's what happens when a post works and **one person has to answer everyone.** the leads are real. so is your bedtime.",
+          "align": "center"
         }
       ]
     },
     {
       "blocks": [
         {
-          "heading": "so we built a *setter*"
+          "heading": "so i built a *setter*"
         },
         {
-          "text": "ManySetter is an AI setter for Manychat. keep the flows you built: your flow still sends the first message. when the lead replies, the setter takes over, asks one question at a time, and only sends your calendar to the right people."
+          "text": "it's called ManySetter, an AI setter for Manychat. you keep your flows: they still send the first message. when the lead replies, the setter takes over, asks one question at a time, and only sends your calendar to the right people.\n\nyour friend gets their evenings back."
         },
         {
           "collage": [
@@ -165,7 +163,7 @@
           "heading": "which number are *you*?"
         },
         {
-          "text": "tell me in the comments, no judgment here. if it's more than three, we should probably talk.\n\n**build your setter free, link in bio.**",
+          "text": "tell me in the comments, no judgment here. if it's all six, you get a virtual hug. and a setter.\n\n**build your setter free, link in bio.**",
           "align": "center"
         }
       ]
