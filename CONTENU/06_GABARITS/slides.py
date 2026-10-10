@@ -66,9 +66,17 @@ def tokens(text: str) -> list[tuple[str, bool]]:
     """Découpe en mots, chaque mot marqué souligné ou non (*...*)."""
     out: list[tuple[str, bool]] = []
     for i, part in enumerate(re.split(r"\*(.+?)\*", text)):
-        for word in part.split():
+        words = part.split()
+        # Une ponctuation collée juste après *mots* reste collée au mot souligné.
+        if words and out and part[:1] not in (" ", "\n") and i % 2 == 0:
+            prev, hl = out.pop()
+            out.append((prev + words.pop(0), hl))
+        for word in words:
             out.append((word, i % 2 == 1))
     return out
+
+
+TRAILING_PUNCT = ".,!?;:"
 
 
 def wrap(text: str, f: ImageFont.FreeTypeFont, max_w: int) -> list[list[tuple[str, bool]]]:
@@ -99,11 +107,12 @@ def draw_lines(d: ImageDraw.ImageDraw, lines, f, x: int, y: int, color: str,
         for j, (word, hl) in enumerate(line):
             ww = f.getlength(word)
             if hl:
-                # Soulignement orange, sous la ligne de base.
+                # Soulignement orange, sous la ligne de base, sans la ponctuation finale.
                 ascent, _ = f.getmetrics()
                 bar_y = y + ascent + int(f.size * 0.06)
                 extend = space if j < len(line) - 1 and line[j + 1][1] else 0
-                d.rounded_rectangle([cx, bar_y, cx + ww + extend, bar_y + max(8, f.size // 9)],
+                bar_w = f.getlength(word.rstrip(TRAILING_PUNCT)) if not extend else ww
+                d.rounded_rectangle([cx, bar_y, cx + bar_w + extend, bar_y + max(8, f.size // 9)],
                                     radius=4, fill=BRAND[500])
             d.text((cx, y), word, font=f, fill=color)
             cx += ww + space
@@ -282,6 +291,19 @@ def slide_cta(d, t, s, k):
         y += pill_h + round(50 * k)
     if s.get("body"):
         y = paragraph(d, t, s["body"], y, round(42 * k))
+    if s.get("button"):
+        # CTA « lien en bio » : un bouton comme sur le site, puis la précision en petit.
+        y += round(44 * k)
+        fb = font(BODY_SEMIBOLD, round(40 * k))
+        pill_h = round(96 * k)
+        pw = fb.getlength(s["button"]) + round(96 * k)
+        d.rounded_rectangle([MARGIN_X, y, MARGIN_X + pw, y + pill_h], radius=pill_h // 2, fill=BRAND[500])
+        d.text((MARGIN_X + pw / 2, y + pill_h / 2), s["button"], font=fb, fill=INK[0], anchor="mm")
+        y += pill_h + round(26 * k)
+        note = s.get("button_note", "Link in bio")
+        fn = font(BODY_MEDIUM, round(30 * k))
+        d.text((MARGIN_X, y), note, font=fn, fill=t["muted"])
+        y += fn.size
     return y
 
 

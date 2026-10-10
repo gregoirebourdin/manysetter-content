@@ -1,0 +1,49 @@
+{
+  "id": "261010_CAR_S1_AV1_this-page-is-for-you",
+  "statut": "à valider",
+  "format": "carrousel",
+  "segment": "S1 et S2 (présentation de la page)",
+  "avatar": "AV1",
+  "role_grille": "candidat à l'épingle n° 1 (présentation)",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "verbatims": ["rd04", "rd13", "rd17", "rd54", "mc01"],
+  "theme": "light",
+  "slides": [
+    {
+      "type": "hook",
+      "kicker": "For coaches who sell in the DMs",
+      "title": "This page is for you if your *DMs* are where your sales happen, and you can't keep up.",
+      "sub": "Read the list, then tell me how many you checked."
+    },
+    {
+      "type": "list",
+      "style": "checks",
+      "title": "You'll feel right at home here if",
+      "items": [
+        "A Reel worked, and now you have more DMs than you can handle.",
+        "You answer leads from the couch at 11:47 pm, because that's when you finally have time.",
+        "Someone asked \"how much?\", you answered, and they disappeared.",
+        "You have a notes app full of replies you copy and paste.",
+        "You tried a setter or a keyword flow, and it never sounded like you."
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "What you'll find here",
+      "title": "The real *DM life* of people who sell on a call.",
+      "body": "Every week: the replies that book calls, the ones that lose leads, and the little things coaches do to keep up. No hype, no income screenshots."
+    },
+    {
+      "type": "text",
+      "kicker": "Who's behind this page",
+      "title": "We read a lot of DMs, and we build for the part after the first one.",
+      "body": "ManySetter is an AI setter for Manychat: it qualifies inbound Instagram, WhatsApp and Facebook Messenger conversations inside your existing flows, then books a call or hands the lead to your team. Keep your Manychat, add the setter."
+    },
+    {
+      "type": "cta",
+      "title": "So, how many did you *check* out of 5?",
+      "body": "Tell me your number in the comments. If it's 4 or 5, you can build your setter for free and test it before it ever talks to a lead.",
+      "button": "Build my setter free"
+    }
+  ]
+}

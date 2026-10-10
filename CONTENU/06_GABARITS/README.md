@@ -31,11 +31,19 @@ Dépendance : Pillow (`pip install pillow`). Polices dans `fonts/` (Nohemi pour 
 | `notes` | `title`, `items[]` | capture lo-fi façon appli Notes (toujours fond blanc) |
 | `dm` | `label`, `contact`, `channel`, `messages[]` (`from`: `lead` ou `setter`, `text`, ou `note` pour une ligne d'heure), `caption` | une conversation DM. Toujours `label: "Example conversation"` si elle n'est pas réelle |
 | `vote` | `kicker`, `title`, `incoming`, `options[4]`, `footer` | « 4 replies, which one books the call? » |
-| `cta` | `title`, `keyword`, `body`, `signature` | dernière slide, avec la signature ManySetter |
+| `cta` | `title`, `keyword` (option), `body`, `button` (option), `button_note` (option, « Link in bio » par défaut), `signature` | dernière slide, avec la signature ManySetter. Tant que ManySetter n'est pas branché sur le compte, pas de `keyword` : un `button` « Build my setter free » et « Link in bio » (retour du 10/10/2026) |
 
 Exemple complet : `exemples/vote-4-replies/` (fiche + rendu). C'est un test du gabarit, pas un post validé.
+
+## `revue.py` : la page de revue
+
+```bash
+python3 CONTENU/06_GABARITS/revue.py CONTENU/00_STRATEGIE/revues/AAAA-MM-JJ_revue.html CONTENU/07_PRET_A_PUBLIER/<id1> CONTENU/07_PRET_A_PUBLIER/<id2> ...
+```
+
+Écrit la page (posts rendus comme sur Instagram, légende complète, OK / À corriger, note par post, bouton « Copier les retours », bascule « Flouter la marque » pour la story, onglet Profil lu dans `00_STRATEGIE/profil.json`) et affiche la carte des images à publier. On la publie comme Artifact avec la capacité `db` : les retours vont dans la collection `reviews` (un document par post), que Claude relit avec ArtifactData. Page du lot 1 : https://claude.ai/artifact/Cq253dMMfmwdycRbwF5FSM
 
 ## À venir
 
 - `reel.py` : voix off → découpe des silences (ffmpeg `silenceremove`) → horaire des mots (faster-whisper) → calage des plans de la banque et des sous-titres, en 1080 × 1920.
-- `revue.html` : la page de revue qui rend chaque post comme sur Instagram (slides, légende, OK / À corriger).
+

@@ -1,0 +1,16 @@
+{
+  "handle": "manysetter",
+  "handle_note": "nom de compte provisoire : le compte de publication n'est pas encore choisi",
+  "name_options": [
+    {"label": "A (recommandé)", "text": "ManySetter | AI DM Setter for Manychat"},
+    {"label": "B", "text": "ManySetter | AI Appointment Setter for DMs"}
+  ],
+  "bio_options": [
+    {"label": "A (recommandée)", "text": "AI setter for Manychat: qualifies your DMs, books the call.\nTested by 100+ marketing agencies.\nBuild your setter free, no card to start 👇"},
+    {"label": "B", "text": "Keep your Manychat, add the setter.\nIt qualifies your Instagram DMs and books the call.\nFor coaches who sell on a call 👇"}
+  ],
+  "link": "manysetter.com",
+  "pins": ["261010_CAR_S1_AV1_this-page-is-for-you", "261010_CAR_S2_AV2_how-much-4-replies"],
+  "grid_order": ["261010_CAR_S1_AV1_things-coaches-do", "261010_CAR_S2_AV2_how-much-4-replies", "261010_CAR_S1_AV1_this-page-is-for-you"],
+  "placeholders": ["Épingle n° 3 : « not for you if… » (prochain lot)", "Reel d'Ivy (après validation de sa planche)", "Carrousel du lot 2", "Image publiée en reel", "Carrousel du lot 2", "Reel d'Ivy"]
+}

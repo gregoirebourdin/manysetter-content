@@ -1,0 +1,74 @@
+{
+  "id": "261010_CAR_S2_AV2_how-much-4-replies",
+  "statut": "à valider",
+  "format": "carrousel",
+  "segment": "S2",
+  "avatar": "AV2",
+  "role_grille": "vote chiffré (hypothèse H2)",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "verbatims": [
+    "rd13",
+    "rd91",
+    "rd14",
+    "mc01"
+  ],
+  "theme": "light",
+  "slides": [
+    {
+      "type": "hook",
+      "kicker": "For coaches who sell in the DMs",
+      "title": "Someone DMs you \"how much is it?\" Which reply actually *books the call*?",
+      "sub": "Same lead, same question, 4 replies. Only one of them gets the call booked."
+    },
+    {
+      "type": "vote",
+      "title": "Which reply books the call?",
+      "incoming": "ok this sounds like exactly what I need, how much is it?",
+      "options": [
+        "It's $1,500! Here's my calendar, grab any slot that works for you.",
+        "Check the link in my bio, everything is explained there.",
+        "Great question! What made you reach out today?",
+        "It's $1,500, or 3 payments of $550. Before I send times, how many clients are you working with right now?"
+      ],
+      "footer": "1, 2, 3 or 4? Tell me in the comments."
+    },
+    {
+      "type": "list",
+      "title": "Why the other three lose the lead",
+      "items": [
+        "Reply 1 sends your calendar to anyone who asks, so your week fills up with calls from people who were never a fit.",
+        "Reply 2 sends a warm lead away from the chat, right when they were ready to talk.",
+        "Reply 3 dodges the price, and a dodge is the fastest way to sound like a script."
+      ]
+    },
+    {
+      "type": "dm",
+      "label": "Example conversation",
+      "contact": "Dani",
+      "messages": [
+        {
+          "from": "lead",
+          "text": "ok this sounds like exactly what I need, how much is it?"
+        },
+        {
+          "from": "setter",
+          "text": "It's $1,500, or 3 payments of $550. Before I send times, how many clients are you working with right now?"
+        },
+        {
+          "from": "lead",
+          "text": "4 right now, I want to get to 10 by spring"
+        },
+        {
+          "from": "setter",
+          "text": "That's exactly who the program is for. I have Tuesday at 2:00 pm or Wednesday at 11:00 am, which one works better?"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Reply 4 is the kind of answer our *AI setter* gives, from your offer and in your voice.",
+      "body": "Which number did you pick? Tell me in the comments, then see how it would answer on your own offer.",
+      "button": "Build my setter free"
+    }
+  ]
+}
