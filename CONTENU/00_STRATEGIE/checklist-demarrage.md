@@ -23,7 +23,8 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 - [ ] [F] Décider : publie-t-on le contenu ManySetter sur @gregoire.system, ou sur un compte ManySetter dédié à créer et connecter à Zernio ?
 - [ ] [F] Décider : brancher ManySetter sur le compte Instagram de la marque (le CTA « Comment SETTER » devient une démo en direct)
 - [x] [F] Personnage : un homme, Seth, buzz cut platine et barbe foncée (10/10)
-- [ ] [C] Générer la planche de Seth dans Google Flow (session du fondateur), étape 1 de `02_AVATARS/prompts-seth.md`, puis validation [F]
+- [x] [C] Planche de Seth générée dans Google Flow (10/10, Nano Banana 2.1, 2 variantes : `02_AVATARS/seth/seth_planche_a.jpg` et `_b.jpg`)
+- [ ] [F] Choisir la planche A ou B (elle devient la référence fixe), puis [C] pack de 3 références et 3 plans test dans Flow
 - [ ] [F] Générer le pack de références et les 3 plans test (étapes 2 à 4), les déposer dans `02_AVATARS/seth/`
 - [ ] [F] Hébergement des médias : Zernio fournit un lien d'upload (`media_generate_upload_link`), à confirmer au premier post
 
