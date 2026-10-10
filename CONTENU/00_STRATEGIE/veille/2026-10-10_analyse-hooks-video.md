@@ -26,6 +26,6 @@
 
 ## Le plan 2 proposé (Veo 3.1 Fast, 20 crédits)
 
-> « Look, every ad says fire your setter for AI. AI takes the 11 p.m. "how much", your human takes the calls. That's why we built ManySetter. »
+> « I know, he books calls that never close, he's drowning in flakes. We built ManySetter to answer the flakes, so he works the serious ones. »
 
-26 mots en 8 s, découpés en tranches horodatées. Le prompt complet est dans `script.json` (plan 2) et suit `02_AVATARS/guide-prompt-veo.md`. Seth parle **au nom de la marque** (« we built »), jamais comme le fondateur, et ne dit pas qu'il est une IA (étiquette « AI info » activée à la publication).
+25 mots, tirés des verbatims (rd43, rd95, rd89, rd75…) : la douleur d'abord, le produit en une phrase. 1re version (« the 11 p.m. "how much" ») refusée par le fondateur le 10/10 : c'était une tâche du produit, pas une douleur. Prompt complet dans `script.json` (plan 2), selon `02_AVATARS/guide-prompt-veo.md`. Seth parle au nom de la marque (« we built »), étiquette « AI info » à la publication.
