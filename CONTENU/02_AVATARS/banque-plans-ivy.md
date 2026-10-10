@@ -1,7 +1,7 @@
 # Banque de plans d'Ivy (HOOK, BODY, CTA)
 
-> Version 1 du 10/10/2026 : 13 plans, dont les 11 qu'appellent les 3 premiers scripts de reels (`07_PRET_A_PUBLIER/261010_REEL_*`) et 2 de réserve (`BODY_03`, `BODY_04`).
-> **À ne générer qu'après** la validation de la planche d'Ivy (`prompts-ivy.md`, étape 1), du pack de 3 références (étape 2) et des 3 plans test (étape 4). Tant que ce n'est pas fait, `reel.py` monte des maquettes avec un carton « plan à générer » à la place de chaque plan.
+> Version 2 du 10/10/2026 : 17 plans (4 ajoutés après le retour du fondateur sur la maquette : il faut assez de plans d'Ivy pour couper toutes les 2 à 3 s). Les 3 scripts de reels (`07_PRET_A_PUBLIER/261010_REEL_*`) en appellent 16.
+> **À ne générer qu'après** la validation de la planche d'Ivy (`prompts-ivy.md`, étape 1), du pack de 3 références (étape 2) et des 3 plans test (étape 4). Tant que ce n'est pas fait, on ne monte rien : on montre au fondateur le script et le découpage plan par plan (retour du 10/10 : jamais de maquette sans Ivy).
 > La méthode vise une vingtaine de plans par famille : on complète au fil des scripts.
 
 ## Comment générer
@@ -32,6 +32,16 @@ Keep Ivy's face, hair, outfit and orange headphones exactly as in the starting f
 
 ```
 Tight framing on Ivy at her desk. She looks straight into the camera, slowly raises one eyebrow, tilts her head a little to the side and presses her lips together, a dry "really?" expression. Small, subtle movements, mouth closed.
+
+Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
+No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
+Keep Ivy's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+```
+
+**`HOOK/ivy_HOOK_04_montre-telephone.mp4`** (départ : `ivy_depart_face-camera.png`, ajouté le 10/10)
+
+```
+Ivy holds her phone up next to her face, screen facing away from the camera, taps the back of it twice with her index finger and raises her eyebrows at the camera, a playful "look at this" expression. Mouth closed.
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
@@ -110,6 +120,36 @@ No on-screen text, no subtitles, no captions, no music. Ambient room sound only,
 Keep Ivy's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
 ```
 
+**`BODY/ivy_BODY_08_leve-un-doigt.mp4`** (départ : `ivy_depart_face-camera.png`, ajouté le 10/10)
+
+```
+Ivy looks at the camera and raises one index finger, a calm "just one" gesture, with a small confident smile, and holds it for a beat before lowering her hand. Mouth closed.
+
+Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
+No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
+Keep Ivy's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+```
+
+**`BODY/ivy_BODY_09_pose-telephone.mp4`** (départ : `ivy_depart_face-camera.png`, ajouté le 10/10)
+
+```
+Ivy puts her phone face down on the desk, leans back in her chair, lets out a big silent theatrical sigh while looking up at the ceiling, then looks back at the camera with a tired, amused half smile. Mouth closed.
+
+Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
+No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
+Keep Ivy's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+```
+
+**`BODY/ivy_BODY_10_hoche-tete.mp4`** (départ : `ivy_depart_face-camera.png`, ajouté le 10/10)
+
+```
+Ivy nods slowly twice at the camera, lips pressed into an approving smile, eyebrows slightly raised, an "exactly" expression. Mouth closed.
+
+Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
+No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
+Keep Ivy's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+```
+
 ## CTA (la fin, l'invitation)
 
 **`CTA/ivy_CTA_01_met-le-casque.mp4`** (départ : `ivy_depart_3am.png`). Déjà donné à l'étape 4 de `prompts-ivy.md`, à reprendre tel quel.
@@ -146,4 +186,4 @@ Méthode A : une seule voix off par reel, toujours la même (fiche d'Ivy, partie
 1. Générer la voix dans Flow (Veo) à partir du bloc voix d'Ivy, phrase par phrase, puis assembler : gratuit, mais la voix peut varier d'un plan à l'autre.
 2. Une voix de synthèse fixe (outil payant) : la seule façon d'avoir exactement la même voix à chaque reel. Aucun abonnement n'est pris sans accord.
 
-En attendant, les maquettes utilisent la voix système « Samantha » de macOS, seulement pour caler le rythme : elles s'appellent `reel_maquette.mp4` et ne se publient jamais.
+L'option `--tts` de `reel.py` (voix système « Samantha ») ne sert qu'à tester le gabarit en interne : ce montage ne se montre pas au fondateur et ne se publie jamais.

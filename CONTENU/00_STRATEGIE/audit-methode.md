@@ -43,8 +43,8 @@ Arborescence et `CLAUDE.md` en place ; les verbatims sont importés dans `CLAUDE
 ## 6. Les reels
 
 - ❌ **La règle n°1 n'était pas respectée** : « une vraie personne filmée qui fait quelque chose ». Ma maquette était faite d'écrans et de cartons, sans Ivy : refusée, à juste titre. Plus aucune vidéo ne sera montrée sans Ivy à l'image.
-- ⚠️ Les 3 scripts : environ un plan toutes les 4 s, écrans trop présents. À réécrire : Ivy à l'image presque tout le temps, une coupe toutes les 2 à 3 s, moins de 30 s, hook visuel et texte à 0 s.
-- ❌ **Méthode B pas proposée** : copier plan par plan un reel qui a cartonné, idées proposées avant de fabriquer, avec la source et ses chiffres. À faire à partir de la veille.
+- ✅ Les 3 scripts **réécrits le 10/10** : Ivy sur 10 à 11 plans sur 12, une coupe toutes les 2,5 s, 29 à 30 s, titre fixe dès 0 s, une blague par reel. Découpage plan par plan dans `reels-proposition-2026-10-10.md` · 🔒 validation, puis plans d'Ivy à générer.
+- ✅ **Méthode B proposée le 10/10** : 3 copies plan par plan (R8 Brian Mark ×2,3, R1 Inrō ×5,0, R5 Neil Patel × HighLevel ×12,6), avec source et chiffres, rien de fabriqué · 🔒 choix du fondateur.
 - ✅ `reel.py` : découpe des silences, horaire des mots, calage des plans et des sous-titres (la chaîne de la méthode), mais inutile tant que les plans d'Ivy n'existent pas.
 
 ## 8. La veille
@@ -82,7 +82,7 @@ Retours notés en règles avant correction, mémoire de Claude tenue à jour, ri
 
 1. ~~Refaire les 3 carrousels dans le style du compte de référence et republier la page de revue~~ : fait le 10/10.
 2. ~~Rassembler les captures du produit dans `03_PRODUIT_REF/`~~ : fait le 10/10.
-3. Réécrire les 3 scripts de reels avec Ivy à l'image, et proposer 3 copies « méthode B » de reels de la veille, sans rien fabriquer avant validation.
+3. ~~Réécrire les 3 scripts de reels avec Ivy à l'image, et proposer 3 copies « méthode B »~~ : fait le 10/10 (`reels-proposition-2026-10-10.md`).
 4. Regarder les publicités actives des concurrents dans la bibliothèque publicitaire Meta.
 
 ## Ce qui débloque tout le reste (fondateur)

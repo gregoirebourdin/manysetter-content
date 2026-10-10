@@ -1,21 +1,68 @@
 {
   "id": "261010_REEL_S1_AV1_how-much-dms",
-  "statut": "script à valider (plans d'Ivy à générer après validation de sa planche)",
+  "statut": "script à valider ; plans d'Ivy à générer après validation de sa planche (aucune maquette montrée sans elle)",
   "format": "reel",
-  "modele_veille": "plainte « DM life » face caméra avec gag visuel (Inrō, ×5)",
-  "segment": "S1", "avatar": "AV1",
-  "verbatims": ["rd13", "rd91", "rd88", "rd05"],
+  "modele_veille": "plainte « DM life » face caméra avec gag visuel (R1 Inrō, ×5,0 la médiane)",
+  "segment": "S1",
+  "avatar": "AV1",
+  "verbatims": [
+    "rd13",
+    "rd91",
+    "rd88",
+    "rd05"
+  ],
   "ai_label": true,
   "cta": "lien en bio",
-  "title": "",
+  "title": "getting \"how much?\" in your DMs all day?",
   "voice": "voix.wav",
   "lines": [
-    {"text": "Be honest, how many of your DMs this week just said how much?", "shot": "HOOK/ivy_HOOK_02_entre-dans-le-cadre.mp4"},
-    {"text": "I read a lot of inboxes, and it's always the same two words.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/inbox-how-much/slide-01.png", "fit": "contain", "zoom": "in"},
-    {"text": "The price question isn't the problem, what happens after it is.", "shot": "HOOK/ivy_HOOK_03_sourcil-leve.mp4"},
-    {"text": "You send the price, and then nothing, for two whole days.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/price-no-reply/slide-01.png", "fit": "contain"},
-    {"text": "I send the price too, then I ask one question that keeps the conversation going.", "shot": "BODY/ivy_BODY_01_tape-vite.mp4"},
-    {"text": "If it's a fit, they get two times on your calendar. If not, they get something useful instead.", "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/price-then-question/slide-01.png", "fit": "contain"},
-    {"text": "How many did you get this week? Tell me in the comments. I'm Ivy, the AI setter, link in bio.", "shot": "CTA/ivy_CTA_01_met-le-casque.mp4"}
-  ]
+    {
+      "text": "Most DMs I read just say how much.",
+      "shot": "HOOK/ivy_HOOK_02_entre-dans-le-cadre.mp4"
+    },
+    {
+      "text": "Every single inbox looks like this.",
+      "shot": "CONTENU/05_BANQUE_IMAGES/ecrans/inbox-how-much/slide-01.png",
+      "fit": "contain",
+      "zoom": "in"
+    },
+    {
+      "text": "The price isn't the problem.",
+      "shot": "HOOK/ivy_HOOK_03_sourcil-leve.mp4"
+    },
+    {
+      "text": "The silence after it is.",
+      "shot": "BODY/ivy_BODY_02_grimace.mp4"
+    },
+    {
+      "text": "You send it, then nothing for two days.",
+      "shot": "BODY/ivy_BODY_09_pose-telephone.mp4"
+    },
+    {
+      "text": "That's a lot of staring at seen.",
+      "shot": "BODY/ivy_BODY_05_hausse-epaules.mp4"
+    },
+    {
+      "text": "So I send the price and one question.",
+      "shot": "BODY/ivy_BODY_01_tape-vite.mp4"
+    },
+    {
+      "text": "How many clients do you have right now?",
+      "shot": "BODY/ivy_BODY_08_leve-un-doigt.mp4"
+    },
+    {
+      "text": "If it's a fit, they get your calendar.",
+      "shot": "BODY/ivy_BODY_04_compte-doigts.mp4"
+    },
+    {
+      "text": "How many this week? Tell me below.",
+      "shot": "CTA/ivy_CTA_02_designe-bas.mp4"
+    },
+    {
+      "text": "I'm Ivy, an AI setter. Link in bio.",
+      "shot": "CTA/ivy_CTA_03_clin-doeil.mp4"
+    }
+  ],
+  "regles": "Ivy à l'image sur au moins 80 % des plans, hook visuel et texte à 0 s, une coupe toutes les 2 à 3 s, moins de 30 s, 2 inserts d'écran au plus",
+  "duree_estimee_s": 28.9
 }
