@@ -50,6 +50,13 @@
         "image": "CONTENU/03_PRODUIT_REF/site/pourquoi-cette-reponse.png",
         "sur": "your human takes the calls",
         "duree_s": 1.0
+      },
+      "prompt_veo": "Vertical 9:16 handheld selfie video, front camera held at arm's length. The man from the start frame walks down a dim apartment hallway, background soft and barely readable. He suddenly stops, brings the phone closer to his face and talks straight into the lens, fed up and urgent, high energy. He rolls his eyes on \"every ad\", counts on his fingers on \"11 p.m.\", does a firm hand chop on \"takes the calls\", then gives a confident half smile. Constant small natural movements, slight handheld shake, real skin texture. He says, fast and without pausing between sentences: \"Every ad says replace your setter with AI. Let the AI take the 11 p.m. 'how much', your human takes the calls. That's exactly why we built ManySetter.\" Voice: warm American male voice, mid-low pitch, projects his voice loud and punchy like a creator talking to his phone, quick confident delivery, slightly breathy from walking, one tiny natural stumble, General American accent. Audio: only his voice and quiet room tone, no music. No subtitles, no text on screen.",
+      "flow": {
+        "modele": "Veo 3.1 Fast",
+        "credits": 20,
+        "mode": "Frames, image de départ seth_depart_selfie-couloir.jpg",
+        "note": "pas de prénom dans le prompt (faux positif « prominent people » au plan 1)"
       }
     }
   ],
