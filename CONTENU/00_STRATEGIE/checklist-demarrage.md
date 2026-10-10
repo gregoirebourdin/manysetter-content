@@ -9,7 +9,7 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 - [x] [C] Brief de marque tiré du site (offre, libellés, garde-fous)
 - [x] [C] Avatars d'écriture définis (AV1, AV2, AV3)
 - [x] [C] Charte visuelle et gabarit de carrousel (`06_GABARITS/slides.py`)
-- [x] [C] Première base de verbatims (`docs/VERBATIMS/verbatims.md`)
+- [ ] [C] Première base de verbatims (`docs/VERBATIMS/verbatims.md`), recherche en cours
 - [x] [C] Première liste de comptes à surveiller (`veille/comptes-suivis.md`)
 - [x] [F] Dépôt GitHub privé `manysetter-content` créé, tout y est poussé
 - [x] [F] Décision : un seul personnage IA de marque qui parle → [C] fiche d'Ivy et prompts (`02_AVATARS/`)
