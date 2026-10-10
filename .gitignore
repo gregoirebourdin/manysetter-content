@@ -7,3 +7,9 @@ CONTENU/04_BANQUE_BROLL/**/*.mov
 .env
 # Journaux du navigateur Playwright (veille)
 .playwright-mcp/
+# Environnement Python local (faster-whisper pour reel.py)
+.venv/
+# Montage des reels : fichiers de travail et vidéos (hébergées ailleurs, jamais dans Git)
+CONTENU/07_PRET_A_PUBLIER/**/_build/
+CONTENU/07_PRET_A_PUBLIER/**/*.mp4
+CONTENU/07_PRET_A_PUBLIER/**/*.wav

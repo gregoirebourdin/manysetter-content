@@ -30,6 +30,7 @@ Dépendance : Pillow (`pip install pillow`). Polices dans `fonts/` (Nohemi pour 
 | `list` | `kicker`, `title`, `items[]`, `style` (`numbers` ou `checks`) | « Things I did before », red flags, in/out |
 | `notes` | `title`, `items[]` | capture lo-fi façon appli Notes (toujours fond blanc) |
 | `dm` | `label`, `contact`, `channel`, `messages[]` (`from`: `lead` ou `setter`, `text`, ou `note` pour une ligne d'heure), `caption` | une conversation DM. Toujours `label: "Example conversation"` si elle n'est pas réelle |
+| `inbox` | `label`, `title`, `rows[]` (`name`, `text`, `time` ; `*mots*` en orange) | liste de conversations façon messagerie, surtout comme plan « écran » d'un reel |
 | `vote` | `kicker`, `title`, `incoming`, `options[4]`, `footer` | « 4 replies, which one books the call? » |
 | `cta` | `title`, `keyword` (option), `body`, `button` (option), `button_note` (option, « Link in bio » par défaut), `signature` | dernière slide, avec la signature ManySetter. Tant que ManySetter n'est pas branché sur le compte, pas de `keyword` : un `button` « Build my setter free » et « Link in bio » (retour du 10/10/2026) |
 
@@ -43,7 +44,20 @@ python3 CONTENU/06_GABARITS/revue.py CONTENU/00_STRATEGIE/revues/AAAA-MM-JJ_revu
 
 Écrit la page (posts rendus comme sur Instagram, légende complète, OK / À corriger, note par post, bouton « Copier les retours », bascule « Flouter la marque » pour la story, onglet Profil lu dans `00_STRATEGIE/profil.json`) et affiche la carte des images à publier. On la publie comme Artifact avec la capacité `db` : les retours vont dans la collection `reviews` (un document par post), que Claude relit avec ArtifactData. Page du lot 1 : https://claude.ai/artifact/Cq253dMMfmwdycRbwF5FSM
 
-## À venir
+## `reel.py` : les reels (1080 × 1920)
 
-- `reel.py` : voix off → découpe des silences (ffmpeg `silenceremove`) → horaire des mots (faster-whisper) → calage des plans de la banque et des sous-titres, en 1080 × 1920.
+```bash
+python3 -m venv .venv && .venv/bin/pip install faster-whisper pillow     # une seule fois
+.venv/bin/python CONTENU/06_GABARITS/reel.py CONTENU/07_PRET_A_PUBLIER/<id>/script.json
+.venv/bin/python CONTENU/06_GABARITS/reel.py --transcribe <vidéo ou audio> --out texte.txt
+```
+
+Voix off (`voix.wav` dans le dossier du post) → découpe des blancs de plus de 0,3 s (ffmpeg `silenceremove`) → horaire de chaque mot (faster-whisper, modèle `small.en`) → un plan par phrase du script, calé sur la voix → sous-titres mot à mot (1 à 3 mots) et titre fixe dessinés avec Pillow, dans la zone sûre (rien dans les 270 px du haut ni les 650 px du bas) → `reel.mp4` en H.264 30 i/s + `montage.json` (horaire de chaque plan). Les plans « écran » (`fit: contain`) sont recadrés sur leur contenu et posés dans la moitié haute.
+
+- `--tts` : voix système de remplacement quand `voix.wav` manque, et cartons « plan à générer » pour les plans absents de la banque. La sortie s'appelle alors `reel_maquette.mp4` : elle sert à valider le rythme, jamais à publier.
+- `--music` : musique très basse sous la voix (on la choisit normalement au moment de programmer).
+- `--transcribe` : transcrit n'importe quelle vidéo ou voix (veille).
+- Les vidéos et fichiers de travail (`_build/`) restent hors Git.
+
+La fiche `script.json` : `title` (titre fixe, option), `voice`, `lines[]` = `{text, shot, fit, zoom}`. Un plan `HOOK/…`, `BODY/…`, `CTA/…` vient de `04_BANQUE_BROLL` (liste et prompts : `02_AVATARS/banque-plans-ivy.md`).
 
