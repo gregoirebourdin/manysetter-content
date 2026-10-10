@@ -1,545 +1,420 @@
-# Verbatims : la réalité des DMs et du traitement des leads
-
-Ce fichier sert de base pour le contenu Instagram organique de ManySetter. Il rassemble les mots exacts (copiés-collés, jamais reformulés ni inventés) de gens qui vivent la réalité des DMs : commentaires « KEYWORD » qui inondent l'inbox, leads qui refroidissent, setters, bots, peur du ban Meta.
-
-- **Date de collecte** : 2026-10-10
-- **Nombre de citations** : 153 en tête de puce, plus 3 phrases citées en note (douleur mère 30 · contournements 25 · déceptions 29 · objections 27 · désirs 18 · émotions 14 · humour 10)
-- **Sources couvertes** (gratuites uniquement, sans Apify ni outil payant) :
-  - **Manychat Community** (community.manychat.com), lu directement : 111 citations, texte exact. C'est la source la plus riche : créateurs, agences et petites équipes qui utilisent Manychat sur Instagram, Messenger et WhatsApp. Environ 130 fils lus.
-  - **Trustpilot** : 30 citations, extraites par un outil de lecture limité à 125 caractères par citation.
-    - Avis 1-3★ de Manychat (pages 1 à 4) : 10 citations.
-    - Avis d'outils d'AI setter / DM concurrents : 18 citations, surtout des avis 5★ qui décrivent la situation « avant ».
-    - Avis 1★ d'une agence de setters/closers : 2 citations.
-  - **Offres d'emploi** sur Freelancer.com et Freelancer.in, écrites par des coachs et des agences qui recrutent des setters : 6 citations.
-  - **LinkedIn** : 4 citations (1 article sur le setting en DM et ses commentaires).
-  - **Reddit** r/artificial, lu via une archive publique (snapshot) : 1 citation.
-  - **Skool** : 1 citation.
-  - **Bloqués ou abandonnés** :
-    - Reddit (www, old et .json en 403 « network policy ». Le domaine est aussi refusé par WebSearch et WebFetch.)
-    - L'archive Reddit pullpush (rate-limit, avec un message explicite « no free scraping for agents » : arrêt immédiat, aucune donnée utilisée)
-    - Quora, Indie Hackers, G2, Capterra, GetApp, TrustRadius, Product Hunt (avis), Medium, Upwork, BlackHatWorld (403)
-    - DuckDuckGo (captcha)
-    - Business Insider
-    - Warrior Forum (recherche en JavaScript uniquement)
-- **Lecture des lignes** : `— plateforme, segment, [source](url), date · note éventuelle`.
-  - Segments : coach / creator / agency / setter-team / other.
-  - Pour la Manychat Community, la date est celle du fil, pas forcément celle de la réponse citée.
-  - Pour Freelancer, la date est approximative (« posté il y a X mois »).
-  - « (…) » marque une coupe entre deux phrases du même message. « / » marque un retour à la ligne.
-
-## Règles d'usage
-
-1. **Citer tel quel, à la première personne**, avec les fautes d'origine. Ne pas « améliorer » une citation. Si on adapte, ce n'est plus un verbatim : on l'écrit comme un hook inspiré, pas entre guillemets.
-2. **Ne jamais présenter une citation comme un avis client de ManySetter**, ni comme un témoignage. Aucune de ces personnes n'est cliente.
-3. **Aucun nom** : pas de pseudo, pas de @handle, pas de nom de marque perso.
-4. **Aucun nom de concurrent dans le contenu publié.** Retirer les noms d'outils cités dans les verbatims (InstantDM, etc.). Pour Manychat, qui est la plateforme partenaire et pas un concurrent, ne pas publier de citation négative qui la nomme : remplacer par « [my automation] » ou « [my tool] », crochets visibles.
-5. **Les lignes marquées « voix d'expert / d'éditeur / promo »** viennent d'agences, d'experts Manychat ou d'éditeurs d'outils, pas d'acheteurs. Elles servent d'inspiration et ne doivent pas être présentées comme la voix du client.
-6. **Extraits Trustpilot** : ils ont été extraits par un outil de lecture. Il faut les revérifier mot pour mot sur la page avant toute capture ou citation publique.
-7. **Ne pas citer de chiffres** tirés de ces verbatims comme des statistiques : ce sont des anecdotes.
-
----
-
-## 1. LA DOULEUR MÈRE : leads perdus, DMs sans réponse, posts « comment X » qui débordent
-
-> "out of approximately 1,000 comments, ManyChat shows that the automation was triggered for only around 150 users. (…) This means I’m losing a significant number of potential leads"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/instagram-reel-automation-only-triggered-for-a-small-percentage-of-comments-on-a-viral-post-8118), 2025-12-12 · reel viral, lien vers un cours gratuit
-
-> "This Reel represents a big opportunity, and right now I’m losing a lot of potential leads due to this behavior."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/instagram-reel-automation-only-triggered-for-a-small-percentage-of-comments-on-a-viral-post-8118), 2025-12-12
-
-> "I lost tons of sales for my business and we estimated a 10k$ loss."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/lost-10k-because-say-hi-to-new-followers-not-working-anymore-9493), 2026-04-08
-
-> "During those 2-3 days, many people commented on my posts but did not receive private messages in return."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/re-triggering-automation-for-missed-instagram-messages-after-payment-failure-1896), 2024-05-30
-
-> "I have a trial reel which got over 40K views… and over 400 comments mentioning my keyword. But the related automation didn’t trigger"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/automation-didn-t-work-do-i-have-to-dm-all-these-people-manually-10483), 2026-07-01
-
-> "EVERYONE who commented the keyword was NOT sent the link. They were sent to my "message requests.""
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/automation-goes-to-requests-instead-of-sends-6117), 2025-05-20
-
-> "this seriously needs to be addressed, whats the point if half our ad targeted audience doesnt even get a single response"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/how-to-enable-manychat-to-respond-to-message-request-in-instagram-1205), 2024-04-12
-
-> "Since the system does not see these message types, the automation does not work and the messages remain unanswered, there must be a solution to this"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/not-responding-to-messages-dropped-in-the-message-request-list-or-unassigned-messages-3630), 2024-10-04 · demandes de message / messages non assignés
-
-> "someone replies, doesn't buy right away, and just kinda disappears into the inbox void 😅"
-— Manychat Community, other, [source](https://community.manychat.com/creator-conversations-72/be-honest-what-actually-happens-to-your-leads-after-the-first-reply-10594), 2026-07-22 · voix d'éditeur (l'auteur travaille sur un outil de suivi de DMs, il le déclare)
-
-> "Right now, if they don’t reply, the convo just sits there collecting dust."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/ai-step-follow-ups-because-ghosted-chats-are-no-fun-7320), 2025-09-17
-
-> "These are warm leads commenting under our own posts, explicitly asking for pricing. And yet, we are unable to reply to them through Direct Messages at all."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30
-
-> "(…) not being able to send DMs to people is going to kill sales by 90%"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30
-
-> "received over 100 comments who are lost customers, and I can't even reach them."
-— Trustpilot (avis Manychat 1★), other, [source](https://www.trustpilot.com/review/manychat.com?page=4&stars=1&stars=2&stars=3), 2025-11-20
-
-> "Because it didn't work, I lost a bunch of potential buyers I couldn't respond to."
-— Trustpilot (avis Manychat 1★), other, [source](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3), 2026-02-20
-
-> "result: ZERO value added by ManyChat, hours and thousands of opportunities lost because of ManyChat."
-— Trustpilot (avis Manychat 2★), other, [source](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3), 2026-05-22
-
-> "Customers are complaining, and I am losing business because of this."
-— Manychat Community, other, [source](https://community.manychat.com/creator-conversations-72/critical-problem-10913), 2026-09-29
-
-> "I’m missing out on a lot of orders. (…) From 1217 messages send only 28 actually arrived."
-— Manychat Community, other, [source](https://community.manychat.com/creator-conversations-72/horrible-delivery-10574), 2026-07-19 · Messenger
-
-> "I’m worried these are just wasted leads because they never get the automated message."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/manychat-sends-notification-but-no-dm-10576), 2026-07-20
-
-> "This has happened maaaany times, and people often end up messaging me to tell me they never received anything, even though they got the notification."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/manychat-sends-notification-but-no-dm-10576), 2026-07-20
-
-> "One post for example had 280 sends and 140 clicks but not one sale."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/auto-dm-links-from-ig-comments-are-not-converting-into-sales-10113), 2026-05-07
-
-> "Our automation has registered over 600 messages sent, but only around 1–2% are being delivered."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/critical-facebook-comment-to-dm-issue-ticket-557166-no-response-after-48-hours-10745), 2026-08-24 · Facebook
-
-> "We were missing around 17% dms because of how many messages we get on our pages."
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://au.trustpilot.com/review/inflowave.io), 2025-11-26
-
-> "ensuring that important conversations aren’t lost among a high volume of messages."
-— Manychat Community, creator, [source](https://community.manychat.com/ideas/suggestion-enable-the-unread-messages-filter-for-better-management-5111), 2025-02-15
-
-> "This would help us ensure that no lead or inquiry gets left without a proper response, especially in high-volume inboxes."
-— Manychat Community, agency, [source](https://community.manychat.com/ideas/filter-for-unreplied-messages-by-humans-unified-inbox-across-accounts-5675), 2025-04-05
-
-> "We are running a promo campaign for a client right now and the keyword trigger is going a little too viral. We are getting hundreds of comments an hour."
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/best-way-to-add-random-delays-to-ig-comment-triggers-to-avoid-action-blocks-9904), 2026-05-03
-
-> "Leads were coming in. The team was responding. But the inbox doesn't discriminate. The one who's ready to buy waits in line just like the one who's just asking for the price."
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/more-ads-more-staff-growing-audience-and-still-missing-targets-here-s-what-we-found-10112), 2026-05-07 · voix d'agence (post promo)
-
-> "The best leads waited like everyone else. And while they waited, they went cold."
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/more-ads-more-staff-growing-audience-and-still-missing-targets-here-s-what-we-found-10112), 2026-05-07 · voix d'agence (post promo)
-
-> "I get tons of messages and lots of them just click on the ad without providing any data or really needing something…."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/qualifying-leads-8146), 2025-12-16 · menuiserie
-
-> "The challenge is, many leads aren’t qualified due to the high price point."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/qualifying-leads-7699), 2025-10-28 · produit à 18 000 €, vidéos virales
-
-> "I run a one-person business. When a conversation goes sideways, I am often driving or away from a screen. There is no support team to tag in."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/let-an-external-ai-agent-take-over-a-live-conversation-via-external-request-ai-handoff-not-human-handoff-10764), 2026-08-28
-
-## 2. LES CONTOURNEMENTS : ce qu'ils font aujourd'hui
-
-> "I responded to comments manually for over 60 days (note physically impossible to respond to all)"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/critical-facebook-comment-to-dm-issue-ticket-557166-no-response-after-48-hours-10745), 2026-08-24
-
-> "Now do I have to go through all the comments and DM all these people the link they should have received automatically?"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/automation-didn-t-work-do-i-have-to-dm-all-these-people-manually-10483), 2026-07-01
-
-> "Obviously, manually doing everything defeats the purpose of Manychat, so I’m certainly doing something wrong."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/automation-goes-to-requests-instead-of-sends-6117), 2025-05-20
-
-> "I can see myself sending lots of manual messages to deal with it, which defeats the purpose!"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/fb-messages-arriving-in-spam-any-way-to-fix-it-10507), 2026-07-07
-
-> "Typically, we would have someone active on the IG app to handle personalised comments and poll responses. And someone at an alternate time on Manychat just to handle inbox."
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/instagram-inbox-restricted-can-i-still-use-manychat-3696), 2024-10-09
-
-> "unfortunately manychat doesnt have this yet so I am employing someone to message everyone who votes in the poll."
-— Manychat Community, setter-team, [source](https://community.manychat.com/general-q-a-43/triggering-bot-after-human-message-4729), 2025-01-12
-
-> "User asks is this a human am I talking to a bot, voicenote gets sent if this question is asked?"
-— Manychat Community, setter-team, [source](https://community.manychat.com/general-q-a-43/triggering-bot-after-human-message-4729), 2025-01-12
-
-> "Right now, we’ve temporarily replaced it with a text block to handle our customers in the evening, but we still want to rely on AI Step."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/ai-step-keep-interfering-live-chat-3945), 2024-10-28
-
-> "I'm fairly new to ManyChat and I'm trying to build an escalation system where a contact gets reassigned to another team member if the currently assigned member doesn't respond within 24 hours."
-— Manychat Community, setter-team, [source](https://community.manychat.com/general-q-a-43/how-to-check-if-a-team-member-replied-manually-after-24-hours-5728), 2025-04-10
-
-> "Hey, trying to get better followups and also implementing some people in my team. But I have the problem, that I somehow cannot filter to unanswered only Chats."
-— Manychat Community, setter-team, [source](https://community.manychat.com/general-q-a-43/see-only-unanswered-messages-3425), 2024-09-17
-
-> "Our agency currently manages chat responses for over 20 businesses, and switching from one account to another is becoming more challenging as we grow."
-— Manychat Community, agency, [source](https://community.manychat.com/ideas/filter-for-unreplied-messages-by-humans-unified-inbox-across-accounts-5675), 2025-04-05
-
-> "My workaround at the moment is to Instagram-Opt-Out, when the keyword is sent, wait 24 hours (longer than any delay in all automations) and then Instagram-Opt-In again."
-— Manychat Community, setter-team, [source](https://community.manychat.com/general-q-a-43/pausing-automations-automatically-when-human-support-is-required-2254), 2024-06-27
-
-> "Lowercase on purpose: perfect capitalization gives an automated vibe, all lowercase messages feel more human"
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/how-do-you-make-automated-messages-feel-human-9183), 2026-03-02 · voix d'expert Manychat
-
-> "No real human writes 30 lines in a single message when they’re chatting. Your automations shouldn’t either!"
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/how-do-you-make-automated-messages-feel-human-9183), 2026-03-02 · voix d'expert Manychat
-
-> "There’s no better way to make your flows seem ‘human’ that actually incorporating a human voice into the flow."
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/how-do-you-make-automated-messages-feel-human-9183), 2026-03-02 · voix d'expert (notes vocales)
-
-> "Whenever a post shows signs of going viral, we immediately switch the automation to the trigger that does not reply to the comment."
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30 · voix d'expert
-
-> "If you find an excuse to send a message 23 hours later and get them to engage, the 24 hours window resets!"
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/about-follow-ups-7741), 2025-10-31 · voix d'expert
-
-> "i'll go first, mine is embarrassingly simple: a "hey, did you still want me to send that over?" a couple days later pulls more replies than anything clever i've ever written."
-— Manychat Community, other, [source](https://community.manychat.com/creator-conversations-72/be-honest-what-actually-happens-to-your-leads-after-the-first-reply-10594), 2026-07-22 · voix d'éditeur (déclarée)
-
-> "This strategy was usually to expensive for lower-ticket offers, where you couldn’t afford the setter."
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/funnel-ideas-with-the-new-follower-dm-automation-for-ig-7736), 2025-10-30 · voix d'expert
-
-> "You will be provided with my Instagram account and will simply have to follow a DM script to book the calls"
-— Freelancer.com (offre d'emploi), coach, [source](https://www.freelancer.com/projects/lead-generation/instagram-appointment-setter), ≈2024-10 · coaching en croissance Instagram
-
-> "the fixed payment will be 6000 Indian rupees per month guaranteed for 30 DMs a day, and 10% commission per sale"
-— Freelancer.com (offre d'emploi), coach, [source](https://www.freelancer.com/projects/lead-generation/instagram-appointment-setter), ≈2024-10
-
-> "Copy-paste the messages I provide"
-— Freelancer.com (offre d'emploi), agency, [source](https://www.freelancer.com/projects/social-media-management/social-media-appointment-setter-needed), ≈2026-06 · setting sortant scripté
-
-> "Commission-only — you get paid for every qualified appointment that shows up. No cap."
-— Freelancer.in (offre d'emploi), agency, [source](https://www.freelancer.in/projects/appointment-setting/instagram-linkedin-appointment-setting), ≈2026-08
-
-> "Our clients rely on skilled DM setters to help them engage with these leads effectively."
-— Freelancer.com (offre d'emploi), agency, [source](https://www.freelancer.com/projects/telemarketing/high-ticket-appointment-setter-38993486), ≈2025 · agence qui fait des campagnes de shoutout pour des coachs « 7-figure »
-
-> "Often they are on commission only deals."
-— LinkedIn (article), other, [source](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon), 2023-06-18 · à propos des setters en DM
-
-## 3. LES DÉCEPTIONS : setters, bots, outils qui cassent, comptes restreints
-
-> "Initially, we had issues with finding reliable appointment setters, people would come and go, results would vary"
-— Trustpilot (avis 5★ d'un outil concurrent), setter-team, [source](https://au.trustpilot.com/review/weareampl.com), 2026-05-04
-
-> "on any given month we would be paying out $10k+ in commissions - for quite average returns"
-— Trustpilot (avis 5★ d'un outil concurrent), setter-team, [source](https://au.trustpilot.com/review/weareampl.com), 2026-05-04
-
-> "Within just a few days, he completely disappeared."
-— Trustpilot (avis 1★ d'une agence de recrutement de closers), other, [source](https://www.trustpilot.com/review/closers.io?stars=1&stars=2&stars=3), 2025-03-01 (édité le 2025-08-05) · closer recruté pour 3 000 $ de frais
-
-> "I paid $15,000 for appointment-setting services and, over four-plus months, received zero sales."
-— Trustpilot (avis 1★ d'une agence de setting), other, [source](https://www.trustpilot.com/review/closers.io?stars=1&stars=2&stars=3), 2026-09-29
-
-> "so they have to hammer people in the DMs."
-— LinkedIn (article), other, [source](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon), 2023-06-18 · setters à la commission
-
-> "You'll annoy more people than you win clients."
-— LinkedIn (article), other, [source](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon), 2023-06-18
-
-> "it keeps sending these robotic, cringey messages like: “Have you ever sent me the message ‘READY’?” – which sounds super unnatural."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/ai-step-keeps-sending-robotic-replies-6891), 2025-07-24
-
-> "But right now, the replies it sends are weird and off-brand, and I can’t find any option to turn off the auto-response or customize what it says."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/ai-step-keeps-sending-robotic-replies-6891), 2025-07-24
-
-> "The conversation was already open and a real person was chatting with the user, but the AI Agent jumped in just because it recognized a word, not based on user intent."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/how-to-stop-manychat-ai-agent-from-interrupting-live-conversations-6813), 2025-07-16
-
-> "sometimes no response at all, sometimes completely wrong answers, even with well-crafted prompts."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/anyone-else-feels-like-the-ai-steps-in-manychat-are-pretty-much-useless-7800), 2025-11-06
-
-> "In short, client conversations get stuck in AI Step, and they won’t end. it’s only end conversation if the client says “thank you”."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/ai-step-keep-interfering-live-chat-3945), 2024-10-28
-
-> "Once my flow reaches the AI Step, it only answers 1-3 questions before ceasing to respond."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/ai-step-only-answering-1-3-questions-5488), 2025-03-19
-
-> "Overall, it's good for ads, but it doesn't feel natural for human-like interactions."
-— Trustpilot (avis 3★ d'un outil de chatbot), other, [source](https://www.trustpilot.com/review/chatfuel.com?stars=1&stars=2&stars=3), 2025-12-19
-
-> "It’s infuriating and has caused brand damage. I’ve received dozens of angry messages saying “the button doesn't work !”."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/urgent-buttons-not-showing-not-clickable-in-ig-dm-after-comment-trigger-lead-magnet-not-delivered-5581), 2025-03-28 · lead magnet
-
-> "I’m experiencing an issue with Instagram Comment Automation that has existed since the very beginning. It has never worked, even once."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/problem-with-instagram-automation-10570), 2026-07-18
-
-> "But many times, it doesn't work, or stops working in the middle of a running campaign."
-— Trustpilot (avis Manychat 3★), other, [source](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3), 2026-05-30
-
-> "I paid for InstantDM and the service failed to work on countless occasions, costing me time and clients."
-— Trustpilot (avis 1★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/instantdm.com), 2026-06-05 · retirer le nom de l'outil avant tout usage
-
-> "Also its automatically sending messages to my existing followers that send me DM’s so i had to disconnect everything."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/funnel-ideas-with-the-new-follower-dm-automation-for-ig-7736), 2025-10-30
-
-> "My account has been permanently disabled and I know exactly what I was doing wrong: Using Manychat."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30 · créatrice voyage, compte de plus de 10 ans
-
-> "Our Instagram account has now been banned from sending DMs for 30 days straight. Flagged as spam. No prior warning."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30 · après un reel à 1 M de vues
-
-> "We were NEVER told to switch ManyChat off."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30
-
-> "My ability to send direct messages on Instagram has been banned twice in a row."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/i-ve-been-banned-from-sending-messages-on-instagram-dm-4355), 2024-12-02 · compte vérifié, 250 k abonnés
-
-> "during the meeting, I was advised to remove ManyChat. How is this possible?"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/i-ve-been-banned-from-sending-messages-on-instagram-dm-4355), 2024-12-02
-
-> "I ran an automation to send links to people, and after about an hour I noticed I could no longer DM new users."
-— Manychat Community, creator, [source](https://community.manychat.com/ideas/many-chat-is-no-longer-safe-to-use-my-instagram-account-shadow-banned-and-im-no-longwr-able-to-send-dms-to-new-people-10361), 2026-06-12
-
-> "I just got banned from commenting on my or any Instagram posts."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/banned-from-instagram-comments-251), 2024-02-13 · 1,5 M d'abonnés, 3 500 DMs auto en une semaine
-
-> "I uploaded a reel and after 600 comments I was blocked again / How does that make sense?"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/instagram-thinking-i-m-a-robot-7954), 2025-11-23
-
-> "Restricted from Instagram right after starting using manychat"
-— Trustpilot (avis Manychat 1★), other, [source](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3), 2026-06-12
-
-> "My client got banned for a week because of the code sending issue. This is really bad, especially during XMAS!!!"
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/urgent-client-banned-because-of-the-issue-the-other-day-4552), 2024-12-18
-
-> "wondering why sales were going down for clients and myself. paying for multiple accounts and automations haven’t been running for weeks."
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/manychat-not-working-for-days-need-urgent-help-2440), 2024-07-10
-
-## 4. LES OBJECTIONS : peur du ban, confiance, « ça fait bot », setup, prix
-
-> "Now it's working very well, but now I'm worried if I will get banned."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/how-to-avoid-getting-banned-10323), 2026-06-07 · artiste, 75 000 abonnés en 26 jours
-
-> "The conversions are working very well to get streams on my Spotify, but if there's a risk of getting banned, then I'm going to stop using it."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/how-to-avoid-getting-banned-10323), 2026-06-07
-
-> "seriously asking and need an immediate answer. (…) Question: If thousands of people DM at the same time, is it safe for my Instagram account?"
-— Manychat Community, coach, [source](https://community.manychat.com/general-q-a-43/if-thousands-of-people-dm-at-the-same-time-is-it-safe-for-my-instagram-account-2530), 2024-07-16 · webinar de plus de 1 500 participants, bonus envoyé par keyword
-
-> "My reel on insta got 100k views with 2k comments, Now the link is not working which is inside the flow. what to do and is it safe to message 2k contacts or should i stop the flow ?"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/my-insta-reel-is-viral-now-the-link-is-not-working-6496), 2025-06-21
-
-> "I am really worried Instagram is going to flag the account for spam if the bot replies instantly to every single person."
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/best-way-to-add-random-delays-to-ig-comment-triggers-to-avoid-action-blocks-9904), 2026-05-03
-
-> "Meta say: 'We restricted your business,' but the worst part is that within the reasons for the restriction, it says: 'Examples of things we do not allow: Automations that mimic human activity. Automations that diminish authentic human activity.'"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/help-needed-meta-account-restriction-after-connecting-manychat-3901), 2024-10-24
-
-> "Hi! We have had issues in the past with account restrictions when we DM more than 100 people the same DM."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/dm-restrictions-1886), 2024-05-29
-
-> "If ManyChat's automation is triggering Instagram's fraud detection and resulting in permanent bans, then ManyChat has a responsibility to warn its users"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30
-
-> "Why is this not clearly disclosed before connecting Instagram and launching automations?"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30
-
-> "Currently, after a customer sends a message, I respond immediately, which is too fast."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/improve-manychat-ai-urgent-4784), 2025-01-17
-
-> "Instant AI replies break immersion and make interactions feel obviously automated."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/ai-step-delay-between-messages-2786), 2024-08-02
-
-> "I am trying to keep my flow of conversation very organic and less bot-like."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/how-to-start-new-sequence-when-you-get-no-response-from-the-user-7841), 2025-11-11
-
-> "I specifically want contextually relevant, natural-feeling responses—not just canned or templated replies."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/urgent-how-do-i-set-up-contextually-relevant-ai-replies-to-comments-ig-reels-tiktok-5486), 2025-03-19
-
-> "The communication should feel warm, supportive, and human — not cold or corporate sales."
-— Freelancer.in (offre d'emploi), other, [source](https://www.freelancer.in/projects/social-media-management/instagram-assistant-for-women), ≈2026-08 · studio photo qui recrute une assistante pour ses DMs
-
-> "Don't over-automate the human moments. For a service business, the relationship is the product."
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/what-advice-would-you-give-someone-building-a-service-business-using-manychat-10295), 2026-06-04 · voix d'agence
-
-> "Our customers know the messages are bot-created."
-— Manychat Community, setter-team, [source](https://community.manychat.com/general-q-a-43/pausing-automations-automatically-when-human-support-is-required-2254), 2024-06-27 · contre-exemple : la transparence assumée
-
-> "The automation flows are smooth and don't feel bot-like, which was my main concern"
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://au.trustpilot.com/review/inflowave.io), 2025-12-10
-
-> "I was unsure whether I could trust Ai to replace my setters"
-— Trustpilot (avis 5★ d'un outil concurrent), setter-team, [source](https://au.trustpilot.com/review/weareampl.com), 2026-05-05 · fragment
-
-> "I was apprehensive at first as wasn’t sure it would work as well as a human setter."
-— Trustpilot (avis 5★ d'un outil concurrent), setter-team, [source](https://au.trustpilot.com/review/weareampl.com), 2026-05-04
-
-> "every single customer thinks he is texting with me (which I never thought would be possible with an ai setter)."
-— Trustpilot (avis 5★ d'un outil concurrent), coach, [source](https://ie.trustpilot.com/review/hirewagent.com), 2026-08-28 · coach high-ticket
-
-> "Why do these people matter if you're auto replying to them?"
-— Reddit r/artificial (lu via une archive), other, [source](https://www.reddit.com/r/artificial/comments/1soyg9p/i_kept_getting_ghosted_or_stuck_in_dry/) ([archive](https://reddit.sentinel-team.org/posts/1soyg9p/snapshots/2026-04-24T21%3A01%3A56.7158Z)), ≈2025-11 · grand public, contexte de DMs personnels : perception d'une IA dans les DMs
-
-> "I'm so frustrated it affected my business,I tried to get support and all I get are bots no human and the bot said the issue needs a human."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/automation-stopped-i-m-losing-leads-9511), 2026-04-11 · le rejet des bots vécu côté client
-
-> "Zero support from a useless AI bot."
-— Trustpilot (avis Manychat 1★), other, [source](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3), 2026-05-01
-
-> "I am not good with AI at all"
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/setsmart.io), 2026-07-05 · même avis : "I might have given up setting it up if I didnt have his help"
-
-> "Takes a lot of training, but works well after."
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/setsmart.io), 2026-06-21
-
-> "so one post that drives a wave of DMs can push you over before you notice."
-— Trustpilot (avis Manychat 1★), other, [source](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3), 2026-06-29 · facturation au contact
-
-> "You never know how much you will pay."
-— Trustpilot (avis Manychat 2★), other, [source](https://www.trustpilot.com/review/manychat.com?stars=1&stars=2&stars=3), 2026-07-08
-
-## 5. LES DÉSIRS : calls bookés sans y être, relances, moins de curieux, temps récupéré
-
-> "I want to build a robot SDR yesterday."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/need-ai-step-to-not-be-instant-human-like-delays-9474), 2026-04-06
-
-> "It would be awesome to be able to connect tools to the AI also, like google calendar, so it can automatically check for available time slots & offer those instead of someone having to click on the link to book a call."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/ai-step-delay-between-messages-2786), 2024-08-02
-
-> "Imagine just clicking “If no response → send this” right inside the AI Step. Easy. Powerful. Game-changing."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/ai-step-follow-ups-because-ghosted-chats-are-no-fun-7320), 2025-09-17
-
-> "Having this option would give us more control and prevent lost leads."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/add-no-response-option-in-ai-step-7335), 2025-09-19
-
-> "People are all the time in their phones not emails so i want to nurture AND CONVERT THEM INSIDE MANYCHAT"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/about-follow-ups-7741), 2025-10-31
-
-> "When I send a DM on instragram it would be nice if manychat could follow up 2 days after if the user doesnt reply."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/follow-up-when-i-personally-send-a-dm-2003), 2024-06-06
-
-> "In case he doesn’t know what to answer, he could just not answer and wait for a human to continue answering."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/let-chatgpt-answers-as-a-human-to-all-chats-with-a-given-information-3135), 2024-08-27 · lieu touristique
-
-> "I want to automatically detect when human representative responds to the conversation. so that we know in our bot that this conversation is being taken care by human representative so that bot is not allowed to interrupt."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/bot-pass-conversaion-to-human-operator-962), 2024-03-26
-
-> "When people chatting with AI say the world “TALK TO / HUMAN / PERSONA”, [or it would be even better if AI recognized the situation] send that chat to a label to be more easibly found by our representatives."
-— Manychat Community, setter-team, [source](https://community.manychat.com/general-q-a-43/need-help-with-ai-ending-of-funnel-how-can-i-label-people-who-needs-human-attention-to-be-easily-acesible-4669), 2025-01-06
-
-> "I want *it* to take the wheel, not a human."
-— Manychat Community, other, [source](https://community.manychat.com/ideas/let-an-external-ai-agent-take-over-a-live-conversation-via-external-request-ai-handoff-not-human-handoff-10764), 2026-08-28 · solopreneur
-
-> "So when the personal starts working again, it will apear a summary about all the things that Manychat did when we were off."
-— Manychat Community, setter-team, [source](https://community.manychat.com/ideas/summary-about-what-manychat-automatizations-did-when-the-personal-wasn-t-working-10859), 2026-09-18
-
-> "Highly recommend if you want to buy back your time, tired of training a human setter, and want to qualify leads faster!"
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/setsmart.io), 2026-09-30
-
-> "not having to worry about responding to hundreds of DMs."
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/setsmart.io), 2026-04-30 · fragment
-
-> "I hands down will never go back to a human setter again after this."
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/setsmart.io), 2026-05-07
-
-> "The best part is that I didn’t had do to hire an Setter…"
-— Trustpilot (avis 5★ d'un outil concurrent), coach, [source](https://ie.trustpilot.com/review/hirewagent.com), 2026-08-28
-
-> "I can actually have time to do the things I love in my business"
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/replyrush.com), 2026-05-27
-
-> "Not because they got more leads. But because they stopped losing the ones they already had."
-— Manychat Community, agency, [source](https://community.manychat.com/creator-conversations-72/more-ads-more-staff-growing-audience-and-still-missing-targets-here-s-what-we-found-10112), 2026-05-07 · voix d'agence (post promo)
-
-> "One of my clients stopped answering her DMs months ago, and now she books more calls than when she did it by hand."
-— Manychat Community, agency, [source](https://community.manychat.com/manychat-tutorials-33/this-ai-booked-120k-in-appointments-in-1-month-10605), 2026-07-23 · voix d'agence (vidéo promo)
-
-## 6. LES ÉMOTIONS : frustration, panique, culpabilité, soulagement
-
-> "This is quite maddening, I’ve just payed for a service that has jeopardised all my work."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/shadowbanned-after-using-manychat-on-instagram-597), 2024-03-02 · après 2 ans et demi de croissance organique
-
-> "I have been trying to diagnose my manychats flow for the past week and its driving me insane 😂."
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/low-manychat-delivery-rate-10158), 2026-05-16
-
-> "I dont know, im going crazy with this…."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/qualifying-leads-8146), 2025-12-16
-
-> "I am desperate for help. My Instagram automations have been completely down for 4 days"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/automations-completely-down-4-days-ticket-469692-no-response-please-help-9361), 2026-03-23
-
-> "It has been over 24h / This is horrible"
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/urgent-ig-automation-issue-has-anyone-faced-this-6176), 2025-05-24
-
-> "And it looks like we are not replying back to our audience. This is not good."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/banned-from-instagram-comments-251), 2024-02-13 · la culpabilité de laisser l'audience sans réponse
-
-> "I’m really looking for a solution for the last 3 months and compeletely fed up."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/banned-from-instagram-comments-251), 2024-02-13
-
-> "I regret even running it for 12 hours :("
-— Manychat Community, creator, [source](https://community.manychat.com/creator-conversations-72/the-platform-added-170-new-contacts-but-only-20-messages-sent-this-filled-70-of-my-curret-plan-10674), 2026-08-06
-
-> "I really want to like this app but it frustrates me beyond the stars!"
-— Trustpilot (avis Manychat 2★), other, [source](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3), 2026-07-06
-
-> "My work progress is 100% stalled."
-— Trustpilot (avis Manychat 1★), other, [source](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3), 2026-02-19
-
-> "This mix-up is quite serious as it is impacting my reputation with the client and could lead to a loss of trust and business."
-— Manychat Community, agency, [source](https://community.manychat.com/general-q-a-43/urgent-issue-message-discrepancy-between-accounts-risking-client-relationship-5718), 2025-04-09
-
-> "Advising me to disable my campaigns after my account has already been permanently banned is not helpful — there is nothing left to disable."
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30
-
-> "For months, the topic of our team meetings was based around how to make the appointment setting process better"
-— Trustpilot (avis 5★ d'un outil concurrent), setter-team, [source](https://au.trustpilot.com/review/weareampl.com), 2026-05-04
-
-> "finally an automation system that work smoothly"
-— Trustpilot (avis 5★ d'un outil concurrent), other, [source](https://www.trustpilot.com/review/instantdm.com), 2026-07-12 · soulagement
-
-## 7. L'HUMOUR et les phrases de niche
-
-> "manychat’s AI is as accurate as a chimp."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/anyone-else-feels-like-the-ai-steps-in-manychat-are-pretty-much-useless-7800), 2025-11-06
-
-> "Need this. It’s way too fast at the moment Lol"
-— Manychat Community, other, [source](https://community.manychat.com/ideas/ai-step-delay-between-messages-2786), 2024-08-02
-
-> "If I have a large amount of messages on a video how can I respond without Instagram thinking I'm a robot"
-— Manychat Community, creator, [source](https://community.manychat.com/general-q-a-43/instagram-thinking-i-m-a-robot-7954), 2025-11-23
-
-> "AI Step Follow-Ups – Because Ghosted Chats Are No Fun! 👻"
-— Manychat Community, other, [source](https://community.manychat.com/ideas/ai-step-follow-ups-because-ghosted-chats-are-no-fun-7320), 2025-09-17 · titre du fil. Même message : "Ever set up an awesome AI Step… only for the user to just vanish? 😅"
-
-> "like the automation nails its part, and then the actual selling bit is basically vibes and hoping we remember to circle back."
-— Manychat Community, other, [source](https://community.manychat.com/creator-conversations-72/be-honest-what-actually-happens-to-your-leads-after-the-first-reply-10594), 2026-07-22 · voix d'éditeur (déclarée). Même message : "do you even follow up? how many times before you call it dead?"
-
-> "Meta isn't responsible. / Manychat isn't responsible. / Nobody is responsible."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265), 2026-05-30
-
-> "This is ridiculous, how can we not filter UNREAD messages (…) It was a good idea 30 years ago."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/see-only-unanswered-messages-3425), 2024-09-17
-
-> "My Manychat is a Spaz and has been non stop sending people the "follow" before my link. It keeps repeating the message for my potential customers."
-— Manychat Community, other, [source](https://community.manychat.com/general-q-a-43/losing-client-9381), 2026-03-24 · titre du fil : "losing client"
-
-> "Just started DM outreach, anyone know the daily limit. Could do with not losing the account 😅"
-— Skool (communauté d'agences), agency, [source](https://www.skool.com/the-agency-club-1175/insta-dm-limit), 2024-04-12
-
-> "I’m getting good at picking out messages from appointment setters."
-— LinkedIn (commentaire d'article), other, [source](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon), 2023 · côté prospect
-
----
-
-## Motifs qui reviennent (futurs hooks)
-
-1. **« Je perds des leads », dit tel quel.** Le vocabulaire est explicite et répété : *"I’m losing a significant number of potential leads"*, *"lost customers"*, *"I am losing business"*, *"since I am losing money"*, *"I’m missing out on a lot of orders"*, *"wasted leads"*. Les gens ne parlent pas de « taux de conversion », ils parlent de leads perdus.
-2. **Le reel viral qui casse tout.** Le pic de succès est le moment où ça lâche : *"went viral"*, *"hundreds of comments an hour"*, *"out of approximately 1,000 comments… only around 150"*, *"after 600 comments I was blocked again"*, *"40K views… and over 400 comments"*. La virale est à la fois le rêve et la panique.
-3. **Le trou noir des « message requests » et du spam.** *"They were sent to my "message requests.""*, *"half our ad targeted audience doesnt even get a single response"*, *"the messages remain unanswered"*, *"From 1217 messages send only 28 actually arrived."*.
-4. **Le rattrapage manuel qui « defeats the purpose ».** *"Now do I have to go through all the comments and DM all these people…"*, *"manually doing everything defeats the purpose"*, *"which defeats the purpose!"*, *"physically impossible to respond to all"*.
-5. **La peur du ban, objection n° 1.** *"is it safe for my Instagram account?"*, *"I'm worried if I will get banned"*, *"then I'm going to stop using it"*, *"without Instagram thinking I'm a robot"*, *"Automations that mimic human activity"*.
-6. **« Personne n'est responsable » : seul face à Meta et à l'outil.** *"Meta isn't responsible. / Manychat isn't responsible. / Nobody is responsible."*, *"No prior warning"*, *"We were NEVER told to switch ManyChat off."*
-7. **Trop rapide, donc bot.** La vitesse instantanée trahit la machine : *"I respond immediately, which is too fast"*, *"way too fast at the moment Lol"*, *"Instant AI replies break immersion"*, *"human-like delays"*.
-8. **Le ton robot / cringe / off-brand.** *"robotic, cringey messages"*, *"weird and off-brand"*, *"less bot-like"*, *"not just canned or templated replies"*, *"doesn't feel natural for human-like interactions"*. Le contournement assumé : *"Lowercase on purpose"*, *"Include typos on purpose?"*, les notes vocales.
-9. **Le lead qui disparaît après la première réponse.** *"disappears into the inbox void"*, *"the convo just sits there collecting dust"*, *"Ghosted Chats Are No Fun! 👻"*, *"how many times before you call it dead?"*, *"follow up 2 days after if the user doesnt reply"*.
-10. **La collision bot / humain.** *"the AI Agent jumped in"*, *"so that bot is not allowed to interrupt"*, *"TALK TO / HUMAN / PERSONA"*, *"is this a human am I talking to a bot"*.
-11. **Les setters : instables, chers, fatigants à former.** *"people would come and go, results would vary"*, *"$10k+ in commissions - for quite average returns"*, *"he completely disappeared"*, *"tired of training a human setter"*, *"never go back to a human setter"*, *"commission only"*.
-12. **L'inbox ne trie pas.** *"the inbox doesn't discriminate"*, *"waits in line just like the one who's just asking for the price"*, *"many leads aren’t qualified due to the high price point"*, *"just click on the ad without… really needing something"*.
-13. **On ne voit pas qui attend une réponse.** *"filter UNREAD messages… It was a good idea 30 years ago"*, *"no lead or inquiry gets left without a proper response"*, *"come back with no idea what fired off while they were gone"*.
-14. **Seul, loin de l'écran.** *"I run a one-person business"*, *"I am often driving or away from a screen"*, *"There is no support team to tag in"*, et en face : *"buy back your time"*, *"time to do the things I love in my business"*.
-15. **La fenêtre de 24 h et les relances bricolées.** *"How are doing follow ups with this 24h restriction?"*, *"23 hours later… the 24 hours window resets!"*, *"if a user doesn’t book a meeting or reply"*.
-
-## Trous (trop peu de matière, à compléter)
-
-- **Les coachs à la première personne sur leurs soirées et week-ends dans les DMs** (thème 2) : presque rien d'accessible. Ce matériau vit sur Reddit, dans les groupes Facebook et en commentaires YouTube/TikTok, tous bloqués ou non lisibles ici.
-- **Les setters vus par le coach** : ghosting, no-shows, calls non qualifiés. Seulement 4 citations directes (Trustpilot d'une agence de closers, avis d'outils). Aucune citation de coach sur un « setter qui ghoste » ou sur les no-shows de ses calls.
-- **Les tire-kickers / calls non qualifiés dans le coaching** : la matière vient surtout de produits physiques (menuiserie, véhicule) et d'un éditeur. Il n'y a rien d'un coach high-ticket.
-- **La culpabilité et le burn-out** : les émotions trouvées sont presque toutes de la frustration ou de la colère contre un outil. Une seule note de culpabilité (« we are not replying back to our audience »), aucune de burn-out.
-- **L'humour « DM me INFO / comment KEYWORD »** : il vit sur X, Threads, TikTok et Reddit, inaccessibles. On n'a trouvé que des clins d'œil de forum.
-- **L'objection prix d'une IA de setting** : seulement des plaintes de facturation au contact. Rien sur « une IA à X $/mois vs un setter ».
-- **WhatsApp et Messenger** : quelques citations Messenger, presque rien de WhatsApp côté coachs/créateurs.
-- **Le marché francophone** : aucune citation en français.
-- **Pour combler** : export manuel depuis un navigateur connecté (Reddit r/coaching, r/sales, r/Instagram, r/ManyChat ; groupes Facebook de coachs et de setters), commentaires YouTube via l'API officielle avec une clé, et 5 à 10 interviews clients courtes avec la même grille de thèmes.
+# Verbatims de la cible
+
+> Les mots exacts des gens qui vendent par DM. **Source n°1 de tout texte** (voir `CLAUDE.md`). Relue avant chaque production.
+> Version du 10/10/2026. Fichier **généré** par `build_verbatims.py` à partir de `verbatims.jsonl` : on enrichit le `.jsonl` (une citation par ligne), puis on relance le script. Ne pas modifier ce `.md` à la main.
+
+## D'où viennent ces mots
+
+Deux recherches menées le même jour, fusionnées ici :
+
+- **Recherche cloud** (préfixe `cl`) : forum public de la communauté Manychat (environ 130 fils lus), Trustpilot (avis de Manychat 1 à 3★, d'outils de setting IA et d'agences de setters), offres d'emploi de setters sur Freelancer, LinkedIn, Skool. Reddit était bloqué depuis le cloud.
+- **Recherche depuis l'appli de bureau** (préfixes `mc` forum Manychat, `rd` Reddit, `tp` Trustpilot) : forum Manychat (57 fils), Reddit par flux RSS publics (environ 160 posts et 20 fils de commentaires, surtout r/personaltraining, r/InstagramMarketing, r/smallbusiness, r/Coaching), Trustpilot. Elle a comblé le trou principal de la première : la voix des coachs eux-mêmes.
+- **Sources gratuites uniquement, sans compte**, aucun outil payant. **Aucune donnée personnelle** : ni pseudo, ni nom, ni handle. Le lien mène à la discussion.
+- **Chaque citation est vérifiée mot pour mot** (colonne « Vérif. ») : par **script** contre le texte source téléchargé, ou dans le **navigateur** intégré (recherche exacte de la phrase dans la page affichée, 10/10/2026). Seuls les espaces et les apostrophes typographiques sont normalisés. Les fautes d'origine sont gardées. Dans une citation, « (…) » marque une coupe et « / » un retour à la ligne du message d'origine.
+- Arrêt quand les mêmes motifs revenaient d'une source à l'autre. Les doublons entre les deux recherches ont été retirés. Outils et marche à suivre pour enrichir : `outils/README.md`.
+
+## Comment s'en servir
+
+1. **À la 1re personne, jamais comme un avis client** : pas de prénom, pas d'étoiles, pas de « a coach told us ». La citation devient la pensée du personnage du post (Maya, Jordan, Sam) ou la phrase qu'Ivy dit avoir « vue dans une boîte de réception ». Aucune de ces personnes n'est cliente de ManySetter.
+2. **On adapte la ponctuation, pas le sens** : en publication, aucun tiret cadratin ni demi-cadratin, US English, pas de phrase de 2 ou 3 mots. Si on réécrit, ce n'est plus un verbatim : c'est un hook inspiré, sans guillemets.
+3. **Rien contre Manychat** : ManySetter s'ajoute à Manychat. Une citation négative qui nomme Manychat ne se publie jamais telle quelle ; si l'émotion est utile, on écrit « [my automation] », crochets visibles, ou on garde seulement la douleur (leads laissés en plan, air pas professionnel).
+4. **Aucun nom de concurrent** : les noms d'outils présents dans une citation sont retirés.
+5. **Le thème « Quand l'automatisation lâche » (T13)** sert à comprendre la peur et la fatigue de la cible. ManySetter ne change ni les déclencheurs de Manychat ni les règles de Meta : on ne promet jamais d'éviter un ban, une demande de message ou un déclencheur raté.
+6. **Voix d'agence, d'expert ou d'éditeur** (notées en commentaire) : inspiration seulement, jamais présentées comme la voix d'un client.
+7. **Aucun chiffre d'une citation** n'est présenté comme une statistique ou un résultat ManySetter : ce sont des anecdotes.
+8. **Inbound seulement** : une citation notée « prospection » sert pour l'émotion, jamais pour son contexte de DM à froid.
+9. **Pas d'indétectable** : les citations sur « paraître naturel » servent à parler de ton et de voix de marque. Les lignes notées « INTERDIT EN PUBLICATION » ne sortent jamais.
+10. **Traçabilité** : chaque post note dans sa fiche l'avatar et les numéros de citations utilisées (exemple : `"verbatims": ["rd04", "cl027"]`).
+
+## Les motifs qui reviennent
+
+Ce que les deux recherches répètent d'une source à l'autre (numéros entre parenthèses). C'est la matière des hooks.
+
+1. **Le post marche, la boîte déborde.** Le volume dépasse une seule personne, et c'est vécu comme un bon problème qui tourne mal : « I'm getting more DMs than I can handle » (rd04), « replying in a timely manner is almost impossible » (rd17), « He cannot keep up with them » (mc26). Le reel viral est à la fois le rêve et la panique : « 40K views… and over 400 comments » (cl005). → S1, hook « Do you have… ? ».
+2. **« Je perds des leads », dit tel quel.** Ils ne parlent pas de taux de conversion : « I'm losing a lot of potential leads » (cl002), « wasted leads » (cl018), « I replied too late and lost the sale » (rd19), « leads just move on to whoever responds first » (rd06).
+3. **Le lead s'évapore juste après le prix ou la première réponse.** « Asked for the price and disappeared » (rd13), « this is exactly what I need… and then vanished » (rd47), « the convo just sits there collecting dust » (mc47), « disappears into the inbox void » (mc01), « people enquiring and then ghosting ( I hate people wasting my damn time) » (rd88), « ghosted after I sent my rates » (rd91). → La série « 4 replies » et la relance (jusqu'à 3, dans la fenêtre de 24 h).
+4. **Le mot-clé n'est pas une conversation.** Le flow répond au mot, pas à la question : « jumped in just because it recognized a word, not based on user intent » (mc07), « it sends automatic message ever time when they write course » (rd22), il redemande ce que le lead a déjà dit (mc11), les gens écrivent en plusieurs messages (mc10). → Le setter attend la fin du message, pose une question à la fois, jamais deux fois.
+5. **Trop rapide, donc bot.** « I respond immediately, which is too fast » (mc19), « Instant AI replies break immersion » (cl095), « way too fast at the moment Lol » (cl145). → Le setter attend que le lead ait fini d'écrire. Ne jamais vendre la vitesse instantanée.
+6. **La peur de sonner robot ou amateur.** « without sounding robotic or spammy » (rd38), « look like amater to my leads » (rd23), « robotic, cringey messages » (mc05), « not just canned or templated replies » (cl097). Même quand ils recrutent un humain, c'est le critère : « without sounding robotic » (rd31). Leurs ruses : minuscules exprès (cl043), notes vocales (rd85, cl045). → « Your leads hear your brand, not a generic bot ». Jamais « indétectable ».
+7. **L'objection n°1 : « un message automatique fait fuir ».** Chez les coachs sportifs surtout : « The fastest way to lose a lead is for the first interaction they have with you be an automated message » (rd57), « it's just a big turn off » (rd62), « My mature clients don't expect a reply at 2am » (rd61), « AI right now for DMs? No. » (rd53). Le désir est juste à côté : « I just want the repetitive first step handled faster […] while still keeping the actual interaction human » (rd65). → Vendre la conversation qui sonne comme la marque et qui passe la main à un humain, pas la réponse à 3 h du matin. La série « 3 a.m. shift » d'Ivy reste une blague sur la vie du coach, pas une promesse de vitesse.
+8. **Les mauvais appels et les curieux coûtent du temps.** « 6 consult calls booked. None of them turned into a real client » (rd43), « 15+ conversations over DM and email. Ended up with 2 actual clients » (rd90), « what feels like free consulting » (rd92), « the inbox doesn't discriminate » (cl026). Certains coachs ont déjà la bonne logique : une offre à 30 $ pour ceux qui n'ont pas le budget (rd76). → « Only the right leads get your calendar », et une réponse utile pour les autres.
+9. **Le setter humain : instable, cher, fatigant à former.** « people would come and go, results would vary » (cl056), « $10k+ in commissions - for quite average returns » (cl057), « he completely disappeared » (cl058), « tired of training a human setter » (cl123), « trusting someone else to have sales conversations on your behalf » (rd35). → S2, sans jamais dénigrer les setters comme personnes.
+10. **Le bot et l'humain se marchent dessus.** Le bot répond par-dessus l'humain (mc41, mc21), personne ne sait qui doit reprendre (mc15), seul au volant sans équipe à appeler (cl030). → « A person when it matters », le relais vers l'équipe.
+11. **Les agences portent la conversation de leurs clients.** Clients non techniques qui veulent tout déléguer (mc38, mc39, rd25), plus de 20 comptes à suivre (mc13), la réputation auprès du client en jeu (cl140). → S3, « You built the flow. Who handles the reply? »
+12. **Seuls face à l'outil et à Meta.** Déclencheurs ratés, demandes de message, comptes restreints : « Meta isn't responsible. / Manychat isn't responsible. / Nobody is responsible. » (cl149), « We were NEVER told to switch ManyChat off. » (cl076). → Matière à empathie seulement (règle 5).
+13. **Les contournements font rire parce qu'ils sont vrais.** 40 DM à la main après un bon post (rd01), un ami payé 50 $ par mois pour répondre (rd40), « manually doing everything defeats the purpose » (cl033), le « hey, did you still want me to send that over? » (mc03), et l'autodérision des coachs ghostés : « ones that magically disappear like your situation lol » (rd82), « I thought if they wanted a coach, they would find me. Ya, I was wrong. » (rd99). → Format « Things I did before ».
+
+## Ce qui manque encore
+
+- **Le setter vu par le coach** : mieux couvert (offres d'emploi, avis), mais presque aucun coach ne raconte en public un setter qui ghoste ou des no-shows dus au setter.
+- **Agences (S3)** : surtout des voix techniques. Il manque la relation client (« le client demande ce que ça a rapporté »).
+- **La culpabilité et le burn-out** : une seule note de culpabilité (cl135) et un burn-out (rd75).
+- **L'objection prix d'un setter IA** (« une IA à 119 $ par mois contre un setter ») : rien encore.
+- **WhatsApp, trading, santé, marché francophone** : presque absents.
+- **Pistes** : commentaires sous les annonces de recrutement de setters, r/OnlinePersonalTrainer et r/sales en commentaires, et 5 à 10 entretiens courts avec des utilisateurs de l'essai gratuit, avec la même grille de thèmes.
+
+## Les mots qu'ils tapent (pour les légendes)
+
+DMs, inbox, leads, losing leads, follow up, ghosted, "how much", consult calls, discovery call, booked calls, no-shows, setter, DM setter, AI setter, appointment setter, Manychat, comment keyword, comment to DM, qualify leads, sound robotic, bot-like, high ticket, online coach.
+
+**État** : 287 citations, tirées de 142 discussions. Maya (S1) : 141, Jordan (S2) : 96, Sam (S3) : 50. Sources : Communauté Manychat (143), r/personaltraining (37), Trustpilot (33), r/InstagramMarketing (22), r/smallbusiness (13), r/appointmentsetter (9), r/Coaching (6), Freelancer (6), r/sales (4), LinkedIn (4), r/BecomeADoula (2), r/Entrepreneur (2), r/lifecoaching (2), r/DigitalMarketing (1), r/AskMarketing (1), r/artificial (1), Skool (1).
+
+## Les citations, par thème
+
+### T1 · La boîte qui déborde (21)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl022 | « We were missing around 17% dms because of how many messages we get on our pages. » | Maya (S1) | [Trustpilot](https://au.trustpilot.com/review/inflowave.io) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2025-11-26 |
+| cl023 | « ensuring that important conversations aren’t lost among a high volume of messages. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/suggestion-enable-the-unread-messages-filter-for-better-management-5111) | script | creator · 2025-02-15 |
+| mc40 | « our whole sales process depends on replying to comments with direct messages. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/instagram-dms-not-working-for-comment-leads-for-10-days-10308) | script | commerce, hors coaching |
+| rd03 | « I post organic content and get leads via lead magnets on IG and FB. Manychat then routes them to my inbox. » | Maya (S1) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1t7b917/appointwise_vs_closebot/) | script |  |
+| rd04 | « I'm getting more DMs than I can handle so I am looking to implement an Ai setter. » | Maya (S1) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1t7b917/appointwise_vs_closebot/) | script |  |
+| rd05 | « a lot of people still DM basic questions and expect fast replies. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1qk6lkr/how_do_you_handle_instagram_leads_when_you_cant/) | script |  |
+| rd10 | « He was getting a fair few IG DMs but wasn't replying fast enough. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1ke1k53/threw_together_an_ig_commentdm_manychat_workflow/) | script | à propos d'un ami coach fitness |
+| rd15 | « a bunch of people commented to be reminded (100) but I didn't have manychat for it. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1wueoss/anyone_have_a_better_option_than_manychat_for_dm/) | script |  |
+| rd17 | « replying in a timely manner is almost impossible. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1g3k99z/alternatvie_to_manychat_but_free/) | script |  |
+| rd18 | « people sometimes comment on very old reels that I will never see again, so they will not have a reply to their comment, question etc. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1g3k99z/alternatvie_to_manychat_but_free/) | script |  |
+| rd20 | « None of these questions are difficult, but when you're getting them throughout the day, it adds up. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1vp1dry/how_do_you_guys_keep_up_with_instagram_dms_when/) | script | boutique Instagram, hors coaching |
+| rd24 | « As my page is growing, I'm getting more comments and DMs and it's starting to take a lot of time to reply to everyone manually. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1rrm0z5/how_do_you_manage_replying_to_a_lot_of_instagram/) | script |  |
+| rd29 | « Do you find it hard to keep up with sending the DMs without dropping the ball » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1s6a4w0/the_comment_link_for_dm_strategy_is_taking_over/) | script |  |
+| rd30 | « I had a viral post generate a huge number of requests for links » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1vjb9jy/instagram_dms_still_blocked_even_though_meta_says/) | script |  |
+| rd37 | « Most of our leads come through Instagram DMs after people see our content. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/) | script |  |
+| rd42 | « we're struggling to keep response times fast enough with manual inbox management. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/) | script |  |
+| rd54 | « Social media engagement, specifically building relationships with people in DM's to hopefully convert them to clients. » | Maya (S1) | [r/Coaching](https://www.reddit.com/r/Coaching/comments/1liapfq/whats_your_most_timewasting_task_that_you_wish_ai/mzaydw7/) | script | réponse à « la tâche qui vous prend le plus de temps » |
+| rd68 | « They are instagram users, they prefer using instagram DM, its not easy to ask them to come to a diffrent channel » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/om3ltzr/) | script |  |
+| rd69 | « What converts is from chats. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/om3ltzr/) | script |  |
+| rd32 | « Most leads are already engaging with the content, replying to stories, commenting, opting into funnels, etc. » | Jordan (S2) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1tddcy3/hiring_remote_dm_setter_appointment_setter_for_a/) | script |  |
+| mc46 | « Over 70% of inbound leads never get a response » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/manychat-tutorials-33/key-takeaways-from-ig-summit-8-2-seconds-of-attention-70-unanswered-leads-7359) | script | chiffre rapporté d'une conférence, jamais à reprendre comme une stat sourcée |
+
+### T2 · Les leads qui disparaissent (26)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| mc01 | « someone replies, doesn't buy right away, and just kinda disappears into the inbox void » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/be-honest-what-actually-happens-to-your-leads-after-the-first-reply-10594) | script | auteur : employé d'un outil de suivi de DM, voix proche de la cible |
+| mc16 | « I have a fitness business where I sell coaching and low ticket programs on my app. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/help-monetizing-and-optimizing-my-clients-1736) | script |  |
+| mc17 | « I have about 13,000 contacts from instagram on manychat and I am unsure on how I can optimize and monetize these contacts. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/help-monetizing-and-optimizing-my-clients-1736) | script |  |
+| mc18 | « They feel like a waste because I heard there was a 24 hour rule where I cant even message them anymore. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/help-monetizing-and-optimizing-my-clients-1736) | script |  |
+| rd06 | « If you're busy or offline, it feels like leads just move on to whoever responds first. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1qk6lkr/how_do_you_handle_instagram_leads_when_you_cant/) | script |  |
+| rd08 | « how do we follow up with someone on Instagram when they don't reply to your DM but they have commented on the post? » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1wy1p16/how_to_use_manychat_for_insta_followups/) | script |  |
+| rd09 | « How many times do you follow up before leaving it? » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1wy1p16/how_to_use_manychat_for_insta_followups/) | script |  |
+| rd19 | « I've definitely had situations where I replied too late and lost the sale because the person had already moved on. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1vp1dry/how_do_you_guys_keep_up_with_instagram_dms_when/) | script | boutique Instagram, hors coaching |
+| rd47 | « even said "this is exactly what I need"… and then vanished. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/) | script | coach en ligne |
+| rd48 | « Do you follow up? Let it go? Is there something I might be missing in how I'm talking to them? » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/) | script |  |
+| rd63 | « usually people like to get immediate response for their questions. Giving a response later, usually no one responds. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/olz3k34/) | script | patron d'une entreprise de service |
+| rd66 | « the real problem is probably having a clean system so leads don't get forgotten for 2 days. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/onu39cp/) | script |  |
+| rd78 | « Some people get excited and feel ready, and then get cold feet. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2p8kuh/) | script | coach sportif |
+| rd88 | « Honestly for me it's people enquiring and then ghosting ( I hate people wasting my damn time) » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1rftnp3/online_fitness_coaches_whats_the_most_annoying/o7mn74k/) | script | coach fitness en ligne |
+| rd97 | « Most times , I come across they will go home and think or they will transfer once they home or get their pay check But I got ghosted instead and doesn't even reply on follow up » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1ojzahl/struggling_to_convert_after_the_free_tasters/) | script |  |
+| mc02 | « the automation nails its part, and then the actual selling bit is basically vibes and hoping we remember to circle back. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/be-honest-what-actually-happens-to-your-leads-after-the-first-reply-10594) | script | même auteur que mc01 |
+| mc36 | « One post for example had 280 sends and 140 clicks but not one sale. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/auto-dm-links-from-ig-comments-are-not-converting-into-sales-10113) | script | créatrice qui vend en affiliation |
+| mc37 | « It's disappointing that I am paying monthly for this and not seeing anything in return. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/auto-dm-links-from-ig-comments-are-not-converting-into-sales-10113) | script | même autrice que mc36 |
+| rd13 | « It has no idea whether that person: Ghosted me. Asked for the price and disappeared. » | Jordan (S2) | [r/DigitalMarketing](https://www.reddit.com/r/DigitalMarketing/comments/1v2w9qy/how_do_you_train_meta_to_optimize_for_people_who/) | script | agence de design qui vend par DM |
+| rd83 | « even after 20 years it still sucks once in awhile because we know we can help them. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2pzyfo/) | script |  |
+| rd84 | « Also sometimes there just so busy they forget. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2pzyfo/) | script |  |
+| rd91 | « The rest were either price shopping, "just getting information," or ghosted after I sent my rates. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qvfxhd/online_inquiries_are_up_but_so_is_my_wasted_time/) | script |  |
+| tp01 | « has me losing dozens of leads per day. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?stars=1&stars=2&stars=3) | navigateur | avis négatif sur Manychat (6 juil. 2026) : ne jamais l'utiliser contre Manychat, seule la douleur des leads perdus est réutilisable |
+| mc47 | « Right now, if they don't reply, the convo just sits there collecting dust. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/ai-step-follow-ups-because-ghosted-chats-are-no-fun-7320) | script |  |
+| mc48 | « Ever set up an awesome AI Step… only for the user to just vanish? » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/ai-step-follow-ups-because-ghosted-chats-are-no-fun-7320) | script |  |
+| rd14 | « most convos go fine until that comes up. Then it's "let me think about it," or they ghost before booking. » | Sam (S3) | [r/AskMarketing](https://www.reddit.com/r/AskMarketing/comments/1wtsrvv/24_left_finance_to_start_a_marketing_agency_5/) | script | contexte : prospection à froid de l'auteur, ne garder que la réaction au prix |
+
+### T3 · Les contournements (28)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl031 | « I responded to comments manually for over 60 days (note physically impossible to respond to all) » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/critical-facebook-comment-to-dm-issue-ticket-557166-no-response-after-48-hours-10745) | script | 2026-08-24 |
+| cl032 | « Now do I have to go through all the comments and DM all these people the link they should have received automatically? » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/automation-didn-t-work-do-i-have-to-dm-all-these-people-manually-10483) | script | creator · 2026-07-01 |
+| cl033 | « Obviously, manually doing everything defeats the purpose of Manychat, so I’m certainly doing something wrong. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/automation-goes-to-requests-instead-of-sends-6117) | script | creator · 2025-05-20 |
+| cl034 | « I can see myself sending lots of manual messages to deal with it, which defeats the purpose! » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/fb-messages-arriving-in-spam-any-way-to-fix-it-10507) | script | 2026-07-07 |
+| cl038 | « Right now, we’ve temporarily replaced it with a text block to handle our customers in the evening, but we still want to rely on AI Step. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/ai-step-keep-interfering-live-chat-3945) | script | 2024-10-28 |
+| mc03 | « a "hey, did you still want me to send that over?" a couple days later pulls more replies than anything clever i've ever written. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/be-honest-what-actually-happens-to-your-leads-after-the-first-reply-10594) | script | même auteur que mc01 |
+| mc08 | « so I won't have to manually do that for +200 people/day. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/automated-message-after-a-comment-dm-reply-if-the-lead-didn-t-reply-to-it-after-a-certain-time-4185) | script |  |
+| mc30 | « I'm trying to send weekly follow-up DMs for 4 weeks (non-sales, relationship-based), but I keep hitting the 24h rule. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/ig-24h-rule-how-to-send-weekly-follow-up-messages-in-manychat-9036) | script |  |
+| rd01 | « Before this, I was manually DMing 40 people after a good post and feeling insane about it. » | Maya (S1) | [r/BecomeADoula](https://www.reddit.com/r/BecomeADoula/comments/1sxqtf4/my_honest_take_on_manychat_and_how_doulas_can_use/) | script | doula qui vend une formation, profil S1 |
+| rd16 | « Is there a way to add it now and have it message all those ppl so I don't have to? » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1wueoss/anyone_have_a_better_option_than_manychat_for_dm/) | script |  |
+| rd40 | « I get about 20-30 DMs a day. Thinking about getting a VA to handle this. Currently just paying a friend $50 a month for it. » | Maya (S1) | [r/Entrepreneur](https://www.reddit.com/r/Entrepreneur/comments/bpex3s/how_much_would_you_pay_for_someone_to_manage_your/) | script |  |
+| rd58 | « I text within 10 minutes if possible and actually talk to the person. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzkk63/how_i_automated_my_lead_followup_saved_5_hours/o4bgcvn/) | script | coach sportif |
+| rd80 | « You can always nudge them in a week or so after but don't chase. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2p7x40/) | script |  |
+| rd81 | « I usually just follow up one time, letting them know I can hold their spot for a few more days if they want to think about it » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2pii6c/) | script |  |
+| rd85 | « Sometimes I'll send this as a voice message too as it's more personal » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2qiqer/) | script | le vocal pour faire humain (audio : Messenger seulement chez ManySetter) |
+| cl036 | « unfortunately manychat doesnt have this yet so I am employing someone to message everyone who votes in the poll. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/triggering-bot-after-human-message-4729) | script | setter-team · 2025-01-12 |
+| cl037 | « User asks is this a human am I talking to a bot, voicenote gets sent if this question is asked? » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/triggering-bot-after-human-message-4729) | script | setter-team · 2025-01-12 · INTERDIT EN PUBLICATION (garde-fou : rien sur ce que répond le setter quand on lui demande s'il est humain) |
+| cl039 | « I'm fairly new to ManyChat and I'm trying to build an escalation system where a contact gets reassigned to another team member if the currently assigned member doesn't respond within 24 hours. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/how-to-check-if-a-team-member-replied-manually-after-24-hours-5728) | script | setter-team · 2025-04-10 |
+| cl040 | « Hey, trying to get better followups and also implementing some people in my team. But I have the problem, that I somehow cannot filter to unanswered only Chats. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/see-only-unanswered-messages-3425) | script | setter-team · 2024-09-17 |
+| cl042 | « My workaround at the moment is to Instagram-Opt-Out, when the keyword is sent, wait 24 hours (longer than any delay in all automations) and then Instagram-Opt-In again. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/pausing-automations-automatically-when-human-support-is-required-2254) | script | setter-team · 2024-06-27 |
+| cl035 | « Typically, we would have someone active on the IG app to handle personalised comments and poll responses. And someone at an alternate time on Manychat just to handle inbox. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/instagram-inbox-restricted-can-i-still-use-manychat-3696) | script | agency · 2024-10-09 |
+| cl043 | « Lowercase on purpose: perfect capitalization gives an automated vibe, all lowercase messages feel more human » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/how-do-you-make-automated-messages-feel-human-9183) | script | agency · 2026-03-02 · voix d'expert Manychat |
+| cl044 | « No real human writes 30 lines in a single message when they’re chatting. Your automations shouldn’t either! » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/how-do-you-make-automated-messages-feel-human-9183) | script | agency · 2026-03-02 · voix d'expert Manychat |
+| cl045 | « There’s no better way to make your flows seem ‘human’ that actually incorporating a human voice into the flow. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/how-do-you-make-automated-messages-feel-human-9183) | script | agency · 2026-03-02 · voix d'expert (notes vocales) |
+| cl046 | « Whenever a post shows signs of going viral, we immediately switch the automation to the trigger that does not reply to the comment. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | agency · 2026-05-30 · voix d'expert |
+| cl047 | « If you find an excuse to send a message 23 hours later and get them to engage, the 24 hours window resets! » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/about-follow-ups-7741) | script | agency · 2025-10-31 · voix d'expert |
+| cl049 | « This strategy was usually to expensive for lower-ticket offers, where you couldn’t afford the setter. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/funnel-ideas-with-the-new-follower-dm-automation-for-ig-7736) | script | agency · 2025-10-30 · voix d'expert |
+| mc42 | « we have prospects who don't complete our intake form, so our medical team needs to follow up with them manually via Instagram DM » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/how-to-prevent-automation-from-triggering-when-the-page-admin-sends-a-manual-dm-10319) | script |  |
+
+### T4 · Les flows et bots qui répondent à côté (20)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl066 | « In short, client conversations get stuck in AI Step, and they won’t end. it’s only end conversation if the client says “thank you”. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/ai-step-keep-interfering-live-chat-3945) | script | 2024-10-28 |
+| cl067 | « Once my flow reaches the AI Step, it only answers 1-3 questions before ceasing to respond. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/ai-step-only-answering-1-3-questions-5488) | script | 2025-03-19 |
+| cl068 | « Overall, it's good for ads, but it doesn't feel natural for human-like interactions. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/chatfuel.com?stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis 3★ d'un outil de chatbot) · 2025-12-19 |
+| mc05 | « it keeps sending these robotic, cringey messages » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/ai-step-keeps-sending-robotic-replies-6891) | script |  |
+| mc06 | « the replies it sends are weird and off-brand » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/ai-step-keeps-sending-robotic-replies-6891) | script |  |
+| mc09 | « it returns to the beginning and causes repetition AI answers. this needs to be resolved because I'm losing customers. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/if-the-customer-sends-a-message-after-1-day-or-24-hours-instead-of-continuing-from-where-the-automation-left-off-it-returns-to-the-beginning-and-causes-repetition-ai-answers-3631) | script |  |
+| mc22 | « The number one complaint I get is the AI instantly answering » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/manychat-ai-is-answering-too-fast-in-instagram-dm-s-7769) | script |  |
+| mc23 | « this (allong with little to no chat context/memory) seems to ruin the user experience. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/manychat-ai-is-answering-too-fast-in-instagram-dm-s-7769) | script |  |
+| mc24 | « sometimes no response at all, sometimes completely wrong answers, even with well-crafted prompts. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/anyone-else-feels-like-the-ai-steps-in-manychat-are-pretty-much-useless-7800) | script |  |
+| mc25 | « Curious to hear real experiences before I give up on it » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/anyone-else-feels-like-the-ai-steps-in-manychat-are-pretty-much-useless-7800) | script |  |
+| mc33 | « It keeps repeating the message for my potential customers. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/losing-client-9381) | script |  |
+| rd12 | « bulletproof the flow so that when a customer types instead of quick replies the response chain will continue. » | Jordan (S2) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1glgrns/seeking_manychat_expert_for_detailed_review_and/) | script |  |
+| rd22 | « i set keyword triggers, but it sends automatic message ever time when they write course or something simmilar, and it totaly ruins my conversion. » | Jordan (S2) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1rznvnm/instagram_automation_for_selling_course/) | script | vend un mentorat |
+| tp02 | « which were actively detrimental to my brand because people were just left hanging. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?stars=1&stars=2&stars=3) | navigateur | avis négatif sur Manychat (9 août 2026) : même réserve que tp01 |
+| mc07 | « the AI Agent jumped in just because it recognized a word, not based on user intent. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/how-to-stop-manychat-ai-agent-from-interrupting-live-conversations-6813) | script |  |
+| mc10 | « Many people send their messages in small parts. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/enable-ai-to-receive-and-process-all-user-messages-sequentially-1972) | script |  |
+| mc11 | « may ask for information the user has already sent. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/enable-ai-to-receive-and-process-all-user-messages-sequentially-1972) | script |  |
+| mc19 | « Currently, after a customer sends a message, I respond immediately, which is too fast. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/improve-manychat-ai-urgent-4784) | script |  |
+| mc35 | « It's too fast and cheap responses. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/need-ai-step-to-not-be-instant-human-like-delays-9474) | script |  |
+| mc44 | « it's not very efficient and cannot handle a conversation successfully. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/handling-complete-customer-queries-with-ai-step-10907) | script |  |
+
+### T13 · Quand l'automatisation lâche (déclencheurs, demandes de message, restrictions Meta) (36)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl001 | « out of approximately 1,000 comments, ManyChat shows that the automation was triggered for only around 150 users. (…) This means I’m losing a significant number of potential leads » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/instagram-reel-automation-only-triggered-for-a-small-percentage-of-comments-on-a-viral-post-8118) | script | creator · 2025-12-12 · reel viral, lien vers un cours gratuit |
+| cl002 | « This Reel represents a big opportunity, and right now I’m losing a lot of potential leads due to this behavior. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/instagram-reel-automation-only-triggered-for-a-small-percentage-of-comments-on-a-viral-post-8118) | script | creator · 2025-12-12 |
+| cl003 | « I lost tons of sales for my business and we estimated a 10k$ loss. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/lost-10k-because-say-hi-to-new-followers-not-working-anymore-9493) | script | 2026-04-08 |
+| cl004 | « During those 2-3 days, many people commented on my posts but did not receive private messages in return. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/re-triggering-automation-for-missed-instagram-messages-after-payment-failure-1896) | script | creator · 2024-05-30 |
+| cl005 | « I have a trial reel which got over 40K views… and over 400 comments mentioning my keyword. But the related automation didn’t trigger » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/automation-didn-t-work-do-i-have-to-dm-all-these-people-manually-10483) | script | creator · 2026-07-01 |
+| cl006 | « EVERYONE who commented the keyword was NOT sent the link. They were sent to my "message requests." » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/automation-goes-to-requests-instead-of-sends-6117) | script | creator · 2025-05-20 |
+| cl007 | « this seriously needs to be addressed, whats the point if half our ad targeted audience doesnt even get a single response » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/how-to-enable-manychat-to-respond-to-message-request-in-instagram-1205) | script | 2024-04-12 |
+| cl008 | « Since the system does not see these message types, the automation does not work and the messages remain unanswered, there must be a solution to this » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/not-responding-to-messages-dropped-in-the-message-request-list-or-unassigned-messages-3630) | script | 2024-10-04 · demandes de message / messages non assignés |
+| cl011 | « These are warm leads commenting under our own posts, explicitly asking for pricing. And yet, we are unable to reply to them through Direct Messages at all. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | 2026-05-30 |
+| cl012 | « (…) not being able to send DMs to people is going to kill sales by 90% » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | creator · 2026-05-30 |
+| cl013 | « received over 100 comments who are lost customers, and I can't even reach them. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=4&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 1★) · 2025-11-20 |
+| cl014 | « Because it didn't work, I lost a bunch of potential buyers I couldn't respond to. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 1★) · 2026-02-20 |
+| cl015 | « result: ZERO value added by ManyChat, hours and thousands of opportunities lost because of ManyChat. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 2★) · 2026-05-22 |
+| cl016 | « Customers are complaining, and I am losing business because of this. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/critical-problem-10913) | script | 2026-09-29 |
+| cl017 | « I’m missing out on a lot of orders. (…) From 1217 messages send only 28 actually arrived. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/horrible-delivery-10574) | script | 2026-07-19 · Messenger |
+| cl018 | « I’m worried these are just wasted leads because they never get the automated message. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/manychat-sends-notification-but-no-dm-10576) | script | creator · 2026-07-20 |
+| cl019 | « This has happened maaaany times, and people often end up messaging me to tell me they never received anything, even though they got the notification. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/manychat-sends-notification-but-no-dm-10576) | script | creator · 2026-07-20 |
+| cl021 | « Our automation has registered over 600 messages sent, but only around 1–2% are being delivered. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/critical-facebook-comment-to-dm-issue-ticket-557166-no-response-after-48-hours-10745) | script | 2026-08-24 · Facebook |
+| cl088 | « My reel on insta got 100k views with 2k comments, Now the link is not working which is inside the flow. what to do and is it safe to message 2k contacts or should i stop the flow ? » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-insta-reel-is-viral-now-the-link-is-not-working-6496) | script | creator · 2025-06-21 |
+| cl069 | « It’s infuriating and has caused brand damage. I’ve received dozens of angry messages saying “the button doesn't work !”. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/urgent-buttons-not-showing-not-clickable-in-ig-dm-after-comment-trigger-lead-magnet-not-delivered-5581) | script | creator · 2025-03-28 · lead magnet |
+| cl070 | « I’m experiencing an issue with Instagram Comment Automation that has existed since the very beginning. It has never worked, even once. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/problem-with-instagram-automation-10570) | script | creator · 2026-07-18 |
+| cl071 | « But many times, it doesn't work, or stops working in the middle of a running campaign. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 3★) · 2026-05-30 |
+| cl072 | « I paid for InstantDM and the service failed to work on countless occasions, costing me time and clients. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/instantdm.com) | navigateur | Trustpilot (avis 1★ d'un outil concurrent) · 2026-06-05 · retirer le nom de l'outil avant tout usage · nom de concurrent : ne jamais le citer |
+| cl073 | « Also its automatically sending messages to my existing followers that send me DM’s so i had to disconnect everything. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/funnel-ideas-with-the-new-follower-dm-automation-for-ig-7736) | script | creator · 2025-10-30 |
+| cl074 | « My account has been permanently disabled and I know exactly what I was doing wrong: Using Manychat. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | creator · 2026-05-30 · créatrice voyage, compte de plus de 10 ans |
+| cl075 | « Our Instagram account has now been banned from sending DMs for 30 days straight. Flagged as spam. No prior warning. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | 2026-05-30 · après un reel à 1 M de vues |
+| cl076 | « We were NEVER told to switch ManyChat off. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | 2026-05-30 |
+| cl077 | « My ability to send direct messages on Instagram has been banned twice in a row. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/i-ve-been-banned-from-sending-messages-on-instagram-dm-4355) | script | creator · 2024-12-02 · compte vérifié, 250 k abonnés |
+| cl078 | « during the meeting, I was advised to remove ManyChat. How is this possible? » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/i-ve-been-banned-from-sending-messages-on-instagram-dm-4355) | script | creator · 2024-12-02 |
+| cl079 | « I ran an automation to send links to people, and after about an hour I noticed I could no longer DM new users. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/ideas/many-chat-is-no-longer-safe-to-use-my-instagram-account-shadow-banned-and-im-no-longwr-able-to-send-dms-to-new-people-10361) | script | creator · 2026-06-12 |
+| cl080 | « I just got banned from commenting on my or any Instagram posts. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/banned-from-instagram-comments-251) | script | creator · 2024-02-13 · 1,5 M d'abonnés, 3 500 DMs auto en une semaine |
+| cl081 | « I uploaded a reel and after 600 comments I was blocked again / How does that make sense? » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/instagram-thinking-i-m-a-robot-7954) | script | creator · 2025-11-23 |
+| cl082 | « Restricted from Instagram right after starting using manychat » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 1★) · 2026-06-12 |
+| cl025 | « We are running a promo campaign for a client right now and the keyword trigger is going a little too viral. We are getting hundreds of comments an hour. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/best-way-to-add-random-delays-to-ig-comment-triggers-to-avoid-action-blocks-9904) | script | agency · 2026-05-03 |
+| cl083 | « My client got banned for a week because of the code sending issue. This is really bad, especially during XMAS!!! » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/urgent-client-banned-because-of-the-issue-the-other-day-4552) | script | agency · 2024-12-18 |
+| cl084 | « wondering why sales were going down for clients and myself. paying for multiple accounts and automations haven’t been running for weeks. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/manychat-not-working-for-days-need-urgent-help-2440) | script | agency · 2024-07-10 |
+
+### T5 · Le setter humain (19)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl050 | « You will be provided with my Instagram account and will simply have to follow a DM script to book the calls » | Jordan (S2) | [Freelancer](https://www.freelancer.com/projects/lead-generation/instagram-appointment-setter) | navigateur | Freelancer.com (offre d'emploi) · coach · ≈2024-10 · coaching en croissance Instagram |
+| cl051 | « the fixed payment will be 6000 Indian rupees per month guaranteed for 30 DMs a day, and 10% commission per sale » | Jordan (S2) | [Freelancer](https://www.freelancer.com/projects/lead-generation/instagram-appointment-setter) | navigateur | Freelancer.com (offre d'emploi) · coach · ≈2024-10 |
+| cl055 | « Often they are on commission only deals. » | Jordan (S2) | [LinkedIn](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon) | navigateur | LinkedIn (article) · 2023-06-18 · à propos des setters en DM |
+| cl056 | « Initially, we had issues with finding reliable appointment setters, people would come and go, results would vary » | Jordan (S2) | [Trustpilot](https://au.trustpilot.com/review/weareampl.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · setter-team · 2026-05-04 |
+| cl057 | « on any given month we would be paying out $10k+ in commissions - for quite average returns » | Jordan (S2) | [Trustpilot](https://au.trustpilot.com/review/weareampl.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · setter-team · 2026-05-04 |
+| cl058 | « Within just a few days, he completely disappeared. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/closers.io?stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis 1★ d'une agence de recrutement de closers) · 2025-03-01 (édité le 2025-08-05) · closer recruté pour 3 000 $ de frais |
+| cl059 | « I paid $15,000 for appointment-setting services and, over four-plus months, received zero sales. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/closers.io?stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis 1★ d'une agence de setting) · 2026-09-29 |
+| cl060 | « so they have to hammer people in the DMs. » | Jordan (S2) | [LinkedIn](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon) | navigateur | LinkedIn (article) · 2023-06-18 · setters à la commission |
+| cl061 | « You'll annoy more people than you win clients. » | Jordan (S2) | [LinkedIn](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon) | navigateur | LinkedIn (article) · 2023-06-18 |
+| rd27 | « I feel physically and emotionally drained from having to always try to fit in as much sales as possible while juggling my client and other business responsibilities. » | Jordan (S2) | [r/sales](https://www.reddit.com/r/sales/comments/9fbqfo/advice_for_hiring_commissionbased_appointment/) | script | patron d'agence, 2018 |
+| rd28 | « my business is steadily growing just enough that I can't feasibly keep up with everything on my own any more, yet growing too slowly for me to denote a committed sum to hires. » | Jordan (S2) | [r/sales](https://www.reddit.com/r/sales/comments/9fbqfo/advice_for_hiring_commissionbased_appointment/) | script |  |
+| rd31 | « Can handle a high volume of conversations without sounding robotic » | Jordan (S2) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1tddcy3/hiring_remote_dm_setter_appointment_setter_for_a/) | script | annonce d'une marque de coaching fitness qui recrute un setter |
+| rd34 | « I have 363K followers on Instagram, so a ton of leads coming in for you. » | Jordan (S2) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1wjk3zf/hiring_us_based_dm_appointment_setter/) | script | coach santé (mal de dos) qui recrute un setter |
+| rd35 | « hiring a setter means trusting someone else to have sales conversations on your behalf. » | Jordan (S2) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1wxv9hw/booked_calls_dont_tell_you_whether_a_setter_is/) | script | auteur : consultant, texte publié dans deux subreddits |
+| rd41 | « Roughly half of high-ticket setters wash out in their first month. » | Jordan (S2) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1urrxd2/hiring_ecom_info_appointment_setter/) | script | annonce d'une entreprise de coaching high-ticket ; c'est leur affirmation, pas une statistique sourcée |
+| rd72 | « to acquire biz clients today, I'd be willing to pay upwards of 1-2k/month if the person is good enough at closing. » | Jordan (S2) | [r/Entrepreneur](https://www.reddit.com/r/Entrepreneur/comments/bpex3s/how_much_would_you_pay_for_someone_to_manage_your/ensb4ns/) | script | ce que vaut un setter à leurs yeux (2019) |
+| cl052 | « Copy-paste the messages I provide » | Sam (S3) | [Freelancer](https://www.freelancer.com/projects/social-media-management/social-media-appointment-setter-needed) | navigateur | Freelancer.com (offre d'emploi) · agency · ≈2026-06 · setting sortant scripté |
+| cl053 | « Commission-only — you get paid for every qualified appointment that shows up. No cap. » | Sam (S3) | [Freelancer](https://www.freelancer.in/projects/appointment-setting/instagram-linkedin-appointment-setting) | navigateur | Freelancer.in (offre d'emploi) · agency · ≈2026-08 |
+| cl054 | « Our clients rely on skilled DM setters to help them engage with these leads effectively. » | Sam (S3) | [Freelancer](https://www.freelancer.com/projects/telemarketing/high-ticket-appointment-setter-38993486) | navigateur | Freelancer.com (offre d'emploi) · agency · ≈2025 · agence qui fait des campagnes de shoutout pour des coachs « 7-figure » |
+
+### T6 · Le relais vers un humain (5)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl030 | « I run a one-person business. When a conversation goes sideways, I am often driving or away from a screen. There is no support team to tag in. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/let-an-external-ai-agent-take-over-a-live-conversation-via-external-request-ai-handoff-not-human-handoff-10764) | script | 2026-08-28 |
+| mc14 | « so the bot doesn't interfere with the human conversation. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/how-to-pause-automations-when-human-agents-reply-via-instagram-app-6078) | script |  |
+| mc15 | « I can't find an effective way to label the chats of people who NEED a human attention » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/need-help-with-ai-ending-of-funnel-how-can-i-label-people-who-needs-human-attention-to-be-easily-acesible-4669) | script |  |
+| mc21 | « the ManyChat automation continues sending automated messages afterwards. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/manychat-tutorials-33/human-interaction-in-conversation-after-automated-responses-5879) | script |  |
+| mc41 | « But ManyChat fires the bot on top of the manual message, which confuses the prospect. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/how-to-prevent-automation-from-triggering-when-the-page-admin-sends-a-manual-dm-10319) | script |  |
+
+### T7 · Qualifier, les mauvais appels (22)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| rd49 | « Most DMs are from teens who WANT help but literally can't pay » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1oyguq8/online_coach_here_how_do_you_stop_attracting/) | script | coach fitness en ligne |
+| rd50 | « Cool...except, they literally do NOT want to pay. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1va39b1/pricing_and_lead_gen_frustrations/) | script | coach santé des femmes |
+| cl028 | « I get tons of messages and lots of them just click on the ad without providing any data or really needing something…. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/qualifying-leads-8146) | script | 2025-12-16 · menuiserie |
+| mc31 | « many leads aren't qualified due to the high price point. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/qualifying-leads-7699) | script | vendeur d'un produit à 18 000 €, hors coaching |
+| mc32 | « What have you found works best for filtering out unqualified leads without losing good prospects? » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/qualifying-leads-7699) | script | même auteur que mc31 |
+| rd33 | « Following up with leads to reduce no-shows » | Jordan (S2) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1tddcy3/hiring_remote_dm_setter_appointment_setter_for_a/) | script |  |
+| rd43 | « This week I had 6 consult calls booked. None of them turned into a real client. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzbwsv/bad_pt_consult_calls_how_do_you_filter_people/) | script | coach sportif |
+| rd44 | « Then at the very end I realized their budget wasn't even close to realistic. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzbwsv/bad_pt_consult_calls_how_do_you_filter_people/) | script |  |
+| rd45 | « it hit me that I'm probably not filtering hard enough before the call. And these calls take real time and energy. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzbwsv/bad_pt_consult_calls_how_do_you_filter_people/) | script |  |
+| rd73 | « I can't count the number of times I've overlooked a key qualifying question. » | Jordan (S2) | [r/sales](https://www.reddit.com/r/sales/comments/1dozipr/has_anyone_here_tried_ai_appointment_setters/lco277n/) | script |  |
+| rd75 | « i used to do the same thing, hopping on calls with anyone who booked, and it burned me out. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzbwsv/bad_pt_consult_calls_how_do_you_filter_people/o69kfc6/) | script | coach ; le commentaire cite ensuite un outil, à ne pas reprendre |
+| rd76 | « The ones who screen out because of budget will be sent a link to join my cheap $30/ month community, and I won't bother speaking with them. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzbwsv/bad_pt_consult_calls_how_do_you_filter_people/o4asa7g/) | script | la même logique que le setter : une réponse utile pour ceux qui ne sont pas prêts |
+| rd77 | « You may end up with less calls booked, but you know the ones that do book are serious about your offer. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzbwsv/bad_pt_consult_calls_how_do_you_filter_people/o4i3cy2/) | script |  |
+| rd89 | « Turns out more inquiries just means more time spent on people who were never serious to begin with. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qvfxhd/online_inquiries_are_up_but_so_is_my_wasted_time/) | script | coach hybride, 8 mois : le portrait de Jordan |
+| rd90 | « Last month I probably had 15+ conversations over DM and email. Ended up with 2 actual clients. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qvfxhd/online_inquiries_are_up_but_so_is_my_wasted_time/) | script |  |
+| rd92 | « it's getting exhausting doing what feels like free consulting for people who have no intention of signing up. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qvfxhd/online_inquiries_are_up_but_so_is_my_wasted_time/) | script |  |
+| rd94 | « Do you guys qualify people somehow before hopping on a call or going deep into their questions? » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qvfxhd/online_inquiries_are_up_but_so_is_my_wasted_time/) | script |  |
+| rd95 | « the MOST ANNOYING part of being a trainer for me is the sheer amount flakes I deal with. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1bvrva2/whats_the_most_annoying_aspect_about_being_an/) | script |  |
+| rd96 | « I wonder if they're even going to show on the time we just agreed on » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1bvrva2/whats_the_most_annoying_aspect_about_being_an/) | script | no-show |
+| cl026 | « Leads were coming in. The team was responding. But the inbox doesn't discriminate. The one who's ready to buy waits in line just like the one who's just asking for the price. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/more-ads-more-staff-growing-audience-and-still-missing-targets-here-s-what-we-found-10112) | script | agency · 2026-05-07 · voix d'agence (post promo) |
+| cl027 | « The best leads waited like everyone else. And while they waited, they went cold. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/more-ads-more-staff-growing-audience-and-still-missing-targets-here-s-what-we-found-10112) | script | agency · 2026-05-07 · voix d'agence (post promo) |
+| mc29 | « Is the AI Step "smart enough" to skip questions if the first answer contains already all answers? » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/using-ai-step-to-qualify-sales-leads-9201) | script |  |
+
+### T8 · Les agences et leurs clients (10)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| mc04 | « For most clients, we're following up 2-3 times over the 24 hours window » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/be-honest-what-actually-happens-to-your-leads-after-the-first-reply-10594?postid=31233#post31233) | script |  |
+| mc12 | « This would help us ensure that no lead or inquiry gets left without a proper response, especially in high-volume inboxes. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/filter-for-unreplied-messages-by-humans-unified-inbox-across-accounts-5675) | script |  |
+| mc13 | « Our agency currently manages chat responses for over 20 businesses » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/filter-for-unreplied-messages-by-humans-unified-inbox-across-accounts-5675) | script |  |
+| mc26 | « His biggest problem is the number of potential client replies he receives both on his WhatsApp & Facebook page. He cannot keep up with them. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/highly-confused-about-manychat-ai-8022?postid=24642#post24642) | script |  |
+| mc27 | « so we can reduce & filter the replies and maybe filter through to him only when really necessary. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/highly-confused-about-manychat-ai-8022?postid=24642#post24642) | script |  |
+| mc34 | « The thing that took the longest to figure out was getting the AI response to feel natural » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/finally-got-it-working-ai-setter-running-live-inside-manychat-demo-9400) | script | auteur : constructeur d'un setter IA maison |
+| mc38 | « My clients are doctors who work all day and want absolutely nothing to do with technology. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-clients-want-to-leave-everything-in-my-hands-and-not-touch-anything-10203) | script |  |
+| mc39 | « They generally want to pay and have everything done for them. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-clients-want-to-leave-everything-in-my-hands-and-not-touch-anything-10203) | script |  |
+| mc45 | « identify where customers are progressing or dropping off » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/ideas/export-conversations-for-ai-powered-funnel-analysis-10867) | script |  |
+| rd25 | « IG account users are not technical people that's why they cannot set up manychat flows » | Sam (S3) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1mqq3ik/is_there_any_ig_commentdm_automation_tool_to/) | script |  |
+
+### T9 · Peurs et objections : sonner comme un bot, se faire bannir (45)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl085 | « Now it's working very well, but now I'm worried if I will get banned. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/how-to-avoid-getting-banned-10323) | script | creator · 2026-06-07 · artiste, 75 000 abonnés en 26 jours · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl086 | « The conversions are working very well to get streams on my Spotify, but if there's a risk of getting banned, then I'm going to stop using it. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/how-to-avoid-getting-banned-10323) | script | creator · 2026-06-07 · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl087 | « seriously asking and need an immediate answer. (…) Question: If thousands of people DM at the same time, is it safe for my Instagram account? » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/if-thousands-of-people-dm-at-the-same-time-is-it-safe-for-my-instagram-account-2530) | script | coach · 2024-07-16 · webinar de plus de 1 500 participants, bonus envoyé par keyword · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl090 | « Meta say: 'We restricted your business,' but the worst part is that within the reasons for the restriction, it says: 'Examples of things we do not allow: Automations that mimic human activity. Automations that diminish authentic human activity.' » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/help-needed-meta-account-restriction-after-connecting-manychat-3901) | script | 2024-10-24 · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl091 | « Hi! We have had issues in the past with account restrictions when we DM more than 100 people the same DM. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/dm-restrictions-1886) | script | 2024-05-29 · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl092 | « If ManyChat's automation is triggering Instagram's fraud detection and resulting in permanent bans, then ManyChat has a responsibility to warn its users » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | creator · 2026-05-30 · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl093 | « Why is this not clearly disclosed before connecting Instagram and launching automations? » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | 2026-05-30 · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl095 | « Instant AI replies break immersion and make interactions feel obviously automated. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/ai-step-delay-between-messages-2786) | script | 2024-08-02 |
+| cl096 | « I am trying to keep my flow of conversation very organic and less bot-like. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/how-to-start-new-sequence-when-you-get-no-response-from-the-user-7841) | script | 2025-11-11 |
+| cl097 | « I specifically want contextually relevant, natural-feeling responses—not just canned or templated replies. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/urgent-how-do-i-set-up-contextually-relevant-ai-replies-to-comments-ig-reels-tiktok-5486) | script | creator · 2025-03-19 |
+| cl098 | « The communication should feel warm, supportive, and human — not cold or corporate sales. » | Maya (S1) | [Freelancer](https://www.freelancer.in/projects/social-media-management/instagram-assistant-for-women) | navigateur | Freelancer.in (offre d'emploi) · ≈2026-08 · studio photo qui recrute une assistante pour ses DMs |
+| cl101 | « The automation flows are smooth and don't feel bot-like, which was my main concern » | Maya (S1) | [Trustpilot](https://au.trustpilot.com/review/inflowave.io) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2025-12-10 |
+| cl105 | « Why do these people matter if you're auto replying to them? » | Maya (S1) | [r/artificial](https://www.reddit.com/r/artificial/comments/1soyg9p/i_kept_getting_ghosted_or_stuck_in_dry/) | script | Reddit r/artificial (lu via une archive) |
+| cl106 | « I'm so frustrated it affected my business,I tried to get support and all I get are bots no human and the bot said the issue needs a human. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/automation-stopped-i-m-losing-leads-9511) | script | 2026-04-11 · le rejet des bots vécu côté client |
+| cl107 | « Zero support from a useless AI bot. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 1★) · 2026-05-01 |
+| cl108 | « I am not good with AI at all » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/setsmart.io) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2026-07-05 · même avis : "I might have given up setting it up if I didnt have his help" |
+| cl109 | « Takes a lot of training, but works well after. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/setsmart.io) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2026-06-21 |
+| cl110 | « so one post that drives a wave of DMs can push you over before you notice. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=2&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 1★) · 2026-06-29 · facturation au contact · facturation Manychat : à ne jamais utiliser |
+| cl111 | « You never know how much you will pay. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 2★) · 2026-07-08 · facturation Manychat : à ne jamais utiliser |
+| rd26 | « I want just a basic text only message so it feels more personal and less automated. » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1q2du2e/manychat_keeps_giving_me_an_error_when_trying_to/) | script |  |
+| rd38 | « Looking for ways to respond fater without sounding robotic or spammy. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/) | script |  |
+| rd52 | « No my brand is human focused. I don't use automation tools for that period. » | Maya (S1) | [r/Coaching](https://www.reddit.com/r/Coaching/comments/1liapfq/whats_your_most_timewasting_task_that_you_wish_ai/mzgwrb9/) | script | coach |
+| rd57 | « The fastest way to lose a lead is for the first interaction they have with you be an automated message (video included or not). » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzkk63/how_i_automated_my_lead_followup_saved_5_hours/o4bo5oj/) | script | coach sportif ; objection n°1 à traiter |
+| rd59 | « I always say things that makes me seem like a human. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzkk63/how_i_automated_my_lead_followup_saved_5_hours/o4bgcvn/) | script |  |
+| rd60 | « The first impression is the most important. If they know it's a real person it makes a huge difference. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzkk63/how_i_automated_my_lead_followup_saved_5_hours/o4bierx/) | script | coach sportif qui automatise tout le reste (facturation, rappels) |
+| rd62 | « if the first thing I get is an automated message, it's just a big turn off. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzkk63/how_i_automated_my_lead_followup_saved_5_hours/o4buy2q/) | script |  |
+| rd64 | « Most important part for me is human connection, I dont want to lose it. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/olz36u7/) | script |  |
+| rd70 | « I want authenticity, not complete automation. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/olz9a5n/) | script |  |
+| rd86 | « Trying to contact them comes off desperate. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2zb2i9/) | script | la peur de relancer |
+| rd98 | « Also, I didn't want to be pushy, which is something I think a lot of coaches feel. » | Maya (S1) | [r/lifecoaching](https://www.reddit.com/r/lifecoaching/comments/1qvn94m/simple_and_probably_obvious_thing_i_realized_that/) | script | coach carrière ; contexte : relance de personnes qui ont interagi, garder seulement l'émotion |
+| cl102 | « I was unsure whether I could trust Ai to replace my setters » | Jordan (S2) | [Trustpilot](https://au.trustpilot.com/review/weareampl.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · setter-team · 2026-05-05 · fragment |
+| cl103 | « I was apprehensive at first as wasn’t sure it would work as well as a human setter. » | Jordan (S2) | [Trustpilot](https://au.trustpilot.com/review/weareampl.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · setter-team · 2026-05-04 |
+| cl104 | « every single customer thinks he is texting with me (which I never thought would be possible with an ai setter). » | Jordan (S2) | [Trustpilot](https://ie.trustpilot.com/review/hirewagent.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · coach · 2026-08-28 · coach high-ticket · INTERDIT EN PUBLICATION (garde-fou : rien sur l'IA qu'on ne détecte pas) |
+| rd21 | « does it struggle when customers ask specific questions about your products? » | Jordan (S2) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1vp1dry/how_do_you_guys_keep_up_with_instagram_dms_when/) | script | boutique Instagram, hors coaching |
+| rd23 | « i dont want to spend any more money in vain, and to look like amater to my leads » | Jordan (S2) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1rznvnm/instagram_automation_for_selling_course/) | script |  |
+| rd51 | « it's going to be difficult to create meaningful relevant conversations via AI. Humans have a difficult enough time doing that. » | Jordan (S2) | [r/Coaching](https://www.reddit.com/r/Coaching/comments/1liapfq/whats_your_most_timewasting_task_that_you_wish_ai/mzdkbou/) | script | coach, réponse à un fil sur l'IA |
+| rd53 | « I'm still not gonna use it for my DM's. AI right now for DMs? No. » | Jordan (S2) | [r/Coaching](https://www.reddit.com/r/Coaching/comments/1liapfq/whats_your_most_timewasting_task_that_you_wish_ai/mzjdt5q/) | script | coach qui utilise l'IA ailleurs |
+| rd61 | « Or act like a human and reply at a normal time. My mature clients don't expect a reply at 2am. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzkk63/how_i_automated_my_lead_followup_saved_5_hours/o4bl91j/) | script | objection à la réponse 24 h/24 |
+| rd74 | « Stupidest thing i ever heard. » | Jordan (S2) | [r/sales](https://www.reddit.com/r/sales/comments/1dozipr/has_anyone_here_tried_ai_appointment_setters/lahbpo7/) | script | réaction brute à l'idée d'un setter IA |
+| tp03 | « Making us look completely unprofessional. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?stars=1&stars=2&stars=3) | navigateur | avis négatif sur Manychat (22 sept. 2026) : même réserve que tp01 |
+| cl089 | « I am really worried Instagram is going to flag the account for spam if the bot replies instantly to every single person. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/best-way-to-add-random-delays-to-ig-comment-triggers-to-avoid-action-blocks-9904) | script | agency · 2026-05-03 · peur du ban : ManySetter ne change ni les déclencheurs ni les règles de Meta, ne jamais rien promettre |
+| cl099 | « Don't over-automate the human moments. For a service business, the relationship is the product. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/what-advice-would-you-give-someone-building-a-service-business-using-manychat-10295) | script | agency · 2026-06-04 · voix d'agence |
+| mc20 | « I am trying to make it seem as natural as possible and a reply like that would look like it is AI » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/chatgpt-prompt-if-it-doesn-t-know-the-answer-4754?postid=13674#post13674) | script | ne jamais s'en servir pour promettre une IA indétectable |
+| mc43 | « Our customers know the messages are bot-created. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/pausing-automations-automatically-when-human-support-is-required-2254) | script |  |
+| rd71 | « a slight delay is usually better than a response that reads as obvious AI and kills the conversation before it starts. » | Sam (S3) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/omh6qd3/) | script |  |
+
+### T12 · Les émotions (14)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl130 | « This is quite maddening, I’ve just payed for a service that has jeopardised all my work. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/shadowbanned-after-using-manychat-on-instagram-597) | script | creator · 2024-03-02 · après 2 ans et demi de croissance organique |
+| cl131 | « I have been trying to diagnose my manychats flow for the past week and its driving me insane 😂. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/low-manychat-delivery-rate-10158) | script | creator · 2026-05-16 |
+| cl132 | « I dont know, im going crazy with this…. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/qualifying-leads-8146) | script | 2025-12-16 |
+| cl133 | « I am desperate for help. My Instagram automations have been completely down for 4 days » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/automations-completely-down-4-days-ticket-469692-no-response-please-help-9361) | script | creator · 2026-03-23 |
+| cl134 | « It has been over 24h / This is horrible » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/urgent-ig-automation-issue-has-anyone-faced-this-6176) | script | 2025-05-24 |
+| cl135 | « And it looks like we are not replying back to our audience. This is not good. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/banned-from-instagram-comments-251) | script | creator · 2024-02-13 · la culpabilité de laisser l'audience sans réponse |
+| cl136 | « I’m really looking for a solution for the last 3 months and compeletely fed up. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/banned-from-instagram-comments-251) | script | creator · 2024-02-13 |
+| cl137 | « I regret even running it for 12 hours :( » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/the-platform-added-170-new-contacts-but-only-20-messages-sent-this-filled-70-of-my-curret-plan-10674) | script | creator · 2026-08-06 |
+| cl138 | « I really want to like this app but it frustrates me beyond the stars! » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3) | script | Trustpilot (avis Manychat 2★) · 2026-07-06 |
+| cl139 | « My work progress is 100% stalled. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/manychat.com?page=3&stars=1&stars=2&stars=3) | navigateur | Trustpilot (avis Manychat 1★) · 2026-02-19 |
+| cl141 | « Advising me to disable my campaigns after my account has already been permanently banned is not helpful — there is nothing left to disable. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | creator · 2026-05-30 |
+| cl143 | « finally an automation system that work smoothly » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/instantdm.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2026-07-12 · soulagement |
+| cl142 | « For months, the topic of our team meetings was based around how to make the appointment setting process better » | Jordan (S2) | [Trustpilot](https://au.trustpilot.com/review/weareampl.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · setter-team · 2026-05-04 |
+| cl140 | « This mix-up is quite serious as it is impacting my reputation with the client and could lead to a loss of trust and business. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/urgent-issue-message-discrepancy-between-accounts-risking-client-relationship-5718) | script | agency · 2025-04-09 |
+
+### T10 · Ce qu'ils veulent (26)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl112 | « I want to build a robot SDR yesterday. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/need-ai-step-to-not-be-instant-human-like-delays-9474) | script | 2026-04-06 |
+| cl113 | « It would be awesome to be able to connect tools to the AI also, like google calendar, so it can automatically check for available time slots & offer those instead of someone having to click on the link to book a call. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/ai-step-delay-between-messages-2786) | script | 2024-08-02 |
+| cl114 | « Imagine just clicking “If no response → send this” right inside the AI Step. Easy. Powerful. Game-changing. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/ai-step-follow-ups-because-ghosted-chats-are-no-fun-7320) | script | 2025-09-17 |
+| cl115 | « Having this option would give us more control and prevent lost leads. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/add-no-response-option-in-ai-step-7335) | script | 2025-09-19 |
+| cl117 | « When I send a DM on instragram it would be nice if manychat could follow up 2 days after if the user doesnt reply. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/follow-up-when-i-personally-send-a-dm-2003) | script | 2024-06-06 |
+| cl118 | « In case he doesn’t know what to answer, he could just not answer and wait for a human to continue answering. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/let-chatgpt-answers-as-a-human-to-all-chats-with-a-given-information-3135) | script | 2024-08-27 · lieu touristique |
+| cl119 | « I want to automatically detect when human representative responds to the conversation. so that we know in our bot that this conversation is being taken care by human representative so that bot is not allowed to interrupt. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/bot-pass-conversaion-to-human-operator-962) | script | 2024-03-26 |
+| cl121 | « I want *it* to take the wheel, not a human. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/let-an-external-ai-agent-take-over-a-live-conversation-via-external-request-ai-handoff-not-human-handoff-10764) | script | 2026-08-28 · solopreneur |
+| cl124 | « not having to worry about responding to hundreds of DMs. » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/setsmart.io) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2026-04-30 · fragment |
+| cl127 | « I can actually have time to do the things I love in my business » | Maya (S1) | [Trustpilot](https://www.trustpilot.com/review/replyrush.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2026-05-27 |
+| mc28 | « People are all the time in their phones not emails » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/about-follow-ups-7741) | script |  |
+| rd02 | « Now it runs while I'm at a birth. » | Maya (S1) | [r/BecomeADoula](https://www.reddit.com/r/BecomeADoula/comments/1sxqtf4/my_honest_take_on_manychat_and_how_doulas_can_use/) | script |  |
+| rd11 | « He got some leads from messages he would've otherwise missed » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1ke1k53/threw_together_an_ig_commentdm_manychat_workflow/) | script |  |
+| rd39 | « Mainly looking to qualify leads and keep the conversation going untill a team member jumps in. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/) | script |  |
+| rd56 | « Any reliable tool that intelligently understands context and does automatic booking in the DMs? » | Maya (S1) | [r/Coaching](https://www.reddit.com/r/Coaching/comments/1o96ndk/dm_automation/) | script |  |
+| rd65 | « I just want the repetitive first step handled faster, things like collecting basic info, qualifying leads, and making sure nobody gets ignored while still keeping the actual interaction human. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/om3mj1m/) | script | le désir le plus proche de ManySetter |
+| rd67 | « I'm not a developer, and I don't want to spend hundreds on Claude/OpenAI credits and weeks building workflows just to realize I've created another thing to maintain. » | Maya (S1) | [r/smallbusiness](https://www.reddit.com/r/smallbusiness/comments/1tdyyn3/anyone_found_a_good_system_for_handling_instagram/om3mdop/) | script | ne pas reprendre les noms d'outils |
+| cl120 | « When people chatting with AI say the world “TALK TO / HUMAN / PERSONA”, [or it would be even better if AI recognized the situation] send that chat to a label to be more easibly found by our representatives. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/need-help-with-ai-ending-of-funnel-how-can-i-label-people-who-needs-human-attention-to-be-easily-acesible-4669) | script | setter-team · 2025-01-06 |
+| cl122 | « So when the personal starts working again, it will apear a summary about all the things that Manychat did when we were off. » | Jordan (S2) | [Communauté Manychat](https://community.manychat.com/ideas/summary-about-what-manychat-automatizations-did-when-the-personal-wasn-t-working-10859) | script | setter-team · 2026-09-18 |
+| cl123 | « Highly recommend if you want to buy back your time, tired of training a human setter, and want to qualify leads faster! » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/setsmart.io) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2026-09-30 |
+| cl125 | « I hands down will never go back to a human setter again after this. » | Jordan (S2) | [Trustpilot](https://www.trustpilot.com/review/setsmart.io) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · 2026-05-07 |
+| cl126 | « The best part is that I didn’t had do to hire an Setter… » | Jordan (S2) | [Trustpilot](https://ie.trustpilot.com/review/hirewagent.com) | navigateur | Trustpilot (avis 5★ d'un outil concurrent) · coach · 2026-08-28 |
+| rd36 | « You want more time for content and delivery, but you also need to know what's happening in your inbox. » | Jordan (S2) | [r/appointmentsetter](https://www.reddit.com/r/appointmentsetter/comments/1wxv9hw/booked_calls_dont_tell_you_whether_a_setter_is/) | script | même auteur que rd35 |
+| rd46 | « how more experienced coaches protect their time without scaring away good clients. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qzbwsv/bad_pt_consult_calls_how_do_you_filter_people/) | script |  |
+| cl128 | « Not because they got more leads. But because they stopped losing the ones they already had. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/creator-conversations-72/more-ads-more-staff-growing-audience-and-still-missing-targets-here-s-what-we-found-10112) | script | agency · 2026-05-07 · voix d'agence (post promo) |
+| cl129 | « One of my clients stopped answering her DMs months ago, and now she books more calls than when she did it by hand. » | Sam (S3) | [Communauté Manychat](https://community.manychat.com/manychat-tutorials-33/this-ai-booked-120k-in-appointments-in-1-month-10605) | script | agency · 2026-07-23 · voix d'agence (vidéo promo) · affirmation promotionnelle, jamais reprise comme un résultat |
+
+### T11 · Humour et autodérision (15)
+
+| # | Citation (mot pour mot) | Avatar | Source | Vérif. | Note |
+| --- | --- | --- | --- | --- | --- |
+| cl144 | « manychat’s AI is as accurate as a chimp. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/anyone-else-feels-like-the-ai-steps-in-manychat-are-pretty-much-useless-7800) | script | 2025-11-06 |
+| cl145 | « Need this. It’s way too fast at the moment Lol » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/ai-step-delay-between-messages-2786) | script | 2024-08-02 |
+| cl146 | « If I have a large amount of messages on a video how can I respond without Instagram thinking I'm a robot » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/instagram-thinking-i-m-a-robot-7954) | script | creator · 2025-11-23 |
+| cl147 | « AI Step Follow-Ups – Because Ghosted Chats Are No Fun! 👻 » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/ideas/ai-step-follow-ups-because-ghosted-chats-are-no-fun-7320) | script | 2025-09-17 · titre du fil. Même message : "Ever set up an awesome AI Step… only for the user to just vanish? 😅" |
+| cl149 | « Meta isn't responsible. / Manychat isn't responsible. / Nobody is responsible. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/my-instagram-account-banned-10265) | script | 2026-05-30 |
+| cl150 | « This is ridiculous, how can we not filter UNREAD messages (…) It was a good idea 30 years ago. » | Maya (S1) | [Communauté Manychat](https://community.manychat.com/general-q-a-43/see-only-unanswered-messages-3425) | script | 2024-09-17 |
+| rd07 | « What setups have actually worked for you beyond "link in bio & hope" ? » | Maya (S1) | [r/InstagramMarketing](https://www.reddit.com/r/InstagramMarketing/comments/1qk6lkr/how_do_you_handle_instagram_leads_when_you_cant/) | script |  |
+| rd55 | « Honestly? I wish AI could just do all of it » | Maya (S1) | [r/Coaching](https://www.reddit.com/r/Coaching/comments/1liapfq/whats_your_most_timewasting_task_that_you_wish_ai/mzgjxd5/) | script |  |
+| rd79 | « It's annoying as hell but what are you gonna do. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2p8kuh/) | script |  |
+| rd87 | « People will do literally anything to avoid confrontation. » | Maya (S1) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n30hipz/) | script |  |
+| rd99 | « I thought if they wanted a coach, they would find me. Ya, I was wrong. » | Maya (S1) | [r/lifecoaching](https://www.reddit.com/r/lifecoaching/comments/1qvn94m/simple_and_probably_obvious_thing_i_realized_that/) | script |  |
+| cl153 | « I’m getting good at picking out messages from appointment setters. » | Jordan (S2) | [LinkedIn](https://www.linkedin.com/pulse/appointment-setting-agenices-from-facebook-turning-linkedin-seddon) | navigateur | LinkedIn (commentaire d'article) · 2023 · côté prospect |
+| rd82 | « ones that don't, and ones that magically disappear like your situation lol. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1lxw26e/client_ghosted_after_saying_they_wanted_online/n2pzyfo/) | script | coach depuis 20 ans |
+| rd93 | « Had one guy ask me to break down his entire program, then told me he'll "think about it" and I never heard from him again. » | Jordan (S2) | [r/personaltraining](https://www.reddit.com/r/personaltraining/comments/1qvfxhd/online_inquiries_are_up_but_so_is_my_wasted_time/) | script |  |
+| cl152 | « Just started DM outreach, anyone know the daily limit. Could do with not losing the account 😅 » | Sam (S3) | [Skool](https://www.skool.com/the-agency-club-1175/insta-dm-limit) | navigateur | Skool (communauté d'agences) · agency · 2024-04-12 · prospection à froid : émotion seulement |
+
+## Index par avatar
+
+- **Maya (S1)** (141) : cl001, cl002, cl003, cl004, cl005, cl006, cl007, cl008, cl011, cl012, cl013, cl014, cl015, cl016, cl017, cl018, cl019, cl021, cl022, cl023, cl030, cl031, cl032, cl033, cl034, cl038, cl085, cl086, cl087, cl088, cl090, cl091, cl092, cl093, cl095, cl096, cl097, cl098, cl101, cl105, cl106, cl107, cl108, cl109, cl110, cl111, cl112, cl113, cl114, cl115, cl117, cl118, cl119, cl121, cl124, cl127, cl130, cl131, cl132, cl133, cl134, cl135, cl136, cl137, cl138, cl139, cl141, cl143, cl144, cl145, cl146, cl147, cl149, cl150, mc01, mc03, mc08, mc16, mc17, mc18, mc28, mc30, mc40, rd01, rd02, rd03, rd04, rd05, rd06, rd07, rd08, rd09, rd10, rd11, rd15, rd16, rd17, rd18, rd19, rd20, rd24, rd26, rd29, rd30, rd37, rd38, rd39, rd40, rd42, rd47, rd48, rd49, rd50, rd52, rd54, rd55, rd56, rd57, rd58, rd59, rd60, rd62, rd63, rd64, rd65, rd66, rd67, rd68, rd69, rd70, rd78, rd79, rd80, rd81, rd85, rd86, rd87, rd88, rd97, rd98, rd99
+- **Jordan (S2)** (96) : cl028, cl036, cl037, cl039, cl040, cl042, cl050, cl051, cl055, cl056, cl057, cl058, cl059, cl060, cl061, cl066, cl067, cl068, cl069, cl070, cl071, cl072, cl073, cl074, cl075, cl076, cl077, cl078, cl079, cl080, cl081, cl082, cl102, cl103, cl104, cl120, cl122, cl123, cl125, cl126, cl142, cl153, mc02, mc05, mc06, mc09, mc22, mc23, mc24, mc25, mc31, mc32, mc33, mc36, mc37, rd12, rd13, rd21, rd22, rd23, rd27, rd28, rd31, rd32, rd33, rd34, rd35, rd36, rd41, rd43, rd44, rd45, rd46, rd51, rd53, rd61, rd72, rd73, rd74, rd75, rd76, rd77, rd82, rd83, rd84, rd89, rd90, rd91, rd92, rd93, rd94, rd95, rd96, tp01, tp02, tp03
+- **Sam (S3)** (50) : cl025, cl026, cl027, cl035, cl043, cl044, cl045, cl046, cl047, cl049, cl052, cl053, cl054, cl083, cl084, cl089, cl099, cl128, cl129, cl140, cl152, mc04, mc07, mc10, mc11, mc12, mc13, mc14, mc15, mc19, mc20, mc21, mc26, mc27, mc29, mc34, mc35, mc38, mc39, mc41, mc42, mc43, mc44, mc45, mc46, mc47, mc48, rd14, rd25, rd71

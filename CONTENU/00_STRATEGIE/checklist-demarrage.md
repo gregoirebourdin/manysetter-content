@@ -9,7 +9,7 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 - [x] [C] Brief de marque tiré du site (offre, libellés, garde-fous)
 - [x] [C] Avatars d'écriture définis (AV1, AV2, AV3)
 - [x] [C] Charte visuelle et gabarit de carrousel (`06_GABARITS/slides.py`)
-- [x] [C] Première base de verbatims : 153 citations, importée dans `CLAUDE.md` (`docs/VERBATIMS/verbatims.md`)
+- [x] [C] Base de verbatims (`docs/VERBATIMS/verbatims.md`) : 287 citations vérifiées mot pour mot (script ou navigateur), fusion de la recherche cloud et de la recherche depuis l'appli de bureau, importée dans `CLAUDE.md`
 - [x] [C] Première liste de comptes à surveiller (`veille/comptes-suivis.md`)
 - [x] [F] Dépôt GitHub privé `manysetter-content` créé, tout y est poussé
 - [x] [F] Décision : un seul personnage IA de marque qui parle → [C] fiche d'Ivy et prompts (`02_AVATARS/`)
@@ -27,7 +27,7 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 
 ## Ensuite, côté Claude
 
-- [ ] [C] Enrichir les verbatims, surtout la voix des coachs : Reddit était bloqué depuis le cloud, 111 citations sur 153 viennent du forum Manychat Community. À compléter depuis l'appli de bureau (pages publiques, sans connexion). Les trous sont listés en fin de fichier
+- [x] [C] Enrichir les verbatims avec la voix des coachs depuis l'appli de bureau, jusqu'à ce que les motifs se répètent (10/10/2026). Trous restants listés dans le fichier
 - [ ] [C] Veille des 12 derniers posts de chaque compte suivi, analyse des reels au-dessus de 2 × la médiane
 - [ ] [C] Grille de départ : 9 à 12 carrousels, maquette réaliste du profil, page de revue
 - [ ] [C] Nom de profil avec mot-clé, bio, plan des 3 épingles
