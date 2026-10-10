@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.pyc
+# Rushes vidéo lourds : à garder hors Git (hébergés ailleurs)
+CONTENU/04_BANQUE_BROLL/**/*.mp4
+CONTENU/04_BANQUE_BROLL/**/*.mov
+.env

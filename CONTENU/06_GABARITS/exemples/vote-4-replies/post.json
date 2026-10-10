@@ -1,0 +1,51 @@
+{
+  "id": "exemple_CAR_S1_vote-4-replies",
+  "statut": "exemple de gabarit, pas un post validé",
+  "theme": "light",
+  "slides": [
+    {
+      "type": "hook",
+      "kicker": "For coaches who sell in the DMs",
+      "title": "Do you answer *how much is it?* and then never hear back?",
+      "sub": "Same lead, same question, 4 replies. Only one of them gets the call booked."
+    },
+    {
+      "type": "vote",
+      "title": "Which reply books the call?",
+      "incoming": "ok this sounds like exactly what I need, how much is it?",
+      "options": [
+        "It's $1,500! Here's my calendar, grab any slot that works for you.",
+        "Check the link in my bio, everything is explained there.",
+        "Great question! What made you reach out today?",
+        "It's $1,500, or 3 payments of $550. Before I send times, how many clients are you working with right now?"
+      ],
+      "footer": "1, 2, 3 or 4? Tell me in the comments."
+    },
+    {
+      "type": "list",
+      "title": "Why the other three lose the lead",
+      "items": [
+        "Reply 1 sends your calendar to anyone who asks, so you spend your week on calls with people who were never a fit.",
+        "Reply 2 sends a warm lead away from the chat, right when they were ready to talk.",
+        "Reply 3 dodges the price, and a dodge is the fastest way to sound like a script."
+      ]
+    },
+    {
+      "type": "dm",
+      "label": "Example conversation",
+      "contact": "Jess",
+      "messages": [
+        {"from": "lead", "text": "ok this sounds like exactly what I need, how much is it?"},
+        {"from": "setter", "text": "It's $1,500, or 3 payments of $550. Before I send times, how many clients are you working with right now?"},
+        {"from": "lead", "text": "4 right now, I want to get to 10 by spring"},
+        {"from": "setter", "text": "That's exactly who the program is for. I have Tuesday at 2:00 pm or Wednesday at 11:00 am, which one works better?"}
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "That last reply was written by an AI setter, inside a normal Manychat flow.",
+      "keyword": "SETTER",
+      "body": "Comment SETTER and it will answer you in your DMs, so you can judge it yourself."
+    }
+  ]
+}
