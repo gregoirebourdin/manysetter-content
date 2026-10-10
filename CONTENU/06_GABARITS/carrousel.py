@@ -480,7 +480,8 @@ def portrait(path: str, handle: str, width: int, ratio: float, c: dict) -> Image
 def photo_block(b: dict, c: dict, k: float) -> Image.Image:
     width = int(min(b.get("width", 560) * k ** 0.3, CW))
     ph = portrait(b["photo"], b.get("handle", ""), width, b.get("ratio", 1.1), c)
-    lab = label(b.get("handle", ""), c, size=int(22 * min(k, 1.4)), align="center") if b.get("handle") else None
+    # rien sous la photo par défaut (retour du fondateur du 10/10/2026) ; "show_handle": true pour l'afficher
+    lab = label(b.get("handle", ""), c, size=int(22 * min(k, 1.4)), align="center") if b.get("show_handle") and b.get("handle") else None
     hh = ph.height + (lab.height + 14 if lab else 0)
     out = Image.new("RGBA", (W, hh), (0, 0, 0, 0))
     out.alpha_composite(ph, ((W - ph.width) // 2, 0))
@@ -497,7 +498,8 @@ def versus(people: list[dict], c: dict, k: float) -> Image.Image:
     a = portrait(people[0]["photo"], people[0].get("handle", ""), width, ratio, c)
     b2 = portrait(people[1]["photo"], people[1].get("handle", ""), width, ratio, c)
     fl = int(22 * min(k, 1.4))
-    hh = a.height + int(fl * 2.6)
+    show = any(pp.get("show_handle") for pp in people)
+    hh = a.height + (int(fl * 2.6) if show else 0)
     out = Image.new("RGBA", (W, hh), (0, 0, 0, 0))
     out.alpha_composite(a, (MX, 0))
     out.alpha_composite(b2, (W - MX - width, 0))
@@ -505,7 +507,8 @@ def versus(people: list[dict], c: dict, k: float) -> Image.Image:
     d.text((W / 2, a.height / 2), "vs", font=font(SERIF_I, 120), fill=ORANGE, anchor="mm")
     f = font(SANS_SB, fl)
     for x, pp in ((MX + width / 2, people[0]), (W - MX - width / 2, people[1])):
-        d.text((x, a.height + fl * 1.3), pp.get("handle", "").upper(), font=f, fill=c["muted"], anchor="mm")
+        if pp.get("show_handle"):
+            d.text((x, a.height + fl * 1.3), pp.get("handle", "").upper(), font=f, fill=c["muted"], anchor="mm")
     return out
 
 

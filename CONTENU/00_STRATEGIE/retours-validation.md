@@ -88,3 +88,9 @@ Format d'une règle :
 - Règle : **la planche E est la référence fixe de Seth** (`02_AVATARS/seth/seth_planche.jpg`). Toutes les images et tous les plans de Seth partent d'elle, jointe à chaque génération ; on ne modifie plus son look sans nouvelle décision du fondateur.
 - Retour : « Tu pourrais me faire des expressions en plus ? Des visages agacés, qui veulent faire comprendre quelque chose à quelqu'un, qui revendiquent, choqué, estomaqué, incompréhension… Je veux vraiment qu'il ait des expressions super humaines. »
 - Règle : Seth a une **planche d'expressions** (`seth/seth_expressions.jpg`) en plus de sa planche de référence : agacé, qui insiste pour faire passer son point, qui revendique, choqué, estomaqué, incompréhension, incrédule, exaspéré… Des expressions **franches et très humaines** (les sourcils, la bouche, les rides, la tête qui penche), jamais neutres ni figées. Les plans vidéo de la banque s'en inspirent : chaque plan HOOK ou BODY porte une émotion lisible en une seconde.
+
+## 2026-10-10 · Photos des carrousels TOFU
+- Retour : « Pourquoi j'ai toujours pas d'image avec la tête d'Hormozi ? Je veux les images dans mes posts ! » puis « Récupère n'importe quelle photo sur Google, on s'en fout. »
+- Règle : Claude récupère lui-même **toute photo sous licence libre** (domaine public, CC0, Creative Commons qui autorise l'usage commercial) trouvée sur Wikimedia ou Openverse. Les photos protégées (Google, Instagram, presse) ne sont pas récupérées par Claude : le fondateur les dépose lui-même dans `05_BANQUE_IMAGES/personnalites/` s'il le décide, et Claude régénère aussitôt.
+- Retour : « Et ne mets pas la source en dessous de la photo, on s'en fout ! »
+- Règle : **rien sous les photos** (ni source, ni crédit, ni @). Quand une licence exige un crédit (CC BY, CC BY-SA), il va dans la **légende** du post, en dernière ligne.
