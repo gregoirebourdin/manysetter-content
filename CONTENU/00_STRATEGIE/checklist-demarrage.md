@@ -18,11 +18,12 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 
 - [ ] [F] Valider ou corriger le brief de marque et le guide expert
 - [ ] [F] Créer le compte Instagram professionnel et la Page Facebook de ManySetter
-- [ ] [F] Créer le compte Zernio, y connecter Instagram (option « Facebook ») et la Page, puis ajouter le connecteur `https://mcp.zernio.com/mcp` dans Claude
+- [x] [F] Zernio connecté à Claude (10/10/2026). Il ne voit qu'un compte Instagram, @gregoire.system (« Gregoire Bourdin | THE SYSTEM™ »), et aucune Page Facebook
+- [ ] [F] Décider : publie-t-on le contenu ManySetter sur @gregoire.system, ou sur un compte ManySetter dédié à créer et connecter à Zernio ?
 - [ ] [F] Décider : brancher ManySetter sur le compte Instagram de la marque (le CTA « Comment SETTER » devient une démo en direct)
 - [ ] [F] Valider Ivy (nom, look, voix), puis générer sa planche avec l'étape 1 de `02_AVATARS/prompts-ivy.md`
 - [ ] [F] Générer le pack de références et les 3 plans test (étapes 2 à 4), les déposer dans `02_AVATARS/ivy/`
-- [ ] [F] Décider : où héberger les images et vidéos publiées (adresse publique exigée par Instagram)
+- [ ] [F] Hébergement des médias : Zernio fournit un lien d'upload (`media_generate_upload_link`), à confirmer au premier post
 
 ## Ensuite, côté Claude
 

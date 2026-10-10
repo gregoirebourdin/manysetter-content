@@ -46,7 +46,7 @@ Ce dépôt est séparé du site. **Ne jamais écrire dans le dépôt `many-sette
 ## Arborescence
 
 - `docs/VERBATIMS/` : la base de verbatims.
-- `CONTENU/00_STRATEGIE/` : brief, guide expert, méthode source, retours de validation, carnet d'études, checklist, `veille/`, `revues/`, `rapports-hebdo/`, `suivi-stats.csv`.
+- `CONTENU/00_STRATEGIE/` : brief, guide expert, méthode source (texte intégral du fondateur), retours de validation, carnet d'études, checklist, prompt de passation (`passation.md`), `veille/`, `revues/`, `rapports-hebdo/`, `suivi-stats.csv`.
 - `CONTENU/02_AVATARS/` : personnages (fiches et planches).
 - `CONTENU/03_PRODUIT_REF/` : captures du produit et maquettes de conversation de référence.
 - `CONTENU/04_BANQUE_BROLL/<HOOK|BODY|CTA>/` : plans des reels.
