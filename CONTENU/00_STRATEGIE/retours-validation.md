@@ -94,3 +94,10 @@ Format d'une règle :
 - Règle : Claude récupère lui-même **toute photo sous licence libre** (domaine public, CC0, Creative Commons qui autorise l'usage commercial) trouvée sur Wikimedia ou Openverse. Les photos protégées (Google, Instagram, presse) ne sont pas récupérées par Claude : le fondateur les dépose lui-même dans `05_BANQUE_IMAGES/personnalites/` s'il le décide, et Claude régénère aussitôt.
 - Retour : « Et ne mets pas la source en dessous de la photo, on s'en fout ! »
 - Règle : **rien sous les photos** (ni source, ni crédit, ni @). Quand une licence exige un crédit (CC BY, CC BY-SA), il va dans la **légende** du post, en dernière ligne.
+
+## 2026-10-10 · Premier reel de Seth (exigences du fondateur)
+- Retour : « Commence par une seule vidéo et montre-moi ce que tu es capable de faire comme script et comme hook. Je vais être intransigeant : il va falloir montrer de l'émotion de ouf, que le fond derrière fasse super raw, un bureau dans un appart mais vraiment réaliste, que tu parles avec tes mains, que tu fasses plein de micro-gestes et d'interactions smooth pour parler. Je veux que ce soit archi réaliste, et que tu trouves un hook de ouf en fonction des pubs que tu as vues. »
+- Règle : les reels de Seth sont **parlés face caméra** (Veo, voix générée avec les lèvres), avec une **émotion forte et lisible** du début à la fin, **les mains qui parlent** et des micro-gestes continus (hochements, sourcils, épaules, mains qui comptent, désignent, se joignent), sans aucun moment figé.
+- Règle : le décor est un **vrai bureau d'appartement, brut et vécu** (bureau encombré, câbles, tasse, étagère, plante, fenêtre en lumière du jour, canapé derrière), filmé comme au téléphone posé, jamais un décor de studio propre.
+- Règle : le hook part de **ce que les publicités du marché martèlent** (`veille/2026-10-10_pubs-actives.md`) et le **contredit** de façon choquante.
+- Règle : on fabrique **une vidéo à la fois** tant que le fondateur n'a pas validé le rendu de Seth en mouvement.
