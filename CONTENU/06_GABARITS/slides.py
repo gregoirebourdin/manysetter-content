@@ -302,20 +302,48 @@ TOP_ALIGNED = {"notes"}
 MAX_SCALE = {"hook": 1.1, "notes": 1.0}
 
 
-def compose(s: dict, theme: str) -> Image.Image:
+def photo_background(path: Path) -> Image.Image:
+    """Photo recadrée en 1080 x 1350, assombrie vers le bas pour porter le texte."""
+    photo = Image.open(path).convert("RGB")
+    scale = max(W / photo.width, H / photo.height)
+    photo = photo.resize((round(photo.width * scale), round(photo.height * scale)), Image.LANCZOS)
+    left, top = (photo.width - W) // 2, (photo.height - H) // 2
+    photo = photo.crop((left, top, left + W, top + H)).convert("RGBA")
+    shade = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shade)
+    start = int(H * 0.38)
+    for y in range(start, H):
+        alpha = int(235 * ((y - start) / (H - start)) ** 0.8)
+        sd.line([(0, y), (W, y)], fill=(13, 12, 10, alpha))
+    return Image.alpha_composite(photo, shade)
+
+
+def compose(s: dict, theme: str, base_dir: Path) -> Image.Image:
+    photo = s.get("photo")
+    if photo:
+        theme = "dark"  # texte clair sur le dégradé sombre
     t = THEMES[theme]
     bg = INK[0] if s["type"] == "notes" else t["bg"]
     available = H - TOP - BOTTOM - (110 if s["type"] == "cta" else 0)
+    if photo:
+        available = int(H * 0.5) - BOTTOM // 2
     k = MAX_SCALE.get(s["type"], 1.3)
     while True:
-        canvas = Image.new("RGB", (W, 3 * H), bg)
+        # Toile transparente : le texte se pose aussi bien sur un aplat que sur une photo.
+        canvas = Image.new("RGBA", (W, 3 * H), (0, 0, 0, 0))
         used = RENDERERS[s["type"]](ImageDraw.Draw(canvas), t, s, k)
         if used <= available or k <= 0.55:
             break
         k = round(k - 0.04, 2)
-    img = Image.new("RGB", (W, H), bg)
-    top = TOP - 30 if s["type"] in TOP_ALIGNED else TOP + max(0, (available - used) // 2)
-    img.paste(canvas.crop((0, 0, W, used)), (0, top))
+    if photo:
+        img = photo_background(base_dir / photo)
+        top = H - BOTTOM - used
+    else:
+        img = Image.new("RGBA", (W, H), bg)
+        top = TOP - 30 if s["type"] in TOP_ALIGNED else TOP + max(0, (available - used) // 2)
+    block = canvas.crop((0, 0, W, used))
+    img.alpha_composite(block, (0, top))
+    img = img.convert("RGB")
     if s["type"] == "cta":
         signature(ImageDraw.Draw(img), t, s)
     return img
@@ -348,9 +376,9 @@ def render(post_path: Path) -> list[Path]:
     slides = post["slides"]
     paths = []
     for i, s in enumerate(slides, 1):
-        img = compose(s, s.get("theme", theme))
+        img = compose(s, s.get("theme", theme), out_dir)
         if s["type"] != "notes" and len(slides) > 1:
-            counter(ImageDraw.Draw(img), THEMES[s.get("theme", theme)], i, len(slides))
+            counter(ImageDraw.Draw(img), THEMES["dark" if s.get("photo") else s.get("theme", theme)], i, len(slides))
         p = out_dir / f"slide-{i:02d}.png"
         img.save(p, optimize=True)
         paths.append(p)

@@ -1,7 +1,7 @@
 # Avatars (personnages d'écriture)
 
 > Trois personnages, un par segment du brief. Ils servent d'abord **à écrire** : chaque post est pensé pour l'un d'eux, avec sa situation et ses mots.
-> **Leur visage n'est pas encore décidé.** Pour un produit qui promet des conversations qui ne sonnent pas « bot », montrer des personnes générées par IA crée l'objection qu'on combat. Options, à trancher par le fondateur : visage réel (fondateur, créateurs UGC) pour les reels, et ces avatars seulement en texte ou en illustration ; ou personnages IA avec l'étiquette « contenu IA ». Une fois choisie, chaque planche de référence ne change plus.
+> **Ils ne sont jamais montrés à l'image** (décision du 10/10/2026) : le seul visage de la marque est Ivy, le personnage IA de marque (`personnage-marque.md`). Maya, Jordan et Sam servent à choisir pour qui on écrit, avec quelle situation et quels mots.
 > Les verbatims de chaque avatar sont dans `docs/VERBATIMS/verbatims.md`.
 
 ## AV1 · Maya, la coach qui répond à tout elle-même (segment S1)
