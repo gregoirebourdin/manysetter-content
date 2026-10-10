@@ -32,7 +32,7 @@ Où on en est :
 
 À faire, une chose à la fois et dans cet ordre :
 1. ~~Les verbatims~~ : faits (10/10/2026).
-2. **La veille** :
+2. ~~La veille~~ : faite le 10/10/2026 (`veille/2026-10-10_veille.md`). La refaire chaque lundi avec `veille/outils/`. Pour mémoire :
    - relever les 12 derniers posts de chaque compte suivi et calculer la médiane de chaque compte ;
    - analyser image par image, avec la grille de la méthode, les reels qui font au moins 2 fois la médiane de leur compte ;
    - écrire les notes dans `veille/` et dans `carnet-etudes.md`.

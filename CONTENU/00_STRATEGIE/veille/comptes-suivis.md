@@ -9,6 +9,13 @@ Version 1 du 10/10/2026. Recherche faite avec des outils gratuits uniquement (re
 - « Vérifié » = page de post Instagram lue directement le 10/10/2026 (voir la dernière section).
 - Les formats marqués « à confirmer » n'ont pas pu être observés depuis cet environnement : ils seront relevés lors de la première veille dans le navigateur.
 
+## Mise à jour du 10/10/2026 (première veille dans le navigateur)
+
+Abonnés lus sur les profils le 10/10/2026 : @manychat 663K · @setsmart_io 1 617 · @inro.social 1 769 · @gohighlevel 100K · @stanforcreators 254K · @brock11johnson 1M · @therealbrianmark 769K · @colethomasgordon 538K · @jeremyleeminer 1M · @jennakutcher 1M · @amyporterfield 480K · @charliejohnsonfitness 499K.
+
+- **@schoolofbots** et **@school_of_bots** : « Profile n'est pas disponible ». Handle à retrouver (le lien depuis le site de l'agence est la meilleure piste).
+- Relevé des 12 derniers posts, médianes et reels analysés : `2026-10-10_veille.md` et `2026-10-10_releve.csv`. Les tableaux ci-dessous gardent les chiffres de la recherche initiale.
+
 ---
 
 ## Groupe A : marques et outils de la niche

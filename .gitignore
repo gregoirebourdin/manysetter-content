@@ -5,3 +5,5 @@ __pycache__/
 CONTENU/04_BANQUE_BROLL/**/*.mp4
 CONTENU/04_BANQUE_BROLL/**/*.mov
 .env
+# Journaux du navigateur Playwright (veille)
+.playwright-mcp/

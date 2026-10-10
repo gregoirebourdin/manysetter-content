@@ -28,7 +28,7 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 ## Ensuite, côté Claude
 
 - [x] [C] Enrichir les verbatims avec la voix des coachs depuis l'appli de bureau, jusqu'à ce que les motifs se répètent (10/10/2026). Trous restants listés dans le fichier
-- [ ] [C] Veille des 12 derniers posts de chaque compte suivi, analyse des reels au-dessus de 2 × la médiane
+- [x] [C] Veille des 12 derniers posts de chaque compte suivi, analyse des reels au-dessus de 2 × la médiane (10/10/2026 : 12 comptes sur 13, 8 reels lus image par image, `veille/2026-10-10_veille.md`)
 - [ ] [C] Grille de départ : 9 à 12 carrousels, maquette réaliste du profil, page de revue
 - [ ] [C] Nom de profil avec mot-clé, bio, plan des 3 épingles
 - [ ] [C] Routines : stats chaque matin, analyse et production chaque lundi (une fois Zernio connecté)
