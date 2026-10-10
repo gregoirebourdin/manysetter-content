@@ -34,6 +34,6 @@ Les planches ne téléchargent rien : la page charge déjà la vidéo, on la lit
 3. Les télécharger avec `curl` dans un dossier de travail hors du dépôt, puis `.venv/bin/python CONTENU/06_GABARITS/reel.py --transcribe <fichier> --out <texte>`.
 4. Dans la note de veille, ne reprendre que de courts extraits : la transcription complète reste hors Git (droits d'auteur).
 
-## 4. Écrire les notes
+## 5. Écrire les notes
 
 Une note par veille : `AAAA-MM-JJ_veille.md` (méthode, médianes, reels lus avec la grille de la méthode, carrousels qui sortent du lot, apprentissages), et les apprentissages repris dans `../carnet-etudes.md`.

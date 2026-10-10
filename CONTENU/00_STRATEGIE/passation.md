@@ -41,11 +41,11 @@ Où on en est :
    - fabrique avec `slides.py` celles que je valide ;
    - ajoute une maquette du profil et une page de revue.
 4. ~~Le profil~~ : proposé le 10/10/2026 (`profil.md`), à valider : le nom de profil avec mot-clé, la bio et le plan des 3 épingles.
-5. **Ivy** :
+5. **Ivy** (10/10/2026 : 3 scripts et banque de 13 prompts prêts, `02_AVATARS/banque-plans-ivy.md` ; planche toujours attendue) :
    - quand je dépose sa planche dans `CONTENU/02_AVATARS/ivy/`, vérifie-la, puis guide-moi pour le pack de références et les 3 plans test ;
    - ensuite, écris 3 scripts de reels d'Ivy et lance la banque de plans HOOK, BODY et CTA.
-6. **`reel.py`** : le script qui découpe les silences de la voix off, place les sous-titres et cale les plans, en 1080 × 1920.
-7. **Les routines** : les stats chaque matin, l'analyse et la production chaque lundi. Seulement une fois le compte de publication décidé.
+6. ~~`reel.py`~~ fait le 10/10/2026 (3 maquettes montées). Pour mémoire, **`reel.py`** : le script qui découpe les silences de la voix off, place les sous-titres et cale les plans, en 1080 × 1920.
+7. **Les routines** (consignes prêtes dans `routines.md`) : les stats chaque matin, l'analyse et la production chaque lundi. Seulement une fois le compte de publication décidé.
 
 **Décisions qui m'appartiennent** (ne les prends jamais à ma place) :
 - valider Ivy : son nom, son look, sa voix ;

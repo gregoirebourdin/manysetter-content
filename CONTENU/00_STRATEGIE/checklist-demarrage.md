@@ -31,7 +31,7 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 - [x] [C] Veille des 12 derniers posts de chaque compte suivi, analyse des reels au-dessus de 2 × la médiane (10/10/2026 : 12 comptes sur 13, 8 reels lus image par image, `veille/2026-10-10_veille.md`)
 - [ ] [C] Grille de départ : 9 à 12 carrousels, maquette réaliste du profil, page de revue. 10/10/2026 : 12 idées proposées, **lot 1 de 3 carrousels fabriqué** (`07_PRET_A_PUBLIER/261010_*`), maquette du profil et page de revue publiées (https://claude.ai/artifact/Cq253dMMfmwdycRbwF5FSM). En attente des retours du fondateur avant le lot 2
 - [x] [C] Nom de profil avec mot-clé, bio, plan des 3 épingles (10/10/2026, `00_STRATEGIE/profil.md`, à valider ; appliqué par le fondateur une fois le compte choisi)
-- [ ] [C] Routines : stats chaque matin, analyse et production chaque lundi (une fois Zernio connecté)
+- [ ] [C] Routines : stats chaque matin, analyse et production chaque lundi. Consignes prêtes (`00_STRATEGIE/routines.md`), création dès que le compte de publication est choisi
 - [x] [C] Gabarit de reel `reel.py` (10/10/2026 : découpe des silences, faster-whisper, plans calés, sous-titres, 1080 × 1920 ; 3 maquettes montées)
 - [ ] [C] Banque de plans HOOK / BODY / CTA : 3 scripts et 13 prompts prêts (`02_AVATARS/banque-plans-ivy.md`), génération après validation de la planche d'Ivy
 - [ ] [F] Choisir la voix d'Ivy pour la voix off : Flow (gratuit, peut varier) ou voix de synthèse fixe (payant)
