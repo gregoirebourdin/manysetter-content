@@ -9,6 +9,7 @@ L'onglet Profil lit CONTENU/00_STRATEGIE/profil.json.
 La page est publiée comme Artifact avec la capacité `db` : les retours du fondateur
 sont enregistrés dans la collection `reviews` (un document par post), que Claude relit.
 Le script affiche la carte des fichiers à publier (chemin publié -> fichier local).
+REVUE_NOTE="..." ajoute une phrase en tête de page (ce qui a changé depuis la dernière revue).
 """
 
 from __future__ import annotations
@@ -16,6 +17,7 @@ from __future__ import annotations
 import base64
 import html
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -50,6 +52,8 @@ def build(out: Path, folders: list[Path]) -> dict:
                        "profile": profile}, ensure_ascii=False)
     page = TEMPLATE.replace("__FONT__", font64).replace("__DATA__", data.replace("</", "<\\/"))
     page = page.replace("__COUNT__", str(len(posts)))
+    note = os.environ.get("REVUE_NOTE", "")
+    page = page.replace("__NOTE__", f"<b>{html.escape(note)}</b> " if note else "")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page)
     files = {}
@@ -168,7 +172,7 @@ hr.sep { border: none; border-top: 1px solid var(--line); margin: 8px 0 0; }
   <header class="top">
     <div class="eyebrow">Revue du lot · <span id="count">__COUNT__</span> posts</div>
     <h1>Chaque post comme il apparaîtra sur Instagram</h1>
-    <p class="lede">Fais défiler les slides, lis la légende, puis coche OK ou À corriger. Tes retours sont enregistrés ici et je les relis directement ; chaque retour devient une règle avant correction. Rien n'est programmé sans ton accord, post par post.</p>
+    <p class="lede">__NOTE__Fais défiler les slides, lis la légende, puis coche OK ou À corriger. Tes retours sont enregistrés ici et je les relis directement ; chaque retour devient une règle avant correction. Rien n'est programmé sans ton accord, post par post.</p>
   </header>
 
   <div class="bar">

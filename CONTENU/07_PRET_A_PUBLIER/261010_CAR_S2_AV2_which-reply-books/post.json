@@ -1,0 +1,183 @@
+{
+  "id": "261010_CAR_S2_AV2_which-reply-books",
+  "statut": "à valider",
+  "format": "carrousel",
+  "style": "éditorial (compte de référence du fondateur)",
+  "segment": "S2",
+  "avatar": "AV2",
+  "role_grille": "vote chiffré (hypothèse H2)",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "verbatims": [
+    "rd13",
+    "rd91",
+    "rd14",
+    "mc01"
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "someone DMs you *\"how much?\"* which reply actually books the *call*?",
+          "size": 112
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/inbox-how-much/slide-01.png",
+          "width": 470
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*4 replies*, pick one"
+        },
+        {
+          "vote": {
+            "incoming": "ok this sounds like exactly what i need, how much is it?",
+            "options": [
+              "It's $1,500! Here's my calendar, grab any slot that works for you.",
+              "Check the link in my bio, everything is explained there.",
+              "Great question! What made you reach out today?",
+              "It's $1,500, or 3 payments of $550. Before I send times, how many clients are you working with right now?"
+            ]
+          }
+        },
+        {
+          "caption": "1, 2, 3 or 4? say it in the comments before you swipe.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "why *1, 2 and 3* lose the lead"
+        },
+        {
+          "label": "reply 1 · the calendar for everyone"
+        },
+        {
+          "text": "sounds efficient. then your week fills up with calls from people who were never a fit, and you're tired as h\\*ll by thursday."
+        },
+        {
+          "label": "reply 2 · the link in bio"
+        },
+        {
+          "text": "you just sent a warm lead out of the chat, right when they were ready to talk. a lot of them don't come back to ask twice."
+        },
+        {
+          "label": "reply 3 · the dodge"
+        },
+        {
+          "text": "no price, just a question. people can smell a script from a mile away, and a dodge smells exactly like one."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "chart": "quadrant",
+          "height": 820,
+          "x": "answers the price",
+          "y": "learns who they are",
+          "corners": [
+            {
+              "at": "tl",
+              "text": "sounds like a script"
+            },
+            {
+              "at": "br",
+              "text": "books anyone"
+            }
+          ],
+          "points": [
+            {
+              "x": 0.2,
+              "y": 0.18,
+              "label": "2 · link in bio"
+            },
+            {
+              "x": 0.24,
+              "y": 0.7,
+              "label": "3 · the dodge"
+            },
+            {
+              "x": 0.78,
+              "y": 0.24,
+              "label": "1 · calendar",
+              "anchor": "rm"
+            },
+            {
+              "x": 0.8,
+              "y": 0.82,
+              "label": "4 · price + one question",
+              "strong": true,
+              "anchor": "rm"
+            }
+          ]
+        },
+        {
+          "caption": "only one reply does both.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "answer the price. then ask *one* question",
+          "size": 108
+        },
+        {
+          "text": "the price shows you're honest. **the question keeps the conversation yours.**",
+          "align": "center",
+          "size": 34
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*reply 4*, in real life"
+        },
+        {
+          "text": "the lead answers the question, because it's about them. now you know if the call is worth booking, and they feel heard instead of sold to."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/price-then-question/slide-01.png",
+          "width": 540
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and that's where it *ends up*"
+        },
+        {
+          "text": "price answered, one question, two times offered. the call is booked in the DM, with the notes already written for you."
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/appel-reserve.png",
+          "width": 820
+        },
+        {
+          "caption": "example from our site, not a real client.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "which number did you *pick*?",
+          "size": 80
+        },
+        {
+          "text": "be honest, most of us have sent reply 1 at least once.\n\nreply 4 is the kind of answer our AI setter gives, from your offer and in your voice. it's ManySetter, an AI setter for Manychat: your flow sends the first message, the setter handles what comes after.\n\n**tell me your number in the comments. build your setter free, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   "id": "261010_CAR_S1_AV1_things-coaches-do",
   "statut": "à valider",
   "format": "carrousel",
+  "style": "éditorial (compte de référence du fondateur)",
   "segment": "S1",
   "avatar": "AV1",
   "role_grille": "contournements, autodérision (série « Things coaches do before… »)",
@@ -14,49 +15,160 @@
     "mc03",
     "rd17"
   ],
-  "theme": "light",
   "slides": [
     {
-      "type": "hook",
-      "kicker": "DM confessions",
-      "title": "Things every coach has done to *keep up* with their DMs",
-      "sub": "Be honest, which number is you?"
-    },
-    {
-      "type": "list",
-      "title": "Here's the list, no judgment",
-      "items": [
-        "I DM'd 40 people by hand after a good post, and felt a little insane about it.",
-        "I paid a friend $50 a month to answer my DMs.",
-        "I sent voice notes so I'd sound more human.",
-        "I kept a notes app full of replies to copy and paste.",
-        "I answered \"how much?\" from the couch at 11:47 pm.",
-        "I followed up once, then felt too desperate to do it again."
+      "blocks": [
+        {
+          "title": "things every coach has done to *keep up* with their DMs",
+          "size": 124
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/notes-dm-replies/slide-01.png",
+          "width": 440
+        }
       ]
     },
     {
-      "type": "notes",
-      "title": "DM replies (do not delete)",
-      "items": [
-        "Price: only send it if they ask twice",
-        "hey! did you still want me to send that over?",
-        "So sorry for the late reply!!",
-        "Calendar link (not for everyone)",
-        "Voice note: say their name first",
-        "If they say \"I'll think about it\", check in Thursday",
-        "Never send 3 messages in a row (again)"
+      "blocks": [
+        {
+          "heading": "*no judgment*, here's the list"
+        },
+        {
+          "list": [
+            "i DM'd 40 people by hand after a good post. my thumbs still haven't forgiven me.",
+            "i paid a friend $50 a month to answer my DMs.",
+            "i sent voice notes so i'd sound more human."
+          ]
+        }
       ]
     },
     {
-      "type": "text",
-      "title": "None of this is a *character flaw*.",
-      "body": "It's what happens when a post works and one person has to answer everyone. The leads are real, and so is your bedtime."
+      "blocks": [
+        {
+          "list": [
+            "i kept a notes app full of replies to copy and paste.",
+            "i answered \"how much?\" from the couch at 11:47 pm.",
+            "i followed up once, then felt too d\\*mn desperate to do it again."
+          ],
+          "start": 4
+        },
+        {
+          "caption": "be honest. which number is you?",
+          "align": "center"
+        }
+      ]
     },
     {
-      "type": "cta",
-      "title": "Which number are you? Tell me in the comments, no judgment here.",
-      "body": "ManySetter is an AI setter for Manychat. Your first message still goes out from Manychat, then the setter takes over when the lead replies: it waits until they finish typing, asks one question at a time, and only sends your calendar to the right leads.",
-      "button": "Build my setter free"
+      "blocks": [
+        {
+          "chart": "curve",
+          "height": 760,
+          "x": "days after a post that worked",
+          "y": "DMs waiting for an answer",
+          "ref": {
+            "y0": 0.3,
+            "y1": 0.3,
+            "label": "what one person can answer"
+          },
+          "points": [
+            [
+              0,
+              0.08
+            ],
+            [
+              0.06,
+              0.55
+            ],
+            [
+              0.12,
+              0.9
+            ],
+            [
+              0.2,
+              0.82
+            ],
+            [
+              0.32,
+              0.6
+            ],
+            [
+              0.5,
+              0.38
+            ],
+            [
+              0.7,
+              0.22
+            ],
+            [
+              1,
+              0.12
+            ]
+          ],
+          "note": {
+            "x": 0.32,
+            "y": 0.6,
+            "title": "the gap",
+            "sub": "where good leads quietly go cold"
+          },
+          "ticks": [
+            [
+              0,
+              "day 0"
+            ],
+            [
+              0.5,
+              "day 3"
+            ],
+            [
+              1,
+              "day 7"
+            ]
+          ],
+          "gap": true
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "none of this is a *character flaw*",
+          "size": 112
+        },
+        {
+          "text": "it's what happens when a post works and **one person has to answer everyone.** the leads are real, and so is your bedtime.",
+          "align": "center",
+          "size": 34
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so we built a *setter*"
+        },
+        {
+          "text": "ManySetter is an AI setter for Manychat. keep the flows you built: your flow still sends the first message. when the lead replies, the setter takes over, asks one question at a time, and only sends your calendar to the right people."
+        },
+        {
+          "collage": [
+            "CONTENU/03_PRODUIT_REF/site/manychat-seul.png",
+            "CONTENU/03_PRODUIT_REF/site/avec-le-setter.png"
+          ],
+          "width": 560
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "which number are *you*?"
+        },
+        {
+          "text": "tell me in the comments, no judgment here. if it's more than three, we should probably talk.\n\n**build your setter free, link in bio.**",
+          "align": "center"
+        }
+      ]
     }
   ]
 }

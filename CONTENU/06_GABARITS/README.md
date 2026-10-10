@@ -1,9 +1,29 @@
 # Gabarits de fabrication
 
-## `slides.py` : les carrousels (1080 × 1350)
+## `carrousel.py` : les carrousels du feed (1080 × 1350), style éditorial
+
+**C'est le gabarit des carrousels depuis le retour du fondateur du 10/10/2026** : copier la structure et le style du post de référence (instagram.com/p/Dcgl8i7CvDT), en gardant les couleurs ManySetter et le surlignage orange.
 
 ```bash
-python3 CONTENU/06_GABARITS/slides.py CONTENU/07_PRET_A_PUBLIER/<id>/post.json
+python3 CONTENU/06_GABARITS/carrousel.py CONTENU/07_PRET_A_PUBLIER/<id>/post.json
+```
+
+Écrit `slide-01.png`… et `apercu.png`. Refuse une fiche avec un tiret cadratin ou demi-cadratin, « ManyChat » ou « alternative », et une slide trop chargée (il faut alors raccourcir le texte ou réduire une image).
+
+Le style :
+- titres en Instrument Serif (licence OFL) étirée de 16 % en hauteur, en minuscules ; `*mots*` en italique avec le surligneur orange sous le bas des lettres (en orange sur fond noir) ;
+- texte courant en Inter, parlé, en minuscules, aligné à gauche ; `**gras**` pour la phrase-thèse ; gros mots masqués en écrivant `\*` (« h\*ll », « d\*mn ») ;
+- une idée = une slide de texte, souvent suivie d'une slide visuelle épurée : graphique (`quadrant`, `curve` avec `gap`, `compare`, `dots`), capture du produit (`03_PRODUIT_REF/site/`), écran DM (`05_BANQUE_IMAGES/ecrans/`), collage de deux images ;
+- une slide noire pour la phrase choc ; une « quick pause » qui présente ManySetter avec une capture ; ni numéro de slide ni logo ; CTA en texte à la dernière slide (« build your setter free, link in bio » tant que ManySetter n'est pas branché sur le compte).
+
+Une slide : `{"bg": "white" | "black", "blocks": [...]}`. Blocs : `title` (+ `size`), `heading`, `lead`, `text` (+ `align`), `label`, `caption`, `spacer`, `image` (+ `width`), `collage` (+ `width`), `chart`, `vote` (`incoming`, `options`), `list` (+ `start`). Détail dans l'en-tête du script ; exemples : les 3 carrousels du 10/10 dans `07_PRET_A_PUBLIER/`.
+
+## `slides.py` : écrans DM et ancien style
+
+Ancien gabarit des carrousels (refusé le 10/10/2026 pour le feed). Il sert encore à dessiner les **écrans** (conversation DM, boîte de réception, appli Notes) rangés dans `05_BANQUE_IMAGES/ecrans/<nom>/`, que `carrousel.py` et `reel.py` reprennent comme images.
+
+```bash
+python3 CONTENU/06_GABARITS/slides.py CONTENU/05_BANQUE_IMAGES/ecrans/<nom>/post.json
 ```
 
 Écrit `slide-01.png`… et `apercu.png` (planche pour la revue) à côté de la fiche. Le script refuse une fiche qui contient un tiret cadratin ou demi-cadratin, « ManyChat » ou le mot « alternative ». Il choisit lui-même la plus grande taille de texte qui tient, et centre le bloc (la vignette 3:4 du profil coupe les bords).

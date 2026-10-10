@@ -1,0 +1,314 @@
+{
+  "id": "261010_CAR_S1_AV1_if-i-were-a-coach",
+  "statut": "à valider",
+  "format": "carrousel",
+  "style": "éditorial (compte de référence du fondateur)",
+  "segment": "S1 et S2",
+  "avatar": "AV1",
+  "role_grille": "candidat à l'épingle n° 1 (présentation par la valeur)",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "verbatims": [
+    "rd13",
+    "rd91",
+    "rd43",
+    "rd22",
+    "mc07",
+    "rd17",
+    "mc01"
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "if i were a coach selling in my *DMs*, here's how i'd handle my *inbox*",
+          "size": 132
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*boring as h\\*ll*"
+        },
+        {
+          "text": "but it's where your money sits.\n\nyour Reel worked. the comments came in. and now the real job starts in your DMs, at 11:47 pm, from the couch.\n\nwhat i see in almost every coach's inbox:"
+        },
+        {
+          "lead": "the same 3 questions + replies that come too late = leads that quietly go cold."
+        },
+        {
+          "spacer": 6
+        },
+        {
+          "chart": "dots",
+          "rows": [
+            {
+              "label": "people who commented",
+              "total": 34,
+              "filled": 0,
+              "caption": "they wanted the guide"
+            },
+            {
+              "label": "people who asked a real question",
+              "total": 34,
+              "filled": 9,
+              "caption": "these are the ones who were ready to talk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*first thing*"
+        },
+        {
+          "lead": "i'd stop sending the price and then going quiet."
+        },
+        {
+          "text": "someone writes \"how much is it?\". you send the price. then nothing, for two whole days.\n\nthe price isn't the problem. the silence after it is. so i'd send the price **and one question** in the same message."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/price-no-reply/slide-01.png",
+          "width": 500
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "chart": "curve",
+          "height": 760,
+          "x": "hours after \"how much?\"",
+          "y": "how warm the lead is",
+          "ref": {
+            "y0": 0.86,
+            "y1": 0.9,
+            "label": "price + one question, same message"
+          },
+          "points": [
+            [
+              0,
+              0.86
+            ],
+            [
+              0.04,
+              0.8
+            ],
+            [
+              0.09,
+              0.62
+            ],
+            [
+              0.15,
+              0.42
+            ],
+            [
+              0.22,
+              0.3
+            ],
+            [
+              0.32,
+              0.23
+            ],
+            [
+              0.5,
+              0.19
+            ],
+            [
+              0.75,
+              0.17
+            ],
+            [
+              1,
+              0.16
+            ]
+          ],
+          "note": {
+            "x": 0.15,
+            "y": 0.42,
+            "title": "the second message",
+            "sub": "never came, nobody follows up"
+          },
+          "ticks": [
+            [
+              0,
+              "0"
+            ],
+            [
+              0.5,
+              "24 h"
+            ],
+            [
+              1,
+              "48 h"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*second thing*"
+        },
+        {
+          "lead": "i'd answer the question, not the keyword."
+        },
+        {
+          "text": "a lead writes \"is this for beginners? i've been burned before\". a keyword flow sees \"beginners\" and sends the booking link.\n\nrespectfully, that's how you lose someone who was ready to talk."
+        },
+        {
+          "collage": [
+            "CONTENU/05_BANQUE_IMAGES/ecrans/flow-beginners/slide-01.png",
+            "CONTENU/05_BANQUE_IMAGES/ecrans/setter-beginners/slide-01.png"
+          ],
+          "width": 440
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "a lead rarely ghosts you over the *price*",
+          "size": 108
+        },
+        {
+          "text": "they ghost when the **second message** never gets an answer.",
+          "align": "center",
+          "size": 34
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*third thing*"
+        },
+        {
+          "lead": "i'd only send my calendar to the right people."
+        },
+        {
+          "text": "\"this week i had 6 consult calls booked. none of them turned into a real client.\" sound familiar?\n\nbefore the link, i'd check what they want and if the budget is real. the others get something useful instead. no call."
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/pourquoi-cette-reponse.png",
+          "width": 560
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "chart": "quadrant",
+          "height": 820,
+          "x": "ready to buy",
+          "y": "fit for your offer",
+          "corners": [
+            {
+              "at": "tl",
+              "text": "great fit, not now"
+            },
+            {
+              "at": "br",
+              "text": "ready, wrong fit"
+            }
+          ],
+          "points": [
+            {
+              "x": 0.18,
+              "y": 0.2,
+              "label": "price shoppers"
+            },
+            {
+              "x": 0.3,
+              "y": 0.62,
+              "label": "just curious"
+            },
+            {
+              "x": 0.7,
+              "y": 0.28,
+              "label": "can't afford it yet",
+              "anchor": "rm"
+            },
+            {
+              "x": 0.8,
+              "y": 0.83,
+              "label": "your calendar",
+              "strong": true,
+              "anchor": "rm"
+            }
+          ]
+        },
+        {
+          "caption": "only one corner gets the booking link. everyone else gets an answer.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*quick pause*"
+        },
+        {
+          "text": "you're probably wondering who's writing this.\n\nwe build ManySetter, an AI setter for Manychat. your first message still goes out from Manychat. when the lead replies, the setter takes over: it learns your offer, asks one question at a time, and hands the important conversations back to you."
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/setter-sources-offre.png",
+          "width": 720
+        },
+        {
+          "lead": "follow if you want the next ones.",
+          "size": 33
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so here's the *whole setup*"
+        },
+        {
+          "chart": "compare",
+          "groups": [
+            {
+              "label": "without a setter",
+              "rows": [
+                {
+                  "w": 0.34,
+                  "text": "\"how much?\""
+                },
+                {
+                  "w": 0.62,
+                  "text": "\"is this for beginners?\""
+                },
+                {
+                  "w": 0.46,
+                  "text": "\"i'll think about it\""
+                }
+              ],
+              "caption": "answered at 11:47 pm, two days later, if at all"
+            },
+            {
+              "label": "with one",
+              "rows": [
+                {
+                  "w": 0.22,
+                  "text": "\"tuesday at 2 or wednesday at 11?\"",
+                  "strong": true
+                }
+              ],
+              "caption": "one question at a time, calendar only for the right people"
+            }
+          ]
+        },
+        {
+          "text": "how many of the 3 do you already do? tell me in the comments.\n\nbuild your setter free, link in bio."
+        }
+      ]
+    }
+  ]
+}

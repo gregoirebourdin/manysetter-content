@@ -28,15 +28,15 @@ Arborescence et `CLAUDE.md` en place ; les verbatims sont importés dans `CLAUDE
 | 2. Verbatims | ✅ 287 citations vérifiées mot pour mot |
 | 3. Avatars et planches | ⚠️ 3 avatars d'écriture + Ivy décidée ; **aucune planche de référence générée** 🔒 |
 | 4. Veille | ✅ 12 comptes, médianes, 8 reels lus et transcrits |
-| 5. Grille de départ, 9 à 12 carrousels, maquette du profil | ⚠️ 3 carrousels faits, **style refusé** : à refaire dans le style du compte de référence. Maquette du profil ✅ |
+| 5. Grille de départ, 9 à 12 carrousels, maquette du profil | ✅ 3 carrousels **refaits le 10/10** dans le style du compte de référence (`carrousel.py`), page de revue republiée · 🔒 validation post par post. Maquette du profil ✅ |
 | 6. Bio et épingles | ✅ proposées · 🔒 choix A/B |
 | 7. Programmation et routines | ❌ attend Zernio et le compte 🔒 ; consignes des routines prêtes |
 | 8. Banque de plans vidéo | ❌ 13 prompts prêts, rien de généré 🔒 |
 
 ## 5. La trame qualité
 
-- ⚠️ **« Un hook avec du contexte : la photo de la scène et une phrase »** : mes carrousels n'avaient **aucune image**. À corriger : images d'illustration épurées (captures de conversations, du produit, puis photos d'Ivy), comme le compte de référence.
-- ⚠️ **« Maximiser les posts photo en piochant d'abord dans l'existant »** : je n'ai pas encore rassemblé l'existant de la marque (captures du produit sur le site, visuels LinkedIn, vidéo du fondateur « From 126 unanswered DMs to booked calls »). À faire : captures du produit dans `03_PRODUIT_REF/` ; demander au fondateur ses fichiers d'origine.
+- ✅ **« Un hook avec du contexte : la photo de la scène et une phrase »** : corrigé le 10/10. Chaque couverture a sa scène (boîte de réception « how much? », note « DM replies (do not delete) ») ou un titre de vécu, et chaque carrousel alterne slides de texte et visuels épurés (graphiques, écrans DM, captures du produit). Les photos d'Ivy viendront s'y ajouter une fois sa planche validée.
+- ⚠️ **« Maximiser les posts photo en piochant d'abord dans l'existant »** : les captures du produit sont rassemblées (`03_PRODUIT_REF/site/`, 5 maquettes du site en haute définition, déjà utilisées dans les 3 carrousels). Reste à demander au fondateur les fichiers d'origine des visuels LinkedIn et de la vidéo « From 126 unanswered DMs to booked calls ».
 - ✅ verbatims à la 1re personne, raison de commenter, produit en dernier, légendes pensées pour la recherche, 3 hashtags maximum.
 - ✅ pas de tiret cadratin ; ⚠️ phrases de 2 ou 3 mots : à revérifier slide par slide dans la nouvelle version.
 
@@ -80,8 +80,8 @@ Retours notés en règles avant correction, mémoire de Claude tenue à jour, ri
 
 ## Ce que je fais maintenant, dans l'ordre
 
-1. Refaire les 3 carrousels dans le style du compte de référence (gabarit `carrousel.py`), avec des images épurées, et republier la page de revue.
-2. Rassembler les captures du produit dans `03_PRODUIT_REF/`.
+1. ~~Refaire les 3 carrousels dans le style du compte de référence et republier la page de revue~~ : fait le 10/10.
+2. ~~Rassembler les captures du produit dans `03_PRODUIT_REF/`~~ : fait le 10/10.
 3. Réécrire les 3 scripts de reels avec Ivy à l'image, et proposer 3 copies « méthode B » de reels de la veille, sans rien fabriquer avant validation.
 4. Regarder les publicités actives des concurrents dans la bibliothèque publicitaire Meta.
 
