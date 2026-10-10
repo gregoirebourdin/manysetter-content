@@ -44,20 +44,21 @@
     {
       "n": 2,
       "secondes": "8-16",
-      "ligne": "Every ad says replace your setter with AI. Let the AI take the 11 p.m. \"how much\", your human takes the calls. That's exactly why we built ManySetter.",
-      "jeu": "Walking selfie, then he stops abruptly and brings the phone closer; rolls his eyes on 'every ad', counts on his fingers on '11 p.m.', firm hand chop on 'takes the calls', then a confident half smile. Talks fast, no pauses, casual and natural.",
+      "ligne": "Look, every ad says fire your setter for AI. AI takes the 11 p.m. \"how much\", your human takes the calls. That's why we built ManySetter.",
+      "jeu": "[0-1 s] stops abruptly, quick breath, brings the phone closer. [1-3 s] eye roll on 'every ad', glance away then back. [3-6 s] counts on his fingers on '11 p.m.', firm hand chop on 'takes the calls'. [6-8 s] leans in, confident half smile.",
       "insert": {
         "image": "CONTENU/03_PRODUIT_REF/site/pourquoi-cette-reponse.png",
         "sur": "your human takes the calls",
         "duree_s": 1.0
       },
-      "prompt_veo": "Vertical 9:16 handheld selfie video, front camera held at arm's length. The man from the start frame walks down a dim apartment hallway, background soft and barely readable. He suddenly stops, brings the phone closer to his face and talks straight into the lens, fed up and urgent, high energy. He rolls his eyes on \"every ad\", counts on his fingers on \"11 p.m.\", does a firm hand chop on \"takes the calls\", then gives a confident half smile. Constant small natural movements, slight handheld shake, real skin texture. He says, fast and without pausing between sentences: \"Every ad says replace your setter with AI. Let the AI take the 11 p.m. 'how much', your human takes the calls. That's exactly why we built ManySetter.\" Voice: warm American male voice, mid-low pitch, projects his voice loud and punchy like a creator talking to his phone, quick confident delivery, slightly breathy from walking, one tiny natural stumble, General American accent. Audio: only his voice and quiet room tone, no music. No subtitles, no text on screen.",
+      "prompt_veo": "Vertical 9:16 iPhone front camera selfie, UGC style, handheld at arm's length with slight natural hand shake. The man from the start frame walks down his apartment hallway, soft daylight from a window behind the phone, a bright doorway far behind him, background soft and barely readable. Natural skin with visible pores, a slight shine on his forehead, light freckles.\n[00:00-00:01] He stops abruptly, takes a quick breath and brings the phone closer to his face, fed up and urgent.\n[00:01-00:03] He rolls his eyes and says: \"Look, every ad says fire your setter for AI.\" His eyes flick away for a split second, then back to the lens.\n[00:03-00:06] Counting on his fingers, then a firm hand chop: \"AI takes the 11 p.m. 'how much', your human takes the calls.\"\n[00:06-00:08] He leans in with a confident half smile: \"That's why we built ManySetter.\"\nVoice: warm American male voice, mid-low pitch, projects his voice like a creator talking to his phone, fast and casual, like a voice note to a friend, no long pauses.\nSFX: his sneakers squeak on the wooden floor as he stops.\nAmbient noise: quiet apartment room tone, faint city traffic through an open window.\nOne continuous take, no cuts. Clean frame with nothing written on screen.",
       "flow": {
         "modele": "Veo 3.1 Fast",
         "credits": 20,
-        "mode": "Frames, image de départ seth_depart_selfie-couloir.jpg",
-        "note": "pas de prénom dans le prompt (faux positif « prominent people » au plan 1)"
-      }
+        "mode": "Frames, même image de départ que le plan 1 (seth_depart_selfie-couloir.jpg) pour garder la lumière",
+        "note": "pas de prénom dans le prompt"
+      },
+      "mots": 26
     }
   ],
   "voix": "His voice: warm American male voice, mid-low pitch, relaxed but quick and confident delivery, dry playful humor, clear diction, natural pauses, no vocal fry, General American accent.",
@@ -66,11 +67,11 @@
     "jump_cuts": true,
     "zooms_secs": [
       "do not fire your human setter",
-      "your human takes the calls"
+      "your human takes the calls",
+      "we built ManySetter"
     ],
     "booms": [
       "fire",
-      "human",
       "calls",
       "ManySetter"
     ],

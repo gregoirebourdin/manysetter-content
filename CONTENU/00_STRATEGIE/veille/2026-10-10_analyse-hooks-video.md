@@ -26,6 +26,6 @@
 
 ## Le plan 2 proposé (Veo 3.1 Fast, 20 crédits)
 
-> « Every ad says replace your setter with AI. Let the AI take the 11 p.m. "how much", your human takes the calls. That's exactly why we built ManySetter. »
+> « Look, every ad says fire your setter for AI. AI takes the 11 p.m. "how much", your human takes the calls. That's why we built ManySetter. »
 
-28 mots en 8 s (3,5 mots/s). Seth parle **au nom de la marque** (« we built »), jamais comme le fondateur, et ne dit pas qu'il est une IA (étiquette « AI info » activée à la publication). Jeu : il s'arrête net, rapproche le téléphone, roule des yeux sur « every ad », compte sur ses doigts sur « 11 p.m. », geste net de la main sur « takes the calls ».
+26 mots en 8 s, découpés en tranches horodatées. Le prompt complet est dans `script.json` (plan 2) et suit `02_AVATARS/guide-prompt-veo.md`. Seth parle **au nom de la marque** (« we built »), jamais comme le fondateur, et ne dit pas qu'il est une IA (étiquette « AI info » activée à la publication).
