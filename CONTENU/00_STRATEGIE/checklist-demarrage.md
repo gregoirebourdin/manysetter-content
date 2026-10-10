@@ -25,7 +25,8 @@ Légende : **[F]** = le fondateur (compte, accès, décision de marque), **[C]**
 - [x] [F] Personnage : un homme, Seth, buzz cut platine et barbe foncée (10/10)
 - [x] [C] Planche de Seth générée dans Google Flow (10/10, Nano Banana 2.1, 2 variantes : `02_AVATARS/seth/seth_planche_a.jpg` et `_b.jpg`)
 - [x] [F] Planches A et B jugées trop banales (10/10) → [C] planches C et D régénérées : tee-shirt blanc, montre orange, tatouage avion en papier dans le cou, taches de rousseur, vrais détails du visage, carrure de coach fitness
-- [ ] [F] Choisir C ou D (elle devient la référence fixe), puis [C] pack de 3 références et 3 plans test dans Flow
+- [x] [F] Casque retiré (10/10) → [C] planche C retouchée dans Flow, sans casque : `seth_planche_e.jpg` (et `_f`, quasi identique)
+- [ ] [F] Valider la planche E (elle devient la référence fixe), puis [C] pack de 3 références et 3 plans test dans Flow
 - [ ] [F] Générer le pack de références et les 3 plans test (étapes 2 à 4), les déposer dans `02_AVATARS/seth/`
 - [ ] [F] Hébergement des médias : Zernio fournit un lien d'upload (`media_generate_upload_link`), à confirmer au premier post
 

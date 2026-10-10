@@ -73,7 +73,7 @@ Avant d'écrire, relire dans cet ordre : `retours-validation.md`, `docs/VERBATIM
 La leçon de la méthode tient encore plus ici : **une vraie personne filmée qui fait quelque chose** bat toute démo produit.
 
 - **Le visage : Seth, un seul personnage IA de marque** (décision du fondateur, 10/10/2026, fiche `02_AVATARS/personnage-marque.md`). Il est ouvertement l'AI setter de ManySetter en personne : c'est la seule façon honnête de faire parler une IA pour vendre une IA, et l'étiquette « AI info » d'Instagram, obligatoire, devient une partie de la blague.
-- **Méthode A (banque de plans + voix off)** : plans de Seth en trois familles, HOOK (son téléphone qui vibre sans arrêt, un sourcil levé face caméra), BODY (il lit, tape, montre un écran de conversation), CTA (il met son casque orange, désigne les commentaires). Les écrans de conversation viennent du vrai produit ou des maquettes `product-ui` du site, incrustés au montage.
+- **Méthode A (banque de plans + voix off)** : plans de Seth en trois familles, HOOK (son téléphone qui vibre sans arrêt, un sourcil levé face caméra), BODY (il lit, tape, montre un écran de conversation), CTA (il craque ses doigts et se met au travail, désigne les commentaires). Les écrans de conversation viennent du vrai produit ou des maquettes `product-ui` du site, incrustés au montage.
 - **Méthode B (copie plan par plan)** : seulement à partir de reels relevés dans la veille, en citant source et chiffres, proposés avant fabrication.
 - **Trois modèles de départ** : face caméra « Do you have a… ? », « 4 replies » chiffré, « Things coaches do before… ». Les séries de Seth sont détaillées dans sa fiche.
 

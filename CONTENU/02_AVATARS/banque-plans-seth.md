@@ -25,7 +25,7 @@ Seth walks into frame from the right and sits down at his desk in one quick, cas
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`HOOK/seth_HOOK_03_sourcil-leve.mp4`** (départ : `seth_depart_face-camera.png`)
@@ -35,7 +35,7 @@ Tight framing on Seth at his desk. He looks straight into the camera, slowly rai
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`HOOK/seth_HOOK_04_montre-telephone.mp4`** (départ : `seth_depart_face-camera.png`, ajouté le 10/10)
@@ -45,7 +45,7 @@ Seth holds his phone up next to his face, screen facing away from the camera, ta
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 ## BODY (le vécu, le mécanisme)
@@ -57,7 +57,7 @@ Seth, at his desk in the evening, types quickly on his phone with both thumbs, f
 
 Vertical 9:16, slight handheld feel, warm lamp light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_02_grimace.mp4`** (départ : `seth_depart_face-camera.png`)
@@ -67,7 +67,7 @@ Seth reads something on his phone, held low and facing away from the camera, and
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_03_explique-mains.mp4`** (départ : `seth_depart_face-camera.png`)
@@ -77,7 +77,7 @@ Seth looks at the camera and explains something with open, expressive hand gestu
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_04_compte-doigts.mp4`** (départ : `seth_depart_face-camera.png`)
@@ -87,7 +87,7 @@ Seth looks at the camera and counts on his fingers, one, then two, then three, w
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_05_hausse-epaules.mp4`** (départ : `seth_depart_face-camera.png`)
@@ -97,7 +97,7 @@ Seth shrugs with both shoulders and opens his palms toward the camera, a resigne
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_06_designe-cote.mp4`** (départ : `seth_depart_face-camera.png`)
@@ -107,17 +107,17 @@ Seth smiles at the camera, then gestures with an open hand toward the right side
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
-**`BODY/seth_BODY_07_ecoute-casque.mp4`** (départ : `seth_depart_3am.png`)
+**`BODY/seth_BODY_07_regarde-montre.mp4`** (départ : `seth_depart_3am.png`)
 
 ```
-Seth, headphones on his ears, presses one hand against an ear cup as if listening closely, nods slowly twice, then looks at his phone and smiles. Mouth closed.
+Seth glances down at his orange watch, raises his eyebrows as if surprised by the time, then looks at the camera with a small amused shrug and picks up his phone. Mouth closed.
 
 Vertical 9:16, slight handheld feel, warm lamp light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_08_leve-un-doigt.mp4`** (départ : `seth_depart_face-camera.png`, ajouté le 10/10)
@@ -127,7 +127,7 @@ Seth looks at the camera and raises one index finger, a calm "just one" gesture,
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_09_pose-telephone.mp4`** (départ : `seth_depart_face-camera.png`, ajouté le 10/10)
@@ -137,7 +137,7 @@ Seth puts his phone face down on the desk, leans back in his chair, lets out a b
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`BODY/seth_BODY_10_hoche-tete.mp4`** (départ : `seth_depart_face-camera.png`, ajouté le 10/10)
@@ -147,12 +147,12 @@ Seth nods slowly twice at the camera, lips pressed into an approving smile, eyeb
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 ## CTA (la fin, l'invitation)
 
-**`CTA/seth_CTA_01_met-le-casque.mp4`** (départ : `seth_depart_3am.png`). Déjà donné à l'étape 4 de `prompts-seth.md`, à reprendre tel quel.
+**`CTA/seth_CTA_01_craque-les-doigts.mp4`** (départ : `seth_depart_3am.png`). Déjà donné à l'étape 4 de `prompts-seth.md`, à reprendre tel quel.
 
 **`CTA/seth_CTA_02_designe-bas.mp4`** (départ : `seth_depart_face-camera.png`)
 
@@ -161,7 +161,7 @@ Seth looks at the camera with a playful smile and points down with both index fi
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 **`CTA/seth_CTA_03_clin-doeil.mp4`** (départ : `seth_depart_face-camera.png`)
@@ -171,7 +171,7 @@ Seth looks into the camera, gives a small, natural wink and a quick smile, then 
 
 Vertical 9:16, phone propped on a desk, static camera, natural light, realistic motion.
 No on-screen text, no subtitles, no captions, no music. Ambient room sound only, no dialogue.
-Keep Seth's face, hair, outfit and orange headphones exactly as in the starting frame for the whole clip.
+Keep Seth's face, platinum buzz cut, dark beard, neck tattoo, white t-shirt and orange watch exactly as in the starting frame for the whole clip.
 ```
 
 ---

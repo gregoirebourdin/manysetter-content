@@ -63,8 +63,8 @@ Seth est muette à l'image (plans Flow sans paroles), la voix off porte le reel,
 | 3 | 5.2 s | écran : `guide-real-question` | They reply with a real question, like this. |
 | 4 | 8.1 s | Seth : `seth_BODY_02_grimace` | And most funnels just stop there. |
 | 5 | 10.4 s | Seth : `seth_BODY_09_pose-telephone` | The question goes cold like leftover pizza. |
-| 6 | 13.0 s | Seth : `seth_CTA_01_met-le-casque` | That's where my shift starts. |
-| 7 | 14.8 s | Seth : `seth_BODY_07_ecoute-casque` | I wait until they finish typing. |
+| 6 | 13.0 s | Seth : `seth_CTA_01_craque-les-doigts` | That's where my shift starts. |
+| 7 | 14.8 s | Seth : `seth_BODY_07_regarde-montre` | I wait until they finish typing. |
 | 8 | 17.0 s | Seth : `seth_HOOK_03_sourcil-leve` | No interrupting. Unlike your uncle. |
 | 9 | 18.9 s | Seth : `seth_BODY_01_tape-vite` | Then I answer from your offer. |
 | 10 | 21.1 s | Seth : `seth_BODY_08_leve-un-doigt` | One question at a time. |
