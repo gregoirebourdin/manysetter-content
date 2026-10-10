@@ -169,12 +169,32 @@ def segments(words, total: float, gap: float = 0.25):
         for k, wd in enumerate(ws):
             cur.append(wd)
             rest = ws[k + 1:]
-            if rest and wd[2] - start >= 1.3 and len(rest) >= 2:
+            on_comma = wd[0][-1:] in ",;:" and wd[2] - start >= 0.6
+            comma_soon = any(x[0][-1:] in ",;:" for x in rest[:2])
+            if rest and len(rest) >= 2 and (on_comma or (wd[2] - start >= 1.3 and not comma_soon)):
                 cut = round((wd[2] + rest[0][1]) / 2, 3)
                 fine.append({"start": start, "end": cut, "words": cur, "suite": True})
                 start, cur = cut, []
         fine.append({"start": start, "end": sg["end"], "words": cur})
     return fine
+
+
+def align_to_script(words, script_words):
+    """Reprend l'orthographe du script mot à mot ; recolle deux mots entendus quand ils en forment un seul (« many setter » → « ManySetter »)."""
+    out, i = [], 0
+    for sw in script_words:
+        if i >= len(words):
+            return None
+        w, a, b = words[i]
+        if norm(w) == norm(sw):
+            out.append((sw, a, b))
+            i += 1
+        elif i + 1 < len(words) and norm(w) + norm(words[i + 1][0]) == norm(sw):
+            out.append((sw, a, words[i + 1][2]))
+            i += 2
+        else:
+            return None
+    return out if i == len(words) else None
 
 
 def contains_phrase(seg_words, phrases) -> bool:
@@ -218,8 +238,9 @@ def build(script_path: Path, model: str = "small.en") -> Path:
         sys.exit("Aucun mot reconnu dans la voix.")
     # l'orthographe vient du script (Whisper peut entendre « center » pour « setter ») quand le compte de mots colle
     script_words = " ".join(p.get("ligne_gardee") or p.get("ligne", "") for p in s["plans"] if p.get("video")).split()
-    if len(script_words) == len(words):
-        words = [(sw, a, b) for sw, (_, a, b) in zip(script_words, words)]
+    aligned = align_to_script(words, script_words)
+    if aligned:
+        words = aligned
     else:
         print(f"Attention : {len(words)} mots entendus pour {len(script_words)} dans le script, sous-titres tels qu'entendus.")
     segs = segments(words, total)
@@ -289,10 +310,11 @@ def build(script_path: Path, model: str = "small.en") -> Path:
     # 5. booms
     boom = work / "boom.wav"
     make_boom(boom)
-    boom_times = []
+    boom_times, used = [], set()
     for sg in segs:
         for w, a, _ in sg["words"]:
-            if norm(w) in booms:
+            if norm(w) in booms and norm(w) not in used:  # un boom par mot clé, à sa première occurrence
+                used.add(norm(w))
                 boom_times.append(sg["t0"] + max(0.0, a - sg["start"]))
     audio_last = "ac"
     if boom_times:

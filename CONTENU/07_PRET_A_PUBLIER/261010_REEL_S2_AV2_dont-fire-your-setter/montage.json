@@ -1,21 +1,40 @@
 {
-  "duree_s": 3.26,
+  "duree_s": 7.3,
   "segments": [
     {
       "de": 0.0,
-      "a": 1.58,
+      "a": 1.82,
       "zoom": 1.26,
-      "texte": "do not fire"
+      "texte": "Your setter books calls that never close?"
     },
     {
-      "de": 1.58,
-      "a": 3.26,
-      "zoom": 1.38,
-      "texte": "your human setter."
+      "de": 1.82,
+      "a": 2.74,
+      "zoom": 1.12,
+      "texte": "Don't fire him,"
+    },
+    {
+      "de": 2.74,
+      "a": 3.74,
+      "zoom": 1.26,
+      "texte": "he's drowning in flakes."
+    },
+    {
+      "de": 3.74,
+      "a": 5.54,
+      "zoom": 1.12,
+      "texte": "Let ManySetter answer the flakes,"
+    },
+    {
+      "de": 5.54,
+      "a": 7.3,
+      "zoom": 1.26,
+      "texte": "so he works the serious ones."
     }
   ],
   "booms_s": [
-    0.74,
-    2.08
+    1.44,
+    3.42,
+    4.14
   ]
 }

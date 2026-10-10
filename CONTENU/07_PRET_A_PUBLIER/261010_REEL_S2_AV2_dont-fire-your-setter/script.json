@@ -1,6 +1,6 @@
 {
   "id": "261010_REEL_S2_AV2_dont-fire-your-setter",
-  "statut": "hook v2 monté (plan 1 recoupé, voix -13 LUFS) ; plan 2 à générer après accord (Veo Fast, 20 crédits, 30 restants)",
+  "statut": "v3 : un seul plan, dans la voiture devant la salle (décor hors appartement demandé le 10/10) ; généré en Veo 3.1 Fast (20 crédits, 10 restants)",
   "format": "reel",
   "methode": "Seth parle face caméra (Veo 3.1, Google Flow), 3 plans de 8 s depuis la même image de départ",
   "segment": "S2",
@@ -27,74 +27,57 @@
   "hook": {
     "titre_fixe": "about to fire your *setter*?",
     "biais": [
-      "contre-pied total des publicités du marché (veille/2026-10-10_pubs-actives.md : « remplace ton setter humain »)",
-      "ironie (c'est une IA qui le dit)",
-      "pertinence pour soi (ton setter, tes appels)"
+      "contre-pied total des publicités du marché (« remplace ton setter humain »)",
+      "pertinence pour soi (une question sur ton setter et tes appels, dès 0,0 s)",
+      "douleur dite avec les mots de la cible (rd43, rd95)"
     ]
   },
-  "image_depart": "CONTENU/02_AVATARS/seth/seth_depart_selfie-couloir.jpg",
+  "image_depart": "CONTENU/02_AVATARS/seth/seth_depart_voiture-salle.jpg",
   "plans": [
     {
       "n": 1,
       "secondes": "0-8",
-      "ligne": "I'm literally an AI setter, and I'm begging you: do not fire your human setter.",
-      "jeu": "Walking selfie, frustrated and urgent, high energy: free hand pressed toward the lens pleading on 'begging you', shaking slightly, then a sharp index finger jab at the camera on 'do not fire', eyebrows high, jaw tense, intense eyes, constant micro-movements.",
-      "video": "CONTENU/07_PRET_A_PUBLIER/261010_REEL_S2_AV2_dont-fire-your-setter/plans/plan_1_hook.mp4",
-      "flow": {
-        "modele": "Veo 3.1 Fast",
-        "credits": 20,
-        "note": "1er essai refusé par Flow (« prominent people », faux positif, remboursé) ; 2e essai sans le prénom dans le prompt : OK"
-      },
-      "garder": [
-        3.55,
-        6.95
-      ],
-      "ligne_gardee": "do not fire your human setter."
-    },
-    {
-      "n": 2,
-      "secondes": "8-16",
-      "ligne": "I know, he books calls that never close, he's drowning in flakes. We built ManySetter to answer the flakes, so he works the serious ones.",
-      "jeu": "[0-1 s] stops abruptly, quick breath, brings the phone closer. [1-4 s] exaggerated sympathetic nod on 'I know', free hand thrown up in exasperation on 'never close', hand sweeping over his head on 'drowning'. [4-8 s] points at the lens on 'we built ManySetter', firm hand chop on 'serious ones', confident half smile.",
-      "prompt_veo": "Vertical 9:16 iPhone front camera selfie, UGC style, handheld at arm's length with slight natural hand shake. The man from the start frame walks down his apartment hallway, soft daylight from a window behind the phone, a bright doorway far behind him, background soft and barely readable. Natural skin with visible pores, a slight shine on his forehead, light freckles.\n[00:00-00:01] He stops abruptly, takes a quick breath and brings the phone closer to his face, exasperated.\n[00:01-00:04] He nods with exaggerated sympathy, throws his free hand up, then sweeps it over his head: \"I know, he books calls that never close, he's drowning in flakes.\" His eyes flick away for a split second, then back to the lens.\n[00:04-00:08] He points at the lens, then a firm hand chop, ending with a confident half smile: \"We built ManySetter to answer the flakes, so he works the serious ones.\"\nVoice: warm American male voice, mid-low pitch, projects his voice like a creator talking to his phone, fast and casual, like a voice note to a friend, no long pauses.\nSFX: his sneakers squeak on the wooden floor as he stops.\nAmbient noise: quiet apartment room tone, faint city traffic through an open window.\nOne continuous take, no cuts. Clean frame with nothing written on screen.",
-      "flow": {
-        "modele": "Veo 3.1 Fast",
-        "credits": 20,
-        "mode": "Frames, même image de départ que le plan 1 (seth_depart_selfie-couloir.jpg) pour garder la lumière",
-        "note": "pas de prénom dans le prompt"
-      },
+      "ligne": "Your setter books calls that never close? Don't fire him, he's drowning in flakes. Let ManySetter answer the flakes, so he works the serious ones.",
       "mots": 25,
       "verbatims_ligne": {
-        "he books calls that never close": [
+        "Your setter books calls that never close?": [
           "rd43",
           "rd35",
           "cl057"
         ],
-        "he's drowning in flakes": [
+        "Don't fire him, he's drowning in flakes.": [
           "rd95",
           "rd89",
           "rd04",
           "mc26"
         ],
-        "answer the flakes, so he works the serious ones": [
+        "Let ManySetter answer the flakes, so he works the serious ones.": [
           "rd75",
           "rd77",
           "rd76"
         ]
-      }
+      },
+      "jeu": "[0-2 s] already fed up, leans toward the lens, eyebrows raised, palm up. [2-5 s] shakes his head, sweeps his free hand over his head, glance at the side window then back. [5-8 s] points at the lens, firm hand chop, confident half smile.",
+      "video": "CONTENU/07_PRET_A_PUBLIER/261010_REEL_S2_AV2_dont-fire-your-setter/plans/plan_voiture.mp4",
+      "flow": {
+        "modele": "Veo 3.1 Fast",
+        "credits": 20,
+        "mode": "Frames, image de départ seth_depart_voiture-salle.jpg"
+      },
+      "prompt_veo": "Vertical 9:16 iPhone front camera selfie, UGC style, handheld at arm's length with slight natural hand shake. The man from the start frame sits in the driver's seat of his parked car outside the gym, overcast daylight through the windshield, the parking lot behind him soft and barely readable. Natural skin with visible pores, a slight shine on his forehead, light freckles. [00:00-00:02] Already fed up, he leans toward the lens, eyebrows raised, palm up, and says: \"Your setter books calls that never close?\" [00:02-00:05] He shakes his head, then sweeps his free hand over his head: \"Don't fire him, he's drowning in flakes.\" His eyes flick to the side window for a split second, then back to the lens. [00:05-00:08] He points at the lens, a firm hand chop, then a confident half smile: \"Let ManySetter answer the flakes, so he works the serious ones.\" Voice: warm American male voice, mid-low pitch, projects his voice like a creator ranting in his car, fast and casual, like a voice note to a friend, no long pauses. SFX: the soft creak of the car seat as he leans in. Ambient noise: muffled parking lot sounds, a car door closing in the distance, quiet car interior with the engine off. One continuous take, no cuts. Clean frame with nothing written on screen."
     }
   ],
   "voix": "His voice: warm American male voice, mid-low pitch, relaxed but quick and confident delivery, dry playful humor, clear diction, natural pauses, no vocal fry, General American accent.",
-  "cadrage": "selfie en marchant dans le couloir de l'appartement, caméra frontale à bout de bras, décor à peine lisible",
+  "cadrage": "selfie dans sa voiture garée devant la salle de sport, ceinture, volant visible, décor à peine lisible",
   "montage": {
     "jump_cuts": true,
     "zooms_secs": [
-      "do not fire your human setter",
+      "books calls that never close",
       "drowning in flakes",
       "works the serious ones"
     ],
     "booms": [
-      "fire",
+      "close",
       "flakes",
       "ManySetter"
     ],
@@ -104,6 +87,8 @@
     "modele": "Veo 3.1 Fast",
     "variantes": 1,
     "credits_par_plan": 20,
-    "total": 40
+    "total_v3": 20,
+    "deja_depenses_v2": 20,
+    "reste_budget": 10
   }
 }
