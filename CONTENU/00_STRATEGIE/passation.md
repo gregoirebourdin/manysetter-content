@@ -36,11 +36,11 @@ Où on en est :
    - relever les 12 derniers posts de chaque compte suivi et calculer la médiane de chaque compte ;
    - analyser image par image, avec la grille de la méthode, les reels qui font au moins 2 fois la médiane de leur compte ;
    - écrire les notes dans `veille/` et dans `carnet-etudes.md`.
-3. **La grille de départ** :
+3. **La grille de départ** (lot 1 de 3 carrousels fait le 10/10/2026, page de revue https://claude.ai/artifact/Cq253dMMfmwdycRbwF5FSM ; relire les retours dans sa collection `reviews`, puis lot 2) :
    - propose-moi d'abord 12 idées de carrousels, chacune avec son hook, son format, son segment et son mot-clé ;
    - fabrique avec `slides.py` celles que je valide ;
    - ajoute une maquette du profil et une page de revue.
-4. **Le profil** : le nom de profil avec mot-clé, la bio et le plan des 3 épingles.
+4. ~~Le profil~~ : proposé le 10/10/2026 (`profil.md`), à valider : le nom de profil avec mot-clé, la bio et le plan des 3 épingles.
 5. **Ivy** :
    - quand je dépose sa planche dans `CONTENU/02_AVATARS/ivy/`, vérifie-la, puis guide-moi pour le pack de références et les 3 plans test ;
    - ensuite, écris 3 scripts de reels d'Ivy et lance la banque de plans HOOK, BODY et CTA.
