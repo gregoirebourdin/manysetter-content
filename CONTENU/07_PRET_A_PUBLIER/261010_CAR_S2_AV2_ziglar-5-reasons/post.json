@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S2_AV2_ziglar-5-reasons",
-  "statut": "programmé le 11/10/2026 par Zernio : jeu. 15/10 12:00 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb8a1db67f2f4f1efcd764)",
+  "statut": "programmé le 11/10/2026 par Zernio : jeu. 15/10 12:00 pm ET, Instagram @greg.manysetter, et son Short YouTube en post séparé à la même heure (ID 6acb8a1db67f2f4f1efcd764)",
   "format": "carrousel",
   "funnel": "TOFU",
   "style": "éditorial (compte de référence du fondateur)",
@@ -200,5 +200,6 @@
     }
   ],
   "musique": "cloudy-skies-and-coffee-vibes.mp3",
-  "zernio_post_id": "6acb8a1db67f2f4f1efcd764"
+  "zernio_post_id": "6acb8a1db67f2f4f1efcd764",
+  "zernio_post_id_youtube": "6acbad60b1ace8b4388fcce8"
 }

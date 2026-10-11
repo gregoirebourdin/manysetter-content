@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_jenna-14m-dms",
-  "statut": "programmé le 11/10/2026 par Zernio : mar. 13/10 12:00 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb897adc1ca6150640515b)",
+  "statut": "programmé le 11/10/2026 par Zernio : mar. 13/10 12:00 pm ET, Instagram @greg.manysetter, et son Short YouTube en post séparé à la même heure (ID 6acb897adc1ca6150640515b)",
   "format": "carrousel",
   "funnel": "TOFU",
   "style": "éditorial, décryptage d'un gros compte US",
@@ -186,5 +186,6 @@
     }
   ],
   "musique": "cloudy-concerns.mp3",
-  "zernio_post_id": "6acb897adc1ca6150640515b"
+  "zernio_post_id": "6acb897adc1ca6150640515b",
+  "zernio_post_id_youtube": "6acbad5c053b9ad83d06338f"
 }

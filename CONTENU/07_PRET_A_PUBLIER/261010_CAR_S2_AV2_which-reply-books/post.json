@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S2_AV2_which-reply-books",
-  "statut": "programmé le 11/10/2026 par Zernio : mer. 14/10 12:00 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb89b65e84a26a4d5bac4b)",
+  "statut": "programmé le 11/10/2026 par Zernio : mer. 14/10 12:00 pm ET, Instagram @greg.manysetter, et son Short YouTube en post séparé à la même heure (ID 6acb89b65e84a26a4d5bac4b)",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S2",
@@ -178,5 +178,6 @@
   ],
   "funnel": "MOFU",
   "musique": "cloudy.mp3",
-  "zernio_post_id": "6acb89b65e84a26a4d5bac4b"
+  "zernio_post_id": "6acb89b65e84a26a4d5bac4b",
+  "zernio_post_id_youtube": "6acbad5ed5f4dab202e27f48"
 }

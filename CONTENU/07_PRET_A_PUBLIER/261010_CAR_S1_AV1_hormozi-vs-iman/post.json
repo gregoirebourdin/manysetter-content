@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_hormozi-vs-iman",
-  "statut": "programmé le 11/10/2026 par Zernio : dim. 11/10 12:00 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb884236f9c5ed81e71079)",
+  "statut": "programmé le 11/10/2026 par Zernio : dim. 11/10 12:00 pm ET, Instagram @greg.manysetter, et son Short YouTube en post séparé à la même heure (ID 6acb884236f9c5ed81e71079)",
   "format": "carrousel",
   "funnel": "TOFU",
   "style": "éditorial, décryptage d'un gros compte US",
@@ -173,5 +173,6 @@
     }
   ],
   "musique": "cloudy-day-vibes.mp3",
-  "zernio_post_id": "6acb884236f9c5ed81e71079"
+  "zernio_post_id": "6acb884236f9c5ed81e71079",
+  "zernio_post_id_youtube": "6acbad22eb9c74e7644fc254"
 }

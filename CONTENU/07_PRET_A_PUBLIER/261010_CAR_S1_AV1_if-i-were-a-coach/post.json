@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_if-i-were-a-coach",
-  "statut": "programmé le 11/10/2026 par Zernio : lun. 12/10 12:00 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb893bbc5a18ed5738ccb0)",
+  "statut": "programmé le 11/10/2026 par Zernio : lun. 12/10 12:00 pm ET, Instagram @greg.manysetter, et son Short YouTube en post séparé à la même heure (ID 6acb893bbc5a18ed5738ccb0)",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S1 et S2",
@@ -309,5 +309,6 @@
   ],
   "funnel": "MOFU",
   "musique": "cloudy-skies-and-coffee-vibes.mp3",
-  "zernio_post_id": "6acb893bbc5a18ed5738ccb0"
+  "zernio_post_id": "6acb893bbc5a18ed5738ccb0",
+  "zernio_post_id_youtube": "6acbad5bb1ace8b4388fcce0"
 }
