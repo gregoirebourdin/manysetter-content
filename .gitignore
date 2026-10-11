@@ -25,3 +25,7 @@ CONTENU/08_YOUTUBE/**/*.webm
 CONTENU/08_YOUTUBE/**/*.wav
 CONTENU/08_YOUTUBE/**/_frames/
 CONTENU/08_YOUTUBE/**/*.json3
+
+# musiques libres de droits (Pixabay) : jamais redistribuées seules
+CONTENU/06_GABARITS/musique/*.mp3
+CONTENU/07_PRET_A_PUBLIER/*/_short/
