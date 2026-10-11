@@ -1,0 +1,267 @@
+{
+  "format": "REEL tiré de YouTube : écran en haut, tête du fondateur en bas",
+  "source": "CONTENU/08_YOUTUBE/G8pP09wehNM/source.mp4",
+  "video_youtube": "https://www.youtube.com/watch?v=G8pP09wehNM",
+  "langue_voix": "français (version anglaise : traduction IA de la plateforme, activée par le fondateur à la publication)",
+  "titre": "Most AI setters you see look like *this*",
+  "cta": "Build my setter free, *link in bio*",
+  "segments": [
+    {
+      "de": 28.4,
+      "a": 33.95,
+      "ecran": [
+        {
+          "t": 28.4,
+          "src": 40.0,
+          "rect": [
+            560,
+            80,
+            900,
+            820
+          ],
+          "ancre": 0.5
+        }
+      ]
+    },
+    {
+      "de": 34.47,
+      "a": 47.3,
+      "ecran": [
+        {
+          "t": 34.47,
+          "src": 41.0,
+          "rect": [
+            300,
+            80,
+            760,
+            690
+          ],
+          "ancre": 0.5
+        },
+        {
+          "t": 37.2,
+          "src": 43.7,
+          "rect": [
+            560,
+            80,
+            900,
+            820
+          ],
+          "ancre": 0.5
+        },
+        {
+          "t": 39.0,
+          "src": 45.5,
+          "rect": [
+            820,
+            250,
+            640,
+            580
+          ],
+          "ancre": 0.5
+        },
+        {
+          "t": 41.2,
+          "src": 47.7,
+          "rect": [
+            300,
+            80,
+            760,
+            690
+          ],
+          "ancre": 0.5
+        },
+        {
+          "t": 44.7,
+          "src": 49.0,
+          "rect": [
+            560,
+            80,
+            900,
+            820
+          ],
+          "ancre": 0.5
+        }
+      ]
+    },
+    {
+      "de": 79.05,
+      "a": 83.1,
+      "ecran": [
+        {
+          "t": 79.05,
+          "src": 85.0,
+          "rect": [
+            100,
+            250,
+            700,
+            300
+          ],
+          "ancre": 0.72,
+          "haut_min": 44
+        }
+      ]
+    },
+    {
+      "de": 86.75,
+      "a": 90.7,
+      "ecran": [
+        {
+          "t": 86.75,
+          "src": 164.0,
+          "rect": [
+            620,
+            130,
+            760,
+            330
+          ],
+          "ancre": 0.68,
+          "haut_min": 44
+        }
+      ]
+    },
+    {
+      "de": 97.1,
+      "a": 104.95,
+      "ecran": [
+        {
+          "t": 97.1,
+          "rect": [
+            100,
+            250,
+            700,
+            300
+          ],
+          "ancre": 0.72,
+          "haut_min": 44
+        },
+        {
+          "t": 100.35,
+          "src": 107.5,
+          "rect": [
+            915,
+            285,
+            620,
+            450
+          ],
+          "ancre": 0.62
+        }
+      ]
+    },
+    {
+      "de": 104.95,
+      "a": 110.25,
+      "ecran": [
+        {
+          "t": 104.95,
+          "src": 375.8,
+          "rect": [
+            560,
+            370,
+            620,
+            380
+          ],
+          "ancre": 0.62
+        }
+      ]
+    }
+  ],
+  "couper": [],
+  "sous_titres": [
+    {
+      "de": 28.4,
+      "a": 30.45,
+      "texte": "The problem is, most of the time,"
+    },
+    {
+      "de": 30.45,
+      "a": 32.35,
+      "texte": "the AI setters people show you"
+    },
+    {
+      "de": 32.35,
+      "a": 33.95,
+      "texte": "look like *this*."
+    },
+    {
+      "de": 34.47,
+      "a": 37.2,
+      "texte": "Honestly, nobody on this planet"
+    },
+    {
+      "de": 37.2,
+      "a": 39.0,
+      "texte": "has the energy or the time"
+    },
+    {
+      "de": 39.0,
+      "a": 41.2,
+      "texte": "to *maintain* a setup like this"
+    },
+    {
+      "de": 41.2,
+      "a": 44.7,
+      "texte": "and still focus seriously on sales"
+    },
+    {
+      "de": 44.7,
+      "a": 47.3,
+      "texte": "and on the actual setting."
+    },
+    {
+      "de": 79.05,
+      "a": 81.15,
+      "texte": "You go to this site,"
+    },
+    {
+      "de": 81.15,
+      "a": 83.1,
+      "texte": "it's called *ManySetter*.com."
+    },
+    {
+      "de": 86.75,
+      "a": 90.7,
+      "texte": "It lets you build your setter *for free*."
+    },
+    {
+      "de": 97.1,
+      "a": 100.35,
+      "texte": "You take the whole sales part"
+    },
+    {
+      "de": 100.35,
+      "a": 104.95,
+      "texte": "and the core of the setting out of Manychat."
+    },
+    {
+      "de": 104.95,
+      "a": 107.3,
+      "texte": "That's what makes the flow so simple"
+    },
+    {
+      "de": 107.3,
+      "a": 110.25,
+      "texte": "you only need *two steps*."
+    }
+  ],
+  "booms": [
+    33.48,
+    39.36,
+    81.88,
+    109.36
+  ],
+  "zooms": [
+    [
+      32.35,
+      33.95
+    ],
+    [
+      39.0,
+      41.2
+    ],
+    [
+      108.8,
+      110.25
+    ]
+  ]
+}

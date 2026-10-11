@@ -2,19 +2,19 @@
 
 > Compte : **@seth.manysetter** (Zernio `6acb7049fff57839fd7248c3`), décision du fondateur du 11/10/2026.
 > 12 posts : 6 carrousels (TOFU et MOFU en alternance) et 6 reels du fondateur, **un sur deux**. Deux posts par jour, fuseau `America/New_York` : carrousel à 12:00 pm ET, reel à 6:30 pm ET (guide expert, partie 9 : 1 carrousel par jour, puis 1 à 2 reels).
-> **Rien n'est programmé avant** : la validation de chaque post, les 6 reels reçus, et un nom de compte qui ne présente plus Seth comme CEO (règle du 11/10).
+> **Rien n'est programmé avant** : la validation de chaque post, les 6 reels reçus, et un nom affiché qui ne présente plus Seth comme CEO (règle du 11/10). Le @ passera plus tard à @greg.manysetter.
 
 | # | Date | Heure (ET) | Format | Étage | Post | Statut |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | mar. 13/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S1_AV1_hormozi-vs-iman` | à valider |
+| 1 | mar. 13/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S1_AV1_hormozi-vs-iman` | validé (11/10) |
 | 2 | mar. 13/10 | 6:30 pm | reel | | reel du fondateur n°1 | fichier attendu |
 | 3 | mer. 14/10 | 12:00 pm | carrousel | MOFU | `261010_CAR_S1_AV1_if-i-were-a-coach` | validé (10/10), retouché le 11/10 |
 | 4 | mer. 14/10 | 6:30 pm | reel | | reel du fondateur n°2 | fichier attendu |
-| 5 | jeu. 15/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S1_AV1_jenna-14m-dms` | à valider |
+| 5 | jeu. 15/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S1_AV1_jenna-14m-dms` | validé (11/10) |
 | 6 | jeu. 15/10 | 6:30 pm | reel | | reel du fondateur n°3 | fichier attendu |
 | 7 | ven. 16/10 | 12:00 pm | carrousel | MOFU | `261010_CAR_S2_AV2_which-reply-books` | validé (10/10), retouché le 11/10 |
 | 8 | ven. 16/10 | 6:30 pm | reel | | reel du fondateur n°4 | fichier attendu |
-| 9 | sam. 17/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S2_AV2_ziglar-5-reasons` | à valider |
+| 9 | sam. 17/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S2_AV2_ziglar-5-reasons` | validé (11/10) |
 | 10 | sam. 17/10 | 6:30 pm | reel | | reel du fondateur n°5 | fichier attendu |
 | 11 | dim. 18/10 | 12:00 pm | carrousel | MOFU | `261010_CAR_S1_AV1_things-coaches-do` | validé (10/10), retouché le 11/10 |
 | 12 | dim. 18/10 | 6:30 pm | reel | | reel du fondateur n°6 | fichier attendu |
