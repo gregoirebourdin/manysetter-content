@@ -17,3 +17,11 @@ CONTENU/07_PRET_A_PUBLIER/**/*.wav
 # Photos de personnalités déposées par le fondateur (droits : décision du fondateur, hors Git)
 CONTENU/05_BANQUE_IMAGES/personnalites/*
 !CONTENU/05_BANQUE_IMAGES/personnalites/README.md
+
+# Vidéos YouTube du fondateur téléchargées pour en tirer des reels (hors Git)
+CONTENU/08_YOUTUBE/**/*.mp4
+CONTENU/08_YOUTUBE/**/*.m4a
+CONTENU/08_YOUTUBE/**/*.webm
+CONTENU/08_YOUTUBE/**/*.wav
+CONTENU/08_YOUTUBE/**/_frames/
+CONTENU/08_YOUTUBE/**/*.json3

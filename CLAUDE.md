@@ -54,5 +54,6 @@ Ce dépôt est séparé du site. **Ne jamais écrire dans le dépôt `many-sette
 - `CONTENU/05_BANQUE_IMAGES/` : images du feed.
 - `CONTENU/06_GABARITS/` : charte et scripts de fabrication (slides, reels).
 - `CONTENU/07_PRET_A_PUBLIER/<id>/` : un dossier par post (slides, `caption.txt`, `post.json`).
+- `CONTENU/08_YOUTUBE/<id YouTube>/` : vidéos YouTube du fondateur dont on tire des reels (script, analyse des passages ; la vidéo reste hors Git).
 
 **Nommage** : `AAMMJJ_FORMAT_SEGMENT_AVATAR_slug`, par exemple `261014_CAR_S1_AV1_comment-guide-flood`. Formats : `CAR` carrousel, `REEL`, `IMGR` image publiée en reel. Segments : `S1`, `S2`, `S3` (voir le brief).
