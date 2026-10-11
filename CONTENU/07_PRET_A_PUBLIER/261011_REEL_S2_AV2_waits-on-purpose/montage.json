@@ -1,148 +1,69 @@
 {
-  "duree_s": 30.8,
-  "images": 924,
-  "images_attendues": 924,
+  "duree_s": 45.23,
+  "images": 1357,
+  "images_attendues": 1357,
   "coupes": [
     {
-      "de_source": 778.38,
-      "a_source": 779.134,
+      "de_source": 771.94,
+      "a_source": 777.93,
       "debut_reel": 0.0
     },
     {
-      "de_source": 779.44,
-      "a_source": 782.95,
-      "debut_reel": 0.75
+      "de_source": 778.3,
+      "a_source": 786.85,
+      "debut_reel": 5.99
     },
     {
-      "de_source": 793.4,
-      "a_source": 793.803,
-      "debut_reel": 4.26
+      "de_source": 792.69,
+      "a_source": 795.28,
+      "debut_reel": 14.54
     },
     {
-      "de_source": 794.127,
-      "a_source": 795.21,
-      "debut_reel": 4.67
-    },
-    {
-      "de_source": 796.9,
+      "de_source": 796.85,
       "a_source": 797.95,
-      "debut_reel": 5.75
+      "debut_reel": 17.13
     },
     {
-      "de_source": 798.8,
-      "a_source": 799.968,
-      "debut_reel": 6.8
+      "de_source": 798.78,
+      "a_source": 800.08,
+      "debut_reel": 18.23
     },
     {
-      "de_source": 801.047,
-      "a_source": 802.1,
-      "debut_reel": 7.97
+      "de_source": 801.0,
+      "a_source": 805.11,
+      "debut_reel": 19.53
     },
     {
-      "de_source": 802.275,
-      "a_source": 802.955,
-      "debut_reel": 9.02
-    },
-    {
-      "de_source": 803.142,
-      "a_source": 803.984,
-      "debut_reel": 9.7
-    },
-    {
-      "de_source": 804.18,
-      "a_source": 805.1,
-      "debut_reel": 10.54
-    },
-    {
-      "de_source": 805.72,
-      "a_source": 806.637,
-      "debut_reel": 11.46
-    },
-    {
-      "de_source": 806.881,
-      "a_source": 807.255,
-      "debut_reel": 12.38
-    },
-    {
-      "de_source": 807.519,
-      "a_source": 809.183,
-      "debut_reel": 12.75
-    },
-    {
-      "de_source": 809.453,
-      "a_source": 809.95,
-      "debut_reel": 14.42
+      "de_source": 805.64,
+      "a_source": 810.24,
+      "debut_reel": 23.64
     },
     {
       "de_source": 810.84,
-      "a_source": 811.977,
-      "debut_reel": 14.92
+      "a_source": 812.82,
+      "debut_reel": 28.24
     },
     {
-      "de_source": 812.217,
-      "a_source": 812.743,
-      "debut_reel": 16.05
+      "de_source": 816.72,
+      "a_source": 821.09,
+      "debut_reel": 30.22
     },
     {
-      "de_source": 816.865,
-      "a_source": 818.6,
-      "debut_reel": 16.58
+      "de_source": 821.65,
+      "a_source": 824.11,
+      "debut_reel": 34.59
     },
     {
-      "de_source": 826.04,
-      "a_source": 827.001,
-      "debut_reel": 18.31
-    },
-    {
-      "de_source": 827.316,
-      "a_source": 828.929,
-      "debut_reel": 19.27
-    },
-    {
-      "de_source": 829.226,
-      "a_source": 829.56,
-      "debut_reel": 20.89
-    },
-    {
-      "de_source": 836.12,
-      "a_source": 837.434,
-      "debut_reel": 21.22
-    },
-    {
-      "de_source": 837.699,
-      "a_source": 838.653,
-      "debut_reel": 22.54
-    },
-    {
-      "de_source": 838.878,
-      "a_source": 839.308,
-      "debut_reel": 23.49
-    },
-    {
-      "de_source": 839.663,
-      "a_source": 840.448,
-      "debut_reel": 23.92
-    },
-    {
-      "de_source": 840.592,
-      "a_source": 841.64,
-      "debut_reel": 24.7
-    },
-    {
-      "de_source": 842.4,
-      "a_source": 844.861,
-      "debut_reel": 25.75
-    },
-    {
-      "de_source": 845.116,
-      "a_source": 847.7,
-      "debut_reel": 28.21
+      "de_source": 833.92,
+      "a_source": 842.1,
+      "debut_reel": 37.05
     }
   ],
   "booms_s": [
-    3.79,
-    5.89,
-    14.89,
-    22.68
-  ]
+    10.17,
+    17.32,
+    27.92,
+    40.97
+  ],
+  "coupes_dans_la_voix": []
 }

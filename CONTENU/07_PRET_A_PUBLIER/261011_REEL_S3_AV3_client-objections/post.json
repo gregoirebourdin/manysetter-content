@@ -1,0 +1,39 @@
+{
+  "id": "261011_REEL_S3_AV3_client-objections",
+  "funnel": "BOFU",
+  "segment": "S3",
+  "avatar": "AV3",
+  "role_grille": "les 3 objections d'un coach à qui une agence vend un setter IA",
+  "biais": [
+    "liste (3 objections)",
+    "pertinence pour soi (l'agence qui a déjà entendu ces objections)",
+    "preuve sociale implicite (« your client says »)"
+  ],
+  "source": {
+    "video": "https://www.youtube.com/watch?v=0AaYRoSFW8U",
+    "passages": [
+      "11:43 → 12:24"
+    ],
+    "ecrans": [
+      "slide « Deliver it, and handle objections » figée (12:00), une objection à la fois"
+    ]
+  },
+  "verbatims": [
+    "rd57",
+    "mc41",
+    "cl140"
+  ],
+  "statut": "à valider",
+  "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
+  "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
+  "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
+  "texte_incruste": "US English (titre, sous-titres phrase par phrase, CTA)",
+  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "montage": "script.json, montage.json",
+    "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
+  },
+  "titre_incruste": "3 objections coaches have about AI setters"
+}

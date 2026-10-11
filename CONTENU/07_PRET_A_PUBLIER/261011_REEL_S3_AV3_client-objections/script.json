@@ -1,0 +1,158 @@
+{
+  "format": "REEL tiré de YouTube : écran en haut, tête du fondateur en bas",
+  "source": "CONTENU/08_YOUTUBE/0AaYRoSFW8U/source.mp4",
+  "video_youtube": "https://www.youtube.com/watch?v=0AaYRoSFW8U",
+  "langue_voix": "français (version anglaise : traduction IA de la plateforme, activée par le fondateur à la publication)",
+  "cta": "Build my setter free, *link in bio*",
+  "bulle": {
+    "x0": 1286,
+    "y1": 1026,
+    "s": 340
+  },
+  "masquer_bulle": true,
+  "couper": [],
+  "titre": "3 objections coaches have about *AI setters*",
+  "segments": [
+    {
+      "de": 703.52,
+      "a": 718.7,
+      "ecran": [
+        {
+          "t": 703.52,
+          "rect": [
+            150,
+            230,
+            1380,
+            470
+          ],
+          "src": 720.0,
+          "fige": true
+        },
+        {
+          "t": 707.6,
+          "rect": [
+            890,
+            330,
+            600,
+            100
+          ],
+          "src": 720.0,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 719.36,
+      "a": 731.8,
+      "ecran": [
+        {
+          "t": 719.36,
+          "rect": [
+            890,
+            440,
+            600,
+            140
+          ],
+          "src": 720.0,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 732.44,
+      "a": 744.4,
+      "ecran": [
+        {
+          "t": 732.44,
+          "rect": [
+            890,
+            590,
+            600,
+            100
+          ],
+          "src": 720.0,
+          "fige": true
+        }
+      ]
+    }
+  ],
+  "sous_titres": [
+    {
+      "de": 703.52,
+      "a": 707.6,
+      "texte": "If your client says, *\"But what if it sounds like a robot?\"*"
+    },
+    {
+      "de": 707.6,
+      "a": 710.7,
+      "texte": "first, let them test it and tell them"
+    },
+    {
+      "de": 710.7,
+      "a": 714.3,
+      "texte": "it writes in the same tone as their funnel,"
+    },
+    {
+      "de": 714.3,
+      "a": 718.7,
+      "texte": "with the same voice as their Insta Reels and their content."
+    },
+    {
+      "de": 719.36,
+      "a": 723.3,
+      "texte": "With objections like that, even if they ask,"
+    },
+    {
+      "de": 723.3,
+      "a": 727.4,
+      "texte": "*\"What happens if it says something wrong?\"*"
+    },
+    {
+      "de": 728.28,
+      "a": 731.8,
+      "texte": "you can take over the chat right away, no problem."
+    },
+    {
+      "de": 732.44,
+      "a": 735.6,
+      "texte": "And if they already have Manychat flows running,"
+    },
+    {
+      "de": 735.6,
+      "a": 739.0,
+      "texte": "tell them there's *nothing to remove*."
+    },
+    {
+      "de": 739.5,
+      "a": 744.4,
+      "texte": "It's just one step to add, and the AI takes it from there."
+    }
+  ],
+  "booms": [
+    707.16,
+    727.0,
+    738.32
+  ],
+  "zooms": [
+    [
+      723.3,
+      727.4
+    ],
+    [
+      735.6,
+      739.0
+    ]
+  ],
+  "cadrage": "bande",
+  "isoler": [
+    52,
+    100,
+    1572,
+    885
+  ],
+  "fond": [
+    249,
+    246,
+    245
+  ]
+}

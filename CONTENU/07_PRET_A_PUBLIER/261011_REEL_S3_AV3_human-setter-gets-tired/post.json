@@ -1,0 +1,40 @@
+{
+  "id": "261011_REEL_S3_AV3_human-setter-gets-tired",
+  "funnel": "TOFU",
+  "segment": "S3",
+  "avatar": "AV3",
+  "role_grille": "débat setter humain contre setter IA",
+  "biais": [
+    "contre-pied (« a human setter gets tired »)",
+    "appel au débat (team humain ou team IA)",
+    "pertinence pour soi (agences et coachs qui recrutent des setters)"
+  ],
+  "source": {
+    "video": "https://www.youtube.com/watch?v=0AaYRoSFW8U",
+    "passages": [
+      "00:44 → 01:00",
+      "01:38 → 02:07"
+    ],
+    "ecrans": [
+      "slide « Coaches lose sales in their DMs » figée (00:50), une carte par idée"
+    ]
+  },
+  "verbatims": [
+    "cl056",
+    "rd31",
+    "mc26"
+  ],
+  "statut": "à valider",
+  "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
+  "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
+  "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
+  "texte_incruste": "US English (titre, sous-titres phrase par phrase, CTA)",
+  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "montage": "script.json, montage.json",
+    "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
+  },
+  "titre_incruste": "A human setter gets tired. An AI setter doesn't."
+}

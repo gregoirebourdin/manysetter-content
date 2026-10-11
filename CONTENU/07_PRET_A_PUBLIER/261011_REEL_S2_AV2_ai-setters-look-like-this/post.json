@@ -13,7 +13,7 @@
     "video": "https://www.youtube.com/watch?v=G8pP09wehNM",
     "passages": [
       "00:28 → 00:52",
-      "01:19 → 01:31",
+      "01:18 → 01:31",
       "01:37 → 01:50"
     ],
     "ecrans_repris": [
@@ -43,5 +43,5 @@
     "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
   },
   "titre_incruste": "Most AI setters you see look like this",
-  "duree_s": 33.2
+  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix"
 }

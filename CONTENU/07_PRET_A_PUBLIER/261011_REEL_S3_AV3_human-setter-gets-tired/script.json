@@ -1,0 +1,170 @@
+{
+  "format": "REEL tiré de YouTube : écran en haut, tête du fondateur en bas",
+  "source": "CONTENU/08_YOUTUBE/0AaYRoSFW8U/source.mp4",
+  "video_youtube": "https://www.youtube.com/watch?v=0AaYRoSFW8U",
+  "langue_voix": "français (version anglaise : traduction IA de la plateforme, activée par le fondateur à la publication)",
+  "cta": "Build my setter free, *link in bio*",
+  "bulle": {
+    "x0": 1286,
+    "y1": 1026,
+    "s": 340
+  },
+  "masquer_bulle": true,
+  "couper": [],
+  "titre": "A human setter gets tired. An *AI setter* doesn't.",
+  "segments": [
+    {
+      "de": 44.08,
+      "a": 53.5,
+      "ecran": [
+        {
+          "t": 44.08,
+          "rect": [
+            150,
+            230,
+            1380,
+            470
+          ],
+          "src": 50.0,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 53.84,
+      "a": 60.4,
+      "ecran": [
+        {
+          "t": 53.84,
+          "rect": [
+            150,
+            350,
+            440,
+            350
+          ],
+          "src": 50.0,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 98.92,
+      "a": 127.2,
+      "ecran": [
+        {
+          "t": 98.92,
+          "rect": [
+            620,
+            350,
+            440,
+            350
+          ],
+          "src": 50.0,
+          "fige": true
+        },
+        {
+          "t": 108.84,
+          "rect": [
+            1086,
+            350,
+            440,
+            350
+          ],
+          "src": 50.0,
+          "fige": true
+        },
+        {
+          "t": 123.24,
+          "rect": [
+            150,
+            230,
+            1380,
+            470
+          ],
+          "src": 50.0,
+          "fige": true
+        }
+      ]
+    }
+  ],
+  "sous_titres": [
+    {
+      "de": 44.08,
+      "a": 48.4,
+      "texte": "First, what you need to understand"
+    },
+    {
+      "de": 48.4,
+      "a": 53.5,
+      "texte": "is that AI setters let you answer DMs everywhere, *all the time*."
+    },
+    {
+      "de": 53.84,
+      "a": 58.9,
+      "texte": "That means WhatsApp, Messenger, Instagram,"
+    },
+    {
+      "de": 58.9,
+      "a": 60.4,
+      "texte": "it can reply *24/7*."
+    },
+    {
+      "de": 98.92,
+      "a": 102.9,
+      "texte": "What's also interesting is that they *qualify* the prospect."
+    },
+    {
+      "de": 103.36,
+      "a": 108.6,
+      "texte": "They ask questions every time, they take an interest in the prospect,"
+    },
+    {
+      "de": 108.84,
+      "a": 113.8,
+      "texte": "whereas a human setter might be *tired*, or in a mood,"
+    },
+    {
+      "de": 113.88,
+      "a": 119.5,
+      "texte": "and then you can't get the full capacity and potential"
+    },
+    {
+      "de": 119.6,
+      "a": 122.9,
+      "texte": "for your coach, or for high-ticket sales."
+    },
+    {
+      "de": 123.24,
+      "a": 127.2,
+      "texte": "So you get a lot of qualification, and a lot of *availability*."
+    }
+  ],
+  "booms": [
+    60.2,
+    102.0,
+    112.28,
+    126.4
+  ],
+  "zooms": [
+    [
+      58.9,
+      60.4
+    ],
+    [
+      108.84,
+      113.8
+    ]
+  ],
+  "cadrage": "bande",
+  "isoler": [
+    52,
+    100,
+    1572,
+    885
+  ],
+  "fond": [
+    249,
+    246,
+    245
+  ]
+}

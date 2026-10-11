@@ -12,10 +12,9 @@
   "source": {
     "video": "https://www.youtube.com/watch?v=G8pP09wehNM",
     "passages": [
-      "14:29 → 15:15",
-      "15:56 → 16:20"
+      "14:24 → 15:15",
+      "15:44 → 16:20"
     ],
-    "coupe": "15:35 → 15:50 retiré (le setter propose « d'atteindre les 10 000 € par mois » : promesse de revenus)",
     "ecrans_repris": [
       "fenêtre de DM seule, sur fond sombre (le profil Instagram d'une autre marque, derrière, est masqué)",
       "chaque phrase est calée sur l'image où le message dont il parle est visible (images figées)"
@@ -27,7 +26,6 @@
     "rd45"
   ],
   "a_valider": [
-    "le message de qualification du setter, visible à l'écran, contient « To get from 1k to 10k MRR » : c'est l'objectif de l'offre d'exemple (une formation e-commerce), pas une promesse de ManySetter, mais le chiffre se lit à l'image pendant 5 s",
     "la conversation est en anglais à l'écran ; ta voix la raconte en français"
   ],
   "statut": "à valider",
@@ -42,5 +40,5 @@
     "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
   },
   "titre_incruste": "I DM'd my own AI setter to see if it would book me",
-  "duree_s": 47.7
+  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix"
 }

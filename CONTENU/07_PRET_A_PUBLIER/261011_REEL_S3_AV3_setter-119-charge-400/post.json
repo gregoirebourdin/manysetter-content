@@ -1,0 +1,40 @@
+{
+  "id": "261011_REEL_S3_AV3_setter-119-charge-400",
+  "funnel": "MOFU",
+  "segment": "S3",
+  "avatar": "AV3",
+  "role_grille": "business model agence : le setter à 119 $, revendu 400 $ par mois",
+  "biais": [
+    "chiffres précis (119 $, 400 $, 281 $, 2 810 $)",
+    "gain personnel (la marge par client)",
+    "boucle ouverte en fin (« that's not the best part »)"
+  ],
+  "source": {
+    "video": "https://www.youtube.com/watch?v=0AaYRoSFW8U",
+    "passages": [
+      "06:50 → 07:11",
+      "07:51 → 08:17"
+    ],
+    "ecrans": [
+      "slides figées sur des images non zoomées : « Setters are hard to hire » (00:50), « $119 a month per live setter » (06:55), « A fixed monthly fee » (08:00)"
+    ]
+  },
+  "verbatims": [
+    "cl057",
+    "cl049",
+    "rd72"
+  ],
+  "statut": "à valider",
+  "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
+  "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
+  "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
+  "texte_incruste": "US English (titre, sous-titres phrase par phrase, CTA)",
+  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "montage": "script.json, montage.json",
+    "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
+  },
+  "titre_incruste": "Your AI setter costs $119. Charge your client $400."
+}

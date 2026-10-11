@@ -6,14 +6,19 @@ Usage :
 
 La vidéo source est un partage d'écran (Screen Studio) avec une bulle webcam ancrée en bas à gauche,
 dont seule la taille change avec les zooms. Le script :
-1. garde les passages `segments[].de → a` (temps de la source), retire les blancs de plus de 0,3 s et les
-   plages `couper` (les « euh ») : ce sont les jump cuts ;
+1. garde les passages `segments[].de → a` (temps de la source) : chaque borne est recalée dans un creux réel
+   de la voix (jamais dans un mot) ; retire les blancs de plus de 0,45 s (0,12 s de marge) et les plages
+   `couper` (les « euh ») : ce sont les jump cuts. `montage.json` liste les coupes où la voix serait audible ;
 2. haut (1080 × 980) : l'écran, cadré sur `ecran[].rect` [x, y, l, h] de la source, à partir de `ecran[].t`.
    `ecran[].src` prend l'image d'un autre moment de la vidéo (la voix reste celle du passage) ;
-   `ancre` place le contenu en hauteur, `haut_min` ignore le haut de la source (fond d'écran),
+   `ancre` place le contenu en hauteur, `haut_min` / `bas_max` ignorent le haut et le bas de la source
+   (fond d'écran, bord de fenêtre), `cadrage: "bande"` met chaque bloc le plus grand possible entre titre et
+   sous-titres (slides, sans zoom sec sur l'écran : le zoom sec porte alors sur la tête), `isoler` et `fond`
+   au niveau du script limitent l'écran à la slide,
    `isoler` ne garde que `rect` (ou la zone [x, y, l, h] donnée) sur un fond uni (`fond`),
    `fige` garde l'image `src` immobile ;
-3. bas (1080 × 940) : l'intérieur de la bulle webcam, suivie image par image (bord droit lu sur le pull) ;
+3. bas (1080 × 940) : l'intérieur de la bulle webcam, suivie image par image (bord droit lu sur le pull),
+   ou fixe (`bulle`) ; `masquer_bulle` efface la bulle de l'image d'écran du haut ;
 4. zooms secs sur les plages `zooms` (écran à 125 %, visage à 110 %), et un léger 100/105 % sur le visage
    d'un jump cut à l'autre ;
 5. booms (impact grave synthétisé, aucun son sous droits) aux temps `booms` ;
@@ -50,6 +55,7 @@ TITLE_TOP = 290           # haut de l'étiquette titre (sous les 270 px du haut,
 SUB_Y = SCREEN_H          # sous-titres à cheval sur la jonction écran / tête
 CTA_Y = 720
 ANCHOR = 0.68             # le centre du contenu d'écran tombe à 68 % de la zone haute (entre titre et sous-titres)
+BAND = (480, 905)         # bande libre de la zone haute, entre l'étiquette titre et les sous-titres
 ORANGE, INK = (255, 97, 29), (13, 12, 10)
 SRC_W, SRC_H = 1692, 1080
 BUBBLE_X0, BUBBLE_Y1 = 55, 1026   # coin bas gauche de la bulle (fixe)
@@ -60,21 +66,73 @@ def run(cmd):
 
 
 # --- Coupes -----------------------------------------------------------------------------
+# Retour du 11/10/2026 : une coupe ne tombe jamais dans un mot. Les horaires des sous-titres automatiques sont
+# approximatifs : chaque point de coupe est recalé sur l'énergie réelle de la voix (trames de 10 ms).
 
-def silences(src: Path, a: float, b: float) -> list[tuple[float, float]]:
-    out = subprocess.run(["ffmpeg", "-v", "info", "-ss", str(a), "-t", str(b - a), "-i", str(src), "-vn",
-                          "-af", "silencedetect=n=-33dB:d=0.22", "-f", "null", "-"],
-                         capture_output=True, text=True).stderr
-    st = [float(x) + a for x in re.findall(r"silence_start: ([\d.]+)", out)]
-    en = [float(x) + a for x in re.findall(r"silence_end: ([\d.]+)", out)]
-    return list(zip(st, en + [b] * (len(st) - len(en))))
+# Le seuil de « creux de voix » dépend de la vidéo (niveau d'enregistrement, musique de fond) : il est calculé
+# sur la source, à 25 dB sous le niveau fort de la voix et au moins 7 dB au-dessus du bruit de fond.
+PAD = 0.12         # marge gardée autour des mots
+MIN_GAP = 0.45     # seuls les blancs plus longs sont raccourcis
 
 
-def keep_intervals(src: Path, seg: dict, cuts: list) -> list[tuple[float, float]]:
-    """Ce qu'on garde d'un segment : sans blancs > 0,3 s (0,08 s de marge) ni plages `couper`."""
-    a, b = seg["de"], seg["a"]
-    holes = [(s + 0.08, e - 0.08) for s, e in silences(src, a, b) if e - s > 0.30]
-    holes += [tuple(c) for c in cuts if c[1] > a and c[0] < b]
+class Envelope:
+    def __init__(self, src: Path):
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(src), "-vn", "-ac", "1", "-ar", "8000",
+                              "-f", "f32le", "-"], capture_output=True).stdout
+        x = np.frombuffer(raw, np.float32)
+        n = len(x) // 80
+        self.db = 20 * np.log10(np.sqrt((x[:n * 80].reshape(n, 80) ** 2).mean(1) + 1e-12))
+        p10, p90 = np.percentile(self.db, [10, 90])
+        self.quiet = float(max(p10 + 7, p90 - 25))
+
+    def idx(self, t: float) -> int:
+        return int(min(max(round(t * 100), 0), len(self.db) - 1))
+
+    def quiet_runs(self, a: float, b: float, min_len: float):
+        q = self.db[self.idx(a):self.idx(b)] < self.quiet
+        runs, i0 = [], None
+        for i, v in enumerate(np.append(q, False)):
+            if v and i0 is None:
+                i0 = i
+            elif not v and i0 is not None:
+                if (i - i0) / 100 >= min_len:
+                    runs.append((a + i0 / 100, a + i / 100))
+                i0 = None
+        return runs
+
+    def onset(self, t: float) -> float:
+        """Point de coupe juste avant le mot qui commence vers t (dans le creux qui le précède)."""
+        runs = self.quiet_runs(t - 0.45, t + 0.10, 0.03)
+        if runs:
+            s0, e0 = runs[-1]
+            return round(max(s0, e0 - 0.06), 3)
+        i0 = self.idx(t - 0.25)
+        return round((i0 + int(np.argmin(self.db[i0:self.idx(t + 0.05)]))) / 100, 3)
+
+    def offset(self, t: float) -> float:
+        """Point de coupe juste après le dernier mot qui finit vers t (dans le creux qui le suit)."""
+        for min_len in (0.12, 0.05):
+            runs = self.quiet_runs(t - 0.10, t + 0.55, min_len)
+            if runs:
+                s0, e0 = runs[0]
+                return round(min(e0, s0 + 0.10), 3)
+        i0 = self.idx(t - 0.05)
+        return round((i0 + int(np.argmin(self.db[i0:self.idx(t + 0.30)]))) / 100, 3)
+
+    def level(self, t: float) -> float:
+        i = self.idx(t)
+        return float(self.db[max(i - 1, 0):i + 2].max())
+
+
+def keep_intervals(env: Envelope, seg: dict, cuts: list, snap_start: bool = True,
+                   snap_end: bool = True) -> list[tuple[float, float]]:
+    """Ce qu'on garde d'un segment : bornes recalées dans les creux de la voix, blancs > MIN_GAP raccourcis
+    (PAD de marge de chaque côté), plages `couper` retirées de creux à creux. Deux segments qui se suivent
+    dans la source (même phrase, autre plan d'écran) gardent leur jonction telle quelle : il n'y a pas de coupe."""
+    a = env.onset(seg["de"]) if snap_start else seg["de"]
+    b = env.offset(seg["a"]) if snap_end else seg["a"]
+    holes = [(s + PAD, e - PAD) for s, e in env.quiet_runs(a, b, MIN_GAP)]
+    holes += [(env.onset(c0), env.onset(c1)) for c0, c1 in cuts if c1 > a and c0 < b]
     holes.sort()
     out, cur = [], a
     for s, e in holes:
@@ -112,7 +170,13 @@ def bubble_edges(src: Path, a: float, b: float) -> tuple[np.ndarray, np.ndarray]
 
 
 class Bubble:
-    def __init__(self, src: Path, ranges):
+    """Bulle webcam : suivie (Screen Studio, ancrée en bas à gauche, taille variable) ou fixe
+    (`bulle`: {"x0", "y1", "s"} dans le script : bord gauche, bas, côté)."""
+
+    def __init__(self, src: Path, ranges, fixed: dict | None = None):
+        self.fixed = fixed
+        if fixed:
+            return
         self.t, self.r = [], []
         for a, b in ranges:
             t, r = bubble_edges(src, a, b)
@@ -122,13 +186,18 @@ class Bubble:
         o = np.argsort(self.t)
         self.t, self.r = self.t[o], self.r[o]
 
-    def crop(self, tau: float, zoom: float) -> tuple[int, int, int, int]:
+    def box(self, tau: float) -> tuple[float, float, float]:
+        if self.fixed:
+            return self.fixed["x0"], self.fixed["y1"], self.fixed["s"]
         right = float(np.interp(tau, self.t, self.r))
-        s = right - BUBBLE_X0
+        return BUBBLE_X0, BUBBLE_Y1, right - BUBBLE_X0
+
+    def crop(self, tau: float, zoom: float) -> tuple[int, int, int, int]:
+        x0, y1, s = self.box(tau)
         w0 = 0.86 * s                      # marges : les coins arrondis de la bulle restent hors cadre
         h0 = w0 * FACE_H / W
-        top0 = BUBBLE_Y1 - s + 0.07 * s
-        cx, cy = BUBBLE_X0 + s / 2, top0 + 0.42 * h0   # on zoome autour des yeux
+        top0 = y1 - s + 0.07 * s
+        cx, cy = x0 + s / 2, top0 + 0.42 * h0   # on zoome autour des yeux
         w, h = w0 / zoom, h0 / zoom
         x = cx - w / 2
         y = cy - 0.42 * h
@@ -188,8 +257,13 @@ def balanced(text: str, f, max_w: float):
 
 
 def subtitle(text: str, size: int = 64) -> np.ndarray:
-    f = font(size)
-    lines, space = balanced(text, f, 960)
+    while True:   # deux lignes au plus : le texte rapetisse s'il le faut
+        f = font(size)
+        lines, space = balanced(text, f, 960)
+        widest = max(sum(x[2] for x in l) + space * (len(l) - 1) for l in lines)
+        if widest <= 980 or size <= 44:
+            break
+        size -= 4
     lh, pad = int(size * 1.22), 14
     widest = max(sum(x[2] for x in l) + space * (len(l) - 1) for l in lines)
     bw, bh = int(widest + 2 * pad + 20), int(lh * len(lines) + 2 * pad)
@@ -208,6 +282,11 @@ def subtitle(text: str, size: int = 64) -> np.ndarray:
 def blend(frame: np.ndarray, rgba: np.ndarray, cx: int, cy: int) -> None:
     h, w = rgba.shape[:2]
     x0, y0 = int(cx - w / 2), int(cy - h / 2)
+    if x0 < 0 or y0 < 0 or x0 + w > frame.shape[1] or y0 + h > frame.shape[0]:   # jamais hors de l'image
+        cx0, cy0 = max(-x0, 0), max(-y0, 0)
+        rgba = rgba[cy0:cy0 + frame.shape[0] - max(y0, 0), cx0:cx0 + frame.shape[1] - max(x0, 0)]
+        x0, y0 = max(x0, 0), max(y0, 0)
+        h, w = rgba.shape[:2]
     region = frame[y0:y0 + h, x0:x0 + w].astype(np.float32)
     a = rgba[..., 3:4].astype(np.float32) / 255
     frame[y0:y0 + h, x0:x0 + w] = (region * (1 - a) + rgba[..., :3] * a).astype(np.uint8)
@@ -215,12 +294,19 @@ def blend(frame: np.ndarray, rgba: np.ndarray, cx: int, cy: int) -> None:
 
 # --- Composition ------------------------------------------------------------------------
 
-def fit_rect(rect, zoom: float, anchor: float = ANCHOR):
+def fit_rect(rect, zoom: float, anchor: float = ANCHOR, band: bool = False):
     """Fenêtre au format de la zone haute qui contient `rect`, zoomée sur son centre ; le centre du contenu
-    tombe à ANCHOR de la hauteur. La fenêtre peut déborder de la source (on complète avec la couleur du bord)."""
+    tombe à ANCHOR de la hauteur. La fenêtre peut déborder de la source (on complète avec la couleur du bord).
+    `band` : le contenu est mis le plus grand possible dans la bande libre BAND (slides)."""
     x, y, w, h = rect
     cx, cy = x + w / 2, y + h / 2
     ar = W / SCREEN_H
+    if band:
+        sc = min(W * 0.94 / w, (BAND[1] - BAND[0]) / h) * zoom
+        ww, wh = W / sc, SCREEN_H / sc
+        wx = min(max(cx - ww / 2, 0), SRC_W - ww) if ww <= SRC_W else cx - ww / 2
+        wy = cy - (BAND[0] + BAND[1]) / 2 / sc
+        return int(wx), int(wy), int(ww), int(wh)
     if w / h > ar:
         h = w / ar
     else:
@@ -234,23 +320,28 @@ def fit_rect(rect, zoom: float, anchor: float = ANCHOR):
 
 
 def screen_part(src_frame: np.ndarray, rect, zoom: float, anchor: float = ANCHOR, top_min: int = 0,
-                isolate: bool = False, fond=(13, 12, 10)) -> np.ndarray:
+                isolate: bool = False, fond=(13, 12, 10), band: bool = False, bottom_max: int | None = None) -> np.ndarray:
     """`top_min` : lignes de la source à ignorer en haut (fond d'écran, bord de fenêtre), remplacées par la
     couleur de la page."""
-    x, y, w, h = fit_rect(rect, zoom, anchor)
-    y0, y1 = max(y, top_min), min(y + h, SRC_H)
-    crop = src_frame[y0:y1, x:x + w]
+    x, y, w, h = fit_rect(rect, zoom, anchor, band)
+    y0, y1 = max(y, top_min), min(y + h, bottom_max or SRC_H)
     if isolate:
-        # seul `rect` reste visible (ex. la fenêtre de DM), le reste devient un fond uni
+        # seul `rect` (ou la zone donnée) reste visible, le reste devient un fond uni : fenêtre de DM,
+        # ou slide sans le fond d'écran autour
         canvas = np.empty((h, w, 3), np.uint8)
         canvas[:] = np.array(fond, np.uint8)
         zone = isolate if isinstance(isolate, (list, tuple)) else rect
-        rx0, ry0 = max(zone[0], x), max(zone[1], y0)
-        rx1, ry1 = min(zone[0] + zone[2], x + w), min(zone[1] + zone[3], y1)
+        rx0, ry0 = max(zone[0], x, 0), max(zone[1], y0)
+        rx1, ry1 = min(zone[0] + zone[2], x + w, SRC_W), min(zone[1] + zone[3], y1)
         if rx1 > rx0 and ry1 > ry0:
             canvas[ry0 - y:ry1 - y, rx0 - x:rx1 - x] = src_frame[ry0:ry1, rx0:rx1]
-        crop = canvas
-    elif y0 != y or y1 != y + h:
+        return cv2.resize(canvas, (W, SCREEN_H), interpolation=cv2.INTER_LANCZOS4 if w < W else cv2.INTER_AREA)
+    if x < 0 or x + w > SRC_W:   # fenêtre plus large que la source : on complète sur les côtés
+        pad = max(-x, x + w - SRC_W, 0)
+        src_frame = cv2.copyMakeBorder(src_frame, 0, 0, pad, pad, cv2.BORDER_REPLICATE)
+        x += pad
+    crop = src_frame[y0:y1, x:x + w]
+    if y0 != y or y1 != y + h:
         edge = crop[2:6] if y0 != y else crop[-6:-2]
         canvas = np.empty((h, w, 3), np.uint8)
         canvas[:] = np.median(edge.reshape(-1, 3), axis=0).astype(np.uint8)
@@ -296,18 +387,31 @@ class Reel:
         self.path = script_path.resolve()
         self.s = json.loads(self.path.read_text())
         self.src = ROOT / self.s["source"]
+        global SRC_W, SRC_H
+        SRC_W, SRC_H = map(int, subprocess.run(
+            ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+             "-of", "csv=p=0", str(self.src)], capture_output=True, text=True).stdout.strip().split(","))
         cuts = self.s.get("couper", [])
+        self.env = Envelope(self.src)
         self.pieces = []   # (de, a, segment)
-        for seg in self.s["segments"]:
-            for a, b in keep_intervals(self.src, seg, cuts):
+        segs = self.s["segments"]
+        for i, seg in enumerate(segs):
+            joined_before = i > 0 and abs(segs[i - 1]["a"] - seg["de"]) < 0.05
+            joined_after = i + 1 < len(segs) and abs(seg["a"] - segs[i + 1]["de"]) < 0.05
+            for a, b in keep_intervals(self.env, seg, cuts, not joined_before, not joined_after):
                 self.pieces.append((a, b, seg))
+        # contrôle : aucune coupe là où la voix est encore audible
+        joints = {round(x, 3) for k in range(len(self.pieces) - 1)
+                  for x in [self.pieces[k][1]] if abs(self.pieces[k][1] - self.pieces[k + 1][0]) < 1e-3}
+        self.cut_check = [(round(t, 3), round(self.env.level(t), 1)) for a, b, _ in self.pieces for t in (a, b)
+                          if round(t, 3) not in joints and self.env.level(t) > self.env.quiet + 6]
         t = 0.0
         self.starts = []
         for a, b, _ in self.pieces:
             self.starts.append(t)
             t += b - a
         self.length = t
-        self.bubble = Bubble(self.src, [(a - 0.5, b + 0.5) for a, b, _ in self.pieces])
+        self.bubble = Bubble(self.src, [(a - 0.5, b + 0.5) for a, b, _ in self.pieces], self.s.get("bulle"))
         self.zooms = self.s.get("zooms", [])
         self.title = label(self.s["titre"], 56)
         self.cta = label(self.s["cta"], 52) if self.s.get("cta") else None
@@ -344,12 +448,29 @@ class Reel:
             sigma = cur["src"] + (tau - t_key) if "src" in cur else tau
         return (cur["rect"], sigma, cur) if with_key else (cur["rect"], sigma)
 
+    def hide_bubble(self, frame: np.ndarray, tau: float) -> np.ndarray:
+        """Efface la bulle de l'image d'écran (sinon la tête apparaît deux fois) : chaque ligne est prolongée
+        avec la couleur prise juste à gauche de la bulle (fond de slide, bandeau noir…)."""
+        x0, y1, s = self.bubble.box(tau)
+        m = 22   # ombre portée
+        xa, xb = int(x0 - m), min(int(x0 + s + m), SRC_W)
+        ya, yb = int(y1 - s - m), min(int(y1 + m), SRC_H)
+        out = frame.copy()
+        ref = out[ya:yb, max(xa - 6, 0):max(xa - 2, 1)].mean(axis=1, keepdims=True).astype(np.uint8)
+        out[ya:yb, xa:xb] = ref
+        return out
+
     def compose(self, face_src, screen_src, tau, t_out, piece_idx, seg) -> np.ndarray:
         z = self.zoomed(tau)
+        if self.s.get("masquer_bulle"):
+            screen_src = self.hide_bubble(screen_src, tau)
         out = np.empty((H, W, 3), np.uint8)
         rect, _, key = self.screen_spec(seg, tau, with_key=True)
-        out[:SCREEN_H] = screen_part(screen_src, rect, 1.25 if z else 1.0, key.get("ancre", ANCHOR),
-                                     key.get("haut_min", 0), key.get("isoler", False), key.get("fond", (13, 12, 10)))
+        band = key.get("bande", self.s.get("cadrage") == "bande")
+        out[:SCREEN_H] = screen_part(screen_src, rect, 1.25 if z and not band else 1.0, key.get("ancre", ANCHOR),
+                                     key.get("haut_min", self.s.get("haut_min", 0)), key.get("isoler", self.s.get("isoler", False)),
+                                     key.get("fond", self.s.get("fond", (13, 12, 10))), band,
+                                     key.get("bas_max", self.s.get("bas_max")))
         fz = 1.10 if z else (1.0 if piece_idx % 2 == 0 else 1.05)
         out[SCREEN_H:] = face_part(face_src, self.bubble.crop(tau, fz))
         for a, b, img in self.subs:
@@ -477,7 +598,8 @@ class Reel:
             "duree_s": round(self.length, 2), "images": k, "images_attendues": n_total,
             "coupes": [{"de_source": a, "a_source": b, "debut_reel": round(t0, 2)}
                        for (a, b, _), t0 in zip(self.pieces, self.starts)],
-            "booms_s": self.boom_times}, ensure_ascii=False, indent=2))
+            "booms_s": self.boom_times,
+            "coupes_dans_la_voix": self.cut_check}, ensure_ascii=False, indent=2))
         return out
 
 
@@ -491,5 +613,5 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     reel = Reel(Path(sys.argv[1]))
-    print(f"{len(reel.pieces)} morceaux, {reel.length:.1f} s")
+    print(f"{len(reel.pieces)} morceaux, {reel.length:.1f} s, coupes dans la voix : {reel.cut_check or 'aucune'}")
     print(reel.preview() if "--apercu" in sys.argv else reel.build())

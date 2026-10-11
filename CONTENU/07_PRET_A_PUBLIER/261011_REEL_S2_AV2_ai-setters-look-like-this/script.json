@@ -7,12 +7,13 @@
   "cta": "Build my setter free, *link in bio*",
   "segments": [
     {
-      "de": 28.4,
+      "de": 28.1,
       "a": 33.95,
       "ecran": [
         {
-          "t": 28.4,
-          "src": 40.0,
+          "t": 28.1,
+          "src": 45.0,
+          "fige": true,
           "rect": [
             560,
             80,
@@ -25,11 +26,12 @@
     },
     {
       "de": 34.47,
-      "a": 47.3,
+      "a": 52.3,
       "ecran": [
         {
           "t": 34.47,
-          "src": 41.0,
+          "src": 45.0,
+          "fige": true,
           "rect": [
             300,
             80,
@@ -40,7 +42,8 @@
         },
         {
           "t": 37.2,
-          "src": 43.7,
+          "src": 45.0,
+          "fige": true,
           "rect": [
             560,
             80,
@@ -51,7 +54,8 @@
         },
         {
           "t": 39.0,
-          "src": 45.5,
+          "src": 45.0,
+          "fige": true,
           "rect": [
             820,
             250,
@@ -62,7 +66,8 @@
         },
         {
           "t": 41.2,
-          "src": 47.7,
+          "src": 45.0,
+          "fige": true,
           "rect": [
             300,
             80,
@@ -73,7 +78,32 @@
         },
         {
           "t": 44.7,
-          "src": 49.0,
+          "src": 45.0,
+          "fige": true,
+          "rect": [
+            560,
+            80,
+            900,
+            820
+          ],
+          "ancre": 0.5
+        },
+        {
+          "t": 47.6,
+          "src": 45.0,
+          "fige": true,
+          "rect": [
+            1000,
+            300,
+            640,
+            580
+          ],
+          "ancre": 0.5
+        },
+        {
+          "t": 50.0,
+          "src": 45.0,
+          "fige": true,
           "rect": [
             560,
             80,
@@ -85,12 +115,13 @@
       ]
     },
     {
-      "de": 79.05,
+      "de": 78.0,
       "a": 83.1,
       "ecran": [
         {
-          "t": 79.05,
+          "t": 78.0,
           "src": 85.0,
+          "fige": true,
           "rect": [
             100,
             250,
@@ -103,11 +134,24 @@
       ]
     },
     {
-      "de": 86.75,
+      "de": 84.0,
       "a": 90.7,
       "ecran": [
         {
-          "t": 86.75,
+          "t": 84.0,
+          "src": 85.0,
+          "fige": true,
+          "rect": [
+            100,
+            250,
+            700,
+            300
+          ],
+          "ancre": 0.72,
+          "haut_min": 44
+        },
+        {
+          "t": 86.7,
           "src": 164.0,
           "rect": [
             620,
@@ -169,9 +213,9 @@
   "couper": [],
   "sous_titres": [
     {
-      "de": 28.4,
+      "de": 28.1,
       "a": 30.45,
-      "texte": "The problem is, most of the time,"
+      "texte": "And the problem is, most of the time,"
     },
     {
       "de": 30.45,
@@ -201,17 +245,22 @@
     {
       "de": 41.2,
       "a": 44.7,
-      "texte": "and still focus seriously on sales"
+      "texte": "and still focus seriously on sales,"
     },
     {
       "de": 44.7,
-      "a": 47.3,
-      "texte": "and on the actual setting."
+      "a": 47.6,
+      "texte": "on the actual setting,"
     },
     {
-      "de": 79.05,
+      "de": 47.6,
+      "a": 52.3,
+      "texte": "and on how well our setter books calls."
+    },
+    {
+      "de": 78.0,
       "a": 81.15,
-      "texte": "You go to this site,"
+      "texte": "Once you have that, go to this site,"
     },
     {
       "de": 81.15,
@@ -219,9 +268,14 @@
       "texte": "it's called *ManySetter.com*."
     },
     {
-      "de": 86.75,
+      "de": 84.0,
+      "a": 86.7,
+      "texte": "You'll find the link in the description,"
+    },
+    {
+      "de": 86.7,
       "a": 90.7,
-      "texte": "It lets you build your setter *for free*."
+      "texte": "and it lets you build your setter *for free*."
     },
     {
       "de": 97.1,

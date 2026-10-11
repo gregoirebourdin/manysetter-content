@@ -1,0 +1,69 @@
+{
+  "duree_s": 45.07,
+  "images": 1352,
+  "images_attendues": 1352,
+  "coupes": [
+    {
+      "de_source": 410.24,
+      "a_source": 412.12,
+      "debut_reel": 0.0
+    },
+    {
+      "de_source": 412.88,
+      "a_source": 417.29,
+      "debut_reel": 1.88
+    },
+    {
+      "de_source": 417.58,
+      "a_source": 422.26,
+      "debut_reel": 6.29
+    },
+    {
+      "de_source": 422.65,
+      "a_source": 425.88,
+      "debut_reel": 10.97
+    },
+    {
+      "de_source": 425.88,
+      "a_source": 431.61,
+      "debut_reel": 14.2
+    },
+    {
+      "de_source": 471.18,
+      "a_source": 480.61,
+      "debut_reel": 19.93
+    },
+    {
+      "de_source": 481.18,
+      "a_source": 485.81,
+      "debut_reel": 29.36
+    },
+    {
+      "de_source": 486.17,
+      "a_source": 492.72,
+      "debut_reel": 33.99
+    },
+    {
+      "de_source": 492.98,
+      "a_source": 494.71,
+      "debut_reel": 40.54
+    },
+    {
+      "de_source": 494.96,
+      "a_source": 495.71,
+      "debut_reel": 42.27
+    },
+    {
+      "de_source": 496.0,
+      "a_source": 498.05,
+      "debut_reel": 43.02
+    }
+  ],
+  "booms_s": [
+    15.68,
+    28.31,
+    32.02,
+    39.02
+  ],
+  "coupes_dans_la_voix": []
+}

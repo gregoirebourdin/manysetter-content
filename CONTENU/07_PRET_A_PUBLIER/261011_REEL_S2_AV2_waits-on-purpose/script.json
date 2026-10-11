@@ -7,12 +7,26 @@
   "cta": "Build my setter free, *link in bio*",
   "segments": [
     {
-      "de": 778.38,
-      "a": 782.95,
+      "de": 771.96,
+      "a": 786.5,
       "ecran": [
+        {
+          "t": 771.96,
+          "src": 782.0,
+          "fige": true,
+          "rect": [
+            180,
+            130,
+            1300,
+            420
+          ],
+          "ancre": 0.62,
+          "haut_min": 44
+        },
         {
           "t": 778.38,
           "src": 782.0,
+          "fige": true,
           "rect": [
             620,
             230,
@@ -25,6 +39,7 @@
         {
           "t": 781.72,
           "src": 785.3,
+          "fige": true,
           "rect": [
             1000,
             230,
@@ -37,11 +52,11 @@
       ]
     },
     {
-      "de": 793.4,
+      "de": 792.65,
       "a": 797.95,
       "ecran": [
         {
-          "t": 793.4,
+          "t": 792.65,
           "src": 794.0,
           "fige": true,
           "rect": [
@@ -85,7 +100,7 @@
     },
     {
       "de": 810.84,
-      "a": 818.6,
+      "a": 823.9,
       "ecran": [
         {
           "t": 810.84,
@@ -101,30 +116,11 @@
       ]
     },
     {
-      "de": 826.04,
-      "a": 829.56,
-      "ecran": [
-        {
-          "t": 826.04,
-          "src": 828.0,
-          "fige": true,
-          "rect": [
-            480,
-            80,
-            900,
-            600
-          ],
-          "ancre": 0.62,
-          "haut_min": 44
-        }
-      ]
-    },
-    {
-      "de": 836.12,
+      "de": 833.96,
       "a": 841.64,
       "ecran": [
         {
-          "t": 836.12,
+          "t": 833.96,
           "rect": [
             700,
             560,
@@ -145,22 +141,6 @@
           "haut_min": 44
         }
       ]
-    },
-    {
-      "de": 842.4,
-      "a": 847.7,
-      "ecran": [
-        {
-          "t": 842.4,
-          "rect": [
-            700,
-            560,
-            920,
-            340
-          ],
-          "ancre": 0.62
-        }
-      ]
     }
   ],
   "couper": [
@@ -175,19 +155,34 @@
   ],
   "sous_titres": [
     {
+      "de": 771.96,
+      "a": 775.0,
+      "texte": "And here you have the settings,"
+    },
+    {
+      "de": 775.0,
+      "a": 777.95,
+      "texte": "everything that lets you control, for example,"
+    },
+    {
       "de": 778.38,
       "a": 781.5,
-      "texte": "How long the AI takes to reply."
+      "texte": "how long the AI takes to reply."
     },
     {
       "de": 781.5,
-      "a": 782.95,
-      "texte": "Right now, it's set to *45 seconds*."
+      "a": 783.1,
+      "texte": "Right now, it's set to *45 seconds*,"
     },
     {
-      "de": 793.4,
+      "de": 783.1,
+      "a": 786.5,
+      "texte": "and you'll see in the test that it really waits 45 seconds."
+    },
+    {
+      "de": 792.65,
       "a": 797.95,
-      "texte": "You also have *safety rules*."
+      "texte": "But you also have *safety rules*."
     },
     {
       "de": 798.8,
@@ -202,37 +197,32 @@
     {
       "de": 806.9,
       "a": 809.95,
-      "texte": "say, a *refund*."
+      "texte": "say, a *refund*,"
     },
     {
       "de": 810.84,
       "a": 818.6,
-      "texte": "Or anything you don't want it to talk about."
+      "texte": "or something you'd rather not talk about,"
     },
     {
-      "de": 826.04,
-      "a": 829.56,
-      "texte": "Here you have an inbox with every message."
+      "de": 818.6,
+      "a": 823.9,
+      "texte": "where you don't want the AI making that call or taking the risk."
     },
     {
-      "de": 836.12,
+      "de": 833.96,
+      "a": 836.1,
+      "texte": "You can see exactly what it looks like,"
+    },
+    {
+      "de": 836.1,
       "a": 840.3,
-      "texte": "And of course, you can *take over* the lead"
+      "texte": "and of course, you can *take over* the lead"
     },
     {
       "de": 840.3,
       "a": 841.64,
       "texte": "whenever you want."
-    },
-    {
-      "de": 842.4,
-      "a": 844.3,
-      "texte": "If you'd rather handle your leads by hand,"
-    },
-    {
-      "de": 844.3,
-      "a": 847.7,
-      "texte": "you can take the conversation back *anytime*."
     }
   ],
   "booms": [
@@ -244,7 +234,7 @@
   "zooms": [
     [
       781.5,
-      782.95
+      783.1
     ],
     [
       837.8,

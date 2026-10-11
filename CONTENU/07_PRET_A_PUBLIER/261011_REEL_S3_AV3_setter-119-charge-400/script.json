@@ -1,0 +1,202 @@
+{
+  "format": "REEL tiré de YouTube : écran en haut, tête du fondateur en bas",
+  "source": "CONTENU/08_YOUTUBE/0AaYRoSFW8U/source.mp4",
+  "video_youtube": "https://www.youtube.com/watch?v=0AaYRoSFW8U",
+  "langue_voix": "français (version anglaise : traduction IA de la plateforme, activée par le fondateur à la publication)",
+  "cta": "Build my setter free, *link in bio*",
+  "bulle": {
+    "x0": 1286,
+    "y1": 1026,
+    "s": 340
+  },
+  "masquer_bulle": true,
+  "couper": [],
+  "titre": "Your AI setter costs $119. Charge your client *$400*.",
+  "segments": [
+    {
+      "de": 410.4,
+      "a": 425.88,
+      "ecran": [
+        {
+          "t": 410.4,
+          "src": 50.0,
+          "fige": true,
+          "rect": [
+            1100,
+            370,
+            420,
+            300
+          ]
+        }
+      ]
+    },
+    {
+      "de": 425.88,
+      "a": 431.4,
+      "ecran": [
+        {
+          "t": 425.88,
+          "src": 415.0,
+          "fige": true,
+          "rect": [
+            144,
+            345,
+            660,
+            395
+          ]
+        },
+        {
+          "t": 428.0,
+          "src": 415.0,
+          "fige": true,
+          "rect": [
+            840,
+            390,
+            500,
+            300
+          ]
+        }
+      ]
+    },
+    {
+      "de": 471.24,
+      "a": 497.6,
+      "ecran": [
+        {
+          "t": 471.24,
+          "rect": [
+            150,
+            320,
+            420,
+            290
+          ],
+          "src": 480.0,
+          "fige": true
+        },
+        {
+          "t": 481.28,
+          "rect": [
+            150,
+            320,
+            1380,
+            290
+          ],
+          "src": 480.0,
+          "fige": true
+        },
+        {
+          "t": 486.32,
+          "rect": [
+            150,
+            620,
+            800,
+            170
+          ],
+          "src": 480.0,
+          "fige": true
+        },
+        {
+          "t": 496.16,
+          "rect": [
+            150,
+            230,
+            1380,
+            560
+          ],
+          "src": 480.0,
+          "fige": true
+        }
+      ]
+    }
+  ],
+  "sous_titres": [
+    {
+      "de": 410.4,
+      "a": 414.7,
+      "texte": "Think about it, a human setter usually costs"
+    },
+    {
+      "de": 414.7,
+      "a": 420.2,
+      "texte": "around $300 to $400 a month,"
+    },
+    {
+      "de": 420.2,
+      "a": 425.6,
+      "texte": "with a fixed fee plus a commission on sales."
+    },
+    {
+      "de": 425.88,
+      "a": 428.0,
+      "texte": "Here, for *$119*,"
+    },
+    {
+      "de": 428.0,
+      "a": 431.4,
+      "texte": "you get a setter that can reply 1,500 times."
+    },
+    {
+      "de": 471.24,
+      "a": 473.6,
+      "texte": "So you can say, \"Look, dear client,"
+    },
+    {
+      "de": 473.6,
+      "a": 478.0,
+      "texte": "today I want to add an AI setter to your business,"
+    },
+    {
+      "de": 478.0,
+      "a": 480.6,
+      "texte": "and I'll set it up for just *$400 a month*.\""
+    },
+    {
+      "de": 481.28,
+      "a": 485.6,
+      "texte": "The setter costs you $119, so you made *$281* in margin."
+    },
+    {
+      "de": 486.32,
+      "a": 489.9,
+      "texte": "It gets interesting with volume, say 10 clients,"
+    },
+    {
+      "de": 490.28,
+      "a": 495.6,
+      "texte": "that's *$2,810 a month* in margin."
+    },
+    {
+      "de": 496.16,
+      "a": 497.6,
+      "texte": "But as you'll see, that's not the best part."
+    }
+  ],
+  "booms": [
+    427.36,
+    479.56,
+    483.84,
+    491.2
+  ],
+  "zooms": [
+    [
+      481.28,
+      485.6
+    ],
+    [
+      490.28,
+      495.6
+    ]
+  ],
+  "cadrage": "bande",
+  "isoler": [
+    52,
+    100,
+    1572,
+    885
+  ],
+  "fond": [
+    249,
+    246,
+    245
+  ]
+}
