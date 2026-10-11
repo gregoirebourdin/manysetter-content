@@ -31,7 +31,7 @@
   "a_valider": [
     "le flow géant vient d'un post public d'un membre de la communauté Manychat (déjà montré dans ta vidéo YouTube) : titre et adresse coupés, personne n'est nommé"
   ],
-  "statut": "à valider",
+  "statut": "programmé le 11/10/2026 par Zernio : dim. 11/10 6:30 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb88aecdebc60f1dcbd3fe)",
   "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
   "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
   "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
@@ -43,5 +43,6 @@
     "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
   },
   "titre_incruste": "Most AI setters you see look like this",
-  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix"
+  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix",
+  "zernio_post_id": "6acb88aecdebc60f1dcbd3fe"
 }

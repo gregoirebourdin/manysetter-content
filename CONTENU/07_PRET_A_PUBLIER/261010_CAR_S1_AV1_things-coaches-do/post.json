@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_things-coaches-do",
-  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; retouches du 11/10 (phrases courtes reliées, CTA « no card to start ») ; grille du 13/10 (voir 00_STRATEGIE/grille-2026-10-13.md)",
+  "statut": "programmé le 11/10/2026 par Zernio : ven. 16/10 12:00 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb8a24344268d4ee73cd7e)",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S1",
@@ -170,5 +170,6 @@
     }
   ],
   "funnel": "MOFU",
-  "musique": "cloudy-day-vibes.mp3"
+  "musique": "cloudy-day-vibes.mp3",
+  "zernio_post_id": "6acb8a24344268d4ee73cd7e"
 }

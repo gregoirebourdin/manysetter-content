@@ -24,7 +24,7 @@
     "rd31",
     "mc26"
   ],
-  "statut": "à valider",
+  "statut": "programmé le 11/10/2026 par Zernio : lun. 12/10 6:30 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb88ddcdebc60f1dcbd467)",
   "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
   "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
   "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
@@ -36,5 +36,6 @@
     "montage": "script.json, montage.json",
     "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
   },
-  "titre_incruste": "A human setter gets tired. An AI setter doesn't."
+  "titre_incruste": "A human setter gets tired. An AI setter doesn't.",
+  "zernio_post_id": "6acb88ddcdebc60f1dcbd467"
 }

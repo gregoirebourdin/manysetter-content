@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_if-i-were-a-coach",
-  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; retouches du 11/10 (phrases courtes reliées, CTA « no card to start ») ; grille du 13/10 (voir 00_STRATEGIE/grille-2026-10-13.md)",
+  "statut": "programmé le 11/10/2026 par Zernio : lun. 12/10 12:00 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb893bbc5a18ed5738ccb0)",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S1 et S2",
@@ -308,5 +308,6 @@
     }
   ],
   "funnel": "MOFU",
-  "musique": "cloudy-skies-and-coffee-vibes.mp3"
+  "musique": "cloudy-skies-and-coffee-vibes.mp3",
+  "zernio_post_id": "6acb893bbc5a18ed5738ccb0"
 }

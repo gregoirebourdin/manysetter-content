@@ -28,7 +28,7 @@
   "a_valider": [
     "la conversation est en anglais à l'écran ; ta voix la raconte en français"
   ],
-  "statut": "à valider",
+  "statut": "programmé le 11/10/2026 par Zernio : mar. 13/10 6:30 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb88e07d423e9e5a4ce7b8)",
   "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
   "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
   "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
@@ -40,5 +40,6 @@
     "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
   },
   "titre_incruste": "I DM'd my own AI setter to see if it would book me",
-  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix"
+  "fond": "le fond du discours du fondateur n'est pas filtré (règle du 11/10/2026) ; phrases gardées entières, coupes calées dans les creux de la voix",
+  "zernio_post_id": "6acb88e07d423e9e5a4ce7b8"
 }

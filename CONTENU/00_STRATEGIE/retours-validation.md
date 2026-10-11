@@ -196,3 +196,15 @@ Format d'une règle :
 - Règle : avant de livrer, un contrôle automatique mesure le niveau de la voix à chaque point de coupe ; une coupe où la voix est encore forte est corrigée avant de montrer la vidéo.
 - Retour : « Je donne ça d'après mon histoire personnelle, je ne te demande pas de juger le contenu, juste de m'en faire des shorts, okay ? »
 - Règle : pour les reels tirés des **vidéos YouTube du fondateur**, Claude **ne filtre pas le fond** de ce qu'il dit (c'est son histoire, avec ses chiffres et ses mots). Les passages se choisissent sur leurs chances de marcher (hook, idée complète, chute), et se montent fidèlement. Les règles d'écriture (US English, pas de tiret cadratin, CTA) restent pour les textes que Claude ajoute : titre, sous-titres (traduction fidèle), légende.
+
+## 2026-10-11 · Programmation de la première grille (6 carrousels + 6 reels du fondateur)
+- Retour : « Ne précise pas que c'est le fondateur qui parle, on s'en branle. »
+- Règle : les légendes des reels du fondateur ne disent jamais « founder here » ni rien de ce genre ; elles sont publiées telles que préparées. (La règle du 11/10 sur ce point est annulée : le compte est désormais @greg.manysetter, à son nom.)
+- Retour : « Mes 6 vidéos sont dans le repo [préparées par la session « YouTube to Short »]. Programme-moi tout ça, cherche les 6 reels et poste-les dans l'ordre qu'on a dit, et pense bien que je parle à des USA. »
+- Règle : les horaires visent les États-Unis (fuseau `America/New_York`, carrousels 12:00 pm ET, reels 6:30 pm ET), les textes restent en US English. Les 6 reels suivent l'ordre donné par la session « YouTube to Short » (`message-programmateur-reels-youtube.md`).
+- Décision (voix des reels) : « Tout par Zernio ». Les 6 reels partent avec la voix française du fondateur et les sous-titres anglais incrustés ; pas de traduction Meta AI.
+- Retour : « Je peux pas changer le nom donc publie comme ça. » Le nom affiché reste « Seth | CEO of Manysetter™ » (Instagram bloque le changement), mais la photo de profil et les vidéos sont celles du fondateur : « Seth » n'est plus qu'un nom affiché sur son propre compte, pas un personnage généré présenté comme CEO. Claude publie.
+- Règle : **aucune vidéo du Seth généré** ne part sur ce compte tant que son nom affiché le présente comme CEO ; les vidéos de Seth iront ailleurs, ou plus tard, avec l'étiquette « AI info ».
+- Décision : le fondateur valide la grille entière (« programme-moi tout ça ») : 6 carrousels et 6 reels, statut « validé » le 11/10.
+- Retour : « Y'a déjà de la musique dans les reels. » Règle : les reels tirés de YouTube partent **tels quels** (`reel.mp4`), sans musique ajoutée ; la musique « cloudy » ne sert qu'aux Shorts des carrousels (et aux vidéos qui n'en ont pas).
+- Retour : « Je veux que tout soit synchro, tout ce qui est posté sur Insta est posté sur YouTube. » Règle : **chaque post Instagram part aussi sur YouTube, à la même heure**, dans le même post Zernio (carrousel → son Short `short.mp4` ; reel → la même vidéo). Sur YouTube, « link in bio » devient « at manysetter.com » et le titre est la 1re ligne de la légende.

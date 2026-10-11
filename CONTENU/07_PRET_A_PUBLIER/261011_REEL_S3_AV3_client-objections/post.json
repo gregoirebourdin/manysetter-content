@@ -23,7 +23,7 @@
     "mc41",
     "cl140"
   ],
-  "statut": "à valider",
+  "statut": "programmé le 11/10/2026 par Zernio : ven. 16/10 6:30 pm ET, Instagram @greg.manysetter + YouTube (ID 6acb88ebcdebc60f1dcbd4a0)",
   "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
   "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
   "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
@@ -35,5 +35,6 @@
     "montage": "script.json, montage.json",
     "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
   },
-  "titre_incruste": "3 objections coaches have about AI setters"
+  "titre_incruste": "3 objections coaches have about AI setters",
+  "zernio_post_id": "6acb88ebcdebc60f1dcbd4a0"
 }
