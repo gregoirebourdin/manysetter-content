@@ -1,0 +1,95 @@
+[00:00.3] Bonjour à tous et à toutes. Aujourd'hui, on se retrouve pour une nouvelle vidéo YouTube excellente puisqueaujourd'hui, on va créer ni plus ni moins qu'un setur IA qui va être branché sur notre
+[00:11.4] Instagram et qui va nous ramener des calls sur notre calendly list. C'est aussi simple que ça. Alors, pourquoi cette vidéo ? Parce qu'aujourd'hui, je vois énormément de tutoriels
+[00:22.2] dans les communautés ou même sur YouTube qui nous apprennent à faire des flow mini chat pour créer des seturs IA. Et le problème c'est que la plupart du temps les seturs IA que l'on nous montre ressemblent
+[00:33.0] à ça. Très clairement personne sur cette planète n'a assez d'énergie ni de temps pour entretenir ce genre de scénario et pouvoir sérieusement se concentrer sur
+[00:43.6] l'aspect sales et sur l'aspect setting et sur les performances que notre setur y aura concernant notre prise d'appel. Donc ce que je vous propose aujourd'hui, c'est
+[00:54.1] de vous montrer une méthode super simple qui va vous permettre en à peine 9 minutes de créer le meilleur setur IA que vous avez jamais utilisé. Vous êtes prêts
+[01:04.3] ? C'est parti. Étape numéro 1, c'est d'avoir un compte mini chat bien évidemment, d'avoir un compte Instagram pour pouvoir le tester
+[01:15.0] et d'avoir un Calenly. Une fois que vous avez ça, vous allez vous rendre sur ce site. Ça s'appelle meniset.com. Vous aurez le lien dans la
+[01:25.4] description ci-dessous et il va vous permettre gratuitement de créer votre setur. Donc ce qui est ultra bien, c'est que vous allez pouvoir gérer tout depuis
+[01:36.3] ce site là. Vous allez enlever toute la partie sales et toute la partie qui concentre le cœur du setting en dehors de Mini Chat. Et c'est ce qui va rendre le flow tellement simple
+[01:47.2] que vous n'aurez plus besoin que de deux étapes au lieu des 1 et un étapes et des 1 et une conditions que l'on a d'habitude sur un flow mini chat. Donc
+[01:57.8] on commence directement, on va cliquer sur create my mini chat setter. Une fois que vous avez cliqué là-dessus, vous allez être redirigé vers une page
+[02:08.5] de login. En l'occurrence, je suis déjà connecté, mais vous allez tout simplement rentrer votre email et recevoir un code que vous allez devoir regarder dans votre email et coller dans Many Seter. Une
+[02:18.9] fois que c'est fait, vous allez tout simplement créer un nouveau workspace. Donc pour la démo, je vais l'appeler Mini Chat Test. Très
+[02:29.3] simplement, je crée le workspace. À partir de ce moment-là, Manetteur nous propose de créer directement notre setter. Donc, allons-y. Nous cliquons sur setup
+[02:40.0] setter et une fois que c'est fait, vous l'application va vous poser une question assez pertinente qui est est-ce que vous c'était pour un client ou pour votre propre business ? Nous, en l'occurrence
+[02:50.7] c'est pour notre propre business. Donc, nous cliquons là-dessus. Nous allons vouloir créer un setur sur Instagram. Donc pour l'exemple, nous allons l'appeler Instagram
+[03:01.7] setter. Je clique sur suivant et là on arrive à la connexion avec many chat
+[03:12.0] ce qui va rendre l'utilisation encore plus simple. Donc tout simplement vous avez des vidéos ici où vous pouvez regarder mais nous on va je vais vous le montrer directement ici. Vous allez cliquer sur copier pour pouvoir récupérer le
+[03:23.2] code et cliquer sur install in menu chat. Là, une page va s'ouvrir, la page de Mini Chat qui va vous proposer directement d'installer l'application. Donc, vous avez juste à
+[03:33.5] cliquer sur le bouton installer en dessous. Ici, on va nous demander sur quel compte est-ce que l'on va vouloir installer notre setur IA. Vous allez sélectionner le votre
+[03:44.1] bien entendu, celui sur lequel vous avez vos réseaux qui sont connectés. Donc aujourd'hui, ce tutoriel traite sur Instagram, mais vous allez notamment pouvoir l'utiliser sur WhatsApp, Telegram, Messenger
+[03:55.3] et Instagram. bien entendu. Donc vous cliquez sur installer et là directement vous allez pouvoir voir que Many Chat nous dit que cette application a bien été
+[04:05.8] installée. Vous allez vous rendre dans les paramètres de l'app et c'est dans ces paramètres nous allons pouvoir coller le code. Une
+[04:20.0] fois que ce code est collé, vous allez pouvoir cliquer sur save. Parfait. Comme vous pouvez le voir, tout
+[04:30.8] a bien été sauvegardé. Maintenant, Mini Setur est connecté à votre mini chat. Donc, nous retournons sur la configuration de
+[04:41.6] notre workspace et hop, comme vous pouvez le voir, Mini Seter est bien connecté. Maintenant, Many nous dit qu'il faut ajouter Many Setur dans un flow
+[04:52.5] de Many chat, ce qui est super intéressant puisque c'est là où tout va se jouer. Au lieu de devoir utiliser des milliers de modules, des milliers d'applications, nous allons
+[05:02.9] juste nous rendre donc dans nos automatiss. Comme vous pouvez le voir, j'ai créé un flow qui est plus que basique pour faire le test aujourd'hui. Et
+[05:14.3] ce flow-là consiste tout simplement à détecter si un utilisateur sur Instagram nous envoie un message contenant l'une de ces lettres pour bien évidemment répondre à
+[05:24.8] tout le monde et dans le cadre du test. Donc comme on peut le voir ici, nous allons supprimer directement send a message. [grognement] Voilà. et nous allons
+[05:35.1] choisir une autre étape. Nous allons tout simplement cliquer sur action ici. Donc je clique. Automatiquement, vous allez pouvoir cliquer sur action juste
+[05:45.7] ici et sélectionner comme vous pouvez le voir l'application qui est directement proposée. C'est il y a pas plus simple. Vous cliquez sur start conversation et
+[05:56.1] une fois que c'est fait, le mener va vous proposer quelques champs, notamment le canal que vous allez utiliser. En l'occurrence, nous ça va être Instagram.
+[06:07.1] Donc on clique ici et on va aller sélectionner notre setup qui est juste ici, Instagram setter. Une fois que c'est fait, vous allez cliquer sur save et juste ici,
+[06:17.9] update. Parfait, tout est maintenant connecté. Nous allons juste retourner sur Manet pour voir comment est-ce qu'il
+[06:28.1] réagit à ça. C'est parfait. Maintenant, nous allons pouvoir sur une fois que vous avez cliqué sur continuer, on va
+[06:38.3] voir que l'application nous demande où est-ce qu'on veut recevoir nos appels. Donc tout simplement là, vous pouvez sélectionner d'intégrer vos outils pour
+[06:48.6] que le setur rien qu'en parlant avec votre lead puisse booker l'appel à sa place au lieu de le renvoyer sur un lien. En l'occurrence, pour garder ce tuto beaucoup
+[06:59.6] plus court et ne pas montrer des clés d'un pays dans ce tutoriel, je vais tout simplement utiliser un lien. Donc je clique sur link et je vais aller direct dans mon
+[07:10.0] calendrier juste ici pour récupérer. Voilà, je clique sur copier le lien, je
+[07:21.1] reviens dans mes setter et je colle. Une fois que c'est fait, vous pouvez voir directement sur votre écran que l'on vous propose d'avoir des [grognement]
+[07:31.3] followup. Donc, vous avez plusieurs choix. Soit vous les activez, soit vous les désactivez et on verra un peu plus tard comment est-ce qu'on pourra les customiser. Mais comme
+[07:42.0] vous pouvez le voir sur votre gauche, il y a un onglet dont on ne sait pas encore utiliser qui s'appelle offer and fit. Je vous invite à cliquer dessus et là ça va être super
+[07:52.6] simple. Vous allez pouvoir écrire votre offre, écrire ce que vous vendez, ce que vous voulez proposer et donner du contexte pour que tout votre script de
+[08:03.0] setting et tout votre set soit au courant de ce que vous faites. Donc moi pour exemple, je vais dire I sell incom
+[08:24.2] enrich winner product. Comme vous le voyez ici, vous pouvez ajouter des liens, des PDF, tout ce qui convient finalement à
+[08:35.2] votre business. Après, vous allez pouvoir ici rajouter les obligatoires mais vous pouvez. Donc, vous pouvez par exemple mettre can invest 3k note
+[08:49.7] full beginner. Et une fois que vous avez rempli vos informations, vous allez tout simplement pouvoir cliquer sur continuer. Et ici, comme vous
+[08:59.8] pouvez le voir, il y a un chargement qui va se lancer pour générer directement votre script de setting ainsi que tout le contexte dont il va avoir besoin
+[09:10.8] pour avoir le meilleur setup. Il y a généralement [grognement] ça prend entre 1 minute à 3 minutes. Ce n'est pas très long mais comme
+[09:21.1] vous pouvez le voir tout est en train de se charger. On se retrouve le playbook enfin terminé. Vous allez pouvoir cliquer sur continuer setup
+[09:32.5] de workspace. Donc comme vous pouvez le voir ici, vous pouvez directement essayer votre setur. Alors c'est super parce
+[09:43.0] que vous allez pouvoir écrire hey I love content et vous allez ainsi
+[09:53.4] pouvoir discuter avec votre set. Et là, comme on peut le voir, les questions sont déjà très intéressantes et vous
+[10:04.5] pouvez continuer à discuter avec lui. Si vous n'aimez pas les réponses qu'il vous donne, vous pouvez directement ici cliquer dans ce petit espace et demander par
+[10:15.2] exemple I want et donner ici
+[10:26.2] I want a better tone with emoji face and ends. Vous pouvez directement envoyer votre message et vous allez pouvoir améliorer
+[10:37.7] votre script au fur et à mesure. Comme on peut le voir, le script de setting s'est bien mis à jour. Et si je repose une question ? [grognement]
+[10:57.7] Si je pose la question, hop, il me répond avec les mises à jour automatiques. Pour cet outil, vous avez directement 14 jours d'essai gratuit.
+[11:08.6] Donc vous pouvez absolument le tester sur des premiers lead. Vous avez 500 réponses en NIA, donc vous pouvez largement tester et avoir vos
+[11:19.4] premiers appels. Et on va faire le tour très rapidement pour que vous puissiez comprendre à quoi est-ce que ça sert. Comme vous pouvez le voir ici, on a l'historique de ce qu'on lui a demandé pour qu'il s'entraîne et
+[11:29.6] qu'il devienne meilleur en terme de set. Donc, vous pourrez toujours le tester ici avant de le pluguer sur vos clients ou sur votre compte Instagram. Et vous allez pouvoir retrouver ici
+[11:40.5] dans l'onglet Playbook absolument tout ce qui est relié au script de setting. Donc vous avez votre script de setting qui est juste ici. Vous avez l'offre qui
+[11:52.4] remplit les critères, votre voix, les objections, le contexte, absolument tout. Donc je vous laisserai regarder ce que l'a généré pour vous, mais globalement vous allez avoir des
+[12:03.4] rendez-vous qualifiés. Quand vous allez ici dans l'onglet booking des followup, vous allez pouvoir donc connecter votre calendrier beaucoup plus profondément que un
+[12:13.8] simple booking link. Vous allez pouvoir mettre votre clé API pour votre calendrier. Mais ça, on l'a déjà fait. Vous pouvez ici voir les follow-up qui sont beaucoup plus complets que ce
+[12:24.0] que l'on avait dans l'onboarding parce que vous pouvez ici non seulement laisser lia écrire le follow web que vous voulez dans la fenêtre de de contexte qui
+[12:34.5] est de 24 heures pour main chat, vous pouvez l'écrire vous-même et vous pouvez aussi faire une voice note pour que les follow-up soient encore plus personnalisés et
+[12:44.8] que la personne ne se doute absolument pas que derrière les messages se cachent unir. Et ici vous allez avoir donc les settings, tout
+[12:55.2] ce qui vous permet de gérer par exemple euh le délai que Lia va mettre pour répondre. Là, il est mis sur 45 secondes et on va pouvoir voir le test tout à l'heure comme quoi
+[13:05.5] il met bien 45 secondes. Euh vous pouvez aussi avoir des pauses et euh ou supprimer votre setur si vous en avez envie, mais vous avez aussi des règles
+[13:17.5] de sécurité. par exemple, vous allez pouvoir euh dire qui l'arrête de parler à partir euh d'un moment où la
+[13:27.8] personne parle par exemple de remboursement ou que la personne parle de quelque chose dont vous n'avez pas
+[13:38.3] envie de parler, que vous ne voulez pas que Lia prenne ce choix-là et le risque de parler de ces sujets-là. Donc c'est super intéressant et vous avez ici un inbox dans lequel vous
+[13:48.5] allez avoir tous les messages. Et comme vous pouvez voir, on a ici les messages que l'on a envoyé lors du test. Donc vous pouvez directement voir à quoi cela ressemble et vous allez bien sûr pouvoir prendre la main sur
+[13:59.9] le lead si vous en avez envie. Si vous voulez pouvoir gérer vos leads à la main, vous pouvez récupérer la conversation absolument quand vous le voulez. Donc maintenant, il est temps de voir
+[14:10.5] bah est-ce que ça fonctionne réellement sur notre compte Instagram. Et c'est parti, on se rejoint sur directement mon compte Instagram ici.
+[14:22.0] Donc on peut voir que je vais décaler mon image. On peut voir que juste ici se trouve le compte Instagram qui est relié à Many Chat et nous allons lui envoyer un premier message. Donc
+[14:32.2] nous allons dire par exemple "Hello, I'm interested about ecome." simplement,
+[14:43.0] nous allons envoyer ce message et nous allons attendre la réponse et voir ce que notre setur répond. On voit que il nous demande si j'ai déjà
+[14:53.6] commencé à vendre ou si je débute juste. Donc je lui dis que j'ai déjà fait 1 million ce qu'est-ce que je vends actuellement
+[15:04.4] ? Donc je lui réponds des produits pour chien. Ce à quoi il me répond, c'est une niche. Depuis combien de temps est-ce que tu fais de l'com ? Je lui réponds 2
+[15:14.6] ans. Est-ce que j'ai pas essayé trouver des produits gagn ? Qu'est-ce qui se passe ? Du
+[15:24.9] coup, je lui dis que je regarde sur Pinterest trend actuellement et là, il me dit "Ah mais qu'est-ce que tu penses qui te retient d'aller atteindre les
+[15:35.5] 10K par mois avec ma boutique Icom Donc je lui dis les bonnes sources et peut-être les compétences de faire de meilleurs ads ou de meilleurs shops. Il me répond que
+[15:50.7] il pourrait me proposer d'atteindre les 10000 € par mois mais me demande d'abord si j'ai 3000 € de côté à investir pour ce
+[16:00.9] projet-l. Je lui dis oui, pourquoi pas ? Il me fait un récap et me dit que la prochaine étape est un appel de 30 minutes. Je lui dis que je suis OK. Il m'envoie le lien, je lui dis que je
+[16:11.4] pris mon appel pour le lendemain matin à 4h de l'après-midi et il me dit "Parfait, on se voit à 4h." Le prompt qui
+[16:22.2] a été utilisé n'a eu besoin que de 5 minutes à être développé. Alors imaginez si vous pefez votre script de setting, vous pouvez avoir des résultats
+[16:33.2] démentiels. Et le plus intéressant dans tout ça, c'est que si on retourne sur notre application Mini Setter ici, vous allez vous rendre directement dans Inbox. Et là, qu'est-ce
+[16:43.5] que vous vous allez pouvoir voir directement ici booked. Donc vous allez pouvoir direct statistiqu et pouvoir comprendre qu'est-ce
+[16:56.2] la conversation. Vous pouvez même la reprendre vous. Donc c'est géni synchroniser chat
+[17:08.8] et vous ne perdez plus jamais aucun lead. J'espère que cette vidéo vous aura plu. Si vous avez des questions, n'hésitez
+[17:25.6] et d'ici vous souhaite de bons C'est

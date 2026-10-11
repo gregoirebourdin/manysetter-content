@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_if-i-were-a-coach",
-  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; à programmer une fois le compte de publication choisi",
+  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; retouches du 11/10 (phrases courtes reliées, CTA « no card to start ») ; grille du 13/10 (voir 00_STRATEGIE/grille-2026-10-13.md)",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S1 et S2",
@@ -30,7 +30,7 @@
           "heading": "*boring as h\\*ll*"
         },
         {
-          "text": "but it's where your money is.\n\nyour Reel worked. the comments came in. now the real job starts in your DMs, usually at 11:47 pm, from the couch.\n\nhere's what i see in almost every coach's inbox:"
+          "text": "but it's where your money is.\n\nyour Reel worked and the comments came in. now the real job starts in your DMs, usually at 11:47 pm, from the couch.\n\nhere's what i see in almost every coach's inbox:"
         },
         {
           "lead": "the same 3 questions, answered too late, by someone who's exhausted."
@@ -188,7 +188,7 @@
           "lead": "i'd only send my calendar to the right people."
         },
         {
-          "text": "\"this week i had 6 consult calls booked. none of them turned into a real client.\" sound familiar?\n\nbefore the link, i'd check what they want and if the budget is real. everyone else gets something useful. just not your tuesday afternoon."
+          "text": "\"this week i had 6 consult calls booked. none of them turned into a real client.\" does that sound familiar?\n\nbefore the link, i'd check what they want and if the budget is real. everyone else gets something useful. just not your tuesday afternoon."
         },
         {
           "image": "CONTENU/03_PRODUIT_REF/site/pourquoi-cette-reponse.png",
@@ -302,10 +302,10 @@
           ]
         },
         {
-          "text": "how many of the 3 do you already do? tell me in the comments. zero is a valid answer.\n\n**build your setter free, link in bio.**"
+          "text": "how many of the 3 do you already do? tell me in the comments. zero is a valid answer.\n\n**build your setter free, no card to start, link in bio.**"
         }
       ]
     }
   ],
-  "funnel": "MOFU/BOFU"
+  "funnel": "MOFU"
 }

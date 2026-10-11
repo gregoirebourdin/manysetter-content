@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S2_AV2_which-reply-books",
-  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; à programmer une fois le compte de publication choisi",
+  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; retouches du 11/10 (phrases courtes reliées, CTA « no card to start ») ; grille du 13/10 (voir 00_STRATEGIE/grille-2026-10-13.md)",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S2",
@@ -42,7 +42,7 @@
           }
         },
         {
-          "caption": "1, 2, 3 or 4? comment before you swipe. no cheating.",
+          "caption": "1, 2, 3 or 4? comment before you swipe, no cheating.",
           "align": "center"
         }
       ]
@@ -56,7 +56,7 @@
           "label": "reply 1 · the calendar for everyone"
         },
         {
-          "text": "sounds efficient. then your week fills up with calls from people who were never a fit. by thursday you're tired as h\\*ll."
+          "text": "sounds efficient, then your week fills up with calls from people who were never a fit. by thursday you're tired as h\\*ll."
         },
         {
           "label": "reply 2 · the link in bio"
@@ -125,7 +125,7 @@
       "bg": "black",
       "blocks": [
         {
-          "title": "answer the price. then ask *one* question"
+          "title": "answer the price, then ask *one* question"
         },
         {
           "text": "the price shows you're honest. **the question keeps the conversation yours.**",
@@ -171,10 +171,10 @@
           "heading": "which number did you *pick*?"
         },
         {
-          "text": "be honest. i've seen reply 1 more times than i can count. no judgment. ok, a little.\n\nreply 4 is what my AI setter writes. i built it, it's called ManySetter: your Manychat flow sends the first message, the setter handles what comes after.\n\n**tell me your number in the comments. build your setter free, link in bio.**"
+          "text": "be honest, i've seen reply 1 more times than i can count. no judgment, ok, maybe a little.\n\nreply 4 is what my AI setter writes. i built it, it's called ManySetter: your Manychat flow sends the first message, the setter handles what comes after.\n\n**tell me your number in the comments. build your setter free, no card to start, link in bio.**"
         }
       ]
     }
   ],
-  "funnel": "MOFU/BOFU"
+  "funnel": "MOFU"
 }

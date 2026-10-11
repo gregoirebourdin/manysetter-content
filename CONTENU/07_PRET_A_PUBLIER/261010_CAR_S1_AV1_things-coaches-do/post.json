@@ -1,6 +1,6 @@
 {
   "id": "261010_CAR_S1_AV1_things-coaches-do",
-  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; à programmer une fois le compte de publication choisi",
+  "statut": "validé par le fondateur le 10/10/2026 (version 3) ; retouches du 11/10 (phrases courtes reliées, CTA « no card to start ») ; grille du 13/10 (voir 00_STRATEGIE/grille-2026-10-13.md)",
   "format": "carrousel",
   "style": "éditorial (compte de référence du fondateur)",
   "segment": "S1",
@@ -36,7 +36,7 @@
           "list": [
             "you DM'd 40 people by hand after one good post. your thumbs still hate you.",
             "you paid a friend $50 a month to answer your DMs. that friend now knows way too much.",
-            "you sent voice notes to sound more human. then you heard your own voice. ugh."
+            "you sent voice notes to sound more human. then you heard your own voice, ugh."
           ]
         }
       ]
@@ -52,7 +52,7 @@
           "start": 4
         },
         {
-          "caption": "be honest. which number is you?",
+          "caption": "be honest, which number is you?",
           "align": "center"
         }
       ]
@@ -163,11 +163,11 @@
           "heading": "which number are *you*?"
         },
         {
-          "text": "tell me in the comments, no judgment here. if it's all six, you get a virtual hug. and a setter.\n\n**build your setter free, link in bio.**",
+          "text": "tell me in the comments, no judgment here. if it's all six, you get a virtual hug and a setter.\n\n**build your setter free, no card to start, link in bio.**",
           "align": "center"
         }
       ]
     }
   ],
-  "funnel": "MOFU/BOFU"
+  "funnel": "MOFU"
 }
