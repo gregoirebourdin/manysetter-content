@@ -1,0 +1,44 @@
+{
+  "duree_s": 44.68,
+  "images": 1340,
+  "images_attendues": 1340,
+  "coupes": [
+    {
+      "de_source": 43.94,
+      "a_source": 44.67,
+      "debut_reel": 0.0
+    },
+    {
+      "de_source": 45.09,
+      "a_source": 53.8,
+      "debut_reel": 0.73
+    },
+    {
+      "de_source": 53.82,
+      "a_source": 57.05,
+      "debut_reel": 9.44
+    },
+    {
+      "de_source": 57.26,
+      "a_source": 60.83,
+      "debut_reel": 12.67
+    },
+    {
+      "de_source": 98.93,
+      "a_source": 101.6,
+      "debut_reel": 16.24
+    },
+    {
+      "de_source": 101.84,
+      "a_source": 127.61,
+      "debut_reel": 18.91
+    }
+  ],
+  "booms_s": [
+    15.61,
+    19.07,
+    29.35,
+    43.47
+  ],
+  "coupes_dans_la_voix": []
+}

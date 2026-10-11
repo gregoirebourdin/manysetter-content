@@ -1,0 +1,48 @@
+{
+  "duree_s": 39.37,
+  "images": 1181,
+  "images_attendues": 1181,
+  "coupes": [
+    {
+      "de_source": 703.4,
+      "a_source": 719.06,
+      "debut_reel": 0.0
+    },
+    {
+      "de_source": 719.24,
+      "a_source": 720.16,
+      "debut_reel": 15.66
+    },
+    {
+      "de_source": 720.53,
+      "a_source": 727.5,
+      "debut_reel": 16.58
+    },
+    {
+      "de_source": 728.23,
+      "a_source": 732.33,
+      "debut_reel": 23.55
+    },
+    {
+      "de_source": 732.34,
+      "a_source": 735.65,
+      "debut_reel": 27.65
+    },
+    {
+      "de_source": 735.94,
+      "a_source": 740.02,
+      "debut_reel": 30.96
+    },
+    {
+      "de_source": 740.27,
+      "a_source": 744.6,
+      "debut_reel": 35.04
+    }
+  ],
+  "booms_s": [
+    3.76,
+    23.05,
+    33.34
+  ],
+  "coupes_dans_la_voix": []
+}
