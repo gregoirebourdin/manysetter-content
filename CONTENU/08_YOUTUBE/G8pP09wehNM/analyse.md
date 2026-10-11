@@ -4,6 +4,15 @@
 - Montage d'origine : partage d'écran avec zooms animés, bulle webcam arrondie en bas à gauche (environ 215 px de côté, plus petite pendant les zooms). Pas de fichier webcam séparé.
 - Analyse du 11/10/2026, sur les sous-titres automatiques de YouTube (`transcript_fr.txt`). Les timecodes sont à ± 1 s ; on les cale au mot près au montage.
 
+## Statut (11/10/2026)
+
+Les 3 premiers passages sont retenus par le fondateur et montés (mise en page A), en attente de sa validation :
+- 1 → `07_PRET_A_PUBLIER/261011_REEL_S2_AV2_ai-setters-look-like-this/` (33 s)
+- 2 → `07_PRET_A_PUBLIER/261011_REEL_S1_AV1_dm-my-own-setter/` (48 s)
+- 3 → `07_PRET_A_PUBLIER/261011_REEL_S2_AV2_waits-on-purpose/` (31 s)
+
+Le 4e (« Fix it in one sentence ») reste en réserve.
+
 ## Classement proposé (le fondateur en choisit 3)
 
 ### 1. « Most AI setters you see look like this »

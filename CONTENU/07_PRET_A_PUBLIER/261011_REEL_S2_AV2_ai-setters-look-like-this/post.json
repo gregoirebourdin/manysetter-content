@@ -1,0 +1,47 @@
+{
+  "id": "261011_REEL_S2_AV2_ai-setters-look-like-this",
+  "funnel": "MOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "role_grille": "contre-pied des tutos de setters IA en flows géants",
+  "biais": [
+    "interruption du schéma (le flow géant à la 1re seconde)",
+    "contre-pied (« les setters IA qu'on vous montre ressemblent à ça »)",
+    "pertinence pour soi (tout utilisateur de Manychat s'y reconnaît)"
+  ],
+  "source": {
+    "video": "https://www.youtube.com/watch?v=G8pP09wehNM",
+    "passages": [
+      "00:28 → 00:52",
+      "01:19 → 01:31",
+      "01:37 → 01:50"
+    ],
+    "ecrans_repris": [
+      "flow géant : post public de la communauté Manychat, titre et adresse du post coupés",
+      "page d'accueil de ManySetter",
+      "écran « Who is this setter for? » (02:44)",
+      "action « ManySetter · Start conversation » dans Manychat (06:16)"
+    ]
+  },
+  "verbatims": [
+    "rd67",
+    "mc24",
+    "mc25"
+  ],
+  "a_valider": [
+    "le flow géant vient d'un post public d'un membre de la communauté Manychat (déjà montré dans ta vidéo YouTube) : titre et adresse coupés, personne n'est nommé"
+  ],
+  "statut": "à valider",
+  "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
+  "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
+  "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
+  "texte_incruste": "US English (titre, sous-titres phrase par phrase, CTA)",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "montage": "script.json, montage.json",
+    "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
+  },
+  "titre_incruste": "Most AI setters you see look like this",
+  "duree_s": 33.2
+}

@@ -1,0 +1,11 @@
+Manychat AI setter flows shouldn't look like a subway map.
+
+Most AI setter tutorials teach you a flow with way too many steps and conditions. Nobody has the time to maintain that and still focus on sales.
+
+So I took the setting out of the flow. Your Manychat keeps the trigger, and the flow only needs two steps.
+
+How many steps does your current flow have? Tell me in the comments.
+
+Keep your Manychat, add the setter. Build my setter free, link in bio.
+
+#manychat #aisetter #dmsetter

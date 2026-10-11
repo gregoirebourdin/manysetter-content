@@ -11,7 +11,8 @@ dont seule la taille change avec les zooms. Le script :
 2. haut (1080 × 980) : l'écran, cadré sur `ecran[].rect` [x, y, l, h] de la source, à partir de `ecran[].t`.
    `ecran[].src` prend l'image d'un autre moment de la vidéo (la voix reste celle du passage) ;
    `ancre` place le contenu en hauteur, `haut_min` ignore le haut de la source (fond d'écran),
-   `isoler` ne garde que `rect` sur un fond uni (`fond`), `fige` garde l'image `src` immobile ;
+   `isoler` ne garde que `rect` (ou la zone [x, y, l, h] donnée) sur un fond uni (`fond`),
+   `fige` garde l'image `src` immobile ;
 3. bas (1080 × 940) : l'intérieur de la bulle webcam, suivie image par image (bord droit lu sur le pull) ;
 4. zooms secs sur les plages `zooms` (écran à 125 %, visage à 110 %), et un léger 100/105 % sur le visage
    d'un jump cut à l'autre ;
@@ -243,8 +244,9 @@ def screen_part(src_frame: np.ndarray, rect, zoom: float, anchor: float = ANCHOR
         # seul `rect` reste visible (ex. la fenêtre de DM), le reste devient un fond uni
         canvas = np.empty((h, w, 3), np.uint8)
         canvas[:] = np.array(fond, np.uint8)
-        rx0, ry0 = max(rect[0], x), max(rect[1], y0)
-        rx1, ry1 = min(rect[0] + rect[2], x + w), min(rect[1] + rect[3], y1)
+        zone = isolate if isinstance(isolate, (list, tuple)) else rect
+        rx0, ry0 = max(zone[0], x), max(zone[1], y0)
+        rx1, ry1 = min(zone[0] + zone[2], x + w), min(zone[1] + zone[3], y1)
         if rx1 > rx0 and ry1 > ry0:
             canvas[ry0 - y:ry1 - y, rx0 - x:rx1 - x] = src_frame[ry0:ry1, rx0:rx1]
         crop = canvas

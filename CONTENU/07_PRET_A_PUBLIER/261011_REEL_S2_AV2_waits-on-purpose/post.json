@@ -1,0 +1,48 @@
+{
+  "id": "261011_REEL_S2_AV2_waits-on-purpose",
+  "funnel": "MOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "role_grille": "contre-pied de la réponse instantanée : délai de réponse, règles de sécurité, reprise en main",
+  "biais": [
+    "contre-pied (tout le marché vend la réponse instantanée)",
+    "chiffre précis (45 secondes)",
+    "aversion à la perte (le sujet qu'on ne veut pas voir traité par l'IA)"
+  ],
+  "source": {
+    "video": "https://www.youtube.com/watch?v=G8pP09wehNM",
+    "passages": [
+      "12:58 → 13:03",
+      "13:13 → 13:38",
+      "13:46 → 13:50",
+      "13:56 → 14:08"
+    ],
+    "coupe": "12:34 → 12:44 jamais repris (« pour que la personne ne se doute absolument pas » qu'une IA est derrière : interdit)",
+    "ecrans_repris": [
+      "Settings › Reply delay (45 s)",
+      "Settings › Safety rules et « Topics to stay away from » (refunds)",
+      "Inbox et bouton « Reply myself »"
+    ]
+  },
+  "verbatims": [
+    "mc19",
+    "cl095",
+    "rd71",
+    "mc15",
+    "rd39"
+  ],
+  "a_valider": [],
+  "statut": "à valider",
+  "format": "reel tiré de YouTube (écran en haut, tête du fondateur en bas)",
+  "visage": "le fondateur, vraie vidéo (pas d'étiquette « AI info » pour l'image)",
+  "voix": "français ; la version anglaise vient de « Translate your voice with Meta AI », à activer et à écouter en aperçu avant de publier (règle du 11/10/2026)",
+  "texte_incruste": "US English (titre, sous-titres phrase par phrase, CTA)",
+  "cta": "lien en bio (ManySetter pas encore branché sur le compte)",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "montage": "script.json, montage.json",
+    "fabrication": "CONTENU/06_GABARITS/montage_youtube.py"
+  },
+  "titre_incruste": "My AI setter waits on purpose before it replies",
+  "duree_s": 30.8
+}
