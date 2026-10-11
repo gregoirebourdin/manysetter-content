@@ -10,6 +10,8 @@ dont seule la taille change avec les zooms. Le script :
    plages `couper` (les « euh ») : ce sont les jump cuts ;
 2. haut (1080 × 980) : l'écran, cadré sur `ecran[].rect` [x, y, l, h] de la source, à partir de `ecran[].t`.
    `ecran[].src` prend l'image d'un autre moment de la vidéo (la voix reste celle du passage) ;
+   `ancre` place le contenu en hauteur, `haut_min` ignore le haut de la source (fond d'écran),
+   `isoler` ne garde que `rect` sur un fond uni (`fond`), `fige` garde l'image `src` immobile ;
 3. bas (1080 × 940) : l'intérieur de la bulle webcam, suivie image par image (bord droit lu sur le pull) ;
 4. zooms secs sur les plages `zooms` (écran à 125 %, visage à 110 %), et un léger 100/105 % sur le visage
    d'un jump cut à l'autre ;
@@ -230,13 +232,23 @@ def fit_rect(rect, zoom: float, anchor: float = ANCHOR):
     return int(x), int(y), int(w), int(h)
 
 
-def screen_part(src_frame: np.ndarray, rect, zoom: float, anchor: float = ANCHOR, top_min: int = 0) -> np.ndarray:
+def screen_part(src_frame: np.ndarray, rect, zoom: float, anchor: float = ANCHOR, top_min: int = 0,
+                isolate: bool = False, fond=(13, 12, 10)) -> np.ndarray:
     """`top_min` : lignes de la source à ignorer en haut (fond d'écran, bord de fenêtre), remplacées par la
     couleur de la page."""
     x, y, w, h = fit_rect(rect, zoom, anchor)
     y0, y1 = max(y, top_min), min(y + h, SRC_H)
     crop = src_frame[y0:y1, x:x + w]
-    if y0 != y or y1 != y + h:
+    if isolate:
+        # seul `rect` reste visible (ex. la fenêtre de DM), le reste devient un fond uni
+        canvas = np.empty((h, w, 3), np.uint8)
+        canvas[:] = np.array(fond, np.uint8)
+        rx0, ry0 = max(rect[0], x), max(rect[1], y0)
+        rx1, ry1 = min(rect[0] + rect[2], x + w), min(rect[1] + rect[3], y1)
+        if rx1 > rx0 and ry1 > ry0:
+            canvas[ry0 - y:ry1 - y, rx0 - x:rx1 - x] = src_frame[ry0:ry1, rx0:rx1]
+        crop = canvas
+    elif y0 != y or y1 != y + h:
         edge = crop[2:6] if y0 != y else crop[-6:-2]
         canvas = np.empty((h, w, 3), np.uint8)
         canvas[:] = np.median(edge.reshape(-1, 3), axis=0).astype(np.uint8)
@@ -257,14 +269,18 @@ def face_part(src_frame: np.ndarray, box) -> np.ndarray:
 def frames(src: Path, t0: float, dur: float):
     """Images de la source (RGB 1692 × 1080) à 30 i/s, à partir de t0."""
     p = subprocess.Popen(["ffmpeg", "-v", "error", "-ss", f"{t0:.3f}", "-i", str(src), "-t", f"{dur:.3f}",
-                          "-vf", f"fps={FPS}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+                          "-vf", f"fps={FPS}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+                         stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
     size = SRC_W * SRC_H * 3
-    while True:
-        buf = p.stdout.read(size)
-        if len(buf) < size:
-            break
-        yield np.frombuffer(buf, np.uint8).reshape(SRC_H, SRC_W, 3)
-    p.wait()
+    try:
+        while True:
+            buf = p.stdout.read(size)
+            if len(buf) < size:
+                break
+            yield np.frombuffer(buf, np.uint8).reshape(SRC_H, SRC_W, 3)
+    finally:   # on arrête de lire avant la fin : on ferme le lecteur proprement
+        p.kill()
+        p.wait()
 
 
 def frame_at(src: Path, t: float) -> np.ndarray:
@@ -320,7 +336,10 @@ class Reel:
             if k.get("t", seg["de"]) <= tau + 1e-6:
                 cur = k
         t_key = cur.get("t", seg["de"])
-        sigma = cur["src"] + (tau - t_key) if "src" in cur else tau
+        if cur.get("fige"):
+            sigma = cur["src"]
+        else:
+            sigma = cur["src"] + (tau - t_key) if "src" in cur else tau
         return (cur["rect"], sigma, cur) if with_key else (cur["rect"], sigma)
 
     def compose(self, face_src, screen_src, tau, t_out, piece_idx, seg) -> np.ndarray:
@@ -328,7 +347,7 @@ class Reel:
         out = np.empty((H, W, 3), np.uint8)
         rect, _, key = self.screen_spec(seg, tau, with_key=True)
         out[:SCREEN_H] = screen_part(screen_src, rect, 1.25 if z else 1.0, key.get("ancre", ANCHOR),
-                                     key.get("haut_min", 0))
+                                     key.get("haut_min", 0), key.get("isoler", False), key.get("fond", (13, 12, 10)))
         fz = 1.10 if z else (1.0 if piece_idx % 2 == 0 else 1.05)
         out[SCREEN_H:] = face_part(face_src, self.bubble.crop(tau, fz))
         for a, b, img in self.subs:
@@ -336,7 +355,7 @@ class Reel:
                 blend(out, img, W // 2, SUB_Y)
         blend(out, self.title, W // 2, TITLE_TOP + self.title.shape[0] // 2)
         if self.cta is not None and t_out >= self.length - 2.2:
-            blend(out, self.cta, W // 2, CTA_Y)
+            blend(out, self.cta, W // 2, self.s.get("cta_y", CTA_Y))
         return out
 
     def locate(self, t_out: float):
@@ -422,6 +441,7 @@ class Reel:
                                stdin=subprocess.PIPE)
         n_total = int(round(self.length * FPS))
         k = 0
+        frozen = {}
         for i, ((a, b, seg), t0) in enumerate(zip(self.pieces, self.starts)):
             n = int(round((t0 + b - a) * FPS)) - int(round(t0 * FPS))
             _, sigma0 = self.screen_spec(seg, a)
@@ -434,10 +454,14 @@ class Reel:
                 fs = next(face_it, None)
                 fs = last_face if fs is None else fs
                 last_face = fs
-                key = id(self.screen_spec(seg, tau)[0])
-                _, sigma = self.screen_spec(seg, tau)
+                _, sigma, cur = self.screen_spec(seg, tau, with_key=True)
+                key = id(cur)
                 if abs(sigma - tau) < 1e-3:
                     ss = fs
+                elif cur.get("fige"):
+                    if sigma not in frozen:
+                        frozen[sigma] = frame_at(self.src, sigma)
+                    ss = frozen[sigma]
                 else:
                     if screen_key != key or screen_it is None:
                         screen_it, screen_key = frames(self.src, sigma, (b - tau) + 0.2), key

@@ -143,7 +143,7 @@
     {
       "blocks": [
         {
-          "heading": "so we built a *setter*"
+          "heading": "so i built a *setter*"
         },
         {
           "text": "it's called ManySetter, an AI setter for Manychat. you keep your flows: they still send the first message. when the lead replies, the setter takes over, asks one question at a time, and only sends your calendar to the right people.\n\nyour friend gets their evenings back."

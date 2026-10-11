@@ -1,0 +1,254 @@
+{
+  "format": "REEL tiré de YouTube : écran en haut, tête du fondateur en bas",
+  "source": "CONTENU/08_YOUTUBE/G8pP09wehNM/source.mp4",
+  "video_youtube": "https://www.youtube.com/watch?v=G8pP09wehNM",
+  "langue_voix": "français (version anglaise : traduction IA de la plateforme, activée par le fondateur à la publication)",
+  "titre": "My AI setter waits *on purpose* before it replies",
+  "cta": "Build my setter free, *link in bio*",
+  "segments": [
+    {
+      "de": 778.38,
+      "a": 782.95,
+      "ecran": [
+        {
+          "t": 778.38,
+          "src": 782.0,
+          "rect": [
+            620,
+            230,
+            840,
+            290
+          ],
+          "ancre": 0.75,
+          "haut_min": 44
+        },
+        {
+          "t": 781.72,
+          "src": 785.3,
+          "rect": [
+            1000,
+            230,
+            480,
+            200
+          ],
+          "ancre": 0.62,
+          "haut_min": 44
+        }
+      ]
+    },
+    {
+      "de": 793.4,
+      "a": 797.95,
+      "ecran": [
+        {
+          "t": 793.4,
+          "src": 794.0,
+          "fige": true,
+          "rect": [
+            1030,
+            300,
+            660,
+            320
+          ],
+          "ancre": 0.62
+        }
+      ]
+    },
+    {
+      "de": 798.8,
+      "a": 809.95,
+      "ecran": [
+        {
+          "t": 798.8,
+          "rect": [
+            660,
+            240,
+            820,
+            300
+          ],
+          "ancre": 0.62,
+          "haut_min": 44
+        },
+        {
+          "t": 806.9,
+          "src": 794.0,
+          "fige": true,
+          "rect": [
+            1040,
+            640,
+            640,
+            240
+          ],
+          "ancre": 0.6
+        }
+      ]
+    },
+    {
+      "de": 810.84,
+      "a": 818.6,
+      "ecran": [
+        {
+          "t": 810.84,
+          "rect": [
+            660,
+            520,
+            720,
+            160
+          ],
+          "ancre": 0.62,
+          "haut_min": 44
+        }
+      ]
+    },
+    {
+      "de": 826.04,
+      "a": 829.56,
+      "ecran": [
+        {
+          "t": 826.04,
+          "src": 828.0,
+          "fige": true,
+          "rect": [
+            480,
+            80,
+            900,
+            600
+          ],
+          "ancre": 0.62,
+          "haut_min": 44
+        }
+      ]
+    },
+    {
+      "de": 836.12,
+      "a": 841.64,
+      "ecran": [
+        {
+          "t": 836.12,
+          "rect": [
+            700,
+            560,
+            920,
+            340
+          ],
+          "ancre": 0.62
+        },
+        {
+          "t": 837.8,
+          "rect": [
+            1300,
+            130,
+            360,
+            120
+          ],
+          "ancre": 0.65,
+          "haut_min": 44
+        }
+      ]
+    },
+    {
+      "de": 842.4,
+      "a": 847.7,
+      "ecran": [
+        {
+          "t": 842.4,
+          "rect": [
+            700,
+            560,
+            920,
+            340
+          ],
+          "ancre": 0.62
+        }
+      ]
+    }
+  ],
+  "couper": [
+    [
+      777.95,
+      778.38
+    ],
+    [
+      805.1,
+      805.72
+    ]
+  ],
+  "sous_titres": [
+    {
+      "de": 778.38,
+      "a": 781.5,
+      "texte": "How long the AI takes to reply."
+    },
+    {
+      "de": 781.5,
+      "a": 782.95,
+      "texte": "Right now, it's set to *45 seconds*."
+    },
+    {
+      "de": 793.4,
+      "a": 797.95,
+      "texte": "You also have *safety rules*."
+    },
+    {
+      "de": 798.8,
+      "a": 803.2,
+      "texte": "For example, you can tell it to stop talking"
+    },
+    {
+      "de": 803.2,
+      "a": 806.9,
+      "texte": "the moment the person brings up"
+    },
+    {
+      "de": 806.9,
+      "a": 809.95,
+      "texte": "say, a *refund*."
+    },
+    {
+      "de": 810.84,
+      "a": 818.6,
+      "texte": "Or anything you don't want it to talk about."
+    },
+    {
+      "de": 826.04,
+      "a": 829.56,
+      "texte": "Here you have an inbox with every message."
+    },
+    {
+      "de": 836.12,
+      "a": 840.3,
+      "texte": "And of course, you can *take over* the lead"
+    },
+    {
+      "de": 840.3,
+      "a": 841.64,
+      "texte": "whenever you want."
+    },
+    {
+      "de": 842.4,
+      "a": 844.3,
+      "texte": "If you'd rather handle your leads by hand,"
+    },
+    {
+      "de": 844.3,
+      "a": 847.7,
+      "texte": "you can take the conversation back *anytime*."
+    }
+  ],
+  "booms": [
+    782.48,
+    797.04,
+    809.92,
+    837.84
+  ],
+  "zooms": [
+    [
+      781.5,
+      782.95
+    ],
+    [
+      837.8,
+      840.3
+    ]
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "format": "REEL tiré de YouTube : écran en haut, tête du fondateur en bas",
+  "source": "CONTENU/08_YOUTUBE/G8pP09wehNM/source.mp4",
+  "video_youtube": "https://www.youtube.com/watch?v=G8pP09wehNM",
+  "langue_voix": "français (version anglaise : traduction IA de la plateforme, activée par le fondateur à la publication)",
+  "titre": "I DM'd my own AI setter to see if it would *book me*",
+  "cta": "Build my setter free, *link in bio*",
+  "segments": [
+    {
+      "de": 869.36,
+      "a": 871.9,
+      "ecran": [
+        {
+          "t": 869.36,
+          "rect": [
+            1170,
+            600,
+            492,
+            440
+          ],
+          "ancre": 0.5,
+          "isoler": true,
+          "src": 872.0,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 872.12,
+      "a": 881.1,
+      "ecran": [
+        {
+          "t": 872.12,
+          "rect": [
+            1170,
+            600,
+            492,
+            440
+          ],
+          "ancre": 0.5,
+          "isoler": true
+        }
+      ]
+    },
+    {
+      "de": 885.3,
+      "a": 890.3,
+      "ecran": [
+        {
+          "t": 885.3,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true
+        }
+      ]
+    },
+    {
+      "de": 891.16,
+      "a": 895.86,
+      "ecran": [
+        {
+          "t": 891.16,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 891.2,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 896.12,
+      "a": 898.95,
+      "ecran": [
+        {
+          "t": 896.12,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 892.2,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 902.4,
+      "a": 911.4,
+      "ecran": [
+        {
+          "t": 902.4,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 894.6,
+          "fige": true
+        },
+        {
+          "t": 904.56,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 895.4,
+          "fige": true
+        },
+        {
+          "t": 906.68,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 897.2,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 913.8,
+      "a": 914.8,
+      "ecran": [
+        {
+          "t": 913.8,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 910.6,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 955.8,
+      "a": 960.95,
+      "ecran": [
+        {
+          "t": 955.8,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 939.5,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 961.64,
+      "a": 962.95,
+      "ecran": [
+        {
+          "t": 961.64,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 943.4,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 963.44,
+      "a": 966.95,
+      "ecran": [
+        {
+          "t": 963.44,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 950.0,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 967.4,
+      "a": 968.66,
+      "ecran": [
+        {
+          "t": 967.4,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 962.2,
+          "fige": true
+        }
+      ]
+    },
+    {
+      "de": 969.08,
+      "a": 979.8,
+      "ecran": [
+        {
+          "t": 969.08,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 965.2,
+          "fige": true
+        },
+        {
+          "t": 970.2,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 969.2,
+          "fige": true
+        },
+        {
+          "t": 977.7,
+          "rect": [
+            1170,
+            520,
+            492,
+            470
+          ],
+          "ancre": 0.42,
+          "isoler": true,
+          "src": 972.5,
+          "fige": true
+        }
+      ]
+    }
+  ],
+  "couper": [
+    [
+      974.88,
+      975.85
+    ]
+  ],
+  "sous_titres": [
+    {
+      "de": 869.36,
+      "a": 871.9,
+      "texte": "We're sending it a first message."
+    },
+    {
+      "de": 872.12,
+      "a": 881.1,
+      "texte": "For example, *\"Hello, I'm interested in ecom.\"*"
+    },
+    {
+      "de": 885.3,
+      "a": 890.3,
+      "texte": "Now we wait and see what our setter replies."
+    },
+    {
+      "de": 891.16,
+      "a": 895.86,
+      "texte": "It asks if I already sell or if I'm just starting out."
+    },
+    {
+      "de": 896.12,
+      "a": 898.95,
+      "texte": "I tell it I already make *1k a month*."
+    },
+    {
+      "de": 902.4,
+      "a": 904.45,
+      "texte": "It asks what I'm selling right now."
+    },
+    {
+      "de": 904.56,
+      "a": 906.65,
+      "texte": "I answer, dog products."
+    },
+    {
+      "de": 906.68,
+      "a": 908.95,
+      "texte": "It replies, nice niche."
+    },
+    {
+      "de": 908.96,
+      "a": 911.4,
+      "texte": "How long have you been in ecom?"
+    },
+    {
+      "de": 913.8,
+      "a": 914.8,
+      "texte": "I say two years."
+    },
+    {
+      "de": 955.8,
+      "a": 960.95,
+      "texte": "It asks if I have *3k set aside* to invest in this."
+    },
+    {
+      "de": 961.64,
+      "a": 962.95,
+      "texte": "I say yes, why not?"
+    },
+    {
+      "de": 963.44,
+      "a": 964.85,
+      "texte": "It recaps everything"
+    },
+    {
+      "de": 964.85,
+      "a": 966.95,
+      "texte": "and says the next step is a *30-minute call*."
+    },
+    {
+      "de": 967.4,
+      "a": 968.66,
+      "texte": "I tell it I'm in."
+    },
+    {
+      "de": 969.08,
+      "a": 970.2,
+      "texte": "It sends me the link,"
+    },
+    {
+      "de": 970.2,
+      "a": 977.7,
+      "texte": "I tell it I booked a call for tomorrow at 4 p.m."
+    },
+    {
+      "de": 977.7,
+      "a": 979.8,
+      "texte": "and it says, *\"Perfect, see you at 4.\"*"
+    }
+  ],
+  "booms": [
+    957.96,
+    966.16,
+    979.52
+  ],
+  "zooms": [
+    [
+      955.8,
+      960.95
+    ],
+    [
+      977.7,
+      979.8
+    ]
+  ],
+  "cta_y": 560
+}
