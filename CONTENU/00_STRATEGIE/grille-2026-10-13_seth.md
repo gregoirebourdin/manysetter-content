@@ -1,0 +1,33 @@
+# Grille de publication : 13 au 18 octobre 2026
+
+> Compte : **@seth.manysetter** (Zernio `6acb7049fff57839fd7248c3`), décision du fondateur du 11/10/2026.
+> 12 posts : 6 carrousels (TOFU et MOFU en alternance) et 6 reels du fondateur, **un sur deux**. Deux posts par jour, fuseau `America/New_York` : carrousel à 12:00 pm ET, reel à 6:30 pm ET (guide expert, partie 9 : 1 carrousel par jour, puis 1 à 2 reels).
+> **Rien n'est programmé avant** : la validation de chaque post, les 6 reels reçus, et un nom de compte qui ne présente plus Seth comme CEO (règle du 11/10).
+
+| # | Date | Heure (ET) | Format | Étage | Post | Statut |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | mar. 13/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S1_AV1_hormozi-vs-iman` | à valider |
+| 2 | mar. 13/10 | 6:30 pm | reel | | reel du fondateur n°1 | fichier attendu |
+| 3 | mer. 14/10 | 12:00 pm | carrousel | MOFU | `261010_CAR_S1_AV1_if-i-were-a-coach` | validé (10/10), retouché le 11/10 |
+| 4 | mer. 14/10 | 6:30 pm | reel | | reel du fondateur n°2 | fichier attendu |
+| 5 | jeu. 15/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S1_AV1_jenna-14m-dms` | à valider |
+| 6 | jeu. 15/10 | 6:30 pm | reel | | reel du fondateur n°3 | fichier attendu |
+| 7 | ven. 16/10 | 12:00 pm | carrousel | MOFU | `261010_CAR_S2_AV2_which-reply-books` | validé (10/10), retouché le 11/10 |
+| 8 | ven. 16/10 | 6:30 pm | reel | | reel du fondateur n°4 | fichier attendu |
+| 9 | sam. 17/10 | 12:00 pm | carrousel | TOFU | `261010_CAR_S2_AV2_ziglar-5-reasons` | à valider |
+| 10 | sam. 17/10 | 6:30 pm | reel | | reel du fondateur n°5 | fichier attendu |
+| 11 | dim. 18/10 | 12:00 pm | carrousel | MOFU | `261010_CAR_S1_AV1_things-coaches-do` | validé (10/10), retouché le 11/10 |
+| 12 | dim. 18/10 | 6:30 pm | reel | | reel du fondateur n°6 | fichier attendu |
+
+## Pourquoi ces 3 TOFU
+- `hormozi-vs-iman` ouvre la grille : le duel des deux plus gros noms, deux visages, une question qui fait commenter (« team Hormozi or team Iman? »).
+- `jenna-14m-dms` : un chiffre énorme et sourcé (son propre blog), le format le plus proche de notre produit (commentaire, puis DM).
+- `ziglar-5-reasons` plutôt que `unpopular-offer` : un 2e post avec le visage d'Hormozi dans la même semaine userait l'effet ; Ziglar parle du « I'll think about it », une douleur des verbatims (rd93, rd14).
+- En réserve : `unpopular-offer`, `harvard-60x`, `miner-comment-cold` (photo de Jeremy Miner en grand format attendue).
+
+## Retouches du 11/10 (contrôle qualité)
+- Publication sur @seth.manysetter : la ligne produit passe à la voix de la marque (« we built ManySetter », « our AI setter », « hi, this is ManySetter »), plus de « i built ManySetter ».
+- Phrases de 1 à 3 mots reliées par des virgules (« sound familiar? », « no cheating. », « be honest. », « ugh. »…).
+- CTA aligné sur l'offre réelle : « build your setter free, no card to start, link in bio » (dernière slide et légende).
+- `ziglar-5-reasons` : « Not affiliated with Zig Ziglar or his company. » ajouté à la légende.
+- Les 3 carrousels du lot 1 sont classés MOFU.

@@ -163,3 +163,11 @@ Format d'une règle :
 - Règle : les reels BOFU sont **tournés par le fondateur** (sa vraie voix, son vrai visage) : ce sont les seuls où « I built ManySetter » se dit à l'oral, et ils ne demandent pas d'étiquette IA. Claude écrit leur légende (produit, CTA « Build my setter free, no card to start, link in bio ») et ne retouche la vidéo que sur demande.
 - Règle : la programmation passe par Zernio, **post par post validé**, sur le compte Instagram choisi par le fondateur, aux horaires du guide (carrousels 12:00 pm ET, reels 6:30 pm ET, fuseau `America/New_York`), un post par jour.
 - Constat du 11/10/2026 : Zernio ne voit plus qu'une chaîne YouTube (« manysetter ») ; **aucun compte Instagram connecté**. Rien ne peut être programmé sur Instagram avant que le fondateur reconnecte un compte.
+
+## 2026-10-11 · Compte de publication : @seth.manysetter, 6 reels
+- Retour : « Relié à mon Zernio, il y a mon nouveau compte @Seth.Manysetter. Donc on va publier là-dessus. Je vais te donner 6 reels, okay ? Tu vas pouvoir alterner un sur deux ? Redonne-moi le total. »
+- Décision : **on publie sur @seth.manysetter** (Zernio, compte Instagram `6acb7049fff57839fd7248c3`, en bonne santé le 11/10).
+- Règle : la grille **alterne carrousel et reel, un sur deux** ; les carrousels alternent eux-mêmes TOFU et MOFU. Première grille : 6 carrousels et 6 reels, soit 12 posts (`00_STRATEGIE/grille-2026-10-13.md`).
+- Règle (conséquence de la limite posée le 10/10) : sur ce compte, le « i » des carrousels se lit comme Seth. Les conseils restent à la 1re personne, mais **la ligne produit passe à la voix de la marque** : « we built ManySetter », « our AI setter », jamais « i built ManySetter ». La règle du 10/10 (« i built ManySetter ») ne vaut que pour un compte tenu par le fondateur à son nom.
+- Règle : quand le fondateur apparaît en personne dans un reel publié sur ce compte, la légende dit que c'est le fondateur qui parle, pour qu'on ne le confonde pas avec Seth.
+- Point ouvert (limite de Claude, signalée au fondateur) : le nom affiché du compte est « Seth | CEO of Manysetter™ ». Seth est un personnage généré : le présenter comme le CEO, c'est faire passer une personne qui n'existe pas pour le dirigeant réel de l'entreprise. Claude ne programme rien tant que le nom affiché présente Seth comme CEO ou fondateur ; il propose « Seth | ManySetter ».
