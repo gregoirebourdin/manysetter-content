@@ -26,98 +26,88 @@ Pilier 2 : chaque étape du tuto et chaque conséquence est **vérifiée à sa s
 
 Les posts portés par un gros nom ou une vraie démo font le plus de vues (Zig Ziglar 108, « DM my own setter » 63, Hormozi 60) ; les carrousels « how to » MOFU font entre 1 et 11 vues. Échantillon minuscule, mais ça pousse vers des hooks à contre-pied et des démos concrètes. Instagram : statistiques non remontées par Zernio au 19/10 (synchro en retard).
 
-## Banque d'idées
+## Banque d'idées (v2 du 19/10, après le retour du fondateur sur les hooks)
 
-Verbatims : numéros de `docs/VERBATIMS/verbatims.md`. Les hooks sont des premières versions, à affiner au script.
+Chaque hook sert deux fois : slide 1 du carrousel et titre-hook fixe du reel. Setty ouvre ensuite le reel sur sa phrase signature. Verbatims : numéros de `docs/VERBATIMS/verbatims.md`.
 
 ### Pilier 1 · Le business du coach
 
-**1. Le webinaire** · reel déjà fait (Setty, reel 2 « The webinar », validé)
-- Hook carrousel : « your webinar didn't flop, your DMs did »
-- Fausse croyance : peu de ventes après un webinaire = mauvais webinaire, il faut changer d'offre ou de format.
-- Problèmes : après le replay, les DM arrivent (« price? », « is the replay still up? ») et personne ne répond à temps.
-- Conséquences : les leads les plus chauds refroidissent, et on change encore de stratégie sans savoir ce qui a cassé (cl087, rd06, rd19, mc47, rd91).
-- Solution et bénéfices : un setter qui répond dans ta voix, qualifie et réserve ; tu vois enfin ce que ton webinaire a vraiment produit.
+**1. Le webinaire** · reel déjà fait (Setty, reel 2, validé)
+- Hook : « Why your webinar flopped, even with 50+ live viewers »
+- Problèmes : après le replay, les DM arrivent (« price? », « is the replay still up? ») et personne n'y répond à temps.
+- Conséquences : les plus chauds refroidissent, et tu changes encore de stratégie sans savoir ce qui a cassé (cl087, rd06, rd19, mc47, rd91).
+- Solution et bénéfices : un setter qui répond dans ta voix, qualifie et réserve ; tu vois enfin ce que ton webinaire a produit.
 
-**2. Le challenge de 5 jours** · reel déjà fait (Setty, reel 1 « challenge »)
-- Hook : « your 5-day challenge doesn't have a traffic problem, it has a day 6 problem »
-- Fausse croyance : plus d'inscrits = plus de ventes.
-- Problèmes : le jour 6, des centaines de DM sur l'offre en même temps ; tu en traites vingt.
+**2. Le challenge de 5 jours** · reel déjà fait (Setty, reel 1)
+- Hook : « Your 5-day challenge is outdated because of this »
+- Problèmes : le jour 6, des centaines de DM sur l'offre en même temps, tu en traites vingt.
 - Conséquences : les plus engagés de la semaine attendent, toi tu t'épuises (rd04, rd17, rd24, rd75).
 - Solution et bénéfices : chaque DM traité le soir même, les sérieux sur ton agenda.
 
-**3. Plus de leads**
-- Hook : « you don't need more leads, you need fewer flakes »
-- Reel : « You booked six [bleep]ing calls this week, right? None of them closed. »
-- Fausse croyance : mon problème, c'est le trafic.
-- Problèmes : plus de demandes = plus de consulting gratuit, 15 conversations pour 2 clients (rd89, rd90, rd92).
-- Conséquences : un agenda plein de gens sans budget, la fatigue, le doute sur ton offre (rd43, rd44, rd45).
-- Solution et bénéfices : on qualifie avant l'agenda ; ceux qui ne sont pas prêts reçoivent quelque chose d'utile (rd76, rd77).
+**3. Les appels qui ne signent pas**
+- Hook : « Why you booked 10 calls this week and closed none of them »
+- Reel : « You booked ten [bleep]ing calls this week, right? »
+- Problèmes : n'importe qui réserve, et tu découvres le budget à la fin de l'appel (rd43, rd44).
+- Conséquences : du consulting gratuit, des appels qui « take real time and energy », et tu doutes de toi en vente (rd45, rd92, rd75).
+- Solution et bénéfices : la qualification se fait dans le DM, avant l'agenda ; moins d'appels, mais « the ones that do book are serious » (rd77, rd76).
 
-**4. Les lives tous les jours**
-- Hook : « going live every day won't save your launch »
-- Reel : « You went live for the [bleep]ing algorithm again, right? »
-- Fausse croyance : plus je suis visible, plus je vends.
-- Problèmes : chaque live laisse des commentaires et des DM que personne ne relance (rd18, mc01, rd09).
-- Conséquences : la roue du hamster, et des leads qui « disappear into the inbox void » (mc01, rd27).
-- Solution et bénéfices : chaque personne qui écrit après un live a une vraie conversation, relancée jusqu'à 3 fois.
+**4. Le DM funnel**
+- Hook : « Your DM funnel is stuck in 2015 »
+- Reel : « You built your [bleep]ing DM funnel in 2015, right? »
+- Problèmes : le funnel de 2015, c'est « link in bio & hope » (rd07) : un lien, puis le silence, et une relance qu'on oublie (mc02, rd08, rd09).
+- Conséquences : des leads qui « disappear into the inbox void » (mc01, rd47) ; tu paies tes outils sans rien voir revenir (mc37).
+- Solution et bénéfices : le funnel de maintenant est une conversation qui répond à la question, qualifie, relance jusqu'à 3 fois dans les 24 h et réserve.
 
-**5. Est-ce que tu aimes encore ton business ?**
-- Hook : « you didn't quit your 9 to 5 to answer DMs at 11 pm »
-- Reel : « You quit your [bleep]ing job for freedom, right? »
-- Fausse croyance : répondre moi-même à tous mes DM, c'est ça, la relation client.
-- Problèmes : tu es à la fois le setter, le closer, le coach et le créateur de contenu (rd27, rd54, rd01, rd40).
-- Conséquences : tu n'aimes plus coacher, tu brûles (rd75, rd92).
-- Solution et bénéfices : tu récupères tes soirées, tu ne parles plus qu'aux gens sérieux, et une personne reprend la main quand ça compte.
+**5. Les gros coachs et leurs DM**
+- Hook : « Why the biggest coaches never answer their own DMs »
+- Reel : « You still answer your own [bleep]ing DMs, right? »
+- Problèmes : les gros comptes recrutent des setters pour leurs DM (rd34, cl054, rd31) ; toi, tu es le coach, le setter et le closer (rd27, rd54, rd01).
+- Conséquences : tes soirées y passent et tu n'aimes plus coacher (rd75, rd92).
+- Solution et bénéfices : la même organisation qu'un gros compte, sans recruter (setter humain aux États-Unis : environ 13 à 21 $ de l'heure plus commission, PayScale cité sur le site ; ManySetter : 119 $ par mois). Une personne reprend la main quand ça compte.
 
 ### Pilier 2 · Les outils
 
-**6. Claude ou ChatGPT sur WhatsApp**
-- Hook : « how to plug Claude into your WhatsApp to answer your DMs (please don't) »
-- Reel : « You plugged [bleep]ing ChatGPT into your WhatsApp, right? »
-- Fausse croyance : un chatbot IA branché sur mes messages = un setter gratuit.
-- Le tuto : les vraies étapes qu'on trouve en ligne (à documenter à la source).
-- Problèmes, à vérifier avant d'écrire : ce que disent les conditions de WhatsApp sur les connexions non officielles et sur les assistants IA, la réponse instantanée à 3 h du matin, les prix inventés, l'accès à toutes tes conversations privées, aucune personne pour reprendre la main.
+**6. Claude sur WhatsApp** (idée du fondateur)
+- Hook : « How to plug Claude into your WhatsApp to answer your DMs »
+- Reel : « You plugged [bleep]ing Claude into your WhatsApp, right? »
+- Le tuto : les vraies étapes qu'on trouve en ligne, documentées à la source.
+- Problèmes, à vérifier avant d'écrire : ce que disent les conditions de WhatsApp sur les connexions non officielles et les assistants IA, la réponse instantanée à 3 h du matin, les prix inventés, l'accès à toutes tes conversations privées, personne pour reprendre la main.
 - Conséquences : « another thing to maintain » (rd67), des réponses fausses (mc24), des leads qui sentent le bot (mc05, rd57).
 - Solution et bénéfices : un setter qui répond depuis tes sources, attend que le lead ait fini d'écrire, passe la main, sur les canaux officiels via Manychat.
 
-**7. Le flow « Comment GUIDE » de Manychat**
-- Hook : « the comment-to-DM flow every coach copies works perfectly, until the lead replies »
+**7. Le flow « Comment GUIDE »**
+- Hook : « Why your "Comment GUIDE" flow gets 400 comments and 0 sales »
 - Reel : « You set up your [bleep]ing "Comment GUIDE" flow, right? »
-- Fausse croyance : mon flow Manychat gère mes DM.
-- Le tuto : le flow en 5 étapes, tel qu'on le fait dans Manychat (Manychat fait très bien le premier message).
-- Problèmes : le lead répond par une vraie question ; le flow répond au mot-clé, pas à la question, et redemande ce qu'il a déjà dit (mc07, rd22, mc11, mc10).
-- Conséquences : « the convo just sits there collecting dust » (mc47, mc01).
+- Le tuto : le flow tel qu'on le monte dans Manychat (Manychat envoie très bien le premier message).
+- Problèmes : le lead répond par une vraie question, le flow répond au mot-clé et redemande ce qu'il a déjà dit (mc07, rd22, mc11, mc10).
+- Conséquences : « 280 sends and 140 clicks but not one sale » (mc36), une conversation qui « just sits there collecting dust » (mc47).
 - Solution et bénéfices : « Keep your Manychat. Add the setter. »
 
-**8. Le lien Calendly dans le DM**
-- Hook : « dropping your Calendly link in the DM is why your calendar is full of no-shows »
-- Reel : « You put your [bleep]ing Calendly link in the DM, right? »
-- Fausse croyance : plus je mets mon lien partout, plus j'ai d'appels.
+**8. Calendly et les no-shows**
+- Hook : « If you get 90% no-shows with Calendly, this is why »
+- Reel : « You dropped your [bleep]ing Calendly link in the DM, right? »
 - Le tuto : le lien dans le message automatique et dans la bio, comme tout le monde.
-- Problèmes : n'importe qui réserve, sans budget ni besoin vérifié (rd43, rd44), et les no-shows (rd33, rd96).
-- Conséquences : « these calls take real time and energy » (rd45, rd75).
-- Solution et bénéfices : seuls les bons leads ont ton agenda ; 2 ou 3 créneaux dans leur fuseau, le résumé du lead dans l'événement.
+- Problèmes : n'importe qui réserve, sans budget ni besoin vérifié (rd43, rd44), puis ne vient pas (rd33, rd96).
+- Conséquences : des créneaux bloqués pour rien et la fatigue (rd45, rd75).
+- Solution et bénéfices : seuls les bons leads ont ton agenda, 2 ou 3 créneaux dans leur fuseau, le résumé du lead dans l'événement.
 
-**9. Le bot IA fait maison (Make, Zapier, n8n)**
-- Hook : « how to build an AI DM bot with Make in one afternoon, and the 4 ways it breaks »
-- Reel : « You built a [bleep]ing AI bot on Make, right? »
-- Fausse croyance : je peux me fabriquer un setter IA en un après-midi.
-- Le tuto : la recette qui circule (déclencheur, appel à l'IA, réponse), à documenter à la source.
-- Problèmes : il répond à la seconde (mc22, cl095), oublie le contexte (mc23), répond par-dessus toi quand tu reprends la main (mc41), et il faut l'entretenir (rd67).
-- Conséquences : « look like amater to my leads » (rd23), « robotic, cringey messages » (mc05).
-- Solution et bénéfices : rien à construire ni à entretenir ; le playbook est prêt en environ deux minutes.
+**9. ChatGPT ou Claude pour faire ton setting**
+- Hook : « ChatGPT or Claude: which one should you use for setting? »
+- Reel : « You asked ChatGPT to be your [bleep]ing setter, right? »
+- Le duel : les deux face aux vraies situations d'un DM (« how much? », « I'll think about it », deux messages d'affilée), avec ce que chacun sait faire ou non, vérifié dans leur doc officielle.
+- Problèmes : aucun des deux ne connaît ton offre, ne voit ton Instagram, n'attend que le lead ait fini d'écrire, ne réserve dans ton agenda ni ne relance dans les 24 h tout seul (à vérifier point par point).
+- Conséquences : un setter « maison » à entretenir (rd67), qui répond faux ou trop vite (mc24, mc22).
+- Solution et bénéfices : le modèle n'est pas le setter ; le setter, c'est tout ce qu'il y a autour (offre, voix, délai, qualification, agenda, relances, passage de main).
 
-**10. Le script de DM écrit par ChatGPT**
-- Hook : « the ChatGPT DM script everyone copies is why your leads ghost »
-- Reel : « You asked ChatGPT for a [bleep]ing DM script, right? »
-- Fausse croyance : un bon script suffit à transformer mes DM en appels.
-- Le tuto : le prompt qui écrit un script de setting (utile, on le donne).
-- Problèmes : un script répète le même pitch face à une objection et sonne comme un script (rd38, rd31) ; « ghosted after I sent my rates » (rd91).
+**10. Le script de DM**
+- Hook : « This is the DM script I made to get 50+ calls a week »
+- Reel : « You copied a [bleep]ing DM script off YouTube, right? »
+- À confirmer par le fondateur : le chiffre « 50+ calls a week » doit être réel (le sien ou celui d'un compte qu'on peut sourcer). Sinon : « This is the exact DM script my setter uses to book calls ».
+- Problèmes : le script copié répète le même pitch face à une objection et sonne comme un script (rd38, rd31), « ghosted after I sent my rates » (rd91).
 - Conséquences : des leads qui partent au premier « I'll think about it » (rd14, rd93).
-- Solution et bénéfices : le setter écrit ton playbook à partir de ta page de vente et s'adapte à chaque lead, une question à la fois.
+- Solution et bénéfices : le script complet, donné en entier (enregistrements) ; et le setter qui l'adapte à chaque lead, une question à la fois.
 
 ## Ordre proposé (2 posts par jour, piliers en alternance)
 
-1 (webinaire) · 6 (Claude sur WhatsApp) · 3 (fewer flakes) · 8 (Calendly) · 2 (challenge) · 7 (Comment GUIDE) · 5 (9 to 5) · 9 (bot Make) · 4 (lives) · 10 (script ChatGPT).
+1 (webinaire) · 6 (Claude sur WhatsApp) · 3 (10 calls, 0 closed) · 8 (Calendly) · 2 (challenge) · 7 (Comment GUIDE) · 4 (DM funnel 2015) · 9 (ChatGPT ou Claude) · 5 (gros coachs) · 10 (le script).
 Fabrication par lots de 3 idées, validées avant la suite. Chaque reel de Setty : script validé, puis voix (payante, quelques centimes, lancée après le feu vert), puis rendu validé.
