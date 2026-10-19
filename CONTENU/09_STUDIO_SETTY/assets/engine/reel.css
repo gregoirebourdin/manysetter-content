@@ -57,9 +57,9 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0d0c0
 #info { position: absolute; left: 140px; top: 560px; height: 300px; padding: 0 110px; border-radius: 150px; border-bottom-left-radius: 36px;
   display: flex; align-items: center; background: #fff; color: #1a1816; font: 600 190px/1 Nohemi, sans-serif; letter-spacing: -0.04em;
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7); opacity: 0; }
-#hand { position: absolute; left: 700px; top: 170px; width: 230px; height: 230px; border-radius: 50%; background: #ff611d;
+#hand, .badge { position: absolute; left: 700px; top: 170px; width: 230px; height: 230px; border-radius: 50%; background: #ff611d;
   display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px -14px #ff611d; opacity: 0; }
-#hand svg { width: 128px; height: 128px; color: #fff; stroke-width: 2.2; }
+#hand svg, .badge svg { width: 128px; height: 128px; color: #fff; stroke-width: 2.2; }
 #moon { position: absolute; left: 760px; top: 190px; opacity: 0; color: #ffd9a8; }
 #moon svg { width: 130px; height: 130px; stroke-width: 2; fill: #ffd9a833; }
 #moon b { position: absolute; font: 600 60px/1 Nohemi, sans-serif; color: #fff; }
@@ -161,3 +161,26 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0d0c0
   background: linear-gradient(#ff884d, #e64b15); box-shadow: 0 24px 60px -16px #e64b15, inset 0 2px 0 #ffffff55;
   font: 600 78px/1 Nohemi, sans-serif; letter-spacing: -0.04em; color: #fff; }
 #endcta svg { width: 70px; height: 70px; stroke-width: 2.6; }
+
+/* ---------- props added for reel2 (kit) ---------- */
+#live .day svg { width: 40px; height: 40px; margin-right: 10px; stroke-width: 2.2; color: #ff7a3a; }
+#live .day b.n { width: auto; min-width: 1.9em; text-align: left; }
+.toast { position: absolute; left: 0; right: 0; margin: 0 auto; width: max-content; max-width: 920px; height: 100px; padding: 0 40px 0 30px;
+  display: flex; align-items: center; gap: 20px; border-radius: 999px; background: rgba(26, 24, 22, 0.95); color: #fff;
+  box-shadow: inset 0 0 0 2px #42403c, 0 24px 60px -18px #000; font: 600 42px/1 Inter, sans-serif; letter-spacing: -0.01em;
+  white-space: nowrap; opacity: 0; }
+.toast svg { width: 50px; height: 50px; stroke-width: 2.2; color: #ff7a3a; flex: none; }
+.toast.red { background: #ff2d46; box-shadow: 0 24px 60px -18px #ff2d46; }
+.toast.red svg, .toast.green svg { color: #fff; }
+.toast.green { background: #00a36f; box-shadow: 0 24px 60px -18px #00a36f; }
+.toast.light { background: #fff; color: #1a1816; box-shadow: 0 24px 60px -18px #000; }
+.chat { position: absolute; display: flex; flex-direction: column; gap: 16px; }
+.chat .cb { display: flex; flex-direction: column; opacity: 0; }
+.chat .cb .b { max-width: 760px; padding: 26px 34px; border-radius: 44px; font: 500 40px/1.25 Inter, sans-serif; letter-spacing: -0.01em;
+  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.6); }
+.chat .cb.lead { align-items: flex-start; }
+.chat .cb.lead .b { background: #fff; color: #1a1816; border-bottom-left-radius: 12px; }
+.chat .cb.me { align-items: flex-end; }
+.chat .cb.me .b { background: linear-gradient(#ff884d, #e64b15); color: #fff; border-bottom-right-radius: 12px; }
+.chat .cb .m { margin: 8px 14px 0; font: 500 28px/1 Inter, sans-serif; color: #c9c5c2; }
+.chat .cb .b.small { font-size: 36px; padding: 18px 28px; }

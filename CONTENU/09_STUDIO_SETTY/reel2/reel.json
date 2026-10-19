@@ -1,0 +1,44 @@
+{
+ "id": "reel2",
+ "slug": "webinar",
+ "title": "The webinar",
+ "pub_id": "261019_REEL_S1_AV1_the-webinar",
+ "funnel": "MOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Hey [bleep]. You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
+ "biais": [
+  "interruption du schéma (une mascotte mignonne qui insulte)",
+  "pertinence pour soi (son format exact)",
+  "chiffre précis (Twelve people)"
+ ],
+ "verbatims": [
+  "rd13",
+  "rd05",
+  "rd91",
+  "rd93",
+  "rd92",
+  "rd01",
+  "rd43",
+  "rd75",
+  "mc06",
+  "rd38",
+  "mc10",
+  "mc11",
+  "rd76",
+  "rd77",
+  "mc47",
+  "rd48",
+  "cl030"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "Webinar done, replay sent, and now your DMs are full of \"price?\" and people who ghost after you answer.\nMeet Setty, the AI setter I built for coaches who sell in the DMs. He learns your offer, talks like you, only sends your calendar to the serious ones and books the call.\nComment SETTY and he'll slide into your DMs.\n#webinar #onlinecoach #dmsetter\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "script v2 validé (19/10), rendu 30 i/s à valider",
+ "created": "2026-10-19",
+ "voice_s": [
+  54.0,
+  59.5
+ ],
+ "line_gap": 0.36,
+ "tail_s": 2.4
+}

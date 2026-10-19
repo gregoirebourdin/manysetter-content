@@ -23,7 +23,8 @@ import torchaudio
 from scipy.signal import resample_poly
 
 SR = 48000
-SPOKEN = {"dms": "dee ems", "manychat": "many chat", "manysetter": "many setter", "400": "four hundred", "ai": "ay eye"}
+SPOKEN = {"dms": "dee ems", "manychat": "many chat", "manysetter": "many setter", "400": "four hundred", "ai": "ay eye",
+          "a.m": "ay em", "p.m": "pee em"}
 IN_SENTENCE, AFTER_PUNCT = 0.12, 0.22
 # pauses held longer for comedic timing: (word the pause comes after) → seconds
 BEATS = {"like...": 0.34, "them...": 0.3, "dead.": 0.26, "business.": 0.3, "it\"...": 0.22, "you?": 0.3, "bed?": 0.34,
@@ -75,13 +76,16 @@ def main():
     ap.add_argument("take")
     ap.add_argument("out")
     ap.add_argument("--rate", type=float, default=1.0)
+    ap.add_argument("--gap", type=float, default=0.0, help="minimum pause after each line (s); reel.json line_gap")
     a = ap.parse_args()
     segs = json.loads(pathlib.Path(a.segments).read_text())
-    words, line_of = [], []
+    words, line_of, PAUSE = [], [], {}
     for li, s in enumerate(segs):
         for w in s["text"].split():
             words.append(w)
             line_of.append(li)
+        if "pause" in s:  # a comedic beat after this line (seconds), set in vo/<reel>_segments.json
+            PAUSE[len(words) - 1] = s["pause"]
 
     x, sr = sf.read(a.take, dtype="float32")
     if x.ndim > 1:
@@ -100,6 +104,9 @@ def main():
         nxt = times[i + 1][0] if i + 1 < len(times) else min(len(x) / SR, e + 0.35)
         w = words[i]
         target = BEATS.get(w.lower(), AFTER_PUNCT if re.search(r"[.,!?…]\"?$", w) else IN_SENTENCE)
+        if a.gap and i + 1 < len(words) and line_of[i + 1] != line_of[i]:
+            target = max(target, a.gap)  # a breath between two lines (longer reels)
+        target = PAUSE.get(i, target)
         if i + 1 < len(words) and words[i + 1].startswith('"'):
             target = max(target, 0.2)  # a breath before a quoted phrase
         if i + 1 == len(times):

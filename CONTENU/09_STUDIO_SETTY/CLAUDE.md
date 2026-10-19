@@ -69,7 +69,10 @@ it." · "You went live. Again. For the [bleep]ing algorithm, right?"
 
 ## 4. Reel format
 
-- 1080×1920, **25–30 s**, about **85–90 spoken words** (Charon ~3.3 words/s once the pauses are tight).
+- 1080×1920, **25–30 s** by default, about **85–90 spoken words** (Charon ~3.2 words/s once the pauses are tight).
+  A reel can be longer (reel2: 1 minute, 181 words): in `reel.json`, `voice_s` (target of the tightened voice, e.g.
+  [54, 59.5]), `line_gap` (a breath between lines, e.g. 0.36 s) and `tail_s` (end hold, 1.6 s by default). A comedic
+  beat after a line: `"pause": 0.3` on that segment in `vo/<reel>_segments.json`.
 - **Frame 0 is the thumbnail**: Setty in close-up with his smug face, never a black frame.
 - Something changes on screen every ~0.5–0.8 s: a word, a prop, a camera move, a cut.
 - Every spoken word is on screen (captions), except a word shown by a prop (the giant "info?" bubble).
@@ -135,7 +138,9 @@ Picture
   captions, then props in call order; reel1 builds its DM rain last to keep its exact frames).
 - CSS `zoom` on a positioned element also scales its `top/left`: zoom an inner element inside an unzoomed wrapper.
 - Caption stroke = `-webkit-text-stroke` + `paint-order: stroke fill` + a hard drop shadow: readable on anything.
-- In a close-up, Setty's mouth sits in the caption zone: hide the caption of a bleeped word there.
+- In a close-up, Setty's mouth sits in the caption zone: hide the caption of a bleeped word there (its own chunk with
+  `hide: True`), or you get two bars.
+- Keep stacks of bubbles and toasts out of the caption zone (y ≥ 1185): measure on a snapshot, shorten the text.
 - Physics: Setty is a static rounded body from his projected silhouette (MID framing); no side walls; remove the
   floor and raise gravity to drain the pile.
 - Pupils and glints stay inside the lid radius (1.07 × eye radius); closed eyes need the `^`/`u` arcs.
@@ -147,6 +152,9 @@ Sound
   word; message blips 0.1–0.3 s before; taps after the word ends. Type the CTA keyword once it is said: reel1 typed
   under "SETTY" and Whisper heard "setting".
 - The bleep ends before the next word starts. Duck the music by ~0.64 under the voice (60 ms look-ahead), SFX by 0.3.
+- Whisper on the mix finds the culprit: if a word is fine in `mix_nomusic.wav` but not in `mix.wav`, it is the beat
+  (reel2: "Manychat" → "mini chat" until the beat came back in on the spark, after the word); otherwise an SFX
+  ("They" lost under a sparkle, "put" under a boing, "DMs" under the return whoosh).
 - Master with a constant gain to −14 LUFS + `alimiter` (lowered automatically if the true peak passes −1 dBTP).
   Never ffmpeg loudnorm in dynamic mode. Never time-stretch the voice slower; `--rate` ≤ 1.1 only if a take is long.
 - Whisper on the final mix: "four hundred" → "400", "SETTY" → "Seti" are spelling; a trailing "Thanks for

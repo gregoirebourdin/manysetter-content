@@ -35,7 +35,7 @@ PY = str(VENV_PY if VENV_PY.exists() else sys.executable)
 HF = ["npx", "--yes", "hyperframes@0.8.114"]
 KEY_FILE = pathlib.Path.home() / ".config/manysetter/gemini.env"
 PUBLISH = REPO / "CONTENU/07_PRET_A_PUBLIER"
-TARGET = (25.5, 29.5)  # seconds of tightened voice we aim for (reel = voice + 1.6 s tail)
+TARGET = (25.5, 29.5)  # default seconds of tightened voice (reel = voice + 1.6 s); a reel sets "voice_s" in reel.json
 
 
 def say(msg=""):
@@ -72,6 +72,11 @@ def reel_dir(reel):
     if not (d / "build.py").exists():
         sys.exit(f"{reel}: no {reel}/build.py (create it with: python3 studio.py new {reel} <slug>)")
     return d
+
+
+def target(reel):
+    f = STUDIO / reel / "reel.json"
+    return tuple(json.loads(f.read_text()).get("voice_s", TARGET)) if f.exists() else TARGET
 
 
 def has_key():
@@ -164,7 +169,8 @@ def cmd_voice(a):
     takes_dir = STUDIO / "vo/takes"
     takes_dir.mkdir(parents=True, exist_ok=True)
     words = sum(len(s["text"].split()) for s in segs)
-    say(f"{reel}: {len(segs)} lines, {words} words (aim for 85 to 90)")
+    lo, hi = target(reel)
+    say(f"{reel}: {len(segs)} lines, {words} words (~{words / 3.15:.0f} s of voice; target {lo}–{hi} s)")
 
     if a.take:
         takes = [takes_dir / f"{reel}_try{a.take}.wav"]
@@ -197,7 +203,8 @@ def cmd_voice(a):
     res = {}
     for t in cands:
         out = STUDIO / f"vo/_cand/{reel}/{t.stem}"
-        r = run([PY, "scripts/voice.py", str(seg), str(t), str(out), "--rate", str(a.rate)], capture_output=True, text=True)
+        gap = json.loads((STUDIO / reel / "reel.json").read_text()).get("line_gap", 0) if (STUDIO / reel / "reel.json").exists() else 0
+        r = run([PY, "scripts/voice.py", str(seg), str(t), str(out), "--rate", str(a.rate), "--gap", str(gap)], capture_output=True, text=True)
         if r.returncode:
             say(f"  {t.name}: alignment failed: {r.stderr.strip()[-400:]}")
             continue
@@ -206,8 +213,9 @@ def cmd_voice(a):
         res[t] = {"dir": out, "dur": tim["duration"], "weak": weak}
     if not res:
         sys.exit("no take could be aligned")
-    mid = sum(TARGET) / 2
-    pick = min(res, key=lambda t: (not (TARGET[0] <= res[t]["dur"] <= TARGET[1]), abs(res[t]["dur"] - mid), len(res[t]["weak"])))
+    lo, hi = target(reel)
+    mid = (lo + hi) / 2
+    pick = min(res, key=lambda t: (not (lo <= res[t]["dur"] <= hi), abs(res[t]["dur"] - mid), len(res[t]["weak"])))
 
     say(f"\n  {'take':<16}{'raw':>7}{'tight':>8}  errors / weak alignments")
     for t in takes:
@@ -224,8 +232,8 @@ def cmd_voice(a):
     final = check_vo(dest / "vo.wav", script)
     say(f"\nvo/{reel}/vo.wav: {res[pick]['dur']:.2f}s (reel ≈ {res[pick]['dur'] + 1.6:.1f}s), Whisper on the tightened voice: "
         + ("OK" if final["errors"] == 0 else f"{final['errors']} issue(s): {final['problems'][:4]}"))
-    if not (TARGET[0] <= res[pick]["dur"] <= TARGET[1]):
-        say(f"  ! outside {TARGET[0]}–{TARGET[1]} s: cut or add words, or --rate 1.05 (never slower than 1.0)")
+    if not (lo <= res[pick]["dur"] <= hi):
+        say(f"  ! outside {lo}–{hi} s: cut or add words, or --rate 1.05 (never slower than 1.0)")
     say(f"next: python3 studio.py go {reel}")
 
 
@@ -288,7 +296,7 @@ def cmd_check(a):
     data = json.loads((d / "cues.json").read_text())
     sys.path.insert(0, str(STUDIO / "scripts"))
     from reelkit import lint
-    warn = lint(data)
+    warn = lint(data, max_total=target(a.reel)[1] + 2.1)
     say("house rules: " + ("OK" if not warn else ""))
     for w in warn:
         say(f"  ! {w}")
@@ -359,7 +367,7 @@ def cmd_deliver(a):
     luma = frame0_luma(main)
     qa = [
         (v["width"] == 1080 and v["height"] == 1920, f"1080×1920 ({v['width']}×{v['height']}, {v['r_frame_rate']} fps)"),
-        (24.5 <= dur <= 31, f"duration {dur:.1f}s (25 to 30 s)"),
+        (target(a.reel)[0] - 1 <= dur <= target(a.reel)[1] + 2.1, f"duration {dur:.1f}s (voice {target(a.reel)[0]}–{target(a.reel)[1]} s + tail)"),
         (abs(I + 14) <= 0.7, f"loudness {I:.1f} LUFS (−14)"),
         (TP <= -0.9, f"true peak {TP:.1f} dBTP (≤ −1)"),
         (luma > 18, f"frame 0 is not black (mean luma {luma:.0f}/255): it is the thumbnail"),

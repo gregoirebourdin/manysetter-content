@@ -26,9 +26,9 @@ export function marquee(R, { text = "5-DAY CHALLENGE", at, out, flash = 0.5 }) {
   if (flash) R.flash(at, flash);
 }
 
-/** Big glowing clock (or any short text) on a night background. */
-export function nightClock(R, { text = "00:00", at, blink, out, night = at - 0.06, flash = 0.35 }) {
-  R.mount("back", "clock", `<div id="clock">${text}</div>`);
+/** Big glowing clock (or any short text) on a night background. `size` (px) shrinks a longer text ("1:00 AM"). */
+export function nightClock(R, { text = "00:00", at, blink, out, night = at - 0.06, flash = 0.35, size }) {
+  R.mount("back", "clock", `<div id="clock"${size ? ` style="font-size: ${size}px"` : ""}>${text}</div>`);
   const { tl } = R;
   if (night != null) {
     tl.to("#bg-night", { opacity: 1, duration: 0.15 }, night);
@@ -69,10 +69,20 @@ export function ringLight(R, { at, out, flicker = at + 0.28, flashAt = at + 0.02
 
 // ---------------------------------------------------------------- objects in front
 
-/** LIVE pill with a day counter that flips from `from` to `to` between days.t0 and days.t1. */
-export function livePill(R, { at, out, days }) {
-  R.mount("front", "live", `<div id="live"><div class="pill"><i></i>LIVE</div><div class="day">DAY&nbsp;<b id="dayn">1</b></div></div>`);
+/** LIVE pill with a day counter that flips from `from` to `to` between days.t0 and days.t1, or a viewer count
+ *  (eye icon) that melts from viewers.from to viewers.to between viewers.t0 and viewers.t1. */
+export function livePill(R, { at, out, days, viewers }) {
+  const right = viewers ? `<div class="day">${R.ico("eye")}<b class="n" id="viewn">${viewers.from}</b></div>`
+    : `<div class="day">DAY&nbsp;<b id="dayn">1</b></div>`;
+  R.mount("front", "live", `<div id="live"><div class="pill"><i></i>LIVE</div>${right}</div>`);
   const { tl } = R;
+  if (viewers) {
+    const n = document.getElementById("viewn"), { from, to, t0, t1 } = viewers;
+    R.onFrame((t) => {
+      const k = Math.min(1, Math.max(0, (t - t0) / (t1 - t0)));
+      n.textContent = String(Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3))));
+    });
+  }
   tl.fromTo("#live", { opacity: 0, y: -40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(3)" }, at);
   if (days) {
     const dayn = document.getElementById("dayn");
@@ -108,14 +118,17 @@ export function giantBubble(R, { text = "info?", at, out, flash = 0.6, flashAt =
   if (flash) R.flash(flashAt, flash);
 }
 
-/** Orange round badge with a Lucide icon (hand, moon, clock…), optional wiggle. */
-export function iconBadge(R, { icon = "hand", at, wiggle, out }) {
-  const el = R.mount("front", "hand", `<div id="hand"></div>`);
+/** Orange round badge with a Lucide icon (hand, ghost, video-off…), optional wiggle. Several per reel: give each an `id`
+ *  and a `pos` [left, top] (default: top right, clear of the IG buttons). `fly` throws it up and away instead of shrinking. */
+export function iconBadge(R, { id = "hand", icon = "hand", at, wiggle, out, pos, fly = false }) {
+  const style = pos ? ` style="left: ${pos[0]}px; top: ${pos[1]}px"` : "";
+  const el = R.mount("front", "hand", `<div id="${id}"${id === "hand" ? "" : ' class="badge"'}${style}></div>`);
   el.innerHTML = R.ico(icon);
-  const { tl } = R;
-  tl.fromTo("#hand", { opacity: 0, scale: 0.2, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.26, ease: "back.out(3)" }, at);
-  if (wiggle != null) tl.to("#hand", { rotation: 14, duration: 0.09, yoyo: true, repeat: 5, ease: "sine.inOut" }, wiggle);
-  tl.to("#hand", { opacity: 0, scale: 0.5, duration: 0.12 }, out);
+  const { tl } = R, sel = `#${id}`;
+  tl.fromTo(sel, { opacity: 0, scale: 0.2, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.26, ease: "back.out(3)" }, at);
+  if (wiggle != null) tl.to(sel, { rotation: 14, duration: 0.09, yoyo: true, repeat: 5, ease: "sine.inOut" }, wiggle);
+  if (fly) tl.to(sel, { y: -900, x: 160, rotation: 30, opacity: 0, duration: 0.5, ease: "power2.in" }, out);
+  else tl.to(sel, { opacity: 0, scale: 0.5, duration: 0.12 }, out);
 }
 
 /** Moon + floating "z z" ("go to sleep"). */
@@ -212,14 +225,14 @@ export function playbookCard(R, { at, fill, fillDur, chips, learned, out, page =
 }
 
 /**
- * Real DM thread. `messages` in order: { lead: "text", at } · { typing: true, at, hide } ·
+ * Real DM thread. `messages` in order: { lead: "text", at } · { typing: true, at, hide, who: "lead" (default: setter) } ·
  * { setter: "text", at, chip: { text, tone: "orange"|"green", dot, at } }; add `scroll: t` on a message
  * to scroll the thread up before it appears (measured, so the newest message sits at the bottom).
  */
 export function dmThread(R, { at, out, handle = "sarah.mindset", initials = "SM", messages }) {
   let n = 0, last = "m0";
   const rows = messages.map((m) => {
-    if (m.typing) return { ...m, id: `${last}t`, html: `<div class="ms-typing" style="align-self: flex-end"><i></i><i></i><i></i></div>` };
+    if (m.typing) return { ...m, id: `${last}t`, html: `<div class="ms-typing" style="align-self: flex-${m.who === "lead" ? "start" : "end"}"><i></i><i></i><i></i></div>` };
     last = `m${++n}`;
     const who = m.lead != null ? "lead" : "setter";
     const chip = m.chip
@@ -331,6 +344,26 @@ export function endCta(R, { text = "Comment SETTY", icon = "arrow-down", at, bou
   el.querySelector("#endarrow").innerHTML = R.ico(icon);
   R.tl.fromTo("#endcta", { opacity: 0, scale: 0.5, y: 60 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(2.4)" }, at);
   R.tl.to("#endarrow", { y: 16, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, bounce);
+}
+
+/** Small pill notification, Zoom / app style ("Mom left the webinar"): Lucide icon + text, pops in, slides out.
+ *  Several per reel (`id`). tone: dark (default), red, green, light. y: top in px (default between Setty and the captions). */
+export function toast(R, { id = "toast1", icon = "log-out", text, at, out, y = 1010, tone = "" }) {
+  R.mount("front", "toast", `<div class="toast${tone ? " " + tone : ""}" id="${id}" style="top: ${y}px">${R.ico(icon)}<span>${text}</span></div>`);
+  R.tl.fromTo(`#${id}`, { opacity: 0, y: 40, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2.4)" }, at);
+  if (out != null) R.tl.to(`#${id}`, { opacity: 0, y: -30, duration: 0.18, ease: "power2.in" }, out);
+}
+
+/** A stack of chat bubbles popping in one by one (a DM gag, follow-ups…): items [{ text, at, from: "lead"|"me", meta, small }].
+ *  "me" = the coach / the setter (orange, right), "lead" = white, left. meta = small grey line under it ("Seen · 3 days ago").
+ *  Several per reel (`id`). Keep it between Setty and the captions (y ≈ 680–1150 in TOP framing, 900–1150 in MID). */
+export function chatBubbles(R, { id = "chat1", x = 110, y = 900, w = 860, items, out }) {
+  const html = items.map((it, k) => `<div class="cb ${it.from || "lead"}" id="${id}-${k}"><div class="b${it.small ? " small" : ""}">${it.text}</div>` +
+    (it.meta ? `<div class="m">${it.meta}</div>` : "") + `</div>`).join("");
+  R.mount("front", "chat", `<div class="chat" id="${id}" style="left: ${x}px; top: ${y}px; width: ${w}px">${html}</div>`);
+  items.forEach((it, k) => R.tl.fromTo(`#${id}-${k}`, { opacity: 0, y: 24, scale: 0.9 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2.4)" }, it.at));
+  if (out != null) R.tl.to(`#${id}`, { opacity: 0, y: 80, duration: 0.2, ease: "power2.in" }, out);
 }
 
 // ---------------------------------------------------------------- physics

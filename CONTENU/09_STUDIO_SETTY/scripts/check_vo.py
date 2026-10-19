@@ -62,6 +62,9 @@ NUM = {
     "9pm": "9 pm",
     "2": "two",
     "12": "twelve",
+    "1": "one",
+    "6": "six",
+    "3": "three",
     "40": "forty",
     "5": "five",
 }

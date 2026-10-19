@@ -220,3 +220,13 @@ Format d'une règle :
 - Règle : sur les reels, Claude ne construit que ce qui reste : tout ce qui resservira va dans le kit commun (moteur, accessoires, sons, gabarits, `studio.py`, avec `studio.py regress` pour prouver que le reel 1 ne bouge pas) ; ce qui est propre à un reel (script, scènes, sons) se fait une fois, vite, sans outillage dédié.
 - Point ouvert (fondateur) : « Comment SETTY. I'll slide into your DMs. » ne vaut que si le mot-clé SETTY répond vraiment sur le compte qui publie (règle du 10/10 : sinon, lien en bio). À confirmer avant le premier reel de Setty publié.
 - Point ouvert (fondateur) : la voix Charon est une voix réaliste générée par IA ; l'étiquette « AI info » d'Instagram est recommandée sur chaque reel de Setty.
+
+## 2026-10-19 · Reel 2 de Setty « The webinar »
+- Retour : « Maintenant j'aimerais que tu fasses pour le webinaire, en mode "Okay tu as fait ton putain de webinaire ?", en anglais bien sûr. » puis, sur le script v1 (ouverture « Hey [bip]. » de la série gardée) : « Go pour le script. »
+- Règle : le script v1 de `writing/reel2_webinar.md` est validé ; la voix Charon est lancée pour ce script.
+- Retour : « CTA "Comment SETTY" : le mot-clé répond bien sur le compte. »
+- Règle : le mot-clé SETTY répond sur le compte qui publie (@greg.manysetter) : le CTA « Comment SETTY. I'll slide into your DMs. » est autorisé sur les reels de Setty (le point ouvert du 19/10 est levé). Si l'automatisation est coupée un jour, on repasse au lien en bio.
+- Retour (pendant la génération de la voix du script v1, ~30 s) : « Fais 1 minute stp. »
+- Règle : le reel 2 dure **environ 1 minute** (~180 mots) : on rallonge le script v1 en gardant ses lignes, on le fait valider, puis on relance la voix. Le format par défaut (25–30 s) reste celui du guide tant que le fondateur n'en fait pas la norme.
+- Retour (script v2, 1 minute) : « Go pour la version 1 minute, lance la voix. »
+- Règle : le script v2 de `writing/reel2_webinar.md` (181 mots) est validé ; la voix est lancée pour lui.

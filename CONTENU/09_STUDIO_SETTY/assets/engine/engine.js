@@ -10,7 +10,7 @@ export const W = 1080, H = 1920;
 // A new prop gets a slot here (unknown slots go on top of their layer).
 export const ORDER = {
   back: ["marquee", "ring", "clock", "bed"],
-  front: ["live", "ecg", "rain", "info", "hand", "moon", "tapes", "cable", "mc", "spark", "cardsw", "confetti", "comment", "notif"],
+  front: ["live", "ecg", "rain", "info", "hand", "moon", "tapes", "cable", "mc", "spark", "cardsw", "confetti", "chat", "toast", "comment", "notif"],
   root: ["caps", "endcta", "flash"],
   cards: ["pb", "thread", "booked", "cal"],
 };

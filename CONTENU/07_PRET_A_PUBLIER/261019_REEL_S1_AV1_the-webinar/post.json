@@ -1,0 +1,48 @@
+{
+  "funnel": "MOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Hey [bleep]. You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
+  "biais": [
+    "interruption du schéma (une mascotte mignonne qui insulte)",
+    "pertinence pour soi (son format exact)",
+    "chiffre précis (Twelve people)"
+  ],
+  "verbatims": [
+    "rd13",
+    "rd05",
+    "rd91",
+    "rd93",
+    "rd92",
+    "rd01",
+    "rd43",
+    "rd75",
+    "mc06",
+    "rd38",
+    "mc10",
+    "mc11",
+    "rd76",
+    "rd77",
+    "mc47",
+    "rd48",
+    "cl030"
+  ],
+  "cta": "Comment SETTY",
+  "id": "261019_REEL_S1_AV1_the-webinar",
+  "format": "reel Setty (mascotte 3D en code, voix Charon générée par IA)",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel2",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel2_webinar.md"
+  },
+  "etiquette_ia": "« AI info » à activer à la publication (voix réaliste générée par IA)",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+  },
+  "qa": {
+    "duree_s": 56.93,
+    "lufs": -14.2,
+    "true_peak_dbtp": -1.8
+  },
+  "statut": "script v2 validé (19/10), rendu 30 i/s à valider"
+}

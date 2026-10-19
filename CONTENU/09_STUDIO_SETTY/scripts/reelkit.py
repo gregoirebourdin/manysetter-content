@@ -19,8 +19,11 @@ ARROW_DOWN = '<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>'  # Lucide arrow-do
 
 
 class Reel:
-    def __init__(self, build_file, tail=1.6):
+    def __init__(self, build_file, tail=None):
         self.here = pathlib.Path(build_file).resolve().parent
+        meta = self.here / "reel.json"
+        if tail is None:  # end hold after the last word (CTA, loop): reel.json "tail_s", 1.6 s by default
+            tail = json.loads(meta.read_text()).get("tail_s", 1.6) if meta.exists() else 1.6
         self.id = self.here.name  # the folder name is the reel id: reel1, reel2…
         self.timing = json.loads((STUDIO / f"vo/{self.id}/timing.json").read_text())
         self.W = self.timing["words"]
@@ -85,14 +88,16 @@ class Reel:
         html = shell.replace("/*DATA*/", "const DATA = " + json.dumps(data, ensure_ascii=False) + ";")
         html = html.replace("/*SCENES*/", scenes).replace("{{TOTAL}}", f"{self.total:.2f}").replace("{{ID}}", self.id)
         (self.here / "index.html").write_text(html)
-        warn = lint(data)
+        meta = self.here / "reel.json"
+        hi = json.loads(meta.read_text()).get("voice_s", [25.5, 29.5])[1] if meta.exists() else 29.5
+        warn = lint(data, max_total=hi + 2.1)
         print(f"{self.id}: {self.total:.2f}s, {len(data['chunks'])} caption chunks → index.html, cues.json")
         for w in warn:
             print(f"  ! {w}")
         return data
 
 
-def lint(data):
+def lint(data, max_total=31.6):
     """House rules on the on-screen words (CLAUDE.md of the repo + the studio's)."""
     warn = []
     shown = [k["text"] for ch in data["chunks"] if not ch["hide"] for k in ch["tokens"]]
@@ -107,6 +112,6 @@ def lint(data):
     missing = [w["w"] for i, w in enumerate(data["words"]) if i not in covered]
     if missing:
         warn.append(f"spoken words with no caption chunk: {missing}")
-    if data["cues"]["total"] > 30.5:
-        warn.append(f"{data['cues']['total']:.1f}s: over 30 s (aim for 25 to 30 s)")
+    if data["cues"]["total"] > max_total:
+        warn.append(f"{data['cues']['total']:.1f}s: longer than the reel's target ({max_total:.1f} s max)")
     return warn

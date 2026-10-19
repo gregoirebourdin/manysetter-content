@@ -41,10 +41,10 @@ for k in range(5):
     place(sfx, key_click(), H("setty_end") - 0.05 + k * 0.05, 0.4)
 place(sfx, blip("send"), H("setty_end") + 0.28, 0.45)
 place(sfx, whoosh(0.5, 500, 5000), H("slide") - 0.05, 0.6, pan=0.6)
-place(sfx, whoosh(0.5, 5000, 700), H("slide") + 0.5, 0.45, pan=-0.6)
+place(sfx, whoosh(0.5, 5000, 700), H("slide") + 0.36, 0.2, pan=-0.6)  # quiet: "your DMs" lands on it (reel2)
 place(sfx, ping(1318), H("dms_end") + 0.05, 0.35)
 place(sfx, ping(1760), H("dms_end") + 0.2, 0.3)
 place(sfx, pop(), H("end") + 0.32, 0.45)
 place(sfx, sparkle(0.8), H("end") + 0.34, 0.3)
 
-M.finish()
+M.finish(tp_max=-1.5)  # the MP4 (AAC) then stays under -1 dBTP

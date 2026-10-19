@@ -208,7 +208,8 @@ class Mix:
         place(self.sfx, beep(880, 0.55), dead_t, 0.22)
 
     # ---- duck, mix, master
-    def finish(self, music_gain=0.42, sfx_gain=0.5, duck_music=0.64, duck_sfx=0.3):
+    def finish(self, music_gain=0.42, sfx_gain=0.5, duck_music=0.64, duck_sfx=0.3, tp_max=-1.0):
+        """tp_max: true-peak ceiling of the WAV. AAC encoding adds ~0.3 dB: new reels use -1.5 so the MP4 stays ≤ -1 dBTP."""
         voice, music, sfx = self.voice, self.music, self.sfx
         # duck the music under the voice (look-ahead envelope)
         env = np.sqrt(np.convolve(voice**2, np.ones(int(0.03 * SR)) / int(0.03 * SR), "same"))
@@ -222,13 +223,13 @@ class Mix:
         sfx *= (1 - duck_sfx * np.clip(sm * 3, 0, 1))[:, None]
         self.OUT.mkdir(exist_ok=True)
         mix = self.VOX * 1.0 + music * music_gain + sfx * sfx_gain
-        master(mix, self.OUT / "mix.wav")
-        master(self.VOX * 1.0 + sfx * sfx_gain, self.OUT / "mix_nomusic.wav")
+        master(mix, self.OUT / "mix.wav", tp_max=tp_max)
+        master(self.VOX * 1.0 + sfx * sfx_gain, self.OUT / "mix_nomusic.wav", tp_max=tp_max)
 
 
-def master(stem, path, target=-14.0, limit=-1.5):
+def master(stem, path, target=-14.0, limit=-1.5, tp_max=-1.0):
     """Constant gain to -14 LUFS + alimiter (never loudnorm in dynamic mode). If the true peak still lands
-    above -1 dBTP (inter-sample peaks), the limiter is lowered and the file redone."""
+    above tp_max (inter-sample peaks), the limiter is lowered and the file redone."""
     with tempfile.TemporaryDirectory() as td:
         raw = pathlib.Path(td) / "raw.wav"
         sf.write(raw, stem.astype(np.float32), SR, subtype="FLOAT")
@@ -244,6 +245,6 @@ def master(stem, path, target=-14.0, limit=-1.5):
     summ = r.stderr.split("Summary:")[1]
     I2 = summ.split("I:")[1].split("LUFS")[0].strip()
     P2 = summ.split("Peak:")[1].split("dBFS")[0].strip()
-    if float(P2) > -1.0 and limit > -4.0:
-        return master(stem, path, target, limit - 1.0)
+    if float(P2) > tp_max and limit > -4.0:
+        return master(stem, path, target, limit - 1.0, tp_max)
     print(f"{path.name}: {I2} LUFS, true peak {P2} dBTP")
