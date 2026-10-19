@@ -4,6 +4,6 @@ It only replies when you open Claude and ask, it runs through WhatsApp Web inste
 
 Were you about to try it? Tell me in the comments.
 
-I built ManySetter, an AI setter for Manychat. Comment SETTY and I'll send you your custom AI setter, built for your offer. Not affiliated with Anthropic, WhatsApp or Meta.
+I built ManySetter, an AI setter for Manychat. Comment SETTY and I'll show you how to set up your AI setter for free. Not affiliated with Anthropic, WhatsApp or Meta.
 
 #claudeai #whatsappbusiness #aisetter

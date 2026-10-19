@@ -18,7 +18,7 @@
 | 3. Les conséquences (douleurs, verbatims) | slides 4-5 | la phrase sérieuse sur fond noir |
 | 4. La solution | slide 6 | « Plug me into Manychat » + vrais écrans |
 | 5. Les bénéfices | slide 7 | 3 faits produit vrais |
-| 6. Le CTA | dernière slide | « Comment SETTY and I'll send you your custom AI setter, built for your offer. » (carrousel, reel et légende) |
+| 6. Le CTA | dernière slide | « Comment SETTY and I'll show you how to set up your AI setter for free. » (carrousel, reel et légende) |
 
 Pilier 2 : chaque étape du tuto et chaque conséquence est **vérifiée à sa source** (doc officielle de l'outil, conditions de Meta et de WhatsApp) avant fabrication, sources notées dans `post.json`. On ne dénigre jamais un outil ni Manychat : on montre ce qui arrive quand on l'utilise pour un travail de setter.
 

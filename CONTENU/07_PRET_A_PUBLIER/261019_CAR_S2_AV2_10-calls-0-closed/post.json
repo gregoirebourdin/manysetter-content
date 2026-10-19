@@ -1,6 +1,6 @@
 {
   "id": "261019_CAR_S2_AV2_10-calls-0-closed",
-  "statut": "à valider (v2 : texte réduit, retour du 19/10)",
+  "statut": "à valider (v3 : design premium, visuels, slide CTA, retours du 19/10)",
   "format": "carrousel",
   "segment": "S2",
   "avatar": "AV2",
@@ -98,7 +98,23 @@
           "heading": "and everyone *else*?"
         },
         {
-          "text": "they get something useful, like a free guide or a cheaper offer. never your tuesday afternoon."
+          "route": [
+            [
+              "ready to buy",
+              "your calendar"
+            ],
+            [
+              "not ready yet",
+              "a free guide"
+            ],
+            [
+              "no budget",
+              "a cheaper offer"
+            ]
+          ]
+        },
+        {
+          "caption": "nobody gets your tuesday afternoon for free."
         }
       ]
     },
@@ -133,10 +149,10 @@
     {
       "blocks": [
         {
-          "heading": "how many of your last 10 calls *closed*?"
-        },
-        {
-          "text": "be honest, no judgment.\n\n**comment SETTY and i'll send you your custom AI setter, built for your offer.**"
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
         }
       ]
     }

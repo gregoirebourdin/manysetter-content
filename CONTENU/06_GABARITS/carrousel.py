@@ -21,9 +21,8 @@ Blocs : {"title": txt, "size": 118} (couverture, centré) · {"heading": txt} (t
 · {"photo": chemin, "handle": "@compte", "width": 560, "ratio": 1.1} (portrait arrondi ; cadre « photo à déposer » si le fichier manque)
 · {"versus": [{"photo": chemin, "handle": "@a"}, {"photo": chemin, "handle": "@b"}]} (deux visages et « vs »)
 · {"code": "texte", "file": "nom.json"} (fenêtre de code sombre, pour les carrousels tuto).
-Fiche avec "style": "grid" (retour du 19/10/2026) : fond quadrillé et petits éléments graphiques sans texte
-(étoiles, anneaux, bulle de DM, flèche, gribouillis…) posés dans les marges et les zones vides, tirés au sort
-de façon stable pour chaque slide. Sans "style", la fiche sort comme avant (les carrousels déjà publiés ne bougent pas).
+Fiche avec "style": "grid" (retours du 19/10/2026) : habillage premium, quadrillage fin qui s'efface au centre,
+une lueur orange douce qui déborde d'un coin, repères de coupe aux coins, léger grain ; textes plus grands. Sans "style", la fiche sort comme avant (les carrousels déjà publiés ne bougent pas).
 Gros mot masqué : écrire \\* dans la fiche (« h\\*ll ») pour un astérisque visible.
 Les chemins d'images partent de la racine du dépôt.
 """
@@ -126,10 +125,11 @@ def serif_title(text: str, size: int, c: dict, align: str = "center") -> Image.I
     imgs = []
     for line in lines:
         lw = sum(x[2] for x in line) + space * (len(line) - 1)
-        im = Image.new("RGBA", (W, int(size * 1.15)), (0, 0, 0, 0))
+        ascent, descent = fr.getmetrics()
+        # assez haut pour les jambages (y, g, p) : sinon le bas des lettres est coupé
+        im = Image.new("RGBA", (W, max(int(size * 1.15), int(size * 0.1) + ascent + descent)), (0, 0, 0, 0))
         d = ImageDraw.Draw(im)
         x = MX + (CW - lw) / 2 if align == "center" else MX
-        ascent = fr.getmetrics()[0]
         base = int(size * 0.05) + ascent
         # surligneur : bandes continues sous les mots marqués (fond blanc seulement)
         if c["bg"] == WHITE:
@@ -590,154 +590,181 @@ def code_block(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
     return im
 
 
-# --- Habillage (retour du fondateur du 19/10/2026) ---------------------------------------
-# Fond quadrillé et petits éléments graphiques sans texte, posés dans les marges et les zones vides.
+def doc_card(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
+    """Carte « document » : la vraie phrase d'une source (conditions, README…), passages clés surlignés.
+    {"doc": {"source": "WhatsApp Terms of Service", "text": "...", "marks": ["auto-messaging"]}}"""
+    f = font(SANS, int(min(31 * k, 42)))
+    fb = font(SANS_SB, int(min(31 * k, 42)))
+    lf = font(SANS_SB, int(min(20 * k, 26)))
+    lh = int(f.size * 1.45)
+    pad, w = 46, CW
+    words = spec["text"].split()
+    marked = [False] * len(words)
+    low = [x.lower().strip('.,"…()') for x in words]
+    for m in spec.get("marks", []):
+        mw = [x.lower().strip('.,"…()') for x in m.split()]
+        for i in range(len(low) - len(mw) + 1):
+            if low[i:i + len(mw)] == mw:
+                for j in range(i, i + len(mw)):
+                    marked[j] = True
+    lines, cur, cw = [], [], 0.0
+    for wd, mk in zip(words, marked):
+        ww = (fb if mk else f).getlength(wd)
+        sp = f.getlength(" ") if cur else 0
+        if cur and cw + sp + ww > w - 2 * pad:
+            lines.append(cur)
+            cur, cw, sp = [], 0.0, 0
+        cur.append((wd, mk, ww))
+        cw += sp + ww
+    lines.append(cur)
+    head = 70
+    h = pad + head + len(lines) * lh + pad - 8
+    im = Image.new("RGBA", (W, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([MX, 0, MX + w, h], radius=30, fill=WHITE, outline="#e4e1dd", width=2)
+    # icône de page (coin plié) et nom de la source
+    x0, y0 = MX + pad, pad - 4
+    d.polygon([(x0, y0), (x0 + 22, y0), (x0 + 32, y0 + 10), (x0 + 32, y0 + 38), (x0, y0 + 38)], fill="#efedea", outline="#cfcbc6")
+    d.line([(x0 + 22, y0), (x0 + 22, y0 + 10), (x0 + 32, y0 + 10)], fill="#cfcbc6", width=2)
+    d.text((x0 + 50, y0 + 6), spec["source"].upper(), font=lf, fill="#8a8784")
+    y = pad + head
+    sp = f.getlength(" ")
+    for line in lines:
+        x = MX + pad
+        for i, (wd, mk, ww) in enumerate(line):
+            if mk:
+                nxt = i + 1 < len(line) and line[i + 1][1]
+                d.rectangle([x - 4, y + int(f.size * 0.18), x + ww + (sp if nxt else 0) + 4, y + int(f.size * 1.18)], fill="#ffd9c7")
+            x += ww + sp
+        x = MX + pad
+        for wd, mk, ww in line:
+            d.text((x, y), wd, font=fb if mk else f, fill=INK)
+            x += ww + sp
+        y += lh
+    return im
 
-import math  # noqa: E402
+
+def route(rows: list, c: dict, k: float = 1.0) -> Image.Image:
+    """Schéma de tri : chaque type de lead → où il va. La 1re ligne (le bon lead) est en orange.
+    {"route": [["ready to buy", "your calendar"], ["not ready yet", "a free guide"]]}"""
+    f = font(SANS_M, int(min(30 * k, 40)))
+    ph, gap = int(f.size * 2.3), int(f.size * 0.9)
+    h = len(rows) * ph + (len(rows) - 1) * gap
+    im = Image.new("RGBA", (W, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    lw = max(f.getlength(a) for a, _ in rows) + 64
+    rw = max(f.getlength(b) for _, b in rows) + 64
+    ax0, ax1 = MX + lw + 26, W - MX - rw - 26
+    for i, (a, b) in enumerate(rows):
+        y = i * (ph + gap)
+        best = i == 0
+        grey = "#f1efec" if c["bg"] == WHITE else "#2a2826"
+        d.rounded_rectangle([MX, y, MX + lw, y + ph], radius=ph // 2, fill=grey)
+        d.text((MX + 32, y + (ph - f.size) / 2 - 4), a, font=f, fill=c["fg"])
+        cy = y + ph / 2
+        col = ORANGE if best else c["muted"]
+        d.line([(ax0, cy), (ax1 - 10, cy)], fill=col, width=4)
+        d.polygon([(ax1, cy), (ax1 - 18, cy - 11), (ax1 - 18, cy + 11)], fill=col)
+        x1 = W - MX - rw
+        if best:
+            d.rounded_rectangle([x1, y, W - MX, y + ph], radius=ph // 2, fill=ORANGE)
+            d.text((x1 + 32, y + (ph - f.size) / 2 - 4), b, font=f, fill=WHITE)
+        else:
+            d.rounded_rectangle([x1, y, W - MX, y + ph], radius=ph // 2, outline=c["line"], width=3)
+            d.text((x1 + 32, y + (ph - f.size) / 2 - 4), b, font=f, fill=c["fg"])
+    return im
+
+
+def cta_block(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
+    """Slide CTA (retour du 19/10/2026 : « vraiment clean, que ça donne envie de commenter ») :
+    « comment SETTY » en très grand, la promesse en une ligne, une barre de commentaire avec le mot déjà tapé."""
+    kw = spec.get("keyword", "SETTY")
+    title = serif_title(f"comment *{kw}*", int(min(150 * k, 190)), c)
+    line = paragraph(spec["line"], int(min(34 * k, 46)), c, color=c["muted"], align="center")
+    bf = font(SANS_SB, int(min(34 * k, 44)))
+    pf = font(SANS_SB, int(min(30 * k, 38)))
+    bh = int(bf.size * 2.9)
+    bar = Image.new("RGBA", (W, bh), (0, 0, 0, 0))
+    d = ImageDraw.Draw(bar)
+    fill = WHITE if c["bg"] == WHITE else "#1c1b19"
+    d.rounded_rectangle([MX, 0, W - MX, bh], radius=bh // 2, fill=fill, outline="#dedad5" if c["bg"] == WHITE else "#3a3835", width=2)
+    r = int(bh * 0.31)
+    ax = MX + 22 + r
+    d.ellipse([ax - r, bh / 2 - r, ax + r, bh / 2 + r], fill="#ffb48f")
+    tx = ax + r + 26
+    d.text((tx, (bh - bf.size) / 2 - 6), kw, font=bf, fill=c["fg"])
+    cx = tx + bf.getlength(kw) + 6
+    d.line([(cx, bh * 0.3), (cx, bh * 0.7)], fill=ORANGE, width=4)
+    post = "Post"
+    d.text((W - MX - 36 - pf.getlength(post), (bh - pf.size) / 2 - 5), post, font=pf, fill=ORANGE)
+    parts = [title, line, bar]
+    gaps = [int(26 * k), int(70 * k)]
+    h = sum(p.height for p in parts) + sum(gaps)
+    out = Image.new("RGBA", (W, h), (0, 0, 0, 0))
+    y = 0
+    for p, g in zip(parts, gaps + [0]):
+        out.alpha_composite(p, (0, y))
+        y += p.height + g
+    return out
+
+
+# --- Habillage premium (retours du fondateur du 19/10/2026) -----------------------------
+# « Pas de petits motifs qui font gamin, du super design » : quadrillage fin qui s'efface au centre,
+# une lueur orange douce par slide, repères de coupe aux coins, léger grain. Rien ne touche le texte.
+
 import random  # noqa: E402
 
-GRID = 60
+from PIL import ImageChops, ImageFilter  # noqa: E402
+
+GRID = 54
+_FADE = None
 
 
-def _grid(img: Image.Image, c: dict) -> None:
-    d = ImageDraw.Draw(img)
-    col = "#ece9e5" if c["bg"] == WHITE else "#1f1e1c"
-    for x in range(0, W + 1, GRID):
-        d.line([(x, 0), (x, H)], fill=col, width=2)
-    for y in range(0, H + 1, GRID):
-        d.line([(0, y), (W, y)], fill=col, width=2)
+def _fade_mask() -> Image.Image:
+    """Masque radial : le quadrillage est presque invisible au centre et plein sur les bords."""
+    global _FADE
+    if _FADE is None:
+        small = Image.new("L", (W // 6, H // 6))
+        cx, cy = small.width / 2, small.height / 2
+        rmax = (cx ** 2 + cy ** 2) ** 0.5
+        small.putdata([int(255 * min(1.0, max(0.18, ((((x - cx) ** 2 + (y - cy) ** 2) ** 0.5) / rmax) ** 1.6 * 1.35)))
+                       for y in range(small.height) for x in range(small.width)])
+        _FADE = small.resize((W, H), Image.BICUBIC).filter(ImageFilter.GaussianBlur(4))
+    return _FADE
 
 
-def _shape(kind: str, s: int, col: str, alt: str) -> Image.Image:
-    """Un élément graphique, dessiné en 2x puis réduit (bords lisses). s = taille finale en px."""
-    S = s * 2
-    im = Image.new("RGBA", (S, S), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
-    cx = cy = S / 2
-    if kind == "sparkle":
-        pts = []
-        for i in range(8):
-            r = S / 2 if i % 2 == 0 else S * 0.14
-            a = math.pi / 4 * i - math.pi / 2
-            pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
-        d.polygon(pts, fill=col)
-    elif kind == "burst":
-        pts = []
-        for i in range(24):
-            r = S / 2 if i % 2 == 0 else S * 0.36
-            a = math.pi / 12 * i
-            pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
-        d.polygon(pts, fill=col)
-        d.ellipse([cx - S * 0.12, cy - S * 0.12, cx + S * 0.12, cy + S * 0.12], fill=alt)
-    elif kind == "plus":
-        t = S * 0.16
-        d.rounded_rectangle([cx - t, S * 0.08, cx + t, S * 0.92], radius=t, fill=col)
-        d.rounded_rectangle([S * 0.08, cy - t, S * 0.92, cy + t], radius=t, fill=col)
-    elif kind == "ring":
-        t = S * 0.11
-        d.ellipse([t, t, S - t, S - t], outline=col, width=int(t * 1.6))
-    elif kind == "dots":
-        r = S * 0.07
-        for i in range(3):
-            for j in range(3):
-                x, y = S * (0.2 + 0.3 * i), S * (0.2 + 0.3 * j)
-                d.ellipse([x - r, y - r, x + r, y + r], fill=col)
-    elif kind == "bubble":  # bulle de DM avec les trois points « en train d'écrire »
-        d.rounded_rectangle([S * 0.04, S * 0.2, S * 0.96, S * 0.74], radius=S * 0.22, fill=col)
-        d.polygon([(S * 0.18, S * 0.66), (S * 0.12, S * 0.9), (S * 0.38, S * 0.7)], fill=col)
-        for i in range(3):
-            x = S * (0.32 + 0.18 * i)
-            d.ellipse([x - S * 0.06, S * 0.41, x + S * 0.06, S * 0.53], fill=alt)
-    elif kind == "squiggle":
-        pts = [(S * 0.04 + S * 0.92 * i / 60, cy + S * 0.16 * math.sin(i / 60 * 4 * math.pi)) for i in range(61)]
-        d.line(pts, fill=col, width=int(S * 0.07), joint="curve")
-    elif kind == "arrow":  # flèche tracée à la main, courbe
-        p0, p1, p2 = (S * 0.08, S * 0.82), (S * 0.25, S * 0.12), (S * 0.86, S * 0.3)
-        pts = [((1 - u) ** 2 * p0[0] + 2 * (1 - u) * u * p1[0] + u * u * p2[0],
-                (1 - u) ** 2 * p0[1] + 2 * (1 - u) * u * p1[1] + u * u * p2[1]) for u in [i / 40 for i in range(41)]]
-        w = int(S * 0.055)
-        d.line(pts, fill=col, width=w, joint="curve")
-        d.line([(S * 0.66, S * 0.16), p2, (S * 0.7, S * 0.46)], fill=col, width=w, joint="curve")
-    elif kind == "toggle":  # interrupteur : un clin d'œil aux réglages du setter
-        d.rounded_rectangle([S * 0.04, S * 0.3, S * 0.96, S * 0.7], radius=S * 0.2, fill=col)
-        d.ellipse([S * 0.58, S * 0.34, S * 0.9, S * 0.66], fill=alt)
-    return im.resize((s, s), Image.LANCZOS)
-
-
-def _hit(r, boxes, pad=18) -> bool:
-    return any(r[0] < x1 + pad and r[2] > x0 - pad and r[1] < y1 + pad and r[3] > y0 - pad
-               for x0, y0, x1, y1 in boxes)
-
-
-def _stick(img: Image.Image, shape: Image.Image, xy, dark: bool) -> None:
-    """Colle un élément avec une ombre portée douce, comme un autocollant."""
-    a = shape.split()[-1]
-    sh = Image.new("RGBA", shape.size, (0, 0, 0, 120) if dark else (13, 12, 10, 40))
-    sh.putalpha(a.point(lambda v: v * (0.55 if dark else 0.3)))
-    img.alpha_composite(sh, (xy[0] + 6, xy[1] + 8))
-    img.alpha_composite(shape, xy)
-
-
-def decorate(img: Image.Image, c: dict, rnd: random.Random, boxes: list, cover: bool) -> None:
-    """Habille la slide sans jamais toucher le texte (boxes = cadres du contenu) :
-    un élément dans un coin, un disque ou un anneau qui déborde d'un bord, un grand élément dans le plus
-    grand vide (au-dessus, au-dessous ou à côté du contenu) et, sur la couverture, un gros badge."""
+def decorate(img: Image.Image, c: dict, rnd: random.Random, index: int, cover: bool) -> None:
     dark = c["bg"] != WHITE
-    pal = [ORANGE, MARK, INK if not dark else "#4a4844"]
-    alt = c["bg"]
-    # 1. un petit élément dans un coin libre
-    corners = [(18, 18), (W - 102, 18), (18, H - 102), (W - 102, H - 102)]
-    rnd.shuffle(corners)
-    used = []
-    for cx, cy in corners:
-        s = rnd.randint(66, 84)
-        if not _hit((cx, cy, cx + s, cy + s), boxes):
-            _stick(img, _shape(rnd.choice(["sparkle", "plus", "dots", "burst"]), s, rnd.choice(pal[:2]), alt), (cx, cy), dark)
-            used.append((cx, cy, cx + s, cy + s))
-            break
-    # 2. un grand disque ou anneau qui déborde d'un bord (dans la marge, jamais sous le texte)
-    r = rnd.randint(110, 150)
-    side = rnd.choice([-1, 1])
-    yy = rnd.choice([rnd.randint(-40, 170), rnd.randint(H - 170, H + 40)])
-    xx = -int(r * 0.45) if side < 0 else W + int(r * 0.45)
-    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ld = ImageDraw.Draw(layer)
-    if rnd.random() < 0.5:
-        ld.ellipse([xx - r, yy - r, xx + r, yy + r], fill=MARK if not dark else "#3a2116")
-    else:
-        ld.ellipse([xx - r, yy - r, xx + r, yy + r], outline=ORANGE, width=14)
-    img.alpha_composite(layer)
-    # 3. le grand élément : le plus grand carré libre au-dessus, au-dessous ou à côté du contenu
-    cands = []
-    if boxes:
-        top, bot = min(b[1] for b in boxes), max(b[3] for b in boxes)
-        cands += [(MX, 10, W - MX, top), (MX, bot, W - MX, H - 10)]
-        for x0, y0, x1, y1 in boxes:
-            cands += [(x1, y0, W - 44, y1), (44, y0, x0, y1)]
-    best = None
-    for x0, y0, x1, y1 in cands:
-        s = int(min(x1 - x0, y1 - y0) - 40)
-        s = min(s, 220)
-        if s < 110:
-            continue
-        pos = (x0 + (x1 - x0 - s) // 2, y0 + (y1 - y0 - s) // 2)
-        rect = (pos[0], pos[1], pos[0] + s, pos[1] + s)
-        if _hit(rect, boxes) or _hit(rect, used, 10):
-            continue
-        if best is None or s > best[0]:
-            best = (s, pos)
-    if best:
-        s, pos = best
-        kind = rnd.choice(["bubble", "arrow", "squiggle", "toggle", "sparkle", "burst"])
-        _stick(img, _shape(kind, s, rnd.choice(pal[:2]) if kind != "arrow" else pal[2], alt), pos, dark)
-        used.append((pos[0], pos[1], pos[0] + s, pos[1] + s))
-    # 4. la couverture : un gros badge qui déborde d'un coin du haut, s'il ne touche pas le titre
-    if cover:
-        for bx, by in rnd.sample([(W - 190, -40), (-40, -40), (W - 190, H - 190), (-40, H - 190)], 4):
-            rect = (max(bx, 0), max(by, 0), min(bx + 230, W), min(by + 230, H))
-            if not _hit(rect, boxes, 10) and not _hit(rect, used, 0):
-                _stick(img, _shape("burst", 230, ORANGE, alt), (bx, by), dark)
-                break
+    # 1. la lueur : un grand dégradé orange flou qui déborde d'un coin (le coin tourne d'une slide à l'autre)
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    corners = [(W + 60, -120), (-140, H + 80), (W + 80, H + 60), (-120, -100)]
+    gx, gy = corners[index % 4]
+    r = 560 if cover else 470
+    gd.ellipse([gx - r, gy - r, gx + r, gy + r], fill=(255, 136, 77, 120 if dark else 70))
+    img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(170)))
+    # 2. le quadrillage, effacé au centre
+    lines = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(lines)
+    col = (255, 255, 255, 26) if dark else (13, 12, 10, 22)
+    for x in range(GRID // 2, W, GRID):
+        ld.line([(x, 0), (x, H)], fill=col, width=1)
+    for y in range(GRID // 2, H, GRID):
+        ld.line([(0, y), (W, y)], fill=col, width=1)
+    a = ImageChops.multiply(lines.split()[-1], _fade_mask())
+    lines.putalpha(a)
+    img.alpha_composite(lines)
+    # 3. repères de coupe fins aux quatre coins
+    d = ImageDraw.Draw(img)
+    mc = "#5a5753" if dark else "#bdb9b4"
+    m, L = 40, 30
+    for x, y, sx, sy in [(m, m, 1, 1), (W - m, m, -1, 1), (m, H - m, 1, -1), (W - m, H - m, -1, -1)]:
+        d.line([(x, y), (x + sx * L, y)], fill=mc, width=2)
+        d.line([(x, y), (x, y + sy * L)], fill=mc, width=2)
+    # 4. un léger grain, comme une impression
+    noise = Image.effect_noise((W, H), 28).point(lambda v: 128 + (v - 128) // 2)
+    grain = Image.merge("RGBA", (noise, noise, noise, Image.new("L", (W, H), 10 if not dark else 14)))
+    img.alpha_composite(grain)
 
 
 # --- Montage d'une slide ------------------------------------------------------------
@@ -780,6 +807,12 @@ def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
         return numbered(b["list"], c, b.get("start", 1), z(b.get("size", 36), 60))
     if "code" in b:
         return code_block(b, c, min(k, 1.4))
+    if "doc" in b:
+        return doc_card(b["doc"], c, min(k, 1.4))
+    if "route" in b:
+        return route(b["route"], c, min(k, 1.4))
+    if "cta" in b:
+        return cta_block(b["cta"], c, min(k, 1.3))
     if "spacer" in b:
         return Image.new("RGBA", (W, z(b["spacer"])), (0, 0, 0, 0))
     raise ValueError(f"bloc inconnu : {b}")
@@ -789,7 +822,7 @@ MARGIN = 104                      # marge haute et basse minimale
 SCALES = [x / 100 for x in range(200, 84, -5)]   # 2,00 → 0,85
 
 
-def compose(s: dict, rnd: random.Random | None = None, cover: bool = False) -> Image.Image:
+def compose(s: dict, rnd: random.Random | None = None, cover: bool = False, index: int = 0) -> Image.Image:
     """Choisit la plus grande taille de texte qui tient : une slide n'a jamais de grand vide
     (retour du fondateur du 10/10/2026 : « écris plus gros, ça se lit mieux »).
     Avec rnd (fiche "style": "grid"), le fond quadrillé et les éléments graphiques passent sous le contenu."""
@@ -806,14 +839,7 @@ def compose(s: dict, rnd: random.Random | None = None, cover: bool = False) -> I
     y = MARGIN if s.get("valign") == "top" else (H - total) // 2
     img = Image.new("RGBA", (W, H), c["bg"])
     if rnd is not None:
-        _grid(img, c)
-        boxes, yy = [], y
-        for p, g in zip(parts, gaps + [0]):
-            bb = p.split()[-1].getbbox()
-            if bb:
-                boxes.append((bb[0], yy + bb[1], bb[2], yy + bb[3]))
-            yy += p.height + g
-        decorate(img, c, rnd, boxes, cover)
+        decorate(img, c, rnd, index, cover)
     for p, g in zip(parts, gaps + [0]):
         img.alpha_composite(p, (0, y))
         y += p.height + g
@@ -847,7 +873,7 @@ def render(path: Path) -> list[Path]:
     for i, s in enumerate(post["slides"], 1):
         p = path.parent / f"slide-{i:02d}.png"
         rnd = random.Random(f"{path.parent.name}-{i}") if grid else None
-        compose(s, rnd, cover=(i == 1)).save(p, optimize=True)
+        compose(s, rnd, cover=(i == 1), index=i - 1).save(p, optimize=True)
         out.append(p)
     tw, th = 300, 375
     sheet = Image.new("RGB", (tw * len(out) + 16 * (len(out) + 1), th + 32), "#cfcdca")

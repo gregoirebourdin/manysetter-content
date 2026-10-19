@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1440" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+                     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/" } }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1440px; overflow: hidden; background: #f5f3f2; }
+      #root { position: relative; width: 100%; height: 100%; background: #f5f3f2; font-family: Inter, sans-serif; }
+      .head { position: absolute; left: 48px; top: 30px; display: flex; align-items: baseline; gap: 22px; }
+      .head h1 { font: 600 64px/1 Nohemi, sans-serif; letter-spacing: -0.045em; color: #1a1816; }
+      .head p { font-size: 20px; color: #76736f; }
+      .head .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ff611d; margin-right: 8px; }
+      .cell { position: absolute; background: #fff; border-radius: 18px;
+        box-shadow: 0 0 0 1px #0d0c0a0f, 0 1px 2px #0d0c0a0a, 0 4px 12px -4px #0d0c0a0f; }
+      .cell span { position: absolute; left: 16px; bottom: 12px; font-size: 17px; font-weight: 600; color: #42403c; }
+      .cell em { position: absolute; right: 16px; bottom: 12px; font-size: 14px; font-style: normal; color: #a3a09d; }
+      #three-layer { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="coach" data-start="0" data-duration="1" data-fps="30" data-width="1920" data-height="1440">
+      <div class="head"><h1>The coach</h1><p><span class="dot"></span>Setty's sparring partner · infopreneur, tank top, beanie, three-day stubble · sheet v1</p></div>
+      <div id="cells"></div>
+      <canvas id="three-layer"></canvas>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { setupStage } from "./assets/setty/setty.js";
+      import { createCoach, pose } from "./assets/coach/coach.js";
+
+      const W = 1920, H = 1440;
+      const FULL = { pos: [0, 2.5, 19], at: [0, 2.25, 0], fov: 17 };
+      const BUST = { pos: [0, 3.75, 8.6], at: [0, 3.55, 0], fov: 17 };
+      const CELLS = [
+        { label: "Front", note: "turnaround", p: pose("neutral"), cam: FULL },
+        { label: "Three-quarter", note: "turnaround", p: pose("neutral", { turn: 0.7 }), cam: FULL },
+        { label: "Side", note: "turnaround", p: pose("neutral", { turn: 1.5708 }), cam: FULL },
+        { label: "Back", note: "turnaround", p: pose("neutral", { turn: 3.1416 }), cam: FULL },
+        { label: "Seated", note: "at his desk", p: pose("neutral", { sit: 1, turn: 0.5, y: 0.0, phone: 1, armRf: 0.9, elbowR: 1.5 }), cam: FULL },
+        { label: "Hyped", note: "\"the chat was on fire\"", p: pose("hyped", { turn: 0.15 }), cam: BUST },
+        { label: "Smug", note: "", p: pose("smug", { turn: 0.2 }), cam: BUST },
+        { label: "Stressed", note: "63 DMs", p: pose("stressed", { turn: -0.1 }), cam: BUST },
+        { label: "Defeated", note: "\"they all vanished\"", p: pose("defeated", { turn: 0.1 }), cam: BUST },
+        { label: "Shocked", note: "", p: pose("shocked"), cam: BUST },
+        { label: "Confused", note: "", p: pose("confused", { turn: 0.15 }), cam: BUST },
+        { label: "Laughing", note: "", p: pose("laughing", { turn: -0.15 }), cam: BUST },
+        { label: "Annoyed", note: "", p: pose("annoyed", { turn: 0.2 }), cam: BUST },
+        { label: "Skeptical", note: "\"a bot? nah\"", p: pose("skeptical", { turn: 0.1 }), cam: BUST },
+        { label: "Talking", note: "lip-sync", p: pose("neutral", { talk: 0.7, turn: 0.25, armLf: 0.7, elbowL: 1.4 }), cam: BUST },
+      ];
+      const COLS = 5, ROWS = 3, X0 = 48, Y0 = 130, GAP = 18;
+      const CW = (W - 2 * X0 - (COLS - 1) * GAP) / COLS, CH = (H - Y0 - 30 - (ROWS - 1) * GAP) / ROWS;
+      const cellsEl = document.getElementById("cells");
+      CELLS.forEach((c, i) => {
+        c.x = X0 + (i % COLS) * (CW + GAP);
+        c.y = Y0 + Math.floor(i / COLS) * (CH + GAP);
+        const el = document.createElement("div");
+        el.className = "cell";
+        Object.assign(el.style, { left: `${c.x}px`, top: `${c.y}px`, width: `${CW}px`, height: `${CH}px` });
+        el.innerHTML = `<span>${c.label}</span><em>${c.note}</em>`;
+        cellsEl.appendChild(el);
+      });
+      const canvas = document.getElementById("three-layer");
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      renderer.autoClear = false;
+      renderer.setClearColor(0x000000, 0);
+      const scene = new THREE.Scene();
+      await setupStage(renderer, scene, { shadowOpacity: 0.16 });
+      const coach = createCoach();
+      scene.add(coach.root);
+      const camera = new THREE.PerspectiveCamera(17, CW / (CH - 26), 0.1, 100);
+      function renderAll() {
+        renderer.setScissorTest(false);
+        renderer.clear();
+        renderer.setScissorTest(true);
+        for (const c of CELLS) {
+          coach.apply(c.p);
+          camera.position.set(...c.cam.pos);
+          camera.lookAt(...c.cam.at);
+          camera.fov = c.cam.fov;
+          camera.updateProjectionMatrix();
+          const vy = H - (c.y + CH - 26);
+          renderer.setViewport(c.x, vy, CW, CH - 26);
+          renderer.setScissor(c.x, vy, CW, CH - 26);
+          renderer.render(scene, camera);
+        }
+      }
+      renderAll();
+      window.addEventListener("hf-seek", renderAll);
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 1 });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.coach = tl;
+    </script>
+  </body>
+</html>

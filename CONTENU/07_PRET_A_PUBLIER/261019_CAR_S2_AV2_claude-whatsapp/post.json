@@ -1,6 +1,6 @@
 {
   "id": "261019_CAR_S2_AV2_claude-whatsapp",
-  "statut": "à valider (v2 : texte réduit, retour du 19/10)",
+  "statut": "à valider (v3 : design premium, visuels, slide CTA, retours du 19/10)",
   "format": "carrousel",
   "segment": "S2",
   "avatar": "AV2",
@@ -45,7 +45,8 @@
           "caption": "the setup everyone shares, and the part nobody posts.",
           "align": "center"
         }
-      ]
+      ],
+      "bg": "black"
     },
     {
       "blocks": [
@@ -100,7 +101,17 @@
           "heading": "2. it's not the official *API*"
         },
         {
-          "text": "it runs through WhatsApp Web. WhatsApp's terms ban \"auto-messaging\" and say they can suspend your account."
+          "text": "it runs through WhatsApp Web. here's what WhatsApp's terms say:"
+        },
+        {
+          "doc": {
+            "source": "WhatsApp Terms of Service",
+            "text": "…impermissible communications such as bulk messaging, auto-messaging, auto-dialing, and the like. (…) we may take action with respect to your account, including disabling or suspending your account.",
+            "marks": [
+              "auto-messaging",
+              "disabling or suspending your account"
+            ]
+          }
         }
       ]
     },
@@ -110,7 +121,16 @@
           "heading": "3. it reads *every* chat"
         },
         {
-          "text": "your clients, your mom, your ex.\n\nits own README warns that prompt injection could leak your data."
+          "text": "your clients, your mom, your ex. even its own README warns you:"
+        },
+        {
+          "doc": {
+            "source": "whatsapp-mcp · README",
+            "text": "Caution: as with many MCP servers, the WhatsApp MCP is subject to the lethal trifecta. (…) could lead to private data exfiltration.",
+            "marks": [
+              "private data exfiltration"
+            ]
+          }
         }
       ]
     },
@@ -137,10 +157,10 @@
     {
       "blocks": [
         {
-          "heading": "were you about to *clone* it?"
-        },
-        {
-          "text": "be honest, i won't tell anyone.\n\n**comment SETTY and i'll send you your custom AI setter, built for your offer.**"
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "id": "261019_CAR_S1_AV1_webinar-flopped",
-  "statut": "à valider (v2 : texte réduit, retour du 19/10)",
+  "statut": "à valider (v3 : design premium, visuels, slide CTA, retours du 19/10)",
   "format": "carrousel",
   "segment": "S1",
   "avatar": "AV1",
@@ -67,7 +67,11 @@
           "heading": "and *nobody* answered"
         },
         {
-          "text": "\"i'll reply tomorrow\" became thursday. by then, they were gone."
+          "text": "\"i'll reply tomorrow\" became thursday."
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/premier-dm-sans-reponse.png",
+          "width": 900
         }
       ]
     },
@@ -138,10 +142,10 @@
     {
       "blocks": [
         {
-          "heading": "how many DMs did your last *webinar* get?"
-        },
-        {
-          "text": "tell me in the comments.\n\n**comment SETTY and i'll send you your custom AI setter, built for your offer.**"
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
         }
       ]
     }
