@@ -1,0 +1,213 @@
+{
+  "id": "261019_CAR_S2_AV2_dm-script",
+  "statut": "à valider (lot 2, fait d'un coup à la demande du fondateur le 19/10)",
+  "format": "carrousel",
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "1 · business du coach",
+  "idee": 10,
+  "reel_associe": "à écrire (Setty : « You copied a [bleep]ing DM script off YouTube, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy.mp3",
+  "biais": [
+    "valeur gratuite à enregistrer (le script entier)",
+    "pertinence pour soi (ses DM de ce soir)",
+    "écart de curiosité (« without sounding scripted »)"
+  ],
+  "verbatims": [
+    "rd38",
+    "rd31",
+    "rd91",
+    "rd14",
+    "rd93"
+  ],
+  "sources": [
+    {
+      "fait": "hook sans chiffre : « 50+ calls a week » attend la confirmation du fondateur (chiffre réel et sourcé ou rien)",
+      "source": "ligne-edito.md, idée 10"
+    },
+    {
+      "fait": "le setter tire de l'offre un script de setting, les objections et un document de ton ; une question à la fois, sans reposer une question déjà posée",
+      "source": "brief-de-marque.md, section 2"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "this is the *DM script* i made to book calls without sounding scripted"
+        },
+        {
+          "caption": "save it, you'll need it tonight.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "why copied scripts *fail*"
+        },
+        {
+          "text": "same pitch, every lead, word for word. leads smell it, and you get \"ghosted after i sent my rates\"."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "step 1: answer *their* question",
+          "size": 66
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "how much is it?"
+            },
+            {
+              "from": "me",
+              "text": "it's $300 a month. can i ask what made you reach out?"
+            }
+          ]
+        },
+        {
+          "caption": "never dodge the price, it feels shady."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "step 2: *one* question at a time",
+          "size": 66
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "what's the main thing you want to fix?"
+            },
+            {
+              "from": "lead",
+              "text": "my energy, i'm always tired"
+            },
+            {
+              "from": "me",
+              "text": "got it, what have you tried so far?"
+            }
+          ]
+        },
+        {
+          "caption": "never two questions in one message."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "step 3: check the *fit*",
+          "size": 66
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "if we started this month, would that work for you?"
+            },
+            {
+              "from": "lead",
+              "text": "yes, i'm ready"
+            }
+          ]
+        },
+        {
+          "caption": "timing and budget, before the calendar."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "step 4: offer *two* times",
+          "size": 66
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "tuesday 2 p.m. or thursday 10 a.m.?"
+            },
+            {
+              "from": "lead",
+              "text": "thursday!"
+            }
+          ]
+        },
+        {
+          "caption": "a choice beats \"here's my link\"."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "step 5: the *\"i'll think about it\"*",
+          "size": 66
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "i'll think about it"
+            },
+            {
+              "from": "me",
+              "text": "totally fair, which part are you unsure about?"
+            }
+          ]
+        },
+        {
+          "caption": "find the real objection, don't push."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it turns your offer into a script like this, then adapts it to each lead, one question at a time."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "your script, in your voice.",
+            "it never asks the same thing twice.",
+            "objections get a real answer.",
+            "you never paste a script again."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

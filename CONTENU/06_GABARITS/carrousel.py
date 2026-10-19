@@ -229,15 +229,25 @@ def label(text: str, c: dict, size: int = 23, align: str = "left") -> Image.Imag
 
 # --- Images ------------------------------------------------------------------------
 
-def load_cropped(path: Path) -> Image.Image:
-    """Recadre une capture sur son contenu (enlève le fond uni autour)."""
-    im = Image.open(path).convert("RGB")
-    bg = im.getpixel((4, 4))
+def load_cropped(path: Path, inner: bool = False) -> Image.Image:
+    """Recadre une capture sur son contenu (enlève le fond uni autour).
+    inner : recadre une 2e fois dans la carte blanche (écrans de la banque : la conversation seule, sans le vide)."""
+    im = _crop_on(Image.open(path).convert("RGB"), (4, 4))
+    if inner:
+        im = _crop_on(im, (60, 60), m=34)
+    return im
+
+
+def _crop_on(im: Image.Image, at: tuple, m: int = 44) -> Image.Image:
+    bg = im.getpixel(at)
     mask = Image.eval(Image.merge("RGB", [ch.point(lambda v, b=b: 255 if abs(v - b) > 14 else 0)
                                           for ch, b in zip(im.split(), bg)]), lambda v: v).convert("L")
+    if at != (4, 4):   # dans la carte : on ignore son bord
+        mask = mask.crop((at[0], at[1], im.width - at[0], im.height - at[1]))
     box = mask.getbbox()
+    if box and at != (4, 4):
+        box = (box[0] + at[0], box[1] + at[1], box[2] + at[0], box[3] + at[1])
     if box:
-        m = 44
         im = im.crop((max(0, box[0] - m), max(0, box[1] - m), min(im.width, box[2] + m), min(im.height, box[3] + m)))
     return im
 
@@ -254,7 +264,7 @@ def rounded(im: Image.Image, width: int, radius: int = 30, border: str | None = 
 
 
 def image_block(spec: dict) -> Image.Image:
-    im = rounded(load_cropped(ROOT / spec["image"]), spec.get("width", 760))
+    im = rounded(load_cropped(ROOT / spec["image"], spec.get("inner", "/ecrans/" in spec["image"])), spec.get("width", 760))
     out = Image.new("RGBA", (W, im.height), (0, 0, 0, 0))
     out.alpha_composite(im, ((W - im.width) // 2, 0))
     return out
@@ -518,7 +528,7 @@ def versus(people: list[dict], c: dict, k: float) -> Image.Image:
 
 def chat(msgs: list[dict], c: dict, k: float = 1.0) -> Image.Image:
     """Bulles de conversation : le lead à gauche en gris, la réponse à droite en orange."""
-    f = font(SANS, int(min(30 * k, 50)))
+    f = font(SANS, int(min(30 * k, 60)))
     lh = int(f.size * 1.35)
     im = Image.new("RGBA", (W, 2400), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
@@ -647,7 +657,12 @@ def doc_card(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
 def route(rows: list, c: dict, k: float = 1.0) -> Image.Image:
     """Schéma de tri : chaque type de lead → où il va. La 1re ligne (le bon lead) est en orange.
     {"route": [["ready to buy", "your calendar"], ["not ready yet", "a free guide"]]}"""
-    f = font(SANS_M, int(min(30 * k, 40)))
+    size = int(min(30 * k, 48))
+    while True:   # la plus grande taille dont les deux colonnes de pastilles tiennent dans la largeur
+        f = font(SANS_M, size)
+        if max(f.getlength(a) for a, _ in rows) + max(f.getlength(b) for _, b in rows) + 128 + 130 <= CW or size <= 24:
+            break
+        size -= 2
     ph, gap = int(f.size * 2.3), int(f.size * 0.9)
     h = len(rows) * ph + (len(rows) - 1) * gap
     im = Image.new("RGBA", (W, h), (0, 0, 0, 0))
@@ -772,7 +787,7 @@ LOGOS = ROOT / "CONTENU" / "05_BANQUE_IMAGES" / "logos"
 
 def place_logo(img: Image.Image, spec: dict) -> Image.Image | None:
     """Logo 3D d'un outil (retour du 19/10/2026) : énorme, il sort d'un coin et passe derrière le texte.
-    {"name": "claude", "corner": "bl", "size": 760, "angle": -12}. Renvoie son masque (pour le halo du texte)."""
+    {"name": "claude", "corner": "bl", "size": 760, "angle": -12}. Renvoie son masque (pour le flou sous le texte)."""
     path = LOGOS / f"{spec['name']}.png"
     if not path.exists():
         print(f"  logo manquant : {path.relative_to(ROOT)} (à fournir par le fondateur)")
@@ -787,21 +802,26 @@ def place_logo(img: Image.Image, spec: dict) -> Image.Image | None:
             "tl": (-out * lw, -out * lh), "tr": (W - (1 - out) * lw, -out * lh)}[spec.get("corner", "bl")]
     x, y = int(x), int(y)
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    sh = Image.new("RGBA", logo.size, (0, 0, 0, 0))
-    sh.putalpha(logo.split()[-1].point(lambda v: v * 0.28))
-    layer.alpha_composite(sh.filter(ImageFilter.GaussianBlur(28)), (x + 18, y + 30))
-    layer.alpha_composite(logo, (x, y))
+    layer.alpha_composite(logo, (x, y))   # aucune ombre portée (retour du 19/10/2026 : « je déteste l'ombre »)
     img.alpha_composite(layer)
     return layer.split()[-1]
 
 
-def halo(img: Image.Image, parts_layer: Image.Image, logo_mask: Image.Image, bg: str) -> None:
-    """Halo de la couleur du fond autour des lettres, seulement là où elles passent sur le logo : le texte reste net."""
-    a = parts_layer.split()[-1].filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.GaussianBlur(14))
-    a = ImageChops.multiply(a, logo_mask.filter(ImageFilter.MaxFilter(9)))
-    lay = Image.new("RGBA", (W, H), bg)
-    lay.putalpha(a.point(lambda v: min(255, int(v * 1.1))))
-    img.alpha_composite(lay)
+def _dilate(mask: Image.Image, radius: int) -> Image.Image:
+    """Grossit un masque de radius px (calculé en quart de taille : le MaxFilter plein format est trop lent)."""
+    q = 4
+    small = mask.resize((W // q, H // q), Image.BILINEAR).filter(ImageFilter.MaxFilter(2 * (radius // q) + 1))
+    return small.resize((W, H), Image.BILINEAR)
+
+
+def frost(img: Image.Image, parts_layer: Image.Image, logo_mask: Image.Image, bg: str) -> None:
+    """Verre dépoli (retour du 19/10/2026 : « mets un blur plutôt » que l'ombre) : là où le texte passe
+    sur le logo, le logo est flouté et un peu éclairci ; ailleurs il reste net. Aucune ombre, aucun contour."""
+    zone = _dilate(parts_layer.split()[-1], 36).filter(ImageFilter.GaussianBlur(48))
+    zone = ImageChops.multiply(zone, _dilate(logo_mask, 20).filter(ImageFilter.GaussianBlur(22)))
+    zone = zone.point(lambda v: min(255, int(v * 1.5)))
+    soft = Image.blend(img.filter(ImageFilter.GaussianBlur(34)), Image.new("RGBA", (W, H), bg), 0.42)
+    img.paste(soft, (0, 0), zone)
 
 
 # --- Montage d'une slide ------------------------------------------------------------
@@ -847,7 +867,7 @@ def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
     if "doc" in b:
         return doc_card(b["doc"], c, min(k, 1.4))
     if "route" in b:
-        return route(b["route"], c, min(k, 1.4))
+        return route(b["route"], c, min(k, 1.6))
     if "cta" in b:
         return cta_block(b["cta"], c, min(k, 1.3))
     if "spacer" in b:
@@ -877,13 +897,17 @@ def compose(s: dict, rnd: random.Random | None = None, cover: bool = False, inde
     img = Image.new("RGBA", (W, H), c["bg"])
     if rnd is not None:
         decorate(img, c, rnd, index, cover)
-    logo_mask = place_logo(img, s["logo"]) if s.get("logo") else None
+    logo_mask = None
+    for spec in ([s["logo"]] if isinstance(s.get("logo"), dict) else s.get("logo", [])):   # un logo ou deux
+        m = place_logo(img, spec)
+        if m is not None:
+            logo_mask = m if logo_mask is None else ImageChops.lighter(logo_mask, m)
     text = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     for p, g in zip(parts, gaps + [0]):
         text.alpha_composite(p, (0, y))
         y += p.height + g
     if logo_mask is not None:
-        halo(img, text, logo_mask, c["bg"])
+        frost(img, text, logo_mask, c["bg"])
     img.alpha_composite(text)
     return img.convert("RGB")
 

@@ -1,0 +1,180 @@
+{
+  "id": "261019_CAR_S1_AV1_chatgpt-or-claude",
+  "statut": "à valider (lot 2, fait d'un coup à la demande du fondateur le 19/10)",
+  "format": "carrousel",
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "2 · outils",
+  "idee": 9,
+  "reel_associe": "à écrire (Setty : « You asked ChatGPT to be your [bleep]ing setter, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy-concerns.mp3",
+  "biais": [
+    "duel (deux noms connus, il veut savoir qui gagne)",
+    "contre-pied (« whoever wins, you're still the setter »)",
+    "pertinence pour soi (ce qu'il fait déjà)"
+  ],
+  "verbatims": [
+    "rd67",
+    "mc24",
+    "mc22",
+    "rd55"
+  ],
+  "sources": [
+    {
+      "fait": "aucune affirmation sur les capacités de ChatGPT ou de Claude : le carrousel décrit l'usage par copier-coller (on colle le DM, on recopie la réponse), pas une limite des outils",
+      "source": "choix de rédaction du 19/10/2026"
+    },
+    {
+      "fait": "« its own setting model, built on years of setting work »",
+      "source": "brief-de-marque.md, section 7 (site ManySetter)"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "logo": [
+        {
+          "name": "claude",
+          "corner": "bl",
+          "size": 840,
+          "angle": -14,
+          "out": 0.3
+        },
+        {
+          "name": "chatgpt",
+          "corner": "tr",
+          "size": 620,
+          "angle": 12,
+          "out": 0.4
+        }
+      ],
+      "blocks": [
+        {
+          "caption": "the answer will annoy you.",
+          "align": "center"
+        },
+        {
+          "title": "*ChatGPT* or *Claude*: which one should you use for setting?"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "round 1: *writing* the reply"
+        },
+        {
+          "text": "\"how much?\", \"i'll think about it\". both write a solid reply, it's a tie."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "round 2: *reading* your DMs"
+        },
+        {
+          "text": "you copy the DM in, then copy the reply out, every single time."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "round 3: the *midnight* lead",
+          "size": 66
+        },
+        {
+          "text": "a lead writes while you sleep. neither one answers until you wake up and paste."
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "Here's your guide! Let me know what you think."
+            },
+            {
+              "from": "lead",
+              "text": "thanks!! quick question, does this work if I only have 2 hours a week?"
+            }
+          ]
+        },
+        {
+          "caption": "seen at 11:47 p.m., still no reply."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "whoever wins, *you're* still the setter"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the setter is everything *around* the model"
+        },
+        {
+          "list": [
+            "your offer and your voice.",
+            "waiting until they finish typing.",
+            "one question at a time.",
+            "booking, follow-ups, a human handoff."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "its own setting model, built on years of setting work, right inside your Manychat."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/pourquoi-cette-reponse.png",
+          "width": 940
+        },
+        {
+          "caption": "and every reply shows why it said that.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "no more copy-paste at 11 p.m.",
+            "every reply comes from your offer.",
+            "you see why it said that.",
+            "you stop being a human clipboard."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "261019_CAR_S2_AV2_calendly-no-shows",
+  "statut": "à valider (lot 2, fait d'un coup à la demande du fondateur le 19/10)",
+  "format": "carrousel",
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "2 · outils",
+  "idee": 8,
+  "reel_associe": "à écrire (Setty : « You dropped your [bleep]ing Calendly link in the DM, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy-concerns.mp3",
+  "biais": [
+    "chiffre très précis (90 %)",
+    "pertinence pour soi (son lien d'agenda)",
+    "contre-pied (« it's not your reminder emails »)"
+  ],
+  "verbatims": [
+    "rd43",
+    "rd44",
+    "rd33",
+    "rd96",
+    "rd45"
+  ],
+  "sources": [
+    {
+      "fait": "réservation Calendly par le setter : 2 ou 3 créneaux dans le fuseau du lead, résumé du lead dans l'événement (Calendly payant), sinon envoi du lien",
+      "source": "brief-de-marque.md, section 2 (site ManySetter lu le 10/10/2026)"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "logo": {
+        "name": "calendly",
+        "corner": "bl",
+        "size": 800,
+        "angle": -14,
+        "out": 0.34
+      },
+      "blocks": [
+        {
+          "caption": "it's not your reminder emails.",
+          "align": "center"
+        },
+        {
+          "title": "if you get *90% no-shows* with calendly, this is why"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *setup* everyone uses",
+          "size": 66
+        },
+        {
+          "text": "your Calendly link goes in the auto DM, in your bio, everywhere."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is this for beginners? I've been burned by coaches before"
+            },
+            {
+              "from": "me",
+              "text": "Here's the link to book your free call, grab any time that works!"
+            }
+          ]
+        }
+      ],
+      "logo": {
+        "name": "calendly",
+        "corner": "tr",
+        "size": 520,
+        "angle": 14,
+        "out": 0.42
+      }
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*anyone* can book"
+        },
+        {
+          "text": "no budget, no goal, no idea who you are. the link doesn't ask."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so they book, then *forget*"
+        },
+        {
+          "text": "a free call costs them nothing, so skipping it costs them nothing too."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "you sat in an empty call for 15 minutes, *again*"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and it *wears* you down"
+        },
+        {
+          "text": "\"these calls take real time and energy.\" the no-shows take it for nothing."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "make them *earn* the link",
+          "size": 66
+        },
+        {
+          "text": "a few questions in the DM first. your calendar only goes to people who fit."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "can i book a call?"
+            },
+            {
+              "from": "me",
+              "text": "sure, quick one first: what are you trying to fix?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*",
+          "size": 66
+        },
+        {
+          "text": "it asks your questions in the DM, then offers times only to the right leads."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "4 right now, I want to get to 10 by spring"
+            },
+            {
+              "from": "me",
+              "text": "That's exactly who the program is for. I have Tuesday at 2:00 pm or Wednesday at 11:00 am, which one works better?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "only leads who fit get a time.",
+            "2 or 3 slots in their time zone.",
+            "a summary of the lead in the event.",
+            "no more waving at an empty call."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

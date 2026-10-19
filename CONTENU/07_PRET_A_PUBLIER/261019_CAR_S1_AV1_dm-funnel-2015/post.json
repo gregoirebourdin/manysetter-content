@@ -1,0 +1,191 @@
+{
+  "id": "261019_CAR_S1_AV1_dm-funnel-2015",
+  "statut": "à valider (lot 2, fait d'un coup à la demande du fondateur le 19/10)",
+  "format": "carrousel",
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "1 · business du coach",
+  "idee": 4,
+  "reel_associe": "à écrire (Setty : « You built your [bleep]ing DM funnel in 2015, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy-skies-and-coffee-vibes.mp3",
+  "biais": [
+    "contre-pied (« stuck in 2015 »)",
+    "pertinence pour soi (son funnel)",
+    "aversion à la perte (les leads disparus)"
+  ],
+  "verbatims": [
+    "rd07",
+    "mc02",
+    "rd08",
+    "rd09",
+    "mc01",
+    "mc37"
+  ],
+  "sources": [
+    {
+      "fait": "relances : jusqu'à 3, entre 1 et 23 h après le dernier message, dans la fenêtre de 24 h",
+      "source": "brief-de-marque.md, section 2 (site ManySetter)"
+    }
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "your *DM funnel* is stuck in 2015"
+        },
+        {
+          "caption": "link in bio and hope, right?",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the 2015 *funnel*"
+        },
+        {
+          "list": [
+            "you post something that hits.",
+            "you say \"link in bio\".",
+            "you hope they click, then buy."
+          ]
+        },
+        {
+          "caption": "\"link in bio & hope\", the original funnel."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "then *nothing*",
+          "size": 66
+        },
+        {
+          "text": "they ask the price, you answer, and that's the last you hear."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "hey how much is it"
+            },
+            {
+              "from": "me",
+              "text": "It's $1,500 for the 12 weeks!"
+            }
+          ]
+        },
+        {
+          "caption": "no reply, 2 days later."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the follow-up you *forgot*"
+        },
+        {
+          "text": "\"hoping we remember to circle back\". spoiler: nobody ever circles back."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "they didn't say no. they disappeared into the *inbox void*."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and you pay for it *monthly*"
+        },
+        {
+          "text": "the tools, the ads, the content. and nothing comes back from the DMs."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *2026* funnel is a conversation"
+        },
+        {
+          "route": [
+            [
+              "they ask",
+              "a real answer"
+            ],
+            [
+              "they hesitate",
+              "one question"
+            ],
+            [
+              "they go quiet",
+              "up to 3 follow-ups"
+            ],
+            [
+              "they fit",
+              "a booked call"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*",
+          "size": 66
+        },
+        {
+          "text": "it turns your funnel into a real conversation. it answers, qualifies, follows up and books."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "ok this sounds like exactly what I need, how much is it?"
+            },
+            {
+              "from": "me",
+              "text": "It's $1,500, or 3 payments of $550. Before I send times, how many clients are you working with right now?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "every DM gets a real reply.",
+            "quiet leads get a follow-up.",
+            "you see what your posts really sell.",
+            "2015 called, it wants its funnel back."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

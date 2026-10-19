@@ -1,0 +1,169 @@
+{
+  "id": "261019_CAR_S1_AV1_5-day-challenge",
+  "statut": "à valider (lot 2, fait d'un coup à la demande du fondateur le 19/10)",
+  "format": "carrousel",
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "1 · business du coach",
+  "idee": 2,
+  "reel_associe": "déjà fait (Setty, reel 1)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy-day-vibes.mp3",
+  "biais": [
+    "contre-pied (« outdated » : le format qu'il vient de lancer)",
+    "écart de curiosité (« because of this »)",
+    "aversion à la perte (les plus engagés laissés en vu)"
+  ],
+  "verbatims": [
+    "rd04",
+    "rd17",
+    "rd24",
+    "rd75"
+  ],
+  "sources": [],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "your *5-day challenge* is outdated because of this"
+        },
+        {
+          "caption": "and no, it's not the content.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "day 5 was a *banger*",
+          "size": 66
+        },
+        {
+          "text": "you pitched the offer live. then day 6 hit your inbox."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is the offer still open?"
+            },
+            {
+              "from": "lead",
+              "text": "can i pay in 2 parts?"
+            },
+            {
+              "from": "lead",
+              "text": "does it work if i travel?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*hundreds* of DMs, one of you"
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/inbox-how-much/slide-01.png",
+          "width": 500,
+          "inner": false
+        },
+        {
+          "caption": "you answer twenty, the rest wait, then leave."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "they showed up 5 days in a row, and got *left on read*"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and you're *fried*"
+        },
+        {
+          "text": "\"it burned me out.\" so next month, you'll blame the challenge."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what's actually *outdated*"
+        },
+        {
+          "text": "not the challenge, it's one person answering every DM by hand after it."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *2026* version"
+        },
+        {
+          "list": [
+            "day 1 to 5, you teach.",
+            "day 6, every DM gets an answer.",
+            "the serious ones land on your calendar."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*",
+          "size": 66
+        },
+        {
+          "text": "it answers your challenge DMs in your voice, qualifies, and books the call."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "thanks!! quick question, does this work if I only have 2 hours a week?"
+            },
+            {
+              "from": "me",
+              "text": "It does, most people in the program start with about 2 hours. What's the one thing you want to fix first?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "every DM gets a real answer.",
+            "you see what the challenge really sold.",
+            "you actually rest on day 6 (shocking)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

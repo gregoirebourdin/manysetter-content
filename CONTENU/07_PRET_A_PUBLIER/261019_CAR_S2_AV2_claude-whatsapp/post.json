@@ -39,11 +39,11 @@
     {
       "blocks": [
         {
-          "title": "how to plug *claude* into your whatsapp to answer your DMs"
-        },
-        {
           "caption": "the setup everyone shares, and the part nobody posts.",
           "align": "center"
+        },
+        {
+          "title": "how to plug *claude* into your whatsapp to answer your DMs"
         }
       ],
       "bg": "black",
@@ -68,7 +68,14 @@
             "restart Claude and ask it to reply."
           ]
         }
-      ]
+      ],
+      "logo": {
+        "name": "whatsapp",
+        "corner": "br",
+        "size": 560,
+        "angle": 12,
+        "out": 0.42
+      }
     },
     {
       "blocks": [
@@ -127,7 +134,14 @@
             ]
           }
         }
-      ]
+      ],
+      "logo": {
+        "name": "whatsapp",
+        "corner": "tr",
+        "size": 520,
+        "angle": 14,
+        "out": 0.45
+      }
     },
     {
       "blocks": [
@@ -165,6 +179,22 @@
         },
         {
           "text": "it replies on its own, in your voice, on WhatsApp, Instagram and Messenger through Manychat. no code, nothing to babysit."
+        }
+      ],
+      "logo": [
+        {
+          "name": "instagram",
+          "corner": "bl",
+          "size": 600,
+          "angle": -12,
+          "out": 0.26
+        },
+        {
+          "name": "messenger",
+          "corner": "br",
+          "size": 600,
+          "angle": 12,
+          "out": 0.26
         }
       ]
     },

@@ -1,0 +1,191 @@
+{
+  "id": "261019_CAR_S2_AV2_comment-guide-flow",
+  "statut": "à valider (lot 2, fait d'un coup à la demande du fondateur le 19/10)",
+  "format": "carrousel",
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "2 · outils",
+  "idee": 7,
+  "reel_associe": "à écrire (Setty : « You set up your [bleep]ing \"Comment GUIDE\" flow, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy.mp3",
+  "biais": [
+    "chiffres qui se contredisent (400 commentaires, 0 vente)",
+    "pertinence pour soi (son flow)",
+    "contre-pied (« that part works great »)"
+  ],
+  "verbatims": [
+    "mc07",
+    "rd22",
+    "mc11",
+    "mc10",
+    "mc47"
+  ],
+  "sources": [
+    {
+      "fait": "Manychat envoie le premier message après un mot-clé en commentaire ; un flow à mots-clés « answer the keyword, not the question »",
+      "source": "brief-de-marque.md, sections 2 et 4 (site ManySetter)"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "why your comment *GUIDE* flow gets 400 comments and 0 sales"
+        },
+        {
+          "caption": "the guide went out, then what?",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *setup*"
+        },
+        {
+          "list": [
+            "post an Instagram reel, \"comment GUIDE\".",
+            "Manychat sends the guide by DM.",
+            "400 comments, 400 guides sent."
+          ]
+        },
+        {
+          "caption": "and honestly, that part works great."
+        }
+      ],
+      "logo": {
+        "name": "instagram",
+        "corner": "tr",
+        "size": 600,
+        "angle": 14,
+        "out": 0.3
+      }
+    },
+    {
+      "blocks": [
+        {
+          "heading": "then the lead *replies*",
+          "size": 66
+        },
+        {
+          "text": "a real question, about their real life."
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "Here's your guide! Let me know what you think."
+            },
+            {
+              "from": "lead",
+              "text": "thanks!! quick question, does this work if I only have 2 hours a week?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and the flow answers the *keyword*",
+          "size": 66
+        },
+        {
+          "text": "the lead asks if it's for beginners, the flow sends the booking link."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is this for beginners? I've been burned by coaches before"
+            },
+            {
+              "from": "me",
+              "text": "Here's the link to book your free call, grab any time that works!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "400 comments, 400 guides, *0 sales*"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the convo just sits there, *collecting dust*"
+        },
+        {
+          "text": "the lead had a question. nobody answered it, so they left."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "keep your Manychat, add the *setter*"
+        },
+        {
+          "text": "Manychat sends the guide. the setter answers the question that comes after."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*",
+          "size": 66
+        },
+        {
+          "text": "it plugs into your Manychat flow, reads the real question, and answers in your voice."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is this for beginners? I've been burned by coaches before"
+            },
+            {
+              "from": "me",
+              "text": "Totally fair, and thanks for saying it. What happened last time, so I can tell you honestly if this would be different?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "the guide still goes out like before.",
+            "real questions get real answers.",
+            "the serious ones book a call.",
+            "no more rebuilding flows at midnight."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

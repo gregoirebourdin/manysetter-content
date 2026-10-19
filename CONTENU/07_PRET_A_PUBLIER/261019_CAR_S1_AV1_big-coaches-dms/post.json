@@ -1,0 +1,174 @@
+{
+  "id": "261019_CAR_S1_AV1_big-coaches-dms",
+  "statut": "à valider (lot 2, fait d'un coup à la demande du fondateur le 19/10)",
+  "format": "carrousel",
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "1 · business du coach",
+  "idee": 5,
+  "reel_associe": "à écrire (Setty : « You still answer your own [bleep]ing DMs, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy-day-vibes.mp3",
+  "biais": [
+    "autorité (les gros comptes)",
+    "écart de curiosité (« why… never »)",
+    "pertinence pour soi (il fait les trois métiers)"
+  ],
+  "verbatims": [
+    "rd34",
+    "rd31",
+    "cl054",
+    "rd27",
+    "cl058"
+  ],
+  "sources": [
+    {
+      "fait": "annonce publique d'un coach santé à 363 000 abonnés qui recrute un setter : « I have 363K followers on Instagram, so a ton of leads coming in for you. »",
+      "source": "https://www.reddit.com/r/appointmentsetter/comments/1wjk3zf/hiring_us_based_dm_appointment_setter/ (verbatim rd34, vérifié le 10/10/2026)"
+    },
+    {
+      "fait": "prix : $119/month per live setter",
+      "source": "brief-de-marque.md, section 3"
+    }
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "why the *biggest coaches* never answer their own DMs"
+        },
+        {
+          "caption": "and it's not because they're lazy.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "read their *job posts*"
+        },
+        {
+          "text": "big accounts hire people to answer their DMs, like this real post:"
+        },
+        {
+          "doc": {
+            "source": "a coach hiring a DM setter",
+            "text": "I have 363K followers on Instagram, so a ton of leads coming in for you.",
+            "marks": [
+              "a ton of leads"
+            ]
+          }
+        }
+      ],
+      "logo": {
+        "name": "instagram",
+        "corner": "tr",
+        "size": 600,
+        "angle": 14,
+        "out": 0.3
+      }
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the coach *doesn't* set"
+        },
+        {
+          "route": [
+            [
+              "content",
+              "the coach"
+            ],
+            [
+              "DMs",
+              "the setter"
+            ],
+            [
+              "calls",
+              "the closer"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and you? you're *all three*"
+        },
+        {
+          "text": "you film, you reply, you close. then you coach, if there's any energy left."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "you didn't start coaching to answer *DMs at midnight*"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so just *hire* a setter?"
+        },
+        {
+          "text": "paid by the hour plus commission, months to train, and sometimes \"he completely disappeared\"."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "copy the *system*, not the payroll"
+        },
+        {
+          "text": "the secret isn't the hire. it's that every DM gets answered by someone who isn't you."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "an AI setter that answers your DMs in your voice, and hands you the chat when it matters."
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/avec-le-setter.png",
+          "width": 820
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "the same setup as the big accounts.",
+            "$119 a month per live setter.",
+            "a person steps in when it matters.",
+            "you go back to coaching (remember that?)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}
