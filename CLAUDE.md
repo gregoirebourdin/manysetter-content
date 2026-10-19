@@ -55,5 +55,6 @@ Ce dépôt est séparé du site. **Ne jamais écrire dans le dépôt `many-sette
 - `CONTENU/06_GABARITS/` : charte et scripts de fabrication (slides, reels).
 - `CONTENU/07_PRET_A_PUBLIER/<id>/` : un dossier par post (slides, `caption.txt`, `post.json`).
 - `CONTENU/08_YOUTUBE/<id YouTube>/` : vidéos YouTube du fondateur dont on tire des reels (script, analyse des passages ; la vidéo reste hors Git).
+- `CONTENU/09_STUDIO_SETTY/` : le studio des reels de Setty, la mascotte (moteur commun, accessoires, sons, `studio.py`, un dossier par reel ; méthode : `/setty-reel`, guide : son `CLAUDE.md`, en anglais).
 
 **Nommage** : `AAMMJJ_FORMAT_SEGMENT_AVATAR_slug`, par exemple `261014_CAR_S1_AV1_comment-guide-flood`. Formats : `CAR` carrousel, `REEL`, `IMGR` image publiée en reel. Segments : `S1`, `S2`, `S3` (voir le brief).
