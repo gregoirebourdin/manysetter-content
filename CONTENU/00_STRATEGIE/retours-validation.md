@@ -304,3 +304,11 @@ Format d'une règle :
 - Règle : **une slide chargée devient un visuel** dès que c'est possible : bulles de DM, vraie capture du produit, carte « document » qui cite la vraie phrase d'une source (conditions de WhatsApp, README), schéma (tri des leads, parcours). Le texte ne garde que la phrase qui fait comprendre le visuel.
 - Retour : « Je veux que la dernière slide avec le CTA soit vraiment vraiment clean, que ça donne envie de commenter. »
 - Règle : **la dernière slide est une slide CTA dédiée, très épurée** : « comment SETTY » en très grand, une ligne qui dit ce qu'on reçoit, et une barre de commentaire Instagram dessinée avec « SETTY » déjà tapé. Rien d'autre ; la question qui fait réagir passe dans la légende.
+
+## 2026-10-19 · Lot 1 v3 validé dans son style, logos des outils
+- Retour : « Okay j'adore. » (lot 1 v3 : design premium, couvertures alternées, visuels, slide CTA)
+- Règle : le style v3 (`"style": "grid"` de `carrousel.py`) est la base des carrousels.
+- Retour : « Maintenant, à chaque fois que tu parles de Claude, de GPT, d'Insta, WhatsApp, Messenger, etc., je veux que tu mettes leur logo en gros. Par exemple pour la cover "How to plug Claude…", il faut qu'en bas à gauche, dans le coin, il y ait l'énorme logo Claude en 3D qui passe derrière le texte. »
+- Règle : **dès qu'une slide nomme un outil** (Claude, ChatGPT, Instagram, WhatsApp, Messenger, Calendly, Zoom…), son **logo officiel en 3D, énorme**, sort d'un coin de la slide et passe **derrière le texte**. Tracés officiels (données Simple Icons), jamais redessinés ; un logo par slide (deux au plus) ; jamais le logo de Manychat ni d'un concurrent (brief) ; la légende garde « Not affiliated with… ».
+- Retour : « Nan, utilise les vrais logos, pas une librairie chelou. » puis le logo Claude 3D (« voilà, comme ça, je l'ai eu sur IconScout »).
+- Règle : les logos 3D viennent de **fichiers fournis par le fondateur** (IconScout ou kit officiel de la marque), rangés dans `05_BANQUE_IMAGES/logos/` (hors Git, la licence est la sienne) ; Claude ne redessine aucun logo et n'en prend pas dans une bibliothèque. Un logo manquant se demande au fondateur avec son nom de fichier.

@@ -29,3 +29,4 @@ CONTENU/08_YOUTUBE/**/*.json3
 # musiques libres de droits (Pixabay) : jamais redistribuées seules
 CONTENU/06_GABARITS/musique/*.mp3
 CONTENU/07_PRET_A_PUBLIER/*/_short/
+CONTENU/05_BANQUE_IMAGES/logos/*.png

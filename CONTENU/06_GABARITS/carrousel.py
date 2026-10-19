@@ -767,6 +767,43 @@ def decorate(img: Image.Image, c: dict, rnd: random.Random, index: int, cover: b
     img.alpha_composite(grain)
 
 
+LOGOS = ROOT / "CONTENU" / "05_BANQUE_IMAGES" / "logos"
+
+
+def place_logo(img: Image.Image, spec: dict) -> Image.Image | None:
+    """Logo 3D d'un outil (retour du 19/10/2026) : énorme, il sort d'un coin et passe derrière le texte.
+    {"name": "claude", "corner": "bl", "size": 760, "angle": -12}. Renvoie son masque (pour le halo du texte)."""
+    path = LOGOS / f"{spec['name']}.png"
+    if not path.exists():
+        print(f"  logo manquant : {path.relative_to(ROOT)} (à fournir par le fondateur)")
+        return None
+    s = spec.get("size", 760)
+    logo = Image.open(path).convert("RGBA").resize((s, s), Image.LANCZOS)
+    if spec.get("angle"):
+        logo = logo.rotate(spec["angle"], resample=Image.BICUBIC, expand=True)
+    lw, lh = logo.size
+    out = spec.get("out", 0.3)
+    x, y = {"bl": (-out * lw, H - (1 - out) * lh), "br": (W - (1 - out) * lw, H - (1 - out) * lh),
+            "tl": (-out * lw, -out * lh), "tr": (W - (1 - out) * lw, -out * lh)}[spec.get("corner", "bl")]
+    x, y = int(x), int(y)
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sh = Image.new("RGBA", logo.size, (0, 0, 0, 0))
+    sh.putalpha(logo.split()[-1].point(lambda v: v * 0.28))
+    layer.alpha_composite(sh.filter(ImageFilter.GaussianBlur(28)), (x + 18, y + 30))
+    layer.alpha_composite(logo, (x, y))
+    img.alpha_composite(layer)
+    return layer.split()[-1]
+
+
+def halo(img: Image.Image, parts_layer: Image.Image, logo_mask: Image.Image, bg: str) -> None:
+    """Halo de la couleur du fond autour des lettres, seulement là où elles passent sur le logo : le texte reste net."""
+    a = parts_layer.split()[-1].filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.GaussianBlur(14))
+    a = ImageChops.multiply(a, logo_mask.filter(ImageFilter.MaxFilter(9)))
+    lay = Image.new("RGBA", (W, H), bg)
+    lay.putalpha(a.point(lambda v: min(255, int(v * 1.1))))
+    img.alpha_composite(lay)
+
+
 # --- Montage d'une slide ------------------------------------------------------------
 
 BOOST = 1.0   # plafonds de taille x BOOST : 1,35 pour le style « grid » (peu de texte, retour du 19/10/2026)
@@ -840,9 +877,14 @@ def compose(s: dict, rnd: random.Random | None = None, cover: bool = False, inde
     img = Image.new("RGBA", (W, H), c["bg"])
     if rnd is not None:
         decorate(img, c, rnd, index, cover)
+    logo_mask = place_logo(img, s["logo"]) if s.get("logo") else None
+    text = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     for p, g in zip(parts, gaps + [0]):
-        img.alpha_composite(p, (0, y))
+        text.alpha_composite(p, (0, y))
         y += p.height + g
+    if logo_mask is not None:
+        halo(img, text, logo_mask, c["bg"])
+    img.alpha_composite(text)
     return img.convert("RGB")
 
 

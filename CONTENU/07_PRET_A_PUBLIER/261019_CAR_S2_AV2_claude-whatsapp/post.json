@@ -46,7 +46,14 @@
           "align": "center"
         }
       ],
-      "bg": "black"
+      "bg": "black",
+      "logo": {
+        "name": "claude",
+        "corner": "bl",
+        "size": 820,
+        "angle": -14,
+        "out": 0.32
+      }
     },
     {
       "blocks": [
@@ -93,7 +100,14 @@
         {
           "text": "it only answers when you open Claude and ask.\n\n**it's not a setter, it's an intern who only works when you watch.**"
         }
-      ]
+      ],
+      "logo": {
+        "name": "claude",
+        "corner": "br",
+        "size": 620,
+        "angle": 12,
+        "out": 0.36
+      }
     },
     {
       "blocks": [
