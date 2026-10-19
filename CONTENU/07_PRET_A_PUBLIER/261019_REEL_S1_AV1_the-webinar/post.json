@@ -2,7 +2,7 @@
   "funnel": "MOFU",
   "segment": "S1",
   "avatar": "AV1",
-  "hook": "Hey [bleep]. You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
+  "hook": "You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
   "biais": [
     "interruption du schéma (une mascotte mignonne qui insulte)",
     "pertinence pour soi (son format exact)",
@@ -40,9 +40,14 @@
     "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
   },
   "qa": {
-    "duree_s": 56.93,
-    "lufs": -14.2,
-    "true_peak_dbtp": -1.9
+    "duree_s": 56.0,
+    "lufs": -14.4,
+    "true_peak_dbtp": -2.3
   },
-  "statut": "v4 (mise en page scène, titre plein largeur, zooms) rendue en 30 i/s le 19/10, à valider"
+  "statut": "validé par le fondateur le 19/10 (sans « Hey bitch »), rendu final 60 i/s ; prêt à programmer, en attente de son feu vert",
+  "hook_title": [
+    "Your webinar is over.",
+    "Your DMs just started."
+  ],
+  "horaire_propose": "mardi 20/10/2026, 6:30 pm ET (America/New_York), Instagram @greg.manysetter + YouTube Short"
 }

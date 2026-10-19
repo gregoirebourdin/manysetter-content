@@ -40,8 +40,9 @@ Setty is **ultra insolent, hardcore, a bit vulgar, and talks like a real human**
 in the first second. Grégoire's words: « faut que tu sois hard, hardcore, que tu rentres cash dans le truc »,
 « un poil vulgaire », « que tu parles vraiment comme un humain ». He threw out soft, generic hooks and polite pitches.
 
-- **Signature hook, every reel:** `Hey [bleep]. You did your [bleep]ing <challenge|webinar|VSL>, right?`
-- **Three bleeps per reel at most**: two in the hook, one in the punchline. More becomes noise.
+- **Signature hook, every reel:** `You did your [bleep]ing <challenge|webinar|VSL>, right?` (Grégoire cut the
+  `Hey [bleep].` opener on 19 Oct; default since, unless he asks for it back).
+- **Three bleeps per reel at most**: one in the hook, one in the punchline (a third only if it is the joke).
 - A bleep lets the first consonant through ("b—", "f—", "sh—"), then a 1 kHz tone; a censor bar covers Setty's
   mouth (`pose.censor`) and the caption word (`.tok.bleep`).
 - **CTA:** `Comment SETTY. I'll slide into your DMs.` only while the SETTY keyword really answers on the account
@@ -49,8 +50,8 @@ in the first second. Grégoire's words: « faut que tu sois hard, hardcore, que 
   reads the validated label "Build my setter free" (`kit.endCta`). Check before every publication.
 - Funny > clever. Roast the viewer like a best friend, never punch down. The villain is the inbox, never the coach.
 
-Series hooks: "…webinar, right? Two hours. Twelve people stayed." · "…VSL, right? Forty takes. Your mom watched
-it." · "You went live. Again. For the [bleep]ing algorithm, right?"
+Series hooks: "You did your [bleep]ing webinar, right? Two hours. Twelve people stayed." · "You shot your [bleep]ing
+VSL, right? Forty takes. Your mom watched it." · "You went live. Again. For the [bleep]ing algorithm, right?"
 
 ## 3. Setty, the character
 
@@ -98,7 +99,7 @@ Reel1 keeps the older "center" layout (Setty big in the middle).
 
 ## 5. Script recipe
 
-1. Hook (0–3 s): the signature hook, naming the coach's exact format.
+1. Hook (0–3 s): the signature hook, naming the coach's exact format (and the hook title on screen says the subject).
 2. Pain, made physical (3–12 s): 3–4 short, concrete images, in the coaches' words (verbatims).
 3. The turn (12–15 s): a dead-serious one-liner on black ("That's not a business. That's a hostage situation.").
 4. Setty's flex (15–22 s): "Plug me into Manychat." then 3 true product facts shown in the real UI.
@@ -174,6 +175,7 @@ Sound
   word; message blips 0.1–0.3 s before; taps after the word ends. Type the CTA keyword once it is said: reel1 typed
   under "SETTY" and Whisper heard "setting".
 - The bleep ends before the next word starts. Duck the music by ~0.64 under the voice (60 ms look-ahead), SFX by 0.3.
+- The beat stops under "Comment SETTY." and comes back after it: a snare on the keyword turned it into "saidy" (reel2).
 - Whisper on the mix finds the culprit: if a word is fine in `mix_nomusic.wav` but not in `mix.wav`, it is the beat
   (reel2: "Manychat" → "mini chat" until the beat came back in on the spark, after the word); otherwise an SFX
   ("They" lost under a sparkle, "put" under a boing, "DMs" under the return whoosh).

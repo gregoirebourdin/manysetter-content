@@ -13,6 +13,7 @@
     python3 studio.py render reel2 [--fps 60]    MP4 in renders/ (30 fps preview by default, 60 fps final)
     python3 studio.py deliver reel2 [file.mp4]   two MP4s (with / without music) + QA + post folder in 07_PRET_A_PUBLIER
     python3 studio.py regress [--before]         kit changes: reel1 frames before/after must stay identical
+    python3 studio.py cut reel2 0 [5 …]          drop whole lines from the validated voice (free, no new take)
 
 Run it from anywhere with any python3: the steps that need numpy/torch use the repo's .venv.
 """
@@ -421,6 +422,14 @@ def cmd_regress(a):
     sys.exit(run([PY, "scripts/imgdiff.py", str(base / "before"), str(out)]).returncode)
 
 
+# ---------------------------------------------------------------- cut
+
+def cmd_cut(a):
+    r = run([PY, "scripts/cutvo.py", a.reel, *[str(n) for n in a.lines]])
+    if r.returncode:
+        sys.exit(r.returncode)
+
+
 # ---------------------------------------------------------------- cli
 
 def main():
@@ -441,9 +450,11 @@ def main():
     p.add_argument("--workers", default="2"); p.add_argument("--quality", default="looks"); p.add_argument("--no-whisper", action="store_true")
     p = sub.add_parser("deliver"); p.add_argument("reel"); p.add_argument("file", nargs="?")
     p = sub.add_parser("regress"); p.add_argument("--before", action="store_true")
+    p = sub.add_parser("cut"); p.add_argument("reel"); p.add_argument("lines", nargs="+", type=int)
     a = ap.parse_args()
     {"doctor": cmd_doctor, "new": cmd_new, "voice": cmd_voice, "build": cmd_build, "audio": cmd_audio, "snap": cmd_snap,
-     "check": cmd_check, "go": cmd_go, "render": cmd_render, "deliver": cmd_deliver, "regress": cmd_regress}[a.cmd](a)
+     "check": cmd_check, "go": cmd_go, "render": cmd_render, "deliver": cmd_deliver, "regress": cmd_regress,
+     "cut": cmd_cut}[a.cmd](a)
 
 
 if __name__ == "__main__":

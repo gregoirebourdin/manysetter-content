@@ -250,3 +250,8 @@ Format d'une règle :
 - Règle : le titre-hook est **aussi gros que la largeur le permet** (chaque ligne remplit la largeur utile, plafond 120 px), toujours visible du début à la fin.
 - Retour : « Il n'y a pas de zoom. Il me faut des zooms in, des zooms out, vraiment beaucoup d'animation, tout en gardant à chaque fois le hook visuel. Il faut vraiment qu'il y ait du rythme. »
 - Règle : chaque reel a des **zooms avant et arrière** sur la scène, calés sur les mots clés (on pousse vers l'élément qui compte : le compteur, le « $0 », le « Seen »), des transitions qui zooment d'un écran à l'autre, et un mouvement visible toutes les 1 à 2 secondes. Le titre et les sous-titres ne zooment jamais.
+
+## 2026-10-19 · Reel 2 de Setty, validation
+- Retour : « Enlève juste le "hey bitch" du début stp, sinon je valide tout le reste. »
+- Règle : le reel 2 commence directement par « You did your [bip]ing webinar, right? » ; tout le reste de la version « scène » est validé (rendu final en 60 i/s). La ligne est coupée dans la voix validée, sans nouvelle génération.
+- Règle (par défaut, jusqu'à avis contraire du fondateur) : les prochains reels de Setty n'ouvrent plus sur « Hey [bip]. » ; l'accroche part directement sur le format du coach (« You did your [bip]ing <format>, right? »).

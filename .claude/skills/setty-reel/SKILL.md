@@ -19,7 +19,7 @@ himself; never ask for the key, never type it).
 ## 1. Script ✋
 
 - `python3 studio.py new reelN <slug>` creates the reel (hook + CTA already acted and sounded) and `writing/reelN_<slug>.md`.
-- Write the script with CLAUDE.md § 5: the signature hook naming his format, 3–4 physical pain images in the
+- Write the script with CLAUDE.md § 5: the signature hook naming his format (no "Hey [bleep]." opener since 19/10), 3–4 physical pain images in the
   coaches' words, the dead-serious turn on black, "Plug me into Manychat." + 3 true facts, the bleeped roast, the CTA
   (check § 2: "Comment SETTY" only if the keyword answers on the publishing account).
 - 85–90 words, ≤ 3 bleeps, facts from § 1 only. The table: line (EN) / sens (FR) / on screen / verbatim ids.

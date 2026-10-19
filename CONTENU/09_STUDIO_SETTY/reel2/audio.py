@@ -21,7 +21,7 @@ M.trap([
     (H("manychat_end") - 0.05, H("classy") - 0.05, "full"),  # the beat drops back in on the spark, after "Manychat"
     (H("classy_end") + 0.1, H("you") - 0.15, "full"),
     (H("you") - 0.15, H("comment") - 0.12, "lite"),
-    (H("comment") - 0.12, H("end") + 2.4, "full"),
+    (H("setty_end") + 0.08, H("end") + 2.4, "full"),  # the beat stops under "Comment SETTY." so the keyword lands clean
 ])
 M.drone(H("funnel_line") - 0.2, H("manychat_end") - 0.05)  # under the line on black, until the spark
 
@@ -30,10 +30,10 @@ M.word_ticks()
 # hook
 place(sfx, impact(44), 0.0, 0.5)
 place(sfx, whoosh(0.5, 400, 2600), 0.0, 0.35)
-for k in ("bleep1", "bleep2", "bleep3"):
+for k in ("bleep2", "bleep3"):
     place(sfx, thump(140), H(k) - 0.02, 0.6)
     place(sfx, click(), H(k) - 0.02, 0.4)
-place(sfx, whoosh(0.35, 700, 4200), H("youdid") - 0.1, 0.4, pan=-0.3)
+place(sfx, whoosh(0.35, 700, 4200), H("format") - 0.32, 0.35, pan=0.3)  # the hop toward the webinar
 place(sfx, impact_word(46), H("format") - 0.03, 0.7)
 place(sfx, swish(0.6), H("format") - 0.05, 0.3)
 # the flop: LIVE pill, viewers melting, mom leaves, camera off
@@ -123,7 +123,7 @@ place(sfx, thump(110), H("pants") - 0.02, 0.35)  # low: a boing here blurred "pu
 # CTA (the keyword is typed after it is said, so the clicks never mask "SETTY")
 place(sfx, whoosh(0.4, 400, 2400), H("comment") - 0.12, 0.35)
 for k in range(5):
-    place(sfx, key_click(), H("setty_end") - 0.05 + k * 0.05, 0.4)
+    place(sfx, key_click(), H("setty_end") + 0.04 + k * 0.05, 0.4)
 place(sfx, blip("send"), H("setty_end") + 0.28, 0.45)
 place(sfx, whoosh(0.5, 500, 5000), H("slide") - 0.05, 0.6, pan=0.6)
 place(sfx, whoosh(0.5, 5000, 700), H("slide") + 0.36, 0.2, pan=-0.6)  # quiet: "your DMs" lands on it

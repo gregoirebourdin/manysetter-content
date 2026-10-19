@@ -6,7 +6,7 @@
  "funnel": "MOFU",
  "segment": "S1",
  "avatar": "AV1",
- "hook": "Hey [bleep]. You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
+ "hook": "You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
  "biais": [
   "interruption du schéma (une mascotte mignonne qui insulte)",
   "pertinence pour soi (son format exact)",
@@ -33,7 +33,7 @@
  ],
  "cta": "Comment SETTY",
  "caption": "Webinar done, replay sent, and now your DMs are full of \"price?\" and people who ghost after you answer.\nMeet Setty, the AI setter I built for coaches who sell in the DMs. He learns your offer, talks like you, only sends your calendar to the serious ones and books the call.\nComment SETTY and he'll slide into your DMs.\n#webinar #onlinecoach #dmsetter\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
- "statut": "v4 (mise en page scène, titre plein largeur, zooms) rendue en 30 i/s le 19/10, à valider",
+ "statut": "validé par le fondateur le 19/10 (sans « Hey bitch »), rendu final 60 i/s ; prêt à programmer, en attente de son feu vert",
  "created": "2026-10-19",
  "voice_s": [
   54.0,
