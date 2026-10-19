@@ -742,9 +742,12 @@ def decorate(img: Image.Image, c: dict, rnd: random.Random, boxes: list, cover: 
 
 # --- Montage d'une slide ------------------------------------------------------------
 
+BOOST = 1.0   # plafonds de taille x BOOST : 1,35 pour le style « grid » (peu de texte, retour du 19/10/2026)
+
+
 def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
     """Dessine un bloc ; k agrandit le texte (et les images) quand la slide a de la place."""
-    z = lambda v, cap=None: int(min(v * k, cap) if cap else v * k)
+    z = lambda v, cap=None: int(min(v * k, cap * BOOST) if cap else v * k)
     if "title" in b:
         return serif_title(b["title"], z(b.get("size", 118), 176), c)
     if "heading" in b:
@@ -839,6 +842,8 @@ def render(path: Path) -> list[Path]:
     for old in path.parent.glob("slide-*.png"):
         old.unlink()
     grid = post.get("style") == "grid"
+    global BOOST
+    BOOST = 1.35 if grid else 1.0
     for i, s in enumerate(post["slides"], 1):
         p = path.parent / f"slide-{i:02d}.png"
         rnd = random.Random(f"{path.parent.name}-{i}") if grid else None

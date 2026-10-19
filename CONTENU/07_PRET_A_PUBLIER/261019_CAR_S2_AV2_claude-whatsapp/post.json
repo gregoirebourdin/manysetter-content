@@ -1,6 +1,6 @@
 {
   "id": "261019_CAR_S2_AV2_claude-whatsapp",
-  "statut": "à valider",
+  "statut": "à valider (v2 : texte réduit, retour du 19/10)",
   "format": "carrousel",
   "segment": "S2",
   "avatar": "AV2",
@@ -42,7 +42,7 @@
           "title": "how to plug *claude* into your whatsapp to answer your DMs"
         },
         {
-          "caption": "the 10-minute setup everyone's sharing, and the part nobody posts.",
+          "caption": "the setup everyone shares, and the part nobody posts.",
           "align": "center"
         }
       ]
@@ -54,14 +54,11 @@
         },
         {
           "list": [
-            "download the free, open-source whatsapp-mcp project from GitHub.",
-            "run its bridge and scan the QR code with your phone, like WhatsApp Web.",
-            "add it to Claude Desktop's config file (next slide).",
-            "restart Claude and ask it to read and answer your messages."
+            "get the free whatsapp-mcp project on GitHub.",
+            "scan its QR code with your phone.",
+            "add it to Claude Desktop's config.",
+            "restart Claude and ask it to reply."
           ]
-        },
-        {
-          "caption": "you need Go, Python and uv on your computer."
         }
       ]
     },
@@ -75,7 +72,7 @@
           "file": "claude_desktop_config.json"
         },
         {
-          "caption": "that's it, Claude can now read your chats and send messages for you."
+          "caption": "that's it, Claude can read and send your messages."
         }
       ]
     },
@@ -90,10 +87,10 @@
     {
       "blocks": [
         {
-          "heading": "1. it doesn't answer on its *own*"
+          "heading": "1. it doesn't reply on its *own*"
         },
         {
-          "text": "Claude only reads and replies when you open it and ask. a lead DMs you at 11 pm? they wait until you're back at your laptop.\n\n**it's not a setter. it's a very smart intern who only works when you're watching.**"
+          "text": "it only answers when you open Claude and ask.\n\n**it's not a setter, it's an intern who only works when you watch.**"
         }
       ]
     },
@@ -103,17 +100,17 @@
           "heading": "2. it's not the official *API*"
         },
         {
-          "text": "it connects through WhatsApp Web, not WhatsApp's official business API. you may need to scan the QR code again after about 20 days.\n\nWhatsApp's terms ban \"auto-messaging\" and any \"non-personal use\" they haven't authorized, and say they can disable or suspend your account."
+          "text": "it runs through WhatsApp Web. WhatsApp's terms ban \"auto-messaging\" and say they can suspend your account."
         }
       ]
     },
     {
       "blocks": [
         {
-          "heading": "3. it can read *every* chat"
+          "heading": "3. it reads *every* chat"
         },
         {
-          "text": "your clients, your mom, your ex. the project's own README warns that prompt injection could leak your private data.\n\nin april 2025, security researchers at Invariant Labs showed how a malicious add-on could make it send your message history to a stranger's number."
+          "text": "your clients, your mom, your ex.\n\nits own README warns that prompt injection could leak your data."
         }
       ]
     },
@@ -123,7 +120,7 @@
           "heading": "and your *leads*?"
         },
         {
-          "text": "they're still waiting for you to open your laptop.\n\n\"I don't want to spend hundreds on Claude/OpenAI credits and weeks building workflows just to realize I've created another thing to maintain.\"\n\n**you wanted a setter. you got a side project.**"
+          "text": "still waiting for you to open your laptop.\n\n**you wanted a setter. you got a side project.**"
         }
       ]
     },
@@ -133,7 +130,7 @@
           "heading": "so i built *ManySetter*"
         },
         {
-          "text": "an AI setter that answers on its own, from your offer and in your voice, on WhatsApp, Instagram and Messenger through Manychat.\n\nit waits until the lead has finished writing, asks one question at a time, books the call, and hands you the chat when it matters. no code, nothing to babysit."
+          "text": "it replies on its own, in your voice, on WhatsApp, Instagram and Messenger through Manychat. no code, nothing to babysit."
         }
       ]
     },
@@ -143,7 +140,7 @@
           "heading": "were you about to *clone* it?"
         },
         {
-          "text": "be honest in the comments, i won't tell anyone.\n\n**save this before you do.** **build your setter free, no card to start, link in bio.**"
+          "text": "be honest, i won't tell anyone.\n\n**comment SETTY and i'll send you your custom AI setter, built for your offer.**"
         }
       ]
     }

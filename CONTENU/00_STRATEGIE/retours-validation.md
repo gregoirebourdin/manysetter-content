@@ -288,3 +288,9 @@ Format d'une règle :
 - Retour : « Je veux que tu les places dans un environnement, pas juste un fond uni : un décor, différent à chaque fois. Commence par le coach à son bureau et Setty dans le lit à côté. Deux voix. Le décor doit vraiment être stylé, et à chaque fois que l'un parle, on zoome sur lui. »
 - Règle : chaque reel de Setty se joue **dans un décor 3D stylé, différent d'un reel à l'autre** (premier : la chambre-bureau du coach, le soir, lui à son bureau, Setty dans le lit à côté). Plus de fond uni. Les décors sont faits en code dans le même style que les personnages, avec des meubles réutilisables, pour qu'un nouveau décor se monte vite.
 - Règle : **deux voix**, une par personnage (Setty garde Charon). **Champ-contrechamp** : à chaque réplique, la caméra zoome sur celui qui parle ; l'autre réagit.
+
+## 2026-10-19 · Lot 1 de la ligne éditoriale (webinar-flopped, claude-whatsapp, 10-calls-0-closed)
+- Retour : « Je te le dis direct, trop verbeux les carrousels, il faut moins de texte. »
+- Règle : **un carrousel se lit en 3 secondes par slide** : un titre de section, puis **25 mots au plus** sous le titre (une ou deux phrases courtes). Couverture : le hook seul, plus une ligne de 8 mots au plus. Listes : 3 ou 4 éléments de 8 mots au plus. Citations des verbatims : un fragment de 10 mots au plus. Tout ce qui explique en plus va dans la légende ou disparaît. Le texte qui reste grossit pour remplir la slide.
+- Retour : « Et à chaque fois, mets un CTA "Comment SETTY and I send you your custom Setter AI for your product". »
+- Règle : **chaque post** (carrousel, reel, légende) finit sur le CTA **« Comment SETTY and I'll send you your custom AI setter, built for your offer. »** (« offer » : le mot des coachs ; « product » si le fondateur le préfère). Il remplace « link in bio » tant que le mot-clé SETTY répond sur le compte qui publie (vérifié le 19/10 sur @greg.manysetter). Ce que le DM envoie (le setter personnalisé) relève du fondateur.

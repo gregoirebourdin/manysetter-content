@@ -1,9 +1,9 @@
 How to connect Claude to WhatsApp to answer your DMs, and what happens when you do.
 
-The setup everyone's sharing uses an open-source project that plugs Claude into WhatsApp Web. It works, but Claude only replies when you open it and ask, it isn't WhatsApp's official API, and the project's own README warns about prompt injection leaking your data.
+It only replies when you open Claude and ask, it runs through WhatsApp Web instead of the official API, and it can read every chat you have.
 
 Were you about to try it? Tell me in the comments.
 
-I built ManySetter, an AI setter for Manychat. Build your setter free, no card to start, link in bio. Not affiliated with Anthropic, WhatsApp or Meta.
+I built ManySetter, an AI setter for Manychat. Comment SETTY and I'll send you your custom AI setter, built for your offer. Not affiliated with Anthropic, WhatsApp or Meta.
 
 #claudeai #whatsappbusiness #aisetter
