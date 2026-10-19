@@ -65,16 +65,15 @@ place(sfx, blip("send"), H("never") - 0.2, 0.3)
 place(sfx, scratch(), H("again_end") + 0.03, 0.3)
 # free coaching at 1 AM, six calls zero clients
 place(sfx, whoosh(0.4, 2600, 500), H("rest") - 0.15, 0.3)
-for k, f in enumerate((1200, 900, 1200)):
-    place(sfx, woodblock(f), H("at1") - 0.22 + k * 0.3, 0.16)
+for k, key in enumerate(("free", "indms", "at1", "one")):  # the lock screen lights up: a soft ping per notification
+    place(sfx, ping(1568 if k % 2 else 1318), H(key) - 0.15, 0.14)
 place(sfx, blip("recv"), H("six") - 0.25, 0.35)
 place(sfx, impact_word(50), H("zero") - 0.03, 0.6)
 # the turn
 place(sfx, scratch(), H("funnel_line") - 0.32, 0.45)
-place(sfx, whoosh(0.3, 3000, 600), H("free2") - 0.12, 0.35, pan=-0.4)
-place(sfx, impact(48), H("free2") - 0.02, 0.6)
-place(sfx, whoosh(0.3, 600, 3000), H("hotline") - 0.12, 0.35, pan=0.4)
-place(sfx, impact(40), H("hotline") - 0.02, 0.85)
+place(sfx, hum(1.4), H("free2") - 0.12, 0.45)  # the neon buzzes on
+place(sfx, impact(48), H("free2") - 0.02, 0.5)
+place(sfx, impact(40), H("hotline") - 0.02, 0.8)
 # the plug
 place(sfx, riser(0.55), H("plug") - 0.67, 0.3)
 place(sfx, impact(46), H("plug") - 0.12, 0.6)
@@ -83,6 +82,9 @@ place(sfx, whoosh(0.4, 400, 3000), H("plug") - 0.15, 0.3)
 place(sfx, key_click(), H("manychat_end") - 0.04, 0.6)
 place(sfx, zap(0.35), H("manychat_end") - 0.03, 0.35)
 place(sfx, blip("recv"), H("manychat_end") + 0.03, 0.35)
+# the pipeline: messages travel Instagram → Manychat → ManySetter → Calendly
+for k in range(4):
+    place(sfx, blip("recv"), H("manychat_end") + 0.25 + k * 0.3, 0.12, pan=-0.3 + 0.2 * k)
 # the flex: playbook, thread, typing, replay, qualified, follow-ups, booked, calendar
 place(sfx, whoosh(0.45, 300, 2500), H("read") - 0.2, 0.35)
 scan = t_(H("offer") - H("read") + 0.15)
@@ -106,6 +108,9 @@ place(sfx, whoosh(0.4, 500, 2600), H("incal") - 0.12, 0.3)
 place(sfx, thump(200), H("calendar2"), 0.5)
 for k in range(3):
     place(sfx, pop(), H("calendar2") + 0.22 + k * 0.1, 0.25)
+# the sorter: each lead slides into its lane
+for key, dt in (("tire", 0.22), ("tire", 0.6), ("serious", 0.22), ("serious", 0.62)):
+    place(sfx, whoosh(0.3, 1800, 600), H(key) + dt, 0.12)
 # spicy: flame, handed to you
 place(sfx, whoosh(0.4, 2600, 500), H("spicy_line") - 0.2, 0.3)
 place(sfx, zap(0.3), H("spicy_end") + 0.02, 0.25)

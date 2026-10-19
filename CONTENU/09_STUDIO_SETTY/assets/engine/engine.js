@@ -9,9 +9,9 @@ export const W = 1080, H = 1920;
 // Paint order of the props inside each layer, whatever order the scene script mounts them in.
 // A new prop gets a slot here (unknown slots go on top of their layer).
 export const ORDER = {
-  back: ["marquee", "ring", "clock", "bed"],
+  back: ["marquee", "ring", "clock", "bed", "stage"],
   front: ["live", "ecg", "rain", "info", "hand", "moon", "tapes", "cable", "mc", "spark", "cardsw", "confetti", "chat", "toast", "comment", "notif"],
-  root: ["caps", "endcta", "flash"],
+  root: ["caps", "endcta", "title", "flash"],
   cards: ["pb", "thread", "booked", "cal"],
 };
 
@@ -21,7 +21,10 @@ export const CAMS = {
   MID: { z: 14, ly: 0.25, x: 0, lx: 0 },
   TOP: { z: 19, ly: -1.2, x: 0, lx: 0 },
   END: { z: 14, ly: 1.05, x: 0, lx: 0 },
+  STAGE: { z: 33, ly: 6.9, x: 0, lx: 0 }, // layout "stage": Setty small at the bottom (dots ≈ y 1320, body to ≈ 1650)
 };
+// where Setty stands in the stage layout (pose x): bottom left, centre, right (clear of the IG buttons)
+export const SPOT = { L: -2.0, C: 0, R: 2.0 };
 
 const FACE_SKIP = new Set(["x", "y", "z", "scale", "squash", "turn", "tilt", "lean", "dotsPhase"]);
 
@@ -81,7 +84,22 @@ export async function createReel(DATA, opts = {}) {
   };
   // frame 0 is the thumbnail: Setty in close-up, smug
   const P = Object.assign(basePose(), face(opts.face ?? "smug"), opts.pose ?? { turn: 0.15, dotsBounce: 1 });
-  const CAM = Object.assign({ z: 9.2, ly: 1.85, x: 0, roll: 0, lx: 0 }, opts.cam);
+  const CAM = Object.assign({ z: 9.2, ly: 1.85, x: 0, roll: 0, lx: 0 }, DATA.layout === "stage" ? CAMS.STAGE : {}, opts.cam);
+  if (DATA.layout) root.classList.add(`layout-${DATA.layout}`);
+  // stage layout: the modules live in a box the "stage camera" can zoom (the title and the captions never zoom)
+  const ZO = { x: 540, y: 840 }; // zoom origin: the centre of the stage
+  if (DATA.layout === "stage") {
+    const clip = document.createElement("div"); // fades the zoomed stage out under the hook title
+    clip.id = "stageclip";
+    clip.className = "layer";
+    clip.dataset.slot = "stage";
+    const sb = document.createElement("div");
+    sb.id = "stagebox";
+    sb.className = "layer";
+    clip.appendChild(sb);
+    document.getElementById("back").appendChild(clip);
+    gsap.set(sb, { transformOrigin: `${ZO.x}px ${ZO.y}px` });
+  }
   const LIGHT = { key: 2.5, rim: 3.0, red: 0 };
   const SHAKES = [];
   const shake = (t, amp = 1, dec = 9) => SHAKES.push({ t, amp, dec });
@@ -108,6 +126,14 @@ export async function createReel(DATA, opts = {}) {
       shake(t, amp);
       K(end + 0.05, 0.1, { censor: 0, squash: 0 });
     },
+    // a hop to another spot (stage layout): x travels, y arcs up and lands with a squash
+    hop: (t, x, { dur = 0.42, h = 1.1, turn = 0.25 } = {}) => {
+      K(t, dur, { x }, "power1.inOut");
+      K(t, dur * 0.5, { y: h, squash: -0.06, turn: Math.sign(x) * turn }, "power2.out");
+      K(t + dur * 0.5, dur * 0.5, { y: 0, turn: 0 }, "power2.in");
+      K(t + dur, 0.08, { squash: 0.12 }, "power2.out");
+      K(t + dur + 0.08, 0.4, { squash: 0 }, "elastic.out(1, 0.4)");
+    },
     // a hard pose change with a squash pop
     pop: (t, faceName, extra = {}, { squash = -0.1 } = {}) => {
       K(t, 0.18, { ...face(faceName, extra), squash }, "back.out(2.6)");
@@ -121,6 +147,11 @@ export async function createReel(DATA, opts = {}) {
     tl.fromTo("#flash", { opacity: o }, { opacity: 0, duration: d, ease: "power2.out", immediateRender: false }, at);
   // backgrounds of the stage: warm (default), hot, night, black; glow and spot
   const bg = (name, opacity, at, dur = 0.2) => tl.to(name.startsWith("#") ? name : `#bg-${name}`, { opacity, duration: dur }, at);
+  // the stage camera: zoom toward a point of the screen ([x, y] in px stays in place), back out, slow drift. Seek-safe.
+  const zoom = (at, { to = [ZO.x, ZO.y], s = 1.2, dur = 0.22, ease = "power3.out" } = {}) =>
+    tl.to("#stagebox", { scale: s, x: -(s - 1) * (to[0] - ZO.x), y: -(s - 1) * (to[1] - ZO.y), duration: dur, ease }, at);
+  const unzoom = (at, dur = 0.24, ease = "power3.inOut") => tl.to("#stagebox", { scale: 1, x: 0, y: 0, duration: dur, ease }, at);
+  const drift = (at, { to, s = 1.08, dur = 1.6 } = {}) => zoom(at, { to, s, dur, ease: "sine.inOut" });
 
   // captions: words pop on their own cue (every spoken word on screen)
   const COUNTS = [];
@@ -200,7 +231,8 @@ export async function createReel(DATA, opts = {}) {
 
   return {
     W, H, C, TOTAL, DATA, root, $, ico, rnd, mount, THREE, renderer, scene, stage, setty, camera,
-    P, CAM, LIGHT, face, pose, basePose, K, shake, beat, act, CAMS, tl, flash, bg, captions, toScreen,
+    P, CAM, LIGHT, face, pose, basePose, K, shake, beat, act, CAMS, SPOT, tl, flash, bg, zoom, unzoom, drift, captions, toScreen,
+    place: (vars) => { const { cam, ...p } = vars; Object.assign(P, p); if (cam) Object.assign(CAM, cam); }, // frame 0, before any K
     onFrame: (fn) => FRAME.push(fn), start,
   };
 }

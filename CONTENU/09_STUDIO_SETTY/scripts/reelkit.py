@@ -81,6 +81,10 @@ class Reel:
         cues = {"total": self.total, **CUES}
         data = {"words": [{k: w[k] for k in ("w", "t", "end")} for w in self.W], "chunks": self.chunks(CHUNKS, BLEEPS),
                 "cues": cues, "bleeps": [{"i": i, "t": self.t(i), "end": self.e(i)} for i in BLEEPS], "icons": lucide}
+        meta = self.here / "reel.json"
+        layout = json.loads(meta.read_text()).get("layout") if meta.exists() else None
+        if layout:
+            data["layout"] = layout  # "stage": hook title on top, the stage in the middle, Setty small at the bottom
         (self.here / "cues.json").write_text(json.dumps(data, indent=1, ensure_ascii=False))
         shell = (STUDIO / "assets/engine/shell.html").read_text()
         scenes = (self.here / "src/scenes.js").read_text().rstrip("\n")

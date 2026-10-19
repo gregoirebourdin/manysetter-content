@@ -69,11 +69,26 @@ it." · "You went live. Again. For the [bleep]ing algorithm, right?"
 
 ## 4. Reel format
 
+**Layout "stage" (Grégoire, 19 Oct, the default for every new reel; `"layout": "stage"` in reel.json):** the hook title
+fixed at the top for the whole reel (white Instagram labels, black text, the key word in orange: `kit.hookTitle`), the
+**stage** in the middle (y 480–1080) showing something real and useful (the coaches' tools, named and with their
+logos: Zoom, Instagram, WhatsApp, Messenger, Calendly…; diagrams that explain: `st.*` in `assets/engine/stage.js`),
+the captions just above Setty, and **Setty small at the bottom**, hopping corner to corner (`beat.hop(t, SPOT.L)`),
+reacting, looking and pointing at the stage. He comes big only for an instant (a push-in on the punchline).
+**Rhythm (Grégoire, 19 Oct):** the hook title as big as the width allows (`kit.hookTitle` fits each line, `pulses` on the
+key beats); the stage camera zooms in toward what matters on each key word and pulls back between (`zoom(t, { to:
+[x, y], s })`, `unzoom(t)`, `drift(t, …)`: the point [x, y] in screen px stays in place); modules enter by zooming in and
+leave by zooming through. Something moves every 1–2 s. The title and the captions never zoom (the zoomed stage fades
+out under the title).
+Every reel gets its own stage visuals for its own subject: never replay another reel's sequence of props.
+Reel1 keeps the older "center" layout (Setty big in the middle).
+
 - 1080×1920, **25–30 s** by default, about **85–90 spoken words** (Charon ~3.2 words/s once the pauses are tight).
   A reel can be longer (reel2: 1 minute, 181 words): in `reel.json`, `voice_s` (target of the tightened voice, e.g.
   [54, 59.5]), `line_gap` (a breath between lines, e.g. 0.36 s) and `tail_s` (end hold, 1.6 s by default). A comedic
   beat after a line: `"pause": 0.3` on that segment in `vo/<reel>_segments.json`.
-- **Frame 0 is the thumbnail**: Setty in close-up with his smug face, never a black frame.
+- **Frame 0 is the thumbnail**: the hook title + the stage already showing the subject + Setty smug (stage layout);
+  Setty in close-up in the center layout. Never a black frame.
 - Something changes on screen every ~0.5–0.8 s: a word, a prop, a camera move, a cut.
 - Every spoken word is on screen (captions), except a word shown by a prop (the giant "info?" bubble).
 - The last frame loops into the first (Setty centred, smug or winking; frame 0 is the close-up).
@@ -118,8 +133,15 @@ Never re-render for the no-music version (`deliver` remuxes). Commit and push af
   `shake(t, amp)`, `beat.slam / beat.bleep / beat.pop` (acting shortcuts), `flash(t)`, `bg(name, opacity, t)`,
   cameras `HOOK, MID (z 14, Setty centred at y≈576), TOP (z 19, Setty in y 74–645, UI cards in 660–1150), END`,
   cues `C.word`, `T(i)`/`E(i)` (start/end of word i), and `kit.*` (the props).
-- `assets/engine/props.js` + `reel.css`: every prop of reel1, parameterised (catalogue: `PROPS.md`). A new prop goes
-  there with a slot in `ORDER` (engine.js), never inside a reel.
+- `assets/engine/props.js` + `reel.css`: every prop of reel1, parameterised, plus `hookTitle`, toasts, chat bubbles
+  (catalogue: `PROPS.md`). A new prop goes there with a slot in `ORDER` (engine.js), never inside a reel.
+- `assets/engine/stage.js` + `stage.css` + `brands.js`: the stage modules (Zoom webinar, Instagram inbox and chat, phone
+  lock screen, Calendly events and confirmation, neon sign, the DMs → Manychat → ManySetter → calendar pipeline, lead
+  sorter, 24-hour follow-up timeline, hand-off card, laptop) and `st.app(slug)`, glossy app icons with the official
+  glyphs (Simple Icons, CC0 data). Never the Manychat logo (brief): write "Manychat".
+- Stage layout helpers: `SPOT.L / C / R` (Setty's x), `beat.hop(t, x)`, `R.place({...})` (frame-0 pose),
+  camera `STAGE` (and a short push-in like `{ z: 21, ly: 4.1 }` for a punchline), the stage camera `zoom / unzoom /
+  drift` (modules and the real app cards live in `#stagebox`, inside `#stageclip` which fades it under the title).
 - `scripts/reelkit.py`: CHUNKS (`accent`, `display`, `hide`, `hero`, `count`, `hold`), `auto_chunks(a, b)`,
   `find("word")`, the house-rule lint (dashes, "ManyChat", bleeps, uncaptioned words, length).
 - `scripts/sound.py` (+ `synth.py`): voice chain + bleeps, the original half-time trap at 150 BPM with sections that

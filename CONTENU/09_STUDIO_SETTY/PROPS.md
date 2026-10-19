@@ -32,7 +32,30 @@ Reference calls with real values: `reel1/src/scenes.js` and `reel1/audio.py`. Se
 | `notification` | phone notification sliding down ("setty · slid into your DMs") | `{ title, text, at }` + flash | any | 2 `ping` |
 | `endCta` | orange end pill with a bouncing arrow | `{ text: "Comment SETTY", icon: "arrow-down", at }` | END | `pop()`, `sparkle(0.8)` |
 
-Stage helpers (engine): `flash(t, opacity, duration)`, `bg("hot" | "night" | "black" | "#glow" | "#spot", opacity, t, dur)`,
+## Stage modules (`assets/engine/stage.js`, layout "stage")
+
+What the middle of the screen shows: the coaches' real tools with their logos, and diagrams that explain. Each takes an
+`id` (use it several times), enters and leaves on its own, and stays behind Setty. Real values: `reel2/src/scenes.js`.
+
+| Module | Shows | Call |
+|---|---|---|
+| `st.app(slug, size)` | glossy app icon with the official glyph: instagram, whatsapp, messenger, zoom, calendly, caldotcom, stripe, manysetter | HTML string, inside any module |
+| `kit.hookTitle` | the hook title fixed on top, each line as big as the width allows, key words in orange (`*DMs*`), bumps on beats | `{ lines: ["…", "Your *DMs* just started."], max: 120, pulses: [t…] }` |
+| `st.zoomWebinar` | Zoom webinar window: REC, attendees gallery, count melting, a tile leaving with the Zoom toast, active-speaker ring | `{ id, at, out, title, tiles: [{ name, emoji \| ini, bg, mic }], viewers: { from, to, t0, t1 }, drop, leave, spot }` |
+| `st.igInbox` | Instagram inbox flooding (newest on top), Requests badge counting | `{ id, at, out, rows: [{ u, m, c, hot }], times, requests }` |
+| `st.igChat` | Instagram conversation: grey / purple bubbles, "Seen", typing dots | `{ id, at, out, user, color, status, msgs: [{ me, text, at, big, seen, typing }] }` |
+| `st.lockScreen` | phone lock screen at night, notifications stacking (Instagram, WhatsApp, Messenger) | `{ id, at, out, time, date, notifs: [{ app, who, text, at }] }` |
+| `st.calendlyEvents` | Calendly scheduled events, each call gets its fate (No-show…), total | `{ id, at, out, rows, rowAt, status: [{ row, text, tone, at }], total: { label, value, at } }` |
+| `st.calendlyConfirm` | Calendly booking confirmation + "Lead summary · added by ManySetter" | `{ id, at, out, who, when, summaryAt, summary: [...] }` |
+| `st.neonSign` | a neon sign switching on (flickers) on a black stage | `{ id, at, out, lines, sub, flicker }` + `bg("black", 1, t)` |
+| `st.flowPipeline` | the product in one picture: your DMs → Manychat → ManySetter → calendar, messages travelling | `{ id, at, out, connect, pulses, sources, target, targetLabel }` |
+| `st.leadSorter` | two lanes, leads dropping in and sorted (tire-kickers / serious) | `{ id, at, out, left, right, leads: [{ u, m, c, side, at }] }` |
+| `st.followTimeline` | Instagram's 24-hour window, follow-ups popping at 2 h / 8 h / 20 h | `{ id, at, out, marks: [{ h, text, at }], fillTo }` |
+| `st.handoffCard` | ManySetter inbox: a lead gets upset, "Handed to you", "Reply myself" | `{ id, at, out, user, text, tagAt, handAt }` |
+| `st.laptopClose` | a laptop (Zoom on screen) whose lid shuts, an emoji drops (👖) | `{ id, at, close, out, drop: { emoji, at } }` |
+
+Stage helpers (engine): `zoom(t, { to: [x, y], s, dur })` / `unzoom(t)` / `drift(t, { to, s, dur })` (the stage camera),
+`beat.hop(t, SPOT.L | SPOT.C | SPOT.R)`, `R.place({ x, cam })`, `flash(t, opacity, duration)`, `bg("hot" | "night" | "black" | "#glow" | "#spot", opacity, t, dur)`,
 `shake(t, amp)`, cameras `HOOK / MID / TOP / END`, lights through `K(t, d, { light: { key, rim, red } })`.
 
 Reel 2 "The webinar" uses most of the kit with real values: `reel2/src/scenes.js`, `reel2/audio.py`.

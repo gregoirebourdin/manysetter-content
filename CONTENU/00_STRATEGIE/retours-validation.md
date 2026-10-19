@@ -230,3 +230,23 @@ Format d'une règle :
 - Règle : le reel 2 dure **environ 1 minute** (~180 mots) : on rallonge le script v1 en gardant ses lignes, on le fait valider, puis on relance la voix. Le format par défaut (25–30 s) reste celui du guide tant que le fondateur n'en fait pas la norme.
 - Retour (script v2, 1 minute) : « Go pour la version 1 minute, lance la voix. »
 - Règle : le script v2 de `writing/reel2_webinar.md` (181 mots) est validé ; la voix est lancée pour lui.
+
+## 2026-10-19 · Reel 2 de Setty, retour sur le rendu (« un réel Insta qui pop »)
+- Retour : « Je veux qu'il y ait un hook visuel, les hooks que tu écris tout en haut et qui restent tout le long de la vidéo : une phrase super hook qui permet aux personnes de comprendre directement de quoi on parle. »
+- Règle : chaque reel de Setty porte un **titre-hook fixe en haut**, de la première à la dernière image : étiquette blanche arrondie façon Instagram, texte noir, mot clé en orange (#ff611d), sous les 270 px du haut (le style validé pour Seth le 10/10, étendu à Setty). Il dit le sujet en une phrase.
+- Retour : « Ma mascotte, elle est quasiment toujours au milieu, en super grand, je veux pas ça. Je veux qu'elle soit en bas à gauche, en bas à droite, qu'elle change, qu'elle bouge, énormément de mouvements. Au milieu, sous le hook visuel et au-dessus de ma mascotte, on montre vraiment quelque chose : vraiment stylé, pas du motion pour être du motion, que ça explique des choses ou que ce soit vraiment joli. »
+- Règle : mise en page des reels de Setty : titre en haut, **scène au milieu** (vraies interfaces, schémas qui expliquent, visuels soignés), sous-titres juste au-dessus de Setty, **Setty petit en bas**, qui change de coin, saute, réagit et montre la scène. Il ne revient en grand qu'un instant, pour un effet.
+- Retour : « Je veux pas qu'ils se ressemblent trop : le réel 2 a repris énormément de trucs du réel 1, c'est pas assez custom. Je vais devoir en sortir plein, il va falloir que ce soit différent. »
+- Règle : chaque reel a ses propres visuels de scène, choisis pour son sujet ; on ne rejoue pas la suite d'accessoires d'un autre reel (pluie de DM, coupe au noir à rubans, prise Manychat…). Le kit fournit des briques (interfaces, logos, schémas) que chaque reel combine autrement.
+- Retour : « Utilise des termes et des choses qu'eux utilisent vraiment dans leur activité de coach, le nom des outils exacts, genre Calendly, Instagram, WhatsApp : vraiment concret, vraiment réel. Tu peux utiliser les logos officiels ou en chercher des 3D. Mais je veux vraiment que ce soit stylé. »
+- Règle : la scène montre les **vrais outils des coachs**, nommés et avec leur logo (Instagram, WhatsApp, Messenger, Zoom, Calendly, Cal.com…), et leur jargon (discovery call, no-show, replay, registrants, payment plan…). Garde-fou du brief maintenu : « Manychat » s'écrit en toutes lettres, sans son logo, et aucun outil concurrent (setter IA) n'est nommé.
+- Retour : « Tout le reste, j'aime bien. »
+- Règle : script, voix, sous-titres mot à mot, insolence et son du reel 2 sont validés ; seule l'image est refaite.
+
+## 2026-10-19 · Reel 2 de Setty, version « scène » (2e retour)
+- Retour : « J'aime beaucoup la deuxième version maintenant. »
+- Règle : la mise en page « scène » (titre en haut, vraies interfaces au milieu, Setty en bas qui bouge) est validée comme base des reels de Setty.
+- Retour : « Le hook visuel, les textes, ça c'est trop bien. Mais il faut que tu le mettes en beaucoup plus gros, vraiment gros. »
+- Règle : le titre-hook est **aussi gros que la largeur le permet** (chaque ligne remplit la largeur utile, plafond 120 px), toujours visible du début à la fin.
+- Retour : « Il n'y a pas de zoom. Il me faut des zooms in, des zooms out, vraiment beaucoup d'animation, tout en gardant à chaque fois le hook visuel. Il faut vraiment qu'il y ait du rythme. »
+- Règle : chaque reel a des **zooms avant et arrière** sur la scène, calés sur les mots clés (on pousse vers l'élément qui compte : le compteur, le « $0 », le « Seen »), des transitions qui zooment d'un écran à l'autre, et un mouvement visible toutes les 1 à 2 secondes. Le titre et les sous-titres ne zooment jamais.

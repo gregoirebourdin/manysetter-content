@@ -201,7 +201,10 @@ export function manychatPlug(R, { at, cable = at + 0.07, connect, out, flash = 0
 // ---------------------------------------------------------------- real app UI (cards under Setty, TOP framing)
 
 function cardsBox(R) {
-  if (!document.getElementById("cards")) R.mount("front", "cardsw", `<div id="cardsw"><div id="cards"></div></div>`);
+  if (!document.getElementById("cards")) {
+    const box = document.getElementById("stagebox"); // stage layout: the real app cards zoom with the stage
+    R.mount(box ? "stagebox" : "front", "cardsw", `<div id="cardsw"><div id="cards"></div></div>`, box || undefined);
+  }
   return document.getElementById("cards");
 }
 const card = (R, slot, html) => R.mount("cards", slot, html, cardsBox(R));
@@ -364,6 +367,20 @@ export function chatBubbles(R, { id = "chat1", x = 110, y = 900, w = 860, items,
   items.forEach((it, k) => R.tl.fromTo(`#${id}-${k}`, { opacity: 0, y: 24, scale: 0.9 },
     { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2.4)" }, it.at));
   if (out != null) R.tl.to(`#${id}`, { opacity: 0, y: 80, duration: 0.2, ease: "power2.in" }, out);
+}
+
+/** The hook title, fixed at the top for the whole reel (stage layout): white Instagram-style labels, black text, the key
+ *  words in orange (*like this*). Every line is as big as the width allows (max px), so the hook reads at a glance.
+ *  Visible from frame 0 (the thumbnail) unless `at` > 0; `pulses`: times where it bumps on a beat. */
+export function hookTitle(R, { lines, at = 0, max = 120, width = 1020, pulses = [] }) {
+  const html = lines.map((l) => `<span class="l">${l.replace(/\*(.+?)\*/g, "<b>$1</b>")}</span>`).join("");
+  R.mount("root", "title", `<div class="hook" id="hook">${html}</div>`);
+  document.querySelectorAll("#hook .l").forEach((el) => {
+    el.style.fontSize = "100px";
+    el.style.fontSize = `${Math.min(max, Math.floor((100 * width) / el.offsetWidth))}px`;
+  });
+  if (at > 0) R.tl.fromTo("#hook .l", { opacity: 0, y: -20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, stagger: 0.08, ease: "back.out(2)" }, at);
+  pulses.forEach((t) => R.tl.fromTo("#hook", { scale: 1 }, { scale: 1.06, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t));
 }
 
 // ---------------------------------------------------------------- physics

@@ -35,8 +35,14 @@ himself; never ask for the key, never type it).
 
 - `reelN/build.py`: name the cues of the middle scenes (`find("word")`), tune the auto chunks (accent, hero,
   display for numbers, hide when a prop says the word), set the third bleep.
-- `reelN/src/scenes.js`: for each line, Setty's face (`K` + a preset), a camera move, one prop or one UI card, a flash
-  on hard cuts. Props first from `PROPS.md`; a new one goes into `props.js` (and the catalogue). Real UI only.
+- Stage layout (Grégoire, 19/10, the default): a hook title fixed on top that says the subject in one sentence
+  (`kit.hookTitle`, key word in orange), the **stage** in the middle showing something real or explanatory, captions,
+  and **Setty small at the bottom**, hopping corner to corner (`beat.hop`), reacting, pointing at the stage.
+- `reelN/src/scenes.js`: for each line, what the stage shows (the coaches' real tools, named and with their logos:
+  Zoom, Instagram, WhatsApp, Messenger, Calendly…; their jargon: discovery call, no-show, replay, payment plan…), and
+  Setty's face and move. **Each reel gets its own stage visuals**: never replay another reel's sequence. Modules first
+  from `PROPS.md` (`st.*`); a missing one goes into `stage.js` (and the catalogue), never inside the reel.
+  Never the Manychat logo (write "Manychat"), no competitor (AI setter tools) named.
 - `reelN/audio.py`: the beat sections (stop on the comedic beats, drone under the turn), one SFX per motion (PROPS.md
   gives each prop's sound), never on a word onset.
 - `python3 studio.py go reelN`, read the contact sheets, fix, repeat. Check: framing, captions readable and in the

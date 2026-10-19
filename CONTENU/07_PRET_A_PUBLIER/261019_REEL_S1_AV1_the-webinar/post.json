@@ -42,7 +42,7 @@
   "qa": {
     "duree_s": 56.93,
     "lufs": -14.2,
-    "true_peak_dbtp": -1.8
+    "true_peak_dbtp": -1.9
   },
-  "statut": "script v2 validé (19/10), rendu 30 i/s à valider"
+  "statut": "v4 (mise en page scène, titre plein largeur, zooms) rendue en 30 i/s le 19/10, à valider"
 }
