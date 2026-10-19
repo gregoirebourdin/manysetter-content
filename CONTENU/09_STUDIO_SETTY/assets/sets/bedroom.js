@@ -183,18 +183,15 @@ export async function build({ renderer, scene, mood = "golden" }) {
     coach: { x: -1.05, y: -0.46, z: -0.92, turn: 0.6, sit: 1 },
     setty: { x: 1.95, y: 0.56, z: -2.2, turn: -0.3, scale: 0.7, armLf: 0.9, armRf: 0.9, armLr: 0.5, armRr: 0.5 }, // arms on the duvet
     heads: { coach: coachHead, setty: settyFace },
+    // close-up framing of each character (the engine's shotTo(t, "coach", { x, y, dist }) starts from these)
+    frames: {
+      coach: { target: coachHead, dist: 12, yaw: 0.5, y: 820 },
+      setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 },
+    },
     shots: {
       wide: { pos: [0.2, 3.7, 13.2], at: [0.2, 2.3, -1.5], fov: 40 },
-      coach: shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
-      setty: shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 }),
+      coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
+      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 }),
     },
   };
-}
-
-/** a camera that looks at `target` from `dist` away (yaw/pitch around it) and puts it at screen height `y` (px of 1920) */
-export function shot(target, { dist = 10, fov = 30, yaw = 0, pitch = 0.1, y = 840 } = {}) {
-  const half = dist * Math.tan(THREE.MathUtils.degToRad(fov / 2));
-  const off = ((960 - y) / 960) * half;
-  const pos = [target.x + Math.sin(yaw) * Math.cos(pitch) * dist, target.y + Math.sin(pitch) * dist, target.z + Math.cos(yaw) * Math.cos(pitch) * dist];
-  return { pos, at: [target.x, target.y - off, target.z], fov };
 }

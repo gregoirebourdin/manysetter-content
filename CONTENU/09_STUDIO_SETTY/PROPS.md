@@ -62,3 +62,17 @@ Reel 2 "The webinar" uses most of the kit with real values: `reel2/src/scenes.js
 
 New prop? Add it to `props.js` (+ its CSS in `reel.css`, its slot in `ORDER`), add a line here, then
 `python3 studio.py regress` to prove reel1 did not move.
+
+## Dialogue reels in a 3D set (layout "set", since 19/10)
+
+| Piece | What | Where |
+|---|---|---|
+| The coach | infopreneur (tank top, beanie, stubble, gold chain links), seated or standing, phone, pointing finger, 19 expressions | `assets/coach/coach.js` · sheet `lab/coach` |
+| Setty's new faces | `deadpan, eyeRoll, mocking, sleepy, disgusted, panic, pleading, thinking, sly` (the old ones unchanged) | `assets/setty/setty.js` · `lab/setty2` |
+| Set kit | room, slat wall, desk, monitor (canvas screen), keyboard, mug, cans, ring light, mic arm, gaming chair, bed, nightstand, lamp, plant, shelf, neon sign, wall glow, window views (`night`, `dubai`), framed print, rug, sun patch, light shaft, `shot()` | `assets/sets/kit.js` |
+| Sets | `bedroom` (moods `golden`: Dubai at golden hour, `night`) | `assets/sets/bedroom.js` · look test `lab/set` |
+| Dialogue acting | `D.line(k, speakerFace, listenerFace, framing)`, `D.reaction(t, face)`, `D.side(t, "left"\|"right")` + a stage module (framing `D.CARD_L / CARD_R`), `D.punch(t)` | `assets/engine/dialogue.js` · reference `reel2/src/scenes.js` |
+| Sound | his riser (`M.riser_into`), BOOM (`M.boom`), Fahhh (`M.fahhh`), clic (`M.clic`), music (`M.music_bed`, `M.tape_stop`) | `assets/sounds/`, `scripts/sound.py` · reference `reel2/audio.py` |
+
+Over the set, the stage modules drawn for a dark stage (`flowPipeline`, `leadSorter`, `followTimeline`) get a dark card
+automatically; the white UI ones (`igInbox`, `igChat`, `playbookCard`, `calendly*`) read as they are.

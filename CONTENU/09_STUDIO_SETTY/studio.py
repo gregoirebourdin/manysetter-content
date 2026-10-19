@@ -165,6 +165,8 @@ def cmd_voice(a):
     if not seg.exists():
         sys.exit(f"missing {seg.relative_to(STUDIO)} (one segment per line, each with its delivery direction)")
     segs = json.loads(seg.read_text())
+    if any("who" in sg for sg in segs):
+        return voice_dialogue(a, reel, segs)
     script = STUDIO / f"vo/{reel}_script.txt"
     script.write_text(" ".join(s["text"] for s in segs) + "\n")
     takes_dir = STUDIO / "vo/takes"
@@ -236,6 +238,104 @@ def cmd_voice(a):
     if not (lo <= res[pick]["dur"] <= hi):
         say(f"  ! outside {lo}–{hi} s: cut or add words, or --rate 1.05 (never slower than 1.0)")
     say(f"next: python3 studio.py go {reel}")
+
+
+def voice_dialogue(a, reel, segs):
+    """Dialogue reels (segments carry "who"): one voice per speaker, takes per speaker and per candidate voice, each
+    checked by Whisper and tightened (voice.py), then the lines laid in script order (scripts/dialogue.py). With several
+    candidates for a speaker (casting), every combination is assembled in vo/_dialogue/<reel>/ and --pick installs one."""
+    cfg = {}
+    for part in (a.voices or "").split(","):
+        if part.strip():
+            who, vs = part.split("=")
+            cfg[who.strip()] = [v.strip() for v in vs.split("|") if v.strip()]
+    whos = list(dict.fromkeys(sg["who"] for sg in segs))
+    for w in whos:
+        cfg.setdefault(w, ["Charon"] if w == "setty" else [])
+    if missing := [w for w in whos if not cfg[w]]:
+        sys.exit(f"no voice for {missing}: --voices \"{missing[0]}=Puck|Fenrir\" (casting) or one fixed voice")
+    work = STUDIO / f"vo/_dialogue/{reel}"
+    work.mkdir(parents=True, exist_ok=True)
+    takes_dir = STUDIO / "vo/takes"
+    takes_dir.mkdir(parents=True, exist_ok=True)
+    (STUDIO / f"vo/{reel}_script.txt").write_text(" ".join(sg["text"] for sg in segs) + "\n")
+    for w in whos:
+        sub = [{"text": sg["text"], "style": sg.get("style", "")} for sg in segs if sg["who"] == w]
+        (work / f"{w}_segments.json").write_text(json.dumps(sub, indent=1, ensure_ascii=False))
+        (work / f"{w}_script.txt").write_text(" ".join(x["text"] for x in sub) + "\n")
+    jobs = [(w, v) for w in whos for v in cfg[w]]
+    takes = {}
+    for w, v in jobs:
+        have = sorted(takes_dir.glob(f"{reel}_{w}_{v}_try*.wav"))
+        if a.take or a.reuse:
+            takes[(w, v)] = have
+        else:
+            n0 = len(have)
+            takes[(w, v)] = [takes_dir / f"{reel}_{w}_{v}_try{n0 + k + 1}.wav" for k in range(a.takes)]
+    todo = [(w, v, t) for (w, v), ts in takes.items() for t in ts if not t.exists()]
+    if todo:
+        if not has_key():
+            sys.exit("no Gemini key: run `python3 studio.py doctor` for the one command Grégoire types himself")
+        if not a.yes:
+            sys.exit(f"the voices are paid (Gemini TTS, {len(todo)} takes, a few cents): rerun with --yes once Grégoire has said go")
+        say(f"generating {len(todo)} takes ({', '.join(f'{w}={v}' for w, v in jobs)}), 4 at a time…")
+        with cf.ThreadPoolExecutor(4) as ex:
+            futs = {ex.submit(run, [PY, "scripts/tts_gemini.py", "--voice", v, "--segments", str(work / f"{w}_segments.json"),
+                                    "--out", str(t), "--no-fallback"], capture_output=True, text=True): t for w, v, t in todo}
+            for f in cf.as_completed(futs):
+                r = f.result()
+                say(f"  {futs[f].name}: " + (r.stdout.strip() or r.stderr.strip()[-300:]))
+    best = {}
+    for (w, v), ts in takes.items():
+        ts = [t for t in ts if t.exists()]
+        if not ts:
+            sys.exit(f"no take for {w}={v}")
+        with cf.ThreadPoolExecutor(min(3, len(ts))) as ex:
+            checks = dict(zip(ts, ex.map(lambda t: check_vo(t, work / f"{w}_script.txt"), ts)))
+        res = {}
+        for t in ts:
+            out = work / f"{w}_{v}" / t.stem
+            r = run([PY, "scripts/voice.py", str(work / f"{w}_segments.json"), str(t), str(out), "--gap", "0.3"],
+                    capture_output=True, text=True)
+            if r.returncode:
+                say(f"  {t.name}: alignment failed: {r.stderr.strip()[-300:]}")
+                continue
+            tim = json.loads((out / "timing.json").read_text())
+            res[t] = {"dir": out, "dur": tim["duration"], "weak": [x["w"] for x in tim["words"] if x["score"] < 0.35],
+                      "err": checks[t]["errors"], "probs": checks[t]["problems"][:3]}
+        if not res:
+            sys.exit(f"no take of {w}={v} could be aligned")
+        pick = min(res, key=lambda t: (res[t]["err"], len(res[t]["weak"]), res[t]["dur"]))
+        best[(w, v)] = res[pick]["dir"]
+        for t, r in res.items():
+            say(f"  {t.name:<34}{r['dur']:>6.1f}s  errors {r['err']} {r['probs'] if r['err'] else ''}"
+                f"{(' weak: ' + ', '.join(r['weak'])) if r['weak'] else ''}{'  ← kept' if t == pick else ''}")
+    # every combination of the candidate voices
+    import itertools
+    rj = json.loads((STUDIO / reel / "reel.json").read_text()) if (STUDIO / reel / "reel.json").exists() else {}
+    combos = list(itertools.product(*[[(w, v) for v in cfg[w]] for w in whos]))
+    labels = {}
+    for combo in combos:
+        label = "_".join(f"{w}-{v}" for w, v in combo)
+        out = work / "mix" / label
+        r = run([PY, "scripts/dialogue.py", str(STUDIO / f"vo/{reel}_segments.json"), str(out),
+                 *[f"{w}={best[(w, v)]}" for w, v in combo], "--turn-gap", str(rj.get("turn_gap", 0.2))],
+                capture_output=True, text=True)
+        if r.returncode:
+            sys.exit(r.stderr[-600:])
+        labels[label] = out
+        say(f"  {label}: {json.loads((out / 'timing.json').read_text())['duration']:.1f}s → {out.relative_to(STUDIO)}/vo.wav")
+    choice = a.pick or next(iter(labels))
+    choice = next((l for l in labels if a.pick and a.pick in l), choice)
+    dest = STUDIO / f"vo/{reel}"
+    dest.mkdir(parents=True, exist_ok=True)
+    for f in ("vo.wav", "timing.json"):
+        shutil.copy(labels[choice] / f, dest / f)
+    final = check_vo(dest / "vo.wav", STUDIO / f"vo/{reel}_script.txt")
+    say(f"\ninstalled {choice} in vo/{reel}/ ({json.loads((dest / 'timing.json').read_text())['duration']:.1f}s), Whisper: "
+        + ("OK" if final["errors"] == 0 else f"{final['errors']} issue(s): {final['problems'][:4]}"))
+    if len(labels) > 1:
+        say(f"other versions in vo/_dialogue/{reel}/mix/; install one with: python3 studio.py voice {reel} --reuse --pick <voice>")
 
 
 # ---------------------------------------------------------------- build / audio / snap / check
@@ -440,6 +540,9 @@ def main():
     p = sub.add_parser("voice"); p.add_argument("reel"); p.add_argument("--yes", action="store_true")
     p.add_argument("--takes", type=int, default=3); p.add_argument("--voice", default="Charon")
     p.add_argument("--rate", type=float, default=1.0); p.add_argument("--take", help="reuse an existing take number instead of generating")
+    p.add_argument("--voices", help='dialogue reels: "coach=Puck|Fenrir|Zubenelgenubi,setty=Charon" (several = casting)')
+    p.add_argument("--pick", help="dialogue reels: the voice combination to install (e.g. Fenrir)")
+    p.add_argument("--reuse", action="store_true", help="dialogue reels: reuse the existing takes, generate nothing")
     for name in ("build", "check"):
         p = sub.add_parser(name); p.add_argument("reel")
     p = sub.add_parser("audio"); p.add_argument("reel"); p.add_argument("--no-whisper", action="store_true")

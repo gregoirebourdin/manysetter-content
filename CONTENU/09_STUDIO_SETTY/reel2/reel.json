@@ -6,44 +6,53 @@
  "funnel": "MOFU",
  "segment": "S1",
  "avatar": "AV1",
- "hook": "You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
+ "hook": "Setty, in bed, to the coach at his desk: You did your [bleep]ing webinar, right?",
  "biais": [
-  "interruption du schéma (une mascotte mignonne qui insulte)",
   "pertinence pour soi (son format exact)",
-  "chiffre précis (Twelve people)"
+  "écart de curiosité (les 63 messages)",
+  "autodérision (le « how much » retourné)"
  ],
  "verbatims": [
+  "rd04",
+  "rd01",
   "rd13",
   "rd05",
-  "rd91",
-  "rd93",
-  "rd92",
-  "rd01",
-  "rd43",
-  "rd75",
-  "mc06",
+  "rd19",
+  "rd47",
+  "rd06",
+  "cl058",
+  "cl056",
   "rd38",
+  "mc05",
+  "rd57",
   "mc10",
-  "mc11",
+  "mc06",
+  "rd92",
   "rd76",
   "rd77",
-  "mc47",
-  "rd48",
-  "cl030"
+  "rd14",
+  "rd98",
+  "rd86"
  ],
  "cta": "Comment SETTY",
- "caption": "Webinar done, replay sent, and now your DMs are full of \"price?\" and people who ghost after you answer.\nMeet Setty, the AI setter I built for coaches who sell in the DMs. He learns your offer, talks like you, only sends your calendar to the serious ones and books the call.\nComment SETTY and he'll slide into your DMs.\n#webinar #onlinecoach #dmsetter\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
- "statut": "validé par le fondateur le 19/10 (sans « Hey bitch »), rendu final 60 i/s ; prêt à programmer, en attente de son feu vert",
+ "caption": "Webinar done, and now your DMs are full of \"how much?\" and people who vanish once you answer.\nMeet Setty, the AI setter I built for coaches who sell in the DMs: he learns your offer, talks like you, waits till they're done typing and only sends your calendar to the serious ones.\nComment SETTY and he'll slide into your DMs.\n#webinar #onlinecoach #dmsetter\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "v3 dialogue à valider (rendu 30 i/s du 19/10) ; voix Fenrir + Charon ; rien n'est programmé",
  "created": "2026-10-19",
  "voice_s": [
-  54.0,
-  59.5
+  48.0,
+  66.0
  ],
- "line_gap": 0.36,
  "tail_s": 2.4,
- "layout": "stage",
+ "layout": "set",
  "hook_title": [
   "Your webinar is over.",
   "Your *DMs* just started."
- ]
+ ],
+ "turn_gap": 0.2,
+ "set": "bedroom",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ }
 }

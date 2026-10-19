@@ -82,9 +82,20 @@ class Reel:
         data = {"words": [{k: w[k] for k in ("w", "t", "end")} for w in self.W], "chunks": self.chunks(CHUNKS, BLEEPS),
                 "cues": cues, "bleeps": [{"i": i, "t": self.t(i), "end": self.e(i)} for i in BLEEPS], "icons": lucide}
         meta = self.here / "reel.json"
-        layout = json.loads(meta.read_text()).get("layout") if meta.exists() else None
+        rj = json.loads(meta.read_text()) if meta.exists() else {}
+        layout = rj.get("layout")
         if layout:
             data["layout"] = layout  # "stage": hook title on top, the stage in the middle, Setty small at the bottom
+        if layout == "set":  # the 3D set and its mood ("set": the coach and Setty talk in it)
+            data["set"], data["mood"] = rj.get("set", "bedroom"), rj.get("mood", "golden")
+        if rj.get("hook_title"):
+            data["hook_title"] = rj["hook_title"]
+        if self.timing.get("dialogue"):  # who says each line, and the mouths follow the voice
+            for d, w in zip(data["words"], self.W):
+                d["who"] = w["who"]
+            data["lines"] = [{"id": L["id"], "who": L["who"], "t": ws[0]["t"], "end": ws[-1]["end"]}
+                             for L in self.timing["lines"] if (ws := [w for w in self.W if w["line"] == L["id"]])]
+            data["lips"] = lips(STUDIO / f"vo/{self.id}/vo.wav", data["lines"], self.total)
         (self.here / "cues.json").write_text(json.dumps(data, indent=1, ensure_ascii=False))
         shell = (STUDIO / "assets/engine/shell.html").read_text()
         scenes = (self.here / "src/scenes.js").read_text().rstrip("\n")
@@ -99,6 +110,29 @@ class Reel:
         for w in warn:
             print(f"  ! {w}")
         return data
+
+
+def lips(wav, lines, total, fps=30):
+    """Mouth opening per speaker, 0–9 per frame (a string per speaker), from the voice envelope inside its own lines."""
+    import numpy as np
+    import soundfile as sf
+    x, sr = sf.read(wav, dtype="float64")
+    x = x if x.ndim == 1 else x.mean(axis=1)
+    hop, n = sr // fps, int(total * fps) + 2
+    rms = np.array([np.sqrt(np.mean(x[k * hop:(k + 1) * hop] ** 2)) if k * hop < len(x) else 0.0 for k in range(n)])
+    out = {"fps": fps}
+    for who in sorted({L["who"] for L in lines}):
+        m = np.zeros(n, bool)
+        for L in lines:
+            if L["who"] == who:
+                m[int((L["t"] - 0.03) * fps):int((L["end"] + 0.05) * fps) + 1] = True
+        ref = np.percentile(rms[m], 92) if m.any() else 1.0
+        lv = np.clip(rms / (ref + 1e-9), 0, 1) ** 0.7 * m
+        y = np.zeros(n)
+        for k in range(n):  # opens fast, closes a bit slower: reads as talking, not flapping
+            y[k] = max(lv[k], y[k - 1] * 0.55 if k else 0)
+        out[who] = "".join(str(int(round(v * 9))) for v in y)
+    return out
 
 
 def lint(data, max_total=31.6):

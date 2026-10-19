@@ -332,3 +332,9 @@ Format d'une règle :
 - Règle : les reels de Setty utilisent **les sons du fondateur** (`09_STUDIO_SETTY/assets/sounds/`) : son **riser** au tout début (jamais un riser synthétisé), son **BOOM** sur chaque **dinguerie** (la phrase qui choque ou qui fait rire, marquée dans le script), le **« Fahhh »** à chaque **roast** d'un personnage sur l'autre, le **clic** sur les apparitions d'écran, et **sa musique** en fond (plus de beat synthétisé). Le script marque chaque BOOM et chaque Fahhh avant la voix.
 - Retour : « Je veux que tu retravailles à fond les persos 3D, je ne veux pas un seul bug : par exemple son collier est moche. Si tu veux, tu peux même faire encore plus d'expressions faciales. »
 - Règle : avant de montrer un personnage, on le passe **au crible** (de face, de trois quarts, de profil, de dos, assis, en gros plan) : aucune pièce qui flotte ou qui traverse le corps, aucune jointure visible, aucun accessoire raté (la chaîne est refaite pour suivre le cou et tomber sur le torse). Chaque personnage a une **large palette d'expressions** franches.
+
+## 2026-10-19 · Reel 2 de Setty, script v3 (dialogue)
+- Retour : « Go pour le script et les voix : casting de 3 voix pour le coach, puis les prises. »
+- Règle : le script v3 de `writing/reel2_webinar.md` (dialogue coach ↔ Setty, BOOM, Fahhh, coupure de musique) est **validé** ; la génération des voix est autorisée pour lui : Setty en Charon, le coach en **3 voix candidates** (prises complètes), assemblées en 3 versions du dialogue pour que le fondateur choisisse la voix du coach. La voix choisie devient fixe pour tous les reels suivants.
+- Retour (casting) : « casting_coach_Fenrir je préfère. »
+- Règle : **la voix du coach est Fenrir** (Gemini TTS), fixe pour tous les reels ; Setty reste Charon.

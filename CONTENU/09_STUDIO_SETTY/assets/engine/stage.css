@@ -224,3 +224,19 @@
   background: linear-gradient(#cfcfd4, #8e8e93); box-shadow: 0 24px 40px -14px #000; }
 .lap .pants { position: absolute; left: 50%; top: 130px; font-size: 230px; line-height: 1; opacity: 0;
   filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.6)); }
+
+/* Layout "set" (reel.json "layout": "set", Grégoire 19/10): the 3D set fills the frame, the hook title on top, the camera
+   on whoever talks (his face around y 800), the captions under his chin, the cards (#stagebox) pop over the scene. */
+.layout-set #stageclip { -webkit-mask-image: linear-gradient(to bottom, transparent 0, transparent 505px, #000 540px);
+  mask-image: linear-gradient(to bottom, transparent 0, transparent 505px, #000 540px); }
+.layout-set #caps { top: 1200px; }
+.layout-set .chunk { font-size: 96px; }
+.layout-set .chunk.hero { font-size: 128px; }
+.layout-set .bg, .layout-set #glow, .layout-set #spot { display: none; }
+.layout-set #cardsw { left: 100px; top: 590px; }
+.layout-set #comment { top: 565px; }
+.layout-set #endcta { top: 880px; }
+.layout-set #notif { top: 560px; transform: translateY(-960px); }
+/* over the 3D set, the modules drawn for a dark stage get their own dark card so they read on any background */
+.layout-set .st.flow, .layout-set .st.sort, .layout-set .st.tl24 { background: rgba(18, 16, 24, 0.93); border-radius: 44px;
+  box-shadow: 0 34px 90px -24px rgba(0, 0, 0, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.08); }

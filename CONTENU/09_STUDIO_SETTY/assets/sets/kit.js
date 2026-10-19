@@ -680,3 +680,13 @@ export function rug({ r = 2.4, base = "#efe7da", ring = "#ff611d" } = {}) {
   m.receiveShadow = true;
   return m;
 }
+
+/** a camera that looks at `target` from `dist` away (yaw/pitch around it, yaw 0 = from +z) and puts it at screen point
+ *  (x, y) of the 1080×1920 frame. Returns { pos, at, fov } (what the sets' shots and the engine's camera use). */
+export function shot(target, { dist = 10, fov = 30, yaw = 0, pitch = 0.1, x = 540, y = 840 } = {}) {
+  const half = dist * Math.tan(THREE.MathUtils.degToRad(fov / 2));
+  const offY = ((960 - y) / 960) * half, offX = ((x - 540) / 540) * half * (1080 / 1920);
+  const pos = [target.x + Math.sin(yaw) * Math.cos(pitch) * dist, target.y + Math.sin(pitch) * dist, target.z + Math.cos(yaw) * Math.cos(pitch) * dist];
+  const right = [Math.cos(yaw), 0, -Math.sin(yaw)];
+  return { pos, at: [target.x - right[0] * offX, target.y - offY, target.z - right[2] * offX], fov };
+}

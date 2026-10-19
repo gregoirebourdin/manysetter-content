@@ -1,41 +1,38 @@
-// Setty's acting (K = keyframe on his pose / camera / light) and what the stage shows, line by line.
-// Stage layout (CLAUDE.md § 4): hook title on top, the stage in the middle (st.*: real tools, diagrams), captions,
-// Setty small at the bottom hopping between SPOT.L / C / R. Every reel gets its OWN stage visuals for its subject.
-// Reference: reel2/src/scenes.js · catalogue: PROPS.md.
-// In scope: R, C (cues), T(i)/E(i), K, face, shake, beat, flash, bg, tl, SPOT, STAGE (camera), kit, st.
+// {{REEL}}: a conversation in a 3D set (layout "set"). The camera goes to whoever talks (D.line), the other one reacts,
+// cards pop beside the speaker (D.side + an st.* module), BOOMs punch in (D.punch), the roasted one gets the camera for
+// the "Fahhh" (D.reaction). Scope: R, C, K (Setty), KC (coach), face / faceC, shotTo, shake, flash, tl, D, T(i), E(i), kit, st.
+const { L, line, reaction, side, punch, CARD_L, CARD_R } = D;
 
-const { L, R: RIGHT } = SPOT;
-const look = (x, y) => ({ lookX: x, lookY: y }); // lookY > 0: up at the stage
+kit.hookTitle(R, { lines: R.DATA.hook_title || ["Your hook,", "the *key* word in orange."], pulses: [C.drop] });
 
-// ---- the hook title, fixed for the whole reel: one sentence that says the subject, the key word in *orange*
-kit.hookTitle(R, { lines: ["Your <subject> is over.", "Your *DMs* just started."], pulses: [C.format] });
+// ---- frame 0 (thumbnail): the wide shot, both characters in their mood
+R.place({ ...face("smug", { lookX: -0.8, dotsBounce: 1 }) });
+Object.assign(R.Q, faceC("hyped", { mouthOpen: 0.3, lookX: 0.5 }));
 
-// ---- the stage camera: on each key word, push toward the element that proves it, pull back before the next module
-// zoom(C.word - 0.05, { to: [x, y], s: 1.35, dur: 0.2 });  unzoom(C.next - 0.12, 0.2);  drift(C.word, { to, s: 1.08, dur: 1.4 });
+// ---- the hook (Setty): a slow push from the wide, a punch onto Setty, the censor bar, BOOM + the drop after it
+K(0, 1.4, { cam: R.camOf("setty", { dist: 16, y: 900 }) }, "sine.in");
+const B1 = R.DATA.bleeps[0];
+K(B1.t - 0.1, 0.2, { cam: R.camOf("setty") }, "power4.out");
+K(B1.t - 0.04, 0.12, { censor: 1, squash: 0.06 }, "back.out(3)");
+K(B1.end + 0.05, 0.1, { censor: 0, squash: 0 });
+K(B1.end + 0.1, 0.25, face("mocking", { armRr: 0.5, armRf: 0.9 }));
+KC(1.0, 0.3, faceC("confused", { lookX: 0.6 }));
+punch(C.drop, 26);
+flash(C.drop, 0.5, 0.18);
 
-// ---- hook (no "Hey [bleep]."): the stage already shows the subject at frame 0 (at: 0), Setty smug at the bottom
-// st.zoomWebinar(R, { id: "zoom", at: 0, out: …, … })   ← pick the module that fits THIS reel's subject
-K(C.youdid, 0.18, { browLy: 0.24, browLr: 0.3, lean: -0.05, ...look(0.15, 0.2) }, "back.out(3)");   // straight at the viewer
-K(C.bleep2 - 0.03, 0.1, { censor: 1, ...face("smug", { censor: 1, ...look(0.1, 0.2) }), squash: 0.08 }, "back.out(3)");
-shake(C.bleep2, 0.5);
-beat.hop(C.format - 0.3, RIGHT, { dur: 0.3 });
-K(C.format - 0.02, 0.08, { censor: 0, squash: -0.14, armLr: 1.9, armLf: 0.5 }, "power2.out"); // points at the stage
-K(C.format + 0.08, 0.5, { squash: 0 }, "elastic.out(1, 0.35)");
-shake(C.format, 0.9);
-K(C.right, 0.25, { ...face("smug", look(-0.4, 0.4)), armLr: 0.35, armLf: 0, lean: 0.08 }, "back.out(2)");
+// ---- the middle: one line() per line (speaker face, listener face, framing); a card: side() + a module + CARD_L/CARD_R
+// line(1, faceC("hyped", { lookX: 0.5 }), face("sleepy", { lookX: -0.6 }));
+// line(3, faceC("panic", { phone: 1 }), face("sly"), CARD_L); side(C.clic1 - 0.01, "left"); st.igInbox(R, { … });
+// punch(C.boom1);
+// line(6, face("mocking", { armRr: 1.3, armRf: 1.0 }), null); reaction(C.fahhh1, faceC("annoyed"));
 
-// ---- the pain, made physical and REAL on the stage (Instagram inbox, a chat, Calendly, a lock screen…), Setty hopping
-// ---- the turn (black + a stage moment), the flex in the real ManySetter UI (kit.playbookCard, kit.dmThread, st.flowPipeline…)
-// ---- the roast: a short push-in, K(t, 0.3, { cam: { z: 21, ly: 4.1 } }), the third censor bar, then back to cam: STAGE
-
-// ---- CTA: Comment SETTY (typed once it is said), Setty slides out and back, the DM lands
-K(C.comment - 0.12, 0.35, { ...face("happy", { ...look(0, 0.8), armRr: 0.4 }), turn: 0, cam: STAGE }, "expo.out");
-K(C.setty + 0.25, 0.2, { ...face("wink") }, "back.out(2)");
-K(C.slide - 0.05, 0.36, { x: 6.5, lean: -0.35, squash: 0.08, ...face("smug") }, "power3.in");
-K(C.slide + 0.36, 0.01, { x: -6.5, lean: 0.35 }, "none");
-K(C.slide + 0.55, 0.5, { x: 0, lean: 0, squash: 0, ...face("smug", look(0.2, 0.3)) }, "back.out(1.6)");
-K(C.end + 0.5, 0.2, { ...face("wink") }, "back.out(2)");
-kit.commentBar(R, { keyword: "SETTY", at: C.comment - 0.12, caret: C.comment, type: C.setty_end + 0.04, step: 0.05,
-  send: C.setty_end + 0.34, out: C.slide - 0.1 });
+// ---- the CTA (Setty): wink, the comment bar types SETTY, back to the wide (loops to frame 0)
+line(L.length - 1, face("smug", { lookX: 0.2 }), faceC("laughing"));
+K(C.slide - 0.1, 0.25, face("wink"), "back.out(2)");
+K(C.dms_end + 0.1, 0.9, { cam: R.camOf("wide") }, "power3.inOut");
+K(C.dms_end + 0.2, 0.4, face("smug", { lookX: -0.8 }));
+KC(C.dms_end + 0.2, 0.4, faceC("hyped", { mouthOpen: 0.3, lookX: 0.5 }));
+kit.commentBar(R, { keyword: "SETTY", at: C.comment - 0.12, caret: C.comment, type: C.setty_end + 0.06, step: 0.07,
+  send: C.setty_end + 0.45, out: C.slide - 0.1 });
 kit.notification(R, { title: "setty", text: "slid into your DMs", at: C.dms_end + 0.03 });
-kit.endCta(R, { text: "Comment SETTY", at: C.end + 0.32 });
+kit.endCta(R, { text: "Comment SETTY", at: C.end + 0.6 });

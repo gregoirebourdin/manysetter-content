@@ -2,30 +2,33 @@
   "funnel": "MOFU",
   "segment": "S1",
   "avatar": "AV1",
-  "hook": "You did your [bleep]ing webinar, right? Two hours. Twelve people stayed.",
+  "hook": "Setty, in bed, to the coach at his desk: You did your [bleep]ing webinar, right?",
   "biais": [
-    "interruption du schéma (une mascotte mignonne qui insulte)",
     "pertinence pour soi (son format exact)",
-    "chiffre précis (Twelve people)"
+    "écart de curiosité (les 63 messages)",
+    "autodérision (le « how much » retourné)"
   ],
   "verbatims": [
+    "rd04",
+    "rd01",
     "rd13",
     "rd05",
-    "rd91",
-    "rd93",
-    "rd92",
-    "rd01",
-    "rd43",
-    "rd75",
-    "mc06",
+    "rd19",
+    "rd47",
+    "rd06",
+    "cl058",
+    "cl056",
     "rd38",
+    "mc05",
+    "rd57",
     "mc10",
-    "mc11",
+    "mc06",
+    "rd92",
     "rd76",
     "rd77",
-    "mc47",
-    "rd48",
-    "cl030"
+    "rd14",
+    "rd98",
+    "rd86"
   ],
   "cta": "Comment SETTY",
   "id": "261019_REEL_S1_AV1_the-webinar",
@@ -40,14 +43,9 @@
     "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
   },
   "qa": {
-    "duree_s": 56.0,
-    "lufs": -14.4,
-    "true_peak_dbtp": -2.3
+    "duree_s": 58.5,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.4
   },
-  "statut": "validé par le fondateur le 19/10 (sans « Hey bitch »), rendu final 60 i/s ; prêt à programmer, en attente de son feu vert",
-  "hook_title": [
-    "Your webinar is over.",
-    "Your DMs just started."
-  ],
-  "horaire_propose": "mardi 20/10/2026, 6:30 pm ET (America/New_York), Instagram @greg.manysetter + YouTube Short"
+  "statut": "v3 dialogue à valider (rendu 30 i/s du 19/10) ; voix Fenrir + Charon ; rien n'est programmé"
 }

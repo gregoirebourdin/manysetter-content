@@ -57,8 +57,8 @@ VSL, right? Forty takes. Your mom watched it." · "You went live. Again. For the
 
 Every reel is now **a real conversation between the coach and Setty**, never a monologue that sounds like an ad: the
 coach (an infopreneur) talks like a human, Setty answers, insolent and funny. The product comes up because the coach
-asks (his objections are the verbatims), each answer is one true fact. Two voices: Setty = Charon, the coach = his own
-voice (cast once, then fixed). The signature hook stays Setty's first line. Script table in `writing/`: who / line /
+asks (his objections are the verbatims), each answer is one true fact. Two voices: Setty = Charon, the coach = **Fenrir**
+(cast by Grégoire on 19 Oct, fixed). The signature hook stays Setty's first line. Script table in `writing/`: who / line /
 sens / shot and screen / verbatims.
 
 **The coach** (`assets/coach/coach.js`, same toy-like 3D language as Setty, all code): ribbed white tank top, black beanie
@@ -77,6 +77,16 @@ rug, window views `VIEWS.night / dubai`, sun patch, light shaft); a set file (`b
 (default: Dubai at golden hour) and `night`) places them, its lights, the characters' spots and the camera shots
 (`wide`, `coach`, `setty`, built with `shot(target, { dist, yaw, y })` so the speaker's face sits above the captions).
 **Shot / reverse shot: the camera goes to whoever talks**, the other reacts. Look test: `lab/set` (wide + two close-ups).
+
+**Making a dialogue reel** (reel2 v3 is the reference): `vo/<reel>_segments.json` carries `"who"` on every line (and
+`"pause": 0.95` after a roast, for the Fahhh); `studio.py voice <reel> --yes --voices "coach=Fenrir,setty=Charon"` makes
+takes per speaker, checks them with Whisper, tightens them (voice.py) and lays the lines in order (`scripts/dialogue.py`;
+casting: `coach=A|B|C` assembles every version in `vo/_dialogue/<reel>/mix/`, `--reuse --pick B` installs one).
+`reel.json`: `"layout": "set"`, `"set"`, `"mood"`, `"hook_title"`. The build adds `DATA.lines` (who, start, end) and
+`DATA.lips` (mouth opening per speaker from the voice). In scenes.js, `D` (assets/engine/dialogue.js) gives `line(k,
+speakerFace, listenerFace, framing)`, `reaction(t, face)`, `side(t, "left"|"right")` + an `st.*` card with framing
+`CARD_L / CARD_R`, `punch(t)` on each BOOM; `R.camOf(name, { x, y, dist })`, `shotTo(t, name)`, `KC` / `faceC` act the
+coach. Both characters blink on their own; dark stage modules get a card background over the set.
 
 ## 3. Setty, the character
 

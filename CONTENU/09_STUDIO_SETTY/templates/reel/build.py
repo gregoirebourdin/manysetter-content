@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Captions, bleeps and scene cues of this reel, from the voice timing (kit: scripts/reelkit.py).
+"""Captions, bleeps and cues of this dialogue reel, from the two voices (kit: scripts/reelkit.py).
 
-Starter from templates/reel: the signature hook and the CTA are already chunked and cued; the middle is
-auto-chunked (a new chunk at each punctuation or every 4 words): hand-tune the chunks that matter.
-Usage: python3 studio.py build <reel>   (or python3 <reel>/build.py)
+Lines come from vo/<reel>_segments.json ("who" on each). F(L) / Z(L) = first / last word of line L; word(L, "text")
+finds a word inside line L. Name the cues the scenes and the sound use: drop (end of the hook), boomN (💥 a
+"dinguerie"), fahhhN (😩 after a roast), clicN (a card pops), howmuch-like beats, and the CTA cues.
+Usage: python3 studio.py build <reel>
 """
 import pathlib
 import sys
@@ -12,35 +13,43 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 from reelkit import Reel  # noqa: E402
 
 R = Reel(__file__)
-t, e, find = R.t, R.e, R.find
-LAST = len(R.W) - 1
+t, e, find, W = R.t, R.e, R.find, R.W
+LN = {}
+for i, w in enumerate(W):
+    a, b = LN.get(w["line"], (i, i))
+    LN[w["line"]] = (min(a, i), max(b, i))
+F = lambda L: LN[L][0]  # noqa: E731
+Z = lambda L: LN[L][1]  # noqa: E731
+LAST = max(LN)
 
-# ---- the signature hook (no "Hey [bleep]." since 19/10): "You did your fucking <format>, right?"
-B2 = find("fucking")              # the hook's bleep
-FMT = B2 + 1                      # the coach's format: webinar, VSL, algorithm…
-RIGHT = find("right?")            # last word of the hook
-# ---- the CTA: "Comment SETTY. I'll slide into your DMs."
-CTA = find("Comment", LAST - 8)
-B3 = find("fucking", RIGHT)       # bleep 2, in the punchline: put the script's word here
 
-BLEEPS = [B2, B3]                 # three at most
+def word(L, txt):
+    return find(txt, F(L))
 
-CHUNKS = [
-    *R.auto_chunks(0, B2 - 1),
-    (B2, B2, {}),
-    (FMT, RIGHT, {"accent": [FMT], "hero": True}),
-    # ---- the middle: start from auto chunks, then tune (accent: [i], hero, display: {i: "400"}, hide, count)
-    *R.auto_chunks(RIGHT + 1, CTA - 1),
-    (CTA, CTA + 1, {"accent": [CTA + 1]}),
-    (CTA + 2, LAST, {"accent": [LAST], "hold": 0.3}),
-]
+
+B1 = find("fucking")
+SETTY = find("SETTY")
+BLEEPS = [B1]                       # 3 at most
+
+ACCENT = {0: [], LAST: ["SETTY"]}   # line → words in orange
+HERO = {SETTY}                      # words that make their chunk big
+DISPLAY = {}                        # {i: "Manychat."} when the voice script says "ManyChat."
+
+CHUNKS = []
+for L in sorted(LN):
+    acc = [word(L, w) for w in ACCENT.get(L, [])]
+    for a, b, o in R.auto_chunks(F(L), Z(L)):
+        parts = [(a, B1 - 1), (B1, B1), (B1 + 1, b)] if a <= B1 <= b and a < b else [(a, b)]  # the bleep alone
+        for x, y in parts:
+            if x <= y:
+                CHUNKS.append((x, y, {"accent": [i for i in acc if x <= i <= y], "hero": any(x <= h <= y for h in HERO),
+                                      "display": {i: d for i, d in DISPLAY.items() if x <= i <= y}}))
 
 CUES = {
-    "youdid": t(0), "bleep2": t(B2), "format": t(FMT),
-    "right": t(RIGHT), "right_end": e(RIGHT),
-    # ---- name the words that trigger the middle scenes, e.g. "stayed": t(find("stayed.")),
-    "bleep3": t(B3),
-    "comment": t(CTA), "setty": t(CTA + 1), "setty_end": e(CTA + 1), "slide": t(CTA + 3), "dms_end": e(LAST), "end": e(LAST),
+    "right_end": e(Z(0)), "drop": e(Z(0)) + 0.05,
+    # "boom1": t(word(3, "sixty-three")), "fahhh1": e(Z(6)) + 0.12, "clic1": t(F(3)) + 0.15,
+    "comment": t(word(LAST, "comment")), "setty": t(SETTY), "setty_end": e(SETTY), "slide": t(word(LAST, "slide")),
+    "dms_end": e(Z(LAST)), "end": e(Z(LAST)),
 }
 
 if __name__ == "__main__":

@@ -41,7 +41,10 @@ ALIASES = {
 }
 
 
+CENSORED = {("f", "ing"): "fucking", ("f", ""): "fuck", ("f", "ed"): "fucked", ("s", ""): "shit", ("b", ""): "bitch",
+            ("a", ""): "ass", ("s", "ty"): "shitty"}
 NUM = {
+    "63": "sixty three",
     "$1,500 bucks": "fifteen hundred bucks",
     "$1500 bucks": "fifteen hundred bucks",
     "$1,500": "fifteen hundred dollar",
@@ -71,6 +74,8 @@ NUM = {
 
 
 def words(text: str) -> list[str]:
+    # Whisper censors swear words itself ("f***ing", "s***"): put the word back before the vocal-tag cleanup eats the stars
+    text = re.sub(r"\b([A-Za-z])\*+([A-Za-z]*)", lambda m: CENSORED.get((m.group(1).lower(), m.group(2).lower()), m.group(1) + m.group(2)), text)
     text = re.sub(r"<[^>]+>|\([^)]*\)|\[[^\]]*\]|\*[^*]*\*", " ", text)  # vocal tags, (laughs), [sighs]
     text = " " + text.replace("-", " ").lower() + " "
     for k in sorted(NUM, key=len, reverse=True):  # whole tokens only, longest first

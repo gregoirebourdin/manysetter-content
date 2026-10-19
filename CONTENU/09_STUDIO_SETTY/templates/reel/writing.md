@@ -1,15 +1,17 @@
 # {{REEL}}, "{{SLUG}}" (draft, for approval)
 
-Recipe (CLAUDE.md § 5): signature hook naming the format, 3–4 physical pain images, the dead-serious turn on black,
-"Plug me into Manychat." + 3 true facts in the real UI, the bleeped roast, "Comment SETTY. I'll slide into your DMs."
-85–90 words, 3 bleeps at most. Every line comes from the verbatims (ids in the last column).
+A real conversation (CLAUDE.md § 2b): the coach talks like a human, Setty answers. Setty opens with the signature hook
+naming the coach's format; the product comes up because the coach asks (his objections = the verbatims), one true fact
+per answer; Setty's last line is the CTA. Set: a NEW one for this reel (assets/sets/), its mood, its window view.
+Sound: his riser → BOOM + music drop after the hook; 💥 BOOM on each "dinguerie"; 😩 Fahhh after each roast (that
+line gets "pause": 0.95 in the segments); clic when a card pops; cut the music on the comedic beat.
 
-| # | Voice (EN) | Sens (FR) | On screen | Verbatims |
-|---|---|---|---|---|
-| 1 | Hey [bleep]. | | Close-up smug, censor bar on his mouth | |
-| 2 | You did your [bleep]ing …, right? | | Whip out; the format slams behind him (marquee) | |
-| … | | | | |
-| n | Comment SETTY. I'll slide into your DMs. | | Comment bar types SETTY, Setty slides out and back, notification | |
+| # | Who | Line (EN) | Sens (FR) | Shot and screen | Sound | Verbatims |
+|---|---|---|---|---|---|---|
+| 1 | Setty | You did your [bleep]ing …, right? | | Wide (frame 0), punch-in on Setty | riser → 💥 + drop | série |
+| 2 | Coach | | | CU coach | | |
+| … | | | | | | |
+| n | Setty | … comment SETTY and I'll slide into your DMs. | | CU Setty, wink; comment bar; back to the wide | clics on SETTY | série |
 
-Words: · Estimated length: (words ÷ 3.3 + 1.6 s)
-Biases (hook): · Funnel / segment / avatar:
+Words: · Estimated length: (words ÷ 3.1 + 0.2 s per change of speaker + 0.95 s per Fahhh + 2.4 s)
+Hook title: · Biases: · Funnel / segment / avatar:

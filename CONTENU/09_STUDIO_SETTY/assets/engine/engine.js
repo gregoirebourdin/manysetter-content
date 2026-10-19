@@ -3,6 +3,8 @@
 // that acts Setty with K(...) and places props from props.js. See CLAUDE.md § 7.
 import * as THREE from "three";
 import { createSetty, setupStage, pose, basePose } from "../setty/setty.js";
+import { createCoach, pose as coachPose, basePose as coachBase } from "../coach/coach.js";
+import { shot as frameShot } from "../sets/kit.js";
 
 export const W = 1080, H = 1920;
 
@@ -72,9 +74,14 @@ export async function createReel(DATA, opts = {}) {
   renderer.setSize(W, H, false);
   renderer.setPixelRatio(1);
   const scene = new THREE.Scene();
-  const stage = await setupStage(renderer, scene, { shadowOpacity: opts.shadowOpacity ?? 0.42 });
+  // layout "set" (19/10): a styled 3D set (assets/sets/<name>.js) fills the frame, the coach and Setty talk in it
+  const SETL = DATA.layout === "set";
+  const set = SETL ? await (await import(`../sets/${DATA.set || "bedroom"}.js`)).build({ renderer, scene, mood: DATA.mood }) : null;
+  const stage = SETL ? { key: set.key, rim: set.rim } : await setupStage(renderer, scene, { shadowOpacity: opts.shadowOpacity ?? 0.42 });
   const setty = createSetty();
   scene.add(setty.root);
+  const coach = SETL ? createCoach() : null;
+  if (coach) scene.add(coach.root);
   const camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 100);
 
   const face = (name, extra = {}) => {
@@ -83,12 +90,21 @@ export async function createReel(DATA, opts = {}) {
     return Object.assign(o, extra);
   };
   // frame 0 is the thumbnail: Setty in close-up, smug
-  const P = Object.assign(basePose(), face(opts.face ?? "smug"), opts.pose ?? { turn: 0.15, dotsBounce: 1 });
-  const CAM = Object.assign({ z: 9.2, ly: 1.85, x: 0, roll: 0, lx: 0 }, DATA.layout === "stage" ? CAMS.STAGE : {}, opts.cam);
+  const P = SETL ? Object.assign(basePose(), face(opts.face ?? "smug"), { dotsBounce: 1 }, set.setty, opts.pose)
+    : Object.assign(basePose(), face(opts.face ?? "smug"), opts.pose ?? { turn: 0.15, dotsBounce: 1 });
+  // the coach's pose (layout "set"): his spot in the set, then his acting (KC, faceC)
+  const Q = SETL ? Object.assign(coachBase(), set.coach, opts.coachPose) : null;
+  const camOf = (name, o = {}) => {
+    const f = set.frames?.[name];
+    const s = f ? frameShot(f.target, { ...f, ...o }) : set.shots[name];
+    return { px: s.pos[0], py: s.pos[1], pz: s.pos[2], ax: s.at[0], ay: s.at[1], az: s.at[2], fov: s.fov };
+  };
+  const CAM = SETL ? Object.assign({ roll: 0 }, camOf("wide"), opts.cam)
+    : Object.assign({ z: 9.2, ly: 1.85, x: 0, roll: 0, lx: 0 }, DATA.layout === "stage" ? CAMS.STAGE : {}, opts.cam);
   if (DATA.layout) root.classList.add(`layout-${DATA.layout}`);
   // stage layout: the modules live in a box the "stage camera" can zoom (the title and the captions never zoom)
   const ZO = { x: 540, y: 840 }; // zoom origin: the centre of the stage
-  if (DATA.layout === "stage") {
+  if (DATA.layout === "stage" || SETL) {
     const clip = document.createElement("div"); // fades the zoomed stage out under the hook title
     clip.id = "stageclip";
     clip.className = "layer";
@@ -97,10 +113,10 @@ export async function createReel(DATA, opts = {}) {
     sb.id = "stagebox";
     sb.className = "layer";
     clip.appendChild(sb);
-    document.getElementById("back").appendChild(clip);
+    document.getElementById(SETL ? "front" : "back").appendChild(clip); // over the 3D set: the cards pop over the scene
     gsap.set(sb, { transformOrigin: `${ZO.x}px ${ZO.y}px` });
   }
-  const LIGHT = { key: 2.5, rim: 3.0, red: 0 };
+  const LIGHT = SETL ? { key: set.key.intensity, rim: set.rim.intensity, red: 0 } : { key: 2.5, rim: 3.0, red: 0 };
   const SHAKES = [];
   const shake = (t, amp = 1, dec = 9) => SHAKES.push({ t, amp, dec });
 
@@ -112,6 +128,17 @@ export async function createReel(DATA, opts = {}) {
     if (cam) act.to(CAM, { ...cam, duration: d, ease, lazy: false }, t);
     if (light) act.to(LIGHT, { ...light, duration: d, ease, lazy: false }, t);
   };
+  // the coach (layout "set"): KC tweens his pose like K does Setty's; faceC = an expression without his placement
+  const KC = (t, d, vars, ease = "power3.out") => { if (Q) act.to(Q, { ...vars, duration: d, ease, lazy: false }, t); };
+  const COACH_SKIP = new Set(["x", "y", "z", "turn", "scale", "squash", "sit", "spread", "talk"]);
+  const faceC = (name, extra = {}) => {
+    const p = coachPose(name), o = {};
+    for (const k in p) if (!COACH_SKIP.has(k)) o[k] = p[k];
+    return Object.assign(o, extra);
+  };
+  // the camera goes to whoever talks (shot / reverse shot): a fast push to his close-up; o = { x, y, dist, yaw } framing
+  const shotTo = (t, name, { dur = 0.3, ease = "power3.inOut", ...o } = {}) => K(t, dur, { cam: camOf(name, o) }, ease);
+
   // acting shortcuts for new reels (reel1 writes them out by hand)
   const beat = {
     // a slam on a word: squash, elastic back, camera shake
@@ -185,6 +212,28 @@ export async function createReel(DATA, opts = {}) {
     return [(v.x * 0.5 + 0.5) * W, (-v.y * 0.5 + 0.5) * H];
   };
   const FRAME = [];
+  // lip-sync (DATA.lips, from the voice envelope, per speaker) and automatic blinks (every 2.4–4.6 s, seeded per character)
+  const lip = (who, t) => {
+    const L = DATA.lips?.[who];
+    if (!L) return 0;
+    const f = t * DATA.lips.fps, i = Math.floor(f);
+    const a = +(L[i] || 0) / 9, b = +(L[i + 1] || 0) / 9;
+    return a + (b - a) * (f - i);
+  };
+  const BLINKS = {};
+  const blink = (t, seed) => {
+    if (!BLINKS[seed]) {
+      let s = seed * 9301 + 49297, tt = 0.8 + (seed % 1) * 2;
+      const r = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
+      BLINKS[seed] = [];
+      while (tt < TOTAL + 5) { BLINKS[seed].push(tt); tt += 2.4 + r() * 2.2; }
+    }
+    for (const b of BLINKS[seed]) {
+      const d = t - b;
+      if (d >= 0 && d < 0.16) return d < 0.06 ? d / 0.06 : 1 - (d - 0.06) / 0.1;
+    }
+    return 0;
+  };
   function renderAt(t) {
     act.seek(t, false);
     // camera + shakes
@@ -196,16 +245,33 @@ export async function createReel(DATA, opts = {}) {
       sy += Math.cos((t - s.t) * 57) * 0.07 * k;
       sr += Math.sin((t - s.t) * 41) * 0.025 * k;
     }
-    camera.position.set(CAM.x + sx, CAM.ly + 0.35 + sy, CAM.z);
-    camera.lookAt(CAM.lx + sx, CAM.ly + sy, 0);
+    if (SETL) {
+      camera.position.set(CAM.px + sx, CAM.py + sy, CAM.pz);
+      camera.lookAt(CAM.ax + sx * 0.5, CAM.ay + sy * 0.5, CAM.az);
+      camera.fov = CAM.fov;
+      camera.updateProjectionMatrix();
+    } else {
+      camera.position.set(CAM.x + sx, CAM.ly + 0.35 + sy, CAM.z);
+      camera.lookAt(CAM.lx + sx, CAM.ly + sy, 0);
+    }
     camera.rotateZ(CAM.roll + sr);
     camera.updateMatrixWorld();
     stage.key.intensity = LIGHT.key;
     stage.rim.intensity = LIGHT.rim;
-    stage.rim.color.setRGB(1, 0.54 - 0.3 * LIGHT.red, 0.3 - 0.22 * LIGHT.red, THREE.SRGBColorSpace);
-    // idle life: a float, a sway, the typing dots
-    const bob = Math.sin(t * 2.7) * 0.06;
-    setty.apply({ ...P, y: P.y + bob, lean: P.lean + Math.sin(t * 1.9) * 0.02, dotsPhase: t * 10 });
+    if (!SETL) stage.rim.color.setRGB(1, 0.54 - 0.3 * LIGHT.red, 0.3 - 0.22 * LIGHT.red, THREE.SRGBColorSpace);
+    // idle life: a float, a sway, the typing dots (in a set: a smaller float, blinks, the mouth follows the voice)
+    const bob = Math.sin(t * 2.7) * (SETL ? 0.025 : 0.06);
+    if (SETL) {
+      const ls = lip("setty", t), lc = lip("coach", t), bs = blink(t, 1.3), bc = blink(t, 2.1);
+      setty.apply({ ...P, y: P.y + bob, lean: P.lean + Math.sin(t * 1.9) * 0.015, dotsPhase: t * 10,
+        mouthOpen: Math.min(1, P.mouthOpen + ls * 0.55), squash: P.squash + ls * 0.025,
+        lidL: P.happyL > 0.5 ? P.lidL : Math.max(P.lidL, bs), lidR: P.happyR > 0.5 ? P.lidR : Math.max(P.lidR, bs) });
+      coach.apply({ ...Q, talk: Math.max(Q.talk, lc), nod: Q.nod + lc * 0.05 + Math.sin(t * 1.3) * 0.012,
+        headTilt: Q.headTilt + Math.sin(t * 0.9) * 0.015, bend: Q.bend + Math.sin(t * 1.7) * 0.008,
+        lidL: Q.happyL > 0.5 ? Q.lidL : Math.max(Q.lidL, bc), lidR: Q.happyR > 0.5 ? Q.lidR : Math.max(Q.lidR, bc) });
+    } else {
+      setty.apply({ ...P, y: P.y + bob, lean: P.lean + Math.sin(t * 1.9) * 0.02, dotsPhase: t * 10 });
+    }
     renderer.render(scene, camera);
 
     // anchors for the DOM props that follow Setty (ring light): --sx/--sy centre, --su one body unit in px
@@ -232,6 +298,7 @@ export async function createReel(DATA, opts = {}) {
   return {
     W, H, C, TOTAL, DATA, root, $, ico, rnd, mount, THREE, renderer, scene, stage, setty, camera,
     P, CAM, LIGHT, face, pose, basePose, K, shake, beat, act, CAMS, SPOT, tl, flash, bg, zoom, unzoom, drift, captions, toScreen,
+    set, coach, Q, KC, faceC, shotTo, camOf, lip,
     place: (vars) => { const { cam, ...p } = vars; Object.assign(P, p); if (cam) Object.assign(CAM, cam); }, // frame 0, before any K
     onFrame: (fn) => FRAME.push(fn), start,
   };

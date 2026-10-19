@@ -25,8 +25,6 @@ M.music_bed(drop=DROP, play=[
 
 # ---------------- SFX: only his sounds, each one carries a moment (no cute chimes, no tick under every word)
 M.riser_into(DROP)                       # his riser from frame 0, its climax + a BOOM on the drop
-for k in ("bleep2", "bleep3"):
-    place(sfx, thump(140), H(k) - 0.02, 0.6)
 for k, t in C.items():
     if k.startswith("boom"):             # build.py: "boom1": t(find("word")) on every "dinguerie"
         M.boom(t)

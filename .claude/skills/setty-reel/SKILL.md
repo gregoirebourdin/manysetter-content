@@ -1,6 +1,6 @@
 ---
 name: setty-reel
-description: Make a ManySetter reel starring Setty (9:16, 25–30 s, insolent, Charon voice) from an idea or a hook, with the studio kit in CONTENU/09_STUDIO_SETTY (studio.py). Use for any new Setty reel, a series variant (webinar, VSL, live…), edits to an existing one, or improving the shared kit.
+description: Make a ManySetter reel starring Setty (9:16, a dialogue between the coach and Setty in a 3D set, Fenrir + Charon voices) from an idea or a hook, with the studio kit in CONTENU/09_STUDIO_SETTY (studio.py). Use for any new Setty reel, a series variant (webinar, VSL, live…), edits to an existing one, or improving the shared kit.
 ---
 
 # /setty-reel: from an idea to the post folder
@@ -16,37 +16,33 @@ Talk to Grégoire in French, short. Two gates ✋; between them, work alone and 
 `python3 studio.py doctor`. If the Gemini key is missing, give Grégoire the one command from the doctor (he types it
 himself; never ask for the key, never type it).
 
-## 1. Script ✋
+## 1. Script ✋ (since 19/10: a dialogue in a set, CLAUDE.md § 2b)
 
-- `python3 studio.py new reelN <slug>` creates the reel (hook + CTA already acted and sounded) and `writing/reelN_<slug>.md`.
-- Write the script with CLAUDE.md § 5: the signature hook naming his format (no "Hey [bleep]." opener since 19/10), 3–4 physical pain images in the
-  coaches' words, the dead-serious turn on black, "Plug me into Manychat." + 3 true facts, the bleeped roast, the CTA
-  (check § 2: "Comment SETTY" only if the keyword answers on the publishing account).
-- 85–90 words, ≤ 3 bleeps, facts from § 1 only. The table: line (EN) / sens (FR) / on screen / verbatim ids.
-- Show it to Grégoire. Wait for his go (or his edits): the go also authorises the paid voice for this script.
+- `python3 studio.py new reelN <slug>` creates the reel from the dialogue template and `writing/reelN_<slug>.md`.
+- Write a **real conversation**: the coach (infopreneur) talks like a human, Setty answers, insolent; Setty opens with the
+  signature hook naming the coach's format; the product only comes up because the coach asks (his objections = the
+  verbatims), one true fact per answer (§ 1); Setty's last line is the CTA ("Comment SETTY" only if the keyword answers).
+- Pick a **new set** (never the same twice in a row: build it in `assets/sets/` from `kit.js`) and its mood.
+- Mark the sound in the table: 💥 BOOM on each "dinguerie", 😩 Fahhh after each roast, clic on each card, the music cut.
+- Table: who / line (EN) / sens (FR) / shot and screen / sound / verbatim ids. ≤ 3 bleeps.
+- Show it to Grégoire. Wait for his go: it also authorises the paid voices for this script.
 
-## 2. Voice
+## 2. Voices
 
-- Write `vo/reelN_segments.json` (one segment per line, each with a delivery direction).
-- `python3 studio.py voice reelN --yes`: 3 takes in parallel, Whisper, tight pauses, timing; it keeps the best take
-  (every word right, 25.5–29.5 s). If a key word is swallowed, give its pause room in `BEATS` (scripts/voice.py).
+- `vo/reelN_segments.json`: one segment per line with `"who"`, a delivery direction, `"pause": 0.95` after a roast.
+- `python3 studio.py voice reelN --yes --voices "coach=Fenrir,setty=Charon"`: takes per speaker, Whisper, tightened,
+  laid in order. The voices are fixed (Fenrir, Charon); cast again only if Grégoire asks (`coach=A|B|C`, then `--pick`).
 
 ## 3. Picture and sound
 
-- `reelN/build.py`: name the cues of the middle scenes (`find("word")`), tune the auto chunks (accent, hero,
-  display for numbers, hide when a prop says the word), set the third bleep.
-- Stage layout (Grégoire, 19/10, the default): a hook title fixed on top that says the subject in one sentence
-  (`kit.hookTitle`, key word in orange), the **stage** in the middle showing something real or explanatory, captions,
-  and **Setty small at the bottom**, hopping corner to corner (`beat.hop`), reacting, pointing at the stage.
-- `reelN/src/scenes.js`: for each line, what the stage shows (the coaches' real tools, named and with their logos:
-  Zoom, Instagram, WhatsApp, Messenger, Calendly…; their jargon: discovery call, no-show, replay, payment plan…), and
-  Setty's face and move. **Each reel gets its own stage visuals**: never replay another reel's sequence. Modules first
-  from `PROPS.md` (`st.*`); a missing one goes into `stage.js` (and the catalogue), never inside the reel.
-  Never the Manychat logo (write "Manychat"), no competitor (AI setter tools) named.
-- `reelN/audio.py`: the beat sections (stop on the comedic beats, drone under the turn), one SFX per motion (PROPS.md
-  gives each prop's sound), never on a word onset.
-- `python3 studio.py go reelN`, read the contact sheets, fix, repeat. Check: framing, captions readable and in the
-  safe zone, nothing under the IG buttons, every scene lands on its word, Whisper understands every word of the mix.
+- `reelN/build.py`: name the cues (drop, boomN, fahhhN, clicN, the CTA), accents, hero words, display for numbers.
+- `reelN/src/scenes.js`: `D.line(k, speakerFace, listenerFace, framing)` for every line (the camera on whoever talks),
+  `D.reaction(t, face)` for each Fahhh, `D.side()` + a real-tool card (`st.*`, the coaches' tools with their logos) with
+  `CARD_L / CARD_R`, `D.punch(t)` on each BOOM. Faces: `face()` for Setty, `faceC()` for the coach (CLAUDE.md lists them).
+- `reelN/audio.py`: his music (`M.music_bed`, cut on the comedic beat with `M.tape_stop`), `M.riser_into(drop)`, the BOOMs,
+  Fahhh and clicks from the cues. Nothing else.
+- `python3 studio.py go reelN`, read the contact sheets, fix, repeat: faces above the captions, cards never on a face,
+  nothing under the IG buttons, Whisper understands every word of the mix.
 
 ## 4. Render ✋
 

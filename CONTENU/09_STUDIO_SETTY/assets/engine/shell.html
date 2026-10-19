@@ -47,9 +47,13 @@
       import { createReel } from "./assets/engine/engine.js";
       import * as kit from "./assets/engine/props.js";
       import * as st from "./assets/engine/stage.js";
+      import { dialogue } from "./assets/engine/dialogue.js";
 
       const R = await createReel(window.DATA);
       const { C, K, face, shake, beat, flash, bg, zoom, unzoom, drift, tl, CAMS, SPOT } = R;
+      const { KC, faceC, shotTo } = R; // layout "set": the coach's acting and the shot / reverse-shot camera
+      const LINES = R.DATA.lines || []; // dialogue reels: { id, who, t, end } per line
+      const D = R.DATA.layout === "set" ? dialogue(R) : null; // line(), reaction(), side(), punch() (assets/engine/dialogue.js)
       const { HOOK, MID, TOP, END, STAGE } = CAMS;
       const T = (i) => R.DATA.words[i].t, E = (i) => R.DATA.words[i].end; // start / end of word i
 
