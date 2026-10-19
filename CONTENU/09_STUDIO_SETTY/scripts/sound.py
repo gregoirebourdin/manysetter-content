@@ -59,24 +59,35 @@ def riser(dur):
     return noise_swell(dur, 300, 6000, up=True)
 
 
-def crash(dur=1.6):
-    """Cymbal-ish crash: bright noise with a long decay (the drop)."""
-    t = t_(dur)
-    return hp(rng.standard_normal(len(t)), 4000) * np.exp(-t * 3.2) * 0.6  # noqa: F405
+# ---------------------------------------------------------------- the founder's sounds (assets/sounds, 19/10)
+
+SOUNDS = STUDIO / "assets/sounds"
+# where each sound "hits" (s into the file): its transient, its climax or its first syllable
+HIT = {"boom": 0.0, "clic": 0.29, "riser": 7.03, "fahhh": 0.17}
+_CACHE = {}
 
 
-def hook_riser(dur=1.6):
-    """The hook riser (Grégoire, 19/10): noise swell + a rising tone that speeds up, ending at full energy."""
-    t = t_(dur)
-    u = t / dur
-    f = 180 * (1400 / 180) ** (u ** 1.6)
-    tone = np.sin(2 * np.pi * np.cumsum(f) / SR) * (0.5 + 0.5 * np.sin(2 * np.pi * np.cumsum(4 + 26 * u ** 2) / SR))
-    return noise_swell(dur, 250, 9000, up=True) * 0.8 + tone * u ** 2.2 * 0.35
+def sample(name):
+    """One of Grégoire's sounds (assets/sounds/<name>.mp3), stereo float at SR."""
+    if name not in _CACHE:
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(SOUNDS / f"{name}.mp3"), "-f", "f32le", "-ac", "2",
+                              "-ar", str(SR), "-"], capture_output=True, check=True).stdout
+        _CACHE[name] = np.frombuffer(raw, dtype=np.float32).reshape(-1, 2).astype(np.float64)
+    return _CACHE[name]
 
 
-def boom(f=42):
-    """Deep low-passed boom for a punch-in on a key word: below the voice, so it never masks a consonant."""
-    return lp(sub_hit(f, 1.0), 160) * 1.3  # noqa: F405
+def cut_sample(name, start=0.0, length=None, fade_in=0.004, fade_out=0.25):
+    """A slice of a sound, with short fades so it never clicks."""
+    x = sample(name)
+    a = max(0, int(start * SR))
+    b = len(x) if length is None else min(len(x), a + int(length * SR))
+    y = x[a:b].copy()
+    fi, fo = int(fade_in * SR), int(min(fade_out, len(y) / SR / 2) * SR)
+    if fi:
+        y[:fi] *= np.linspace(0, 1, fi)[:, None]
+    if fo:
+        y[-fo:] *= np.linspace(1, 0, fo)[:, None]
+    return y
 
 
 def pop():
@@ -227,36 +238,48 @@ class Mix:
             place(self.sfx, beep(880, 0.09), voice_t - 0.05 + span * (x + 35) / 1000, 0.2)
         place(self.sfx, beep(880, 0.55), dead_t, 0.22)
 
-    # ---- patterns that make a reel pop (Grégoire, 19/10: a riser on the hook, no cute chimes)
-    def riser_into(self, hit, dur=1.6, gain=0.55):
-        """A riser that ends exactly on `hit` (from 0 if the hook starts at once), then the drop."""
-        d = min(dur, hit)
-        place(self.sfx, hook_riser(d), hit - d, gain)
-        self.drop(hit)
+    # ---- Grégoire's patterns (19/10): his riser into the hook, his BOOM on every "dinguerie", "Fahhh" on every roast,
+    # his click when something pops on screen, his music under it all (no synthesized beat in new reels)
+    def riser_into(self, hit, gain=0.7, tail=1.0):
+        """His riser, cut so its climax lands exactly on `hit` (it starts at frame 0 when the hook is short), then a BOOM."""
+        lead = min(hit, HIT["riser"] - 0.2)
+        place(self.sfx, cut_sample("riser", HIT["riser"] - lead, lead + tail, fade_in=0.01, fade_out=0.4), hit - lead, gain)
+        self.boom(hit)
 
-    def drop(self, t, gain=0.8):
-        """The drop: impact + sub boom + crash, where the beat comes in."""
-        place(self.sfx, impact(40), t, gain)  # noqa: F405
-        place(self.sfx, boom(36), t, gain * 0.8)
-        place(self.sfx, crash(1.6), t, gain * 0.35)
+    def boom(self, t, gain=0.85, length=3.2):
+        """His BOOM (sub, below the voice) on the word that lands."""
+        place(self.sfx, cut_sample("boom", 0, length, fade_out=1.2), t - HIT["boom"], gain)
+
+    def fahhh(self, t, gain=0.8):
+        """'Fahhh' once a roast has landed: give the line a pause in vo/<reel>_segments.json so it never covers a word."""
+        place(self.sfx, cut_sample("fahhh", 0, 1.6, fade_out=0.4), t - HIT["fahhh"], gain)
+
+    def clic(self, t, gain=0.9):
+        """His click on something that pops on screen (a card, the inbox, a typed letter)."""
+        place(self.sfx, cut_sample("clic", 0.2, 0.5, fade_out=0.15), t - (HIT["clic"] - 0.2), gain)
+
+    def music_bed(self, name="music_01", drop=0.0, src_drop=136.2, play=None, gain=1.0):
+        """His music: the track's own drop (src_drop, s) lands on `drop`; silent before it (the riser alone).
+        play: [(t0, t1)] where it plays (it keeps its own time, like a mute), default from drop to the end."""
+        x = sample(name)
+        for t0, t1 in play or [(drop, self.TOTAL + 0.5)]:
+            a = src_drop + (t0 - drop)
+            seg = cut_sample(name, a, t1 - t0, fade_in=0.03, fade_out=0.08)
+            place(self.music, seg, t0, gain)
+        self.music_peak = np.abs(x).max()
 
     def suck(self, t, dur=0.45, gain=0.4):
         """Reverse swell ending at t (before a punchline or a hard cut)."""
         place(self.sfx, noise_swell(dur, 6000, 400, up=True), t - dur, gain)
 
-    def cut(self, t, gain=0.3, pan=0.0):
-        """A short whoosh for a camera cut (shot / reverse shot), centred 0.12 s before the cut."""
-        place(self.sfx, whoosh(0.3, 900, 4200), t - 0.15, gain, pan=pan)  # noqa: F405
-
     def tape_stop(self, t, dur=0.5):
-        """The beat dies like a tape stop at t (needs the beat to run until t)."""
+        """The music dies like a tape stop at t: put it at the end of a music_bed play section (t1 - dur)."""
         i, n = int(t * SR), int(dur * SR)
         seg = self.music[i : i + int(dur * 2.2 * SR)].copy()
         if len(seg) < 4:
             return
         stopped = tape_stop(seg, dur) * np.linspace(1, 0, n)[:, None] ** 0.5  # noqa: F405
         self.music[i : i + n] = stopped[: len(self.music) - i]
-        self.music[i + n :] = 0
 
     # ---- duck, mix, master
     def finish(self, music_gain=0.42, sfx_gain=0.5, duck_music=0.64, duck_sfx=0.3, tp_max=-1.0):

@@ -312,3 +312,23 @@ Format d'une règle :
 - Règle : **dès qu'une slide nomme un outil** (Claude, ChatGPT, Instagram, WhatsApp, Messenger, Calendly, Zoom…), son **logo officiel en 3D, énorme**, sort d'un coin de la slide et passe **derrière le texte**. Tracés officiels (données Simple Icons), jamais redessinés ; un logo par slide (deux au plus) ; jamais le logo de Manychat ni d'un concurrent (brief) ; la légende garde « Not affiliated with… ».
 - Retour : « Nan, utilise les vrais logos, pas une librairie chelou. » puis le logo Claude 3D (« voilà, comme ça, je l'ai eu sur IconScout »).
 - Règle : les logos 3D viennent de **fichiers fournis par le fondateur** (IconScout ou kit officiel de la marque), rangés dans `05_BANQUE_IMAGES/logos/` (hors Git, la licence est la sienne) ; Claude ne redessine aucun logo et n'en prend pas dans une bibliothèque. Un logo manquant se demande au fondateur avec son nom de fichier.
+- Retour : « Je déteste l'ombre que tu as mise derrière, mets un blur plutôt. »
+- Règle : **aucune ombre** sous les logos ni autour du texte. Là où le texte passe sur un logo, le logo est **flouté localement** (effet verre dépoli) pour que les lettres restent lisibles ; partout ailleurs il reste net.
+
+## 2026-10-19 · Les 7 carrousels restants de la ligne éditoriale
+- Retour : « Okay, fais-moi tous les carrousels maintenant. »
+- Règle : exception à la règle des lots de 3 (10/10), décidée par le fondateur : les 7 idées restantes de la banque (8, 2, 7, 4, 9, 5, 10) sont fabriquées d'un coup, dans l'ordre de publication de `ligne-edito.md`. La validation reste **post par post** avant toute programmation, et les reels de Setty restent un par un (script validé, puis voix payante).
+- Règle : l'alternance des couvertures continue après le lot 1 (blanc, noir, blanc) : Calendly noir, challenge blanc, Comment GUIDE noir, DM funnel blanc, ChatGPT ou Claude noir, gros coachs blanc, script noir.
+- Règle : sur une slide à logo, aucun petit texte gris ne passe sur le logo (illisible même flouté) : la ligne d'accroche de la couverture se place alors au-dessus du titre.
+
+## 2026-10-19 · Coach et décor « chambre-bureau » (1re planche)
+- Retour : « Okay j'aime bien. Juste dehors, mets-moi genre une tour à Dubaï en pleine journée, golden hour. »
+- Règle : le coach (`assets/coach/coach.js`) et la chambre-bureau sont **validés dans leur style**. Par la fenêtre, on voit **Dubaï à la golden hour** (une très haute tour en flèche, soleil bas, ciel doré) ; la pièce prend la **lumière de fin de journée** (soleil chaud qui entre par la fenêtre, contre-jour doré sur les personnages), au lieu de la nuit.
+- Règle : un décor peut avoir plusieurs **ambiances** (nuit, golden hour…) avec les mêmes meubles ; la vue par la fenêtre fait partie du décor et se choisit avec lui.
+
+## 2026-10-19 · Sons fournis par le fondateur, personnages à polir
+- Retour : « Je déteste le riser, je vais t'en donner un autre avec d'autres SFX. Je veux que tu mettes un BOOM à chaque fois que l'un d'entre eux dit une dinguerie. Je t'ai mis une autre musique de fond. » (fichiers : `RISER.mp3`, `BOOM audio.mp3`, `CLIC.mp3`, `Musique (1).mp3`)
+- Retour : « Et quand il y en a un qui roast l'autre, je veux que tu mettes ce SFX. » (`Fahhh Sound Effect.mp3`)
+- Règle : les reels de Setty utilisent **les sons du fondateur** (`09_STUDIO_SETTY/assets/sounds/`) : son **riser** au tout début (jamais un riser synthétisé), son **BOOM** sur chaque **dinguerie** (la phrase qui choque ou qui fait rire, marquée dans le script), le **« Fahhh »** à chaque **roast** d'un personnage sur l'autre, le **clic** sur les apparitions d'écran, et **sa musique** en fond (plus de beat synthétisé). Le script marque chaque BOOM et chaque Fahhh avant la voix.
+- Retour : « Je veux que tu retravailles à fond les persos 3D, je ne veux pas un seul bug : par exemple son collier est moche. Si tu veux, tu peux même faire encore plus d'expressions faciales. »
+- Règle : avant de montrer un personnage, on le passe **au crible** (de face, de trois quarts, de profil, de dos, assis, en gros plan) : aucune pièce qui flotte ou qui traverse le corps, aucune jointure visible, aucun accessoire raté (la chaîne est refaite pour suivre le cou et tomber sur le torse). Chaque personnage a une **large palette d'expressions** franches.

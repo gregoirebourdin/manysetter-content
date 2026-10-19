@@ -64,14 +64,17 @@ sens / shot and screen / verbatims.
 **The coach** (`assets/coach/coach.js`, same toy-like 3D language as Setty, all code): ribbed white tank top, black beanie
 with a leather patch, three-day stubble, gold chain, charcoal joggers, white sneakers; he can sit (`sit: 1`) and hold his
 phone (`phone: 1`). Presets: `neutral, hyped, smug, stressed (sweat drop), defeated, confused, shocked, laughing,
-annoyed, skeptical`. Fields: `x y z turn scale squash bend lean twist nod headTurn headTilt lookX lookY pupil lidL/R
+annoyed, skeptical, mocking (the roast, pointing), eyeRoll, panic, pleading, proud, deadpan, disgusted, thinking, sly,
+pointing`; Setty gained `deadpan, eyeRoll, mocking, sleepy, disgusted, panic, pleading, thinking, sly`. Fields: `x y z turn scale squash bend lean twist nod headTurn headTilt lookX lookY pupil lidL/R
 lowL/R happyL/R browLy/Ry browLa/Ra (inner end up = worried) curve smirk mouthW mouthOpen mouthRound teeth talk (lip-sync)
-censor armLr/Rr armLf/Rf elbowL/R wristL/R sit spread sweat phone`. Sheet: `lab/coach` (snapshot it to look).
+censor armLr/Rr armLf/Rf elbowL/R wristL/R pointL/R sit spread sweat phone`. The gold chain is ~80 real links laid
+on the body by raycasting. Check every character in `lab/coach` and `lab/setty2` before showing it (Grégoire: « pas un seul bug »). Sheet: `lab/coach` (snapshot it to look).
 
 **Sets** (`assets/sets/`): every reel plays in a styled 3D set, **a different one each time** (Grégoire: « pas juste un fond
 uni »). `kit.js` holds the reusable furniture (room, wood slats, desk, monitor with a canvas screen, keyboard, mug, cans,
 ring light, mic arm, gaming chair, bed, nightstand, lamp, plant, shelf, neon sign, wall glow, night window, framed print,
-rug); a set file (`bedroom.js`, the first) places them, its lights, the characters' spots and the camera shots
+rug, window views `VIEWS.night / dubai`, sun patch, light shaft); a set file (`bedroom.js`, the first, moods `golden`
+(default: Dubai at golden hour) and `night`) places them, its lights, the characters' spots and the camera shots
 (`wide`, `coach`, `setty`, built with `shot(target, { dist, yaw, y })` so the speaker's face sits above the captions).
 **Shot / reverse shot: the camera goes to whoever talks**, the other reacts. Look test: `lab/set` (wide + two close-ups).
 
@@ -193,10 +196,12 @@ Picture
 - No `../` in asset paths (HyperFrames' lint refuses it): fonts are declared in `shell.html` with `assets/...`.
 
 Sound
-- **Every sound carries a moment** (Grégoire, 19 Oct): a riser from frame 0 into the drop right after the hook line
-  (`M.riser_into(t)`), a short whoosh on each shot change (`M.cut(t)`), a low `boom()` on a punch-in, `M.suck(t)` before a
-  punchline, `M.tape_stop(t)` when the beat dies on a comedic beat. No cute chimes in bursts (pings, sparkles, pops at the
-  end), no tick under every word: he called them « débiles ».
+- **Grégoire's own sounds** (`assets/sounds/`, 19 Oct; he hated a synthesized riser): `M.riser_into(t)` = his riser,
+  cut so its climax lands on the end of the hook line, then his BOOM and the drop of his music (`M.music_bed(drop=t,
+  play=[…])`, the track's drop at 136.2 s); `M.boom(t)` on every "dinguerie" (cues `boomN` in build.py); `M.fahhh(t)`
+  right after every roast (cues `fahhhN`; give that line a `"pause"` of ~0.9 s in the segments so it never covers a
+  word); `M.clic(t)` when a screen pops (cues `clicN`). No synthesized beat in new reels (the trap stays for reel1), no
+  cute chimes in bursts, no tick under every word. The music's licence goes in post.json.
 - Never put an SFX on a word onset: it eats the consonant ("by hand" → "buy ham"). Word ticks 0.07 s before the
   word; message blips 0.1–0.3 s before; taps after the word ends. Type the CTA keyword once it is said: reel1 typed
   under "SETTY" and Whisper heard "setting".

@@ -443,10 +443,10 @@ export function wallGlow({ w = 4, h = 2.5, color = "#8b5cff", strength = 0.8 } =
   return new THREE.Mesh(new THREE.PlaneGeometry(w, h), glow(0xffffff, { map: tex, transparent: true, opacity: strength, blending: THREE.AdditiveBlending, depthWrite: false }));
 }
 
-/** a window on the night city, with half-open blinds */
-export function nightWindow({ w = 2.6, h = 2.4, seed = 41 } = {}) {
-  const R = rng(seed);
-  const tex = canvasTex(768, 704, (c, W, H) => {
+// ---------------- window views (canvas painters: (ctx, W, H, rnd)) ----------------
+export const VIEWS = {
+  /** a city at night: lit windows, a moon */
+  night(c, W, H, R) {
     const sky = c.createLinearGradient(0, 0, 0, H);
     sky.addColorStop(0, "#0b1030");
     sky.addColorStop(0.65, "#3a2a6a");
@@ -468,28 +468,187 @@ export function nightWindow({ w = 2.6, h = 2.4, seed = 41 } = {}) {
         x += bw + 6;
       }
     }
-  });
+  },
+  /** Dubai at golden hour: a supertall stepped tower with a spire, the sun low behind the skyline, warm haze */
+  dubai(c, W, H, R) {
+    const sky = c.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0, "#86aed0");
+    sky.addColorStop(0.36, "#e8cba6");
+    sky.addColorStop(0.68, "#ffae63");
+    sky.addColorStop(1, "#ffd193");
+    c.fillStyle = sky;
+    c.fillRect(0, 0, W, H);
+    const sx = W * 0.7, sy = H * 0.64;
+    const halo = c.createRadialGradient(sx, sy, 0, sx, sy, W * 0.6);
+    halo.addColorStop(0, "rgba(255, 246, 215, 1)");
+    halo.addColorStop(0.07, "rgba(255, 228, 165, 0.95)");
+    halo.addColorStop(0.32, "rgba(255, 172, 92, 0.35)");
+    halo.addColorStop(1, "rgba(255, 150, 80, 0)");
+    c.fillStyle = halo;
+    c.fillRect(0, 0, W, H);
+    c.fillStyle = "#fff7df";
+    c.beginPath();
+    c.arc(sx, sy, W * 0.045, 0, Math.PI * 2);
+    c.fill();
+    // long thin clouds lit from below
+    for (let i = 0; i < 6; i++) {
+      c.fillStyle = `rgba(255, 226, 190, ${0.18 + R() * 0.2})`;
+      c.beginPath();
+      c.ellipse(R() * W, H * (0.08 + R() * 0.35), W * (0.12 + R() * 0.2), 6 + R() * 8, 0, 0, Math.PI * 2);
+      c.fill();
+    }
+    const tower = (x, w, h, base, { shade = "#7d5c6c", lit = "#ffc27c", top = "flat" } = {}) => {
+      const g = c.createLinearGradient(x - w / 2, 0, x + w / 2, 0);
+      g.addColorStop(0, shade);
+      g.addColorStop(0.62, shade);
+      g.addColorStop(1, lit);
+      c.fillStyle = g;
+      c.beginPath();
+      if (top === "sail") {
+        c.moveTo(x - w / 2, base);
+        c.lineTo(x - w / 2, base - h);
+        c.quadraticCurveTo(x + w * 0.9, base - h * 0.55, x + w / 2, base);
+      } else if (top === "slant") {
+        c.moveTo(x - w / 2, base);
+        c.lineTo(x - w / 2, base - h);
+        c.lineTo(x + w / 2, base - h * 0.86);
+        c.lineTo(x + w / 2, base);
+      } else if (top === "peak") {
+        c.moveTo(x - w / 2, base);
+        c.lineTo(x - w / 2, base - h * 0.85);
+        c.lineTo(x, base - h);
+        c.lineTo(x + w / 2, base - h * 0.85);
+        c.lineTo(x + w / 2, base);
+      } else c.rect(x - w / 2, base - h, w, h);
+      c.fill();
+    };
+    // far, hazy skyline
+    let x = -10;
+    while (x < W) {
+      const bw = 26 + R() * 50, bh = H * (0.06 + R() * 0.12);
+      c.fillStyle = "rgba(205, 140, 128, 0.6)";
+      c.fillRect(x, H * 0.86 - bh, bw, bh + H);
+      x += bw + 4;
+    }
+    // the skyline around the hero tower
+    const B = H * 0.97;
+    tower(W * 0.07, 70, H * 0.46, B, { top: "slant" });
+    tower(W * 0.17, 54, H * 0.34, B);
+    tower(W * 0.56, 62, H * 0.47, B, { top: "peak" });
+    tower(W * 0.63, 48, H * 0.4, B, { top: "peak" });
+    tower(W * 0.83, 78, H * 0.44, B, { top: "sail" });
+    tower(W * 0.94, 46, H * 0.3, B);
+    // the supertall: stepped tiers that narrow, then the spire
+    const X = W * 0.34, tiers = [118, 100, 86, 72, 60, 48, 38, 28, 20, 13];
+    let y = B;
+    const th = (H * 0.72) / tiers.length;
+    tiers.forEach((w, i) => {
+      const off = (i % 2 ? 1 : -1) * w * 0.08;
+      tower(X + off, w, th + 2, y, { shade: "#6f5266", lit: "#ffc983" });
+      c.fillStyle = "rgba(255, 220, 170, 0.18)";
+      for (let k = 6; k < th; k += 9) c.fillRect(X + off - w / 2, y - k, w, 1.5);
+      y -= th;
+    });
+    c.fillStyle = "#6f5266";
+    c.beginPath();
+    c.moveTo(X - 6, y + 2);
+    c.lineTo(X, H * 0.035);
+    c.lineTo(X + 6, y + 2);
+    c.fill();
+    c.fillStyle = "#ffd59a";
+    c.fillRect(X + 1, H * 0.06, 2, y - H * 0.06);
+    // warm haze on the ground, a few birds
+    const haze = c.createLinearGradient(0, H * 0.7, 0, H);
+    haze.addColorStop(0, "rgba(255, 200, 140, 0)");
+    haze.addColorStop(1, "rgba(255, 210, 160, 0.8)");
+    c.fillStyle = haze;
+    c.fillRect(0, H * 0.7, W, H * 0.3);
+    c.strokeStyle = "rgba(70, 50, 60, 0.7)";
+    c.lineWidth = 2.5;
+    for (const [bx, by, s] of [[0.52, 0.22, 9], [0.56, 0.2, 7], [0.6, 0.24, 8]]) {
+      c.beginPath();
+      c.moveTo(W * bx - s, H * by - s * 0.5);
+      c.quadraticCurveTo(W * bx - s * 0.4, H * by - s * 0.8, W * bx, H * by);
+      c.quadraticCurveTo(W * bx + s * 0.4, H * by - s * 0.8, W * bx + s, H * by - s * 0.5);
+      c.stroke();
+    }
+  },
+};
+
+/** a window on a view (VIEWS.night, VIEWS.dubai or a painter), blinds half down or rolled up (blinds: 0) */
+export function cityWindow({ w = 2.6, h = 2.4, view = "night", blinds = 9, mullion = true, bright = 0.85, seed = 41 } = {}) {
+  const R = rng(seed);
+  const paint = typeof view === "function" ? view : VIEWS[view];
+  const tex = canvasTex(1024, Math.round((1024 * h) / w), (c, W, H) => paint(c, W, H, R));
   const g = new THREE.Group();
-  const view = new THREE.Mesh(new THREE.PlaneGeometry(w, h), glow(0xffffff, { map: tex }));
-  view.material.color.setScalar(0.85);
+  const v = new THREE.Mesh(new THREE.PlaneGeometry(w, h), glow(0xffffff, { map: tex }));
+  v.material.color.setScalar(bright);
   const fm = mat(0x16161a, { roughness: 0.4 });
   const t = 0.1;
-  for (const [x, y, bw, bh] of [[0, h / 2, w + 2 * t, t], [0, -h / 2, w + 2 * t, t], [-w / 2, 0, t, h], [w / 2, 0, t, h], [0, 0, 0.05, h]]) {
+  const bars = [[0, h / 2, w + 2 * t, t], [0, -h / 2, w + 2 * t, t], [-w / 2, 0, t, h], [w / 2, 0, t, h]];
+  if (mullion) bars.push([0, 0, 0.05, h]);
+  for (const [x, y, bw, bh] of bars) {
     const b = box(bw, bh, 0.12, 0.01, fm);
     b.position.set(x, y, 0.04);
     g.add(b);
   }
   const sill = box(w + 0.4, 0.08, 0.35, 0.02, mat(0xf0ece6, { roughness: 0.5 }));
   sill.position.set(0, -h / 2 - 0.08, 0.15);
-  g.add(view, sill);
+  g.add(v, sill);
   const bl = mat(0xe9e4dc, { roughness: 0.7 });
-  for (let i = 0; i < 9; i++) {
-    const s = box(w, 0.07, 0.02, 0.005, bl, false);
-    s.position.set(0, h / 2 - 0.1 - i * 0.12, 0.12);
-    s.rotation.x = 0.9;
-    g.add(s);
+  if (blinds) {
+    for (let i = 0; i < blinds; i++) {
+      const s = box(w, 0.07, 0.02, 0.005, bl, false);
+      s.position.set(0, h / 2 - 0.1 - i * 0.12, 0.12);
+      s.rotation.x = 0.9;
+      g.add(s);
+    }
+  } else {
+    const roll = cyl(0.09, 0.09, w + 0.1, bl, 24);
+    roll.rotation.z = Math.PI / 2;
+    roll.position.set(0, h / 2 + 0.02, 0.16);
+    g.add(roll);
   }
+  g.userData.view = v;
   return g;
+}
+export const nightWindow = (o = {}) => cityWindow({ ...o, view: "night" });
+
+/** soft light shapes (additive): a sun patch on the floor, a shaft of light through the air */
+function softTex(kind) {
+  return canvasTex(256, 256, (c, W, H) => {
+    if (kind === "patch") {
+      const g = c.createRadialGradient(W / 2, H / 2, W * 0.1, W / 2, H / 2, W * 0.5);
+      g.addColorStop(0, "rgba(255,255,255,1)");
+      g.addColorStop(0.6, "rgba(255,255,255,0.7)");
+      g.addColorStop(1, "rgba(255,255,255,0)");
+      c.fillStyle = g;
+      c.fillRect(0, 0, W, H);
+    } else {
+      const v = c.createLinearGradient(0, 0, 0, H);
+      v.addColorStop(0, "rgba(255,255,255,1)");
+      v.addColorStop(1, "rgba(255,255,255,0)");
+      c.fillStyle = v;
+      c.fillRect(0, 0, W, H);
+      c.globalCompositeOperation = "destination-in";
+      const hgr = c.createLinearGradient(0, 0, W, 0);
+      hgr.addColorStop(0, "rgba(0,0,0,0)");
+      hgr.addColorStop(0.5, "rgba(0,0,0,1)");
+      hgr.addColorStop(1, "rgba(0,0,0,0)");
+      c.fillStyle = hgr;
+      c.fillRect(0, 0, W, H);
+    }
+  });
+}
+export function sunPatch({ w = 3, d = 2, color = 0xffb465, strength = 0.5 } = {}) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, d), glow(color, { map: softTex("patch"), transparent: true, opacity: strength,
+    blending: THREE.AdditiveBlending, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2;
+  return m;
+}
+export function lightShaft({ w = 2.4, h = 5.5, color = 0xffc27a, strength = 0.14 } = {}) {
+  return new THREE.Mesh(new THREE.PlaneGeometry(w, h), glow(color, { map: softTex("shaft"), transparent: true, opacity: strength,
+    blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
 }
 
 /** framed print (draw(ctx, w, h) paints the art) */

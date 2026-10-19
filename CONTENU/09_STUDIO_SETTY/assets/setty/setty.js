@@ -221,6 +221,21 @@ export const EXPRESSIONS = {
               curve: -0.6, mouthW: 0.75, blush: 0.3, armLr: 1.25, armRr: 1.25, armLf: 0.5, armRf: 0.5, lean: 0.06 },
   proud: { lidL: 0.3, lidR: 0.3, lowL: 0.4, lowR: 0.4, browLy: 0.08, browRy: 0.08, curve: 1.25, mouthW: 1.15, blush: 0.9,
            tilt: -0.12, armLr: 0.6, armRr: 0.6, armLf: -0.6, armRf: -0.6 },
+  // added 19/10 for the dialogues (the presets above are unchanged: reel1 stays identical)
+  deadpan: { lidL: 0.56, lidR: 0.56, curve: 0, mouthW: 0.7, blush: 0.15, browLy: -0.03, browRy: -0.03 },
+  eyeRoll: { lidL: 0.46, lidR: 0.46, lookY: 0.95, lookX: 0.2, curve: -0.1, smirk: -0.4, mouthW: 0.7, browLy: 0.07, browRy: 0.07,
+             blush: 0.2, lean: 0.05 },
+  mocking: { happyL: 1, lidR: 0.35, mouthOpen: 0.7, teeth: 1, tongue: 0.6, curve: 1.2, smirk: 0.5, blush: 0.9, browLy: 0.1,
+             armRr: 1.4, armRf: 1.2, lean: -0.06, tilt: -0.05 },
+  sleepy: { lidL: 0.58, lidR: 0.62, lowL: 0.12, lowR: 0.12, lookY: -0.35, curve: 0.3, mouthW: 0.6, blush: 0.5, browLy: -0.03, browRy: -0.03 },
+  disgusted: { lidL: 0.4, lidR: 0.2, browLr: -0.25, browRr: 0.05, browLy: -0.03, curve: -0.8, smirk: -0.8, mouthW: 0.8, blush: 0.1,
+               lean: 0.08 },
+  panic: { lidL: 0, lidR: 0, pupil: 0.55, browLy: 0.22, browRy: 0.22, browLr: 0.3, browRr: 0.3, mouthOpen: 0.8, teeth: 1, curve: -0.5,
+           alert: 1, dots: 0, armLr: 2.6, armRr: 2.6, blush: 0.1 },
+  pleading: { lidL: 0, lidR: 0, pupil: 1.15, browLr: 0.35, browRr: 0.35, browLy: 0.1, browRy: 0.1, curve: -0.2, mouthW: 0.6,
+              blush: 1, armLr: 0.6, armRr: 0.6, armLf: 0.8, armRf: 0.8 },
+  thinking: { lidL: 0.3, lidR: 0.3, lookY: 0.7, lookX: -0.6, curve: 0.1, smirk: 0.4, mouthW: 0.7, browRy: 0.1, tilt: -0.05 },
+  sly: { lidL: 0.5, lidR: 0.5, lookX: 0.8, curve: 0.9, smirk: 1, browLr: -0.1, browRr: -0.1, blush: 0.5 },
 };
 
 export function pose(name, extra = {}) {

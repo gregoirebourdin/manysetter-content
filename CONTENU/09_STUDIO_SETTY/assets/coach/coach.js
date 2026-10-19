@@ -189,6 +189,8 @@ export function basePose() {
     sit: 0, spread: 0.12,
     // props: sweat drop, phone in the right hand
     sweat: 0, phone: 0,
+    // a pointing index finger on the hand (0 = fist / mitten)
+    pointL: 0, pointR: 0,
   };
 }
 
@@ -212,10 +214,67 @@ export const EXPRESSIONS = {
              lookX: 0.6, smirk: -0.2 },
   skeptical: { lidL: 0.55, lidR: 0.18, browRy: 0.11, browLy: -0.04, browLa: -0.2, curve: 0.2, smirk: 0.6, headTilt: 0.1,
                nod: 0.05, armLr: 0.25, armLf: 0.75, elbowL: 2.1, armRr: 0.25, armRf: 0.75, elbowR: 2.1 },
+  // the roast: laughing at the other one and pointing at him
+  mocking: { happyL: 1, happyR: 0, lidR: 0.35, browLy: 0.08, browRy: 0.03, mouthOpen: 0.6, teeth: 1, curve: 1.1, smirk: 0.5,
+             mouthW: 1.15, headTilt: -0.1, nod: -0.08, armRr: 0.35, armRf: 1.45, elbowR: 0.15, pointR: 1 },
+  eyeRoll: { lidL: 0.42, lidR: 0.42, lookY: 1, lookX: 0.25, browLy: 0.05, browRy: 0.05, curve: -0.1, smirk: -0.4, mouthW: 0.75,
+             headTilt: 0.12, nod: -0.06 },
+  panic: { lidL: 0, lidR: 0, lowL: 0, lowR: 0, pupil: 0.6, browLy: 0.14, browRy: 0.14, browLa: 0.4, browRa: 0.4, mouthOpen: 0.7,
+           teeth: 1, curve: -0.6, mouthW: 1.2, sweat: 1, armLr: 2.2, armRr: 2.2, armLf: 0.4, armRf: 0.4, elbowL: 2.3, elbowR: 2.3 },
+  pleading: { lidL: 0, lidR: 0, pupil: 1.15, browLy: 0.06, browRy: 0.06, browLa: 0.5, browRa: 0.5, curve: -0.3, mouthW: 0.7,
+              headTilt: -0.12, armLr: 0.3, armRr: 0.3, armLf: 1.1, armRf: 1.1, elbowL: 1.2, elbowR: 1.2, wristL: 0.5, wristR: 0.5 },
+  proud: { lidL: 0.35, lidR: 0.35, curve: 1.1, smirk: 0.3, mouthW: 1.1, nod: -0.14, bend: -0.1, browLy: 0.04, browRy: 0.04,
+           armLr: 0.5, armRr: 0.5, armLf: -0.2, armRf: -0.2, elbowL: 1.9, elbowR: 1.9 },
+  deadpan: { lidL: 0.55, lidR: 0.55, curve: 0, mouthW: 0.8, browLy: -0.02, browRy: -0.02, lookX: 0, lookY: 0 },
+  disgusted: { lidL: 0.45, lidR: 0.25, browLa: -0.3, browRa: -0.1, browLy: -0.05, curve: -0.7, smirk: -0.8, mouthW: 0.9,
+               headTilt: 0.15, nod: 0.06, bend: 0.06 },
+  thinking: { lidL: 0.3, lidR: 0.3, lookY: 0.6, lookX: -0.5, browRy: 0.08, browLa: 0.1, curve: 0.1, smirk: 0.4, mouthW: 0.8,
+              headTilt: -0.08, nod: 0.05 },
+  sly: { lidL: 0.5, lidR: 0.5, lookX: 0.7, browLy: 0.05, browLa: -0.1, browRa: -0.1, curve: 0.9, smirk: 1, mouthW: 1.05, headTilt: 0.08 },
+  pointing: { browLy: 0.06, browRy: 0.06, curve: 0.8, mouthOpen: 0.3, teeth: 1, armRr: 0.3, armRf: 1.5, elbowR: 0.1, pointR: 1 },
 };
 
 export function pose(name, extra = {}) {
   return Object.assign(basePose(), EXPRESSIONS[name] || {}, extra);
+}
+
+function goldChain(bodyParts) {
+  const probes = bodyParts.map((m) => { const q = new THREE.Mesh(m.geometry); q.position.copy(m.position); q.updateMatrixWorld(true); return q; });
+  const rc = new THREE.Raycaster();
+  const C = new THREE.Vector3(0, 1.47, 0), pts = [], nrm = [];
+  const N = 72;
+  for (let i = 0; i < N; i++) {
+    const a = (i / N) * Math.PI * 2; // 0 = the front, the loop goes round the neck
+    const front = Math.max(0, Math.cos(a));
+    const d = new THREE.Vector3(Math.sin(a), 0.55 - 1.05 * Math.pow(front, 1.4), Math.cos(a) * 0.85).normalize();
+    rc.set(C.clone().addScaledVector(d, 3), d.clone().negate());
+    const hit = rc.intersectObjects(probes, false)[0];
+    if (!hit) continue;
+    const n = hit.face.normal.clone().transformDirection(hit.object.matrixWorld);
+    pts.push(hit.point.clone().addScaledVector(n, 0.024));
+    nrm.push(n);
+  }
+  const curve = new THREE.CatmullRomCurve3(pts, true, "centripetal");
+  const L = curve.getLength(), step = 0.03, count = Math.floor(L / step);
+  const link = new THREE.TorusGeometry(0.019, 0.0062, 6, 14);
+  link.scale(1.45, 1, 1);
+  const mesh = new THREE.InstancedMesh(link, phys(COLORS.gold, { metalness: 1, roughness: 0.22, clearcoat: 0.6 }), count);
+  const m = new THREE.Matrix4(), T = new THREE.Vector3(), B = new THREE.Vector3(), Nn = new THREE.Vector3();
+  for (let k = 0; k < count; k++) {
+    const u = k / count, P = curve.getPointAt(u);
+    T.copy(curve.getTangentAt(u));
+    // the body's normal there: the closest sampled one
+    let best = 0, bd = 1e9;
+    pts.forEach((q, j) => { const dd = q.distanceToSquared(P); if (dd < bd) { bd = dd; best = j; } });
+    Nn.copy(nrm[best]).addScaledVector(T, -nrm[best].dot(T)).normalize();
+    B.crossVectors(T, Nn);
+    // links alternate: flat on the body, then standing
+    if (k % 2) m.makeBasis(T, Nn, B); else m.makeBasis(T, B.clone().negate(), Nn); // right-handed bases
+    m.setPosition(P);
+    mesh.setMatrixAt(k, m);
+  }
+  mesh.castShadow = true;
+  return mesh;
 }
 
 export function createCoach() {
@@ -250,7 +309,8 @@ export function createCoach() {
     }), phys(0xffffff, { vertexColors: true, roughness: 0.55, clearcoat: 0.3 })));
     shoe.position.set(0, 0.04, 0.1);
     ankle.add(shoe);
-    knee.add(shin, cuff, ankle);
+    const kneeBall = shadowed(new THREE.Mesh(new THREE.SphereGeometry(0.235, 32, 24), jog));
+    knee.add(kneeBall, shin, cuff, ankle);
     hip.add(thigh, knee);
     body.add(hip);
     legs.push({ side, hip, knee, ankle });
@@ -287,21 +347,16 @@ export function createCoach() {
       const k = THREE.MathUtils.lerp(0.74, 1, smooth(-0.72, 0.35, y));
       const pec = z > 0 ? 0.075 * Math.exp(-(Math.pow(Math.abs(x) - 0.36, 2) / 0.05 + Math.pow(y - 0.26, 2) / 0.035)) : 0;
       const trap = y > 0.2 ? 0.2 * smooth(0.25, 0.95, Math.abs(x)) * smooth(0.2, 0.72, y) : 0;
-      return [x * k, y - trap, z + pec];
+      const cap = 0.06 * Math.exp(-(Math.pow(Math.abs(x) - 0.82, 2) / 0.02 + Math.pow(y - 0.38, 2) / 0.03));
+      return [x * k + Math.sign(x) * cap, y - trap, z + pec];
     },
   }), torsoMat));
   torso.position.y = 0.78;
   upper.add(torso);
-  // gold chain on the chest
-  const chain = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.022, 10, 80),
-    phys(COLORS.gold, { metalness: 1, roughness: 0.26, clearcoat: 0.5 }));
-  chain.position.set(0, 1.42, 0.12);
-  chain.rotation.x = 1.12;
-  chain.scale.set(1, 1.15, 1);
-  chain.castShadow = true;
-  upper.add(chain);
   const neck = shadowed(new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.3, 0.5, 40), skin));
   neck.position.set(0, 1.56, 0);
+  // gold chain: ~80 real links laid on the body (each ray from outside toward the neck base finds the surface)
+  upper.add(goldChain([torso, neck]));
   upper.add(neck);
 
   // ---------------- head ----------------
@@ -464,11 +519,12 @@ export function createCoach() {
   const arms = [];
   for (const side of [-1, 1]) {
     const shoulder = new THREE.Group();
-    shoulder.position.set(side * 0.88, 1.2, 0);
-    const delt = shadowed(new THREE.Mesh(new THREE.SphereGeometry(0.245, 40, 30), skin));
-    delt.scale.set(1, 0.95, 0.95);
-    delt.position.set(-side * 0.03, -0.08, 0);
-    const up = shadowed(new THREE.Mesh(limbGeo(0.6, [[0, 0.215], [0.4, 0.24], [0.75, 0.2], [1, 0.165]]), skin));
+    shoulder.position.set(side * 0.86, 1.15, 0);
+    const delt = shadowed(new THREE.Mesh(new THREE.SphereGeometry(0.25, 40, 30), skin));
+    delt.scale.set(1.0, 0.78, 0.96);
+    delt.position.set(-side * 0.09, -0.15, 0);
+    const up = shadowed(new THREE.Mesh(limbGeo(0.6, [[0, 0.225], [0.4, 0.242], [0.75, 0.2], [1, 0.17]]), skin));
+    const elbowBall = shadowed(new THREE.Mesh(new THREE.SphereGeometry(0.172, 32, 24), skin));
     up.position.y = -0.04;
     up.scale.set(1, 1, 1.06);
     const elbow = new THREE.Group();
@@ -481,11 +537,13 @@ export function createCoach() {
     const thumb = shadowed(new THREE.Mesh(new THREE.CapsuleGeometry(0.052, 0.11, 6, 16), skin));
     thumb.position.set(-side * 0.11, -0.09, 0.06);
     thumb.rotation.set(0.35, 0, side * 0.45);
-    wrist.add(hand, thumb);
-    elbow.add(fore, wrist);
+    const finger = shadowed(new THREE.Mesh(new THREE.CapsuleGeometry(0.045, 0.16, 6, 16), skin));
+    finger.position.set(-side * 0.02, -0.34, 0.02);
+    wrist.add(hand, thumb, finger);
+    elbow.add(elbowBall, fore, wrist);
     shoulder.add(delt, up, elbow);
     upper.add(shoulder);
-    arms.push({ side, shoulder, elbow, wrist });
+    arms.push({ side, shoulder, elbow, wrist, finger });
   }
   // phone in the right hand (viewer's right): screen faces him, back faces the camera when he reads it
   const phone = new THREE.Group();
@@ -530,6 +588,10 @@ export function createCoach() {
       a.shoulder.rotation.set(-f, 0, r * a.side, "YXZ");
       a.elbow.rotation.x = -(isL ? p.elbowL : p.elbowR);
       a.wrist.rotation.y = (isL ? p.wristL : p.wristR) * a.side;
+      const pt = isL ? p.pointL : p.pointR;
+      a.finger.visible = pt > 0.02;
+      a.finger.scale.set(1, Math.max(0.001, pt), 1);
+      a.finger.position.y = -0.2 - 0.14 * pt;
     }
     sweat.visible = p.sweat > 0.02;
     sweat.scale.setScalar(Math.max(0.001, p.sweat));

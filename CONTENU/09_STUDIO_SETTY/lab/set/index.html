@@ -49,14 +49,14 @@
       const camera = new THREE.PerspectiveCamera(40, W / H, 0.5, 80);
       const SHOTS = [
         { shot: "wide", c: cPose("hyped", { turn: 0.2 }), s: sPose("smug") },
-        { shot: "coach", c: cPose("hyped", { talk: 0.6, armRf: 0.9, elbowR: 1.4 }), s: sPose("unimpressed") },
-        { shot: "setty", c: cPose("confused"), s: sPose("sideEye", { lookX: -0.9 }) },
+        { shot: "coach", c: cPose("hyped", { talk: 0.6, armRf: 0.9, elbowR: 1.4 }), s: sPose("eyeRoll") },
+        { shot: "setty", c: cPose("confused"), s: sPose("deadpan", { lookX: -0.7 }) },
       ];
       function renderAt(t) {
         const k = Math.min(2, Math.floor(t));
         const S = SHOTS[k], sh = set.shots[S.shot];
         coach.apply(Object.assign({}, S.c, set.coach, { turn: set.coach.turn + (S.c.turn || 0) }));
-        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0) }));
+        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0), armLr: S.s.armLr > 1 ? S.s.armLr : set.setty.armLr }));
         camera.position.set(...sh.pos);
         camera.lookAt(...sh.at);
         camera.fov = sh.fov;

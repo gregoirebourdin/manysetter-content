@@ -27,7 +27,7 @@
   </head>
   <body>
     <div id="root" data-composition-id="coach" data-start="0" data-duration="1" data-fps="30" data-width="1920" data-height="1440">
-      <div class="head"><h1>The coach</h1><p><span class="dot"></span>Setty's sparring partner · infopreneur, tank top, beanie, three-day stubble · sheet v1</p></div>
+      <div class="head"><h1>The coach</h1><p><span class="dot"></span>Setty's sparring partner · infopreneur, tank top, beanie, three-day stubble · sheet v2</p></div>
       <div id="cells"></div>
       <canvas id="three-layer"></canvas>
     </div>
@@ -39,24 +39,23 @@
       const W = 1920, H = 1440;
       const FULL = { pos: [0, 2.5, 19], at: [0, 2.25, 0], fov: 17 };
       const BUST = { pos: [0, 3.75, 8.6], at: [0, 3.55, 0], fov: 17 };
+      const CHAIN = { pos: [0.6, 3.3, 5.2], at: [0, 2.85, 0], fov: 17 };
+      const E = (name, note, extra = {}) => ({ label: name[0].toUpperCase() + name.slice(1), note, p: pose(name, extra), cam: BUST });
       const CELLS = [
-        { label: "Front", note: "turnaround", p: pose("neutral"), cam: FULL },
-        { label: "Three-quarter", note: "turnaround", p: pose("neutral", { turn: 0.7 }), cam: FULL },
-        { label: "Side", note: "turnaround", p: pose("neutral", { turn: 1.5708 }), cam: FULL },
-        { label: "Back", note: "turnaround", p: pose("neutral", { turn: 3.1416 }), cam: FULL },
-        { label: "Seated", note: "at his desk", p: pose("neutral", { sit: 1, turn: 0.5, y: 0.0, phone: 1, armRf: 0.9, elbowR: 1.5 }), cam: FULL },
-        { label: "Hyped", note: "\"the chat was on fire\"", p: pose("hyped", { turn: 0.15 }), cam: BUST },
-        { label: "Smug", note: "", p: pose("smug", { turn: 0.2 }), cam: BUST },
-        { label: "Stressed", note: "63 DMs", p: pose("stressed", { turn: -0.1 }), cam: BUST },
-        { label: "Defeated", note: "\"they all vanished\"", p: pose("defeated", { turn: 0.1 }), cam: BUST },
-        { label: "Shocked", note: "", p: pose("shocked"), cam: BUST },
-        { label: "Confused", note: "", p: pose("confused", { turn: 0.15 }), cam: BUST },
-        { label: "Laughing", note: "", p: pose("laughing", { turn: -0.15 }), cam: BUST },
-        { label: "Annoyed", note: "", p: pose("annoyed", { turn: 0.2 }), cam: BUST },
-        { label: "Skeptical", note: "\"a bot? nah\"", p: pose("skeptical", { turn: 0.1 }), cam: BUST },
-        { label: "Talking", note: "lip-sync", p: pose("neutral", { talk: 0.7, turn: 0.25, armLf: 0.7, elbowL: 1.4 }), cam: BUST },
+        { label: "Front", note: "", p: pose("neutral"), cam: FULL },
+        { label: "Three-quarter", note: "", p: pose("neutral", { turn: 0.7 }), cam: FULL },
+        { label: "Side", note: "", p: pose("neutral", { turn: 1.5708 }), cam: FULL },
+        { label: "Back", note: "", p: pose("neutral", { turn: 3.1416 }), cam: FULL },
+        { label: "Seated", note: "at his desk", p: pose("neutral", { sit: 1, turn: 0.5, phone: 1, armRf: 0.9, elbowR: 1.5 }), cam: FULL },
+        { label: "Chain", note: "close-up", p: pose("neutral", { turn: 0.35 }), cam: CHAIN },
+        E("hyped", "the chat was on fire", { turn: 0.15 }), E("smug", "", { turn: 0.2 }), E("stressed", "63 DMs", { turn: -0.1 }),
+        E("defeated", "they all vanished", { turn: 0.1 }), E("shocked", ""), E("confused", "", { turn: 0.15 }),
+        E("laughing", "", { turn: -0.15 }), E("annoyed", "", { turn: 0.2 }), E("skeptical", "a bot? nah", { turn: 0.1 }),
+        E("mocking", "the roast", { turn: 0.25 }), E("eyeRoll", "", { turn: 0.1 }), E("panic", "", {}),
+        E("pleading", "", { turn: -0.1 }), E("proud", "", { turn: 0.15 }), E("deadpan", "", {}),
+        E("disgusted", "", { turn: 0.15 }), E("thinking", "", { turn: -0.2 }), E("pointing", "look who's asking", { turn: 0.3 }),
       ];
-      const COLS = 5, ROWS = 3, X0 = 48, Y0 = 130, GAP = 18;
+      const COLS = 6, ROWS = 4, X0 = 48, Y0 = 130, GAP = 18;
       const CW = (W - 2 * X0 - (COLS - 1) * GAP) / COLS, CH = (H - Y0 - 30 - (ROWS - 1) * GAP) / ROWS;
       const cellsEl = document.getElementById("cells");
       CELLS.forEach((c, i) => {

@@ -1,33 +1,36 @@
 # reel2, "The webinar" (v3, dialogue, for approval)
 
 Grégoire, 19/10: « une vraie conversation entre les deux », the infopreneur talks and Setty answers, in a set (the
-coach's bedroom-office at night: he is at his desk, Setty is in the bed next to him), the camera zooms on whoever talks.
-Two voices: Setty = Charon; the coach = to cast (3 voices tested on 2 lines). ~170 words, 2 bleeps, ~1 min.
-The product comes up because the coach asks, never as a pitch. Every product line is a true fact (CLAUDE.md § 1).
+coach's bedroom-office, Dubai at golden hour through the window: he is at his desk, Setty is in the bed next to him),
+the camera zooms on whoever talks. Two voices: Setty = Charon; the coach = to cast (3 voices tested on 2 lines).
+~170 words, 2 bleeps, ~1 min. The product comes up because the coach asks, never as a pitch.
+Sound (his files, assets/sounds): his riser from frame 0 → BOOM + his music on the drop; 💥 BOOM on each "dinguerie";
+😩 "Fahhh" right after each roast (that line gets a pause in the voice so it never covers a word); his click when a
+screen pops; the music cuts on line 18 (silence for the "how much?") and comes back after "SETTY".
 
-| # | Who | Line (EN) | Sens (FR) | Shot and screen | Verbatims |
-|---|---|---|---|---|---|
-| 1 | Setty | You did your [bleep]ing webinar, right? | T'as fait ton [bip] de webinaire, hein ? | Wide (frame 0): Setty in bed, the coach at his desk, WEBINAR ENDED on the monitor. Riser, then a punch-in on Setty | série |
-| 2 | Coach | Two hours live, bro. The chat was on fire. | Deux heures de live, frère. Le chat était en feu. | CU coach, hyped, hands out | (contexte webinaire) |
-| 3 | Setty | Cool. Now open your DMs. | Cool. Maintenant ouvre tes DM. | CU Setty, deadpan | brief |
-| 4 | Coach | Holy [bleep], why do I have sixty-three messages? | Putain, pourquoi j'ai soixante-trois messages ? | CU coach, phone up, stressed, sweat drop; the real Instagram inbox pops in: 63 | rd04, rd01 |
-| 5 | Setty | That's everyone who typed "how much" while you were talking. | C'est tous ceux qui ont tapé « combien » pendant que tu parlais. | CU Setty; "how much?" bubbles stack up | rd13, rd05 |
-| 6 | Coach | Okay, I'll answer them tonight. | Ok, je leur réponds ce soir. | CU coach, confident | brief § 4 |
-| 7 | Setty | Tonight you'll fall asleep in that chair with your shoes on. | Ce soir tu vas t'endormir sur cette chaise avec tes baskets. | CU Setty, side-eye toward the chair | blague |
-| 8 | Coach | Last time I replied two days late and they all vanished. | La dernière fois j'ai répondu deux jours après, ils ont tous disparu. | CU coach, defeated; a real chat: "Seen · 2 days ago" | rd19, rd47 |
-| 9 | Setty | Yeah, they went with whoever answered first. | Ouais, ils sont allés chez celui qui a répondu en premier. | CU Setty, unimpressed | rd06 |
-| 10 | Coach | So I hire a setter? The last one disappeared. | Donc j'embauche un setter ? Le dernier a disparu. | CU coach, annoyed | cl058, cl056 |
-| 11 | Setty | Or you plug me into Manychat. | Ou tu me branches sur Manychat. | Push-in on Setty, smug; the pipeline Instagram → Manychat → ManySetter → Calendly | brief |
-| 12 | Coach | Nah, my leads hate robotic replies. | Non, mes leads détestent les réponses de robot. | CU coach, skeptical | rd38, mc05, rd57 |
-| 13 | Setty | Same. I learn your offer, I talk like you, and I wait till they're done typing. | Moi aussi. J'apprends ton offre, je parle comme toi, et j'attends qu'ils aient fini d'écrire. | CU Setty; playbook card "learned from your sales page", then a lead typing… one short reply | brief, mc10, mc06 |
-| 14 | Coach | And the guys who want free consulting? | Et les mecs qui veulent du conseil gratuit ? | CU coach, eyebrow up | rd92 |
-| 15 | Setty | They get your free guide. Only the serious ones get your calendar. | Ils ont ton guide gratuit. Seuls les sérieux ont ton agenda. | CU Setty; the lead sorter: "free guide sent" vs "call offered" | brief, rd76, rd77 |
-| 16 | Coach | And when they say "I'll think about it"? | Et quand ils disent « je vais réfléchir » ? | CU coach | rd14 |
-| 17 | Setty | I follow up, three times max, and I never beg. | Je relance, trois fois max, et je supplie jamais. | CU Setty; follow-up timeline inside 24 h | brief, rd98, rd86 |
-| 18 | Coach | Okay… how much? | Ok… c'est combien ? | Wide, beat cut: silence | callback de la ligne 5 |
-| 19 | Setty | Look who's asking "how much" now. It's free to build, so comment SETTY and I'll slide into your DMs. | Regarde qui demande « combien » maintenant. C'est gratuit à construire, alors commente SETTY et je débarque dans tes DM. | CU Setty, wink; comment bar types SETTY; back to the wide (loops to frame 0) | série, brief § 3 |
+| # | Who | Line (EN) | Sens (FR) | Shot and screen | Sound | Verbatims |
+|---|---|---|---|---|---|---|
+| 1 | Setty | You did your [bleep]ing webinar, right? | T'as fait ton [bip] de webinaire, hein ? | Wide (frame 0): Setty in bed, the coach at his desk, WEBINAR ENDED on the monitor; punch-in on Setty | riser → 💥 + music drop on "right?" | série |
+| 2 | Coach | Two hours live, bro. The chat was on fire. | Deux heures de live, frère. Le chat était en feu. | CU coach, hyped, hands out | | (contexte webinaire) |
+| 3 | Setty | Cool. Now open your DMs. | Cool. Maintenant ouvre tes DM. | CU Setty, deadpan | | brief |
+| 4 | Coach | Holy [bleep], why do I have sixty-three messages? | Putain, pourquoi j'ai soixante-trois messages ? | CU coach, phone up, panic, sweat drop; the real Instagram inbox pops in: 63 | clic (inbox) · 💥 "sixty-three" | rd04, rd01 |
+| 5 | Setty | That's everyone who typed "how much" while you were talking. | C'est tous ceux qui ont tapé « combien » pendant que tu parlais. | CU Setty, eye roll; "how much?" bubbles stack up | clic | rd13, rd05 |
+| 6 | Coach | Okay, I'll answer them tonight. | Ok, je leur réponds ce soir. | CU coach, proud | | brief § 4 |
+| 7 | Setty | Tonight you'll fall asleep in that chair with your shoes on. | Ce soir tu vas t'endormir sur cette chaise avec tes baskets. | CU Setty, mocking; quick cut to the coach's sneakers | 😩 Fahhh | blague |
+| 8 | Coach | Last time I replied two days late and they all vanished. | La dernière fois j'ai répondu deux jours après, ils ont tous disparu. | CU coach, defeated; a real chat: "Seen · 2 days ago" | 💥 "vanished" | rd19, rd47 |
+| 9 | Setty | Yeah, they went with whoever answered first. | Ouais, ils sont allés chez celui qui a répondu en premier. | CU Setty, deadpan | 😩 Fahhh | rd06 |
+| 10 | Coach | So I hire a setter? The last one disappeared. | Donc j'embauche un setter ? Le dernier a disparu. | CU coach, annoyed | | cl058, cl056 |
+| 11 | Setty | Or you plug me into Manychat. | Ou tu me branches sur Manychat. | Push-in on Setty, sly; the pipeline Instagram → Manychat → ManySetter → Calendly | 💥 "Manychat" | brief |
+| 12 | Coach | Nah, my leads hate robotic replies. | Non, mes leads détestent les réponses de robot. | CU coach, skeptical | | rd38, mc05, rd57 |
+| 13 | Setty | Same. I learn your offer, I talk like you, and I wait till they're done typing. | Moi aussi. J'apprends ton offre, je parle comme toi, et j'attends qu'ils aient fini d'écrire. | CU Setty; playbook card "learned from your sales page", then a lead typing… one short reply | clic (card) | brief, mc10, mc06 |
+| 14 | Coach | And the guys who want free consulting? | Et les mecs qui veulent du conseil gratuit ? | CU coach, thinking | | rd92 |
+| 15 | Setty | They get your free guide. Only the serious ones get your calendar. | Ils ont ton guide gratuit. Seuls les sérieux ont ton agenda. | CU Setty; the lead sorter: "free guide sent" vs "call offered" | 💥 "calendar" | brief, rd76, rd77 |
+| 16 | Coach | And when they say "I'll think about it"? | Et quand ils disent « je vais réfléchir » ? | CU coach, pleading | | rd14 |
+| 17 | Setty | I follow up, three times max, and I never beg. | Je relance, trois fois max, et je supplie jamais. | CU Setty, smug; follow-up timeline inside 24 h | 😩 Fahhh | brief, rd98, rd86 |
+| 18 | Coach | Okay… how much? | Ok… c'est combien ? | Wide, the music cuts: silence | music cut | callback de la ligne 5 |
+| 19 | Setty | Look who's asking "how much" now. It's free to build, so comment SETTY and I'll slide into your DMs. | Regarde qui demande « combien » maintenant. C'est gratuit à construire, alors commente SETTY et je débarque dans tes DM. | CU Setty, mocking then wink; comment bar types SETTY; back to the wide (loops to frame 0) | 😩 Fahhh after "now" · clics on SETTY · music back | série, brief § 3 |
 
-Words: ~170 · Estimated length: ~53 s of voice + the gaps between speakers ≈ 1 min
+Words: ~170 · Estimated length: ~53 s of voice + the gaps and the 4 Fahhh pauses ≈ 1 min
 Hook title (all reel): "Your webinar is over. / Your *DMs* just started."
 Biases: pertinence pour soi (son format exact), écart de curiosité (les 63 messages), autodérision (le « how much » retourné).
 Funnel / segment / avatar: MOFU / S1 / AV1. Facts used: Manychat plug-in, learns the offer, brand voice, waits for the
