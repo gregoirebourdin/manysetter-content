@@ -514,13 +514,10 @@ export function rug({ r = 2.4, base = "#efe7da", ring = "#ff611d" } = {}) {
     c.beginPath();
     c.arc(W / 2, W / 2, W * 0.4, 0, Math.PI * 2);
     c.stroke();
-    c.strokeStyle = "rgba(0,0,0,0.05)";
-    c.lineWidth = 2;
-    for (let i = 0; i < 60; i++) { c.beginPath(); c.arc(W / 2, W / 2, (i / 60) * W / 2, 0, Math.PI * 2); c.stroke(); }
   });
-  const m = new THREE.Mesh(new THREE.CircleGeometry(r, 96), mat(0xffffff, { map: tex, roughness: 1, transparent: true, sheen: 1, sheenColor: new THREE.Color(0xffffff) }));
+  const m = new THREE.Mesh(new THREE.CircleGeometry(r, 96), mat(0xffffff, { map: tex, roughness: 1, alphaTest: 0.5, polygonOffset: true, polygonOffsetFactor: -4, polygonOffsetUnits: -4 }));
   m.rotation.x = -Math.PI / 2;
-  m.position.y = 0.012;
+  m.position.y = 0.03;
   m.receiveShadow = true;
   return m;
 }

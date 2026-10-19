@@ -53,6 +53,28 @@ in the first second. Grégoire's words: « faut que tu sois hard, hardcore, que 
 Series hooks: "You did your [bleep]ing webinar, right? Two hours. Twelve people stayed." · "You shot your [bleep]ing
 VSL, right? Forty takes. Your mom watched it." · "You went live. Again. For the [bleep]ing algorithm, right?"
 
+## 2b. The dialogue format (Grégoire, 19 Oct: every new reel)
+
+Every reel is now **a real conversation between the coach and Setty**, never a monologue that sounds like an ad: the
+coach (an infopreneur) talks like a human, Setty answers, insolent and funny. The product comes up because the coach
+asks (his objections are the verbatims), each answer is one true fact. Two voices: Setty = Charon, the coach = his own
+voice (cast once, then fixed). The signature hook stays Setty's first line. Script table in `writing/`: who / line /
+sens / shot and screen / verbatims.
+
+**The coach** (`assets/coach/coach.js`, same toy-like 3D language as Setty, all code): ribbed white tank top, black beanie
+with a leather patch, three-day stubble, gold chain, charcoal joggers, white sneakers; he can sit (`sit: 1`) and hold his
+phone (`phone: 1`). Presets: `neutral, hyped, smug, stressed (sweat drop), defeated, confused, shocked, laughing,
+annoyed, skeptical`. Fields: `x y z turn scale squash bend lean twist nod headTurn headTilt lookX lookY pupil lidL/R
+lowL/R happyL/R browLy/Ry browLa/Ra (inner end up = worried) curve smirk mouthW mouthOpen mouthRound teeth talk (lip-sync)
+censor armLr/Rr armLf/Rf elbowL/R wristL/R sit spread sweat phone`. Sheet: `lab/coach` (snapshot it to look).
+
+**Sets** (`assets/sets/`): every reel plays in a styled 3D set, **a different one each time** (Grégoire: « pas juste un fond
+uni »). `kit.js` holds the reusable furniture (room, wood slats, desk, monitor with a canvas screen, keyboard, mug, cans,
+ring light, mic arm, gaming chair, bed, nightstand, lamp, plant, shelf, neon sign, wall glow, night window, framed print,
+rug); a set file (`bedroom.js`, the first) places them, its lights, the characters' spots and the camera shots
+(`wide`, `coach`, `setty`, built with `shot(target, { dist, yaw, y })` so the speaker's face sits above the captions).
+**Shot / reverse shot: the camera goes to whoever talks**, the other reacts. Look test: `lab/set` (wide + two close-ups).
+
 ## 3. Setty, the character
 
 - A living DM bubble: puffy squircle, the logo gradient (#ffa066 → #e64b15), glossy, a tail at the bottom left
@@ -171,6 +193,10 @@ Picture
 - No `../` in asset paths (HyperFrames' lint refuses it): fonts are declared in `shell.html` with `assets/...`.
 
 Sound
+- **Every sound carries a moment** (Grégoire, 19 Oct): a riser from frame 0 into the drop right after the hook line
+  (`M.riser_into(t)`), a short whoosh on each shot change (`M.cut(t)`), a low `boom()` on a punch-in, `M.suck(t)` before a
+  punchline, `M.tape_stop(t)` when the beat dies on a comedic beat. No cute chimes in bursts (pings, sparkles, pops at the
+  end), no tick under every word: he called them « débiles ».
 - Never put an SFX on a word onset: it eats the consonant ("by hand" → "buy ham"). Word ticks 0.07 s before the
   word; message blips 0.1–0.3 s before; taps after the word ends. Type the CTA keyword once it is said: reel1 typed
   under "SETTY" and Whisper heard "setting".

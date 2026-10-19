@@ -59,6 +59,26 @@ def riser(dur):
     return noise_swell(dur, 300, 6000, up=True)
 
 
+def crash(dur=1.6):
+    """Cymbal-ish crash: bright noise with a long decay (the drop)."""
+    t = t_(dur)
+    return hp(rng.standard_normal(len(t)), 4000) * np.exp(-t * 3.2) * 0.6  # noqa: F405
+
+
+def hook_riser(dur=1.6):
+    """The hook riser (Grégoire, 19/10): noise swell + a rising tone that speeds up, ending at full energy."""
+    t = t_(dur)
+    u = t / dur
+    f = 180 * (1400 / 180) ** (u ** 1.6)
+    tone = np.sin(2 * np.pi * np.cumsum(f) / SR) * (0.5 + 0.5 * np.sin(2 * np.pi * np.cumsum(4 + 26 * u ** 2) / SR))
+    return noise_swell(dur, 250, 9000, up=True) * 0.8 + tone * u ** 2.2 * 0.35
+
+
+def boom(f=42):
+    """Deep low-passed boom for a punch-in on a key word: below the voice, so it never masks a consonant."""
+    return lp(sub_hit(f, 1.0), 160) * 1.3  # noqa: F405
+
+
 def pop():
     b, th = blip("recv"), thump(320)
     out = np.zeros(max(len(b), len(th)))
@@ -206,6 +226,37 @@ class Mix:
         for x in (120, 360, 600):
             place(self.sfx, beep(880, 0.09), voice_t - 0.05 + span * (x + 35) / 1000, 0.2)
         place(self.sfx, beep(880, 0.55), dead_t, 0.22)
+
+    # ---- patterns that make a reel pop (Grégoire, 19/10: a riser on the hook, no cute chimes)
+    def riser_into(self, hit, dur=1.6, gain=0.55):
+        """A riser that ends exactly on `hit` (from 0 if the hook starts at once), then the drop."""
+        d = min(dur, hit)
+        place(self.sfx, hook_riser(d), hit - d, gain)
+        self.drop(hit)
+
+    def drop(self, t, gain=0.8):
+        """The drop: impact + sub boom + crash, where the beat comes in."""
+        place(self.sfx, impact(40), t, gain)  # noqa: F405
+        place(self.sfx, boom(36), t, gain * 0.8)
+        place(self.sfx, crash(1.6), t, gain * 0.35)
+
+    def suck(self, t, dur=0.45, gain=0.4):
+        """Reverse swell ending at t (before a punchline or a hard cut)."""
+        place(self.sfx, noise_swell(dur, 6000, 400, up=True), t - dur, gain)
+
+    def cut(self, t, gain=0.3, pan=0.0):
+        """A short whoosh for a camera cut (shot / reverse shot), centred 0.12 s before the cut."""
+        place(self.sfx, whoosh(0.3, 900, 4200), t - 0.15, gain, pan=pan)  # noqa: F405
+
+    def tape_stop(self, t, dur=0.5):
+        """The beat dies like a tape stop at t (needs the beat to run until t)."""
+        i, n = int(t * SR), int(dur * SR)
+        seg = self.music[i : i + int(dur * 2.2 * SR)].copy()
+        if len(seg) < 4:
+            return
+        stopped = tape_stop(seg, dur) * np.linspace(1, 0, n)[:, None] ** 0.5  # noqa: F405
+        self.music[i : i + n] = stopped[: len(self.music) - i]
+        self.music[i + n :] = 0
 
     # ---- duck, mix, master
     def finish(self, music_gain=0.42, sfx_gain=0.5, duck_music=0.64, duck_sfx=0.3, tp_max=-1.0):
