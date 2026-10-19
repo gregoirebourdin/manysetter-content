@@ -2,6 +2,8 @@
 
 ## `carrousel.py` : les carrousels du feed (1080 × 1350), style éditorial
 
+- **Habillage (19/10/2026)** : `"style": "grid"` dans `post.json` ajoute le fond quadrillé et de petits éléments graphiques sans texte (étoiles, badges, anneaux qui débordent, bulle de DM, flèche, gribouillis), placés automatiquement là où il n'y a pas de texte, avec une ombre d'autocollant ; tirage stable par slide. Bloc `{"code": ..., "file": ...}` pour les carrousels tuto (fenêtre de code sombre). Sans `style`, une fiche sort comme avant.
+
 **C'est le gabarit des carrousels depuis le retour du fondateur du 10/10/2026** : copier la structure et le style du post de référence (instagram.com/p/Dcgl8i7CvDT), en gardant les couleurs ManySetter et le surlignage orange.
 
 ```bash

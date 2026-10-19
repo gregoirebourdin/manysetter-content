@@ -19,7 +19,11 @@ Blocs : {"title": txt, "size": 118} (couverture, centré) · {"heading": txt} (t
 · {"list": [élément, ...], "start": 1} (liste numérotée, chiffres en serif orange)
 · {"chat": [{"from": "lead" | "me", "text": ...}, ...]} (bulles : le lead en gris à gauche, la réponse en orange à droite)
 · {"photo": chemin, "handle": "@compte", "width": 560, "ratio": 1.1} (portrait arrondi ; cadre « photo à déposer » si le fichier manque)
-· {"versus": [{"photo": chemin, "handle": "@a"}, {"photo": chemin, "handle": "@b"}]} (deux visages et « vs »).
+· {"versus": [{"photo": chemin, "handle": "@a"}, {"photo": chemin, "handle": "@b"}]} (deux visages et « vs »)
+· {"code": "texte", "file": "nom.json"} (fenêtre de code sombre, pour les carrousels tuto).
+Fiche avec "style": "grid" (retour du 19/10/2026) : fond quadrillé et petits éléments graphiques sans texte
+(étoiles, anneaux, bulle de DM, flèche, gribouillis…) posés dans les marges et les zones vides, tirés au sort
+de façon stable pour chaque slide. Sans "style", la fiche sort comme avant (les carrousels déjà publiés ne bougent pas).
 Gros mot masqué : écrire \\* dans la fiche (« h\\*ll ») pour un astérisque visible.
 Les chemins d'images partent de la racine du dépôt.
 """
@@ -553,6 +557,189 @@ def numbered(items: list[str], c: dict, start: int = 1, size: int = 33) -> Image
     return out
 
 
+MONO = Path("/System/Library/Fonts/Menlo.ttc")
+
+
+def code_block(spec: dict, c: dict, k: float = 1.0) -> Image.Image:
+    """Bloc de code façon éditeur (carrousels tuto) : fenêtre sombre, 3 pastilles, nom du fichier,
+    texte à chasse fixe ; les chaînes entre guillemets en orange."""
+    f = font(MONO, int(min(24 * k, 34)))
+    lh = int(f.size * 1.5)
+    lines = spec["code"].split("\n")
+    pad, bar = 34, 64
+    w = CW
+    h = bar + pad + len(lines) * lh + pad
+    im = Image.new("RGBA", (W, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([MX, 0, MX + w, h], radius=28, fill="#17161a")
+    for i, col in enumerate(("#ff5f57", "#febc2e", "#28c840")):
+        d.ellipse([MX + 28 + i * 30, 24, MX + 46 + i * 30, 42], fill=col)
+    if spec.get("file"):
+        lf = font(SANS_M, 22)
+        d.text((MX + w / 2 - lf.getlength(spec["file"]) / 2, 20), spec["file"], font=lf, fill="#8f8c94")
+    y = bar + pad - 10
+    for line in lines:
+        x = MX + pad
+        for part in re.split(r'("[^"]*")', line):
+            if not part:
+                continue
+            col = "#ffa066" if part.startswith('"') else "#e8e6ea"
+            d.text((x, y), part, font=f, fill=col)
+            x += f.getlength(part)
+        y += lh
+    return im
+
+
+# --- Habillage (retour du fondateur du 19/10/2026) ---------------------------------------
+# Fond quadrillé et petits éléments graphiques sans texte, posés dans les marges et les zones vides.
+
+import math  # noqa: E402
+import random  # noqa: E402
+
+GRID = 60
+
+
+def _grid(img: Image.Image, c: dict) -> None:
+    d = ImageDraw.Draw(img)
+    col = "#ece9e5" if c["bg"] == WHITE else "#1f1e1c"
+    for x in range(0, W + 1, GRID):
+        d.line([(x, 0), (x, H)], fill=col, width=2)
+    for y in range(0, H + 1, GRID):
+        d.line([(0, y), (W, y)], fill=col, width=2)
+
+
+def _shape(kind: str, s: int, col: str, alt: str) -> Image.Image:
+    """Un élément graphique, dessiné en 2x puis réduit (bords lisses). s = taille finale en px."""
+    S = s * 2
+    im = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    cx = cy = S / 2
+    if kind == "sparkle":
+        pts = []
+        for i in range(8):
+            r = S / 2 if i % 2 == 0 else S * 0.14
+            a = math.pi / 4 * i - math.pi / 2
+            pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+        d.polygon(pts, fill=col)
+    elif kind == "burst":
+        pts = []
+        for i in range(24):
+            r = S / 2 if i % 2 == 0 else S * 0.36
+            a = math.pi / 12 * i
+            pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+        d.polygon(pts, fill=col)
+        d.ellipse([cx - S * 0.12, cy - S * 0.12, cx + S * 0.12, cy + S * 0.12], fill=alt)
+    elif kind == "plus":
+        t = S * 0.16
+        d.rounded_rectangle([cx - t, S * 0.08, cx + t, S * 0.92], radius=t, fill=col)
+        d.rounded_rectangle([S * 0.08, cy - t, S * 0.92, cy + t], radius=t, fill=col)
+    elif kind == "ring":
+        t = S * 0.11
+        d.ellipse([t, t, S - t, S - t], outline=col, width=int(t * 1.6))
+    elif kind == "dots":
+        r = S * 0.07
+        for i in range(3):
+            for j in range(3):
+                x, y = S * (0.2 + 0.3 * i), S * (0.2 + 0.3 * j)
+                d.ellipse([x - r, y - r, x + r, y + r], fill=col)
+    elif kind == "bubble":  # bulle de DM avec les trois points « en train d'écrire »
+        d.rounded_rectangle([S * 0.04, S * 0.2, S * 0.96, S * 0.74], radius=S * 0.22, fill=col)
+        d.polygon([(S * 0.18, S * 0.66), (S * 0.12, S * 0.9), (S * 0.38, S * 0.7)], fill=col)
+        for i in range(3):
+            x = S * (0.32 + 0.18 * i)
+            d.ellipse([x - S * 0.06, S * 0.41, x + S * 0.06, S * 0.53], fill=alt)
+    elif kind == "squiggle":
+        pts = [(S * 0.04 + S * 0.92 * i / 60, cy + S * 0.16 * math.sin(i / 60 * 4 * math.pi)) for i in range(61)]
+        d.line(pts, fill=col, width=int(S * 0.07), joint="curve")
+    elif kind == "arrow":  # flèche tracée à la main, courbe
+        p0, p1, p2 = (S * 0.08, S * 0.82), (S * 0.25, S * 0.12), (S * 0.86, S * 0.3)
+        pts = [((1 - u) ** 2 * p0[0] + 2 * (1 - u) * u * p1[0] + u * u * p2[0],
+                (1 - u) ** 2 * p0[1] + 2 * (1 - u) * u * p1[1] + u * u * p2[1]) for u in [i / 40 for i in range(41)]]
+        w = int(S * 0.055)
+        d.line(pts, fill=col, width=w, joint="curve")
+        d.line([(S * 0.66, S * 0.16), p2, (S * 0.7, S * 0.46)], fill=col, width=w, joint="curve")
+    elif kind == "toggle":  # interrupteur : un clin d'œil aux réglages du setter
+        d.rounded_rectangle([S * 0.04, S * 0.3, S * 0.96, S * 0.7], radius=S * 0.2, fill=col)
+        d.ellipse([S * 0.58, S * 0.34, S * 0.9, S * 0.66], fill=alt)
+    return im.resize((s, s), Image.LANCZOS)
+
+
+def _hit(r, boxes, pad=18) -> bool:
+    return any(r[0] < x1 + pad and r[2] > x0 - pad and r[1] < y1 + pad and r[3] > y0 - pad
+               for x0, y0, x1, y1 in boxes)
+
+
+def _stick(img: Image.Image, shape: Image.Image, xy, dark: bool) -> None:
+    """Colle un élément avec une ombre portée douce, comme un autocollant."""
+    a = shape.split()[-1]
+    sh = Image.new("RGBA", shape.size, (0, 0, 0, 120) if dark else (13, 12, 10, 40))
+    sh.putalpha(a.point(lambda v: v * (0.55 if dark else 0.3)))
+    img.alpha_composite(sh, (xy[0] + 6, xy[1] + 8))
+    img.alpha_composite(shape, xy)
+
+
+def decorate(img: Image.Image, c: dict, rnd: random.Random, boxes: list, cover: bool) -> None:
+    """Habille la slide sans jamais toucher le texte (boxes = cadres du contenu) :
+    un élément dans un coin, un disque ou un anneau qui déborde d'un bord, un grand élément dans le plus
+    grand vide (au-dessus, au-dessous ou à côté du contenu) et, sur la couverture, un gros badge."""
+    dark = c["bg"] != WHITE
+    pal = [ORANGE, MARK, INK if not dark else "#4a4844"]
+    alt = c["bg"]
+    # 1. un petit élément dans un coin libre
+    corners = [(18, 18), (W - 102, 18), (18, H - 102), (W - 102, H - 102)]
+    rnd.shuffle(corners)
+    used = []
+    for cx, cy in corners:
+        s = rnd.randint(66, 84)
+        if not _hit((cx, cy, cx + s, cy + s), boxes):
+            _stick(img, _shape(rnd.choice(["sparkle", "plus", "dots", "burst"]), s, rnd.choice(pal[:2]), alt), (cx, cy), dark)
+            used.append((cx, cy, cx + s, cy + s))
+            break
+    # 2. un grand disque ou anneau qui déborde d'un bord (dans la marge, jamais sous le texte)
+    r = rnd.randint(110, 150)
+    side = rnd.choice([-1, 1])
+    yy = rnd.choice([rnd.randint(-40, 170), rnd.randint(H - 170, H + 40)])
+    xx = -int(r * 0.45) if side < 0 else W + int(r * 0.45)
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(layer)
+    if rnd.random() < 0.5:
+        ld.ellipse([xx - r, yy - r, xx + r, yy + r], fill=MARK if not dark else "#3a2116")
+    else:
+        ld.ellipse([xx - r, yy - r, xx + r, yy + r], outline=ORANGE, width=14)
+    img.alpha_composite(layer)
+    # 3. le grand élément : le plus grand carré libre au-dessus, au-dessous ou à côté du contenu
+    cands = []
+    if boxes:
+        top, bot = min(b[1] for b in boxes), max(b[3] for b in boxes)
+        cands += [(MX, 10, W - MX, top), (MX, bot, W - MX, H - 10)]
+        for x0, y0, x1, y1 in boxes:
+            cands += [(x1, y0, W - 44, y1), (44, y0, x0, y1)]
+    best = None
+    for x0, y0, x1, y1 in cands:
+        s = int(min(x1 - x0, y1 - y0) - 40)
+        s = min(s, 220)
+        if s < 110:
+            continue
+        pos = (x0 + (x1 - x0 - s) // 2, y0 + (y1 - y0 - s) // 2)
+        rect = (pos[0], pos[1], pos[0] + s, pos[1] + s)
+        if _hit(rect, boxes) or _hit(rect, used, 10):
+            continue
+        if best is None or s > best[0]:
+            best = (s, pos)
+    if best:
+        s, pos = best
+        kind = rnd.choice(["bubble", "arrow", "squiggle", "toggle", "sparkle", "burst"])
+        _stick(img, _shape(kind, s, rnd.choice(pal[:2]) if kind != "arrow" else pal[2], alt), pos, dark)
+        used.append((pos[0], pos[1], pos[0] + s, pos[1] + s))
+    # 4. la couverture : un gros badge qui déborde d'un coin du haut, s'il ne touche pas le titre
+    if cover:
+        for bx, by in rnd.sample([(W - 190, -40), (-40, -40), (W - 190, H - 190), (-40, H - 190)], 4):
+            rect = (max(bx, 0), max(by, 0), min(bx + 230, W), min(by + 230, H))
+            if not _hit(rect, boxes, 10) and not _hit(rect, used, 0):
+                _stick(img, _shape("burst", 230, ORANGE, alt), (bx, by), dark)
+                break
+
+
 # --- Montage d'une slide ------------------------------------------------------------
 
 def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
@@ -588,6 +775,8 @@ def block_image(b: dict, c: dict, k: float = 1.0) -> Image.Image:
         return versus(b["versus"], c, k)
     if "list" in b:
         return numbered(b["list"], c, b.get("start", 1), z(b.get("size", 36), 60))
+    if "code" in b:
+        return code_block(b, c, min(k, 1.4))
     if "spacer" in b:
         return Image.new("RGBA", (W, z(b["spacer"])), (0, 0, 0, 0))
     raise ValueError(f"bloc inconnu : {b}")
@@ -597,9 +786,10 @@ MARGIN = 104                      # marge haute et basse minimale
 SCALES = [x / 100 for x in range(200, 84, -5)]   # 2,00 → 0,85
 
 
-def compose(s: dict) -> Image.Image:
+def compose(s: dict, rnd: random.Random | None = None, cover: bool = False) -> Image.Image:
     """Choisit la plus grande taille de texte qui tient : une slide n'a jamais de grand vide
-    (retour du fondateur du 10/10/2026 : « écris plus gros, ça se lit mieux »)."""
+    (retour du fondateur du 10/10/2026 : « écris plus gros, ça se lit mieux »).
+    Avec rnd (fiche "style": "grid"), le fond quadrillé et les éléments graphiques passent sous le contenu."""
     c = colors(s.get("bg", "white"))
     avail = H - 2 * MARGIN
     for k in ([s["scale"]] if "scale" in s else SCALES):
@@ -612,6 +802,15 @@ def compose(s: dict) -> Image.Image:
         raise SystemExit(f"Slide trop chargée ({total} px pour {avail}) : {s['blocks'][0]}")
     y = MARGIN if s.get("valign") == "top" else (H - total) // 2
     img = Image.new("RGBA", (W, H), c["bg"])
+    if rnd is not None:
+        _grid(img, c)
+        boxes, yy = [], y
+        for p, g in zip(parts, gaps + [0]):
+            bb = p.split()[-1].getbbox()
+            if bb:
+                boxes.append((bb[0], yy + bb[1], bb[2], yy + bb[3]))
+            yy += p.height + g
+        decorate(img, c, rnd, boxes, cover)
     for p, g in zip(parts, gaps + [0]):
         img.alpha_composite(p, (0, y))
         y += p.height + g
@@ -639,9 +838,11 @@ def render(path: Path) -> list[Path]:
     out = []
     for old in path.parent.glob("slide-*.png"):
         old.unlink()
+    grid = post.get("style") == "grid"
     for i, s in enumerate(post["slides"], 1):
         p = path.parent / f"slide-{i:02d}.png"
-        compose(s).save(p, optimize=True)
+        rnd = random.Random(f"{path.parent.name}-{i}") if grid else None
+        compose(s, rnd, cover=(i == 1)).save(p, optimize=True)
         out.append(p)
     tw, th = 300, 375
     sheet = Image.new("RGB", (tw * len(out) + 16 * (len(out) + 1), th + 32), "#cfcdca")

@@ -1,0 +1,151 @@
+{
+  "id": "261019_CAR_S2_AV2_claude-whatsapp",
+  "statut": "à valider",
+  "format": "carrousel",
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "2 · outils",
+  "idee": 6,
+  "reel_associe": "à écrire (Setty : « You plugged [bleep]ing Claude into your WhatsApp, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy.mp3",
+  "biais": [
+    "pertinence pour soi (le tuto qu'il cherche)",
+    "écart de curiosité (« the part nobody posts »)",
+    "aversion à la perte (compte suspendu, données qui fuient, leads perdus)"
+  ],
+  "verbatims": [
+    "rd67",
+    "rd06",
+    "mc24",
+    "mc05"
+  ],
+  "sources": [
+    {
+      "fait": "le projet whatsapp-mcp : open source, se connecte au WhatsApp personnel via l'API multi-appareils de WhatsApp Web (bibliothèque whatsmeow), pas l'API officielle ; prérequis Go, Python, uv, Claude Desktop ; QR code au premier lancement ; config dans ~/Library/Application Support/Claude/claude_desktop_config.json ; ré-authentification possible après environ 20 jours ; le README avertit que l'injection de prompt peut mener à l'exfiltration de données privées ; Claude agit par ses outils quand on le lui demande",
+      "source": "https://github.com/lharries/whatsapp-mcp (README lu le 19/10/2026)"
+    },
+    {
+      "fait": "démonstration d'Invariant Labs du 7 avril 2025 : un serveur MCP malveillant branché à côté de whatsapp-mcp peut faire envoyer l'historique des messages vers un numéro tiers",
+      "source": "https://invariantlabs.ai/blog/whatsapp-mcp-exploited"
+    },
+    {
+      "fait": "conditions de WhatsApp : interdisent « bulk messaging, auto-messaging, auto-dialing » et « any non-personal use of our Services unless otherwise authorized by us » ; « we may take action with respect to your account, including disabling or suspending your account »",
+      "source": "https://www.whatsapp.com/legal/terms-of-service (lu le 19/10/2026)"
+    }
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "how to plug *claude* into your whatsapp to answer your DMs"
+        },
+        {
+          "caption": "the 10-minute setup everyone's sharing, and the part nobody posts.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *setup*"
+        },
+        {
+          "list": [
+            "download the free, open-source whatsapp-mcp project from GitHub.",
+            "run its bridge and scan the QR code with your phone, like WhatsApp Web.",
+            "add it to Claude Desktop's config file (next slide).",
+            "restart Claude and ask it to read and answer your messages."
+          ]
+        },
+        {
+          "caption": "you need Go, Python and uv on your computer."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *config*"
+        },
+        {
+          "code": "{\n  \"mcpServers\": {\n    \"whatsapp\": {\n      \"command\": \"/path/to/uv\",\n      \"args\": [\n        \"--directory\",\n        \"/path/to/whatsapp-mcp-server\",\n        \"run\", \"main.py\"\n      ]\n    }\n  }\n}",
+          "file": "claude_desktop_config.json"
+        },
+        {
+          "caption": "that's it, Claude can now read your chats and send messages for you."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "cool, now here's the part *nobody* posts"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "1. it doesn't answer on its *own*"
+        },
+        {
+          "text": "Claude only reads and replies when you open it and ask. a lead DMs you at 11 pm? they wait until you're back at your laptop.\n\n**it's not a setter. it's a very smart intern who only works when you're watching.**"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "2. it's not the official *API*"
+        },
+        {
+          "text": "it connects through WhatsApp Web, not WhatsApp's official business API. you may need to scan the QR code again after about 20 days.\n\nWhatsApp's terms ban \"auto-messaging\" and any \"non-personal use\" they haven't authorized, and say they can disable or suspend your account."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "3. it can read *every* chat"
+        },
+        {
+          "text": "your clients, your mom, your ex. the project's own README warns that prompt injection could leak your private data.\n\nin april 2025, security researchers at Invariant Labs showed how a malicious add-on could make it send your message history to a stranger's number."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and your *leads*?"
+        },
+        {
+          "text": "they're still waiting for you to open your laptop.\n\n\"I don't want to spend hundreds on Claude/OpenAI credits and weeks building workflows just to realize I've created another thing to maintain.\"\n\n**you wanted a setter. you got a side project.**"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "an AI setter that answers on its own, from your offer and in your voice, on WhatsApp, Instagram and Messenger through Manychat.\n\nit waits until the lead has finished writing, asks one question at a time, books the call, and hands you the chat when it matters. no code, nothing to babysit."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "were you about to *clone* it?"
+        },
+        {
+          "text": "be honest in the comments, i won't tell anyone.\n\n**save this before you do.** **build your setter free, no card to start, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

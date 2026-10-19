@@ -1,0 +1,153 @@
+{
+  "id": "261019_CAR_S1_AV1_webinar-flopped",
+  "statut": "à valider",
+  "format": "carrousel",
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "1 · business du coach",
+  "idee": 1,
+  "reel_associe": "261019_REEL_S1_AV1_the-webinar (Setty, reel 2, validé)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy-day-vibes.mp3",
+  "biais": [
+    "mystère avec un chiffre qui contredit l'échec (« even with 50+ live viewers »)",
+    "pertinence pour soi (son webinaire)",
+    "aversion à la perte (les leads chauds perdus)"
+  ],
+  "verbatims": [
+    "cl087",
+    "rd06",
+    "rd19",
+    "mc47",
+    "rd91"
+  ],
+  "sources": [],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "why your webinar *flopped*, even with 50+ live viewers"
+        },
+        {
+          "caption": "spoiler: it's probably not your slides.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the webinar was *fine*"
+        },
+        {
+          "text": "50 people showed up live. you pitched, sent the replay, and went to bed feeling good.\n\nthen the DMs started."
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is the replay still up?"
+            },
+            {
+              "from": "lead",
+              "text": "how much is it?"
+            },
+            {
+              "from": "lead",
+              "text": "is this ok if i'm a total beginner?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and *nobody* answered"
+        },
+        {
+          "text": "you were writing the replay email. your VA was asleep. \"i'll reply tomorrow\" became thursday.\n\nby thursday, they had moved on."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "your best leads never said no. they asked *how much* and heard nothing."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what it *costs* you"
+        },
+        {
+          "text": "\"If you're busy or offline, it feels like leads just move on to whoever responds first.\"\n\nso you blame the webinar. new offer, new slides, maybe a challenge next month.\n\n**and the same thing happens again.**"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the fix isn't a better *webinar*"
+        },
+        {
+          "text": "it's answering the DMs your webinar creates, while people are still warm.\n\n**the webinar fills the inbox. the inbox closes the sale.**"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "an AI setter for Manychat. it learns your offer from your sales page in about two minutes, then answers your DMs in your voice, once the lead has finished writing.\n\nit asks one question at a time, only sends your calendar to the right people, and follows up to 3 times within 24 hours."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "label": "what it looks like",
+          "align": "center"
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/setter-sources-offre.png",
+          "width": 900
+        },
+        {
+          "caption": "your offer, your voice, your objections, ready in about two minutes. example from our site, not a client.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "your webinar gets judged on what it really produced.",
+            "you stop changing strategy every month.",
+            "you finally sleep after a webinar (wild, i know)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "how many people DM'd you after your last *webinar*?"
+        },
+        {
+          "text": "tell me in the comments. zero counts, no judgment.\n\n**build your setter free, no card to start, link in bio.**"
+        }
+      ]
+    }
+  ]
+}

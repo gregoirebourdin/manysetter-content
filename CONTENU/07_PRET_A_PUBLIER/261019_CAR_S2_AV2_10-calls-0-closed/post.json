@@ -1,0 +1,148 @@
+{
+  "id": "261019_CAR_S2_AV2_10-calls-0-closed",
+  "statut": "à valider",
+  "format": "carrousel",
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "1 · business du coach",
+  "idee": 3,
+  "reel_associe": "à écrire (Setty : « You booked ten [bleep]ing calls this week, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "musique": "cloudy-skies-and-coffee-vibes.mp3",
+  "biais": [
+    "mystère avec un chiffre précis (10 appels, 0 client)",
+    "pertinence pour soi (son agenda)",
+    "soulagement de la culpabilité (« you're not bad at sales »)"
+  ],
+  "verbatims": [
+    "rd49",
+    "rd44",
+    "rd45",
+    "rd92",
+    "rd75",
+    "rd76",
+    "rd77"
+  ],
+  "sources": [],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "why you booked *10 calls* this week and closed none of them"
+        },
+        {
+          "caption": "it's not your closing skills, it's who you let book.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*anyone* can book"
+        },
+        {
+          "text": "your link goes out in the DM, and the calendar fills up.\n\nteens who \"WANT help but literally can't pay\". a guy who's \"just curious\". and probably your cousin."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "you find out on the *call*"
+        },
+        {
+          "text": "forty minutes in, you finally ask about budget.\n\n\"Then at the very end I realized their budget wasn't even close to realistic.\"\n\nthe answer was \"i was thinking like $50?\""
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "10 calls, 10 hours, *0 clients*"
+        },
+        {
+          "text": "and a week you'll never get back.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what it *costs* you"
+        },
+        {
+          "text": "\"these calls take real time and energy.\" it starts to feel like \"free consulting for people who have no intention of signing up.\"\n\nand slowly, you start thinking you're bad at sales.\n\n**you're not, you're just tired.**"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "qualify *before* the calendar"
+        },
+        {
+          "text": "ask in the DM, one question at a time. only the serious ones get your link. here are the 3 i'd ask:"
+        },
+        {
+          "list": [
+            "what are you trying to fix right now?",
+            "have you worked with a coach before?",
+            "if it's a fit, are you ready to start this month?"
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and everyone *else*?"
+        },
+        {
+          "text": "they still get something useful: a free guide, a replay, or a cheaper option like a $30 community.\n\nnobody gets ignored, and nobody gets your tuesday afternoon for free."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it asks your qualifying questions in the DM, one at a time, in your voice. only the right leads get your calendar.\n\nthe call lands with a summary of the lead in the event."
+        },
+        {
+          "image": "CONTENU/03_PRODUIT_REF/site/appel-reserve.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "fewer calls on your calendar, and every one of them can actually pay.",
+            "you show up already knowing what they want.",
+            "your evenings stop being free consulting hours."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "how many of your last 10 calls *closed*?"
+        },
+        {
+          "text": "be honest in the comments, no judgment. ok, maybe a little.\n\n**build your setter free, no card to start, link in bio.**"
+        }
+      ]
+    }
+  ]
+}
