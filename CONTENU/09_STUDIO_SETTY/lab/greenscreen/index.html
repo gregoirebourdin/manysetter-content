@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+                     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/" } }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #161a26; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #three { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .hook { position: absolute; left: 20px; right: 20px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .hook .l { display: inline-block; background: #fff; color: #121110; font: 800 92px/1.08 Inter, sans-serif; letter-spacing: -0.035em;
+        padding: 0.14em 0.36em 0.2em; border-radius: 0.36em; box-shadow: 0 22px 46px -18px rgba(0, 0, 0, 0.8); white-space: nowrap; }
+      .hook .l b { color: #ff611d; }
+      .cap { position: absolute; left: 80px; right: 80px; top: 1185px; text-align: center; font: 600 96px/1.04 Nohemi, sans-serif;
+        letter-spacing: -0.045em; color: #fff; -webkit-text-stroke: 14px #0d0c0a; paint-order: stroke fill; text-shadow: 0 10px 0 #0d0c0a; opacity: 0; }
+      .cap b { color: #ff7a3a; font-weight: 600; }
+      .tag { position: absolute; left: 24px; bottom: 24px; font: 700 34px Inter, sans-serif; color: #fff; background: rgba(0,0,0,0.6); padding: 6px 14px; border-radius: 10px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="greenscreen" data-start="0" data-duration="14" data-fps="30" data-width="1080" data-height="1920">
+      <canvas id="three"></canvas>
+      <div class="hook"><span class="l">If you have <b>10,000</b></span><span class="l">Manychat contacts and</span><span class="l">nobody buys, this is why</span></div>
+      <div class="cap" id="c0">You've got <b>10,000</b> contacts in Manychat, right?</div>
+      <div class="cap" id="c1">Nobody buys, so tonight I <b>blast</b> them all.</div>
+      <div class="cap" id="c2">Meta gives you <b>24 hours</b>.</div>
+      <div class="tag" id="tag"></div>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, pose as sPose } from "./assets/setty/setty.js";
+      import { createCoach, pose as cPose } from "./assets/coach/coach.js";
+      import { build } from "./assets/sets/greenscreen.js";
+      import { shot } from "./assets/sets/kit.js";
+
+      const W = 1080, H = 1920;
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("three"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      const scene = new THREE.Scene();
+      const set = await build({ renderer, scene });
+      const coach = createCoach(), setty = createSetty();
+      scene.add(coach.root, setty.root);
+      const camera = new THREE.PerspectiveCamera(40, W / H, 0.5, 80);
+      // the engine's framings (wide, close-ups on the real heads, the pushes, the card framings CARD_L / CARD_R),
+      // the extra shots, then the bug hunt: from above, from the side, from behind, at seat level
+      const SHOTS = [
+        { name: "wide", shot: "wide", c: cPose("hyped"), s: sPose("smug") },
+        { name: "coach", shot: "coach", c: cPose("hyped", { talk: 0.6 }), s: sPose("eyeRoll") },
+        { name: "setty", shot: "setty", c: cPose("confused"), s: sPose("deadpan") },
+        { name: "coach + card right", shot: "coach", o: { x: 310, dist: 17.5, y: 860 }, c: cPose("shocked"), s: sPose("smug") },
+        { name: "setty + card left", shot: "setty", o: { x: 800, dist: 15 }, c: cPose("annoyed"), s: sPose("sly") },
+        { name: "coach push", shot: "coach", o: { dist: 9.6, yaw: 0.48 }, c: cPose("mocking"), s: sPose("excuseMe") },
+        { name: "setty push", shot: "setty", o: { dist: 8.4, yaw: -0.38 }, c: cPose("panic"), s: sPose("mocking") },
+        { name: "monitor", shot: "monitor", c: cPose("defeated"), s: sPose("mocking", { armRr: 1.2 }) },
+        { name: "promo", shot: "promo", c: cPose("neutral"), s: sPose("smug") },
+        { name: "top", cam: { pos: [0, 13, 9], at: [0, 1.6, -1], fov: 42 }, c: cPose("pleading"), s: sPose("laughing") },
+        { name: "side left", cam: { pos: [-12, 4.2, -0.6], at: [0, 2.2, -1], fov: 38 }, c: cPose("skeptical"), s: sPose("proud") },
+        { name: "behind", cam: { pos: [3.5, 5, -3.0], at: [-1.2, 2.3, -0.6], fov: 52 }, c: cPose("pointing"), s: sPose("deadpan") },
+        { name: "seat level", cam: { pos: [-1.2, 1.0, 4.6], at: [-1.7, 0.8, -0.8], fov: 40 }, c: cPose("defeated"), s: sPose("smug") },
+        { name: "setty seat", cam: { pos: [4.6, 1.6, 2.0], at: [2.15, 1.4, -1.2], fov: 40 }, c: cPose("neutral"), s: sPose("happy") },
+      ];
+      // like the engine (engine.js camOf): the close-ups aim at the real heads, seated and posed
+      function shotOf(S) {
+        if (S.cam) return S.cam;
+        scene.updateMatrixWorld(true);
+        const F = set.frames;
+        F.coach.target = coach.head.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, 0.18, 0));
+        F.setty.target = new THREE.Vector3(set.setty.x, set.setty.y + 1.7 * set.setty.scale + 0.04, set.setty.z);
+        return F[S.shot] ? shot(F[S.shot].target, { ...F[S.shot], ...(S.o || {}) }) : set.shots[S.shot];
+      }
+      function renderAt(t) {
+        const k = Math.min(SHOTS.length - 1, Math.floor(t));
+        const S = SHOTS[k];
+        coach.apply(Object.assign({}, S.c, set.coach, { turn: set.coach.turn + (S.c.turn || 0) }));
+        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0) }));
+        const sh = shotOf(S);
+        camera.position.set(...sh.pos);
+        camera.lookAt(...sh.at);
+        camera.fov = sh.fov;
+        camera.updateProjectionMatrix();
+        renderer.render(scene, camera);
+        document.querySelectorAll(".cap").forEach((el, i) => (el.style.opacity = i === k ? 1 : 0));
+        document.querySelector(".hook").style.opacity = k < 7 ? 1 : 0;
+        document.getElementById("tag").textContent = S.name;
+      }
+      // the hook title sized like kit.hookTitle (each line fills the width, 120 px at most)
+      document.querySelectorAll(".hook .l").forEach((el) => {
+        el.style.fontSize = "100px";
+        el.style.fontSize = `${Math.min(120, Math.floor((100 * 1020) / el.offsetWidth))}px`;
+      });
+      renderAt(0);
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: SHOTS.length });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.greenscreen = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "greenscreen",
+ "mood": "night",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  50.0,
+  56.8
+ ],
+ "tail_s": 2.4,
+ "id": "reel13",
+ "slug": "24-hour-rule",
+ "title": "The 24-hour rule",
+ "pub_id": "261021_REEL_S1_AV1_24-hour-rule",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Setty, on his two road cases in a green-screen studio, to the coach on his apple box: You've got ten thousand [bleep]ing contacts in Manychat, right?",
+ "hook_title": [
+  "If you have *10,000*",
+  "Manychat contacts and",
+  "nobody buys, this is why"
+ ],
+ "biais": [
+  "chiffre très précis (10 000 contacts)",
+  "écart de curiosité (« this is why »)",
+  "autorité (la règle de Meta)",
+  "aversion à la perte (les contacts de mars hors d'atteinte)"
+ ],
+ "verbatims": [
+  "mc17",
+  "mc16",
+  "mc18",
+  "mc30",
+  "rd66",
+  "cl030"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that works inside Meta's 24-hour window. Follow so the DM lands 📩\n\n👇 READ BELOW: why you can't just message your 10,000 Manychat contacts, from Meta's and Manychat's own docs.\n\n1. When a lead messages you on Instagram or Messenger, a 24-hour window opens, and every new message from them restarts it.\n\n2. Inside the window you can reply freely, even with an offer. After it, automated messages aren't allowed, and Manychat won't send your scheduled ones.\n\n3. For 7 more days a person can still reply by hand (Meta calls it the Human Agent tag), and message tags can't carry promotions.\n\n4. Setty is the AI setter I built for coaches: he answers once the lead is done typing, then sends up to 3 follow-ups, all inside the 24 hours, through Manychat.\n\nThe catch: ManySetter doesn't bend Meta's rules. Once the window closes, Setty waits until the lead writes again. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#manychat #instagramdms #onlinecoach\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "caption_youtube": "If you have 10,000 Manychat contacts and nobody buys, this is why\n\n👇 READ BELOW: why you can't just message your 10,000 Manychat contacts, from Meta's and Manychat's own docs.\n\n1. When a lead messages you on Instagram or Messenger, a 24-hour window opens, and every new message from them restarts it.\n\n2. Inside the window you can reply freely, even with an offer. After it, automated messages aren't allowed, and Manychat won't send your scheduled ones.\n\n3. For 7 more days a person can still reply by hand (Meta calls it the Human Agent tag), and message tags can't carry promotions.\n\n4. Setty is the AI setter I built for coaches: he answers once the lead is done typing, then sends up to 3 follow-ups, all inside the 24 hours, through Manychat.\n\nThe catch: ManySetter doesn't bend Meta's rules. Once the window closes, Setty waits until the lead writes again. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#manychat #instagramdms #shorts\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "script v1 à valider (lot 12 à 21)",
+ "created": "2026-10-21",
+ "paire": "261020_CAR_S1_AV1_24-hour-rule (idée 16, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+ "sources": [
+  {
+   "fait": "fenêtre de 24 h quand le lead écrit, réponse libre dedans, même une offre (R1) ; chaque message du lead la relance (R2) ; plus de messages automatiques après, Manychat n'envoie pas les messages programmés (R3, R10)",
+   "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 16 (docs Meta et Manychat lues le 20/10/2026)"
+  },
+  {
+   "fait": "7 jours de réponse à la main (tag Human Agent, jamais automatisé) et aucune promotion dans un tag (R4, R6) ; la règle vient de Meta, pas de Manychat (R9)",
+   "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 16"
+  },
+  {
+   "fait": "le setter attend la fin du message (au moins 30 s), puis jusqu'à 3 relances entre 1 et 23 h après le dernier message du lead, toutes dans la fenêtre (P4, P8, R12)",
+   "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, faits produit communs"
+  },
+  {
+   "fait": "« 10,000 contacts » et « nobody buys » : la situation du lecteur (mc17 : 13 000 contacts), pas une statistique",
+   "source": "banque-2.md, idée 16 ; verbatims mc17, mc18"
+  },
+  {
+   "fait": "prix et essai : 119 $ par mois par setter live, construire et tester gratuit sans carte, essai de 14 jours au passage en live",
+   "source": "brief-de-marque.md, section 3"
+  }
+ ]
+}

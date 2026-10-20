@@ -12,11 +12,11 @@ import * as K from "./kit.js";
 const BACK = -3.4; // the cyc wall
 const COVE = 1.3; // radius of the curve between the wall and the floor
 const CYC = { x0: -4.8, x1: 4.2, h: 10, front: 7 }; // the green: from x0 to x1, up to h, its floor to z = front
-const BOX_H = 0.8; // the apple box (his seat)
+const BOX_H = 0.68; // the apple box (his seat: between the gym bench and the podcast chair, his feet on the floor)
 const CASE_H = 1.0 + 0.85; // two road cases stacked (Setty's seat)
 
 // ---- the characters' spots (a set file owns them; the seats are placed from them)
-const COACH = { x: -1.7, y: -0.46 + (BOX_H - 0.66), z: -0.8, turn: 0.55 };
+const COACH = { x: -1.7, y: -0.46, z: -0.8, turn: 0.55 };
 const SETTY = { x: 2.15, y: CASE_H - 0.31, z: -1.2, turn: -0.45, scale: 0.66 };
 const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
 
@@ -29,7 +29,7 @@ function rod(a, b, r, material, seg = 12) {
   return m;
 }
 
-/** the cyc's green paint (no ctx.filter: gradients only). wall: brighter up top where the cyc lights hit, a soft
+/** the cyc's green paint (gradients only, never a canvas blur). wall: brighter up top where the cyc lights hit, a soft
  *  falloff to the sides and toward the cove, faint roller streaks; cove and floor: a touch darker, scuffed by shoes */
 function greenTex(part) {
   const R = K.rng(part === "wall" ? 3 : part === "cove" ? 5 : 8);
@@ -48,13 +48,13 @@ function greenTex(part) {
     c.fillStyle = side;
     c.fillRect(0, 0, W, H);
     if (part === "wall") for (let i = 0; i < 70; i++) { // roller streaks
-      c.fillStyle = `rgba(${R() < 0.5 ? "255,255,255" : "0,40,10"},${0.015 + R() * 0.025})`;
-      c.fillRect(R() * W, 0, 6 + R() * 30, H);
+      c.fillStyle = `rgba(${R() < 0.5 ? "255,255,255" : "0,40,10"},${0.004 + R() * 0.008})`;
+      c.fillRect(R() * W, 0, 20 + R() * 60, H);
     }
-    else for (let i = 0; i < (part === "floor" ? 90 : 26); i++) { // scuffs and shoe marks
-      c.fillStyle = `rgba(40,48,40,${0.05 + R() * 0.08})`;
+    else for (let i = 0; i < (part === "floor" ? 40 : 14); i++) { // scuffs and shoe marks
+      c.fillStyle = `rgba(40,48,40,${0.025 + R() * 0.04})`;
       c.beginPath();
-      c.ellipse(R() * W, R() * H, 8 + R() * 40, 3 + R() * 10, R() * 3, 0, Math.PI * 2);
+      c.ellipse(R() * W, R() * H, 6 + R() * 22, 2 + R() * 6, R() * 3, 0, Math.PI * 2);
       c.fill();
     }
   });
@@ -64,7 +64,7 @@ function greenTex(part) {
 function cyclorama() {
   const g = new THREE.Group();
   const w = CYC.x1 - CYC.x0, cx = (CYC.x0 + CYC.x1) / 2;
-  const paint = (map) => new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: map, emissiveIntensity: 0.3,
+  const paint = (map) => new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: map, emissiveIntensity: 0.2,
     roughness: 0.95, side: THREE.DoubleSide });
   const wall = new THREE.Mesh(new THREE.PlaneGeometry(w, CYC.h - COVE), paint(greenTex("wall")));
   wall.position.set(cx, COVE + (CYC.h - COVE) / 2, BACK);
@@ -183,6 +183,22 @@ function fresnel({ r = 0.4, len = 0.85 } = {}) {
   return g;
 }
 
+/** a bi-colour LED panel: a black frame, the glowing face at +z, a small control screen on the back */
+function ledPanel({ w = 1.25, h = 0.82 } = {}) {
+  const g = new THREE.Group();
+  const black = K.mat(0x17181b, { metalness: 0.4, roughness: 0.45 });
+  const frame = K.box(w, h, 0.14, 0.04, black);
+  const face = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h - 0.1), K.glow(0xf6f8ff));
+  face.position.z = 0.072;
+  const ctrl = new THREE.Mesh(new THREE.PlaneGeometry(0.34, 0.16), K.glow(0x6fd0ff));
+  ctrl.position.set(0.3, -0.18, -0.072);
+  ctrl.rotation.y = Math.PI;
+  const yoke = new THREE.Mesh(new THREE.TorusGeometry(h * 0.62, 0.025, 8, 24, Math.PI), black);
+  yoke.rotation.set(0, Math.PI / 2, Math.PI);
+  g.add(frame, face, ctrl, yoke);
+  return g;
+}
+
 /** a C-stand: a turtle base, the column, a gobo arm out to the side holding a black flag */
 function cStand({ h = 5.4, arm = 2.1 } = {}) {
   const g = stand(h, { spread: 0.75 });
@@ -243,36 +259,40 @@ function promoShot(c, W, H) {
   };
   palm(W * 0.08, H * 0.42, 22);
   palm(W * 0.9, H * 0.48, -26);
-  // the white sports car, low and wedge-shaped
-  const cx = W * 0.6, cy = H * 0.86;
+  // the white sports car: low, a long hood, the cabin set back, a rear wing
+  const cx = W * 0.62, cy = H * 0.88;
   c.fillStyle = "#f4f2f7";
   c.beginPath();
-  c.moveTo(cx - 230, cy);
-  c.lineTo(cx - 215, cy - 38);
-  c.lineTo(cx - 60, cy - 62);
-  c.lineTo(cx + 40, cy - 92);
-  c.lineTo(cx + 140, cy - 66);
-  c.lineTo(cx + 240, cy - 44);
-  c.lineTo(cx + 250, cy);
+  c.moveTo(cx - 262, cy - 4);
+  c.lineTo(cx - 250, cy - 26);
+  c.lineTo(cx - 70, cy - 46);
+  c.lineTo(cx + 30, cy - 80);
+  c.lineTo(cx + 130, cy - 70);
+  c.lineTo(cx + 236, cy - 46);
+  c.lineTo(cx + 252, cy - 4);
   c.closePath();
   c.fill();
-  c.fillStyle = "#1c2230";
+  c.fillRect(cx + 170, cy - 82, 92, 12); // the wing
+  c.fillRect(cx + 200, cy - 72, 10, 26);
+  c.fillStyle = "#1c2230"; // the side window
   c.beginPath();
-  c.moveTo(cx - 20, cy - 66);
-  c.lineTo(cx + 44, cy - 86);
+  c.moveTo(cx - 40, cy - 50);
+  c.lineTo(cx + 34, cy - 74);
   c.lineTo(cx + 120, cy - 64);
+  c.lineTo(cx + 110, cy - 48);
   c.closePath();
   c.fill();
-  c.fillStyle = "#101014";
-  for (const wx of [cx - 140, cx + 160]) {
+  c.fillStyle = "#c9cbd6";
+  c.fillRect(cx - 200, cy - 22, 380, 5); // the shoulder line
+  for (const wx of [cx - 150, cx + 160]) {
+    c.fillStyle = "#101014";
     c.beginPath();
-    c.arc(wx, cy, 34, 0, Math.PI * 2);
+    c.arc(wx, cy, 38, 0, Math.PI * 2);
     c.fill();
     c.fillStyle = "#b8bcc8";
     c.beginPath();
-    c.arc(wx, cy, 16, 0, Math.PI * 2);
+    c.arc(wx, cy, 18, 0, Math.PI * 2);
     c.fill();
-    c.fillStyle = "#101014";
   }
   // the coach, keyed in on the left: white tank, black beanie, pointing at the lens
   const bx = W * 0.24, by = H;
@@ -359,7 +379,7 @@ function monitorCart(draw, { w = 2.5, h = 1.42, y = 3.7 } = {}) {
 }
 
 /** his seat: a "full apple" box, birch plywood, a hand hole on each side */
-function appleBox({ w = 1.3, h = BOX_H, d = 0.86 } = {}) {
+function appleBox({ w = 1.3, h = BOX_H, d = 0.86, label = "FULL" } = {}) {
   const g = new THREE.Group();
   const ply = K.mat(0xffffff, { map: K.woodTex({ base: "#c8a273", planks: 2, seed: 12 }), roughness: 0.6 });
   const b = K.box(w, h, d, 0.03, ply);
@@ -377,15 +397,16 @@ function appleBox({ w = 1.3, h = BOX_H, d = 0.86 } = {}) {
       c.textAlign = "center";
       c.textBaseline = "middle";
       c.fillStyle = "rgba(24,20,16,0.82)";
-      c.fillText("FULL", W / 2, H / 2 + 4);
+      c.fillText(label, W / 2, H / 2 + 4);
     }) }));
   stencil.position.set(0, h * 0.42, d / 2 + 0.004);
+  stencil.scale.setScalar(Math.min(1, h / 0.8));
   g.add(stencil);
   return g;
 }
 
-/** Setty's seat: a black road case, aluminium edges, ball corners, two latches, FRAGILE stencilled on the front */
-function roadCase({ w = 1.7, h = CASE_H, d = 1.15 } = {}) {
+/** a black road case: aluminium edges, ball corners, two latches, a word stencilled on the front (Setty sits on two) */
+function roadCase({ w = 1.7, h = 1.0, d = 1.15, label = "FRAGILE", lidAt = 0.3 } = {}) {
   const g = new THREE.Group();
   const shell = K.box(w, h, d, 0.02, K.mat(0x17181b, { roughness: 0.55, clearcoat: 0.25 }));
   shell.position.y = h / 2;
@@ -402,11 +423,11 @@ function roadCase({ w = 1.7, h = CASE_H, d = 1.15 } = {}) {
   }
   // the lid line, two butterfly latches
   const lid = K.box(w + 0.03, 0.035, d + 0.03, 0.01, alu);
-  lid.position.y = h - 0.32;
+  lid.position.y = h - lidAt;
   g.add(lid);
   for (const sx of [-0.45, 0.45]) {
     const latch = K.box(0.2, 0.14, 0.035, 0.015, alu);
-    latch.position.set(sx, h - 0.32, d / 2 + 0.02);
+    latch.position.set(sx, h - lidAt, d / 2 + 0.02);
     g.add(latch);
   }
   const stencil = new THREE.Mesh(new THREE.PlaneGeometry(1.25, 0.32), new THREE.MeshStandardMaterial({ transparent: true,
@@ -415,9 +436,10 @@ function roadCase({ w = 1.7, h = CASE_H, d = 1.15 } = {}) {
       c.textAlign = "center";
       c.textBaseline = "middle";
       c.fillStyle = "rgba(236,234,228,0.9)";
-      c.fillText("FRAGILE", W / 2, H / 2 + 6);
+      c.fillText(label, W / 2, H / 2 + 6);
     }) }));
-  stencil.position.set(0, h * 0.4, d / 2 + 0.004);
+  stencil.position.set(0, (h - lidAt) * 0.48, d / 2 + 0.004);
+  stencil.scale.setScalar(Math.min(1, (h - lidAt) / 0.85));
   g.add(stencil);
   return g;
 }
@@ -541,6 +563,20 @@ export async function build({ renderer, scene, mood = "night" }) {
   const fr = fresnel();
   fr.position.set(4.7, 5.25, -2.0);
   fr.lookAt(0.2, 3.2, -0.6);
+  // an LED panel on a short stand behind him, his hair light (it glows behind him in his close-ups)
+  const ledStand = stand(2.7, { spread: 0.6 });
+  K.at(ledStand, -3.7, 0, -2.0);
+  const led = ledPanel();
+  led.position.set(-3.7, 3.05, -2.0);
+  led.lookAt(COACH.x, 4.0, COACH.z);
+  // behind Setty: a stack of apple boxes and sandbags at the foot of the fresnel
+  const ab2 = appleBox({ w: 1.1, h: 0.42, d: 0.75, label: "HALF" });
+  K.at(ab2, 3.75, 0, -1.9, -0.4);
+  const ab3 = appleBox({ w: 1.1, h: 0.42, d: 0.75, label: "HALF" });
+  K.at(ab3, 3.7, 0.42, -1.95, -0.15);
+  const bag1 = K.soft(0.62, 0.22, 0.36, K.mat(0x2f3326, { roughness: 1 }), { puff: 0.25, seed: 9 });
+  K.at(bag1, 3.0, 0.12, -2.0, 0.5);
+  set.add(ledStand, led, ab2, ab3, bag1);
   const cs = cStand({ h: 5.6, arm: 1.6 });
   K.at(cs, -5.5, 0, -1.6, 0.3);
   set.add(sbStand, sbx, frStand, fr, cs);
@@ -554,8 +590,11 @@ export async function build({ renderer, scene, mood = "night" }) {
   const fwd = V(Math.sin(COACH.turn), 0, Math.cos(COACH.turn));
   const ab = appleBox();
   K.at(ab, COACH.x - fwd.x * 0.08, 0, COACH.z - fwd.z * 0.08, COACH.turn);
-  const rc = roadCase();
-  K.at(rc, SETTY.x + 0.05, 0, SETTY.z - 0.05, SETTY.turn * 0.6);
+  const rc = roadCase({ w: 1.85, h: 1.0, d: 1.2, label: "CAM B", lidAt: 0.26 });
+  K.at(rc, SETTY.x + 0.05, 0, SETTY.z - 0.05, SETTY.turn * 0.5);
+  const rc2 = roadCase({ w: 1.5, h: 0.85, d: 1.0, label: "FRAGILE", lidAt: 0.24 });
+  K.at(rc2, SETTY.x + 0.02, 1.0, SETTY.z - 0.02, SETTY.turn * 0.75);
+  set.add(rc2);
   const slate = clapper();
   K.at(slate, COACH.x - 0.95, 0, COACH.z + 0.55, 0.9);
   slate.rotation.x = -0.18;
@@ -602,7 +641,7 @@ export async function build({ renderer, scene, mood = "night" }) {
 
   // where the characters go (engine pose fields), and the camera shots ({ pos, at, fov })
   const cf = V(Math.sin(COACH.turn), 0, Math.cos(COACH.turn));
-  const coachHead = V(COACH.x, 4.2, COACH.z).addScaledVector(cf, 0.28);
+  const coachHead = V(COACH.x, 4.05, COACH.z).addScaledVector(cf, 0.28);
   const settyFace = V(SETTY.x, SETTY.y + 1.7 * SETTY.scale + 0.04, SETTY.z);
   const screen = V(0.25, 3.85, -1.7);
   return {
@@ -611,13 +650,14 @@ export async function build({ renderer, scene, mood = "night" }) {
     setty: { x: SETTY.x, y: SETTY.y, z: SETTY.z, turn: SETTY.turn, scale: SETTY.scale },
     heads: { coach: coachHead, setty: settyFace },
     frames: {
-      coach: { target: coachHead, dist: 12, yaw: 0.55, y: 740 },
-      setty: { target: settyFace, dist: 10.5, yaw: -0.45, pitch: 0.06, y: 800 },
+      // lower than the gym: the hook title takes 3 lines (like the poolside set)
+      coach: { target: coachHead, dist: 12, yaw: 0.55, y: 880 },
+      setty: { target: settyFace, dist: 10.5, yaw: -0.45, pitch: 0.06, y: 900 },
     },
     shots: {
       wide: { pos: [0.2, 4.6, 15.6], at: [0.2, 3.2, -1.4], fov: 44 },
-      coach: K.shot(coachHead, { dist: 12, yaw: 0.55, y: 820 }),
-      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.45, pitch: 0.06, y: 800 }),
+      coach: K.shot(coachHead, { dist: 12, yaw: 0.55, y: 880 }),
+      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.45, pitch: 0.06, y: 900 }),
       // the punchline: Setty and the fake promo on the monitor beside him
       monitor: K.shot(V(1.2, 3.1, -1.4), { dist: 11.5, yaw: -0.25, pitch: 0.05, y: 860 }),
       promo: K.shot(screen, { dist: 6.2, yaw: -0.12, pitch: 0.02, y: 800 }),
