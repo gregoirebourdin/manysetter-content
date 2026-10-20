@@ -35,7 +35,7 @@
   "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
   "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
   "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
-  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : source et licence à noter avant publication",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10), source précise à noter",
   "source": {
     "studio": "CONTENU/09_STUDIO_SETTY/reel2",
     "script": "CONTENU/09_STUDIO_SETTY/writing/reel2_webinar.md"
@@ -50,5 +50,11 @@
     "lufs": -14.2,
     "true_peak_dbtp": -2.0
   },
-  "statut": "validé par le fondateur le 20/10 (v3 dialogue), rendu final 60 i/s ; transmis à la session MANYSETTER POST pour la programmation"
+  "statut": "validé par le fondateur le 20/10 (v3 dialogue), rendu final 60 i/s ; transmis à la session MANYSETTER POST pour la programmation",
+  "programmation": {
+    "date": "2026-10-21 6:30 pm ET",
+    "instagram": "6ad78342745a486e7b7693e4 (shareToFeed, thumbOffset 1000 ms ; « AI info » ajoutée par le fondateur dans l'appli après publication)",
+    "youtube": "6ad7834f51fbb868d1723b85 (Short, containsSyntheticMedia true, CTA « Build your AI setter free at manysetter.com »)",
+    "carrousel_associe": "261019_CAR_S1_AV1_webinar-flopped, même jour à 12:00 pm ET"
+  }
 }

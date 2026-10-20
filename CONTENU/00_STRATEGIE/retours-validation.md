@@ -360,3 +360,8 @@ Format d'une règle :
 ## 2026-10-20 · Reel 2 v3 validé
 - Retour : « Okay vas-y, et après donne-le à MANYSETTER POST pour qu'il puisse savoir où il est avant de le programmer. »
 - Règle : le reel 2 v3 (dialogue, `07_PRET_A_PUBLIER/261019_REEL_S1_AV1_the-webinar/`) est **validé** ; rendu final en 60 i/s. Une fois livré, un reel validé est **transmis à la session « MANYSETTER POST »** (chemin, fichiers, légende, horaire conseillé, points ouverts), qui s'occupe de la programmation.
+
+## 2026-10-20 · Programmation de la paire « webinaire » (carrousel + reel 2 de Setty)
+- Décision : le carrousel `261019_CAR_S1_AV1_webinar-flopped` est **validé tel quel** et part avec le reel 2 de Setty (`261019_REEL_S1_AV1_the-webinar`) le **21/10** : carrousel à 12:00 pm ET, reel à 6:30 pm ET, chacun aussi en Short YouTube (posts Zernio séparés).
+- Décision (étiquette IA) : « Zernio publie, j'ajoute après » : Zernio publie le reel sur Instagram et le fondateur ajoute lui-même l'étiquette « AI info » dans l'appli après publication (Zernio n'a pas de champ pour elle). Sur YouTube, le Short du reel part avec `containsSyntheticMedia: true`.
+- Décision (musique du reel 2) : « Libre de droits, usage commercial » (déclaration du fondateur ; source précise à noter quand il la donne).
