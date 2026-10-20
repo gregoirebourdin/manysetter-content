@@ -1,0 +1,51 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "boardroom",
+ "mood": "afternoon",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  46.0,
+  57.4
+ ],
+ "tail_s": 2.4,
+ "id": "reel18",
+ "slug": "dm-ads",
+ "title": "DM ads",
+ "pub_id": "261021_REEL_S1_AV1_dm-ads",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Setty, sitting on the boardroom table, to the coach standing by his ad dashboard: You paid Meta to fill your [bleep]ing DMs, right?",
+ "hook_title": [
+  "Why your *DM ads* flopped,",
+  "even with *300* conversations started"
+ ],
+ "biais": [
+  "chiffre très précis (300)",
+  "contre-pied (sa métrique préférée)",
+  "aversion à la perte (l'argent des pubs, les sérieux qui partent chez un autre)",
+  "pertinence pour soi (son tableau de bord)"
+ ],
+ "verbatims": [
+  "cl028",
+  "rd88",
+  "rd06",
+  "rd19",
+  "rd42",
+  "cl030",
+  "rd36",
+  "rd38",
+  "rd62",
+  "rd57"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script à valider",
+ "created": "2026-10-21"
+}
