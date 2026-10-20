@@ -1,68 +1,68 @@
 {
- "funnel": "TOFU",
- "segment": "S1",
- "avatar": "AV1",
- "hook": "Setty, on his stool across the podcast table, to the coach at his mic: You asked ChatGPT to be your [bleep]ing setter, right?",
- "biais": [
-  "duel (deux noms connus, il veut savoir qui gagne)",
-  "contre-pied (« whoever wins, you're still the setter »)",
-  "pertinence pour soi (ce qu'il fait déjà : copier le DM, coller la réponse)"
- ],
- "verbatims": [
-  "rd55",
-  "rd67",
-  "rd13",
-  "rd93",
-  "cl033",
-  "rd20",
-  "rd01",
-  "rd65",
-  "mc10",
-  "mc11",
-  "mc22"
- ],
- "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
- "paire": "261019_CAR_S1_AV1_chatgpt-or-claude (idée 9, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
- "sources": [
-  {
-   "fait": "aucune affirmation sur les capacités de ChatGPT ou de Claude : le reel décrit l'usage par copier-coller (le coach colle le DM, recopie la réponse), comme le carrousel ; « both are great, it's a tie » reprend le round 1 validé",
-   "source": "carrousel 261019_CAR_S1_AV1_chatgpt-or-claude, post.json et slide 2 (choix de rédaction du 19/10/2026, validé le 20/10)"
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, on his stool across the podcast table, to the coach at his mic: You asked ChatGPT to be your [bleep]ing setter, right?",
+  "biais": [
+    "duel (deux noms connus, il veut savoir qui gagne)",
+    "contre-pied (« whoever wins, you're still the setter »)",
+    "pertinence pour soi (ce qu'il fait déjà : copier le DM, coller la réponse)"
+  ],
+  "verbatims": [
+    "rd55",
+    "rd67",
+    "rd13",
+    "rd93",
+    "cl033",
+    "rd20",
+    "rd01",
+    "rd65",
+    "mc10",
+    "mc11",
+    "mc22"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261019_CAR_S1_AV1_chatgpt-or-claude (idée 9, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "aucune affirmation sur les capacités de ChatGPT ou de Claude : le reel décrit l'usage par copier-coller (le coach colle le DM, recopie la réponse), comme le carrousel ; « both are great, it's a tie » reprend le round 1 validé",
+      "source": "carrousel 261019_CAR_S1_AV1_chatgpt-or-claude, post.json et slide 2 (choix de rédaction du 19/10/2026, validé le 20/10)"
+    },
+    {
+      "fait": "« whoever wins, you're still the setter » ; « the setter is everything around the model » ; « you stop being a human clipboard »",
+      "source": "carrousel 261019_CAR_S1_AV1_chatgpt-or-claude, slides 5, 6 et 9"
+    },
+    {
+      "fait": "le setter apprend l'offre, répond dans la voix de la marque, attend que le lead ait fini d'écrire, qualifie une question à la fois, réserve l'appel, relance jusqu'à 3 fois dans la fenêtre de 24 h ; il prend le relais dans le flow Manychat quand le lead répond",
+      "source": "brief-de-marque.md, section 2 (site ManySetter)"
+    },
+    {
+      "fait": "« its own setting model, built on years of setting work » ; « right inside your Manychat »",
+      "source": "brief-de-marque.md, section 7 ; carrousel, slide 7"
+    },
+    {
+      "fait": "« No tool can promise a number of calls » ; seul prérequis : « a Manychat account » ; $119/month par setter live, gratuit pour construire et tester sans carte, essai de 14 jours au passage en live",
+      "source": "brief-de-marque.md, sections 3 et 7"
+    }
+  ],
+  "id": "261020_REEL_S1_AV1_chatgpt-or-claude",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel9",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel9_chatgpt-or-claude.md"
   },
-  {
-   "fait": "« whoever wins, you're still the setter » ; « the setter is everything around the model » ; « you stop being a human clipboard »",
-   "source": "carrousel 261019_CAR_S1_AV1_chatgpt-or-claude, slides 5, 6 et 9"
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
   },
-  {
-   "fait": "le setter apprend l'offre, répond dans la voix de la marque, attend que le lead ait fini d'écrire, qualifie une question à la fois, réserve l'appel, relance jusqu'à 3 fois dans la fenêtre de 24 h ; il prend le relais dans le flow Manychat quand le lead répond",
-   "source": "brief-de-marque.md, section 2 (site ManySetter)"
+  "qa": {
+    "duree_s": 59.95,
+    "lufs": -14.1,
+    "true_peak_dbtp": -2.1
   },
-  {
-   "fait": "« its own setting model, built on years of setting work » ; « right inside your Manychat »",
-   "source": "brief-de-marque.md, section 7 ; carrousel, slide 7"
-  },
-  {
-   "fait": "« No tool can promise a number of calls » ; seul prérequis : « a Manychat account » ; $119/month par setter live, gratuit pour construire et tester sans carte, essai de 14 jours au passage en live",
-   "source": "brief-de-marque.md, sections 3 et 7"
-  }
- ],
- "id": "261020_REEL_S1_AV1_chatgpt-or-claude",
- "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
- "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
- "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
- "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
- "source": {
-  "studio": "CONTENU/09_STUDIO_SETTY/reel9",
-  "script": "CONTENU/09_STUDIO_SETTY/writing/reel9_chatgpt-or-claude.md"
- },
- "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
- "fichiers": {
-  "video": "reel.mp4 (hors Git)",
-  "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
- },
- "qa": {
-  "duree_s": 59.97,
-  "lufs": -14.1,
-  "true_peak_dbtp": -2.1
- },
- "statut": "script v1 validé le 20/10 (avec les scripts des reels 4 à 11) ; rendu 30 i/s livré le 20/10, à valider par le fondateur (pas de 60 i/s avant)"
+  "statut": "validé par le fondateur le 20/10 (« Je valide les reels 8, 4, 6, 7 et 9 ») ; final 60 i/s avec la piste caméra ; transmis à MANYSETTER POST"
 }

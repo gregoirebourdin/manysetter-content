@@ -83,6 +83,15 @@ ampoule Edison, lampe arc, console) : à passer dans le kit si un autre reel en 
 2. **Une version de 30 à 35 s** (sans les lignes 11 à 14) pour la rétention.
 3. **Le lip-sync en vraies formes de bouche**, déjà proposé aux reels 2 et 3.
 
+## Le final (validé le 20/10)
+
+- Rendu en 60 i/s avec la piste caméra du moteur (`"cam_track": true`) : chaque mouvement de caméra prend la main sur
+  le précédent. Vérifié sur des images tirées du MP4 : l'accroche avance sans à-coup de 0,5 à 1,6 s, le plan de coupe
+  sur le caisson ON AIR tient 1,1 s (50,2 à 51,3 s), les trois réactions des « Fahhh » tiennent de 0,9 à 1 s, le plan
+  large de la ligne 15 et le retour au large final sont nets. Rien d'autre n'a changé.
+- QA : 1080×1920, 60 i/s, 59,95 s, -14,1 LUFS, crête -2,1 dBTP. Transmis à MANYSETTER POST pour la programmation avec
+  son carrousel, le même jour (reel à 6:30 pm ET).
+
 ## Ce qui t'attend
 
 - Ton feu vert sur ce rendu, puis le final en 60 i/s et la passation à MANYSETTER POST.
