@@ -1,0 +1,53 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "callcenter",
+ "mood": "dusk",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  44.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel16",
+ "slug": "600-setter",
+ "title": "The $600 setter",
+ "pub_id": "261021_REEL_S2_AV2_600-setter",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "You pay a [bleep]ing setter six hundred bucks a month, right?",
+ "hook_title": [
+  "Why your leads still go cold,",
+  "even with a *$600/month* setter"
+ ],
+ "biais": [
+  "chiffre très précis (600 $, 5 %, 14 h → 17 h)",
+  "aversion à la perte (il paie et perd quand même le lead)",
+  "contre-pied (« it's not his fault »)",
+  "pertinence pour soi (son contrat, son dernier lead)"
+ ],
+ "verbatims": [
+  "rd06",
+  "rd63",
+  "rd19",
+  "rd23",
+  "cl056",
+  "cl057",
+  "rd17",
+  "rd42",
+  "rd24",
+  "rd01",
+  "rd65",
+  "rd35"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that answers while your leads are still in the chat. Follow so the DM lands 📩\n\n👇 READ BELOW: why your leads still go cold when you pay a setter, and why it's not his fault.\n\n1. Picture the deal: $600 a month plus 5% of every sale, for someone to answer your DMs.\n\n2. A lead asks at 2 p.m., the reply lands at 5 p.m., and by then she's moved on to whoever answered first.\n\n3. It's not the person. One setter has other clients, a life and sleep, and nobody can live in your inbox all day.\n\n4. Setty answers through Manychat while the lead is still in the chat, in your voice, and hands the tricky chats to your team with the context.\n\nThe catch: an AI setter doesn't replace a great closer on the call. Building and testing Setty are free with no card, then going live starts a 14-day trial at $119/month per live setter, with no commission on your sales.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#appointmentsetter #onlinecoach #highticket\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "caption_youtube": "Why your leads still go cold, even with a $600/month setter\n\n👇 READ BELOW: why your leads still go cold when you pay a setter, and why it's not his fault.\n\n1. Picture the deal: $600 a month plus 5% of every sale, for someone to answer your DMs.\n\n2. A lead asks at 2 p.m., the reply lands at 5 p.m., and by then she's moved on to whoever answered first.\n\n3. It's not the person. One setter has other clients, a life and sleep, and nobody can live in your inbox all day.\n\n4. Setty answers through Manychat while the lead is still in the chat, in your voice, and hands the tricky chats to your team with the context.\n\nThe catch: an AI setter doesn't replace a great closer on the call. Building and testing Setty are free with no card, then going live starts a 14-day trial at $119/month per live setter, with no commission on your sales.\n\nBuild your AI setter free at manysetter.com.\n\n#appointmentsetter #onlinecoach #shorts\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "script à valider",
+ "created": "2026-10-21"
+}

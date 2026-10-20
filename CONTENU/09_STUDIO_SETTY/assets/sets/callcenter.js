@@ -160,7 +160,7 @@ function screenTex(kind) {
       c.fillText("7:12", W / 2, H * 0.52);
       c.font = `500 26px ${SANS}`;
       c.fillStyle = "rgba(255,255,255,0.8)";
-      c.fillText("PM", W / 2 + 128, H * 0.52 - 64);
+      c.fillText("PM", W / 2 + 156, H * 0.52 - 64);
       c.fillText("Locked", W / 2, H * 0.75);
       return;
     }
@@ -484,7 +484,7 @@ export async function build({ renderer, scene, mood = "dusk" }) {
   plantS.scale.setScalar(0.45);
   K.at(plantS, -3.25, 1.35, -2.75);
   const next = workstation({ screen: sleep, chair: false, right: true, seed: 6 });
-  K.at(next, 0.25, 0, -2.45);
+  K.at(next, 0.75, 0, -2.45);
   const farL = workstation({ screen: away, chair: true, seed: 7 });
   K.at(farL, -4.95, 0, -2.45);
   set.add(mine, plantS, next, farL);
@@ -497,7 +497,7 @@ export async function build({ renderer, scene, mood = "dusk" }) {
   const board = ledBoard({ w: 3.2, h: 1.2, hang: CEIL - 6.0 - 0.68 });
   K.at(board, 0.25, 6.0, -7.4);
   const cooler = waterCooler();
-  K.at(cooler, 3.75, 0, -3.3, -0.35);
+  K.at(cooler, 4.35, 0, -3.6, -0.35);
   const plantR = K.plant({ h: 2.6, seed: 23, pot: 0xe4e1db });
   K.at(plantR, 5.6, 0, -1.6);
   const plantL = K.plant({ h: 2.2, seed: 29, pot: 0xe4e1db });
@@ -536,26 +536,32 @@ export async function build({ renderer, scene, mood = "dusk" }) {
     monitor: pl(0x7d8fff, 3, -2.4, 2.3, -1.9, 4),
     board: pl(0xffb23a, 3, 0.25, 5.8, -6.6, 5),
     window: pl(0xff9c86, 5, -4.5, 4.0, BACK + 1.6, 9),
-    cooler: pl(0x9cc4ff, 2, 3.8, 2.6, -2.4, 4),
+    cooler: pl(0x9cc4ff, 2, 4.35, 2.6, -2.7, 4),
   };
 
   // where the characters go (engine pose fields), and the camera shots ({ pos, at, fov })
-  const PERCH = 2.23; // top of the front row's right end panel
+  const PERCH = 2.23; // top of the front row's right end panel (x 0.75 + 1.25 + 0.05)
   const coachHead = new THREE.Vector3(-1.05, 4.05, -0.25);
-  const settyFace = new THREE.Vector3(1.55, PERCH + 1.1, -2.45);
+  const settyFace = new THREE.Vector3(2.05, PERCH + 1.1, -2.45);
+  // two cutaways for R.camOf(): the sticky note on the locked monitor (the punchline), the LED board
+  set.updateMatrixWorld(true);
+  const notePos = note.getWorldPosition(new THREE.Vector3());
+  const boardPos = board.getWorldPosition(new THREE.Vector3());
   return {
     key, rim, lights, root: set,
     coach: { x: COACH.x, y: -0.46, z: COACH.z, turn: COACH.turn, sit: 1, phone: 1 },
-    setty: { x: 1.55, y: PERCH - 0.3, z: -2.45, turn: -0.3, scale: 0.62 },
+    setty: { x: 2.05, y: PERCH - 0.3, z: -2.45, turn: -0.3, scale: 0.62 },
     heads: { coach: coachHead, setty: settyFace },
     frames: {
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 740 },
-      setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 },
+      setty: { target: settyFace, dist: 10.5, yaw: -0.22, pitch: 0.06, y: 800 },
     },
     shots: {
       wide: { pos: [0.2, 4.1, 15.0], at: [0.2, 2.5, -2.0], fov: 44 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
-      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 }),
+      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.22, pitch: 0.06, y: 800 }),
+      note: K.shot(notePos, { dist: 3.6, yaw: -0.5, pitch: 0.05, y: 780 }), // from the left: the coach is on the right
+      board: K.shot(boardPos, { dist: 10, yaw: 0.05, pitch: -0.05, y: 760 }),
     },
   };
 }

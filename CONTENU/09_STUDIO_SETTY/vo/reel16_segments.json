@@ -1,0 +1,18 @@
+[
+ {"who": "setty", "text": "You pay a fucking setter six hundred bucks a month, right?", "style": "Cheeky and mocking, quick, like a best friend about to roast you."},
+ {"who": "coach", "text": "Plus five percent. Best hire ever, bro.", "style": "Proud and casual, a laid-back American guy bragging to his buddy, leaning back in the chair."},
+ {"who": "setty", "text": "Cool, when did he answer your last lead?", "style": "Flat and deadpan, an innocent trap question."},
+ {"who": "coach", "text": "She asked at two, he answered at five.", "style": "Shrugging it off, casual, like it's no big deal."},
+ {"who": "setty", "text": "By five, she was in another coach's DMs.", "style": "Smug and slow, savoring the bad news, a tiny beat before the last word."},
+ {"who": "coach", "text": "Six hundred fucking bucks for a reply three hours late? I'm firing him.", "style": "Shocked at first, the realization hits, then annoyed and decided on the last three words."},
+ {"who": "setty", "text": "It's not his fault. Other clients, a life, sleep. Nobody lives in your inbox, not even you.", "style": "Calm and matter-of-fact defending the guy, listing the three things quickly, then a mocking jab on the last three words.", "pause": 0.95},
+ {"who": "coach", "text": "So I answer them myself, from his desk?", "style": "Defeated and a bit whiny, realizing it."},
+ {"who": "setty", "text": "Nope, plug me into ManyChat. I answer while she's still in the chat, in your voice.", "style": "Smooth and sly, a quick 'Nope', then an easy, confident offer."},
+ {"who": "coach", "text": "And the tricky ones?", "style": "Skeptical, raising an eyebrow."},
+ {"who": "setty", "text": "I hand those to your team, context included.", "style": "Calm and confident, reassuring."},
+ {"who": "coach", "text": "And how much are you?", "style": "Suspicious, eyes narrowed, half joking."},
+ {"who": "setty", "text": "A hundred nineteen bucks a month, and I don't take five percent.", "style": "Smug and proud, a little beat before 'and I don't take five percent', a flex."},
+ {"who": "coach", "text": "Okay, how do I set you up?", "style": "Hesitant and a bit sheepish, a small pause after okay."},
+ {"who": "setty", "text": "Get out of his fucking chair, he went home like a normal human.", "style": "Mocking, laughing at him, slow and smug.", "pause": 0.95},
+ {"who": "setty", "text": "Comment SETTY and I'll send you everything to build your AI setter for free.", "style": "Smooth and smug, then warm and generous on the offer, like handing over a gift."}
+]
