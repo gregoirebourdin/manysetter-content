@@ -73,10 +73,13 @@ on the body by raycasting. Check every character in `lab/coach` and `lab/setty2`
 **Sets** (`assets/sets/`): every reel plays in a styled 3D set, **a different one each time** (Grégoire: « pas juste un fond
 uni »). `kit.js` holds the reusable furniture (room, wood slats, desk, monitor with a canvas screen, keyboard, mug, cans,
 ring light, mic arm, gaming chair, bed, nightstand, lamp, plant, shelf, neon sign, wall glow, night window, framed print,
-rug, window views `VIEWS.night / dubai`, sun patch, light shaft); a set file (`bedroom.js`, the first, moods `golden`
-(default: Dubai at golden hour) and `night`) places them, its lights, the characters' spots and the camera shots
+rug, window views `VIEWS.night / dubai / miami`, sun patch, light shaft; gym: `rubberTex`, `brickTex`, dumbbell, dumbbell rack,
+flat bench, plyo box, kettlebell, shaker, towel, bumper plate, power rack, industrial pendant; `room({ floorMap, wallMap })`,
+`cityWindow({ panes })` for a steel factory window); a set file (`bedroom.js`, the first, moods `golden`
+(default: Dubai at golden hour) and `night`; `gym.js`, reel3: his private gym in the morning, Miami Beach through a
+factory window, Setty on a plyo box) places them, its lights, the characters' spots and the camera shots
 (`wide`, `coach`, `setty`, built with `shot(target, { dist, yaw, y })` so the speaker's face sits above the captions).
-**Shot / reverse shot: the camera goes to whoever talks**, the other reacts. Look test: `lab/set` (wide + two close-ups).
+**Shot / reverse shot: the camera goes to whoever talks**, the other reacts. Look test: `lab/set` (bedroom) and `lab/gym` (wide + two close-ups).
 
 **Making a dialogue reel** (reel2 v3 is the reference): `vo/<reel>_segments.json` carries `"who"` on every line (and
 `"pause": 0.95` after a roast, for the Fahhh); `studio.py voice <reel> --yes --voices "coach=Fenrir,setty=Charon"` makes

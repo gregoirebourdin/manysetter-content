@@ -1,0 +1,20 @@
+[
+ {"who": "setty", "text": "You plugged fucking Claude into your WhatsApp, right?", "style": "Cheeky and mocking, quick, like a best friend about to roast you."},
+ {"who": "coach", "text": "All Sunday, bro. GitHub, QR code, config file. AI answers my leads now.", "style": "Proud and hyped, showing off his weekend project to his buddy, a casual American guy."},
+ {"who": "setty", "text": "Cool. Who's answering them right now?", "style": "Flat and deadpan, a trap question."},
+ {"who": "coach", "text": "Claude, obviously.", "style": "Smug and casual, like it's obvious."},
+ {"who": "setty", "text": "Claude's on your laptop. At home. Closed.", "style": "Dry and slow, one short beat per sentence, killing his vibe."},
+ {"who": "coach", "text": "Wait, it doesn't reply by itself?", "style": "Confused, the confidence cracking, voice going up at the end."},
+ {"who": "setty", "text": "Only when you open it and ask. That's not a setter, that's an intern.", "style": "A mocking roast, slow and smug, savoring the last word.", "pause": 0.95},
+ {"who": "coach", "text": "Fine, I'll bring the laptop to the gym.", "style": "Annoyed and stubborn, brushing it off."},
+ {"who": "setty", "text": "Bring WhatsApp's terms too. No auto-messaging, or they can suspend your account.", "style": "Sly and calm, a little warning with a smirk."},
+ {"who": "coach", "text": "Holy shit, my whole business is on that number.", "style": "Real panic rising, fast, voice going up at the end."},
+ {"who": "setty", "text": "Also, it reads every chat. Your clients, your mom, your ex.", "style": "Teasing and mocking, a beat before each item, the last one savored.", "pause": 0.95},
+ {"who": "coach", "text": "Bro, I'm not a developer. I just want my DMs handled.", "style": "Deflated and tired, venting to a friend."},
+ {"who": "setty", "text": "Then plug me into ManyChat. The official WhatsApp, Instagram, Messenger, no code.", "style": "Smooth and confident, a sly little offer, listing it easily."},
+ {"who": "coach", "text": "And you answer while I'm training?", "style": "Skeptical, raising an eyebrow."},
+ {"who": "setty", "text": "On my own, in your voice. And if I don't know, I hand it to you.", "style": "Calm and confident, a hint of smugness, a short beat between the two sentences."},
+ {"who": "coach", "text": "Okay. How do I set you up?", "style": "Hesitant and a bit sheepish, a small pause after okay."},
+ {"who": "setty", "text": "Finish your set first, you've been on that bench ten minutes.", "style": "Mocking, laughing at him, slow and smug.", "pause": 0.95},
+ {"who": "setty", "text": "Comment SETTY and I'll send you everything to build your AI setter for free.", "style": "Smooth and smug, then warm and generous on the offer, like handing over a gift."}
+]

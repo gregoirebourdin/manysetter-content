@@ -101,20 +101,31 @@ export function noiseTex(base = "#2b3040", amount = 10, seed = 5, size = 512) {
 }
 
 // ---------------- room ----------------
-export function room({ w = 16, h = 10, d = 14, wall = "#2a2f42", floor = "#b98a5e", backZ = -3.4 } = {}) {
+/** floor + back wall. floorMap / wallMap (repeating textures: rubberTex, brickTex…) replace the wood floor and the
+ *  painted wall; tile = their size in world units. */
+export function room({ w = 16, h = 10, d = 14, wall = "#2a2f42", floor = "#b98a5e", backZ = -3.4, floorMap, wallMap,
+  floorTile = 4, wallTile = 4, floorRough = 0.55, baseboard = true } = {}) {
   const g = new THREE.Group();
-  const fl = new THREE.Mesh(new THREE.PlaneGeometry(w, d), mat(0xffffff, { map: woodTex({ base: floor }), roughness: 0.55, clearcoat: 0.25 }));
+  const fl = new THREE.Mesh(new THREE.PlaneGeometry(w, d), mat(0xffffff, { map: floorMap || woodTex({ base: floor }),
+    roughness: floorMap ? floorRough : 0.55, clearcoat: floorMap ? 0.05 : 0.25 }));
   fl.material.map.wrapS = fl.material.map.wrapT = THREE.RepeatWrapping;
-  fl.material.map.repeat.set(w / 4, d / 4);
+  fl.material.map.repeat.set(w / floorTile, d / floorTile);
   fl.rotation.x = -Math.PI / 2;
   fl.position.set(0, 0, backZ + d / 2);
   fl.receiveShadow = true;
-  const wl = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat(0xffffff, { map: noiseTex(wall, 9), roughness: 0.92 }));
+  const wl = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat(0xffffff, { map: wallMap || noiseTex(wall, 9), roughness: 0.92 }));
+  if (wallMap) {
+    wl.material.map.wrapS = wl.material.map.wrapT = THREE.RepeatWrapping;
+    wl.material.map.repeat.set(w / wallTile, h / wallTile);
+  }
   wl.position.set(0, h / 2, backZ);
   wl.receiveShadow = true;
-  const base = box(w, 0.22, 0.06, 0.01, mat(0xf0ece6, { roughness: 0.5 }));
-  base.position.set(0, 0.11, backZ + 0.03);
-  g.add(fl, wl, base);
+  g.add(fl, wl);
+  if (baseboard) {
+    const base = box(w, 0.22, 0.06, 0.01, mat(0xf0ece6, { roughness: 0.5 }));
+    base.position.set(0, 0.11, backZ + 0.03);
+    g.add(base);
+  }
   return g;
 }
 
@@ -573,20 +584,124 @@ export const VIEWS = {
       c.stroke();
     }
   },
+  /** Miami Beach in the morning: the sun just over the ocean, pastel art-deco buildings, palms in front */
+  miami(c, W, H, R) {
+    const sky = c.createLinearGradient(0, 0, 0, H * 0.62);
+    sky.addColorStop(0, "#6fa9de");
+    sky.addColorStop(0.55, "#b9dcf0");
+    sky.addColorStop(1, "#ffe7c8");
+    c.fillStyle = sky;
+    c.fillRect(0, 0, W, H);
+    const sx = W * 0.64, sy = H * 0.5;
+    const halo = c.createRadialGradient(sx, sy, 0, sx, sy, W * 0.55);
+    halo.addColorStop(0, "rgba(255, 252, 235, 1)");
+    halo.addColorStop(0.08, "rgba(255, 238, 200, 0.9)");
+    halo.addColorStop(0.35, "rgba(255, 214, 160, 0.3)");
+    halo.addColorStop(1, "rgba(255, 210, 160, 0)");
+    c.fillStyle = halo;
+    c.fillRect(0, 0, W, H);
+    c.fillStyle = "#fffbea";
+    c.beginPath();
+    c.arc(sx, sy, W * 0.04, 0, Math.PI * 2);
+    c.fill();
+    for (let i = 0; i < 5; i++) { // soft morning clouds
+      c.fillStyle = `rgba(255, 255, 255, ${0.35 + R() * 0.3})`;
+      const cx = R() * W, cy = H * (0.08 + R() * 0.25);
+      for (let k = 0; k < 4; k++) {
+        c.beginPath();
+        c.ellipse(cx + (k - 1.5) * 26, cy + (k % 2) * 6, 34 + R() * 26, 12 + R() * 8, 0, 0, Math.PI * 2);
+        c.fill();
+      }
+    }
+    // the ocean: a band under the horizon, sun glitter
+    const HZ = H * 0.6;
+    const sea = c.createLinearGradient(0, HZ, 0, H);
+    sea.addColorStop(0, "#5fb0cf");
+    sea.addColorStop(1, "#2f86a8");
+    c.fillStyle = sea;
+    c.fillRect(0, HZ, W, H - HZ);
+    c.fillStyle = "rgba(255, 246, 220, 0.85)";
+    for (let i = 0; i < 70; i++) {
+      const gy = HZ + 4 + R() * (H - HZ) * 0.5, spread = 20 + (gy - HZ) * 0.9;
+      c.fillRect(sx + (R() - 0.5) * spread, gy, 6 + R() * 18, 2);
+    }
+    // pastel art-deco blocks along the beach (left and right), rounded corners, eyebrow ledges
+    const PAST = ["#f6c6c9", "#bfe7d9", "#fbe3a7", "#f3f0e6", "#c9d9f5", "#ffd2b0"];
+    const deco = (x, w, h, col) => {
+      const base = H * 0.86;
+      c.fillStyle = col;
+      c.beginPath();
+      c.roundRect(x, base - h, w, h + H, [w * 0.18, w * 0.18, 0, 0]);
+      c.fill();
+      c.fillStyle = "rgba(255, 255, 255, 0.55)";
+      for (let y = base - h + 22; y < base - 8; y += 24) c.fillRect(x + 4, y, w - 8, 3);
+      c.fillStyle = "rgba(60, 90, 120, 0.35)";
+      for (let y = base - h + 30; y < base - 14; y += 24)
+        for (let wx = x + 10; wx < x + w - 14; wx += 18) c.fillRect(wx, y, 9, 10);
+      c.fillStyle = "rgba(255, 255, 255, 0.35)";
+      c.fillRect(x + w - w * 0.22, base - h, w * 0.22, h);
+    };
+    [[-10, 90, 0.36], [84, 70, 0.27], [150, 96, 0.42], [W - 230, 80, 0.3], [W - 150, 104, 0.4], [W - 60, 80, 0.32]]
+      .forEach(([x, w, h], i) => deco(x, w, H * h, PAST[i % PAST.length]));
+    // sand and the boardwalk
+    c.fillStyle = "#f4dfb8";
+    c.fillRect(0, H * 0.86, W, H * 0.14);
+    c.fillStyle = "rgba(190, 150, 100, 0.4)";
+    c.fillRect(0, H * 0.86, W, 4);
+    // palms in front: curved trunks, fronds
+    const palm = (x, h, lean) => {
+      const base = H * 1.02, topX = x + lean * h, topY = base - h;
+      c.strokeStyle = "#5b4636";
+      c.lineCap = "round";
+      for (let k = 0; k < 14; k++) { // ringed trunk
+        const t0 = k / 14, t1 = (k + 1) / 14;
+        const px = (t) => x + lean * h * t * t, py = (t) => base - h * t;
+        c.lineWidth = 16 - t0 * 7;
+        c.beginPath();
+        c.moveTo(px(t0), py(t0));
+        c.lineTo(px(t1), py(t1));
+        c.stroke();
+      }
+      c.fillStyle = "#2f6b47";
+      for (let f = 0; f < 9; f++) {
+        const a = -Math.PI * 0.95 + (f / 8) * Math.PI * 0.95 * 2 + (R() - 0.5) * 0.3, L = h * (0.28 + R() * 0.1);
+        c.save();
+        c.translate(topX, topY);
+        c.rotate(a);
+        c.beginPath();
+        c.moveTo(0, 0);
+        c.quadraticCurveTo(L * 0.5, -L * 0.22, L, L * 0.28);
+        c.quadraticCurveTo(L * 0.5, L * 0.06, 0, 0);
+        c.fill();
+        c.restore();
+      }
+      c.fillStyle = "#4a3a2c";
+      for (let k = 0; k < 4; k++) { c.beginPath(); c.arc(topX + (R() - 0.5) * 12, topY + 6 + R() * 6, 6, 0, Math.PI * 2); c.fill(); }
+    };
+    palm(W * 0.12, H * 0.78, 0.18);
+    palm(W * 0.3, H * 0.62, -0.12);
+    palm(W * 0.86, H * 0.84, -0.2);
+  },
 };
 
 /** a window on a view (VIEWS.night, VIEWS.dubai or a painter), blinds half down or rolled up (blinds: 0) */
-export function cityWindow({ w = 2.6, h = 2.4, view = "night", blinds = 9, mullion = true, bright = 0.85, seed = 41 } = {}) {
+export function cityWindow({ w = 2.6, h = 2.4, view = "night", blinds = 9, mullion = true, bright = 0.85, seed = 41, panes,
+  frame = 0x16161a } = {}) {
   const R = rng(seed);
   const paint = typeof view === "function" ? view : VIEWS[view];
   const tex = canvasTex(1024, Math.round((1024 * h) / w), (c, W, H) => paint(c, W, H, R));
   const g = new THREE.Group();
   const v = new THREE.Mesh(new THREE.PlaneGeometry(w, h), glow(0xffffff, { map: tex }));
   v.material.color.setScalar(bright);
-  const fm = mat(0x16161a, { roughness: 0.4 });
+  const fm = mat(frame, { roughness: 0.4 });
   const t = 0.1;
   const bars = [[0, h / 2, w + 2 * t, t], [0, -h / 2, w + 2 * t, t], [-w / 2, 0, t, h], [w / 2, 0, t, h]];
-  if (mullion) bars.push([0, 0, 0.05, h]);
+  if (mullion && !panes) bars.push([0, 0, 0.05, h]);
+  if (panes) { // a steel factory window: a grid of panes
+    const [cols, rows] = panes;
+    for (let i = 1; i < cols; i++) bars.push([-w / 2 + (i * w) / cols, 0, 0.045, h]);
+    for (let j = 1; j < rows; j++) bars.push([0, -h / 2 + (j * h) / rows, w, 0.045]);
+  }
   for (const [x, y, bw, bh] of bars) {
     const b = box(bw, bh, 0.12, 0.01, fm);
     b.position.set(x, y, 0.04);
@@ -689,4 +804,255 @@ export function shot(target, { dist = 10, fov = 30, yaw = 0, pitch = 0.1, x = 54
   const pos = [target.x + Math.sin(yaw) * Math.cos(pitch) * dist, target.y + Math.sin(pitch) * dist, target.z + Math.cos(yaw) * Math.cos(pitch) * dist];
   const right = [Math.cos(yaw), 0, -Math.sin(yaw)];
   return { pos, at: [target.x - right[0] * offX, target.y - offY, target.z - right[2] * offX], fov };
+}
+
+// ---------------- gym ----------------
+/** black rubber gym tiles with coloured EPDM flecks (repeat it with room({ floorMap, floorTile })) */
+export function rubberTex({ base = "#1c1d21", fleck = ["#ff611d", "#8b8f99", "#3d4a5c"], seed = 9 } = {}) {
+  const R = rng(seed);
+  return canvasTex(512, 512, (c, W, H) => {
+    c.fillStyle = base;
+    c.fillRect(0, 0, W, H);
+    for (let i = 0; i < 2600; i++) {
+      c.fillStyle = R() < 0.82 ? `rgba(255,255,255,${0.02 + R() * 0.04})` : fleck[Math.floor(R() * fleck.length)];
+      c.globalAlpha = R() < 0.82 ? 1 : 0.5;
+      c.fillRect(R() * W, R() * H, 1.5 + R() * 2.5, 1.5 + R() * 2.5);
+    }
+    c.globalAlpha = 1;
+    c.strokeStyle = "rgba(0,0,0,0.75)"; // the tile seams
+    c.lineWidth = 4;
+    c.strokeRect(1, 1, W - 2, H - 2);
+  }, { srgb: true });
+}
+
+/** red-brown brick with dark mortar (repeat it with room({ wallMap, wallTile })) */
+export function brickTex({ base = "#8c4a35", mortar = "#2e2420", rows = 14, cols = 5, seed = 17 } = {}) {
+  const R = rng(seed);
+  return canvasTex(1024, 1024, (c, W, H) => {
+    c.fillStyle = mortar;
+    c.fillRect(0, 0, W, H);
+    const bh = H / rows, bw = W / cols, m = 7;
+    for (let r = 0; r < rows; r++) {
+      const off = r % 2 ? bw / 2 : 0;
+      for (let k = -1; k <= cols; k++) {
+        const x = k * bw + off;
+        c.fillStyle = base;
+        c.filter = `brightness(${0.78 + R() * 0.38}) saturate(${0.8 + R() * 0.4})`;
+        c.fillRect(x + m / 2, r * bh + m / 2, bw - m, bh - m);
+        c.filter = "none";
+        c.fillStyle = `rgba(255,255,255,${R() * 0.05})`;
+        c.fillRect(x + m / 2, r * bh + m / 2, bw - m, 4);
+        for (let n = 0; n < 30; n++) {
+          c.fillStyle = `rgba(0,0,0,${R() * 0.12})`;
+          c.fillRect(x + m / 2 + R() * (bw - m - 4), r * bh + m / 2 + R() * (bh - m - 4), 3, 3);
+        }
+      }
+    }
+  });
+}
+
+const steel = (color = 0x1b1c20) => mat(color, { metalness: 0.6, roughness: 0.38, clearcoat: 0.4 });
+const chrome = () => mat(0xd7dbe0, { metalness: 1, roughness: 0.18 });
+
+/** hex dumbbell lying along x (len = full length) */
+export function dumbbell({ len = 0.62, r = 0.11, color = 0x1a1a1d } = {}) {
+  const g = new THREE.Group();
+  const head = mat(color, { roughness: 0.55, clearcoat: 0.2 });
+  const hw = len * 0.26;
+  for (const sx of [-1, 1]) {
+    const hd = cyl(r, r, hw, head, 6);
+    hd.rotation.z = Math.PI / 2;
+    hd.rotation.x = Math.PI / 6;
+    hd.position.x = sx * (len / 2 - hw / 2);
+    const cap = cyl(r * 0.35, r * 0.35, 0.012, chrome(), 20);
+    cap.rotation.z = Math.PI / 2;
+    cap.position.x = sx * (len / 2 + 0.004);
+    g.add(hd, cap);
+  }
+  const handle = cyl(r * 0.28, r * 0.28, len - 2 * hw + 0.02, chrome(), 20);
+  handle.rotation.z = Math.PI / 2;
+  g.add(handle);
+  return g;
+}
+
+/** two-tier dumbbell rack along x, the pairs getting heavier to the right */
+export function dumbbellRack({ w = 3.4, h = 1.45, d = 0.8, n = 6 } = {}) {
+  const g = new THREE.Group();
+  const st = steel();
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+    const leg = box(0.09, h, 0.09, 0.01, st);
+    leg.position.set(sx * (w / 2 - 0.05), h / 2, sz * (d / 2 - 0.05));
+    g.add(leg);
+  }
+  const tiers = [[h * 0.48, d * 0.15], [h, -d * 0.12]];
+  tiers.forEach(([y, z], ti) => {
+    const shelfB = box(w, 0.06, d * 0.55, 0.01, st);
+    shelfB.position.set(0, y - 0.05, z);
+    shelfB.rotation.x = 0.28;
+    g.add(shelfB);
+    for (let i = 0; i < n; i++) {
+      const k = (i + ti * n) / (2 * n - 1), r = 0.075 + k * 0.08;
+      const db = dumbbell({ len: r * 2.2, r, color: 0x1a1a1d });
+      db.rotation.y = Math.PI / 2;
+      db.position.set(-w / 2 + 0.25 + (i + 0.5) * ((w - 0.5) / n), y + r * 0.95, z + 0.02);
+      g.add(db);
+    }
+  });
+  return g;
+}
+
+/** flat bench along x: padded top (black vinyl, orange piping), steel spine, T feet */
+export function flatBench({ l = 2.3, h = 0.62, w = 0.62 } = {}) {
+  const g = new THREE.Group();
+  const pad = soft(l, 0.24, w, mat(0x141417, { roughness: 0.42, clearcoat: 0.5, clearcoatRoughness: 0.35 }), { P: 4.2, puff: 0.05, seed: 4 });
+  pad.position.y = h - 0.12;
+  const pipe = box(l - 0.1, 0.03, w + 0.02, 0.012, mat(0xff611d, { roughness: 0.5 }), false);
+  pipe.position.y = h - 0.22;
+  const spine = box(l * 0.86, 0.12, 0.16, 0.02, steel());
+  spine.position.y = h - 0.3;
+  g.add(pad, pipe, spine);
+  for (const sx of [-1, 1]) {
+    const post = box(0.13, h - 0.36, 0.13, 0.02, steel());
+    post.position.set(sx * l * 0.36, (h - 0.36) / 2 + 0.04, 0);
+    const foot = box(0.18, 0.08, w * 1.25, 0.03, steel());
+    foot.position.set(sx * l * 0.36, 0.04, 0);
+    g.add(post, foot);
+  }
+  g.userData.top = h;
+  return g;
+}
+
+/** wooden plyo box (jump box), hand holes on the sides */
+export function plyoBox({ w = 1.35, h = 1.25, d = 1.05 } = {}) {
+  const g = new THREE.Group();
+  const wood = mat(0xffffff, { map: noiseTex("#d2a877", 7, 8, 256), roughness: 0.62, clearcoat: 0.12 });
+  wood.map.repeat.set(1, 1);
+  const b = box(w, h, d, 0.03, wood);
+  b.position.y = h / 2;
+  g.add(b);
+  const hole = mat(0x2a1a10, { roughness: 1 });
+  for (const sx of [-1, 1]) {
+    const hh = new THREE.Mesh(new THREE.CircleGeometry(0.1, 24), hole);
+    hh.scale.set(1, 0.42, 1);
+    hh.position.set(sx * (w / 2 + 0.002), h * 0.78, 0);
+    hh.rotation.y = sx * Math.PI / 2;
+    g.add(hh);
+  }
+  const edge = mat(0x8a6040, { roughness: 0.7 });
+  for (const [x, z, ww, dd] of [[0, d / 2, w, 0.02], [0, -d / 2, w, 0.02], [w / 2, 0, 0.02, d], [-w / 2, 0, 0.02, d]]) {
+    const e = box(ww, 0.02, dd, 0.005, edge, false);
+    e.position.set(x, h + 0.001, z);
+    g.add(e);
+  }
+  g.userData.top = h;
+  return g;
+}
+
+/** kettlebell with a coloured band */
+export function kettlebell({ r = 0.24, color = 0x1d1e22, band = 0xff611d } = {}) {
+  const g = new THREE.Group();
+  const iron = mat(color, { roughness: 0.5, clearcoat: 0.25 });
+  const bell = ball(r, iron, 32);
+  bell.scale.set(1, 0.92, 1);
+  bell.position.y = r * 0.9;
+  const handle = shade(new THREE.Mesh(new THREE.TorusGeometry(r * 0.62, r * 0.16, 14, 32, Math.PI), iron));
+  handle.position.y = r * 1.62;
+  const ring = cyl(r * 1.005, r * 1.005, r * 0.22, mat(band, { roughness: 0.5 }), 32);
+  ring.position.y = r * 0.9;
+  g.add(bell, handle, ring);
+  return g;
+}
+
+/** protein shaker: tinted body, orange screw lid, a flip cap */
+export function shaker({ color = 0x232328, lid = 0xff611d } = {}) {
+  const g = new THREE.Group();
+  const body = cyl(0.13, 0.11, 0.42, mat(color, { roughness: 0.3, clearcoat: 0.8, transmission: 0.2 }), 32);
+  body.position.y = 0.21;
+  const cap = cyl(0.135, 0.135, 0.09, mat(lid, { roughness: 0.4, clearcoat: 0.4 }), 32);
+  cap.position.y = 0.465;
+  const spout = cyl(0.04, 0.05, 0.06, mat(lid, { roughness: 0.4 }), 16);
+  spout.position.set(0.04, 0.54, 0);
+  g.add(body, cap, spout);
+  return g;
+}
+
+/** gym towel, folded and a little crumpled */
+export function towel({ w = 0.9, d = 0.42, color = 0xf3f0ea, stripe = 0xff611d } = {}) {
+  const g = new THREE.Group();
+  const t = soft(w, 0.09, d, mat(color, { roughness: 1, sheen: 1, sheenColor: new THREE.Color(0xffffff), sheenRoughness: 0.9 }),
+    { P: 3, puff: 0.25, wrinkle: 0.02, seed: 6 });
+  t.position.y = 0.05;
+  const s = box(0.06, 0.092, d * 0.98, 0.02, mat(stripe, { roughness: 1 }), false);
+  s.position.set(w * 0.34, 0.05, 0);
+  g.add(t, s);
+  return g;
+}
+
+/** bumper plate standing on its edge (axis along x) */
+export function plate({ r = 0.48, w = 0.12, color = 0x17171a, ring = 0xff611d } = {}) {
+  const g = new THREE.Group();
+  const p = cyl(r, r, w, mat(color, { roughness: 0.6 }), 48);
+  p.rotation.z = Math.PI / 2;
+  const hub = cyl(r * 0.24, r * 0.24, w + 0.02, chrome(), 32);
+  hub.rotation.z = Math.PI / 2;
+  const rim = shade(new THREE.Mesh(new THREE.TorusGeometry(r * 0.72, 0.012, 8, 64), mat(ring, { roughness: 0.5 })));
+  rim.rotation.y = Math.PI / 2;
+  rim.position.x = w / 2 + 0.002;
+  g.add(p, hub, rim);
+  return g;
+}
+
+/** power rack with a loaded barbell on the J-hooks */
+export function powerRack({ w = 2.6, h = 5.4, d = 1.8, bar = 3.1 } = {}) {
+  const g = new THREE.Group();
+  const st = steel(0x18191d), holes = mat(0x050506, { roughness: 1 });
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+    const up = box(0.16, h, 0.16, 0.015, st);
+    up.position.set(sx * w / 2, h / 2, sz * d / 2);
+    g.add(up);
+    for (let y = 1.2; y < h - 0.4; y += 0.18) { // the hole line
+      const hl = box(0.05, 0.05, 0.005, 0.005, holes, false);
+      hl.position.set(sx * w / 2, y, sz * d / 2 + 0.083);
+      g.add(hl);
+    }
+  }
+  for (const sz of [-1, 1]) {
+    const top = box(w + 0.16, 0.16, 0.16, 0.015, st);
+    top.position.set(0, h, sz * d / 2);
+    g.add(top);
+  }
+  for (const sx of [-1, 1]) {
+    const side = box(0.16, 0.16, d, 0.015, st);
+    side.position.set(sx * w / 2, h, 0);
+    const foot = box(0.2, 0.08, d + 0.4, 0.02, st);
+    foot.position.set(sx * w / 2, 0.04, 0);
+    const hook = box(0.14, 0.12, 0.22, 0.02, mat(0xff611d, { roughness: 0.5 }));
+    hook.position.set(sx * w / 2, 3.0, d / 2 + 0.16);
+    g.add(side, foot, hook);
+  }
+  const bb = cyl(0.04, 0.04, bar, chrome(), 20);
+  bb.rotation.z = Math.PI / 2;
+  bb.position.set(0, 3.12, d / 2 + 0.2);
+  g.add(bb);
+  for (const sx of [-1, 1]) {
+    const pl = plate({ r: 0.62, w: 0.14 });
+    pl.position.set(sx * (w / 2 + 0.24), 3.12, d / 2 + 0.2);
+    const pl2 = plate({ r: 0.5, w: 0.1, ring: 0xd7dbe0 });
+    pl2.position.set(sx * (w / 2 + 0.38), 3.12, d / 2 + 0.2);
+    g.add(pl, pl2);
+  }
+  return g;
+}
+
+/** industrial pendant: black cone shade, glowing bulb (add its PointLight in the set) */
+export function pendant({ cord = 2.2, color = 0xffd7a0 } = {}) {
+  const g = new THREE.Group();
+  const c = cyl(0.008, 0.008, cord, mat(0x111111), 6);
+  c.position.y = cord / 2;
+  const shadeM = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.42, 0.42, 40, 1, true), mat(0x141416, { roughness: 0.4, side: THREE.DoubleSide }));
+  shadeM.position.y = -0.21;
+  const bulb = ball(0.11, glow(color), 20);
+  bulb.position.y = -0.36;
+  g.add(c, shadeM, bulb);
+  return g;
 }

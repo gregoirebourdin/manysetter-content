@@ -1,0 +1,48 @@
+{
+ "layout": "set",
+ "set": "gym",
+ "mood": "morning",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  48.0,
+  66.0
+ ],
+ "tail_s": 2.4,
+ "id": "reel3",
+ "slug": "claude-whatsapp",
+ "title": "Claude on WhatsApp",
+ "pub_id": "261020_REEL_S2_AV2_claude-whatsapp",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, on a plyo box, to the coach on his bench: You plugged [bleep]ing Claude into your WhatsApp, right?",
+ "hook_title": [
+  "Claude answers your *WhatsApp*?",
+  "Here's the part nobody posts."
+ ],
+ "biais": [
+  "pertinence pour soi (le tuto qu'il vient de faire)",
+  "écart de curiosité (« the part nobody posts »)",
+  "aversion à la perte (compte suspendu, conversations privées lues)"
+ ],
+ "verbatims": [
+  "rd55",
+  "cl121",
+  "rd06",
+  "cl074",
+  "cl012",
+  "rd67",
+  "rd65",
+  "rd57",
+  "mc05",
+  "cl030"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "statut": "script v1 à valider",
+ "created": "2026-10-20"
+}
