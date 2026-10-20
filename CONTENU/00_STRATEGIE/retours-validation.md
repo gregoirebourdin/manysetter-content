@@ -436,3 +436,7 @@ Format d'une règle :
 - Retour : « Je valide les 10 scripts avec tes retouches et les 10 décors, OK pour le coût des voix : lance-les. »
 - Règle : les scripts v1 des reels 12 à 21 (`09_STUDIO_SETTY/writing/lot_reels_12-21_scripts.md`), avec les retouches de Claude (« fit » et « qualify » sortis des répliques, « any hour » retiré du reel 21), et leurs 10 décors (coworking, studio fond vert, cabinet de coach, salle de serveurs, call center, garage, salle de réunion, parc, diner, ring de boxe) sont **validés**. Les 4 titres-hooks sur 3 lignes (reels 12, 13, 14, 20) restent mot pour mot.
 - Règle : la génération des voix est autorisée pour ces 10 scripts (environ 0,40 $, moins de 0,75 $ avec les reprises). **C'est MANYSETTER REELS qui les génère**, dans la session où le fondateur a donné son accord (le refus d'un accord transmis au reel 5 ne se reproduit plus). Chaque rendu reste à valider un par un.
+
+## 2026-10-21 · Reel 14 de Setty « Free coaching in the DMs » validé
+- Retour : « Je valide le reel 14, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
+- Règle : le reel 14 (`07_PRET_A_PUBLIER/261021_REEL_S2_AV2_free-coaching-dms/`, cabinet de coach, 50,0 s) est **validé** tel que livré en 30 i/s ; final en 60 i/s avec `studio.py final` (piste caméra, CRF 20), puis transmis à MANYSETTER POST, qui le programme le même jour que son carrousel (`261020_CAR_S2_AV2_free-coaching-dms`).
