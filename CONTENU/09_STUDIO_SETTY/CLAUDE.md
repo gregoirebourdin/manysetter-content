@@ -161,7 +161,7 @@ flexes"`, `"Smooth, smug, a little flirty sign-off"`.
 | Look | read `reel2/snapshots/contact-sheet-*.jpg`; `snap reel2 --at 3.2,3.4` for a precise moment | 15 s |
 | ✋ Render | `render reel2` (30 fps: 1 min 11 s for reel1 on the M1 GPU), then `deliver reel2`: 2 MP4s + QA (1080×1920, 25–30 s, −14 LUFS, ≤ −1 dBTP, frame 0 not black) + `07_PRET_A_PUBLIER/<pub_id>/` (reel.mp4, caption.txt, post.json) | ~1.5 min |
 | Final | after Grégoire's notes: `render reel2 --fps 60`, `deliver reel2` | ~2.5 min |
-| Kit change | `regress --before`, change the kit, `regress`: reel1 must stay identical | 30 s each |
+| Kit change | `regress --before`, change the kit, `regress`: reel1 and reel2 must stay identical (`--reels reel2` for one) | ~2 min |
 
 Never re-render for the no-music version (`deliver` remuxes). Commit and push after each validated step.
 

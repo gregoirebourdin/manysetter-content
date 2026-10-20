@@ -585,23 +585,35 @@ def cmd_deliver(a):
 
 # ---------------------------------------------------------------- regress
 
+REGRESS = ["reel1", "reel2"]  # the validated reels a kit change must never move
+
+
 def cmd_regress(a):
-    """Before touching assets/engine or scripts/sound.py: `regress --before`; after: `regress` (reel1 must not move)."""
-    at = (STUDIO / "templates/regress_reel1_at.txt").read_text().strip()
+    """Before touching the kit (assets/, scripts/sound.py…): `regress --before`; after: `regress`. reel1 (the old
+    "center" layout) and reel2 (the first dialogue reel in a 3D set) must stay identical; `--reels reel2` checks one."""
     base = STUDIO / "renders/regress"
-    out = base / ("before" if a.before else "after")
-    shutil.rmtree(out, ignore_errors=True)
-    run([PY, "reel1/build.py"], check=True, capture_output=True)
-    r = run(HF + ["snapshot", "reel1", "--at", at, "--no-end", "--describe", "false", "--timeout", "60000", "-o", str(out)],
-            capture_output=True, text=True)
-    if r.returncode:
-        sys.exit(r.stdout[-800:] + r.stderr[-800:])
-    if a.before:
-        say(f"reference saved: {out.relative_to(STUDIO)} ({len(list(out.glob('frame-*.png')))} frames of reel1)")
-        return
-    if not (base / "before").exists():
-        sys.exit("no reference: run `python3 studio.py regress --before` before changing the kit")
-    sys.exit(run([PY, "scripts/imgdiff.py", str(base / "before"), str(out)]).returncode)
+    if (base / "before").exists() and not (base / "reel1").exists():  # the old layout of this folder (reel1 only)
+        (base / "reel1").mkdir(parents=True)
+        shutil.move(str(base / "before"), str(base / "reel1/before"))
+        shutil.rmtree(base / "after", ignore_errors=True)
+    code = 0
+    for reel in (a.reels.split(",") if a.reels else REGRESS):
+        at = (STUDIO / f"templates/regress_{reel}_at.txt").read_text().strip()
+        out = base / reel / ("before" if a.before else "after")
+        shutil.rmtree(out, ignore_errors=True)
+        run([PY, f"{reel}/build.py"], check=True, capture_output=True)
+        r = run(HF + ["snapshot", reel, "--at", at, "--no-end", "--describe", "false", "--timeout", "60000", "-o", str(out)],
+                capture_output=True, text=True)
+        if r.returncode:
+            sys.exit(r.stdout[-800:] + r.stderr[-800:])
+        if a.before:
+            say(f"reference saved: {out.relative_to(STUDIO)} ({len(list(out.glob('frame-*.png')))} frames of {reel})")
+            continue
+        if not (base / reel / "before").exists():
+            sys.exit(f"no reference for {reel}: run `python3 studio.py regress --before` before changing the kit")
+        say(f"{reel}:")
+        code = code or run([PY, "scripts/imgdiff.py", str(base / reel / "before"), str(out)]).returncode
+    sys.exit(code)
 
 
 # ---------------------------------------------------------------- cut
@@ -635,7 +647,7 @@ def main():
     p = sub.add_parser("render"); p.add_argument("reel"); p.add_argument("--fps", type=int, default=30)
     p.add_argument("--workers", default="2"); p.add_argument("--quality", default="looks"); p.add_argument("--no-whisper", action="store_true")
     p = sub.add_parser("deliver"); p.add_argument("reel"); p.add_argument("file", nargs="?")
-    p = sub.add_parser("regress"); p.add_argument("--before", action="store_true")
+    p = sub.add_parser("regress"); p.add_argument("--before", action="store_true"); p.add_argument("--reels", help="e.g. reel2 (default: reel1,reel2)")
     p = sub.add_parser("cut"); p.add_argument("reel"); p.add_argument("lines", nargs="+", type=int)
     a = ap.parse_args()
     {"doctor": cmd_doctor, "new": cmd_new, "voice": cmd_voice, "build": cmd_build, "audio": cmd_audio, "snap": cmd_snap,
