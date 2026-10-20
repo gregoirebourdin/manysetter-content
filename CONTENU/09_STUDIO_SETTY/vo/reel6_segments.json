@@ -1,6 +1,6 @@
 [
  {"who": "setty", "text": "You did your fucking five-day challenge, right?", "style": "Cheeky and mocking, quick, like a best friend about to roast you."},
- {"who": "coach", "text": "Five days live, bro. Pitched the offer last night. Banger.", "style": "Proud but exhausted, a hoarse voice after five days of lives, a casual American guy bragging to his buddy at midnight."},
+ {"who": "coach", "text": "Five days live, bro. Pitched the offer last night. Banger.", "style": "Proud but exhausted, a hoarse voice after five days of lives, a casual American guy bragging to his buddy at midnight. Say 'Pitched' crisply with its final 'ed' sound, and 'Banger' with a clear, punchy B."},
  {"who": "setty", "text": "Then why are you eating cold pizza at midnight?", "style": "A dry, mocking roast, slow and smug, savoring 'cold pizza'.", "pause": 0.95},
  {"who": "coach", "text": "Day six, man. My DMs exploded. Still open? Can I pay in two parts?", "style": "Stressed and overwhelmed, talking fast, reading his DMs out loud in a tired, whiny voice."},
  {"who": "setty", "text": "How many did you answer?", "style": "Flat and deadpan, a trap question."},

@@ -1,0 +1,72 @@
+{
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, on the couch armrest, to the coach slumped with his phone and a cold pizza on day 6: You did your [bleep]ing 5-day challenge, right?",
+  "biais": [
+    "contre-pied (« outdated » : le format qu'il vient de lancer, et Setty dit que le challenge a marché)",
+    "écart de curiosité (« because of this »)",
+    "aversion à la perte (les plus engagés de la semaine laissés en vu)"
+  ],
+  "verbatims": [
+    "rd04",
+    "rd24",
+    "rd20",
+    "rd13",
+    "rd17",
+    "cl031",
+    "rd06",
+    "rd19",
+    "rd63",
+    "mc47",
+    "rd75",
+    "rd27",
+    "rd01",
+    "cl033",
+    "rd65",
+    "rd38",
+    "rd57",
+    "rd70",
+    "rd91",
+    "rd92",
+    "rd43",
+    "rd76",
+    "rd77"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261019_CAR_S1_AV1_5-day-challenge (idée 2, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "la situation du jour 6 : offre pitchée en live le jour 5, des centaines de DM en même temps (« is the offer still open? », « can i pay in 2 parts? »), vingt réponses, les plus engagés en vu, « it burned me out », ce qui est dépassé c'est de répondre à chaque DM à la main",
+      "source": "ligne-edito.md (idée 2) et carrousel validé 261019_CAR_S1_AV1_5-day-challenge (slides 2 à 7)"
+    },
+    {
+      "fait": "ManySetter se branche sur Manychat, apprend l'offre depuis la page de vente (playbook en environ deux minutes), répond dans la voix de la marque, qualifie une question à la fois, ne donne l'agenda qu'aux bons leads (les autres reçoivent une réponse utile), réserve dans Calendly avec le résumé du lead",
+      "source": "brief-de-marque.md § 2 (site ManySetter)"
+    },
+    {
+      "fait": "prix et essai : 119 $ par mois par setter live ; construire et tester est gratuit sans carte ; le passage en live lance un essai de 14 jours",
+      "source": "brief-de-marque.md § 3"
+    }
+  ],
+  "id": "261020_REEL_S1_AV1_5-day-challenge",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel6",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel6_5-day-challenge.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+  },
+  "qa": {
+    "duree_s": 57.07,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.0
+  },
+  "statut": "script v1 validé le 20/10 avec les 8 scripts ; rendu 30 i/s à valider (pas de 60 i/s avant la validation de Grégoire)"
+}

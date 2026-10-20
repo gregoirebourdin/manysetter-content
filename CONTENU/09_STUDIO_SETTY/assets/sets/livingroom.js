@@ -77,7 +77,7 @@ function coffeeTable({ w = 2.6, d = 1.25, h = 0.55 } = {}) {
   return g;
 }
 
-/** an open pizza box, three slices left (the rest is gone), pepperoni; the lid is thrown open, almost flat */
+/** an open pizza box, three slices left (the rest is gone), pepperoni; the lid is thrown open, flat */
 function pizzaBox({ s = 1.05 } = {}) {
   const g = new THREE.Group();
   const card = K.mat(0xc79a63, { roughness: 0.9 });
@@ -108,7 +108,7 @@ function pizzaBox({ s = 1.05 } = {}) {
   const lid = K.box(s, 0.025, s, 0.01, K.mat(0xffffff, { map: lidTex, roughness: 0.95 }));
   lid.position.set(0, 0, s / 2);
   hinge.add(lid);
-  hinge.rotation.x = -2.6;
+  hinge.rotation.x = -3.02; // thrown open, lying flat: it never stands up between a face and the camera
   g.add(hinge);
   // the pizza: crust, cheese and pepperoni on 3 of 8 slices
   const r = s * 0.44, slice = (Math.PI * 2) / 8;
@@ -361,6 +361,8 @@ export async function build({ renderer, scene, mood = "night" }) {
   const settyFace = new THREE.Vector3(setty.x, setty.y + 1.08, setty.z);
   return {
     key, rim, lights, root: set,
+    // the ring light's parts, so a reel can switch it off (the punchline): its light, its glowing tube, its halo
+    ring: { light: lights.ring, tube: ring.children[0], halo },
     coach, setty,
     heads: { coach: coachHead, setty: settyFace },
     frames: {
