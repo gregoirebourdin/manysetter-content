@@ -1,0 +1,58 @@
+{
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, sitting on the café table next to the latte, to the coach waiting on an empty Zoom: You dropped your [bleep]ing Calendly link in the DM, right?",
+ "biais": [
+  "pertinence pour soi (son lien Calendly dans le DM)",
+  "chiffre très précis (90 % de no-shows, l'appel vide à 15:02)",
+  "contre-pied (le lien partout n'est pas l'astuce, c'est la cause des no-shows)",
+  "aversion à la perte (ses créneaux, son temps et son énergie)"
+ ],
+ "verbatims": [
+  "rd43",
+  "rd96",
+  "rd33",
+  "rd95",
+  "rd45",
+  "rd75",
+  "rd44",
+  "rd94",
+  "rd88",
+  "rd46",
+  "rd76",
+  "rd77"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "paire": "261019_CAR_S2_AV2_calendly-no-shows (idée 8, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+ "sources": [
+  {
+   "fait": "l'argumentaire et le titre-hook : le lien Calendly dans le DM auto et la bio, le lien ne demande rien, gratuit à réserver donc gratuit à rater, l'appel vide de 15 minutes, « make them earn the link »",
+   "source": "carrousel 261019_CAR_S2_AV2_calendly-no-shows (validé le 20/10), ligne-edito.md idée 8"
+  },
+  {
+   "fait": "réservation par le setter : 2 ou 3 créneaux dans le fuseau du lead, résumé du lead dans l'événement (Cal.com, iClosed, Calendly payant), sinon envoi du lien ; qualification une question à la fois ; une réponse utile (exemple : un guide gratuit) pour ceux qui ne correspondent pas",
+   "source": "brief-de-marque.md, section 2 (site ManySetter lu le 10/10/2026)"
+  }
+ ],
+ "id": "261020_REEL_S2_AV2_calendly-no-shows",
+ "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+ "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+ "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+ "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "source": {
+  "studio": "CONTENU/09_STUDIO_SETTY/reel5",
+  "script": "CONTENU/09_STUDIO_SETTY/writing/reel5_calendly-no-shows.md"
+ },
+ "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+ "fichiers": {
+  "video": "reel.mp4 (hors Git)",
+  "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+ },
+ "qa": {
+  "duree_s": 55.77,
+  "lufs": -14.2,
+  "true_peak_dbtp": -1.9
+ },
+ "statut": "rendu 30 i/s livré le 20/10 (voix validées et générées), à valider par le fondateur ; ensuite final 60 i/s et passation à MANYSETTER POST"
+}
