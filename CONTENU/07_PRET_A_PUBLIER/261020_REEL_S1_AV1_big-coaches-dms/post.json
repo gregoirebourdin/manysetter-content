@@ -1,0 +1,76 @@
+{
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, in the club seat across the coach's rented private jet: You still answer your own [bleep]ing DMs, right?",
+  "biais": [
+    "autorité (les gros comptes, leur vraie offre d'emploi)",
+    "écart de curiosité (« why… never »)",
+    "pertinence pour soi (il fait les trois métiers)"
+  ],
+  "verbatims": [
+    "rd01",
+    "rd54",
+    "rd60",
+    "rd64",
+    "rd34",
+    "cl054",
+    "rd31",
+    "rd27",
+    "rd75",
+    "rd92",
+    "cl057",
+    "cl058",
+    "rd62",
+    "rd57",
+    "mc05",
+    "rd65",
+    "rd77",
+    "rd35",
+    "rd70"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261019_CAR_S1_AV1_big-coaches-dms (idée 5, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "annonce publique d'un coach santé à 363 000 abonnés qui recrute un setter : « I have 363K followers on Instagram, so a ton of leads coming in for you. »",
+      "source": "https://www.reddit.com/r/appointmentsetter/comments/1wjk3zf/hiring_us_based_dm_appointment_setter/ (verbatim rd34, vérifié le 10/10/2026 ; carrousel slide 2)"
+    },
+    {
+      "fait": "les gros comptes recrutent des setters pour leurs DM (autres offres publiques)",
+      "source": "verbatims rd31 (r/appointmentsetter, marque de coaching fitness) et cl054 (Freelancer, agence qui travaille pour des coachs « 7-figure »)"
+    },
+    {
+      "fait": "le système des gros comptes : le coach fait le contenu, le setter les DM, le closer les appels",
+      "source": "carrousel 261019_CAR_S1_AV1_big-coaches-dms, slide 3 (validé le 20/10)"
+    },
+    {
+      "fait": "setter de rendez-vous aux États-Unis : environ 13 à 21 $ de l'heure plus commission",
+      "source": "PayScale, mai 2026, cité par le guide « AI vs human setter » du site (CLAUDE.md du studio § 1, ligne-edito idée 5)"
+    },
+    {
+      "fait": "répond avec la voix de la marque, seuls les bons leads ont l'agenda, l'équipe peut reprendre une conversation ; $119/month per live setter ; gratuit pour construire et tester, sans carte",
+      "source": "brief-de-marque.md, sections 2, 3 et 5"
+    }
+  ],
+  "id": "261020_REEL_S1_AV1_big-coaches-dms",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel10",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel10_big-coaches-dms.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+  },
+  "qa": {
+    "duree_s": 59.93,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.1
+  },
+  "statut": "script v1 à valider (20/10) : rien de payant avant le feu vert du fondateur"
+}

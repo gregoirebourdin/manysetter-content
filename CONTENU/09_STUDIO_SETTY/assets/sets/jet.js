@@ -421,7 +421,7 @@ export async function build({ renderer, scene, mood = "golden" }) {
     setty: { x: 2.28, y: 0.98, z: -1.18, turn: -0.42, scale: 0.68 },
     heads: { coach: coachHead, setty: settyFace },
     frames: {
-      coach: { target: coachHead, dist: 12, yaw: 0.5, y: 740 },
+      coach: { target: coachHead, dist: 12, yaw: 0.5, y: 850 }, // lower than the gym: his beanie clears the hook title
       setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 },
     },
     shots: {
