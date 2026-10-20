@@ -5,7 +5,7 @@
  {"who": "coach", "text": "So it answers all three? Like a robot on espresso.", "style": "Realizing it as he talks, the confidence cracking, then a nervous laugh on the last words."},
  {"who": "setty", "text": "And does it remember what they said?", "style": "Dry and slow, another trap question."},
  {"who": "coach", "text": "Uh, it asked her name twice.", "style": "Sheepish and quieter, admitting it."},
- {"who": "setty", "text": "Memory doesn't wire itself, you save each lead's Conversation ID and send it back. The fit questions, the booking, the follow-ups? You build those too.", "style": "Mocking and matter-of-fact, a short beat after 'itself', then listing the rest slowly and savoring 'You build those too.'"},
+ {"who": "setty", "text": "Memory doesn't wire itself, you save each lead's Conversation ID and send it back. The right questions, the booking, the follow-ups? You build those too.", "style": "Mocking and matter-of-fact, a short beat after 'itself', then listing the rest slowly and savoring 'You build those too.'"},
  {"who": "coach", "text": "At least it's cheap.", "style": "Hopeful, trying to save face."},
  {"who": "setty", "text": "Make credits, OpenAI tokens, and your Saturday nights in a garage.", "style": "A mocking roast, listing the costs, slow and smug on the last words.", "pause": 0.95},
  {"who": "coach", "text": "Bro, I'm not a developer. I didn't want another thing to maintain.", "style": "Deflated and tired, venting to a friend."},

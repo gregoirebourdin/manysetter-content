@@ -9,11 +9,11 @@
  {"who": "coach", "text": "Knockout.", "style": "Hyped and loud, a happy shout, like he just won the fight."},
  {"who": "setty", "text": "Easy, champ. Thirty new chats a day needs extra replies, thirty-nine per five hundred.", "style": "Calm and honest, slowing him down, a little amused, clear on the numbers."},
  {"who": "coach", "text": "Round two. AI sounds robotic.", "style": "Stubborn and a bit annoyed, crossing his arms, a beat after two."},
- {"who": "setty", "text": "Any hour, in your voice. He sleeps, like a normal person.", "style": "Sly and dry, a small beat before the second sentence, warm on the last words."},
+ {"who": "setty", "text": "In your voice, one question at a time, like you'd do it yourself.", "style": "Sly and dry, a small beat before the second sentence, warm on the last words."},
  {"who": "coach", "text": "So you win.", "style": "Convinced and a bit surprised, short."},
  {"who": "setty", "text": "Nope. He's better on the sales call, big deals, new objections.", "style": "Suddenly dead serious and honest, a hard beat after Nope, then steady and respectful."},
  {"who": "coach", "text": "Then who wins?", "style": "Confused, voice going up at the end."},
- {"who": "setty", "text": "Both. Plug me into ManyChat, I qualify and book. He takes the hard cases and the call.", "style": "Confident and proud, a strong beat after Both, then easy and smooth."},
+ {"who": "setty", "text": "Both. Plug me into ManyChat, I find the serious ones and book them. He takes the hard cases and the call.", "style": "Confident and proud, a strong beat after Both, then easy and smooth."},
  {"who": "coach", "text": "Okay. How do I set you up?", "style": "Hesitant and a bit sheepish, a small pause after okay."},
  {"who": "setty", "text": "You paid for a fight and got a fucking group hug.", "style": "Mocking, laughing at him, slow and smug, savoring group hug.", "pause": 0.95},
  {"who": "setty", "text": "Comment SETTY and I'll send you everything to build your AI setter for free.", "style": "Smooth and smug, then warm and generous on the offer, like handing over a gift."}

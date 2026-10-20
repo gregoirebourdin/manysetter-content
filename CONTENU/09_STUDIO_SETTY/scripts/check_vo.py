@@ -74,6 +74,7 @@ NUM = {
     "5": "five",
 }
 NUM.update({"2015": "twenty fifteen", "2026": "twenty twenty six", "24": "twenty four"})  # reel8
+NUM.update({"$999": "nine ninety nine", "999": "nine ninety nine", "$9.99": "nine ninety nine", "9.99": "nine ninety nine"})  # reel12
 
 
 def words(text: str) -> list[str]:
