@@ -352,10 +352,10 @@
 .layout-set .st.xl .cal-row .d { width: 100px; }
 .layout-set .st.xl .cal-row .d small { font-size: 26px; }
 .layout-set .st.xl .cal-row .d span { font-size: 50px; }
-.layout-set .st.xl .cal-row .w b { font-size: 44px; letter-spacing: -0.02em; }
-.layout-set .st.xl .cal-row .w span { font-size: 34px; white-space: nowrap; }
+.layout-set .st.xl .cal-row .w b { font-size: 50px; letter-spacing: -0.02em; }
+.layout-set .st.xl .cal-row .w span { font-size: 40px; white-space: nowrap; }
 .layout-set .st.xl .cal-row .s-app { --s: 60px !important; }
-.layout-set .st.xl .cal-row .st8 { font-size: 36px; padding: 12px 24px; }
+.layout-set .st.xl .cal-row .st8 { font-size: 40px; padding: 12px 24px; }
 .layout-set .st.xl .cal-total { left: 36px; right: 36px; bottom: 28px; height: 104px; padding: 0 34px; font-size: 38px; border-radius: 26px; }
 .layout-set .st.xl .cal-total b { font-size: 72px; }
 .layout-set .st.xl:has(.ok-top) { height: 720px !important; }
