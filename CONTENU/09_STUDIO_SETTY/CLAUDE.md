@@ -207,6 +207,8 @@ Picture
 - Pupils and glints stay inside the lid radius (1.07 × eye radius); closed eyes need the `^`/`u` arcs.
 - Mark intentional off-canvas props with `data-layout-ignore` / `data-layout-allow-overflow`.
 - No `../` in asset paths (HyperFrames' lint refuses it): fonts are declared in `shell.html` with `assets/...`.
+- Never `ctx.filter` (blur…) in a canvas painter (window views, set textures): the headless Chrome that renders ignores
+  it and the whole texture comes out black (reel10). Soften with gradients.
 
 Sound
 - **Grégoire's own sounds** (`assets/sounds/`, 19 Oct; he hated a synthesized riser): `M.riser_into(t)` = his riser,

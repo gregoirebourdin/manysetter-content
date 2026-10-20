@@ -1,0 +1,82 @@
+{
+ "layout": "set",
+ "set": "jet",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  48.0,
+  62.0
+ ],
+ "tail_s": 2.4,
+ "id": "reel10",
+ "slug": "big-coaches-dms",
+ "title": "The big coaches' DMs",
+ "pub_id": "261020_REEL_S1_AV1_big-coaches-dms",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Setty, in the club seat across the coach's rented private jet: You still answer your own [bleep]ing DMs, right?",
+ "hook_title": [
+  "Why the *biggest coaches*",
+  "never answer their own DMs"
+ ],
+ "biais": [
+  "autorité (les gros comptes, leur vraie offre d'emploi)",
+  "écart de curiosité (« why… never »)",
+  "pertinence pour soi (il fait les trois métiers)"
+ ],
+ "verbatims": [
+  "rd01",
+  "rd54",
+  "rd60",
+  "rd64",
+  "rd34",
+  "cl054",
+  "rd31",
+  "rd27",
+  "rd75",
+  "rd92",
+  "cl057",
+  "cl058",
+  "rd62",
+  "rd57",
+  "mc05",
+  "rd65",
+  "rd77",
+  "rd35",
+  "rd70"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter for your Instagram DMs. Follow so the DM lands 📩\n\n👇 READ BELOW: why the biggest coaches never answer their own DMs, from their own job posts.\n\n1. Big accounts hire people to answer their DMs. One public job post from a coach with 363K followers promised \"a ton of leads coming in for you\".\n\n2. Their setup splits the work: the coach makes content, the setter answers the DMs, the closer takes the calls.\n\n3. Solo, you do all three, and your evenings go to the inbox. Hiring isn't cheap either: a US appointment setter makes about $13 to $21 an hour plus commission (PayScale).\n\n4. Setty is the AI setter I built for coaches: he answers in your voice through Manychat, only gives your calendar to serious leads, and you can jump into any chat yourself.\n\nThe catch: Setty isn't free once he's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#onlinecoach #appointmentsetter #aisetter\n\nManySetter is not affiliated with or endorsed by Manychat, Instagram or Meta.",
+ "caption_youtube": "Why the biggest coaches never answer their own DMs\n\n👇 READ BELOW: why the biggest coaches never answer their own DMs, from their own job posts.\n\n1. Big accounts hire people to answer their DMs. One public job post from a coach with 363K followers promised \"a ton of leads coming in for you\".\n\n2. Their setup splits the work: the coach makes content, the setter answers the DMs, the closer takes the calls.\n\n3. Solo, you do all three, and your evenings go to the inbox. Hiring isn't cheap either: a US appointment setter makes about $13 to $21 an hour plus commission (PayScale).\n\n4. Setty is the AI setter I built for coaches: he answers in your voice through Manychat, only gives your calendar to serious leads, and you can jump into any chat yourself.\n\nThe catch: Setty isn't free once he's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#onlinecoach #appointmentsetter #shorts\n\nManySetter is not affiliated with or endorsed by Manychat, Instagram or Meta.",
+ "statut": "script v1 à valider (20/10) : rien de payant avant le feu vert du fondateur",
+ "created": "2026-10-20",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "sources": [
+  {
+   "fait": "annonce publique d'un coach santé à 363 000 abonnés qui recrute un setter : « I have 363K followers on Instagram, so a ton of leads coming in for you. »",
+   "source": "https://www.reddit.com/r/appointmentsetter/comments/1wjk3zf/hiring_us_based_dm_appointment_setter/ (verbatim rd34, vérifié le 10/10/2026 ; carrousel slide 2)"
+  },
+  {
+   "fait": "les gros comptes recrutent des setters pour leurs DM (autres offres publiques)",
+   "source": "verbatims rd31 (r/appointmentsetter, marque de coaching fitness) et cl054 (Freelancer, agence qui travaille pour des coachs « 7-figure »)"
+  },
+  {
+   "fait": "le système des gros comptes : le coach fait le contenu, le setter les DM, le closer les appels",
+   "source": "carrousel 261019_CAR_S1_AV1_big-coaches-dms, slide 3 (validé le 20/10)"
+  },
+  {
+   "fait": "setter de rendez-vous aux États-Unis : environ 13 à 21 $ de l'heure plus commission",
+   "source": "PayScale, mai 2026, cité par le guide « AI vs human setter » du site (CLAUDE.md du studio § 1, ligne-edito idée 5)"
+  },
+  {
+   "fait": "répond avec la voix de la marque, seuls les bons leads ont l'agenda, l'équipe peut reprendre une conversation ; $119/month per live setter ; gratuit pour construire et tester, sans carte",
+   "source": "brief-de-marque.md, sections 2, 3 et 5"
+  }
+ ],
+ "paire": "261019_CAR_S1_AV1_big-coaches-dms (idée 5, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+}
