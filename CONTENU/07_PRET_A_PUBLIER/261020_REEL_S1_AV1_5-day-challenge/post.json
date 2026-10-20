@@ -68,5 +68,11 @@
     "lufs": -14.2,
     "true_peak_dbtp": -2.0
   },
-  "statut": "validé par le fondateur le 20/10 (30 i/s) ; final 60 i/s avec la piste caméra (cam_track), transmis à MANYSETTER POST"
+  "statut": "validé par le fondateur le 20/10 (30 i/s) ; final 60 i/s avec la piste caméra (cam_track), transmis à MANYSETTER POST",
+  "programmation": {
+    "date": "2026-10-25 6:30 pm ET",
+    "instagram": "6ad7c86aef05a45e4340ee24 (shareToFeed, couverture = image 0 ; « AI info » ajoutée par le fondateur dans l'appli après publication)",
+    "youtube": "6ad7c874ef05a45e4340ee37 (Short, containsSyntheticMedia true)",
+    "carrousel_associe": "261019_CAR_S1_AV1_5-day-challenge, même jour à 12:00 pm ET"
+  }
 }
