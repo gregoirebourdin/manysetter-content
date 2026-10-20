@@ -241,3 +241,95 @@
 /* over the 3D set, the modules drawn for a dark stage get their own dark card so they read on any background */
 .layout-set .st.flow, .layout-set .st.sort, .layout-set .st.tl24 { background: rgba(18, 16, 24, 0.93); border-radius: 44px;
   box-shadow: 0 34px 90px -24px rgba(0, 0, 0, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.08); }
+
+/* laptop with a desktop chat app on screen (laptopClose({ chat })) */
+.lap .scr.chat { display: block; position: relative; background: #f4f1ea; padding: 0; color: #1f1d1a; }
+.lap .scr.chat .ct-bar { height: 52px; display: flex; align-items: center; gap: 10px; padding: 0 20px; background: #e9e4da; font-size: 22px; }
+.lap .scr.chat .ct-bar i { width: 14px; height: 14px; border-radius: 50%; background: #d4cfc4; }
+.lap .scr.chat .ct-bar b { margin-left: 12px; }
+.lap .scr.chat .ct-msg { margin: 46px 40px 0 auto; width: max-content; max-width: 70%; padding: 18px 26px; border-radius: 22px;
+  background: #e2dccf; font: 600 30px/1.25 Inter, sans-serif; }
+.lap .scr.chat .ct-in { position: absolute; left: 34px; right: 34px; bottom: 34px; height: 84px; border-radius: 22px; background: #fff;
+  box-shadow: 0 0 0 2px #e2dccf; display: flex; align-items: center; padding: 0 16px 0 28px; font-size: 26px; color: #9a948a; }
+.lap .scr.chat .ct-in span { flex: 1; }
+.lap .scr.chat .ct-in em { width: 54px; height: 54px; border-radius: 14px; background: #d97757; color: #fff; display: flex; align-items: center; justify-content: center; }
+.lap .scr.chat .ct-in svg.i { width: 30px; height: 30px; }
+/* in a 3D set the card is shown at 55 % beside the speaker: the laptop fills the card, the screen reads big */
+.layout-set .lap { height: 660px; }
+.layout-set .lap .lid { left: 80px; top: 10px; width: 800px; height: 540px; padding: 20px; }
+.layout-set .lap .base { left: 30px; top: 552px; width: 900px; height: 44px; }
+.layout-set .lap .scr.chat .ct-bar { height: 78px; font-size: 34px; gap: 14px; padding: 0 28px; }
+.layout-set .lap .scr.chat .ct-bar i { width: 20px; height: 20px; }
+.layout-set .lap .scr.chat .ct-msg { margin: 50px 40px 0 auto; max-width: 80%; padding: 22px 32px; border-radius: 30px; font-size: 50px; }
+.layout-set .lap .scr.chat .ct-in { left: 40px; right: 40px; bottom: 40px; height: 124px; border-radius: 30px; font-size: 44px; padding: 0 22px 0 36px; }
+.layout-set .lap .scr.chat .ct-in em { width: 84px; height: 84px; border-radius: 22px; }
+.layout-set .lap .scr.chat .ct-in svg.i { width: 46px; height: 46px; }
+.layout-set .lap .pants { top: 150px; font-size: 300px; }
+
+/* the cards below are drawn for a 3D set, where the stage shows at 55 % beside the speaker: big type */
+/* setup checklist */
+.ck { padding: 0 0 34px; }
+.ck-head { height: 136px; display: flex; align-items: center; gap: 22px; padding: 0 40px; border-bottom: 2px solid #efefef; }
+.ck-head b { font-size: 58px; letter-spacing: -0.03em; }
+.ck-head .s-app { --s: 76px; }
+.ck-list { padding: 16px 40px 0; }
+.ck-row { display: flex; align-items: center; gap: 28px; height: 176px; opacity: 0; }
+.ck-ic { width: 124px; height: 124px; border-radius: 32px; background: #17171a; color: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
+.ck-ic svg.i { width: 68px; height: 68px; }
+.ck-ic .s-app { --s: 124px; }
+.ck-row .t { flex: 1; min-width: 0; }
+.ck-row .x { font: 800 66px/1.05 Inter, sans-serif; letter-spacing: -0.035em; white-space: nowrap; }
+.ck-row .s { font: 600 40px/1.2 Inter, sans-serif; color: #7a7670; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -0.02em; }
+.ck-ok { width: 90px; height: 90px; border-radius: 50%; background: #22c55e; color: #fff; display: flex; align-items: center; justify-content: center; opacity: 0; flex: none; }
+.ck-ok svg.i { width: 56px; height: 56px; stroke-width: 3; }
+.ck-done { padding: 22px 40px 0; }
+.ck-done .s-pill { font-size: 54px; padding: 22px 38px; gap: 16px; opacity: 0; }
+.ck-done .s-pill svg.i { width: 56px; height: 56px; }
+
+/* WhatsApp chat list */
+.wa { height: 760px; }
+.wa-head { height: 136px; display: flex; align-items: center; gap: 22px; padding: 0 40px; }
+.wa-head .s-app { --s: 76px; }
+.wa-head b { font-size: 60px; letter-spacing: -0.03em; color: #111b21; }
+.wa-ic { margin-left: auto; color: #54656f; }
+.wa-ic svg.i { width: 50px; height: 50px; }
+.wa-tabs { display: flex; gap: 18px; padding: 0 40px 22px; border-bottom: 2px solid #efefef; }
+.wa-tabs span { padding: 14px 32px; border-radius: 999px; background: #f0f2f5; font: 700 40px/1 Inter, sans-serif; color: #54656f; display: flex; gap: 14px; align-items: center; }
+.wa-tabs .on { background: #d9fdd3; color: #008069; }
+.wa-tabs i { font-style: normal; min-width: 58px; height: 50px; padding: 0 14px; border-radius: 25px; background: #25d366; color: #fff;
+  display: inline-flex; align-items: center; justify-content: center; font-size: 34px; font-variant-numeric: tabular-nums; }
+.wa-list { position: absolute; left: 0; right: 0; top: 232px; bottom: 0; overflow: hidden; }
+.wa-row { position: absolute; left: 0; right: 0; top: 0; height: 132px; display: flex; align-items: center; gap: 26px; padding: 0 40px; opacity: 0; background: #fff; }
+.wa-row .s-av { width: 100px; height: 100px; font-size: 38px; }
+.wa-row .t { flex: 1; min-width: 0; border-bottom: 2px solid #f0f2f5; padding-bottom: 14px; }
+.wa-row .u { display: flex; font: 800 50px/1.15 Inter, sans-serif; color: #111b21; letter-spacing: -0.02em; }
+.wa-row .tm { margin-left: auto; font: 700 32px/1.6 Inter, sans-serif; color: #25d366; }
+.wa-row .m { display: flex; align-items: center; font: 500 42px/1.3 Inter, sans-serif; color: #54656f; white-space: nowrap; overflow: hidden; letter-spacing: -0.015em; }
+.wa-row .nb { margin-left: auto; font-style: normal; min-width: 52px; height: 52px; padding: 0 12px; border-radius: 26px; background: #25d366; color: #fff;
+  display: inline-flex; align-items: center; justify-content: center; font: 800 32px/1 Inter, sans-serif; flex: none; }
+
+/* a quoted document (terms, README) with its key words highlighted */
+.dq { padding: 0 0 44px; }
+.dq-head { display: flex; align-items: center; gap: 24px; padding: 34px 44px 28px; border-bottom: 2px solid #efefef; }
+.dq-head .s-app { --s: 84px; }
+.dq-head b { font: 800 50px/1.1 Inter, sans-serif; letter-spacing: -0.03em; }
+.dq-head .s { font: 600 34px/1.3 Inter, sans-serif; color: #7a7670; margin-top: 4px; }
+.dq-ic { width: 84px; height: 84px; border-radius: 22px; background: #17171a; color: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
+.dq-ic svg.i { width: 50px; height: 50px; }
+.dq-badge { display: inline-flex; align-items: center; gap: 14px; margin: 30px 44px 0; padding: 14px 28px; border-radius: 18px;
+  background: #fff4e5; color: #b45309; font: 800 44px/1 Inter, sans-serif; opacity: 0; }
+.dq-badge svg.i { width: 48px; height: 48px; }
+.dq-text { padding: 26px 44px 0; font: 500 60px/1.25 Georgia, "Times New Roman", serif; color: #2a2724; letter-spacing: -0.015em; }
+.dq-text mark { color: inherit; padding: 0 0.08em; border-radius: 6px; background-image: linear-gradient(#ffb48a, #ffb48a);
+  background-repeat: no-repeat; background-size: 0% 100%; background-color: transparent; font-weight: 700; }
+
+/* hand-off card in a 3D set (shown at 55 %): big type, the tags on their own lines */
+.layout-set .ho-head { padding: 34px 40px; font-size: 52px; gap: 22px; border-bottom-width: 2px; }
+.layout-set .ho-head .s-app { --s: 76px !important; }
+.layout-set .ho-row { gap: 26px; padding: 34px 40px 26px; align-items: flex-start; }
+.layout-set .ho-row .s-av { width: 100px; height: 100px; font-size: 38px; }
+.layout-set .ho-row .u { font-size: 50px; font-weight: 800; letter-spacing: -0.02em; }
+.layout-set .ho-row .m { font-size: 46px; line-height: 1.25; margin-top: 8px; color: #2a2f38; }
+.layout-set .ho-tags { flex-wrap: wrap; gap: 18px; padding: 0 40px 40px 40px; }
+.layout-set .ho-tags .s-pill { font-size: 42px; padding: 16px 28px; gap: 14px; }
+.layout-set .ho-tags .s-pill svg.i { width: 44px; height: 44px; }

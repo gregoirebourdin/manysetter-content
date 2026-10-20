@@ -7,7 +7,7 @@
  {"who": "coach", "text": "Wait, it doesn't reply by itself?", "style": "Confused, the confidence cracking, voice going up at the end."},
  {"who": "setty", "text": "Only when you open it and ask. That's not a setter, that's an intern.", "style": "A mocking roast, slow and smug, savoring the last word.", "pause": 0.95},
  {"who": "coach", "text": "Fine, I'll bring the laptop to the gym.", "style": "Annoyed and stubborn, brushing it off."},
- {"who": "setty", "text": "Bring WhatsApp's terms too. No auto-messaging, or they can suspend your account.", "style": "Sly and calm, a little warning with a smirk."},
+ {"who": "setty", "text": "Bring WhatsApp's terms too. No auto-messaging, or they can suspend your account.", "style": "Sly and calm, a little warning with a smirk. Start clearly on the word 'Bring', echoing his line about bringing the laptop."},
  {"who": "coach", "text": "Holy shit, my whole business is on that number.", "style": "Real panic rising, fast, voice going up at the end."},
  {"who": "setty", "text": "Also, it reads every chat. Your clients, your mom, your ex.", "style": "Teasing and mocking, a beat before each item, the last one savored.", "pause": 0.95},
  {"who": "coach", "text": "Bro, I'm not a developer. I just want my DMs handled.", "style": "Deflated and tired, venting to a friend."},

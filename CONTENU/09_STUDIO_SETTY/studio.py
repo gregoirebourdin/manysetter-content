@@ -390,7 +390,8 @@ def redo_lines(a, reel, segs, cfg, lines, rj):
             say(f"  line {L} {t.name}: {tim['duration']:.1f}s, errors {c['errors']} {c['problems'][:2] if c['errors'] else ''}")
         if not res:
             sys.exit(f"line {L}: no usable take")
-        inst["overrides"][str(L)] = str(min(res.values(), key=lambda r: r[:3])[3].relative_to(STUDIO))
+        pick = next((r for t, r in res.items() if a.pick and a.pick in t.name), None)  # --pick try3: that take
+        inst["overrides"][str(L)] = str((pick or min(res.values(), key=lambda r: r[:3]))[3].relative_to(STUDIO))
     out = work / "mix/installed"
     r = run([PY, "scripts/dialogue.py", str(STUDIO / f"vo/{reel}_segments.json"), str(out),
              *[f"{w}={STUDIO / d}" for w, d in inst["speakers"].items()],
@@ -558,7 +559,7 @@ def cmd_deliver(a):
     shutil.copy(out / f"{a.reel}_nomusic.mp4", pdir / "reel_nomusic.mp4")
     if meta.get("caption"):
         (pdir / "caption.txt").write_text(meta["caption"].rstrip() + "\n")
-    post = {k: meta[k] for k in ("funnel", "segment", "avatar", "hook", "biais", "verbatims", "cta") if k in meta}
+    post = {k: meta[k] for k in ("funnel", "segment", "avatar", "hook", "biais", "verbatims", "cta", "paire", "sources") if k in meta}
     post.update({
         "id": pub,
         "format": (f"reel Setty en dialogue dans un décor 3D (coach : voix {meta['voices'].get('coach')}, Setty : voix "
@@ -569,8 +570,9 @@ def cmd_deliver(a):
                    "la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
         **({"musique": meta["music"]} if meta.get("music") else {}),
         "source": {"studio": f"CONTENU/09_STUDIO_SETTY/{a.reel}", "script": f"CONTENU/09_STUDIO_SETTY/writing/{a.reel}_{meta.get('slug', '')}.md"},
-        "etiquette_ia": ("« AI info » à activer (voix réalistes générées par IA). Zernio n'a pas ce champ pour Instagram : à cocher "
-                         "dans l'appli ; sur YouTube, containsSyntheticMedia: true dans le post Zernio"),
+        "etiquette_ia": ("« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur "
+                         "l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true "
+                         "dans le post Zernio"),
         "fichiers": {"video": "reel.mp4 (hors Git)", "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"},
         "qa": {"duree_s": round(dur, 2), "lufs": I, "true_peak_dbtp": TP},
         "statut": meta.get("statut", "à valider"),
@@ -619,7 +621,7 @@ def main():
     p.add_argument("--takes", type=int, default=3); p.add_argument("--voice", default="Charon")
     p.add_argument("--rate", type=float, default=1.0); p.add_argument("--take", help="reuse an existing take number instead of generating")
     p.add_argument("--voices", help='dialogue reels: "coach=Puck|Fenrir|Zubenelgenubi,setty=Charon" (several = casting)')
-    p.add_argument("--pick", help="dialogue reels: the voice combination to install (e.g. Fenrir)")
+    p.add_argument("--pick", help="dialogue reels: the voice combination to install (e.g. Fenrir); with --redo, the take of the line (e.g. try3)")
     p.add_argument("--reuse", action="store_true", help="dialogue reels: reuse the existing takes, generate nothing")
     p.add_argument("--redo", help="dialogue reels: redo only these lines (e.g. 19 or 4,19) after rewriting them; the rest keeps its takes")
     for name in ("build", "check"):

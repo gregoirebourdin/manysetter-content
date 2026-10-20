@@ -252,11 +252,11 @@ export function followTimeline(R, { id = "fu", at, out, title = "Instagram's 24-
 }
 
 /** ManySetter inbox: a lead gets spicy, the tag lands, the conversation is handed to you ("Reply myself"). */
-export function handoffCard(R, { id = "handoff", at, out, user, text, color = "#ef4444", tagAt, handAt, to = "you" }) {
-  mount(R, id, "s-card", `<div class="ho-head">${app("manysetter", 48)}Inbox<span style="margin-left: auto">${app("instagram", 44)}</span></div>` +
+export function handoffCard(R, { id = "handoff", at, out, user, text, color = "#ef4444", tagAt, handAt, to = "you", channel = "instagram", tag = "🔥 Upset" }) {
+  mount(R, id, "s-card", `<div class="ho-head">${app("manysetter", 48)}Inbox<span style="margin-left: auto">${app(channel, 44)}</span></div>` +
     `<div class="ho-row"><span class="s-av ring" style="background: ${color}">${initials(user)}</span><div class="t"><div class="u">${user}</div>` +
     `<div class="m">${text}</div></div></div>` +
-    `<div class="ho-tags"><span class="s-pill tone-red" id="${id}-tag">🔥 Upset</span><span class="s-pill tone-green" id="${id}-hand">${icon(R, "hand")}Handed to ${to}</span>` +
+    `<div class="ho-tags"><span class="s-pill tone-red" id="${id}-tag">${tag}</span><span class="s-pill tone-green" id="${id}-hand">${icon(R, "hand")}Handed to ${to}</span>` +
     `<span class="s-pill btn" id="${id}-btn">Reply myself</span></div>`, { y: STAGE.y + 120 });
   inOut(R, id, at, out);
   popIn(R, `#${id}-tag`, tagAt, { scale: 0.4 });
@@ -265,8 +265,12 @@ export function handoffCard(R, { id = "handoff", at, out, user, text, color = "#
 }
 
 /** A laptop (Zoom gallery on screen) whose lid shuts at `close`; optional emoji that drops in at `drop` (👖). */
-export function laptopClose(R, { id = "laptop", at, close, out, tiles = ["🙂", "😴", "🥣", "👩‍🦳", "🧑", "🙃"], drop }) {
-  mount(R, id, "lap", `<div class="lid" id="${id}-lid"><div class="scr">${tiles.map((t) => `<div style="background: #2c2c2e">${t}</div>`).join("")}</div></div>` +
+export function laptopClose(R, { id = "laptop", at, close, out, tiles = ["🙂", "😴", "🥣", "👩‍🦳", "🧑", "🙃"], drop, chat }) {
+  // chat: { app, msg, input } puts a desktop chat app on the screen (a request waiting to be typed) instead of the gallery
+  const scr = chat ? `<div class="scr chat"><div class="ct-bar"><i></i><i></i><i></i><b>${chat.app}</b></div>` +
+    `<div class="ct-msg">${chat.msg}</div><div class="ct-in"><span>${chat.input}</span><em>${icon(R, "arrow-up")}</em></div></div>`
+    : `<div class="scr">${tiles.map((t) => `<div style="background: #2c2c2e">${t}</div>`).join("")}</div>`;
+  mount(R, id, "lap", `<div class="lid" id="${id}-lid">${scr}</div>` +
     `<div class="base"></div>` + (drop ? `<div class="pants" id="${id}-drop">${drop.emoji}</div>` : ""), { h: 600 });
   inOut(R, id, at, out);
   R.tl.fromTo(`#${id}-lid`, { rotationX: 0, filter: "brightness(1)" }, { rotationX: -88, filter: "brightness(0.35)", duration: 0.32, ease: "power3.in" }, close);
@@ -274,4 +278,49 @@ export function laptopClose(R, { id = "laptop", at, close, out, tiles = ["🙂",
     gsap.set(`#${id}-drop`, { xPercent: -50 });
     R.tl.fromTo(`#${id}-drop`, { opacity: 0, y: -380, rotation: -20, scale: 0.6 }, { opacity: 1, y: 0, rotation: 6, scale: 1, duration: 0.42, ease: "bounce.out" }, drop.at);
   }
+}
+
+// ---------------------------------------------------------------- tutorials, WhatsApp, documents
+
+/** A setup checklist (the tutorial everyone shares): each step pops with its icon, then gets its green check; an
+ *  optional pill at the end. items: [{ icon (Lucide) | app (brand slug), text, sub, at }], done: { text, at }. */
+export function checklist(R, { id = "steps", at, out, title, appSlug, items, done }) {
+  const rows = items.map((it, k) => `<div class="ck-row" id="${id}-r${k}"><span class="ck-ic">${it.app ? app(it.app, 124) : icon(R, it.icon)}</span>` +
+    `<div class="t"><div class="x">${it.text}</div>${it.sub ? `<div class="s">${it.sub}</div>` : ""}</div>` +
+    `<span class="ck-ok" id="${id}-k${k}">${icon(R, "check")}</span></div>`).join("");
+  mount(R, id, "s-card ck", `<div class="ck-head">${appSlug ? app(appSlug, 76) : ""}<b>${title}</b></div><div class="ck-list">${rows}</div>` +
+    (done ? `<div class="ck-done"><span class="s-pill tone-green" id="${id}-done">${icon(R, "circle-check")}${done.text}</span></div>` : ""));
+  inOut(R, id, at, out);
+  items.forEach((it, k) => {
+    popIn(R, `#${id}-r${k}`, it.at, { x: -40, scale: 0.94 });
+    popIn(R, `#${id}-k${k}`, it.at + 0.28, { scale: 0.2 });
+  });
+  if (done) popIn(R, `#${id}-done`, done.at, { scale: 0.4 });
+}
+
+/** WhatsApp chat list piling up: rows arrive on top with their green unread badge, the Chats tab counts the unread.
+ *  rows: [{ u, m, c, n, time }] in arrival order, times: arrival of each row, unread: { from, to, t0, t1 }. */
+export function waChats(R, { id = "wa", at, out, title = "WhatsApp", rows, times, unread }) {
+  const list = rows.map((r, k) => `<div class="wa-row" id="${id}-r${k}"><span class="s-av" style="background: ${r.c}">${initials(r.u)}</span>` +
+    `<div class="t"><div class="u">${r.u}<span class="tm">${r.time || "now"}</span></div><div class="m">${r.m}<i class="nb">${r.n || 1}</i></div></div></div>`).join("");
+  mount(R, id, "s-card wa", `<div class="wa-head">${app("whatsapp", 76)}<b>${title}</b><span class="wa-ic">${icon(R, "search")}</span></div>` +
+    `<div class="wa-tabs"><span class="on">Chats <i id="${id}-n">${unread ? unread.from : rows.length}</i></span><span>Updates</span><span>Calls</span></div>` +
+    `<div class="wa-list">${list}</div>`, { h: 760 });
+  inOut(R, id, at, out);
+  stackIn(R, rows.map((_, k) => document.getElementById(`${id}-r${k}`)), times, 132);
+  if (unread) counter(R, document.getElementById(`${id}-n`), unread);
+}
+
+/** A real document, quoted word for word (terms of service, a README): its source on top, the quote, the key words
+ *  highlighted in orange one after the other. marks: [{ text (a substring of the quote), at }], badge: { text, icon }. */
+export function docQuote(R, { id = "doc", at, out, source, sub, appSlug, srcIcon = "file-text", badge, text, marks = [] }) {
+  let html = text;
+  marks.forEach((m, k) => { html = html.replace(m.text, `<mark id="${id}-m${k}">${m.text}</mark>`); });
+  mount(R, id, "s-card dq", `<div class="dq-head">${appSlug ? app(appSlug, 84) : `<span class="dq-ic">${icon(R, srcIcon)}</span>`}` +
+    `<div><b>${source}</b>${sub ? `<div class="s">${sub}</div>` : ""}</div></div>` +
+    (badge ? `<div class="dq-badge" id="${id}-b">${icon(R, badge.icon || "triangle-alert")}${badge.text}</div>` : "") +
+    `<div class="dq-text">${html}</div>`);
+  inOut(R, id, at, out);
+  if (badge) popIn(R, `#${id}-b`, at + 0.2, { scale: 0.5 });
+  marks.forEach((m, k) => R.tl.fromTo(`#${id}-m${k}`, { backgroundSize: "0% 100%" }, { backgroundSize: "100% 100%", duration: 0.35, ease: "power2.out", immediateRender: true }, m.at));
 }

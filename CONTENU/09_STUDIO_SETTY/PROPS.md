@@ -51,8 +51,11 @@ What the middle of the screen shows: the coaches' real tools with their logos, a
 | `st.flowPipeline` | the product in one picture: your DMs → Manychat → ManySetter → calendar, messages travelling | `{ id, at, out, connect, pulses, sources, target, targetLabel }` |
 | `st.leadSorter` | two lanes, leads dropping in and sorted (tire-kickers / serious) | `{ id, at, out, left, right, leads: [{ u, m, c, side, at }] }` |
 | `st.followTimeline` | Instagram's 24-hour window, follow-ups popping at 2 h / 8 h / 20 h | `{ id, at, out, marks: [{ h, text, at }], fillTo }` |
-| `st.handoffCard` | ManySetter inbox: a lead gets upset, "Handed to you", "Reply myself" | `{ id, at, out, user, text, tagAt, handAt }` |
-| `st.laptopClose` | a laptop (Zoom on screen) whose lid shuts, an emoji drops (👖) | `{ id, at, close, out, drop: { emoji, at } }` |
+| `st.handoffCard` | ManySetter inbox: a lead gets upset (or asks what is not in the sources), "Handed to you", "Reply myself" | `{ id, at, out, user, text, tagAt, handAt, channel: "whatsapp", tag: "❓ Not in your sources" }` |
+| `st.laptopClose` | a laptop (Zoom on screen, or a desktop chat app with `chat`) whose lid shuts, an emoji drops (👖, 💤) | `{ id, at, close, out, drop: { emoji, at }, chat: { app, msg, input } }` |
+| `st.checklist` | a setup checklist (the tutorial everyone shares): steps pop with their icon, then a green check, an end pill | `{ id, at, out, title, appSlug, items: [{ icon \| app, text, sub, at }], done: { text, at } }` |
+| `st.waChats` | WhatsApp chat list piling up, green unread badges, the Chats tab counting | `{ id, at, out, rows: [{ u, m, c, n, time }], times, unread: { from, to, t0, t1 } }` |
+| `st.docQuote` | a real document quoted word for word (terms, README): source on top, optional Caution badge, key words highlighted in orange | `{ id, at, out, source, sub, appSlug \| srcIcon, badge: { text }, text, marks: [{ text, at }] }` |
 
 Stage helpers (engine): `zoom(t, { to: [x, y], s, dur })` / `unzoom(t)` / `drift(t, { to, s, dur })` (the stage camera),
 `beat.hop(t, SPOT.L | SPOT.C | SPOT.R)`, `R.place({ x, cam })`, `flash(t, opacity, duration)`, `bg("hot" | "night" | "black" | "#glow" | "#spot", opacity, t, dur)`,
@@ -69,10 +72,11 @@ New prop? Add it to `props.js` (+ its CSS in `reel.css`, its slot in `ORDER`), a
 |---|---|---|
 | The coach | infopreneur (tank top, beanie, stubble, gold chain links), seated or standing, phone, pointing finger, 19 expressions | `assets/coach/coach.js` · sheet `lab/coach` |
 | Setty's new faces | `deadpan, eyeRoll, mocking, sleepy, disgusted, panic, pleading, thinking, sly` (the old ones unchanged) | `assets/setty/setty.js` · `lab/setty2` |
-| Set kit | room, slat wall, desk, monitor (canvas screen), keyboard, mug, cans, ring light, mic arm, gaming chair, bed, nightstand, lamp, plant, shelf, neon sign, wall glow, window views (`night`, `dubai`), framed print, rug, sun patch, light shaft, `shot()` | `assets/sets/kit.js` |
-| Sets | `bedroom` (moods `golden`: Dubai at golden hour, `night`) | `assets/sets/bedroom.js` · look test `lab/set` |
+| Set kit | room (`floorMap`, `wallMap`), slat wall, desk, monitor (canvas screen), keyboard, mug, cans, ring light, mic arm, gaming chair, bed, nightstand, lamp, plant, shelf, neon sign, wall glow, window views (`night`, `dubai`, `miami`, factory `panes`), framed print, rug, sun patch, light shaft; gym: rubber floor, painted brick, dumbbell, dumbbell rack, flat bench, plyo box, kettlebell, shaker, towel, bumper plate, power rack, pendant; `shot()` | `assets/sets/kit.js` |
+| Sets | `bedroom` (moods `golden`: Dubai at golden hour, `night`) · `gym` (reel3: his gym in the morning, Miami, Setty on a plyo box) | `assets/sets/bedroom.js`, `gym.js` · look tests `lab/set`, `lab/gym` |
 | Dialogue acting | `D.line(k, speakerFace, listenerFace, framing)`, `D.reaction(t, face)`, `D.side(t, "left"\|"right")` + a stage module (framing `D.CARD_L / CARD_R`), `D.punch(t)` | `assets/engine/dialogue.js` · reference `reel2/src/scenes.js` |
 | Sound | his riser (`M.riser_into`), BOOM (`M.boom`), Fahhh (`M.fahhh`), clic (`M.clic`), music (`M.music_bed`, `M.tape_stop`) | `assets/sounds/`, `scripts/sound.py` · reference `reel2/audio.py` |
 
 Over the set, the stage modules drawn for a dark stage (`flowPipeline`, `leadSorter`, `followTimeline`) get a dark card
-automatically; the white UI ones (`igInbox`, `igChat`, `playbookCard`, `calendly*`) read as they are.
+automatically; the white UI ones (`igInbox`, `igChat`, `playbookCard`, `calendly*`) read as they are. The cards made for
+sets (`checklist`, `waChats`, `docQuote`, and `laptopClose` / `handoffCard` under `.layout-set`) use big type: they show at 55 %.
