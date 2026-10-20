@@ -1,0 +1,74 @@
+{
+  "funnel": "TOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "hook": "Setty, on the side table by his drink, to the coach on his lounger with the laptop on his knees: You copied a [bleep]ing DM script off YouTube, right?",
+  "biais": [
+    "valeur gratuite à enregistrer (le script entier, dit à voix haute)",
+    "pertinence pour soi (le script qu'il colle ce soir)",
+    "écart de curiosité (« without sounding scripted »)",
+    "aversion à la perte (« Seen », « I'll think about it »)"
+  ],
+  "verbatims": [
+    "rd38",
+    "rd31",
+    "cl153",
+    "rd13",
+    "rd91",
+    "rd14",
+    "rd93",
+    "mc33",
+    "rd48",
+    "rd44",
+    "mc11",
+    "rd24",
+    "rd65",
+    "rd36",
+    "cl097",
+    "mc05"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261019_CAR_S2_AV2_dm-script (idée 10, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "le script (répondre à la question, prix compris ; une question à la fois ; vérifier le fit avant l'agenda ; proposer deux créneaux ; sur « I'll think about it », demander quelle partie)",
+      "source": "carrousel 261019_CAR_S2_AV2_dm-script, slides 3 à 7 (validé par le fondateur le 20/10)"
+    },
+    {
+      "fait": "le setter tire de l'offre un script de setting, les objections et un document de ton ; une question à la fois, sans reposer une question déjà posée ; il répond dans la voix de la marque",
+      "source": "brief-de-marque.md, section 2 ; carrousel, slide 8"
+    },
+    {
+      "fait": "« $300 a month » dans la carte de la réplique 13 : valeur de démonstration du carrousel (slide 3), jamais un résultat",
+      "source": "carrousel 261019_CAR_S2_AV2_dm-script, slide 3"
+    },
+    {
+      "fait": "prix et essai : 119 $ par mois par setter live, construire et tester gratuit sans carte, essai de 14 jours au passage en live",
+      "source": "brief-de-marque.md, section 3"
+    },
+    {
+      "fait": "aucun chiffre d'appels : le hook « 50+ calls a week » est abandonné faute de source",
+      "source": "ligne-edito.md, idée 10 ; règle des hooks du 19/10"
+    }
+  ],
+  "id": "261020_REEL_S2_AV2_dm-script",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel11",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel11_dm-script.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+  },
+  "qa": {
+    "duree_s": 52.47,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.0
+  },
+  "statut": "rendu 30 i/s livré le 20/10 (v1), à valider par le fondateur ; pas de 60 i/s avant sa validation"
+}

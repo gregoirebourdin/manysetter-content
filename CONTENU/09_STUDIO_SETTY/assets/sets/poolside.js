@@ -586,6 +586,11 @@ export async function build({ renderer, scene, mood = "afternoon" }) {
   set.add(ring);
 
   // ---- the back of the deck: a low white wall with hedge balls, the villa (left), palms, potted plants
+  const lawn = new THREE.Mesh(new THREE.PlaneGeometry(160, 60), K.mat(0xffffff, { map: K.noiseTex("#5d8f4e", 14, 27, 256), roughness: 1 }));
+  lawn.material.map.repeat.set(24, 9);
+  lawn.rotation.x = -Math.PI / 2;
+  lawn.position.set(0, -0.02, -54); // the garden behind the villa, out to the hills (no void under the horizon)
+  set.add(lawn);
   const wall = K.box(60, 1.0, 0.5, 0.06, K.mat(0xffffff, { map: K.noiseTex("#f1ece3", 5, 9, 256), roughness: 0.9 }));
   wall.position.set(0, 0.5, -18.5);
   set.add(wall);
@@ -679,6 +684,9 @@ export async function build({ renderer, scene, mood = "afternoon" }) {
       wide: { pos: [0.3, 4.2, 15.0], at: [0.3, 2.5, -1.5], fov: 44 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
       setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 }),
+      // inserts: the pool from above (the ring float, the caustics), the villa over the pool
+      pool: { pos: [2.4, 6.8, -3.2], at: [3.2, -0.3, -8.0], fov: 40 },
+      villa: { pos: [5.5, 7.5, 2.0], at: [-8.0, 3.0, -22.0], fov: 38 },
     },
   };
 }

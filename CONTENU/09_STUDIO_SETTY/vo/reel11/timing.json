@@ -1,0 +1,1546 @@
+{
+ "dialogue": true,
+ "duration": 50.48,
+ "lines": [
+  {
+   "id": 0,
+   "text": "You copied a fucking DM script off YouTube, right?",
+   "who": "setty"
+  },
+  {
+   "id": 1,
+   "text": "Free PDF, some guy with a Lambo. I paste it to every lead.",
+   "who": "coach"
+  },
+  {
+   "id": 2,
+   "text": "Your lead got that exact message from every guy who watched that video.",
+   "who": "setty"
+  },
+  {
+   "id": 3,
+   "text": "They ask how much, I send my call link.",
+   "who": "coach"
+  },
+  {
+   "id": 4,
+   "text": "And then?",
+   "who": "setty"
+  },
+  {
+   "id": 5,
+   "text": "Seen. Or \"I'll think about it,\" so I pitch again.",
+   "who": "coach"
+  },
+  {
+   "id": 6,
+   "text": "Let me guess. In caps.",
+   "who": "setty"
+  },
+  {
+   "id": 7,
+   "text": "Okay genius, what do I send?",
+   "who": "coach"
+  },
+  {
+   "id": 8,
+   "text": "Answer what they asked. One question at a time. Check the fit, offer two times. \"I'll think about it\"? Ask which part.",
+   "who": "setty"
+  },
+  {
+   "id": 9,
+   "text": "Cool. Who does that while I'm at the pool?",
+   "who": "coach"
+  },
+  {
+   "id": 10,
+   "text": "Me. Plug me into ManyChat. I build that script from your offer and adapt it to every lead.",
+   "who": "setty"
+  },
+  {
+   "id": 11,
+   "text": "And it won't sound copied?",
+   "who": "coach"
+  },
+  {
+   "id": 12,
+   "text": "It sounds like you. Minus the caps lock.",
+   "who": "setty"
+  },
+  {
+   "id": 13,
+   "text": "Okay. How do I set you up?",
+   "who": "coach"
+  },
+  {
+   "id": 14,
+   "text": "Close the laptop. You rented a fucking villa to copy-paste a PDF.",
+   "who": "setty"
+  },
+  {
+   "id": 15,
+   "text": "Comment SETTY and I'll send you everything to build your AI setter for free.",
+   "who": "setty"
+  }
+ ],
+ "words": [
+  {
+   "i": 0,
+   "w": "You",
+   "line": 0,
+   "who": "setty",
+   "t": 0.06,
+   "end": 0.16,
+   "score": 1.0
+  },
+  {
+   "i": 1,
+   "w": "copied",
+   "line": 0,
+   "who": "setty",
+   "t": 0.24,
+   "end": 0.56,
+   "score": 0.95
+  },
+  {
+   "i": 2,
+   "w": "a",
+   "line": 0,
+   "who": "setty",
+   "t": 0.6,
+   "end": 0.62,
+   "score": 0.92
+  },
+  {
+   "i": 3,
+   "w": "fucking",
+   "line": 0,
+   "who": "setty",
+   "t": 0.72,
+   "end": 1.04,
+   "score": 1.0
+  },
+  {
+   "i": 4,
+   "w": "DM",
+   "line": 0,
+   "who": "setty",
+   "t": 1.121,
+   "end": 1.441,
+   "score": 0.35
+  },
+  {
+   "i": 5,
+   "w": "script",
+   "line": 0,
+   "who": "setty",
+   "t": 1.541,
+   "end": 1.841,
+   "score": 0.92
+  },
+  {
+   "i": 6,
+   "w": "off",
+   "line": 0,
+   "who": "setty",
+   "t": 1.901,
+   "end": 2.001,
+   "score": 1.0
+  },
+  {
+   "i": 7,
+   "w": "YouTube,",
+   "line": 0,
+   "who": "setty",
+   "t": 2.061,
+   "end": 2.401,
+   "score": 0.65
+  },
+  {
+   "i": 8,
+   "w": "right?",
+   "line": 0,
+   "who": "setty",
+   "t": 2.461,
+   "end": 2.641,
+   "score": 0.92
+  },
+  {
+   "i": 9,
+   "w": "Free",
+   "line": 1,
+   "who": "coach",
+   "t": 3.021,
+   "end": 3.241,
+   "score": 0.93
+  },
+  {
+   "i": 10,
+   "w": "PDF,",
+   "line": 1,
+   "who": "coach",
+   "t": 3.301,
+   "end": 3.862,
+   "score": 0.8
+  },
+  {
+   "i": 11,
+   "w": "some",
+   "line": 1,
+   "who": "coach",
+   "t": 4.094,
+   "end": 4.254,
+   "score": 0.99
+  },
+  {
+   "i": 12,
+   "w": "guy",
+   "line": 1,
+   "who": "coach",
+   "t": 4.314,
+   "end": 4.454,
+   "score": 0.97
+  },
+  {
+   "i": 13,
+   "w": "with",
+   "line": 1,
+   "who": "coach",
+   "t": 4.534,
+   "end": 4.634,
+   "score": 1.0
+  },
+  {
+   "i": 14,
+   "w": "a",
+   "line": 1,
+   "who": "coach",
+   "t": 4.694,
+   "end": 4.714,
+   "score": 0.99
+  },
+  {
+   "i": 15,
+   "w": "Lambo.",
+   "line": 1,
+   "who": "coach",
+   "t": 4.774,
+   "end": 5.155,
+   "score": 0.96
+  },
+  {
+   "i": 16,
+   "w": "I",
+   "line": 1,
+   "who": "coach",
+   "t": 5.387,
+   "end": 5.407,
+   "score": 1.0
+  },
+  {
+   "i": 17,
+   "w": "paste",
+   "line": 1,
+   "who": "coach",
+   "t": 5.507,
+   "end": 5.767,
+   "score": 0.85
+  },
+  {
+   "i": 18,
+   "w": "it",
+   "line": 1,
+   "who": "coach",
+   "t": 5.867,
+   "end": 5.907,
+   "score": 1.0
+  },
+  {
+   "i": 19,
+   "w": "to",
+   "line": 1,
+   "who": "coach",
+   "t": 5.967,
+   "end": 6.007,
+   "score": 0.96
+  },
+  {
+   "i": 20,
+   "w": "every",
+   "line": 1,
+   "who": "coach",
+   "t": 6.139,
+   "end": 6.379,
+   "score": 0.94
+  },
+  {
+   "i": 21,
+   "w": "lead.",
+   "line": 1,
+   "who": "coach",
+   "t": 6.439,
+   "end": 6.639,
+   "score": 0.98
+  },
+  {
+   "i": 22,
+   "w": "Your",
+   "line": 2,
+   "who": "setty",
+   "t": 7.019,
+   "end": 7.199,
+   "score": 0.99
+  },
+  {
+   "i": 23,
+   "w": "lead",
+   "line": 2,
+   "who": "setty",
+   "t": 7.331,
+   "end": 7.651,
+   "score": 0.68
+  },
+  {
+   "i": 24,
+   "w": "got",
+   "line": 2,
+   "who": "setty",
+   "t": 7.783,
+   "end": 7.944,
+   "score": 0.99
+  },
+  {
+   "i": 25,
+   "w": "that",
+   "line": 2,
+   "who": "setty",
+   "t": 7.984,
+   "end": 8.084,
+   "score": 0.98
+  },
+  {
+   "i": 26,
+   "w": "exact",
+   "line": 2,
+   "who": "setty",
+   "t": 8.164,
+   "end": 8.524,
+   "score": 0.96
+  },
+  {
+   "i": 27,
+   "w": "message",
+   "line": 2,
+   "who": "setty",
+   "t": 8.624,
+   "end": 8.984,
+   "score": 1.0
+  },
+  {
+   "i": 28,
+   "w": "from",
+   "line": 2,
+   "who": "setty",
+   "t": 9.116,
+   "end": 9.236,
+   "score": 0.97
+  },
+  {
+   "i": 29,
+   "w": "every",
+   "line": 2,
+   "who": "setty",
+   "t": 9.368,
+   "end": 9.528,
+   "score": 0.99
+  },
+  {
+   "i": 30,
+   "w": "guy",
+   "line": 2,
+   "who": "setty",
+   "t": 9.568,
+   "end": 9.688,
+   "score": 0.94
+  },
+  {
+   "i": 31,
+   "w": "who",
+   "line": 2,
+   "who": "setty",
+   "t": 9.728,
+   "end": 9.808,
+   "score": 0.99
+  },
+  {
+   "i": 32,
+   "w": "watched",
+   "line": 2,
+   "who": "setty",
+   "t": 9.888,
+   "end": 10.108,
+   "score": 0.97
+  },
+  {
+   "i": 33,
+   "w": "that",
+   "line": 2,
+   "who": "setty",
+   "t": 10.148,
+   "end": 10.248,
+   "score": 1.0
+  },
+  {
+   "i": 34,
+   "w": "video.",
+   "line": 2,
+   "who": "setty",
+   "t": 10.309,
+   "end": 10.569,
+   "score": 0.77
+  },
+  {
+   "i": 35,
+   "w": "They",
+   "line": 3,
+   "who": "coach",
+   "t": 11.899,
+   "end": 12.02,
+   "score": 0.99
+  },
+  {
+   "i": 36,
+   "w": "ask",
+   "line": 3,
+   "who": "coach",
+   "t": 12.12,
+   "end": 12.22,
+   "score": 1.0
+  },
+  {
+   "i": 37,
+   "w": "how",
+   "line": 3,
+   "who": "coach",
+   "t": 12.3,
+   "end": 12.4,
+   "score": 1.0
+  },
+  {
+   "i": 38,
+   "w": "much,",
+   "line": 3,
+   "who": "coach",
+   "t": 12.48,
+   "end": 12.72,
+   "score": 1.0
+  },
+  {
+   "i": 39,
+   "w": "I",
+   "line": 3,
+   "who": "coach",
+   "t": 12.952,
+   "end": 12.972,
+   "score": 1.0
+  },
+  {
+   "i": 40,
+   "w": "send",
+   "line": 3,
+   "who": "coach",
+   "t": 13.104,
+   "end": 13.304,
+   "score": 0.98
+  },
+  {
+   "i": 41,
+   "w": "my",
+   "line": 3,
+   "who": "coach",
+   "t": 13.344,
+   "end": 13.444,
+   "score": 0.86
+  },
+  {
+   "i": 42,
+   "w": "call",
+   "line": 3,
+   "who": "coach",
+   "t": 13.505,
+   "end": 13.665,
+   "score": 0.99
+  },
+  {
+   "i": 43,
+   "w": "link.",
+   "line": 3,
+   "who": "coach",
+   "t": 13.705,
+   "end": 13.865,
+   "score": 0.98
+  },
+  {
+   "i": 44,
+   "w": "And",
+   "line": 4,
+   "who": "setty",
+   "t": 14.245,
+   "end": 14.305,
+   "score": 1.0
+  },
+  {
+   "i": 45,
+   "w": "then?",
+   "line": 4,
+   "who": "setty",
+   "t": 14.345,
+   "end": 14.445,
+   "score": 1.0
+  },
+  {
+   "i": 46,
+   "w": "Seen.",
+   "line": 5,
+   "who": "coach",
+   "t": 14.825,
+   "end": 15.065,
+   "score": 0.95
+  },
+  {
+   "i": 47,
+   "w": "Or",
+   "line": 5,
+   "who": "coach",
+   "t": 15.297,
+   "end": 15.377,
+   "score": 0.96
+  },
+  {
+   "i": 48,
+   "w": "\"I'll",
+   "line": 5,
+   "who": "coach",
+   "t": 15.589,
+   "end": 15.749,
+   "score": 0.98
+  },
+  {
+   "i": 49,
+   "w": "think",
+   "line": 5,
+   "who": "coach",
+   "t": 15.789,
+   "end": 15.929,
+   "score": 1.0
+  },
+  {
+   "i": 50,
+   "w": "about",
+   "line": 5,
+   "who": "coach",
+   "t": 16.029,
+   "end": 16.23,
+   "score": 0.95
+  },
+  {
+   "i": 51,
+   "w": "it,\"",
+   "line": 5,
+   "who": "coach",
+   "t": 16.29,
+   "end": 16.33,
+   "score": 0.99
+  },
+  {
+   "i": 52,
+   "w": "so",
+   "line": 5,
+   "who": "coach",
+   "t": 16.562,
+   "end": 16.642,
+   "score": 1.0
+  },
+  {
+   "i": 53,
+   "w": "I",
+   "line": 5,
+   "who": "coach",
+   "t": 16.722,
+   "end": 16.762,
+   "score": 0.94
+  },
+  {
+   "i": 54,
+   "w": "pitch",
+   "line": 5,
+   "who": "coach",
+   "t": 16.842,
+   "end": 17.022,
+   "score": 0.94
+  },
+  {
+   "i": 55,
+   "w": "again.",
+   "line": 5,
+   "who": "coach",
+   "t": 17.082,
+   "end": 17.222,
+   "score": 0.99
+  },
+  {
+   "i": 56,
+   "w": "Let",
+   "line": 6,
+   "who": "setty",
+   "t": 17.602,
+   "end": 17.702,
+   "score": 0.85
+  },
+  {
+   "i": 57,
+   "w": "me",
+   "line": 6,
+   "who": "setty",
+   "t": 17.742,
+   "end": 17.782,
+   "score": 0.99
+  },
+  {
+   "i": 58,
+   "w": "guess.",
+   "line": 6,
+   "who": "setty",
+   "t": 17.842,
+   "end": 18.002,
+   "score": 0.92
+  },
+  {
+   "i": 59,
+   "w": "In",
+   "line": 6,
+   "who": "setty",
+   "t": 18.234,
+   "end": 18.294,
+   "score": 0.96
+  },
+  {
+   "i": 60,
+   "w": "caps.",
+   "line": 6,
+   "who": "setty",
+   "t": 18.394,
+   "end": 18.774,
+   "score": 0.99
+  },
+  {
+   "i": 61,
+   "w": "Okay",
+   "line": 7,
+   "who": "coach",
+   "t": 20.104,
+   "end": 20.404,
+   "score": 0.44
+  },
+  {
+   "i": 62,
+   "w": "genius,",
+   "line": 7,
+   "who": "coach",
+   "t": 20.536,
+   "end": 20.937,
+   "score": 1.0
+  },
+  {
+   "i": 63,
+   "w": "what",
+   "line": 7,
+   "who": "coach",
+   "t": 21.169,
+   "end": 21.269,
+   "score": 0.97
+  },
+  {
+   "i": 64,
+   "w": "do",
+   "line": 7,
+   "who": "coach",
+   "t": 21.289,
+   "end": 21.329,
+   "score": 0.0
+  },
+  {
+   "i": 65,
+   "w": "I",
+   "line": 7,
+   "who": "coach",
+   "t": 21.409,
+   "end": 21.429,
+   "score": 1.0
+  },
+  {
+   "i": 66,
+   "w": "send?",
+   "line": 7,
+   "who": "coach",
+   "t": 21.509,
+   "end": 21.729,
+   "score": 0.99
+  },
+  {
+   "i": 67,
+   "w": "Answer",
+   "line": 8,
+   "who": "setty",
+   "t": 22.109,
+   "end": 22.389,
+   "score": 0.99
+  },
+  {
+   "i": 68,
+   "w": "what",
+   "line": 8,
+   "who": "setty",
+   "t": 22.449,
+   "end": 22.549,
+   "score": 1.0
+  },
+  {
+   "i": 69,
+   "w": "they",
+   "line": 8,
+   "who": "setty",
+   "t": 22.589,
+   "end": 22.689,
+   "score": 1.0
+  },
+  {
+   "i": 70,
+   "w": "asked.",
+   "line": 8,
+   "who": "setty",
+   "t": 22.821,
+   "end": 23.062,
+   "score": 0.96
+  },
+  {
+   "i": 71,
+   "w": "One",
+   "line": 8,
+   "who": "setty",
+   "t": 23.294,
+   "end": 23.374,
+   "score": 1.0
+  },
+  {
+   "i": 72,
+   "w": "question",
+   "line": 8,
+   "who": "setty",
+   "t": 23.434,
+   "end": 23.754,
+   "score": 0.98
+  },
+  {
+   "i": 73,
+   "w": "at",
+   "line": 8,
+   "who": "setty",
+   "t": 23.834,
+   "end": 23.874,
+   "score": 1.0
+  },
+  {
+   "i": 74,
+   "w": "a",
+   "line": 8,
+   "who": "setty",
+   "t": 23.934,
+   "end": 23.954,
+   "score": 1.0
+  },
+  {
+   "i": 75,
+   "w": "time.",
+   "line": 8,
+   "who": "setty",
+   "t": 24.014,
+   "end": 24.214,
+   "score": 1.0
+  },
+  {
+   "i": 76,
+   "w": "Check",
+   "line": 8,
+   "who": "setty",
+   "t": 24.446,
+   "end": 24.626,
+   "score": 1.0
+  },
+  {
+   "i": 77,
+   "w": "the",
+   "line": 8,
+   "who": "setty",
+   "t": 24.686,
+   "end": 24.766,
+   "score": 0.99
+  },
+  {
+   "i": 78,
+   "w": "fit,",
+   "line": 8,
+   "who": "setty",
+   "t": 24.806,
+   "end": 24.986,
+   "score": 1.0
+  },
+  {
+   "i": 79,
+   "w": "offer",
+   "line": 8,
+   "who": "setty",
+   "t": 25.218,
+   "end": 25.398,
+   "score": 1.0
+  },
+  {
+   "i": 80,
+   "w": "two",
+   "line": 8,
+   "who": "setty",
+   "t": 25.478,
+   "end": 25.578,
+   "score": 1.0
+  },
+  {
+   "i": 81,
+   "w": "times.",
+   "line": 8,
+   "who": "setty",
+   "t": 25.658,
+   "end": 25.919,
+   "score": 0.97
+  },
+  {
+   "i": 82,
+   "w": "\"I'll",
+   "line": 8,
+   "who": "setty",
+   "t": 26.151,
+   "end": 26.291,
+   "score": 1.0
+  },
+  {
+   "i": 83,
+   "w": "think",
+   "line": 8,
+   "who": "setty",
+   "t": 26.311,
+   "end": 26.431,
+   "score": 1.0
+  },
+  {
+   "i": 84,
+   "w": "about",
+   "line": 8,
+   "who": "setty",
+   "t": 26.511,
+   "end": 26.691,
+   "score": 0.98
+  },
+  {
+   "i": 85,
+   "w": "it\"?",
+   "line": 8,
+   "who": "setty",
+   "t": 26.731,
+   "end": 26.771,
+   "score": 1.0
+  },
+  {
+   "i": 86,
+   "w": "Ask",
+   "line": 8,
+   "who": "setty",
+   "t": 27.003,
+   "end": 27.103,
+   "score": 1.0
+  },
+  {
+   "i": 87,
+   "w": "which",
+   "line": 8,
+   "who": "setty",
+   "t": 27.235,
+   "end": 27.375,
+   "score": 0.99
+  },
+  {
+   "i": 88,
+   "w": "part.",
+   "line": 8,
+   "who": "setty",
+   "t": 27.455,
+   "end": 27.675,
+   "score": 0.94
+  },
+  {
+   "i": 89,
+   "w": "Cool.",
+   "line": 9,
+   "who": "coach",
+   "t": 28.055,
+   "end": 28.275,
+   "score": 0.99
+  },
+  {
+   "i": 90,
+   "w": "Who",
+   "line": 9,
+   "who": "coach",
+   "t": 28.507,
+   "end": 28.608,
+   "score": 0.99
+  },
+  {
+   "i": 91,
+   "w": "does",
+   "line": 9,
+   "who": "coach",
+   "t": 28.668,
+   "end": 28.808,
+   "score": 1.0
+  },
+  {
+   "i": 92,
+   "w": "that",
+   "line": 9,
+   "who": "coach",
+   "t": 28.848,
+   "end": 28.968,
+   "score": 0.99
+  },
+  {
+   "i": 93,
+   "w": "while",
+   "line": 9,
+   "who": "coach",
+   "t": 29.008,
+   "end": 29.148,
+   "score": 0.47
+  },
+  {
+   "i": 94,
+   "w": "I'm",
+   "line": 9,
+   "who": "coach",
+   "t": 29.188,
+   "end": 29.248,
+   "score": 0.36
+  },
+  {
+   "i": 95,
+   "w": "at",
+   "line": 9,
+   "who": "coach",
+   "t": 29.268,
+   "end": 29.308,
+   "score": 0.98
+  },
+  {
+   "i": 96,
+   "w": "the",
+   "line": 9,
+   "who": "coach",
+   "t": 29.348,
+   "end": 29.408,
+   "score": 1.0
+  },
+  {
+   "i": 97,
+   "w": "pool?",
+   "line": 9,
+   "who": "coach",
+   "t": 29.448,
+   "end": 29.668,
+   "score": 0.98
+  },
+  {
+   "i": 98,
+   "w": "Me.",
+   "line": 10,
+   "who": "setty",
+   "t": 30.048,
+   "end": 30.148,
+   "score": 1.0
+  },
+  {
+   "i": 99,
+   "w": "Plug",
+   "line": 10,
+   "who": "setty",
+   "t": 30.38,
+   "end": 30.56,
+   "score": 0.97
+  },
+  {
+   "i": 100,
+   "w": "me",
+   "line": 10,
+   "who": "setty",
+   "t": 30.64,
+   "end": 30.7,
+   "score": 1.0
+  },
+  {
+   "i": 101,
+   "w": "into",
+   "line": 10,
+   "who": "setty",
+   "t": 30.78,
+   "end": 30.92,
+   "score": 1.0
+  },
+  {
+   "i": 102,
+   "w": "ManyChat.",
+   "line": 10,
+   "who": "setty",
+   "t": 30.98,
+   "end": 31.441,
+   "score": 0.94
+  },
+  {
+   "i": 103,
+   "w": "I",
+   "line": 10,
+   "who": "setty",
+   "t": 31.673,
+   "end": 31.693,
+   "score": 1.0
+  },
+  {
+   "i": 104,
+   "w": "build",
+   "line": 10,
+   "who": "setty",
+   "t": 31.773,
+   "end": 31.933,
+   "score": 0.99
+  },
+  {
+   "i": 105,
+   "w": "that",
+   "line": 10,
+   "who": "setty",
+   "t": 31.973,
+   "end": 32.093,
+   "score": 0.99
+  },
+  {
+   "i": 106,
+   "w": "script",
+   "line": 10,
+   "who": "setty",
+   "t": 32.153,
+   "end": 32.393,
+   "score": 0.95
+  },
+  {
+   "i": 107,
+   "w": "from",
+   "line": 10,
+   "who": "setty",
+   "t": 32.453,
+   "end": 32.553,
+   "score": 1.0
+  },
+  {
+   "i": 108,
+   "w": "your",
+   "line": 10,
+   "who": "setty",
+   "t": 32.593,
+   "end": 32.713,
+   "score": 1.0
+  },
+  {
+   "i": 109,
+   "w": "offer",
+   "line": 10,
+   "who": "setty",
+   "t": 32.845,
+   "end": 33.085,
+   "score": 0.99
+  },
+  {
+   "i": 110,
+   "w": "and",
+   "line": 10,
+   "who": "setty",
+   "t": 33.185,
+   "end": 33.265,
+   "score": 1.0
+  },
+  {
+   "i": 111,
+   "w": "adapt",
+   "line": 10,
+   "who": "setty",
+   "t": 33.305,
+   "end": 33.566,
+   "score": 0.98
+  },
+  {
+   "i": 112,
+   "w": "it",
+   "line": 10,
+   "who": "setty",
+   "t": 33.626,
+   "end": 33.666,
+   "score": 0.57
+  },
+  {
+   "i": 113,
+   "w": "to",
+   "line": 10,
+   "who": "setty",
+   "t": 33.706,
+   "end": 33.746,
+   "score": 0.99
+  },
+  {
+   "i": 114,
+   "w": "every",
+   "line": 10,
+   "who": "setty",
+   "t": 33.878,
+   "end": 34.078,
+   "score": 0.99
+  },
+  {
+   "i": 115,
+   "w": "lead.",
+   "line": 10,
+   "who": "setty",
+   "t": 34.158,
+   "end": 34.318,
+   "score": 1.0
+  },
+  {
+   "i": 116,
+   "w": "And",
+   "line": 11,
+   "who": "coach",
+   "t": 34.698,
+   "end": 34.819,
+   "score": 0.98
+  },
+  {
+   "i": 117,
+   "w": "it",
+   "line": 11,
+   "who": "coach",
+   "t": 34.879,
+   "end": 34.919,
+   "score": 1.0
+  },
+  {
+   "i": 118,
+   "w": "won't",
+   "line": 11,
+   "who": "coach",
+   "t": 34.959,
+   "end": 35.139,
+   "score": 0.92
+  },
+  {
+   "i": 119,
+   "w": "sound",
+   "line": 11,
+   "who": "coach",
+   "t": 35.199,
+   "end": 35.419,
+   "score": 1.0
+  },
+  {
+   "i": 120,
+   "w": "copied?",
+   "line": 11,
+   "who": "coach",
+   "t": 35.551,
+   "end": 35.931,
+   "score": 0.99
+  },
+  {
+   "i": 121,
+   "w": "It",
+   "line": 12,
+   "who": "setty",
+   "t": 36.311,
+   "end": 36.351,
+   "score": 1.0
+  },
+  {
+   "i": 122,
+   "w": "sounds",
+   "line": 12,
+   "who": "setty",
+   "t": 36.411,
+   "end": 36.611,
+   "score": 0.96
+  },
+  {
+   "i": 123,
+   "w": "like",
+   "line": 12,
+   "who": "setty",
+   "t": 36.631,
+   "end": 36.751,
+   "score": 0.95
+  },
+  {
+   "i": 124,
+   "w": "you.",
+   "line": 12,
+   "who": "setty",
+   "t": 36.791,
+   "end": 36.911,
+   "score": 1.0
+  },
+  {
+   "i": 125,
+   "w": "Minus",
+   "line": 12,
+   "who": "setty",
+   "t": 37.143,
+   "end": 37.403,
+   "score": 0.95
+  },
+  {
+   "i": 126,
+   "w": "the",
+   "line": 12,
+   "who": "setty",
+   "t": 37.443,
+   "end": 37.503,
+   "score": 1.0
+  },
+  {
+   "i": 127,
+   "w": "caps",
+   "line": 12,
+   "who": "setty",
+   "t": 37.543,
+   "end": 37.763,
+   "score": 0.88
+  },
+  {
+   "i": 128,
+   "w": "lock.",
+   "line": 12,
+   "who": "setty",
+   "t": 37.803,
+   "end": 37.984,
+   "score": 1.0
+  },
+  {
+   "i": 129,
+   "w": "Okay.",
+   "line": 13,
+   "who": "coach",
+   "t": 38.364,
+   "end": 39.125,
+   "score": 0.47
+  },
+  {
+   "i": 130,
+   "w": "How",
+   "line": 13,
+   "who": "coach",
+   "t": 39.357,
+   "end": 39.477,
+   "score": 0.93
+  },
+  {
+   "i": 131,
+   "w": "do",
+   "line": 13,
+   "who": "coach",
+   "t": 39.497,
+   "end": 39.557,
+   "score": 0.93
+  },
+  {
+   "i": 132,
+   "w": "I",
+   "line": 13,
+   "who": "coach",
+   "t": 39.657,
+   "end": 39.677,
+   "score": 1.0
+  },
+  {
+   "i": 133,
+   "w": "set",
+   "line": 13,
+   "who": "coach",
+   "t": 39.757,
+   "end": 39.897,
+   "score": 0.92
+  },
+  {
+   "i": 134,
+   "w": "you",
+   "line": 13,
+   "who": "coach",
+   "t": 39.937,
+   "end": 40.018,
+   "score": 1.0
+  },
+  {
+   "i": 135,
+   "w": "up?",
+   "line": 13,
+   "who": "coach",
+   "t": 40.118,
+   "end": 40.178,
+   "score": 0.99
+  },
+  {
+   "i": 136,
+   "w": "Close",
+   "line": 14,
+   "who": "setty",
+   "t": 40.558,
+   "end": 40.799,
+   "score": 1.0
+  },
+  {
+   "i": 137,
+   "w": "the",
+   "line": 14,
+   "who": "setty",
+   "t": 40.859,
+   "end": 40.939,
+   "score": 1.0
+  },
+  {
+   "i": 138,
+   "w": "laptop.",
+   "line": 14,
+   "who": "setty",
+   "t": 40.979,
+   "end": 41.399,
+   "score": 0.97
+  },
+  {
+   "i": 139,
+   "w": "You",
+   "line": 14,
+   "who": "setty",
+   "t": 41.631,
+   "end": 41.691,
+   "score": 1.0
+  },
+  {
+   "i": 140,
+   "w": "rented",
+   "line": 14,
+   "who": "setty",
+   "t": 41.771,
+   "end": 41.991,
+   "score": 0.86
+  },
+  {
+   "i": 141,
+   "w": "a",
+   "line": 14,
+   "who": "setty",
+   "t": 42.071,
+   "end": 42.091,
+   "score": 0.97
+  },
+  {
+   "i": 142,
+   "w": "fucking",
+   "line": 14,
+   "who": "setty",
+   "t": 42.223,
+   "end": 42.543,
+   "score": 0.99
+  },
+  {
+   "i": 143,
+   "w": "villa",
+   "line": 14,
+   "who": "setty",
+   "t": 42.603,
+   "end": 42.863,
+   "score": 1.0
+  },
+  {
+   "i": 144,
+   "w": "to",
+   "line": 14,
+   "who": "setty",
+   "t": 42.995,
+   "end": 43.075,
+   "score": 1.0
+  },
+  {
+   "i": 145,
+   "w": "copy-paste",
+   "line": 14,
+   "who": "setty",
+   "t": 43.135,
+   "end": 43.616,
+   "score": 0.84
+  },
+  {
+   "i": 146,
+   "w": "a",
+   "line": 14,
+   "who": "setty",
+   "t": 43.676,
+   "end": 43.696,
+   "score": 0.47
+  },
+  {
+   "i": 147,
+   "w": "PDF.",
+   "line": 14,
+   "who": "setty",
+   "t": 43.756,
+   "end": 44.236,
+   "score": 0.83
+  },
+  {
+   "i": 148,
+   "w": "Comment",
+   "line": 15,
+   "who": "setty",
+   "t": 45.646,
+   "end": 46.066,
+   "score": 0.96
+  },
+  {
+   "i": 149,
+   "w": "SETTY",
+   "line": 15,
+   "who": "setty",
+   "t": 46.198,
+   "end": 46.498,
+   "score": 0.66
+  },
+  {
+   "i": 150,
+   "w": "and",
+   "line": 15,
+   "who": "setty",
+   "t": 46.63,
+   "end": 46.71,
+   "score": 0.99
+  },
+  {
+   "i": 151,
+   "w": "I'll",
+   "line": 15,
+   "who": "setty",
+   "t": 46.75,
+   "end": 46.91,
+   "score": 0.94
+  },
+  {
+   "i": 152,
+   "w": "send",
+   "line": 15,
+   "who": "setty",
+   "t": 46.95,
+   "end": 47.131,
+   "score": 1.0
+  },
+  {
+   "i": 153,
+   "w": "you",
+   "line": 15,
+   "who": "setty",
+   "t": 47.191,
+   "end": 47.291,
+   "score": 1.0
+  },
+  {
+   "i": 154,
+   "w": "everything",
+   "line": 15,
+   "who": "setty",
+   "t": 47.423,
+   "end": 47.943,
+   "score": 0.99
+  },
+  {
+   "i": 155,
+   "w": "to",
+   "line": 15,
+   "who": "setty",
+   "t": 48.075,
+   "end": 48.155,
+   "score": 1.0
+  },
+  {
+   "i": 156,
+   "w": "build",
+   "line": 15,
+   "who": "setty",
+   "t": 48.215,
+   "end": 48.395,
+   "score": 0.98
+  },
+  {
+   "i": 157,
+   "w": "your",
+   "line": 15,
+   "who": "setty",
+   "t": 48.475,
+   "end": 48.655,
+   "score": 0.94
+  },
+  {
+   "i": 158,
+   "w": "AI",
+   "line": 15,
+   "who": "setty",
+   "t": 48.787,
+   "end": 49.067,
+   "score": 0.25
+  },
+  {
+   "i": 159,
+   "w": "setter",
+   "line": 15,
+   "who": "setty",
+   "t": 49.147,
+   "end": 49.428,
+   "score": 0.82
+  },
+  {
+   "i": 160,
+   "w": "for",
+   "line": 15,
+   "who": "setty",
+   "t": 49.559,
+   "end": 49.68,
+   "score": 1.0
+  },
+  {
+   "i": 161,
+   "w": "free.",
+   "line": 15,
+   "who": "setty",
+   "t": 49.78,
+   "end": 50.06,
+   "score": 0.99
+  }
+ ]
+}
