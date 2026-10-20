@@ -1,6 +1,6 @@
 # Ligne éditoriale (version du 19/10/2026, à valider avec le fondateur)
 
-> Règles du 19/10 dans `retours-validation.md`. Une idée = un carrousel + un reel de Setty sur le même sujet, le même jour : carrousel à 12:00 pm ET, reel à 6:30 pm ET, chaque post aussi sur YouTube (le carrousel en Short séparé).
+> Règles du 19/10 dans `retours-validation.md`. Une idée = un carrousel + un reel de Setty sur le même sujet, le même jour : carrousel à 12:00 pm ET, reel à 6:30 pm ET, le reel aussi en Short YouTube ; le carrousel sur Instagram seulement (règle du 20/10).
 
 ## Les deux piliers (un jour sur deux)
 
@@ -111,3 +111,75 @@ Chaque hook sert deux fois : slide 1 du carrousel et titre-hook fixe du reel. Se
 
 1 (webinaire) · 6 (Claude sur WhatsApp) · 3 (10 calls, 0 closed) · 8 (Calendly) · 2 (challenge) · 7 (Comment GUIDE) · 4 (DM funnel 2015) · 9 (ChatGPT ou Claude) · 5 (gros coachs) · 10 (le script).
 Les 10 carrousels sont fabriqués (lot 1 le 19/10, puis les 7 autres d'un coup à la demande du fondateur, même jour), chacun à valider avant programmation. Chaque reel de Setty : script validé, puis voix (payante, quelques centimes, lancée après le feu vert), puis rendu validé.
+
+## Banque d'idées n° 2 (proposée le 20/10, v2 après le retour du fondateur, à valider)
+
+> Demande du 20/10 : 10 nouvelles idées, encore plus près des douleurs qu'un coach ou un infopreneur vit **chaque semaine**. Hooks aux 6 formes du fondateur (19/10), verbatims à l'appui. Pilier 2 : chaque étape du tuto et chaque conséquence se vérifie à sa source avant fabrication.
+
+### Pilier 1 · Le business du coach
+
+**11. Le prix qui fait fuir**
+- Hook : « If 9 out of 10 leads ghost after you send your price, this is why »
+- Reel : « You sent your [bleep]ing price in the DM, right? »
+- Douleur : il demande le prix, tu l'envoies, plus rien (rd91, rd13, rd14, rd88, rd97).
+- Solution : le prix arrive avec ce qui le justifie et une question ; on vérifie le besoin avant ; jusqu'à 3 relances dans les 24 h.
+
+**12. Le coaching gratuit en DM**
+- Hook : « Why you gave 5 hours of free coaching in your DMs this week »
+- Reel : « You coached a stranger for [bleep]ing free in your DMs again, right? »
+- Douleur : « break down his entire program », puis « I'll think about it », ou des gens qui ne peuvent pas payer (rd93, rd92, rd89, rd49, rd50).
+- Solution : qualifier d'abord (budget, timing), une réponse utile pour les autres (un guide gratuit, l'offre moins chère, logique de rd76), l'agenda seulement pour les bons.
+
+**13. Le setter à 600 $ par mois** (idée du fondateur)
+- Hook : « Why your leads still go cold, even with a $600/month setter »
+- Reel : « You pay a [bleep]ing setter six hundred bucks a month, right? »
+- Douleur : 600 $ par mois plus 5 % de commission, et la réponse part 3 h après ; le lead est parti chez celui qui a répondu (rd06, rd19, rd63, cl027, cl056, cl057).
+- Solution : une réponse pendant que le lead est encore dans la conversation, dans ta voix, et une personne qui reprend quand ça compte. ManySetter : 119 $ par mois par setter live. On ne dénigre jamais le setter : le méchant, c'est le délai.
+
+**14. Les pubs vers les DM**
+- Hook : « Why your DM ads flopped, even with 300 conversations started »
+- Reel : « You paid Meta to fill your [bleep]ing DMs, right? »
+- Douleur : la pub remplit la boîte, personne ne répond à temps ni ne qualifie, et l'argent part (cl007, cl028, rd42, mc36, mc37).
+- Solution : Manychat garde le déclencheur de la pub, le setter tient chaque conversation qu'elle ouvre. À vérifier : le nom exact de la métrique dans le Gestionnaire de publicités.
+
+**20. La tête d'un lead chaud**
+- Hook : « Why your hottest lead ghosted you, even after "this is exactly what I need" »
+- Reel : « You let a [bleep]ing hot lead sleep on it, right? »
+- La psychologie : dans le DM, l'envie est au maximum (il vient de voir ton contenu, il s'imagine le résultat). Une fois refroidi, il ne ressent plus ce qu'il ressentait : c'est l'écart d'empathie chaud-froid, décrit par George Loewenstein (à vérifier dans ses articles avant d'écrire). Ce qui le refroidit : le temps, un lien « book later », « let me think », la vie (rd47, rd78, rd97, rd84, rd87, rd93).
+- Solution : on finit dans le DM pendant qu'il est chaud. On répond à sa dernière question, on vérifie qu'il colle à l'offre, puis on lui propose 2 ou 3 créneaux dans la conversation, dans son fuseau. S'il se tait, jusqu'à 3 relances dans les 24 h.
+
+### Pilier 2 · Les outils
+
+**15. La relance** (le modèle, un outil à garder)
+- Hook : « This is the follow-up I send when a lead stops replying »
+- Reel : « You let that [bleep]ing lead go cold, right? »
+- Douleur : la peur d'avoir l'air « desperate » ou « pushy », alors on ne relance pas (rd86, rd98, rd09, rd48, mc47).
+- Solution : le livrable vrai (3 relances écrites, à garder) ; puis le setter qui les envoie seul, entre 1 et 23 h après le dernier message, dans la fenêtre de 24 h.
+
+**16. La règle des 24 heures**
+- Hook : « If you have 10,000 Manychat contacts and nobody buys, this is why »
+- Reel : « You've got ten thousand [bleep]ing contacts in Manychat, right? »
+- Le tuto : la fenêtre de 24 h de Meta expliquée simplement (à vérifier dans la doc de Meta : ce qu'on peut envoyer après 24 h, les étiquettes de message).
+- Douleur : « I cant even message them anymore » (mc17, mc18, mc30, cl047). La règle vient de Meta, pas de Manychat.
+- Solution : la conversation se joue dans les 24 h, relances comprises.
+
+**17. Le setter maison avec Make et ChatGPT**
+- Hook : « How to build your own AI setter with Make and ChatGPT »
+- Reel : « You built your own [bleep]ing AI setter with Make, right? »
+- Le tuto : les vraies étapes (modules Make, à vérifier dans leur doc).
+- Douleur : « another thing to maintain », des crédits, des réponses fausses ou instantanées, aucune mémoire de la conversation (rd67, mc24, mc22, mc23, mc34).
+- Solution : le modèle n'est pas le setter ; tout ce qu'il y a autour est déjà fait (offre, voix, attente, qualification, agenda, relances, passage de main).
+
+**18. L'IA qui répond en 2 secondes**
+- Hook : « If your AI replies in 2 seconds, this is why your leads leave »
+- Reel : « You turned on your [bleep]ing AI auto-reply, right? »
+- Douleur : trop rapide donc bot, une réponse à chaque bout de message, des questions déjà posées (mc22, cl095, mc19, mc10, mc11, rd61).
+- Solution : le setter attend que le lead ait fini d'écrire, envoie une seule réponse, pose une question à la fois. On ne vend jamais la vitesse.
+
+**19. Setter humain ou setter IA**
+- Hook : « Human setter or AI setter: which one for 30 DMs a day? »
+- Reel : « You're about to hire a [bleep]ing setter, right? »
+- Le duel : coût (setter aux États-Unis : environ 13 à 21 $ de l'heure plus commission, PayScale cité sur le site ; ManySetter : 119 $ par mois), formation, départs, ce qu'un humain fait mieux (cl056, cl057, cl058, rd35, cl123, rd72).
+- Solution : l'IA tient les conversations, une personne reprend quand ça compte. On ne dénigre jamais les setters.
+
+Ordre proposé (piliers en alternance) : 11 · 16 · 12 · 18 · 13 · 17 · 14 · 15 · 20 · 19, à partir du sam. 31/10. Le 13 et le 19 parlent tous deux du setter humain : ils sont à 5 jours d'écart.

@@ -417,3 +417,17 @@ Format d'une règle :
 ## 2026-10-20 · Reels 11 et 10 de Setty validés
 - Retour : « Je valide les reels 11 et 10, fais leurs finals en 60 i/s et passe-les à MANYSETTER POST. »
 - Règle : les reels 11 (script de DM, piscine) et 10 (gros coachs, jet) sont **validés** tels que livrés en 30 i/s ; finals en 60 i/s avec la piste caméra (`"cam_track": true`), puis transmis à MANYSETTER POST pour les 29 et 30/10.
+
+## 2026-10-20 · Plus de Short YouTube pour les carrousels
+- Retour : « Aussi les carrousels image, ne les transforme plus en vidéo stp, ça marche pas, ça fait pas de vues. »
+- Règle : **un carrousel ne part plus que sur Instagram**, en images. Plus de `short.mp4` ni de post YouTube pour un carrousel (remplace la règle du 11/10 « les carrousels vont aussi sur YouTube, en Short vidéo »). Les reels, eux, partent toujours sur Instagram et en Short YouTube.
+
+## 2026-10-20 · Banque d'idées n° 2 (1re proposition)
+- Retour : « Change la 13 et la 20, remplace-les. J'avais aussi une idée du genre : tu paies un setter 600 $/mois et 5 % de commission, alors que des fois il répond 3 h après. Et j'en veux une où tu expliques ce qui se passe dans la tête d'un lead chaud et pourquoi il faut le closer par DM quand il l'est, genre rentrer dans la psychologie. »
+- Règle : les idées 13 (DM à 23 h) et 20 (réponses enregistrées d'Instagram) sont retirées. Elles sont remplacées par l'idée du fondateur (le setter payé 600 $ par mois plus 5 % qui répond 3 h après) et par une idée sur la **psychologie du lead chaud**.
+- Règle : une idée peut entrer dans **la tête du lead** (ce qu'il pense et ressent à chaque étape). Le mécanisme psychologique cité (étude, chercheur) se vérifie à sa source avant fabrication, comme toute étude (règle du 10/10).
+- Règle : quand un post compare le coût d'un setter humain, le méchant reste **le délai et l'organisation** (une seule personne, d'autres clients, des heures de sommeil), jamais le setter comme personne. On ne vend pas non plus la réponse instantanée : on vend une réponse **pendant que le lead est encore là**.
+
+## 2026-10-20 · Banque d'idées n° 2 validée
+- Retour : « Je valide les 10 » (v2 : 13 = le setter à 600 $ par mois, 20 = la tête d'un lead chaud, 19 gardée à 5 jours de la 13).
+- Règle : les idées 11 à 20 de `ligne-edito.md` sont **validées**, dans l'ordre 11 · 16 · 12 · 18 · 13 · 17 · 14 · 15 · 20 · 19, une paire par jour à partir du sam. 31/10 (après le 1/11, l'heure d'hiver américaine passe le fuseau à UTC-5 : on écrit toujours l'heure ET). Les 10 carrousels et les 10 reels de Setty se fabriquent ; chaque script, puis chaque rendu, reste à valider.
