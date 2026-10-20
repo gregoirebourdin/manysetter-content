@@ -333,3 +333,61 @@
 .layout-set .ho-tags { flex-wrap: wrap; gap: 18px; padding: 0 40px 40px 40px; }
 .layout-set .ho-tags .s-pill { font-size: 42px; padding: 16px 28px; gap: 14px; }
 .layout-set .ho-tags .s-pill svg.i { width: 44px; height: 44px; }
+
+/* ---------- big type for the white UI cards beside a speaker (layout "set", reel5). D.side() shows a card at 55 %: add the
+   class "xl" to it in scenes.js (document.getElementById(id).classList.add("xl")) and its text stays readable on a phone.
+   Covers calendlyEvents (5 rows), calendlyConfirm, igChat and leadSorter; a new class, so reels without it never move. */
+.layout-set .st.xl:has(.cal-head) { height: 760px !important; }
+.layout-set .st.xl:has(.cal-total) { height: 880px !important; }
+.layout-set .st.xl .cal-head { height: 132px; padding: 0 36px; gap: 22px; }
+.layout-set .st.xl .cal-head .s-app { --s: 80px !important; }
+.layout-set .st.xl .cal-head b { font-size: 52px; }
+.layout-set .st.xl .cal-head .tabs { display: none; }
+.layout-set .st.xl .cal-row { height: 118px; gap: 24px; padding: 0 36px; }
+.layout-set .st.xl .cal-row:nth-child(2) { top: 140px !important; }
+.layout-set .st.xl .cal-row:nth-child(3) { top: 258px !important; }
+.layout-set .st.xl .cal-row:nth-child(4) { top: 376px !important; }
+.layout-set .st.xl .cal-row:nth-child(5) { top: 494px !important; }
+.layout-set .st.xl .cal-row:nth-child(6) { top: 612px !important; }
+.layout-set .st.xl .cal-row .d { width: 100px; }
+.layout-set .st.xl .cal-row .d small { font-size: 26px; }
+.layout-set .st.xl .cal-row .d span { font-size: 50px; }
+.layout-set .st.xl .cal-row .w b { font-size: 44px; letter-spacing: -0.02em; }
+.layout-set .st.xl .cal-row .w span { font-size: 34px; white-space: nowrap; }
+.layout-set .st.xl .cal-row .s-app { --s: 60px !important; }
+.layout-set .st.xl .cal-row .st8 { font-size: 36px; padding: 12px 24px; }
+.layout-set .st.xl .cal-total { left: 36px; right: 36px; bottom: 28px; height: 104px; padding: 0 34px; font-size: 38px; border-radius: 26px; }
+.layout-set .st.xl .cal-total b { font-size: 72px; }
+.layout-set .st.xl:has(.ok-top) { height: 720px !important; }
+.layout-set .st.xl .ok-top { padding: 40px 44px 0; gap: 22px; }
+.layout-set .st.xl .ok-top .chk { width: 76px; height: 76px; }
+.layout-set .st.xl .ok-top .chk svg.i { width: 46px; height: 46px; }
+.layout-set .st.xl .ok-top b { font-size: 50px; }
+.layout-set .st.xl .ok-top .s-app { --s: 76px !important; }
+.layout-set .st.xl .ok-ev { padding: 26px 44px 0; }
+.layout-set .st.xl .ok-ev h3 { font-size: 60px; }
+.layout-set .st.xl .ok-ev .r { font-size: 38px; gap: 16px; margin-top: 16px; }
+.layout-set .st.xl .ok-ev .r svg.i { width: 40px; height: 40px; }
+.layout-set .st.xl .ok-ev .r .s-app { --s: 48px !important; }
+.layout-set .st.xl .ok-sum { margin: 28px 44px 0; padding: 26px 32px; }
+.layout-set .st.xl .ok-sum .h { font-size: 28px; }
+.layout-set .st.xl .ok-sum .h .s-app { --s: 44px; }
+.layout-set .st.xl .ok-sum li { font-size: 40px; margin-top: 14px; }
+.layout-set .st.xl.ig { height: 640px !important; }
+.layout-set .st.xl .chat-head { height: 132px; padding: 0 34px; gap: 22px; }
+.layout-set .st.xl .chat-head .s-av { width: 84px; height: 84px; font-size: 32px; }
+.layout-set .st.xl .chat-head .u { font-size: 44px; }
+.layout-set .st.xl .chat-head .s { font-size: 32px; }
+.layout-set .st.xl .chat-head .ic { gap: 30px; }
+.layout-set .st.xl .chat-head .ic svg.i { width: 44px; height: 44px; }
+.layout-set .st.xl .chat-body { top: 132px; padding: 30px 34px; gap: 18px; }
+.layout-set .st.xl .cm .b { max-width: 840px; padding: 24px 34px; border-radius: 44px; font-size: 44px; line-height: 1.25; }
+.layout-set .st.xl .sort .col, .layout-set .st.xl.sort .col { width: 450px; }
+.layout-set .st.xl.sort .hd b { font-size: 46px; }
+.layout-set .st.xl.sort .hd span { font-size: 32px; }
+.layout-set .st.xl.sort .hd .s-app { --s: 76px !important; }
+.layout-set .st.xl.sort .hd > span[style] { font-size: 68px !important; }
+.layout-set .st.xl .s-lead { width: 420px; gap: 14px; }
+.layout-set .st.xl .s-lead .u { display: none; }
+.layout-set .st.xl .s-lead .m { font-size: 36px; max-width: 320px; color: #262626; }
+.layout-set .st.xl .s-lead .s-av { width: 64px; height: 64px; font-size: 24px; }

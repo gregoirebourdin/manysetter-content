@@ -80,3 +80,5 @@ New prop? Add it to `props.js` (+ its CSS in `reel.css`, its slot in `ORDER`), a
 Over the set, the stage modules drawn for a dark stage (`flowPipeline`, `leadSorter`, `followTimeline`) get a dark card
 automatically; the white UI ones (`igInbox`, `igChat`, `playbookCard`, `calendly*`) read as they are. The cards made for
 sets (`checklist`, `waChats`, `docQuote`, and `laptopClose` / `handoffCard` under `.layout-set`) use big type: they show at 55 %.
+For `calendlyEvents`, `calendlyConfirm`, `igChat` and `leadSorter` beside a speaker, add the class `xl` to the card in
+scenes.js (`document.getElementById(id).classList.add("xl")`, reel5): their text doubles so it stays readable at 55 %.
