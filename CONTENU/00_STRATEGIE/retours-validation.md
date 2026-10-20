@@ -406,6 +406,10 @@ Format d'une règle :
 - Règle : les reels 8 (DM funnel 2015, rooftop), 4 (10 calls, voiture), 6 (challenge, salon), 7 (Comment GUIDE, cuisine) et 9 (ChatGPT ou Claude, podcast) sont **validés** tels que livrés en 30 i/s ; finals en 60 i/s, puis transmis à MANYSETTER POST, chacun avec son carrousel.
 - Règle (défaut technique trouvé par Claude après validation) : dans un rendu image par image, deux mouvements de caméra qui se chevauchent se battent (l'accroche reculait d'un coup vers 0,85 s, un plan de coupe pendant une réplique ne durait que 3 images). Les finals passent avec la « piste caméra » du moteur (`reel.json` `"cam_track": true` : chaque mouvement prend la main sur le précédent), qui retire ce défaut sans rien changer d'autre. Les reels 2 et 3, déjà programmés, ont le même défaut : leur correction est une décision du fondateur.
 
+## 2026-10-20 · Reels 2 et 3 : correction de la caméra avant publication
+- Retour : « Oui, corrige les reels 2 et 3 avec la piste caméra, refais leurs finals en 60 i/s et préviens MANYSETTER POST de remplacer les vidéos. »
+- Règle : les reels 2 et 3 sont refaits en 60 i/s avec `"cam_track": true` (rien d'autre ne change), et MANYSETTER POST remplace leurs vidéos dans les posts déjà programmés (Instagram et Short YouTube). La référence de régression du reel 2 est mise à jour sur cette version.
+
 ## 2026-10-20 · Reel 5 de Setty « Calendly and the no-shows » validé
 - Retour : « Je valide le reel 5, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
 - Règle : le reel 5 (`07_PRET_A_PUBLIER/261020_REEL_S2_AV2_calendly-no-shows/`, café, 55,8 s) est **validé** tel que livré en 30 i/s ; final en 60 i/s avec la piste caméra (`"cam_track": true`, règle du 20/10), puis transmis à MANYSETTER POST, qui le programme le même jour que son carrousel (`261019_CAR_S2_AV2_calendly-no-shows`).

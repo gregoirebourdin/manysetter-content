@@ -579,6 +579,9 @@ def cmd_deliver(a):
         "qa": {"duree_s": round(dur, 2), "lufs": I, "true_peak_dbtp": TP},
         "statut": meta.get("statut", "à valider"),
     })
+    if (pdir / "post.json").exists():  # a re-delivery keeps what came after it (the "programmation" of MANYSETTER POST…)
+        for k, v in json.loads((pdir / "post.json").read_text()).items():
+            post.setdefault(k, v)
     (pdir / "post.json").write_text(json.dumps(post, indent=2, ensure_ascii=False) + "\n")
     say(f"post folder: {pdir.relative_to(REPO)}")
 

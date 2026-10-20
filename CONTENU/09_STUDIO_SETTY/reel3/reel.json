@@ -1,5 +1,6 @@
 {
  "layout": "set",
+ "cam_track": true,
  "set": "gym",
  "mood": "morning",
  "voices": {
@@ -43,7 +44,7 @@
  ],
  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
  "caption": "Comment \"SETTY\" and he'll send you everything to build your AI setter for free. Follow so the DM lands 📩\n\n👇 READ BELOW: what plugging Claude into WhatsApp really does, from its own README.\n\n1. The free whatsapp-mcp setup connects Claude Desktop to your personal WhatsApp through WhatsApp Web, not the official API.\n\n2. Claude only replies when you open it and ask, so your leads still wait for you.\n\n3. It can read every chat, and its own README warns of \"private data exfiltration\".\n\n4. Setty is the AI setter I built for coaches: he replies on his own in your voice, through Manychat on the official WhatsApp, Instagram and Messenger, and hands you the chat when he doesn't know.\n\nThe catch: Setty isn't free once he's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#claudeai #whatsappbusiness #aisetter\n\nManySetter is not affiliated with or endorsed by Anthropic, WhatsApp, Manychat or Meta.",
- "statut": "validé par le fondateur le 20/10 (v1), rendu final 60 i/s ; transmis à la session MANYSETTER POST pour la programmation",
+ "statut": "validé par le fondateur ; final 60 i/s refait le 20/10 avec la piste caméra (accroche sans recul, plans de coupe qui tiennent), à remplacer dans les posts programmés",
  "created": "2026-10-20",
  "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
  "sources": [
