@@ -85,10 +85,17 @@ il écrit seulement les nombres en chiffres (363K, 119, 10). Aucune réplique n'
 3. **Une version de 30 à 35 s** en parallèle (sans les répliques 3 à 5), pour la rétention.
 4. **Le lip-sync en vraies formes de bouche**, déjà proposé aux reels 2 et 3.
 
+## Final (validé le 20/10)
+
+- Rendu en 60 i/s avec la piste caméra (`"cam_track": true`) : `renders/reel10_v1_60fps.mp4`, livré dans le dossier de
+  post. 1080×1920 à 60 i/s, 59,9 s, -14,2 LUFS, crête -2,1 dBTP.
+- Images tirées du MP4 : l'accroche avance sans recul entre 0,5 et 1,6 s. Les trois réactions « Fahhh » restent plus
+  d'une seconde sur le coach. Le plan large de « How do I set you up? » tient, et le retour au plan large de la fin se
+  fait d'un seul mouvement.
+
 ## Ce qui t'attend
 
-- Ton feu vert sur ce rendu, puis le final en 60 i/s et la passation à MANYSETTER POST (même jour que son carrousel,
-  6:30 pm ET).
+- La programmation par MANYSETTER POST le 29/10 (carrousel 12:00 pm ET, reel 6:30 pm ET).
 - L'étiquette « AI info » à ajouter dans l'appli après publication, comme pour les reels 2 et 3.
 - La source précise de la musique, à noter quand tu l'as.
 - Rien n'est programmé sans ton go.
