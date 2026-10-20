@@ -431,3 +431,8 @@ Format d'une règle :
 ## 2026-10-20 · Banque d'idées n° 2 validée
 - Retour : « Je valide les 10 » (v2 : 13 = le setter à 600 $ par mois, 20 = la tête d'un lead chaud, 19 gardée à 5 jours de la 13).
 - Règle : les idées 11 à 20 de `ligne-edito.md` sont **validées**, dans l'ordre 11 · 16 · 12 · 18 · 13 · 17 · 14 · 15 · 20 · 19, une paire par jour à partir du sam. 31/10 (après le 1/11, l'heure d'hiver américaine passe le fuseau à UTC-5 : on écrit toujours l'heure ET). Les 10 carrousels et les 10 reels de Setty se fabriquent ; chaque script, puis chaque rendu, reste à valider.
+
+## 2026-10-21 · Reels 12 à 21 de Setty : scripts v1 et décors validés
+- Retour : « Je valide les 10 scripts avec tes retouches et les 10 décors, OK pour le coût des voix : lance-les. »
+- Règle : les scripts v1 des reels 12 à 21 (`09_STUDIO_SETTY/writing/lot_reels_12-21_scripts.md`), avec les retouches de Claude (« fit » et « qualify » sortis des répliques, « any hour » retiré du reel 21), et leurs 10 décors (coworking, studio fond vert, cabinet de coach, salle de serveurs, call center, garage, salle de réunion, parc, diner, ring de boxe) sont **validés**. Les 4 titres-hooks sur 3 lignes (reels 12, 13, 14, 20) restent mot pour mot.
+- Règle : la génération des voix est autorisée pour ces 10 scripts (environ 0,40 $, moins de 0,75 $ avec les reprises). **C'est MANYSETTER REELS qui les génère**, dans la session où le fondateur a donné son accord (le refus d'un accord transmis au reel 5 ne se reproduit plus). Chaque rendu reste à valider un par un.
