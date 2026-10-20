@@ -374,6 +374,54 @@ export function igDM(R, { id = "dm", at, out, user, color = "#d6249f", status = 
   }
 }
 
+// ---------------------------------------------------------------- debates and copy-paste (reel9)
+
+/** A live debate board ("X vs Y"), round by round: a LIVE pill and the show's name, the two names (written, no logos),
+ *  green checks on both names (`checks`: a time), then rounds: a label and a result stamped on the right (TIE, ?, YOU 📋).
+ *  rows: [{ label, at, result: { text, at, tone: "orange" | "grey" } }]; a time before `at` shows it from the start. */
+export function duel(R, { id = "duel", at, out, show, left, right, checks, rows = [] }) {
+  const ok = (k) => (checks != null ? `<i class="du-ok" id="${id}-k${k}">${icon(R, "check")}</i>` : "");
+  const rws = rows.map((r, k) => `<div class="du-row" id="${id}-r${k}"><div class="du-lab">${r.label}</div>` +
+    (r.result ? `<span class="du-res ${r.result.tone || "grey"}" id="${id}-s${k}" data-layout-allow-overlap>${r.result.text}</span>` : "") + `</div>`).join("");
+  mount(R, id, "s-card du", `<div class="du-head"><span class="s-pill du-live"><i></i>LIVE</span><b>${show}</b>${icon(R, "mic")}</div>` +
+    `<div class="du-vs"><span>${left}${ok(0)}</span><em>VS</em><span>${right}${ok(1)}</span></div>${rws}`);
+  inOut(R, id, at, out);
+  if (checks != null) [0, 1].forEach((k) => popIn(R, `#${id}-k${k}`, checks + k * 0.12, { scale: 0.2 }));
+  rows.forEach((r, k) => {
+    popIn(R, `#${id}-r${k}`, r.at, { y: 30, scale: 0.94 });
+    if (r.result) R.tl.fromTo(`#${id}-s${k}`, { opacity: 0, scale: 2.4, rotation: -16 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.22, ease: "back.out(1.6)" }, r.result.at);
+  });
+}
+
+/** The copy-paste loop: a lead's Instagram DM on top, a chat assistant below (its name written, no logo). The DM is
+ *  copied in, the assistant replies, the reply is copied back and sent; a pill counts the copy-pastes. With `setter`,
+ *  the bottom is the setter inside Manychat instead: the reply lands in the DM by itself and the count stays at 0.
+ *  times: { copy, paste, reply, copy2, send } (a time before `at` shows it from the start; no `send`, no sent reply),
+ *  count: { from, to, t0, t1 } */
+export function copyPaste(R, { id = "cp", at, out, user, color = "#d6249f", dm, reply, ai = "ChatGPT", setter, times = {}, count }) {
+  const T = (k) => times[k] ?? Infinity;
+  const bottom = setter
+    ? `<div class="cp-ai ms"><div class="cp-bar">${app("manysetter", 66)}<b>${setter.name}</b><span>${setter.sub}</span></div>` +
+      setter.notes.map((n, k) => `<div class="cp-note" id="${id}-n${k}">${icon(R, n.icon)}${n.text}</div>`).join("") + `</div>`
+    : `<div class="cp-ai"><div class="cp-bar"><i></i><i></i><i></i><b>${ai}</b></div>` +
+      `<div class="cp-m u" id="${id}-p">${dm}</div><div class="cp-m a" id="${id}-a">${reply}</div></div>`;
+  mount(R, id, "s-card cp", `<div class="cp-head">${app("instagram", 70)}<span class="s-av" style="background: ${color}">${initials(user)}</span><b>${user}</b></div>` +
+    `<div class="cp-ig"><div class="cp-b them" id="${id}-d">${dm}</div>` +
+    (setter ? "" : `<span class="cp-copy" id="${id}-c" data-layout-allow-overlap>${icon(R, "copy")}Copy</span>`) +
+    (times.send != null ? `<div class="cp-b me" id="${id}-r" data-layout-allow-overlap>${reply}</div>` : "") + `</div>` +
+    `<div class="cp-clip"><span class="s-pill${setter ? " zero" : ""}" id="${id}-k">📋 copy-pastes: <b id="${id}-n2">${count ? count.from : 0}</b></span></div>` + bottom);
+  inOut(R, id, at, out);
+  if (!setter) {
+    popIn(R, `#${id}-c`, T("copy"), { scale: 0.3 });
+    R.tl.to(`#${id}-c`, { opacity: 0, duration: 0.15 }, T("paste") + 0.1);
+    popIn(R, `#${id}-p`, T("paste"), { y: -60, scale: 0.9 });
+    popIn(R, `#${id}-a`, T("reply"), { y: 20, scale: 0.9 });
+    R.tl.fromTo(`#${id}-a`, { boxShadow: "0 0 0 0 rgba(255,97,29,0)" }, { boxShadow: "0 0 0 8px rgba(255,97,29,0.9)", duration: 0.2, immediateRender: false }, T("copy2"));
+  } else setter.notes.forEach((n, k) => popIn(R, `#${id}-n${k}`, n.at, { x: -30, scale: 0.9 }));
+  if (times.send != null) popIn(R, `#${id}-r`, times.send, setter ? { y: 20, scale: 0.9 } : { y: 220, scale: 0.85 });
+  if (count) counter(R, document.getElementById(`${id}-n2`), count);
+}
+
 // ---------------------------------------------------------------- Instagram comments, Manychat flow (3D sets)
 
 /** The comments under an Instagram post, big type (the sets' card): comments arrive on top (the keyword in bold), the

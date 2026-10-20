@@ -432,6 +432,54 @@
 .igd-row .m span { color: #737373; }
 .igd-row .dot { width: 26px; height: 26px; border-radius: 50%; background: #0095f6; flex: none; }
 
+/* debate board (duel) and copy-paste loop (copyPaste), made for 3D sets (shown at 55 %): big type */
+.du { padding: 0 0 34px; }
+.du-head { display: flex; align-items: center; gap: 22px; padding: 28px 40px; border-bottom: 2px solid #efefef; }
+.du-head b { font: 800 58px/1 Inter, sans-serif; letter-spacing: -0.03em; }
+.du-head svg.i { width: 60px; height: 60px; margin-left: auto; color: #121110; }
+.du-live { background: #ff2d20; color: #fff; font-size: 46px; padding: 12px 26px 12px 22px; gap: 14px; letter-spacing: 0.02em; }
+.du-live i { width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+.du-vs { display: flex; align-items: center; justify-content: center; gap: 22px; padding: 34px 36px 8px; }
+.du-vs span { position: relative; flex: 1; height: 200px; border-radius: 34px; background: #17171a; color: #fff; display: flex; align-items: center;
+  justify-content: center; font: 800 80px/1 Inter, sans-serif; letter-spacing: -0.045em; }
+.du-vs em { width: 116px; height: 116px; flex: none; border-radius: 50%; background: #ff611d; color: #fff; display: flex; align-items: center;
+  justify-content: center; font: italic 900 50px/1 Inter, sans-serif; }
+.du-ok { position: absolute; right: -14px; top: -18px; width: 84px; height: 84px; border-radius: 50%; background: #22c55e; color: #fff;
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 7px #fff; opacity: 0; }
+.du-ok svg.i { width: 52px; height: 52px; stroke-width: 3.4; }
+.du-row { display: flex; align-items: center; gap: 24px; margin: 26px 40px 0; padding: 26px 0 0; border-top: 3px dashed #e3e0db; opacity: 0; }
+.du-lab { flex: 1; font: 800 64px/1.05 Inter, sans-serif; color: #2a2724; letter-spacing: -0.035em; white-space: nowrap; }
+.du-res { flex: none; padding: 10px 30px; border: 8px solid; border-radius: 24px; font: 900 82px/1 Inter, sans-serif; letter-spacing: 0.01em;
+  white-space: nowrap; background: #fff; opacity: 0; }
+.du-res.orange { color: #ff4d12; border-color: #ff4d12; }
+.du-res.grey { color: #4b5563; border-color: #4b5563; }
+
+.cp { padding: 0 0 30px; }
+.cp-head { display: flex; align-items: center; gap: 20px; padding: 26px 36px; border-bottom: 2px solid #efefef; }
+.cp-head .s-av { width: 84px; height: 84px; color: #fff; font: 800 34px/1 Inter, sans-serif; }
+.cp-head b { font: 800 58px/1 Inter, sans-serif; letter-spacing: -0.03em; }
+.cp-ig { position: relative; display: flex; flex-direction: column; gap: 18px; padding: 26px 32px 8px; }
+.cp-b { max-width: 92%; padding: 22px 32px; border-radius: 44px; font: 600 58px/1.18 Inter, sans-serif; letter-spacing: -0.025em; }
+.cp-b.them { align-self: flex-start; background: #efefef; color: #121110; }
+.cp-b.me { align-self: flex-end; background: linear-gradient(135deg, #7a2ff7 0%, #3e5bff 100%); color: #fff; opacity: 0; }
+.cp-copy { position: absolute; right: 30px; top: 104px; display: flex; align-items: center; gap: 12px; padding: 16px 28px; border-radius: 24px;
+  background: #121110; color: #fff; font: 800 52px/1 Inter, sans-serif; box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.6); opacity: 0; }
+.cp-copy svg.i { width: 50px; height: 50px; }
+.cp-clip { display: flex; justify-content: center; padding: 14px 0 18px; }
+.cp-clip .s-pill { background: #fff3d6; color: #a35a00; font-size: 52px; padding: 16px 34px; }
+.cp-clip .s-pill.zero { background: #dcfce7; color: #15803d; }
+.cp-ai { margin: 0 28px; border-radius: 34px; background: #1c1c21; padding: 0 0 26px; }
+.cp-bar { display: flex; align-items: center; gap: 14px; height: 100px; padding: 0 28px; border-bottom: 2px solid #2c2c33; color: #fff; }
+.cp-bar i { width: 20px; height: 20px; border-radius: 50%; background: #48484f; }
+.cp-bar b { font: 800 54px/1 Inter, sans-serif; letter-spacing: -0.03em; margin-left: 8px; }
+.cp-bar span { font: 600 40px/1 Inter, sans-serif; color: #a1a1aa; margin-left: auto; }
+.cp-m { margin: 22px 26px 0; padding: 20px 28px; border-radius: 32px; font: 600 54px/1.18 Inter, sans-serif; letter-spacing: -0.025em; opacity: 0; }
+.cp-m.u { margin-left: auto; width: fit-content; max-width: 86%; background: #34343c; color: #fff; }
+.cp-m.a { max-width: 94%; color: #f4f4f5; background: transparent; padding-left: 6px; }
+.cp-ai.ms .cp-bar { gap: 18px; }
+.cp-note { display: flex; align-items: center; gap: 18px; margin: 30px 30px 0; font: 700 56px/1.15 Inter, sans-serif; color: #fff; letter-spacing: -0.02em; opacity: 0; }
+.cp-note svg.i { width: 60px; height: 60px; color: #ff7a3a; flex: none; }
+
 /* Instagram comments in big type (st.igComments, the sets' card) */
 .igc { height: 760px; }
 .igc-head { height: 136px; display: flex; align-items: center; gap: 22px; padding: 0 40px; border-bottom: 2px solid #efefef; }
