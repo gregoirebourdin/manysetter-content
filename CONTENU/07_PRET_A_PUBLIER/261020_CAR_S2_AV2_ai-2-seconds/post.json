@@ -1,0 +1,181 @@
+{
+  "id": "261020_CAR_S2_AV2_ai-2-seconds",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "2 · outils",
+  "idee": 18,
+  "reel_associe": "reel15 (Setty : « You turned on your [bleep]ing AI auto-reply, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "chiffre très précis (2 secondes)",
+    "contre-pied (la vitesse fait fuir)",
+    "pertinence pour soi (son auto-reply)"
+  ],
+  "verbatims": [
+    "mc22",
+    "mc10",
+    "mc11",
+    "cl095",
+    "mc19"
+  ],
+  "sources": [
+    {
+      "fait": "le setter attend que le lead ait fini d'écrire, puis envoie une seule réponse, courte, dans la voix de la marque ; une question à la fois, sans reposer une question déjà posée",
+      "source": "brief-de-marque.md, section 2 (site ManySetter)"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "if your AI replies in *2 seconds*, this is why your leads leave"
+        },
+        {
+          "caption": "speed isn't the flex you think.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the lead types like a *human*"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "hey"
+            },
+            {
+              "from": "lead",
+              "text": "so i saw your reel"
+            },
+            {
+              "from": "lead",
+              "text": "and i have a question about"
+            }
+          ]
+        },
+        {
+          "caption": "three messages for one single thought."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "your AI answers *each one*"
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "Hi! How can I help you today?"
+            },
+            {
+              "from": "me",
+              "text": "Great! What's your question?"
+            },
+            {
+              "from": "me",
+              "text": "Sure! Here's our booking link."
+            }
+          ]
+        },
+        {
+          "caption": "before they even finished the sentence."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "then it asks what they *already* said"
+        },
+        {
+          "text": "\"may ask for information the user has already sent.\" now it feels like a form, not a chat."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "\"the number one complaint i get is the AI *instantly* answering\""
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "real people *wait* first"
+        },
+        {
+          "text": "they read the whole thing, then reply once, to what was asked. that's what feels human."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "how a reply *should* work"
+        },
+        {
+          "list": [
+            "wait until they stop typing.",
+            "read the whole thing.",
+            "one reply, to the real question.",
+            "one question, never asked twice."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it waits until the lead has finished writing, sends one short reply in your voice, and asks one question at a time."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-one-question/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "no more triple bot replies.",
+            "no question asked twice.",
+            "it reads like you typed it.",
+            "your leads stop feeling like a ticket number."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

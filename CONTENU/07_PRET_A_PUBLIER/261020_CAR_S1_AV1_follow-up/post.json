@@ -1,0 +1,164 @@
+{
+  "id": "261020_CAR_S1_AV1_follow-up",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "2 · outils",
+  "idee": 15,
+  "reel_associe": "reel19 (Setty : « You let that [bleep]ing lead go cold, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "valeur gratuite à enregistrer (les 3 relances)",
+    "pertinence pour soi (son lead silencieux)",
+    "aversion à la perte (le lead qui refroidit)"
+  ],
+  "verbatims": [
+    "rd86",
+    "rd98",
+    "rd84",
+    "rd09",
+    "mc47"
+  ],
+  "sources": [
+    {
+      "fait": "relances : jusqu'à 3, entre 1 et 23 h après le dernier message, dans la fenêtre de 24 h, en mots de l'IA ou de la marque",
+      "source": "brief-de-marque.md, section 2 (site ManySetter)"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "this is the *follow-up* i send when a lead stops replying"
+        },
+        {
+          "caption": "save it before your next \"seen\".",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "why you *don't* follow up"
+        },
+        {
+          "text": "you don't want to look \"desperate\" or \"pushy\". so the lead goes cold, in silence."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "a quiet lead *didn't* say no"
+        },
+        {
+          "text": "sometimes they just got busy and forgot. your follow-up is the reminder."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "follow-up *1*, a few hours later"
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "hey! did you still want the details on the program?"
+            }
+          ]
+        },
+        {
+          "caption": "short, easy to answer, zero pressure."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "follow-up *2*, a bit later"
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "no stress if now's not the time. what's holding you back, timing or budget?"
+            }
+          ]
+        },
+        {
+          "caption": "an easy way out, plus one question."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "follow-up *3*, the last one"
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "i'll stop bugging you, promise. if you ever want help with your goal, just reply here."
+            }
+          ]
+        },
+        {
+          "caption": "leave the door open, then stop."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "all 3 inside *24 hours*, then you stop chasing"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it sends up to 3 follow-ups for you, between 1 and 23 hours after the last message, in your words or its own."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "no lead goes cold in silence.",
+            "you never write a follow-up again.",
+            "the replies land in your DMs.",
+            "you look busy, not desperate (finally)."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

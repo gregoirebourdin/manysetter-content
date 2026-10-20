@@ -1,0 +1,163 @@
+{
+  "id": "261020_CAR_S2_AV2_free-coaching-dms",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "1 · business du coach",
+  "idee": 12,
+  "reel_associe": "reel14 (Setty : « You coached a stranger for [bleep]ing free in your DMs again, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "chiffre très précis (5 heures)",
+    "aversion à la perte (son temps donné pour rien)",
+    "pertinence pour soi (sa semaine)"
+  ],
+  "verbatims": [
+    "rd93",
+    "rd92",
+    "rd89",
+    "rd50",
+    "rd76"
+  ],
+  "sources": [
+    {
+      "fait": "le setter qualifie une question à la fois, ne donne l'agenda qu'aux bons leads, les autres reçoivent une réponse utile (exemple de démo : un guide gratuit) ; il passe la main si l'info n'est pas dans ses sources",
+      "source": "brief-de-marque.md, section 2 (site ManySetter)"
+    }
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "why you gave *5 hours* of free coaching in your DMs this week"
+        },
+        {
+          "caption": "and none of them paid.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "it always starts *innocent*"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "quick question about my diet"
+            },
+            {
+              "from": "lead",
+              "text": "and my training split"
+            },
+            {
+              "from": "lead",
+              "text": "oh and my sleep too lol"
+            }
+          ]
+        },
+        {
+          "caption": "one \"quick question\" becomes a full program."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "then comes the *classic*"
+        },
+        {
+          "text": "you break down their whole plan. they say \"i'll think about it\". you never hear from them again."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and some *can't* pay at all"
+        },
+        {
+          "text": "\"they literally do NOT want to pay.\" you only find out after an hour of typing."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "it feels like *free consulting*, because it is"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*ask* before you teach"
+        },
+        {
+          "text": "two questions first: what they want to fix, and if they're ready to invest. now you know who you're talking to."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "a real answer for *everyone*"
+        },
+        {
+          "list": [
+            "they fit: a booked call.",
+            "not ready yet: a free guide.",
+            "no budget: your cheaper offer."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it asks your questions in the DM, gives your calendar only to leads who fit, and sends the others something useful."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-one-question/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "your evenings stop being office hours.",
+            "the serious ones get your time.",
+            "the others still get real help.",
+            "you stop being a free YouTube channel."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

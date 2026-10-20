@@ -1,0 +1,167 @@
+{
+  "id": "261020_CAR_S1_AV1_price-ghost",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "1 · business du coach",
+  "idee": 11,
+  "reel_associe": "reel12 (Setty : « You sent your [bleep]ing price in the DM, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "chiffre très précis (9 sur 10)",
+    "pertinence pour soi (son « how much? » de cette semaine)",
+    "contre-pied (« it's not your price »)"
+  ],
+  "verbatims": [
+    "rd91",
+    "rd13",
+    "rd88",
+    "rd84",
+    "rd97"
+  ],
+  "sources": [
+    {
+      "fait": "relances : jusqu'à 3, entre 1 et 23 h après le dernier message, dans la fenêtre de 24 h ; le setter répond depuis les sources de la marque",
+      "source": "brief-de-marque.md, section 2 (site ManySetter)"
+    }
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "if *9 out of 10* leads ghost after you send your price, this is why"
+        },
+        {
+          "caption": "and no, it's not your price.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the DM *everyone* gets"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "how much is it?"
+            },
+            {
+              "from": "me",
+              "text": "it's $1,500 for 12 weeks!"
+            }
+          ]
+        },
+        {
+          "caption": "then they leave you on \"seen\", forever."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "a price with *no context*"
+        },
+        {
+          "text": "to them, $1,500 is just a number. they don't know yet what it fixes for them."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "and they *never* say no"
+        },
+        {
+          "text": "saying no feels awkward. so they \"asked for the price and disappeared\"."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "\"people enquiring and then ghosting\", *every* single week"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "*answer* the price, then ask"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "how much is it?"
+            },
+            {
+              "from": "me",
+              "text": "it's $1,500 for 12 weeks. what made you reach out today?"
+            }
+          ]
+        },
+        {
+          "caption": "the price, plus one question. never a dodge."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "if they go *quiet*, follow up"
+        },
+        {
+          "text": "a short nudge a few hours later. sometimes they just got busy and forgot."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it answers the price from your offer, asks the next question, and follows up to 3 times in 24 hours."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/price-then-question/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "the price never ends the chat.",
+            "quiet leads get a follow-up.",
+            "the serious ones book a call.",
+            "no more staring at \"seen\" at 1 a.m."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "261020_CAR_S2_AV2_600-setter",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "1 · business du coach",
+  "idee": 13,
+  "reel_associe": "reel16 (Setty : « You pay a [bleep]ing setter six hundred bucks a month, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "chiffre très précis (600 $ et 5 %)",
+    "aversion à la perte (il paie et perd quand même)",
+    "contre-pied (« it's not your setter's fault »)"
+  ],
+  "verbatims": [
+    "rd06",
+    "rd19",
+    "rd63",
+    "cl027",
+    "cl056"
+  ],
+  "sources": [
+    {
+      "fait": "« 600 $ par mois plus 5 % de commission » : la situation décrite par le fondateur (idée du 20/10), présentée comme un exemple de contrat, pas comme une moyenne",
+      "source": "retours-validation.md, 20/10"
+    },
+    {
+      "fait": "prix : $119/month per live setter, sans commission ; une personne de l'équipe peut répondre elle-même puis rendre la conversation",
+      "source": "brief-de-marque.md, sections 2 et 3"
+    }
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "why your leads still go cold, even with a *$600/month* setter"
+        },
+        {
+          "caption": "and it's not your setter's fault.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *deal* you signed"
+        },
+        {
+          "list": [
+            "$600 a month, every month.",
+            "plus 5% of every sale.",
+            "full access to your inbox."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the reply comes *3 hours* later"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "is this still available?"
+            },
+            {
+              "from": "me",
+              "text": "hey! yes it is, still open"
+            }
+          ]
+        },
+        {
+          "caption": "asked at 2 p.m., answered at 5 p.m."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "by then, they *moved on*"
+        },
+        {
+          "text": "\"leads just move on to whoever responds first.\" they were hot at 2 p.m., not at 5."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "you pay *$600 a month* for a reply that shows up 3 hours late"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "it's *not* the person"
+        },
+        {
+          "text": "one setter has other clients, a life, and sleep. nobody can sit in your inbox all day (not even you)."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what a lead *actually* needs"
+        },
+        {
+          "list": [
+            "an answer while they're still there.",
+            "a question about them, not a pitch.",
+            "a time to book, if they fit."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "an AI setter that answers while the lead is still in the chat, in your voice, and hands you the chat when it matters."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-beginners/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the new *math*"
+        },
+        {
+          "list": [
+            "$119 a month per live setter.",
+            "no commission on your sales.",
+            "a person steps in when it matters.",
+            "your closer gets warm leads, not cold ones."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}
