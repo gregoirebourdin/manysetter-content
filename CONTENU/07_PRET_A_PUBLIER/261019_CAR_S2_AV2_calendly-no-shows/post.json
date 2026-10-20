@@ -31,13 +31,6 @@
   "slides": [
     {
       "bg": "black",
-      "logo": {
-        "name": "calendly",
-        "corner": "bl",
-        "size": 800,
-        "angle": -14,
-        "out": 0.34
-      },
       "blocks": [
         {
           "caption": "it's not your reminder emails.",
@@ -69,14 +62,7 @@
             }
           ]
         }
-      ],
-      "logo": {
-        "name": "calendly",
-        "corner": "tr",
-        "size": 520,
-        "angle": 14,
-        "out": 0.42
-      }
+      ]
     },
     {
       "blocks": [

@@ -338,3 +338,9 @@ Format d'une règle :
 - Règle : le script v3 de `writing/reel2_webinar.md` (dialogue coach ↔ Setty, BOOM, Fahhh, coupure de musique) est **validé** ; la génération des voix est autorisée pour lui : Setty en Charon, le coach en **3 voix candidates** (prises complètes), assemblées en 3 versions du dialogue pour que le fondateur choisisse la voix du coach. La voix choisie devient fixe pour tous les reels suivants.
 - Retour (casting) : « casting_coach_Fenrir je préfère. »
 - Règle : **la voix du coach est Fenrir** (Gemini TTS), fixe pour tous les reels ; Setty reste Charon.
+
+## 2026-10-20 · Logos des carrousels (2e retour)
+- Retour : « En fait j'aime pas le blur derrière les titres, ça nique tout. Tu peux pas juste baisser les images pour pas qu'elles soient derrière les titres ? »
+- Règle : **un logo ne passe jamais derrière un titre ni derrière le texte**, et plus aucun flou. Sur une slide à logo, le texte se décale pour laisser le coin du logo libre, et le logo se cale dans ce coin, aussi grand que possible sans toucher une lettre (`carrousel.py` le place seul). Remplace la règle du 19/10 « passe derrière le texte » et celle du flou.
+- Retour : « J'ai pas Calendly. »
+- Règle : sans fichier 3D fourni par le fondateur, la slide sort **sans logo** (on n'en prend pas ailleurs). Le carrousel `calendly-no-shows` part sans logo.

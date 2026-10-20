@@ -13,7 +13,7 @@ Jamais le logo de Manychat ni d'un concurrent.
 | `chatgpt.png` | ChatGPT | IconScout, fourni par le fondateur le 20/10 | présent |
 | `facebook.png` | Facebook | IconScout, fourni par le fondateur le 19/10 | présent |
 | `meta.png` | Meta | à fournir (envoyé dans la conversation, pas reçu en fichier) | manquant |
-| `calendly.png` | Calendly | à fournir (calendly-no-shows, slides 1 et 2) | manquant |
+| `calendly.png` | Calendly | le fondateur ne l'a pas (20/10) : calendly-no-shows sort sans logo | absent |
 | `zoom.png` | Zoom | à fournir | manquant |
 
-Dans `post.json`, sur une slide : `"logo": {"name": "claude", "corner": "bl", "size": 760, "angle": -12, "out": 0.3}` (coins `tl`, `tr`, `bl`, `br` ; `out` = part du logo qui sort de la slide), ou une liste de deux logos. Pas d'ombre : là où le texte passe sur le logo, le logo est flouté (retour du 19/10). Un logo manquant ne bloque pas le rendu : la slide sort sans lui, puis on relance le rendu quand le fichier arrive.
+Dans `post.json`, sur une slide : `"logo": {"name": "claude", "corner": "bl", "size": 760, "angle": -12, "out": 0.3}` (coins `tl`, `tr`, `bl`, `br` ; `out` = part du logo qui sort de la slide), ou une liste de deux logos. Ni ombre ni flou : le texte laisse libre le coin du logo et le logo ne touche jamais une lettre (retour du 20/10 ; `"logo_space"` règle la place gardée, 260 px par défaut). Un logo manquant ne bloque pas le rendu : la slide sort sans lui, puis on relance le rendu quand le fichier arrive.

@@ -785,26 +785,53 @@ def decorate(img: Image.Image, c: dict, rnd: random.Random, index: int, cover: b
 LOGOS = ROOT / "CONTENU" / "05_BANQUE_IMAGES" / "logos"
 
 
-def place_logo(img: Image.Image, spec: dict) -> Image.Image | None:
-    """Logo 3D d'un outil (retour du 19/10/2026) : énorme, il sort d'un coin et passe derrière le texte.
-    {"name": "claude", "corner": "bl", "size": 760, "angle": -12}. Renvoie son masque (pour le flou sous le texte)."""
+def _logo_image(spec: dict, scale: float = 1.0) -> Image.Image | None:
     path = LOGOS / f"{spec['name']}.png"
     if not path.exists():
-        print(f"  logo manquant : {path.relative_to(ROOT)} (à fournir par le fondateur)")
         return None
-    s = spec.get("size", 760)
-    logo = Image.open(path).convert("RGBA").resize((s, s), Image.LANCZOS)
+    sz = int(spec.get("size", 760) * scale)
+    logo = Image.open(path).convert("RGBA").resize((sz, sz), Image.LANCZOS)
     if spec.get("angle"):
         logo = logo.rotate(spec["angle"], resample=Image.BICUBIC, expand=True)
-    lw, lh = logo.size
-    out = spec.get("out", 0.3)
-    x, y = {"bl": (-out * lw, H - (1 - out) * lh), "br": (W - (1 - out) * lw, H - (1 - out) * lh),
-            "tl": (-out * lw, -out * lh), "tr": (W - (1 - out) * lw, -out * lh)}[spec.get("corner", "bl")]
-    x, y = int(x), int(y)
-    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    layer.alpha_composite(logo, (x, y))   # aucune ombre portée (retour du 19/10/2026 : « je déteste l'ombre »)
-    img.alpha_composite(layer)
-    return layer.split()[-1]
+    return logo
+
+
+def place_logo(img: Image.Image, spec: dict, avoid: Image.Image) -> None:
+    """Logo 3D d'un outil, énorme, qui sort d'un coin (retours du 19 et du 20/10/2026).
+    Il ne touche jamais le texte (avoid = masque du texte grossi) : on part de la position demandée
+    {"name": "claude", "corner": "bl", "size": 760, "angle": -12, "out": 0.3}, puis on le pousse vers son bord
+    (d'abord vers le bas ou le haut, puis sur le côté), et on ne le réduit qu'en dernier recours. Ni ombre ni flou."""
+    corner = spec.get("corner", "bl")
+    sx = -1 if corner[1] == "l" else 1   # sens qui fait sortir le logo de la slide
+    sy = 1 if corner[0] == "b" else -1
+    q = 4
+    small_avoid = avoid.resize((W // q, H // q), Image.BILINEAR).point(lambda v: 255 if v > 20 else 0)
+    best = None
+    for scale in (1.0, 0.88, 0.76, 0.64):
+        logo = _logo_image(spec, scale)
+        if logo is None:
+            print(f"  logo manquant : {spec['name']}.png (la slide sort sans lui)")
+            return
+        lw, lh = logo.size
+        out = spec.get("out", 0.3)
+        x0 = -out * lw if sx < 0 else W - (1 - out) * lw
+        y0 = H - (1 - out) * lh if sy > 0 else -out * lh
+        a_small = logo.split()[-1].resize((max(1, lw // q), max(1, lh // q)), Image.BILINEAR)
+        steps = [(dx, dy) for dy in range(0, int(lh * 0.45), 24) for dx in range(0, int(lw * 0.35), 24)]
+        steps.sort(key=lambda t: (t[0] + t[1], t[0]))
+        for dx, dy in steps:
+            x, y = int(x0 + sx * dx), int(y0 + sy * dy)
+            layer = Image.new("L", (W // q, H // q), 0)
+            layer.paste(a_small, (x // q, y // q))
+            if ImageChops.multiply(layer, small_avoid).point(lambda v: 255 if v > 40 else 0).getbbox() is None:
+                best = (logo, x, y)
+                break
+        if best:
+            break
+    if best is None:   # aucune place libre : le logo reste dans son coin, presque sorti, au plus petit
+        best = (logo, int(x0 + sx * lw * 0.35), int(y0 + sy * lh * 0.45))
+    logo, x, y = best
+    img.alpha_composite(logo, (max(x, 0), max(y, 0)), (max(-x, 0), max(-y, 0)))
 
 
 def _dilate(mask: Image.Image, radius: int) -> Image.Image:
@@ -812,16 +839,6 @@ def _dilate(mask: Image.Image, radius: int) -> Image.Image:
     q = 4
     small = mask.resize((W // q, H // q), Image.BILINEAR).filter(ImageFilter.MaxFilter(2 * (radius // q) + 1))
     return small.resize((W, H), Image.BILINEAR)
-
-
-def frost(img: Image.Image, parts_layer: Image.Image, logo_mask: Image.Image, bg: str) -> None:
-    """Verre dépoli (retour du 19/10/2026 : « mets un blur plutôt » que l'ombre) : là où le texte passe
-    sur le logo, le logo est flouté et un peu éclairci ; ailleurs il reste net. Aucune ombre, aucun contour."""
-    zone = _dilate(parts_layer.split()[-1], 36).filter(ImageFilter.GaussianBlur(48))
-    zone = ImageChops.multiply(zone, _dilate(logo_mask, 20).filter(ImageFilter.GaussianBlur(22)))
-    zone = zone.point(lambda v: min(255, int(v * 1.5)))
-    soft = Image.blend(img.filter(ImageFilter.GaussianBlur(34)), Image.new("RGBA", (W, H), bg), 0.42)
-    img.paste(soft, (0, 0), zone)
 
 
 # --- Montage d'une slide ------------------------------------------------------------
@@ -884,7 +901,13 @@ def compose(s: dict, rnd: random.Random | None = None, cover: bool = False, inde
     (retour du fondateur du 10/10/2026 : « écris plus gros, ça se lit mieux »).
     Avec rnd (fiche "style": "grid"), le fond quadrillé et les éléments graphiques passent sous le contenu."""
     c = colors(s.get("bg", "white"))
-    avail = H - 2 * MARGIN
+    logos = [x for x in ([s["logo"]] if isinstance(s.get("logo"), dict) else s.get("logo", []))
+             if (LOGOS / f"{x['name']}.png").exists()]
+    # le texte laisse libre le coin de chaque logo (retour du 20/10/2026 : jamais un logo derrière un titre)
+    room = s.get("logo_space", 260)
+    top = room if any(x.get("corner", "bl")[0] == "t" for x in logos) else 0
+    bottom = room if any(x.get("corner", "bl")[0] == "b" for x in logos) else 0
+    avail = H - 2 * MARGIN - top - bottom
     for k in ([s["scale"]] if "scale" in s else SCALES):
         parts = [block_image(b, c, k) for b in s["blocks"]]
         gaps = [int(s.get("gap", GAP) * max(1.0, k ** 0.5))] * (len(parts) - 1)
@@ -893,21 +916,21 @@ def compose(s: dict, rnd: random.Random | None = None, cover: bool = False, inde
             break
     else:
         raise SystemExit(f"Slide trop chargée ({total} px pour {avail}) : {s['blocks'][0]}")
-    y = MARGIN if s.get("valign") == "top" else (H - total) // 2
+    y = MARGIN + top if s.get("valign") == "top" else MARGIN + top + (avail - total) // 2
     img = Image.new("RGBA", (W, H), c["bg"])
     if rnd is not None:
         decorate(img, c, rnd, index, cover)
-    logo_mask = None
-    for spec in ([s["logo"]] if isinstance(s.get("logo"), dict) else s.get("logo", [])):   # un logo ou deux
-        m = place_logo(img, spec)
-        if m is not None:
-            logo_mask = m if logo_mask is None else ImageChops.lighter(logo_mask, m)
     text = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     for p, g in zip(parts, gaps + [0]):
         text.alpha_composite(p, (0, y))
         y += p.height + g
-    if logo_mask is not None:
-        frost(img, text, logo_mask, c["bg"])
+    if logos:
+        avoid = _dilate(text.split()[-1], 28)
+        for spec in logos:   # un logo ou deux
+            place_logo(img, spec, avoid)
+    for spec in ([s["logo"]] if isinstance(s.get("logo"), dict) else s.get("logo", [])):
+        if spec not in logos:
+            print(f"  logo manquant : {spec['name']}.png (la slide sort sans lui)")
     img.alpha_composite(text)
     return img.convert("RGB")
 
