@@ -56,6 +56,7 @@ What the middle of the screen shows: the coaches' real tools with their logos, a
 | `st.checklist` | a setup checklist (the tutorial everyone shares): steps pop with their icon, then a green check, an end pill | `{ id, at, out, title, appSlug, items: [{ icon \| app, text, sub, at }], done: { text, at } }` |
 | `st.waChats` | WhatsApp chat list piling up, green unread badges, the Chats tab counting | `{ id, at, out, rows: [{ u, m, c, n, time }], times, unread: { from, to, t0, t1 } }` |
 | `st.docQuote` | a real document quoted word for word (terms, README): source on top, optional Caution badge, key words highlighted in orange | `{ id, at, out, source, sub, appSlug \| srcIcon, badge: { text }, text, marks: [{ text, at }] }` |
+| `st.igDM` | one Instagram DM thread in big type (for sets, readable at 55 %): bubbles, "Seen", a time line between bubbles ("Thu 11:58 PM"), a green chip under a bubble ("Call booked"), the header status turning red ("Active 2w ago"), a rubber stamp slammed over it ("MISSING") | `{ id, at, out, user, color, status, status2: { text, at }, msgs: [{ me, text, at, sep, seen: { text, at }, chip: { text, tone, icon, at } }], stamp: { text, at }, h }` |
 
 Stage helpers (engine): `zoom(t, { to: [x, y], s, dur })` / `unzoom(t)` / `drift(t, { to, s, dur })` (the stage camera),
 `beat.hop(t, SPOT.L | SPOT.C | SPOT.R)`, `R.place({ x, cam })`, `flash(t, opacity, duration)`, `bg("hot" | "night" | "black" | "#glow" | "#spot", opacity, t, dur)`,

@@ -324,3 +324,40 @@ export function docQuote(R, { id = "doc", at, out, source, sub, appSlug, srcIcon
   if (badge) popIn(R, `#${id}-b`, at + 0.2, { scale: 0.5 });
   marks.forEach((m, k) => R.tl.fromTo(`#${id}-m${k}`, { backgroundSize: "0% 100%" }, { backgroundSize: "100% 100%", duration: 0.35, ease: "power2.out", immediateRender: true }, m.at));
 }
+
+// ---------------------------------------------------------------- Instagram DM, big type (3D sets)
+
+/** An Instagram DM thread made for a 3D set (shown at 55 % beside the speaker): big bubbles, readable on a phone.
+ *  msgs: [{ me, text, at, sep, seen: { text, at }, chip: { text, tone, icon, at } }] (sep: a centred time line before the
+ *  bubble, e.g. "Thu 11:58 PM"); status2: { text, at } (the header line turns red: "Active 2w ago"); stamp: { text, at }
+ *  (a rubber stamp slammed over the thread: "MISSING", "GHOSTED"). h: card height (default: its content; keep it under
+ *  ~980 px so the card ends above the captions at 55 %). w: a narrower card (760) can be shown bigger (70 %) beside the
+ *  speaker when the thread is short. */
+export function igDM(R, { id = "dm", at, out, user, color = "#d6249f", status = "Active now", status2, msgs, stamp, h, w = STAGE.w }) {
+  const body = msgs.map((m, k) => (m.sep ? `<div class="dm-sep" id="${id}-p${k}">${m.sep}</div>` : "") +
+    `<div class="dm-m ${m.me ? "me" : "them"}" id="${id}-m${k}"><div class="b">${m.text}</div>` +
+    (m.seen ? `<div class="dm-seen" id="${id}-s${k}">${m.seen.text}</div>` : "") +
+    (m.chip ? `<span class="s-pill tone-${m.chip.tone || "green"} dm-chip" id="${id}-c${k}">${icon(R, m.chip.icon || "circle-check")}${m.chip.text}</span>` : "") +
+    `</div>`).join("");
+  mount(R, id, "s-card igdm", `<div class="dm-head">${app("instagram", 64)}<span class="s-av" style="background: ${color}">${initials(user)}</span>` +
+    `<div><div class="u">${user}</div><div class="s"><span id="${id}-st">${status}</span>` +
+    (status2 ? `<span class="s2" id="${id}-st2">${status2.text}</span>` : "") + `</div></div></div>` +
+    `<div class="dm-body">${body}</div>` + (stamp ? `<div class="dm-stamp" id="${id}-x" data-layout-allow-overlap>${stamp.text}</div>` : ""),
+  { h, w, x: STAGE.x + (STAGE.w - w) / 2 });
+  inOut(R, id, at, out);
+  msgs.forEach((m, k) => {
+    if (m.sep) popIn(R, `#${id}-p${k}`, m.at - 0.15, { scale: 0.8 });
+    popIn(R, `#${id}-m${k}`, m.at);
+    if (m.seen) R.tl.fromTo(`#${id}-s${k}`, { opacity: 0 }, { opacity: 1, duration: 0.2 }, m.seen.at);
+    if (m.chip) popIn(R, `#${id}-c${k}`, m.chip.at, { scale: 0.4 });
+  });
+  if (status2) {
+    R.tl.set(`#${id}-st`, { display: "none" }, status2.at);
+    R.tl.set(`#${id}-st2`, { display: "inline" }, status2.at);
+    popIn(R, `#${id}-st2`, status2.at, { scale: 0.7 });
+  }
+  if (stamp) {
+    gsap.set(`#${id}-x`, { xPercent: -50, yPercent: -50, rotation: -12 });
+    R.tl.fromTo(`#${id}-x`, { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.4)" }, stamp.at);
+  }
+}

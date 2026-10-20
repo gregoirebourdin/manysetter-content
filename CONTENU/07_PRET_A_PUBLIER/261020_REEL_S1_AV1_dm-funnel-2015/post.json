@@ -1,0 +1,74 @@
+{
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, on the low table of a rooftop at sunset, to the coach lounging on his phone: You built your [bleep]ing DM funnel in 2015, right?",
+  "biais": [
+    "contre-pied (« stuck in 2015 »)",
+    "pertinence pour soi (son funnel, ses mots : « link in bio », « how much »)",
+    "aversion à la perte (les leads disparus dans « the inbox void »)"
+  ],
+  "verbatims": [
+    "rd07",
+    "rd13",
+    "rd91",
+    "mc01",
+    "rd47",
+    "rd14",
+    "rd93",
+    "rd88",
+    "rd82",
+    "mc02",
+    "rd08",
+    "rd09",
+    "mc03",
+    "rd86",
+    "rd98",
+    "rd65",
+    "rd77"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261019_CAR_S1_AV1_dm-funnel-2015 (idée 4, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "relances : jusqu'à 3, entre 1 et 23 h après le dernier message, toujours dans la fenêtre de 24 h",
+      "source": "brief-de-marque.md, section 2 (site ManySetter) ; même source que le carrousel 261019_CAR_S1_AV1_dm-funnel-2015"
+    },
+    {
+      "fait": "le setter répond depuis les sources de la marque, dans sa voix, qualifie une question à la fois, ne donne l'agenda qu'aux bons leads et réserve l'appel",
+      "source": "brief-de-marque.md, section 2"
+    },
+    {
+      "fait": "Manychat garde le déclencheur et envoie le premier message ; ManySetter prend le relais quand le lead répond ; inbound seulement",
+      "source": "brief-de-marque.md, sections 2 et 7"
+    },
+    {
+      "fait": "prix : 119 $ par mois par setter live ; construire et tester est gratuit, sans carte ; le passage en live lance un essai de 14 jours",
+      "source": "brief-de-marque.md, section 3"
+    },
+    {
+      "fait": "conversations des cartes (« It's $1,500 for the 12 weeks! », « 3 payments of $550 ») : valeurs d'exemple du carrousel, jamais un client",
+      "source": "261019_CAR_S1_AV1_dm-funnel-2015/post.json, slides 3 et 8"
+    }
+  ],
+  "id": "261020_REEL_S1_AV1_dm-funnel-2015",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel8",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel8_dm-funnel-2015.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+  },
+  "qa": {
+    "duree_s": 59.5,
+    "lufs": -14.1,
+    "true_peak_dbtp": -2.3
+  },
+  "statut": "script v1 à valider (avec les 7 autres reels de la ligne éditoriale)"
+}

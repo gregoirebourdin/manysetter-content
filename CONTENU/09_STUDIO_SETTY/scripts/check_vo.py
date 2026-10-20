@@ -71,6 +71,7 @@ NUM = {
     "40": "forty",
     "5": "five",
 }
+NUM.update({"2015": "twenty fifteen", "2026": "twenty twenty six", "24": "twenty four"})  # reel8
 
 
 def words(text: str) -> list[str]:

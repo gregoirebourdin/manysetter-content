@@ -25,6 +25,7 @@ from scipy.signal import resample_poly
 SR = 48000
 SPOKEN = {"dms": "dee ems", "manychat": "many chat", "manysetter": "many setter", "400": "four hundred", "ai": "ay eye",
           "a.m": "ay em", "p.m": "pee em"}
+SPOKEN.update({"2015": "twenty fifteen", "2026": "twenty twenty six", "dm": "dee em"})  # reel8: years and "DM" as said
 IN_SENTENCE, AFTER_PUNCT = 0.12, 0.22
 # pauses held longer for comedic timing: (word the pause comes after) → seconds
 BEATS = {"like...": 0.34, "them...": 0.3, "dead.": 0.26, "business.": 0.3, "it\"...": 0.22, "you?": 0.3, "bed?": 0.34,

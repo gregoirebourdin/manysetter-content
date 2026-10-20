@@ -391,3 +391,25 @@
 .layout-set .st.xl .s-lead .u { display: none; }
 .layout-set .st.xl .s-lead .m { font-size: 36px; max-width: 320px; color: #262626; }
 .layout-set .st.xl .s-lead .s-av { width: 64px; height: 64px; font-size: 24px; }
+
+/* Instagram DM made for 3D sets (st.igDM): shown at 55 % beside the speaker, so everything is big */
+.igdm { display: flex; flex-direction: column; }
+.dm-head { height: 150px; flex: none; display: flex; align-items: center; gap: 22px; padding: 0 40px; border-bottom: 2px solid #efefef; }
+.dm-head .s-app { --s: 64px; }
+.dm-head .s-av { width: 96px; height: 96px; font-size: 38px; }
+.dm-head .u { font: 800 54px/1.05 Inter, sans-serif; letter-spacing: -0.03em; color: #121110; }
+.dm-head .s { font: 600 38px/1.2 Inter, sans-serif; color: #737373; margin-top: 4px; letter-spacing: -0.02em; }
+.dm-head .s2 { display: none; color: #e11d48; font-weight: 800; }
+.dm-body { flex: 1; padding: 30px 34px 36px; display: flex; flex-direction: column; gap: 18px; }
+.dm-m { display: flex; flex-direction: column; opacity: 0; }
+.dm-m .b { max-width: 860px; padding: 20px 34px; border-radius: 50px; font: 600 60px/1.18 Inter, sans-serif; letter-spacing: -0.025em; }
+.dm-m.them { align-items: flex-start; }
+.dm-m.them .b { background: #efefef; color: #121110; }
+.dm-m.me { align-items: flex-end; }
+.dm-m.me .b { background: linear-gradient(135deg, #7a2ff7 0%, #3e5bff 100%); color: #fff; }
+.dm-seen { font: 600 40px/1 Inter, sans-serif; color: #737373; margin: 12px 18px 0; opacity: 0; }
+.dm-chip { margin-top: 16px; font-size: 48px; padding: 16px 30px; gap: 14px; opacity: 0; }
+.dm-chip svg.i { width: 46px; height: 46px; }
+.dm-sep { align-self: center; font: 700 42px/1 Inter, sans-serif; color: #737373; padding: 6px 0 2px; opacity: 0; }
+.dm-stamp { position: absolute; left: 50%; top: 58%; padding: 14px 46px 18px; border: 12px solid #e11d48; border-radius: 26px; color: #e11d48;
+  background: rgba(255, 255, 255, 0.82); font: 900 128px/1 Inter, sans-serif; letter-spacing: 0.06em; opacity: 0; white-space: nowrap; }

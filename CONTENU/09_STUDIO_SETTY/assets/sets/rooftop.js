@@ -28,7 +28,7 @@ function sunsetCity(c, W, H, R) {
   c.fillStyle = low;
   c.fillRect(0, hy, W, H - hy);
   // the sun, low between the towers, and its glow over the whole sky
-  const sx = W * 0.49, sy = hy - H * 0.045, sr = W * 0.021;
+  const sx = W * 0.49, sy = hy - H * 0.012, sr = W * 0.021;
   const g = c.createRadialGradient(sx, sy, 0, sx, sy, W * 0.34);
   g.addColorStop(0, "rgba(255,232,180,0.95)");
   g.addColorStop(0.1, "rgba(255,178,104,0.6)");
@@ -54,12 +54,13 @@ function sunsetCity(c, W, H, R) {
     c.fill();
   }
   // a row of towers: base line, heights, widths, colour, lit windows, the rim of the sun on the side facing it
-  const towers = ({ base, n, hMin, hMax, wMin, wMax, color, win = 0, rim = 0.3, tall = 0, spire = 0, red = 0 }) => {
+  const towers = ({ base, n, hMin, hMax, wMin, wMax, color, win = 0, rim = 0.3, tall = 0, spire = 0, red = 0, gap = 0 }) => {
     let x = -W * 0.02;
     while (x < W * 1.02) {
       const w = W * (wMin + R() * (wMax - wMin));
       let h = H * (hMin + Math.pow(R(), 1.6) * (hMax - hMin));
       if (R() < tall) h *= 1.7 + R() * 0.6;
+      if (gap && Math.abs(x + w / 2 - sx) < W * gap) { x += w + W * R() * 0.004; continue; } // the sun sets between the towers
       const top = base - h;
       c.fillStyle = color;
       c.fillRect(x, top, w, h + 2);
@@ -88,8 +89,8 @@ function sunsetCity(c, W, H, R) {
       x += w + W * R() * 0.004;
     }
   };
-  towers({ base: hy + H * 0.01, n: 0, hMin: 0.015, hMax: 0.08, wMin: 0.01, wMax: 0.024, color: "rgba(160,92,120,0.8)", rim: 0.12, tall: 0.1, spire: 0.15 });
-  towers({ base: hy + H * 0.03, n: 0, hMin: 0.03, hMax: 0.12, wMin: 0.014, wMax: 0.034, color: "#4b3456", win: 0.22, rim: 0.32, tall: 0.08, spire: 0.12, red: 1 });
+  towers({ base: hy + H * 0.01, n: 0, hMin: 0.015, hMax: 0.08, wMin: 0.01, wMax: 0.024, color: "rgba(160,92,120,0.8)", rim: 0.12, tall: 0.1, spire: 0.15, gap: 0.022 });
+  towers({ base: hy + H * 0.03, n: 0, hMin: 0.03, hMax: 0.12, wMin: 0.014, wMax: 0.034, color: "#4b3456", win: 0.22, rim: 0.32, tall: 0.08, spire: 0.12, red: 1, gap: 0.05 });
   // haze over the horizon, from the sun
   const hz = c.createLinearGradient(0, hy - H * 0.08, 0, hy + H * 0.08);
   hz.addColorStop(0, "rgba(255,170,120,0)");
@@ -366,8 +367,8 @@ export async function build({ renderer, scene, mood = "sunset" }) {
     setty: { x: SX, y: settyY, z: SZ, turn: -0.32, scale: settyS },
     heads: { coach: coachHead, setty: settyFace },
     frames: {
-      coach: { target: coachHead, dist: 12, yaw: 0.46, y: 740 },
-      setty: { target: settyFace, dist: 10.5, yaw: -0.3, pitch: 0.08, y: 800 },
+      coach: { target: coachHead, dist: 12, yaw: 0.46, y: 800 },
+      setty: { target: settyFace, dist: 10.5, yaw: -0.3, pitch: 0.08, y: 860 },
     },
     shots: {
       wide: { pos: [0.2, 4.1, 15.0], at: [0.2, 2.5, -1.5], fov: 44 },
