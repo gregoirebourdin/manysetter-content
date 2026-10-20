@@ -1,0 +1,53 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "serverroom",
+ "mood": "night",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  46.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel15",
+ "slug": "ai-2-seconds",
+ "title": "AI in 2 seconds",
+ "pub_id": "261021_REEL_S2_AV2_ai-2-seconds",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, on a server pulled out of its rack, to the coach on his flight case in the server aisle: You turned on your [bleep]ing AI auto-reply, right?",
+ "hook_title": [
+  "If your AI replies in *2 seconds*,",
+  "this is why your leads leave"
+ ],
+ "biais": [
+  "chiffre très précis (2 secondes)",
+  "contre-pied (la vitesse fait fuir)",
+  "pertinence pour soi (son auto-reply)"
+ ],
+ "verbatims": [
+  "rd06",
+  "rd63",
+  "cl095",
+  "rd71",
+  "mc10",
+  "mc19",
+  "mc11",
+  "mc23",
+  "mc05",
+  "mc22",
+  "cl145",
+  "mc29"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 à valider (lot des reels 12 à 21)",
+ "created": "2026-10-21",
+ "paire": "261020_CAR_S2_AV2_ai-2-seconds (idée 18, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+}

@@ -1,0 +1,18 @@
+[
+ {"who": "setty", "text": "You turned on your fucking AI auto-reply, right?", "style": "Cheeky and mocking, quick, like a best friend about to roast you."},
+ {"who": "coach", "text": "Two seconds, bro. I'm upgrading the servers to make it one.", "style": "Proud and hyped, a casual American guy bragging to his buddy about his tech setup."},
+ {"who": "setty", "text": "Cool. Now your leads leave in two seconds too.", "style": "Flat and deadpan, a beat after 'Cool', then a slow, cutting finish."},
+ {"who": "coach", "text": "What? Speed is the flex.", "style": "Offended and confused, a bit defensive."},
+ {"who": "setty", "text": "Watch. Lead types, \"hey.\" Bot: \"How can I help?\" Lead: \"so I saw your...\" Bot: \"Here's my booking link!\"", "style": "Playful and mocking, acting it out: a lazy, slow texter voice for the lead, a chirpy over-eager robot voice for the bot, quick back and forth."},
+ {"who": "coach", "text": "Okay, they were kinda still typing.", "style": "Sheepish, a little embarrassed, trailing off."},
+ {"who": "setty", "text": "They said \"hey\" and your bot already proposed.", "style": "A mocking roast, slow and smug, savoring the last word.", "pause": 0.95},
+ {"who": "coach", "text": "Then it asks their goal. They literally just told it.", "style": "Deflated, like a confession, rushing the second sentence."},
+ {"who": "setty", "text": "That's not a chat, that's a form with emojis.", "style": "Dry and smug, a small beat before 'a form with emojis'."},
+ {"who": "coach", "text": "Honestly, number one complaint I get? My AI answers instantly. So I slow it down?", "style": "Honest and tired at first, then a hopeful, slightly naive question."},
+ {"who": "setty", "text": "Nope. Plug me into ManyChat. I wait till they're done typing, then send one reply, one question.", "style": "Smooth and sly, a beat after 'Nope', then calm and confident, a tiny beat before 'one reply, one question'."},
+ {"who": "coach", "text": "And the goal thing?", "style": "Skeptical, raising an eyebrow."},
+ {"who": "setty", "text": "I remember what they said. Same question twice? Never.", "style": "Proud and cocky, a short pause before 'Never'."},
+ {"who": "coach", "text": "Okay. How do I set you up?", "style": "Hesitant and a bit sheepish, a small pause after okay."},
+ {"who": "setty", "text": "First, leave the server room. You bought fucking servers so your bot could be wrong faster.", "style": "Mocking, laughing at him, slow and smug.", "pause": 0.95},
+ {"who": "setty", "text": "Comment SETTY and I'll send you everything to build your AI setter for free.", "style": "Smooth and smug, then warm and generous on the offer, like handing over a gift."}
+]
