@@ -396,3 +396,7 @@ Format d'une règle :
 - Décision : « Je valide les 9 » : les carrousels `claude-whatsapp`, `10-calls-0-closed`, `calendly-no-shows`, `5-day-challenge`, `comment-guide-flow`, `dm-funnel-2015`, `chatgpt-or-claude`, `big-coaches-dms` et `dm-script` sont **validés** tels qu'ils sont sur la planche du 20/10 (logos sans flou, légendes au format du 20/10).
 - Règle : **une paire par jour** (carrousel 12:00 pm ET, reel de Setty 6:30 pm ET, Instagram + Short YouTube), dans l'ordre de `ligne-edito.md`. Chaque paire est programmée dès que son reel est validé par le fondateur et transmis par MANYSETTER REELS ; si un reel prend du retard, les paires suivantes glissent d'un jour, sans trou dans la grille.
 - Décision : la paire Claude WhatsApp (idée 6) part le **jeudi 22/10**.
+
+## 2026-10-20 · Reels 4 à 11 de Setty : scripts v1 et décors validés
+- Retour : « Je valide les 8 scripts et les décors, OK pour le coût des voix : lance-les. »
+- Règle : les scripts v1 des reels 4 à 11 (`09_STUDIO_SETTY/writing/lot_reels_4-11_scripts.md`) et leurs 8 décors (voiture, café, salon, cuisine, rooftop, podcast, jet, piscine) sont **validés** ; la génération des voix est autorisée pour ces 8 scripts (coût estimé environ 0,32 $, moins de 0,60 $ avec les reprises), chaque session la lance sans redemander. Chaque rendu reste à valider un par un.
