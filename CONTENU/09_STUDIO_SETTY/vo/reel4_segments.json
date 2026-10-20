@@ -1,0 +1,20 @@
+[
+ {"who": "setty", "text": "You booked ten fucking calls this week, right?", "style": "Cheeky and mocking, quick, like a best friend about to roast you."},
+ {"who": "coach", "text": "Ten, bro. So booked I'm taking calls from my car.", "style": "Hyped and proud, bragging to his buddy, a casual American guy."},
+ {"who": "setty", "text": "Nice. How many paid you?", "style": "Flat and deadpan, a trap question."},
+ {"who": "coach", "text": "Okay, zero. But great conversations.", "style": "Sheepish on 'Okay, zero', then quickly defensive and upbeat."},
+ {"who": "setty", "text": "Great conversations. Forty minutes in, you finally ask the budget.", "style": "Dry and slow, repeating his words with sarcasm, then matter-of-fact."},
+ {"who": "coach", "text": "And they all go, \"I was thinking like fifty bucks?\"", "style": "Exasperated venting, then imitating a lead in a small, unsure voice on the quote."},
+ {"who": "setty", "text": "That's not sales. That's free consulting from a parked car.", "style": "A mocking roast, slow and smug, savoring the last words.", "pause": 0.95},
+ {"who": "coach", "text": "Bro, maybe I just suck at closing.", "style": "Deflated and quiet, doubting himself, venting to a friend."},
+ {"who": "setty", "text": "You don't suck. Your link books people who were never buying.", "style": "Firm and warm on the first sentence, then dead serious and slow on the second."},
+ {"who": "coach", "text": "Then how do I know before they book?", "style": "Curious and a bit desperate, leaning in."},
+ {"who": "setty", "text": "Plug me into ManyChat. I ask your questions in the DM, one at a time.", "style": "Smooth and confident, a sly little offer, calm and easy."},
+ {"who": "coach", "text": "And the ones who literally can't pay?", "style": "Skeptical, a little blunt."},
+ {"who": "setty", "text": "No calendar. They get your free guide or your cheaper offer.", "style": "Calm and cheeky, a quick 'No calendar', then easy and generous."},
+ {"who": "coach", "text": "So I'll book fewer calls?", "style": "Worried, voice going up at the end."},
+ {"who": "setty", "text": "Fewer calls. Serious ones. With their answers right in the invite.", "style": "Confident and smug, three short beats, savoring the last one."},
+ {"who": "coach", "text": "Okay, I'm in. My next call's in two minutes.", "style": "Convinced and rushed, glancing at his phone, a bit stressed on the second sentence."},
+ {"who": "setty", "text": "Take it. Spoiler, he's thinking like fifty fucking bucks.", "style": "Mocking, laughing at him, slow and smug.", "pause": 0.95},
+ {"who": "setty", "text": "Comment SETTY and I'll send you everything to build your AI setter for free.", "style": "Smooth and smug, then warm and generous on the offer, like handing over a gift."}
+]

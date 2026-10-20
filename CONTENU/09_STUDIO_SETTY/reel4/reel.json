@@ -1,0 +1,76 @@
+{
+ "layout": "set",
+ "set": "car",
+ "mood": "dusk",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  46.0,
+  62.0
+ ],
+ "tail_s": 2.4,
+ "id": "reel4",
+ "slug": "10-calls-0-closed",
+ "title": "10 calls, 0 closed",
+ "pub_id": "261020_REEL_S2_AV2_10-calls-0-closed",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, on the passenger seat, to the coach at the wheel between two discovery calls: You booked ten [bleep]ing calls this week, right?",
+ "hook_title": [
+  "Why you booked *10 calls* this week",
+  "and closed none of them"
+ ],
+ "biais": [
+  "mystère avec un chiffre précis (10 appels, 0 client)",
+  "pertinence pour soi (son agenda plein)",
+  "soulagement de la culpabilité (« You don't suck »)"
+ ],
+ "verbatims": [
+  "rd43",
+  "rd89",
+  "rd93",
+  "rd44",
+  "rd50",
+  "rd92",
+  "rd45",
+  "rd75",
+  "rd94",
+  "mc29",
+  "rd49",
+  "rd76",
+  "rd77"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that qualifies leads before they book a call. Follow so the DM lands 📩\n\n👇 READ BELOW: why 10 booked calls can close none, and what to ask in the DM before your calendar.\n\n1. Your booking link lets anyone book, so people who were never buying fill your week.\n\n2. You find out the budget 40 minutes into the call, when it's too late.\n\n3. It's not your closing skills. You're doing free consulting for people who can't pay.\n\n4. Setty is the AI setter I built for coaches: through Manychat, he asks your questions in the DM one at a time, only sends your calendar to the leads who fit, and gives the others a useful answer, like your free guide or a cheaper offer. When he books the call for you (Cal.com, iClosed or a paid Calendly), the lead's answers land in the event.\n\nThe catch: you'll book fewer calls, and Setty isn't free once he's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#salescalls #onlinecoach #aisetter\n\nManySetter is not affiliated with or endorsed by Manychat, Meta, Calendly or Zoom.",
+ "caption_youtube": "Why you booked 10 calls this week and closed none of them\n\n👇 READ BELOW: why 10 booked calls can close none, and what to ask in the DM before your calendar.\n\n1. Your booking link lets anyone book, so people who were never buying fill your week.\n\n2. You find out the budget 40 minutes into the call, when it's too late.\n\n3. It's not your closing skills. You're doing free consulting for people who can't pay.\n\n4. Setty is the AI setter I built for coaches: through Manychat, he asks your questions in the DM one at a time, only sends your calendar to the leads who fit, and gives the others a useful answer, like your free guide or a cheaper offer. When he books the call for you (Cal.com, iClosed or a paid Calendly), the lead's answers land in the event.\n\nThe catch: you'll book fewer calls, and Setty isn't free once he's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#salescalls #onlinecoach #shorts\n\nManySetter is not affiliated with or endorsed by Manychat, Meta, Calendly or Zoom.",
+ "statut": "script v1 et décor à valider (aucune voix générée)",
+ "created": "2026-10-20",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "sources": [
+  {
+   "fait": "le setter pose une question à la fois et ne repose jamais une question déjà posée",
+   "source": "brief de marque § 2 (site ManySetter)"
+  },
+  {
+   "fait": "il ne donne l'agenda qu'aux bons leads ; les autres reçoivent une réponse utile (exemple du site : un guide gratuit au lieu d'un appel)",
+   "source": "brief de marque § 2"
+  },
+  {
+   "fait": "il réserve l'appel (Cal.com, iClosed, Calendly payant) avec le résumé du lead dans l'événement, ou envoie le lien de réservation",
+   "source": "brief de marque § 2"
+  },
+  {
+   "fait": "construire et tester est gratuit, sans carte ; le passage en live lance un essai de 14 jours ; 119 $ par mois et par setter live",
+   "source": "brief de marque § 3"
+  },
+  {
+   "fait": "« 40 minutes » et « $50 » : la situation du lecteur telle qu'écrite dans le carrousel validé (slide 3), d'après rd44 ; pas des statistiques",
+   "source": "261019_CAR_S2_AV2_10-calls-0-closed, verbatims rd44, rd92, rd77"
+  }
+ ],
+ "paire": "261019_CAR_S2_AV2_10-calls-0-closed (idée 3, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+}
