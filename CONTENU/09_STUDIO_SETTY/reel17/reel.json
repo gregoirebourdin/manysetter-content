@@ -1,0 +1,48 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "garage",
+ "mood": "night",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  46.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel17",
+ "slug": "make-chatgpt-setter",
+ "title": "Make and ChatGPT",
+ "pub_id": "",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, on the tool chest in the coach's garage, to the coach at his workbench in front of his Make scenario: You built your own [bleep]ing AI setter with Make, right?",
+ "hook_title": [
+  "How to build your own *AI setter*",
+  "with Make and ChatGPT"
+ ],
+ "biais": [
+  "pertinence pour soi (le tuto qu'il cherche)",
+  "valeur gratuite (les vraies étapes, dites et montrées)",
+  "contre-pied (« the model isn't the setter »)",
+  "aversion à la perte (ses crédits, ses week-ends)"
+ ],
+ "verbatims": [
+  "mc34",
+  "mc10",
+  "mc22",
+  "cl095",
+  "mc11",
+  "mc23",
+  "rd67"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script à valider",
+ "created": "2026-10-21"
+}

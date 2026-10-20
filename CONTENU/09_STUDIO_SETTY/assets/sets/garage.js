@@ -786,8 +786,7 @@ export async function build({ renderer, scene, mood = "night" }) {
   K.at(can3, -4.0, TOP + 0.09, BACK + 1.08);
   can3.rotation.z = Math.PI / 2;
   const pizza = pizzaBox();
-  K.at(pizza, -0.1, TOP, BACK + 1.0, -0.35); // the right end of the bench, next to the cans
-  pizza.scale.setScalar(0.92);
+  K.at(pizza, 0.25, 0, -2.3, 0.4); // on the floor by the end of the bench, between the two of them
   const lamp = clampLamp();
   K.at(lamp, -4.3, TOP, BACK + 0.6, 0.2);
   const neon = K.neonSign("SHIP IT", { color: "#38d9ff", w: 2.3, h: 0.78, font: "italic 800 150px 'Nohemi', Inter, sans-serif" });
