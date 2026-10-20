@@ -375,8 +375,24 @@ Format d'une règle :
 - Retour : « Je valide, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
 - Règle : le reel 3 (`07_PRET_A_PUBLIER/261020_REEL_S2_AV2_claude-whatsapp/`, salle de sport, 61,5 s) est **validé** tel que livré en 30 i/s ; rendu final en 60 i/s, puis transmis à la session « MANYSETTER POST » pour la programmation avec son carrousel (`261019_CAR_S2_AV2_claude-whatsapp`).
 
+## 2026-10-20 · Structure des légendes
+- Retour : « Pour la description, je veux que chacune suive cette structure » (capture d'un post @nocodealex : CTA avec le mot-clé en 1re ligne, « READ BELOW » et la source, 4 points numérotés, « The catch », CTA répété, hashtags).
+- Règle : **chaque légende** (carrousel et reel, Instagram et YouTube) suit cette structure :
+  1. **1re ligne** : le CTA avec le mot-clé entre guillemets et ce qu'on reçoit, avec les mots que la cible cherche (« Comment "SETTY" and I'll show you how to set up a free AI setter for your webinar DMs. »), puis « Follow so the DM lands 📩 » ;
+  2. **« 👇 READ BELOW: … »** : ce que le post explique, et sa source quand il y en a une (« from WhatsApp's own terms ») ;
+  3. **3 ou 4 points numérotés**, une ou deux phrases chacun : le fond du post, faits vérifiés ;
+  4. **« The catch: »** : la limite honnête (ce que ManySetter ne fait pas, prix, aucune promesse de résultat) ;
+  5. le **CTA répété** en une ligne (« Comment "SETTY" for the free setup. ») ;
+  6. les hashtags (3 au plus, règle de `CLAUDE.md`), puis « Not affiliated with… » en dernière ligne quand le post nomme un outil.
+- Règle : sur YouTube (le mot-clé n'y déclenche rien), la 1re ligne devient le hook du post, le CTA répété devient « Build your AI setter free at manysetter.com. », « Follow so the DM lands » disparaît et `#shorts` remplace le dernier hashtag (`caption_youtube.txt`).
+
 ## 2026-10-20 · Les reels restants de la ligne éditoriale, en parallèle
 - Retour : « Maintenant j'aimerais que tu me fasses 6 reels en même temps okay ? Je vais te donner les idées, je te fais confiance sur le script et le décor qui doit changer à chaque fois, mais je veux que tu lances un agent par vidéo et qu'on les fasse tous en même temps pour pouvoir les publier. » Avec la liste des idées restantes : 3, 8, 2 (refait en dialogue), 7, 4, 9, 5, 10 (l'idée 6 est le reel 3, déjà validé).
 - Règle : exception à la règle des lots de 3 et à « une vidéo à la fois » : les reels des idées restantes se fabriquent **en parallèle, une session par reel** (reel4 à reel11), chacun dans **un décor différent**, au format du reel 2 (dialogue Fenrir et Charon, titre-hook = slide 1 du carrousel de la même idée, sons du fondateur, CTA « Comment SETTY and I'll send you everything to build your AI setter for free. », un débrief par reel). Les faits viennent de `ligne-edito.md` et des sources du `post.json` de chaque carrousel.
 - Règle : les scripts sont **montrés ensemble et validés en une fois** ; le **coût total des voix** est annoncé avant de les lancer, puis chaque voix part sans redemander ; **chaque rendu est validé un par un**, puis transmis à MANYSETTER POST, qui le programme avec son carrousel le même jour. Le kit ne doit casser ni le reel 1 ni le reel 2.
 - Règle (machine) : sur le Mac de 8 Go, les étapes lourdes (voix avec Whisper, instantanés, rendus) passent **une à la fois**, derrière un verrou commun (`lockf /tmp/setty-heavy.lock …`).
+
+## 2026-10-20 · Validation des 9 carrousels restants, rythme de publication
+- Décision : « Je valide les 9 » : les carrousels `claude-whatsapp`, `10-calls-0-closed`, `calendly-no-shows`, `5-day-challenge`, `comment-guide-flow`, `dm-funnel-2015`, `chatgpt-or-claude`, `big-coaches-dms` et `dm-script` sont **validés** tels qu'ils sont sur la planche du 20/10 (logos sans flou, légendes au format du 20/10).
+- Règle : **une paire par jour** (carrousel 12:00 pm ET, reel de Setty 6:30 pm ET, Instagram + Short YouTube), dans l'ordre de `ligne-edito.md`. Chaque paire est programmée dès que son reel est validé par le fondateur et transmis par MANYSETTER REELS ; si un reel prend du retard, les paires suivantes glissent d'un jour, sans trou dans la grille.
+- Décision : la paire Claude WhatsApp (idée 6) part le **jeudi 22/10**.

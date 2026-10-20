@@ -1,13 +1,17 @@
-This is the DM script I made to book calls without sounding scripted. Save it for your next lead.
+Comment "SETTY" and I'll show you how to set up a free AI setter that uses a script like this one. Follow so the DM lands 📩
 
-1. Answer their question first, price included.
-2. Ask one question at a time.
-3. Check the fit before the calendar.
-4. Offer two times, not a link.
-5. "I'll think about it": ask which part they're unsure about.
+👇 READ BELOW: the DM script I made to book calls without sounding scripted.
 
-Which step do you skip the most? Tell me in the comments.
+1. Answer their question first, price included. Dodging the price feels shady.
 
-I built ManySetter, an AI setter for Manychat. Comment SETTY and I'll show you how to set up your AI setter for free.
+2. Ask one question at a time, never two in the same message.
+
+3. Check the fit before the calendar: timing and budget.
+
+4. Offer two times instead of a link, and when they say "I'll think about it", ask which part they're unsure about.
+
+The catch: a script copied word for word still sounds like a script. ManySetter adapts it to each lead, and it still can't promise a number of calls.
+
+Comment "SETTY" for the free setup.
 
 #dmscript #appointmentsetting #onlinecoach

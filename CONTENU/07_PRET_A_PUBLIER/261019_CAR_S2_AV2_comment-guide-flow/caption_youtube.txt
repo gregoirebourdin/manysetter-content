@@ -1,0 +1,19 @@
+Why your comment GUIDE flow gets 400 comments and 0 sales
+
+👇 READ BELOW: why a "Comment GUIDE" flow can get 400 comments and 0 sales.
+
+1. The flow does its job: Manychat sends the guide to everyone who comments.
+
+2. Then the lead replies with a real question, like "is this for beginners?".
+
+3. A keyword flow answers the keyword, not the question, and the conversation just sits there.
+
+4. Keep the flow for the guide, and add a setter for what the lead asks next. That's what I built ManySetter for.
+
+The catch: ManySetter doesn't replace Manychat. You need a Manychat account, you keep your flows and you add two actions to them.
+
+Build your AI setter free at manysetter.com.
+
+#commenttodm #dmautomation #shorts
+
+ManySetter is not affiliated with or endorsed by Manychat or Meta.

@@ -1,11 +1,19 @@
-Why your "Comment GUIDE" flow gets 400 comments and 0 sales: the flow answers the keyword, not the question.
+Comment "SETTY" and I'll show you how to add a free AI setter to your Manychat flow. Follow so the DM lands 📩
 
-Keep the flow for the guide. Add a setter for what the lead asks next.
+👇 READ BELOW: why a "Comment GUIDE" flow can get 400 comments and 0 sales.
 
-What keyword are you using right now? Drop it in the comments.
+1. The flow does its job: Manychat sends the guide to everyone who comments.
 
-I built ManySetter, an AI setter for Manychat. Comment SETTY and I'll show you how to set up your AI setter for free.
+2. Then the lead replies with a real question, like "is this for beginners?".
 
-Not affiliated with Manychat or Meta.
+3. A keyword flow answers the keyword, not the question, and the conversation just sits there.
+
+4. Keep the flow for the guide, and add a setter for what the lead asks next. That's what I built ManySetter for.
+
+The catch: ManySetter doesn't replace Manychat. You need a Manychat account, you keep your flows and you add two actions to them.
+
+Comment "SETTY" for the free setup.
 
 #commenttodm #dmautomation #instagramdms
+
+ManySetter is not affiliated with or endorsed by Manychat or Meta.

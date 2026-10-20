@@ -59,5 +59,12 @@
     "lufs": -14.2,
     "true_peak_dbtp": -2.1
   },
-  "statut": "validé par le fondateur le 20/10 (v1), rendu final 60 i/s ; transmis à la session MANYSETTER POST pour la programmation"
+  "statut": "validé par le fondateur le 20/10 (v1), rendu final 60 i/s ; transmis à la session MANYSETTER POST pour la programmation",
+  "programmation": {
+    "date": "2026-10-22 6:30 pm ET",
+    "instagram": "6ad79e671c17f7171a4c0496 (shareToFeed, thumbOffset 1000 ms ; « AI info » ajoutée par le fondateur dans l'appli après publication)",
+    "youtube": "6ad79e6f12f174fe817311c6 (Short, containsSyntheticMedia true)",
+    "carrousel_associe": "261019_CAR_S2_AV2_claude-whatsapp, même jour à 12:00 pm ET",
+    "legendes": "caption.txt et caption_youtube.txt au format du 20/10"
+  }
 }

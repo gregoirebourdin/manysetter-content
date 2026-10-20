@@ -1,0 +1,19 @@
+How to plug Claude into your WhatsApp to answer your DMs
+
+👇 READ BELOW: what the Claude + WhatsApp setup really does, from its own README and WhatsApp's terms.
+
+1. The free whatsapp-mcp project plugs Claude Desktop into your personal WhatsApp through WhatsApp Web: you scan a QR code and add it to Claude's config.
+
+2. Claude only replies when you open it and ask, so your leads still wait for you.
+
+3. It's not the official WhatsApp API, and WhatsApp's terms list "auto-messaging" as impermissible and mention "disabling or suspending your account".
+
+4. It can read every chat, and its own README warns of "private data exfiltration".
+
+The catch: ManySetter isn't free once it's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.
+
+Build your AI setter free at manysetter.com.
+
+#claudeai #whatsapp #shorts
+
+Not affiliated with Anthropic, WhatsApp, Meta or Manychat.
