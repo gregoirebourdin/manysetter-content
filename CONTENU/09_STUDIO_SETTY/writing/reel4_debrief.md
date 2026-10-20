@@ -76,3 +76,11 @@ personnage :
 - Ton feu vert sur ce rendu, puis le final en 60 i/s et la passation à MANYSETTER POST.
 - L'étiquette « AI info » à ajouter dans l'appli après publication, comme pour les reels 2 et 3.
 - Rien n'est programmé sans ton go.
+
+## Final (20/10, après la validation)
+
+- Validé par Grégoire (« Je valide les reels 8, 4, 6, 7 et 9 »). Final en 60 i/s avec la piste caméra du moteur
+  (`"cam_track": true`) : aucun mouvement de caméra ne se bat avec le précédent.
+- Vérifié sur le MP4 : l'accroche avance de 0,5 à 1,6 s sans jamais reculer, et les deux plans de coupe du « Fahhh »
+  (19,5 s et 48,5 s) tiennent environ 1,2 s chacun.
+- QA du final : 1080×1920, 60 i/s, 56,3 s, -14,2 LUFS, crête -2,1 dBTP, image 0 non noire. Transmis à MANYSETTER POST.
