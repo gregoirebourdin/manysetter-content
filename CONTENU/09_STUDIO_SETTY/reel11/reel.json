@@ -1,0 +1,81 @@
+{
+ "layout": "set",
+ "set": "poolside",
+ "mood": "afternoon",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  46.0,
+  58.0
+ ],
+ "tail_s": 2.4,
+ "id": "reel11",
+ "slug": "dm-script",
+ "title": "The DM script",
+ "pub_id": "261020_REEL_S2_AV2_dm-script",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, on the side table by his drink, to the coach on his lounger with the laptop on his knees: You copied a [bleep]ing DM script off YouTube, right?",
+ "hook_title": [
+  "This is the *DM script*",
+  "I made to book calls",
+  "without sounding scripted"
+ ],
+ "biais": [
+  "valeur gratuite à enregistrer (le script entier, dit à voix haute)",
+  "pertinence pour soi (le script qu'il colle ce soir)",
+  "écart de curiosité (« without sounding scripted »)",
+  "aversion à la perte (« Seen », « I'll think about it »)"
+ ],
+ "verbatims": [
+  "rd38",
+  "rd31",
+  "cl153",
+  "rd13",
+  "rd91",
+  "rd14",
+  "rd93",
+  "mc33",
+  "rd48",
+  "rd44",
+  "mc11",
+  "rd24",
+  "rd65",
+  "rd36",
+  "cl097",
+  "mc05"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that adapts this DM script to every lead. Follow so the DM lands 📩\n\n👇 READ BELOW: the DM script I made to book calls without sounding scripted.\n\n1. Answer what they asked, price included. \"Hop on a call first\" is how you end up on \"Seen\".\n\n2. Ask one question at a time, never two in the same message.\n\n3. Check the fit (timing and budget), then offer two times instead of a link. On \"I'll think about it\", ask which part they're unsure about.\n\n4. Setty is the AI setter I built for coaches: he builds that script from your offer and adapts it to every lead, in your voice, through Manychat.\n\nThe catch: no script and no setter can promise you a number of calls. Building and testing Setty are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#dmscript #appointmentsetting #aisetter\n\nManySetter is not affiliated with or endorsed by Manychat, Meta or YouTube.",
+ "caption_youtube": "You copied a DM script off YouTube? Here's the one I made to book calls without sounding scripted\n\n👇 READ BELOW: the DM script I made to book calls without sounding scripted.\n\n1. Answer what they asked, price included. \"Hop on a call first\" is how you end up on \"Seen\".\n\n2. Ask one question at a time, never two in the same message.\n\n3. Check the fit (timing and budget), then offer two times instead of a link. On \"I'll think about it\", ask which part they're unsure about.\n\n4. Setty is the AI setter I built for coaches: he builds that script from your offer and adapts it to every lead, in your voice, through Manychat.\n\nThe catch: no script and no setter can promise you a number of calls. Building and testing Setty are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#dmscript #appointmentsetting #shorts\n\nManySetter is not affiliated with or endorsed by Manychat, Meta or YouTube.",
+ "statut": "script v1 à valider (avec les scripts des reels 4 à 11)",
+ "created": "2026-10-20",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "sources": [
+  {
+   "fait": "le script (répondre à la question, prix compris ; une question à la fois ; vérifier le fit avant l'agenda ; proposer deux créneaux ; sur « I'll think about it », demander quelle partie)",
+   "source": "carrousel 261019_CAR_S2_AV2_dm-script, slides 3 à 7 (validé par le fondateur le 20/10)"
+  },
+  {
+   "fait": "le setter tire de l'offre un script de setting, les objections et un document de ton ; une question à la fois, sans reposer une question déjà posée ; il répond dans la voix de la marque",
+   "source": "brief-de-marque.md, section 2 ; carrousel, slide 8"
+  },
+  {
+   "fait": "« $300 a month » dans la carte de la réplique 13 : valeur de démonstration du carrousel (slide 3), jamais un résultat",
+   "source": "carrousel 261019_CAR_S2_AV2_dm-script, slide 3"
+  },
+  {
+   "fait": "prix et essai : 119 $ par mois par setter live, construire et tester gratuit sans carte, essai de 14 jours au passage en live",
+   "source": "brief-de-marque.md, section 3"
+  },
+  {
+   "fait": "aucun chiffre d'appels : le hook « 50+ calls a week » est abandonné faute de source",
+   "source": "ligne-edito.md, idée 10 ; règle des hooks du 19/10"
+  }
+ ],
+ "paire": "261019_CAR_S2_AV2_dm-script (idée 10, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+}

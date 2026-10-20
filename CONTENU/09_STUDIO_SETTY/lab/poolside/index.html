@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+                     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/" } }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #161a26; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #three { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .hook { position: absolute; left: 20px; right: 20px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .hook .l { display: inline-block; background: #fff; color: #121110; font: 800 58px/1.08 Inter, sans-serif; letter-spacing: -0.035em;
+        padding: 0.14em 0.36em 0.2em; border-radius: 0.36em; box-shadow: 0 22px 46px -18px rgba(0, 0, 0, 0.8); white-space: nowrap; }
+      .hook .l b { color: #ff611d; }
+      .cap { position: absolute; left: 80px; right: 80px; top: 1200px; text-align: center; font: 600 96px/1.04 Nohemi, sans-serif;
+        letter-spacing: -0.045em; color: #fff; -webkit-text-stroke: 14px #0d0c0a; paint-order: stroke fill; text-shadow: 0 10px 0 #0d0c0a; opacity: 0; }
+      .cap b { color: #ff7a3a; font-weight: 600; }
+      .tag { position: absolute; left: 30px; bottom: 30px; font: 700 34px Inter, sans-serif; color: #fff; background: rgba(0,0,0,0.55); padding: 8px 16px; border-radius: 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="poolside" data-start="0" data-duration="6" data-fps="30" data-width="1080" data-height="1920">
+      <canvas id="three"></canvas>
+      <div class="hook"><span class="l">This is the <b>DM script</b></span><span class="l">I made to book calls</span><span class="l">without sounding scripted</span></div>
+      <div class="cap" id="c0">You copied a DM script off <b>YouTube</b>?</div>
+      <div class="cap" id="c1">I paste it to <b>every lead</b>.</div>
+      <div class="cap" id="c2">Your lead got that <b>exact message</b>.</div>
+      <div class="cap" id="c3"></div>
+      <div class="cap" id="c4"></div>
+      <div class="cap" id="c5"></div>
+      <div class="tag" id="tag"></div>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, pose as sPose } from "./assets/setty/setty.js";
+      import { createCoach, pose as cPose, basePose as cBase } from "./assets/coach/coach.js";
+      import { build } from "./assets/sets/poolside.js";
+      import { shot } from "./assets/sets/kit.js";
+
+      const W = 1080, H = 1920;
+      document.querySelectorAll(".hook .l").forEach((el) => {
+        el.style.fontSize = "100px";
+        el.style.fontSize = `${Math.min(120, Math.floor((100 * 1020) / el.offsetWidth))}px`;
+      });
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("three"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      const scene = new THREE.Scene();
+      const set = await build({ renderer, scene });
+      const coach = createCoach(), setty = createSetty();
+      scene.add(coach.root, setty.root);
+      const camera = new THREE.PerspectiveCamera(40, W / H, 0.5, 200);
+      // aim the close-ups like the engine does: at the real seated head (+ beanie) and Setty's face
+      coach.apply(Object.assign(cBase(), set.coach));
+      setty.apply(Object.assign(sPose("smug"), set.setty));
+      scene.updateMatrixWorld(true);
+      const cT = coach.head.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, 0.18, 0));
+      const sT = new THREE.Vector3(set.setty.x, set.setty.y + 1.7 * set.setty.scale + 0.04, set.setty.z);
+      set.shots.coach = shot(cT, set.frames.coach);
+      set.shots.setty = shot(sT, set.frames.setty);
+      // 0-2: the board (wide, coach, Setty); 3-5: checks (coach from his right, coach gesturing, Setty from behind left)
+      const side = { pos: [4.2, 3.2, 3.6], at: [-1.1, 1.6, -0.7], fov: 34 };
+      const high = { pos: [-0.6, 9.5, 8.5], at: [0.4, 1.0, -1.4], fov: 40 };
+      const back = { pos: [-3.5, 4.5, -8.5], at: [0.6, 1.8, -1.2], fov: 40 };
+      const SHOTS = [
+        { shot: "wide", c: cPose("smug", { armLf: 0.55, armRf: 0.55, elbowL: 0.9, elbowR: 0.9 }), s: sPose("smug"), tag: "" },
+        { shot: "coach", c: cPose("hyped", { talk: 0.6, armRf: 0.9, elbowR: 1.4 }), s: sPose("eyeRoll"), tag: "" },
+        { shot: "setty", c: cPose("confused"), s: sPose("mocking", { lookX: -0.7 }), tag: "" },
+        { shot: side, c: cPose("annoyed", { talk: 0.5 }), s: sPose("deadpan"), tag: "check: side" },
+        { shot: high, c: cPose("mocking"), s: sPose("smug"), tag: "check: high" },
+        { shot: back, c: cPose("defeated"), s: sPose("laughing"), tag: "check: back" },
+      ];
+      function renderAt(t) {
+        const k = Math.min(SHOTS.length - 1, Math.floor(t));
+        const S = SHOTS[k], sh = typeof S.shot === "string" ? set.shots[S.shot] : S.shot;
+        coach.apply(Object.assign({}, set.coach, S.c, { x: set.coach.x, y: set.coach.y, z: set.coach.z, sit: 1, phone: 0, turn: set.coach.turn + (S.c.turn || 0) }));
+        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0) }));
+        camera.position.set(...sh.pos);
+        camera.lookAt(...sh.at);
+        camera.fov = sh.fov;
+        camera.updateProjectionMatrix();
+        renderer.render(scene, camera);
+        document.querySelectorAll(".cap").forEach((el, i) => (el.style.opacity = i === k ? 1 : 0));
+        document.getElementById("tag").textContent = S.tag;
+        document.getElementById("tag").style.opacity = S.tag ? 1 : 0;
+      }
+      renderAt(0);
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 6 });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.poolside = tl;
+    </script>
+  </body>
+</html>
