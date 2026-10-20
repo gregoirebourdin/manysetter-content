@@ -1,0 +1,70 @@
+{
+  "funnel": "TOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "hook": "Setty, on the passenger seat, to the coach at the wheel between two discovery calls: You booked ten [bleep]ing calls this week, right?",
+  "biais": [
+    "mystère avec un chiffre précis (10 appels, 0 client)",
+    "pertinence pour soi (son agenda plein)",
+    "soulagement de la culpabilité (« You don't suck »)"
+  ],
+  "verbatims": [
+    "rd43",
+    "rd89",
+    "rd93",
+    "rd44",
+    "rd50",
+    "rd92",
+    "rd45",
+    "rd75",
+    "rd94",
+    "mc29",
+    "rd49",
+    "rd76",
+    "rd77"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261019_CAR_S2_AV2_10-calls-0-closed (idée 3, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "le setter pose une question à la fois et ne repose jamais une question déjà posée",
+      "source": "brief de marque § 2 (site ManySetter)"
+    },
+    {
+      "fait": "il ne donne l'agenda qu'aux bons leads ; les autres reçoivent une réponse utile (exemple du site : un guide gratuit au lieu d'un appel)",
+      "source": "brief de marque § 2"
+    },
+    {
+      "fait": "il réserve l'appel (Cal.com, iClosed, Calendly payant) avec le résumé du lead dans l'événement, ou envoie le lien de réservation",
+      "source": "brief de marque § 2"
+    },
+    {
+      "fait": "construire et tester est gratuit, sans carte ; le passage en live lance un essai de 14 jours ; 119 $ par mois et par setter live",
+      "source": "brief de marque § 3"
+    },
+    {
+      "fait": "« 40 minutes » et « $50 » : la situation du lecteur telle qu'écrite dans le carrousel validé (slide 3), d'après rd44 ; pas des statistiques",
+      "source": "261019_CAR_S2_AV2_10-calls-0-closed, verbatims rd44, rd92, rd77"
+    }
+  ],
+  "id": "261020_REEL_S2_AV2_10-calls-0-closed",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel4",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel4_10-calls-0-closed.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+  },
+  "qa": {
+    "duree_s": 56.3,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.1
+  },
+  "statut": "script v1 et décor validés le 20/10 ; rendu 30 i/s livré le 20/10, à valider par le fondateur (pas de 60 i/s avant)"
+}

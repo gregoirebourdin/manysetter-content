@@ -83,3 +83,21 @@ automatically; the white UI ones (`igInbox`, `igChat`, `playbookCard`, `calendly
 sets (`checklist`, `waChats`, `docQuote`, and `laptopClose` / `handoffCard` under `.layout-set`) use big type: they show at 55 %.
 For `calendlyEvents`, `calendlyConfirm`, `igChat` and `leadSorter` beside a speaker, add the class `xl` to the card in
 scenes.js (`document.getElementById(id).classList.add("xl")`, reel5): their text doubles so it stays readable at 55 %.
+
+## Discovery-call cards (`assets/engine/calls.js`, reel4)
+
+Big type for set reels (read at 55 % beside a speaker), same contract as `st.*` (id, at, out). Load them in scenes.js with
+`const cl = await import("./assets/engine/calls.js");` (the styles are injected by the module). Real values: `reel4/src/scenes.js`.
+
+| Card | Shows | Call |
+|---|---|---|
+| `cl.callsWeek` | the coach's week in Calendly: call tiles popping (initials + day), a green total; `stamp` greys every tile with a red cross and turns the total red ("0 clients") | `{ id, at, out, tiles: [{ who, time, c }], times, full, total: { text, at }, stamp: { text, at } }` |
+| `cl.callScreen` | the discovery call on Zoom: the lead's video, you in the corner, the timer running, your question as a subtitle, the lead's answer slammed as a bubble | `{ id, at, out, who, emoji, bg, timer: { from, to, t0, t1 } (seconds), ask: { text, at }, reply: { text, at } }` |
+| `cl.dmAsk` | an Instagram DM, your messages (purple, right) and the lead's (grey, left), one by one | `{ id, at, out, user, color, msgs: [{ me, text, at }] }` |
+| `cl.routeCard` | "who gets what": a question, then rows (icon tile + text); a `strike` row is crossed out in red | `{ id, at, out, title, rows: [{ icon, text, tone: red\|green\|orange\|blue, strike, at }] }` |
+| `cl.bookedBrief` | Calendly "You are scheduled" + "Lead summary · added by ManySetter", the lead's answers line by line | `{ id, at, out, who, when, summaryAt, summary: [{ k, v }] }` |
+| `cl.reminder` | a phone notification banner (Calendly reminder: "Discovery call with Kyle · in 2 min"); reset `#stagebox` first in a wide shot | `{ id, at, out, appSlug, appName, title, text, y }` |
+
+Set `car` (`assets/sets/car.js`, reel4): his black SUV parked outside a glass coworking at dusk, seen through the open
+windshield; the coach at the wheel (right of the frame), Setty over the passenger seat; `R.set.lights.phone` and
+`R.set.phoneScreen` light his phone up on its dash mount. Look test: `lab/car`.
