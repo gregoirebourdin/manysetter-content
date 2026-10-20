@@ -413,3 +413,7 @@ Format d'une règle :
 ## 2026-10-20 · Reel 5 de Setty « Calendly and the no-shows » validé
 - Retour : « Je valide le reel 5, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
 - Règle : le reel 5 (`07_PRET_A_PUBLIER/261020_REEL_S2_AV2_calendly-no-shows/`, café, 55,8 s) est **validé** tel que livré en 30 i/s ; final en 60 i/s avec la piste caméra (`"cam_track": true`, règle du 20/10), puis transmis à MANYSETTER POST, qui le programme le même jour que son carrousel (`261019_CAR_S2_AV2_calendly-no-shows`).
+
+## 2026-10-20 · Reels 11 et 10 de Setty validés
+- Retour : « Je valide les reels 11 et 10, fais leurs finals en 60 i/s et passe-les à MANYSETTER POST. »
+- Règle : les reels 11 (script de DM, piscine) et 10 (gros coachs, jet) sont **validés** tels que livrés en 30 i/s ; finals en 60 i/s avec la piste caméra (`"cam_track": true`), puis transmis à MANYSETTER POST pour les 29 et 30/10.
