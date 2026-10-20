@@ -720,8 +720,14 @@ def commit_mine(paths, msg, push=True):
 
 
 def cmd_commit(a):
-    paths = reel_paths(a.reel) + [pathlib.Path(x).resolve() for x in (a.also or [])]
-    commit_mine(paths, a.message, push=not a.no_push)
+    also = []
+    for x in a.also or []:
+        p = pathlib.Path(x).absolute()
+        p = p.parent.resolve() / p.name  # never resolve the path itself: lab/<set>/assets is a link to the whole assets/ (21/10)
+        if p.is_dir() and not p.is_symlink():
+            sys.exit(f"--also {x}: a folder; name its files one by one (a folder takes the other sessions' files with it)")
+        also.append(p)
+    commit_mine(reel_paths(a.reel) + also, a.message, push=not a.no_push)
 
 
 def cmd_final(a):
