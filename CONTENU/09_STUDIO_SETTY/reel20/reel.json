@@ -1,0 +1,51 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "diner",
+ "mood": "night",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  46.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel20",
+ "slug": "hot-lead",
+ "title": "The hot lead",
+ "pub_id": "",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Setty, sitting on a diner table next to the napkin dispenser, to the coach in the booth at 1 a.m., phone in hand behind a huge order: You let a [bleep]ing hot lead sleep on it, right?",
+ "hook_title": [
+  "Why your *hottest lead*",
+  "ghosted you, even after",
+  "\"this is exactly what I need\""
+ ],
+ "biais": [
+  "autorité (une étude, un chercheur nommé : Loewenstein, 2005)",
+  "écart de curiosité (« there's a name for it »)",
+  "pertinence pour soi (son lead chaud de la semaine, « tonight »)",
+  "ancrage dans le décor (il vit l'étude de la faim en direct)"
+ ],
+ "verbatims": [
+  "rd47",
+  "rd84",
+  "rd78",
+  "rd86",
+  "rd98",
+  "rd65"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script à valider",
+ "created": "2026-10-21",
+ "sources": [
+  "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 20 (L1 Loewenstein 2005, L3, L5 Read et van Leeuwen 1998) et faits produit P6, P9, P9b"
+ ]
+}

@@ -470,11 +470,11 @@ function toGoBag() {
     c.font = "600 22px Inter, sans-serif";
     c.fillText("THANK YOU!", W / 2, H * 0.53);
     c.fillStyle = "#fbfaf6"; // the stapled receipt
-    c.fillRect(W * 0.5, H * 0.6, W * 0.4, H * 0.36);
+    c.fillRect(W * 0.46, H * 0.6, W * 0.48, H * 0.36);
     c.fillStyle = "#333";
-    c.font = "600 15px Inter, sans-serif";
+    c.font = "600 12px Inter, sans-serif";
     c.textAlign = "left";
-    ["1 CHEESEBURGER", "TO GO", "1:02 AM"].forEach((l, k) => c.fillText(l, W * 0.53, H * 0.67 + k * 22));
+    ["1 CHEESEBURGER", "TO GO", "1:02 AM"].forEach((l, k) => c.fillText(l, W * 0.49, H * 0.67 + k * 22));
     c.fillStyle = "#888";
     c.fillRect(W * 0.66, H * 0.605, 20, 4);
   });
@@ -655,7 +655,7 @@ export async function build({ renderer, scene, mood = "night" }) {
   K.at(shake, -2.25, TOP, -1.45);
   const cup = K.mug(0xf4f1ea, TEAL);
   cup.scale.setScalar(1.45);
-  K.at(cup, -0.55, TOP, -0.68, 2.4);
+  K.at(cup, -0.95, TOP, -0.62, 2.4);
   const bag = toGoBag();
   K.at(bag, -0.05, TOP, -1.62, -0.25);
   const nap = napkins();
@@ -733,15 +733,15 @@ export async function build({ renderer, scene, mood = "night" }) {
     frames: {
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 860 }, // lower: the hook title runs on 3 lines
       setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 860 },
-      bag: { target: bagAt, dist: 4.2, yaw: -0.25, pitch: 0.22, y: 860 }, // from the left: Setty stays out of it
-      clock: { target: clockAt, dist: 5.0, yaw: 0.35, pitch: -0.05, y: 860 }, // from the right: the coach's head stays out of it
+      bag: { target: bagAt, dist: 2.8, yaw: -0.35, pitch: 0.28, y: 900 }, // tight, from the left: Setty and the mug stay out
+      clock: { target: clockAt, dist: 5.0, yaw: 0.5, pitch: -0.05, y: 860 }, // from the right: the coach's head stays out of it
     },
     shots: {
       wide: { pos: [-0.2, 3.7, 12.8], at: [-0.2, 2.45, -1.6], fov: 44 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 860 }),
       setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 860 }),
-      bag: K.shot(bagAt, { dist: 4.2, yaw: -0.25, pitch: 0.22, y: 860 }),
-      clock: K.shot(clockAt, { dist: 5.0, yaw: 0.35, pitch: -0.05, y: 860 }),
+      bag: K.shot(bagAt, { dist: 2.8, yaw: -0.35, pitch: 0.28, y: 900 }),
+      clock: K.shot(clockAt, { dist: 5.0, yaw: 0.5, pitch: -0.05, y: 860 }),
     },
   };
 }
