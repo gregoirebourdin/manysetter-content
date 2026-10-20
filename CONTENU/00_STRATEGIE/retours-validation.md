@@ -365,3 +365,8 @@ Format d'une règle :
 - Décision : le carrousel `261019_CAR_S1_AV1_webinar-flopped` est **validé tel quel** et part avec le reel 2 de Setty (`261019_REEL_S1_AV1_the-webinar`) le **21/10** : carrousel à 12:00 pm ET, reel à 6:30 pm ET, chacun aussi en Short YouTube (posts Zernio séparés).
 - Décision (étiquette IA) : « Zernio publie, j'ajoute après » : Zernio publie le reel sur Instagram et le fondateur ajoute lui-même l'étiquette « AI info » dans l'appli après publication (Zernio n'a pas de champ pour elle). Sur YouTube, le Short du reel part avec `containsSyntheticMedia: true`.
 - Décision (musique du reel 2) : « Libre de droits, usage commercial » (déclaration du fondateur ; source précise à noter quand il la donne).
+
+## 2026-10-20 · Reel 3 de Setty « Claude on WhatsApp » (idée 6), script v1 et décor
+- Retour : « Go pour le script et le décor, lance les voix. »
+- Règle : le script v1 de `09_STUDIO_SETTY/writing/reel3_claude-whatsapp.md` (dialogue coach ↔ Setty, environ 1 minute, 2 bips) est **validé**, et la génération des voix est autorisée pour lui (coach en Fenrir, Setty en Charon).
+- Règle : le décor « salle de sport du coach au matin » (`assets/sets/gym.js` : brique peinte anthracite, sol caoutchouc, Miami par une fenêtre d'atelier, Setty sur une box de saut) est **validé**. Ses meubles restent dans le kit pour les prochains reels de coachs fitness.
