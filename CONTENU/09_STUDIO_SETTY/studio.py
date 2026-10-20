@@ -569,7 +569,8 @@ def cmd_deliver(a):
                    "la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
         **({"musique": meta["music"]} if meta.get("music") else {}),
         "source": {"studio": f"CONTENU/09_STUDIO_SETTY/{a.reel}", "script": f"CONTENU/09_STUDIO_SETTY/writing/{a.reel}_{meta.get('slug', '')}.md"},
-        "etiquette_ia": "« AI info » à activer à la publication (voix réaliste générée par IA)",
+        "etiquette_ia": ("« AI info » à activer (voix réalistes générées par IA). Zernio n'a pas ce champ pour Instagram : à cocher "
+                         "dans l'appli ; sur YouTube, containsSyntheticMedia: true dans le post Zernio"),
         "fichiers": {"video": "reel.mp4 (hors Git)", "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"},
         "qa": {"duree_s": round(dur, 2), "lufs": I, "true_peak_dbtp": TP},
         "statut": meta.get("statut", "à valider"),
