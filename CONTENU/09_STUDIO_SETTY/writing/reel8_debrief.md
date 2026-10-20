@@ -67,6 +67,14 @@ Le coach est dans un fauteuil lounge en teck, téléphone en main. Setty est ass
 3. **Une version de 30 à 35 s**, pour la rétention : on enlève les répliques 3 à 7 avec `studio.py cut`, sans nouvelle voix.
 4. **Le coach « skeptical »** lève les deux poings devant lui ; une pose plus nonchalante, bras sur l'accoudoir, irait mieux au fauteuil.
 
+## Final 60 i/s (après ta validation du 20/10)
+
+- Rendu avec la piste caméra (`"cam_track": true`) : rien d'autre ne change.
+- Vérifié sur des images tirées du MP4 (pas sur les instantanés) :
+  - l'accroche reste sur Setty de 0,5 à 1,6 s, sans recul ;
+  - chaque plan de coupe tient : le Fahhh sur le coach (23,6 à 24,9 s), le plan large de « Okay, that's 2026 » (42,6 à 44,9 s), le coucher de soleil (49,5 à 51,1 s), la réaction du coach (51,3 à 52,3 s) et le plan large final.
+- Contrôle qualité : 1080×1920 en 60 i/s, 59,5 s, -14,1 LUFS, crête -2,3 dBTP.
+
 ## Ce qui t'attend
 
 - Ton feu vert sur ce rendu, puis le final en 60 i/s et la passation à MANYSETTER POST.
