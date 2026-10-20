@@ -1,0 +1,67 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "coachoffice",
+ "mood": "morning",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  48.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel14",
+ "slug": "free-coaching-dms",
+ "title": "Free coaching in the DMs",
+ "pub_id": "261021_REEL_S2_AV2_free-coaching-dms",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, in the coach's armchair like a therapist, to the coach slumped on his own clients' couch with his phone: You coached a stranger for [bleep]ing free in your DMs again, right?",
+ "hook_title": [
+  "Why you gave *5 hours*",
+  "of free coaching",
+  "in your DMs this week"
+ ],
+ "biais": [
+  "chiffre très précis (5 heures)",
+  "aversion à la perte (son temps donné pour rien)",
+  "pertinence pour soi (sa semaine)",
+  "interruption du schéma (le coach sur le divan, Setty en psy)"
+ ],
+ "verbatims": [
+  "rd93",
+  "rd88",
+  "rd49",
+  "rd50",
+  "rd89",
+  "rd92",
+  "rd46",
+  "rd94",
+  "rd45",
+  "rd24",
+  "rd65",
+  "rd76",
+  "rd77",
+  "rd36"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that qualifies your DM leads before you coach them. Follow so the DM lands 📩\n\n👇 READ BELOW: how one \"quick question\" in your DMs turns into hours of free coaching, and how to stop it without ghosting anyone.\n\n1. It starts with one quick question. Then their diet, their training split, their sleep, and you end up typing a full program.\n\n2. Then they'll \"think about it\", or you find out an hour later they can't pay, or don't want to.\n\n3. Ask before you teach: what do they want to fix, and are they ready to invest?\n\n4. Setty is the AI setter I built for coaches: he asks your questions one at a time through Manychat. Leads who fit get your calendar, the others get something useful, like your free guide.\n\nThe catch: some people will never buy, and that's fine. Setty answers from the offer and sources you give him, and hands the chat back to you when he doesn't know. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#onlinecoach #fitnesscoach #instagramdms\n\nManySetter is not affiliated with or endorsed by Manychat, Meta or Calendly.",
+ "caption_youtube": "Why you gave 5 hours of free coaching in your DMs this week\n\n👇 READ BELOW: how one \"quick question\" in your DMs turns into hours of free coaching, and how to stop it without ghosting anyone.\n\n1. It starts with one quick question. Then their diet, their training split, their sleep, and you end up typing a full program.\n\n2. Then they'll \"think about it\", or you find out an hour later they can't pay, or don't want to.\n\n3. Ask before you teach: what do they want to fix, and are they ready to invest?\n\n4. Setty is the AI setter I built for coaches: he asks your questions one at a time through Manychat. Leads who fit get your calendar, the others get something useful, like your free guide.\n\nThe catch: some people will never buy, and that's fine. Setty answers from the offer and sources you give him, and hands the chat back to you when he doesn't know. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#onlinecoach #fitnesscoach #shorts\n\nManySetter is not affiliated with or endorsed by Manychat, Meta or Calendly.",
+ "statut": "script v1 à valider (lot 12 à 21)",
+ "created": "2026-10-21",
+ "paire": "261020_CAR_S2_AV2_free-coaching-dms",
+ "sources": [
+  {
+   "fait": "It checks fit first. Leads who don't fit get a helpful answer, like your free guide, instead of your calendar (P6, P9, P10).",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 12 (site ManySetter, commit 4437fc1)"
+  },
+  {
+   "fait": "« 5 hours » est la situation du lecteur (hook du carrousel), pas un chiffre sourcé.",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 12"
+  }
+ ]
+}

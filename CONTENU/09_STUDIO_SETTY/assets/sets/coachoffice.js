@@ -67,9 +67,9 @@ function chesterfield({ w = 4.6, d = 1.75, color = 0x5e1d18 } = {}) {
     c.position.set(-inner / 2 + cw * (i + 0.5), baseTop + cushH / 2, -d / 2 + bd + (d - bd) / 2 - 0.02);
     g.add(c);
   }
-  // a cream knit pillow in the left corner (his clients' side: the one he never sits on)
-  const knit = K.mat(0xe9e1d3, { roughness: 0.95, sheen: 0.7, sheenColor: new THREE.Color(0xffffff) });
-  const pil = K.soft(0.8, 0.78, 0.26, knit, { P: 2.6, puff: 0.35, seed: 72 });
+  // a knit pillow in the left corner (his clients' side: the one he never sits on); squarish, an egg shape read oddly
+  const knit = K.mat(0xd9cfbd, { roughness: 0.95, sheen: 0.7, sheenColor: new THREE.Color(0xffffff) });
+  const pil = K.soft(0.74, 0.7, 0.24, knit, { P: 3.4, puff: 0.22, wrinkle: 0.01, seed: 72 });
   pil.position.set(-inner / 2 + 0.45, seat + 0.4, -d / 2 + bd + 0.14);
   pil.rotation.set(-0.2, 0.25, 0.15);
   g.add(pil);
@@ -439,7 +439,8 @@ export async function build({ renderer, scene, mood = "morning" }) {
   const chair = clubChair();
   K.at(chair, CHAIR.x, 0, CHAIR.z, CHAIR.ry);
   const rug = persianRug();
-  K.at(rug, 0.4, 0, 0.2, 0.04);
+  K.at(rug, 0.4, 0.035, 0.2); // above the floor (at y 0 the far wide lost half of it to z-fighting)
+  rug.rotation.z = 0.04;
   set.add(sofa, chair, rug);
   // the legal pad on the armchair's front arm (the one toward the couch and the camera)
   const pad = legalPad();
@@ -513,12 +514,13 @@ export async function build({ renderer, scene, mood = "morning" }) {
     frames: {
       // lower than reel6's (740/800): the 3-line hook title hid the beanie and the top of Setty (as reel11, 880/900)
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 880 },
-      setty: { target: settyFace, dist: 11.5, yaw: -0.34, pitch: 0.08, y: 900 }, // scale 0.68: a step back
+      setty: { target: settyFace, dist: 11.5, yaw: -0.34, pitch: 0.08, y: 950 }, // scale 0.68: a step back
     },
     shots: {
-      wide: { pos: [0.55, 4.0, 18.8], at: [0.55, 3.15, -1.5], fov: 39 },
+      // far enough that the end notification fits between the 3-line title and the beanie, Setty's mouth above the captions
+      wide: { pos: [0.55, 4.0, 18.8], at: [0.55, 3.2, -1.5], fov: 39 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 880 }),
-      setty: K.shot(settyFace, { dist: 11.5, yaw: -0.34, pitch: 0.08, y: 900 }),
+      setty: K.shot(settyFace, { dist: 11.5, yaw: -0.34, pitch: 0.08, y: 950 }),
       // cut-ins: the therapist's legal pad on the armrest, the tissue box on the side table, his certificate on the wall
       pad: K.shot(PAD, { dist: 4.2, yaw: -0.5, pitch: 0.7, y: 900 }),
       tissues: K.shot(new THREE.Vector3(0.9, 1.4, -2.5), { dist: 5.0, yaw: 0.1, pitch: 0.25, y: 880 }),

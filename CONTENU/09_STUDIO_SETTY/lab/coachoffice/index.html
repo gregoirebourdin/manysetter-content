@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+                     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/" } }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #161a26; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #three { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .hook { position: absolute; left: 20px; right: 20px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .hook .l { display: inline-block; background: #fff; color: #121110; font: 800 58px/1.08 Inter, sans-serif; letter-spacing: -0.035em;
+        padding: 0.14em 0.36em 0.2em; border-radius: 0.36em; box-shadow: 0 22px 46px -18px rgba(0, 0, 0, 0.8); white-space: nowrap; }
+      .hook .l b { color: #ff611d; }
+      .cap { position: absolute; left: 80px; right: 80px; top: 1200px; text-align: center; font: 600 96px/1.04 Nohemi, sans-serif;
+        letter-spacing: -0.045em; color: #fff; -webkit-text-stroke: 14px #0d0c0a; paint-order: stroke fill; text-shadow: 0 10px 0 #0d0c0a; opacity: 0; }
+      .cap b { color: #ff7a3a; font-weight: 600; }
+      .card { position: absolute; width: 430px; height: 520px; border-radius: 34px; background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6); opacity: 0; display: flex; align-items: center; justify-content: center;
+        font: 800 44px Inter, sans-serif; color: #121110; }
+      .tag { position: absolute; left: 30px; bottom: 30px; font: 700 34px Inter, sans-serif; color: #fff; background: rgba(0,0,0,0.55); padding: 8px 16px; border-radius: 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="coachoffice" data-start="0" data-duration="10" data-fps="30" data-width="1080" data-height="1920">
+      <canvas id="three"></canvas>
+      <div class="hook" id="hook"><span class="l">Why you gave <b>5 hours</b></span><span class="l">of free coaching</span><span class="l">in your DMs this week</span></div>
+      <div class="card" id="cardL" style="left: 40px; top: 640px">card (left)</div>
+      <div class="card" id="cardR" style="left: 610px; top: 640px">card (right)</div>
+      <div class="cap" id="c0">You coached a stranger <b>for free</b>?</div>
+      <div class="cap" id="c1">One <b>quick question</b>, bro.</div>
+      <div class="cap" id="c2">How did that make you <b>feel</b>?</div>
+      <div class="cap" id="c3"><b>Five hours</b> this week.</div>
+      <div class="cap" id="c4">Plug me into <b>Manychat</b>.</div>
+      <div class="cap" id="c5"></div>
+      <div class="cap" id="c6"></div>
+      <div class="cap" id="c7"></div>
+      <div class="cap" id="c8"></div>
+      <div class="cap" id="c9">You coached a stranger <b>for free</b>?</div>
+      <div class="tag" id="tag"></div>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, pose as sPose } from "./assets/setty/setty.js";
+      import { createCoach, pose as cPose, basePose as cBase } from "./assets/coach/coach.js";
+      import { build } from "./assets/sets/coachoffice.js";
+      import { shot } from "./assets/sets/kit.js";
+
+      const W = 1080, H = 1920;
+      document.querySelectorAll(".hook .l").forEach((el) => {
+        el.style.fontSize = "100px";
+        el.style.fontSize = `${Math.min(120, Math.floor((100 * 1020) / el.offsetWidth))}px`;
+      });
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("three"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      const scene = new THREE.Scene();
+      const set = await build({ renderer, scene });
+      const coach = createCoach(), setty = createSetty();
+      scene.add(coach.root, setty.root);
+      const camera = new THREE.PerspectiveCamera(40, W / H, 0.5, 200);
+      // aim the close-ups like the engine does: at the real seated head (+ beanie) and Setty's face
+      coach.apply(Object.assign(cBase(), set.coach));
+      setty.apply(Object.assign(sPose("smug"), set.setty));
+      scene.updateMatrixWorld(true);
+      const cT = coach.head.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, 0.18, 0));
+      const sT = new THREE.Vector3(set.setty.x, set.setty.y + 1.7 * set.setty.scale + 0.04, set.setty.z);
+      set.frames.coach.target = cT;
+      set.frames.setty.target = sT;
+      set.shots.coach = shot(cT, set.frames.coach);
+      set.shots.setty = shot(sT, set.frames.setty);
+      // the engine's framings with a card beside the speaker (dialogue.js: CARD_L = { x: 800, dist: 15 },
+      // CARD_R = { x: 310, dist: 17.5, y: 860 }), and the push-in on a line (dist × 0.8)
+      const CARD_L = { x: 800, dist: 15 }, CARD_R = { x: 310, dist: 17.5, y: 860 };
+      const fr = (who, o) => shot(set.frames[who].target, { ...set.frames[who], ...o });
+      const side = { pos: [5.2, 3.0, 4.2], at: [0.3, 1.8, -1.2], fov: 36 };
+      const high = { pos: [-0.4, 10.5, 8.5], at: [0.4, 1.0, -1.4], fov: 40 };
+      const low = { pos: [-4.8, 1.2, 6.5], at: [0.6, 2.0, -1.4], fov: 40 }; // from the left, at knee height
+      const SHOTS = [
+        { shot: "wide", c: cPose("defeated", { phone: 1 }), s: sPose("smug"), tag: "", phone: 1 },
+        { shot: "coach", c: cPose("annoyed", { talk: 0.6, armRf: 0.9, elbowR: 1.4 }), s: sPose("deadpan"), tag: "", phone: 1 },
+        { shot: "setty", c: cPose("confused"), s: sPose("deadpan", { lookX: -0.7 }), tag: "" },
+        { shot: fr("coach", CARD_R), c: cPose("stressed", { talk: 0.5 }), s: sPose("sideEye"), tag: "coach + card right", card: "cardR" },
+        { shot: fr("setty", CARD_L), c: cPose("skeptical"), s: sPose("sly", { lookX: -0.6 }), tag: "Setty + card left", card: "cardL" },
+        { shot: fr("coach", { dist: set.frames.coach.dist * 0.8 }), c: cPose("hyped", { talk: 0.5 }), s: sPose("smug"), tag: "coach push-in" },
+        { shot: side, c: cPose("annoyed", { talk: 0.5 }), s: sPose("deadpan"), tag: "check: side" },
+        { shot: high, c: cPose("mocking"), s: sPose("smug"), tag: "check: high" },
+        { shot: low, c: cPose("defeated"), s: sPose("laughing"), tag: "check: low left" },
+      ];
+      // the ending's measure (dialogue.js ending()): heads in the wide [top, chin] (+0.62 beanie top, -0.45 chin), the room
+      // between the title and the highest head (needs ≥ 128 px), or the lowest chin + 170 ≤ 1275 (notification below)
+      function endingRoom() {
+        const w = set.shots.wide, cam = new THREE.PerspectiveCamera(w.fov, W / H, 0.1, 100);
+        cam.position.set(...w.pos); cam.lookAt(...w.at); cam.updateMatrixWorld(true);
+        const y = (p, dy) => (-p.clone().add(new THREE.Vector3(0, dy, 0)).project(cam).y * 0.5 + 0.5) * H;
+        const heads = [cT, sT].map((p) => [y(p, 0.62) - 20, y(p, -0.45) + 12]);
+        const hk = document.getElementById("hook"), tb = hk.offsetTop + hk.offsetHeight;
+        const room = Math.min(...heads.map(([a]) => a), 1170) - tb, below = Math.max(...heads.map(([, c]) => c)) + 20;
+        return `room ${Math.round(room)} (≥128) · below+150 ${Math.round(below + 150)} (≤1275) · tb ${tb} · heads ${heads.map((h) => h.map(Math.round).join("/")).join(", ")}`;
+      }
+      SHOTS.push({ shot: "wide", c: cPose("defeated", { phone: 1 }), s: sPose("smug"), tag: endingRoom(), phone: 1 }); // 9-10 s: the measure
+      function renderAt(t) {
+        const k = Math.min(SHOTS.length - 1, Math.floor(t));
+        const S = SHOTS[k], sh = typeof S.shot === "string" ? set.shots[S.shot] : S.shot;
+        coach.apply(Object.assign({}, set.coach, S.c, { x: set.coach.x, y: set.coach.y, z: set.coach.z, sit: 1, phone: S.phone ?? set.coach.phone, turn: set.coach.turn + (S.c.turn || 0) }));
+        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0) }));
+        camera.position.set(...sh.pos);
+        camera.lookAt(...sh.at);
+        camera.fov = sh.fov;
+        camera.updateProjectionMatrix();
+        renderer.render(scene, camera);
+        document.querySelectorAll(".cap").forEach((el, i) => (el.style.opacity = i === k ? 1 : 0));
+        for (const id of ["cardL", "cardR"]) document.getElementById(id).style.opacity = S.card === id ? 0.85 : 0;
+        document.getElementById("tag").textContent = S.tag;
+        document.getElementById("tag").style.opacity = S.tag ? 1 : 0;
+      }
+      renderAt(0);
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 10 });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.coachoffice = tl;
+    </script>
+  </body>
+</html>
