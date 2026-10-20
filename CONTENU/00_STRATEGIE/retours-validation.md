@@ -400,3 +400,8 @@ Format d'une règle :
 ## 2026-10-20 · Reels 4 à 11 de Setty : scripts v1 et décors validés
 - Retour : « Je valide les 8 scripts et les décors, OK pour le coût des voix : lance-les. »
 - Règle : les scripts v1 des reels 4 à 11 (`09_STUDIO_SETTY/writing/lot_reels_4-11_scripts.md`) et leurs 8 décors (voiture, café, salon, cuisine, rooftop, podcast, jet, piscine) sont **validés** ; la génération des voix est autorisée pour ces 8 scripts (coût estimé environ 0,32 $, moins de 0,60 $ avec les reprises), chaque session la lance sans redemander. Chaque rendu reste à valider un par un.
+
+## 2026-10-20 · Reels 8, 4, 6, 7 et 9 de Setty validés
+- Retour : « Je valide les reels 8, 4, 6, 7 et 9, fais leurs finals en 60 i/s et passe-les à MANYSETTER POST. »
+- Règle : les reels 8 (DM funnel 2015, rooftop), 4 (10 calls, voiture), 6 (challenge, salon), 7 (Comment GUIDE, cuisine) et 9 (ChatGPT ou Claude, podcast) sont **validés** tels que livrés en 30 i/s ; finals en 60 i/s, puis transmis à MANYSETTER POST, chacun avec son carrousel.
+- Règle (défaut technique trouvé par Claude après validation) : dans un rendu image par image, deux mouvements de caméra qui se chevauchent se battent (l'accroche reculait d'un coup vers 0,85 s, un plan de coupe pendant une réplique ne durait que 3 images). Les finals passent avec la « piste caméra » du moteur (`reel.json` `"cam_track": true` : chaque mouvement prend la main sur le précédent), qui retire ce défaut sans rien changer d'autre. Les reels 2 et 3, déjà programmés, ont le même défaut : leur correction est une décision du fondateur.

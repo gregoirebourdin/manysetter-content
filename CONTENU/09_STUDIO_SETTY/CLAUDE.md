@@ -207,6 +207,10 @@ Picture
 - Pupils and glints stay inside the lid radius (1.07 × eye radius); closed eyes need the `^`/`u` arcs.
 - Mark intentional off-canvas props with `data-layout-ignore` / `data-layout-allow-overflow`.
 - No `../` in asset paths (HyperFrames' lint refuses it): fonts are declared in `shell.html` with `assets/...`.
+- Overlapping camera tweens fight in a frame-by-frame render: when the newer move ends, the older one takes the camera
+  back (reels 2 and 3: the hook jumped back at ~0.85 s, the bench cutaway lasted 3 frames). Snapshots jump straight to
+  a time and never show it: check moves on frames pulled from the MP4. Fix: `"cam_track": true` in reel.json (on in
+  the template since 20/10): each camera move takes over from the one before it, which stops where it was.
 - Never `ctx.filter` (blur…) in a canvas painter (window views, set textures): the headless Chrome that renders ignores
   it and the whole texture comes out black (reel10). Soften with gradients.
 

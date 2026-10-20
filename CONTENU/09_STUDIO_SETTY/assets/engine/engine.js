@@ -132,11 +132,16 @@ export async function createReel(DATA, opts = {}) {
   const shake = (t, amp = 1, dec = 9) => SHAKES.push({ t, amp, dec });
 
   const act = gsap.timeline({ paused: true });
+  // camera track (reel.json "cam_track": true, 20/10): each camera move takes over from the one before it, which stops
+  // where it was. Without it, overlapping "to" tweens fight in a frame-by-frame render: when the newer move ends, the
+  // older one takes the camera back (the hook jumped back at ~0.85 s, a cutaway inside a line lasted 3 frames).
+  const CAMQ = DATA.cam_track ? [] : null;
   const K = (t, d, vars, ease = "power3.out") => {
     const { cam, light, ...p } = vars;
     // lazy: false — the pose is read right after seek(), so every tween must apply immediately
     if (Object.keys(p).length) act.to(P, { ...p, duration: d, ease, lazy: false }, t);
-    if (cam) act.to(CAM, { ...cam, duration: d, ease, lazy: false }, t);
+    if (cam && CAMQ) CAMQ.push({ t, d, cam, ease, i: CAMQ.length });
+    else if (cam) act.to(CAM, { ...cam, duration: d, ease, lazy: false }, t);
     if (light) act.to(LIGHT, { ...light, duration: d, ease, lazy: false }, t);
   };
   // the coach (layout "set"): KC tweens his pose like K does Setty's; faceC = an expression without his placement
@@ -299,7 +304,26 @@ export async function createReel(DATA, opts = {}) {
     }
   }
 
+  /** the camera track, per property: the move that started last owns the camera; an earlier move is cut where it was,
+   *  with its own ease kept (explicit from/to values: right in sequential renders and in jumping snapshots alike) */
+  function camTrack() {
+    const props = new Set(CAMQ.flatMap((q) => Object.keys(q.cam)));
+    for (const k of props) {
+      const qs = CAMQ.filter((q) => q.cam[k] != null).sort((a, b) => a.t - b.t || a.i - b.i);
+      let v = CAM[k];
+      qs.forEach((q, j) => {
+        const span = Math.min(q.d, (j + 1 < qs.length ? qs[j + 1].t : Infinity) - q.t);
+        if (span <= 1e-4) return; // replaced by a move that starts at the same time
+        const ez = gsap.parseEase(q.ease) || ((x) => x), c = span / q.d, ec = ez(c);
+        const to = v + (q.cam[k] - v) * ec;
+        act.fromTo(CAM, { [k]: v }, { [k]: to, duration: span, ease: (x) => (ec ? ez(x * c) / ec : x), lazy: false, immediateRender: false }, q.t);
+        v = to;
+      });
+    }
+  }
+
   function start() {
+    if (CAMQ) camTrack();
     tl.to({}, { duration: TOTAL }, 0);
     window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
     renderAt(window.__hfThreeTime || 0);

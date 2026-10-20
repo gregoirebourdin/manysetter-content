@@ -90,6 +90,8 @@ class Reel:
             data["set"], data["mood"] = rj.get("set", "bedroom"), rj.get("mood", "golden")
         if rj.get("hook_title"):
             data["hook_title"] = rj["hook_title"]
+        if rj.get("cam_track"):  # each camera move takes over from the previous one (engine.js, 20/10)
+            data["cam_track"] = True
         if self.timing.get("dialogue"):  # who says each line, and the mouths follow the voice
             for d, w in zip(data["words"], self.W):
                 d["who"] = w["who"]
