@@ -22,6 +22,12 @@ les doublons et on réutilise ce qui existe. MANYSETTER REELS y publie les règl
 
 | Carte | Créée par | Ce qu'elle montre | Statut |
 |---|---|---|---|
+| `bigDM` (`card_bigDM.js`) | reel12 | un DM Instagram en très gros caractères pour une carte à côté de celui qui parle (texte ≈ 96 px, ≈ 60 px à l'écran à 62 %) : en-tête (logo, avatar, nom, statut qui peut passer au rouge), bulles courtes, « Seen » sous une bulle, une ligne d'heure entre deux bulles (« 3 h later »), une bulle « en train d'écrire » | en cours |
+| `priceTag` (`card_priceTag.js`) | reel12 | une étiquette de prix seule, énorme (« $1,500 »), une ligne dessous, des « ? » qui popent autour, et en option le prix barré qui passe à un autre | en cours |
+| `screenTime` (`card_screenTime.js`) | reel14 | le Temps d'écran de l'iPhone en très gros caractères (≈ 60 px à l'écran à 62 %) : en-tête « Screen Time · This week », un total énorme qui défile (« 5h 02m »), une ligne dessous, une barre par jour qui monte, et en option un tampon rouge qui tombe (« $0 billed ») | en cours |
+| `twoWays` (`card_twoWays.js`) | reel14 | deux sorties en très gros caractères : une ligne par sortie (icône d'app du kit ou emoji, titre, flèche, destination), qui popent sur les mots, avec une coche ; pour « the right ones → your calendar / the rest → your free guide » | en cours |
+| `contactsList` (`card_contactsList.js`) | reel13 | la liste de contacts Manychat en gros caractères : un compteur énorme (« 10,000 contacts »), 3 contacts avec la date de leur dernier DM, un bouton « Send to all » ; en option les lignes passent au gris avec un cadenas et une pastille (« By hand · 7 days · no promo ») | en cours |
+| `window24` (`card_window24.js`) | reel13 | la fenêtre de 24 h de Meta en gros caractères : une horloge énorme qui défile (24:00:00 → 00:00:00) sur un anneau, une pastille d'état (Open / Closed), une ligne dessous, un DM qui arrive et remet l'horloge à 24:00:00, et en option des relances listées (« Follow-up · 4 h ») | en cours |
 
 ## Règles trouvées en route
 

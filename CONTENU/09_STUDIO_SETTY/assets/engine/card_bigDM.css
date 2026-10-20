@@ -1,0 +1,31 @@
+/* Card "bigDM" (card_bigDM.js): an Instagram DM in very big type (96 px bubbles), for a card beside the speaker */
+.bdm { display: flex; flex-direction: column; }
+.bdm .bdm-head { height: 132px; flex: none; display: flex; align-items: center; gap: 22px; padding: 0 38px; border-bottom: 3px solid #efefef; }
+.bdm .bdm-head .s-app { --s: 80px; }
+.bdm .bdm-head .s-av { width: 92px; height: 92px; font: 800 38px/1 Inter, sans-serif; color: #fff; }
+.bdm .bdm-head .u { font: 800 56px/1.05 Inter, sans-serif; letter-spacing: -0.03em; color: #121110; }
+.bdm .bdm-head .s { font: 600 42px/1.2 Inter, sans-serif; color: #737373; margin-top: 2px; letter-spacing: -0.02em; }
+.bdm .bdm-head .s2 { display: none; color: #e11d48; font-weight: 800; }
+.bdm .bdm-head.compact { height: 112px; gap: 20px; }
+.bdm .bdm-head.compact .s-app { --s: 72px; }
+.bdm .bdm-head.compact b { font: 800 56px/1 Inter, sans-serif; letter-spacing: -0.03em; color: #121110; }
+.bdm .corner { position: absolute; right: 26px; top: 26px; }
+.bdm .bdm-body { flex: 1; padding: 30px 34px 34px; display: flex; flex-direction: column; gap: 18px; }
+.bdm.nohead .bdm-body { padding-top: 34px; }
+.bdm .bdm-m { display: flex; flex-direction: column; opacity: 0; }
+.bdm .bdm-m.them { align-items: flex-start; }
+.bdm .bdm-m.me { align-items: flex-end; }
+.bdm .bdm-m .row { display: flex; align-items: center; gap: 22px; max-width: 100%; }
+.bdm .bdm-m .b { max-width: 880px; padding: 16px 38px 20px; border-radius: 56px; font: 700 96px/1.1 Inter, sans-serif; letter-spacing: -0.035em; }
+.bdm .bdm-m.them .b { background: #efefef; color: #121110; }
+.bdm .bdm-m.me .b { background: linear-gradient(135deg, #7a2ff7 0%, #3e5bff 100%); color: #fff; }
+.bdm .bdm-m .tm { font: 800 54px/1 Inter, sans-serif; color: #8a8a8a; white-space: nowrap; }
+.bdm .bdm-m .seen { font: 700 56px/1 Inter, sans-serif; color: #737373; margin: 12px 20px 0; opacity: 0; }
+.bdm .bdm-m .dots { display: none; gap: 16px; align-items: center; height: 106px; padding: 0 6px; }
+.bdm .bdm-m .dots i { width: 26px; height: 26px; border-radius: 50%; background: currentColor; opacity: 0.55; }
+.bdm .bdm-m .sw { position: relative; display: inline-block; }
+.bdm .bdm-m .sw .o { position: relative; display: inline-block; }
+.bdm .bdm-m .sw .o i { position: absolute; left: -6px; right: -6px; top: 52%; height: 12px; border-radius: 6px; background: #ff611d;
+  transform-origin: 0 50%; transform: scaleX(0); }
+.bdm .bdm-m .sw .n { position: absolute; left: 50%; bottom: 72%; margin-left: -1.4em; padding: 4px 22px 8px; border-radius: 28px;
+  background: #ff611d; color: #fff; font-size: 0.78em; white-space: nowrap; opacity: 0; box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.5); }
