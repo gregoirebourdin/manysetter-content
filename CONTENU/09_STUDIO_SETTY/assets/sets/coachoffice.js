@@ -514,13 +514,13 @@ export async function build({ renderer, scene, mood = "morning" }) {
     frames: {
       // lower than reel6's (740/800): the 3-line hook title hid the beanie and the top of Setty (as reel11, 880/900)
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 880 },
-      setty: { target: settyFace, dist: 11.5, yaw: -0.34, pitch: 0.08, y: 950 }, // scale 0.68: a step back
+      setty: { target: settyFace, dist: 11.5, yaw: -0.34, pitch: 0.08, y: 880 }, // scale 0.68: a step back; higher, his mouth over the captions
     },
     shots: {
       // far enough that the end notification fits between the 3-line title and the beanie, Setty's mouth above the captions
       wide: { pos: [0.55, 4.0, 18.8], at: [0.55, 3.2, -1.5], fov: 39 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 880 }),
-      setty: K.shot(settyFace, { dist: 11.5, yaw: -0.34, pitch: 0.08, y: 950 }),
+      setty: K.shot(settyFace, { dist: 11.5, yaw: -0.34, pitch: 0.08, y: 880 }),
       // cut-ins: the therapist's legal pad on the armrest, the tissue box on the side table, his certificate on the wall
       pad: K.shot(PAD, { dist: 4.2, yaw: -0.5, pitch: 0.7, y: 900 }),
       tissues: K.shot(new THREE.Vector3(0.9, 1.4, -2.5), { dist: 5.0, yaw: 0.1, pitch: 0.25, y: 880 }),
