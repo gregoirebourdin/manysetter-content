@@ -30,7 +30,7 @@
     "rd98",
     "rd86"
   ],
-  "cta": "Comment SETTY",
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
   "id": "261019_REEL_S1_AV1_the-webinar",
   "format": "reel Setty (mascotte 3D en code, voix Charon générée par IA)",
   "source": {
@@ -43,9 +43,9 @@
     "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
   },
   "qa": {
-    "duree_s": 58.5,
+    "duree_s": 59.1,
     "lufs": -14.2,
-    "true_peak_dbtp": -2.4
+    "true_peak_dbtp": -2.0
   },
   "statut": "v3 dialogue à valider (rendu 30 i/s du 19/10) ; voix Fenrir + Charon ; rien n'est programmé"
 }
