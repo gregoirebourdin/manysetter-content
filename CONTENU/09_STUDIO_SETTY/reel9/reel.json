@@ -1,0 +1,74 @@
+{
+ "layout": "set",
+ "set": "podcast",
+ "mood": "evening",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  44.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel9",
+ "slug": "chatgpt-or-claude",
+ "title": "ChatGPT or Claude",
+ "pub_id": "261020_REEL_S1_AV1_chatgpt-or-claude",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Setty, on his stool across the podcast table, to the coach at his mic: You asked ChatGPT to be your [bleep]ing setter, right?",
+ "hook_title": [
+  "*ChatGPT* or *Claude*:",
+  "which one should you use for setting?"
+ ],
+ "biais": [
+  "duel (deux noms connus, il veut savoir qui gagne)",
+  "contre-pied (« whoever wins, you're still the setter »)",
+  "pertinence pour soi (ce qu'il fait déjà : copier le DM, coller la réponse)"
+ ],
+ "verbatims": [
+  "rd55",
+  "rd67",
+  "rd13",
+  "rd93",
+  "cl033",
+  "rd20",
+  "rd01",
+  "rd65",
+  "mc10",
+  "mc11",
+  "mc22"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build your AI setter for free, no more ChatGPT copy-paste. Follow so the DM lands 📩\n\n👇 READ BELOW: ChatGPT vs Claude as your setter, and why the winner doesn't matter.\n\n1. Writing the reply: paste a DM into either one and you get a solid answer, so it's a tie.\n\n2. Reading the DM: you copy it in, then paste the reply back, every single time. The setter is still you.\n\n3. A setter is everything around the model: your offer, your voice, waiting until the lead finishes typing, one question at a time, booking and follow-ups.\n\n4. Setty is the AI setter I built for coaches: his own setting model, built on years of setting work, right inside your Manychat on Instagram, WhatsApp and Messenger. Nobody copies or pastes anything.\n\nThe catch: Setty needs a Manychat account, and no setter, human or AI, can promise you a number of calls. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#chatgpt #claudeai #aisetter\n\nManySetter is not affiliated with or endorsed by OpenAI, Anthropic, Manychat or Meta.",
+ "caption_youtube": "ChatGPT or Claude for your DMs? Whoever wins, you're still the setter\n\n👇 READ BELOW: ChatGPT vs Claude as your setter, and why the winner doesn't matter.\n\n1. Writing the reply: paste a DM into either one and you get a solid answer, so it's a tie.\n\n2. Reading the DM: you copy it in, then paste the reply back, every single time. The setter is still you.\n\n3. A setter is everything around the model: your offer, your voice, waiting until the lead finishes typing, one question at a time, booking and follow-ups.\n\n4. Setty is the AI setter I built for coaches: his own setting model, built on years of setting work, right inside your Manychat on Instagram, WhatsApp and Messenger. Nobody copies or pastes anything.\n\nThe catch: Setty needs a Manychat account, and no setter, human or AI, can promise you a number of calls. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#chatgpt #claudeai #shorts\n\nManySetter is not affiliated with or endorsed by OpenAI, Anthropic, Manychat or Meta.",
+ "statut": "script v1 à valider (avec les scripts des reels 4 à 11)",
+ "created": "2026-10-20",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "sources": [
+  {
+   "fait": "aucune affirmation sur les capacités de ChatGPT ou de Claude : le reel décrit l'usage par copier-coller (le coach colle le DM, recopie la réponse), comme le carrousel ; « both are great, it's a tie » reprend le round 1 validé",
+   "source": "carrousel 261019_CAR_S1_AV1_chatgpt-or-claude, post.json et slide 2 (choix de rédaction du 19/10/2026, validé le 20/10)"
+  },
+  {
+   "fait": "« whoever wins, you're still the setter » ; « the setter is everything around the model » ; « you stop being a human clipboard »",
+   "source": "carrousel 261019_CAR_S1_AV1_chatgpt-or-claude, slides 5, 6 et 9"
+  },
+  {
+   "fait": "le setter apprend l'offre, répond dans la voix de la marque, attend que le lead ait fini d'écrire, qualifie une question à la fois, réserve l'appel, relance jusqu'à 3 fois dans la fenêtre de 24 h ; il prend le relais dans le flow Manychat quand le lead répond",
+   "source": "brief-de-marque.md, section 2 (site ManySetter)"
+  },
+  {
+   "fait": "« its own setting model, built on years of setting work » ; « right inside your Manychat »",
+   "source": "brief-de-marque.md, section 7 ; carrousel, slide 7"
+  },
+  {
+   "fait": "« No tool can promise a number of calls » ; seul prérequis : « a Manychat account » ; $119/month par setter live, gratuit pour construire et tester sans carte, essai de 14 jours au passage en live",
+   "source": "brief-de-marque.md, sections 3 et 7"
+  }
+ ],
+ "paire": "261019_CAR_S1_AV1_chatgpt-or-claude (idée 9, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+}
