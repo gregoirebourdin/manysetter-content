@@ -1,0 +1,165 @@
+{
+  "id": "261020_CAR_S1_AV1_dm-ads",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "1 · business du coach",
+  "idee": 14,
+  "reel_associe": "reel18 (Setty : « You paid Meta to fill your [bleep]ing DMs, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "chiffre très précis (300)",
+    "contre-pied (sa métrique préférée)",
+    "aversion à la perte (l'argent des pubs)"
+  ],
+  "verbatims": [
+    "cl028",
+    "rd42"
+  ],
+  "sources": [
+    {
+      "fait": "métrique « Messaging conversations started » : les personnes qui vous ont écrit après la pub (A1, A2) ; pubs click to message vers Messenger, Instagram, WhatsApp (A4) ; Manychat démarre une automatisation depuis une pub Instagram ou Facebook (A6) ; Manychat garde le déclencheur, le setter prend le relais (A8)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 14 (Centre d'aide Business de Meta et help.manychat.com lus le 20/10/2026)"
+    }
+  ],
+  "slides": [
+    {
+      "logo": {
+        "name": "instagram",
+        "corner": "bl",
+        "size": 800,
+        "angle": -14,
+        "out": 0.34
+      },
+      "blocks": [
+        {
+          "title": "why your DM ads flopped, even with *300 conversations started*"
+        },
+        {
+          "caption": "and Meta counted every single one.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *metric* you're proud of"
+        },
+        {
+          "text": "in Ads Manager it's called \"Messaging conversations started\". it counts people who messaged you after your ad."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what it *doesn't* count"
+        },
+        {
+          "text": "it doesn't tell you if anyone answered, if they fit, or if they booked. it only means the lead said hi."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "meanwhile, in your *inbox*"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "hey saw your ad, how does it work?"
+            },
+            {
+              "from": "lead",
+              "text": "is it online?"
+            },
+            {
+              "from": "lead",
+              "text": "hello??"
+            }
+          ]
+        },
+        {
+          "caption": "three messages, still no answer."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "people click *without* a real need"
+        },
+        {
+          "text": "\"lots of them just click on the ad without providing any data\". the sorting is on you."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "you paid Meta for *300* hellos, and nobody had time to answer"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the ad did its *job*"
+        },
+        {
+          "text": "it opened the chat. what happens next decides the sale: an answer, a fit question, a time to book."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "keep the ad, add the *setter*"
+        },
+        {
+          "text": "Manychat keeps your ad trigger and sends the first message. the setter takes over when the lead replies."
+        }
+      ],
+      "logo": {
+        "name": "messenger",
+        "corner": "tr",
+        "size": 520,
+        "angle": 14,
+        "out": 0.42
+      }
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it answers the chats your ad opens, in your voice, asks your fit questions one at a time, and books the ones who fit."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-beginners/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

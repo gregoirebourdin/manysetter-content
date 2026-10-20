@@ -1,0 +1,19 @@
+Comment "SETTY" and I'll show you how to set up a free AI setter without building one in Make. Follow so the DM lands 📩
+
+👇 READ BELOW: the real steps of a homemade AI setter with Make and ChatGPT, built from Make's and Manychat's own docs, and what's still missing.
+
+1. In Manychat, an External Request in your Default Reply sends each message to a Make Custom webhook.
+
+2. In Make, a ChatGPT "Generate a response" module writes the reply, and Webhook Response sends it back to Manychat.
+
+3. Memory doesn't wire itself: you store each lead's Conversation ID and pass it back every time.
+
+4. You still build the wait, the fit questions, the booking and the follow-ups yourself, and you pay Make credits plus OpenAI tokens.
+
+The catch: ManySetter isn't free once it's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.
+
+Comment "SETTY" for the free setup.
+
+#nocode #chatgpt #aisetter
+
+Not affiliated with Make, OpenAI, Manychat or Meta.

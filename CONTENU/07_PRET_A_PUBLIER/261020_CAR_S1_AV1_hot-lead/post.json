@@ -1,0 +1,181 @@
+{
+  "id": "261020_CAR_S1_AV1_hot-lead",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "1 · business du coach",
+  "idee": 20,
+  "reel_associe": "reel20 (Setty : « You let a [bleep]ing hot lead sleep on it, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "autorité (une étude, un chercheur)",
+    "écart de curiosité (« there's a name for it »)",
+    "pertinence pour soi (son lead chaud de la semaine)"
+  ],
+  "verbatims": [
+    "rd47",
+    "rd78",
+    "rd84",
+    "rd93"
+  ],
+  "sources": [
+    {
+      "fait": "écart d'empathie chaud-froid : Loewenstein, G. (2005), Hot-cold empathy gaps and medical decision making, Health Psychology 24(4 Suppl.), S49-S56, doi:10.1037/0278-6133.24.4.S49 (L1) ; biais de projection : Loewenstein, O'Donoghue et Rabin (2003), QJE 118(4) (L3)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 20"
+    },
+    {
+      "fait": "étude de la faim : Read, D. et van Leeuwen, B. (1998), Predicting hunger, OBHDP 76(2), 189-205, doi:10.1006/obhd.1998.2803 (L5)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 20"
+    },
+    {
+      "fait": "aucune étude ne porte sur des leads en DM : le post l'applique par analogie, sans durée, et cite aussi l'oubli (rd84)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 20"
+    },
+    {
+      "fait": "réservation : 2 ou 3 créneaux dans le fuseau du lead, sur Cal.com, Calendly payant ou iClosed, sinon le lien (P9, P9b)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, faits produit"
+    }
+  ],
+  "slides": [
+    {
+      "blocks": [
+        {
+          "title": "why your *hottest lead* ghosted you, even after \"this is exactly what i need\""
+        },
+        {
+          "caption": "there's a name for what happened.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "in the DM, they're *on fire*"
+        },
+        {
+          "chat": [
+            {
+              "from": "lead",
+              "text": "omg this is exactly what i need"
+            },
+            {
+              "from": "lead",
+              "text": "how do i start?"
+            }
+          ]
+        },
+        {
+          "caption": "they can already picture the result."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "then you send the *link*"
+        },
+        {
+          "chat": [
+            {
+              "from": "me",
+              "text": "amazing! book a time on my calendar here"
+            },
+            {
+              "from": "lead",
+              "text": "perfect, i'll do it tonight"
+            }
+          ]
+        },
+        {
+          "caption": "spoiler: tonight never comes."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the next day, the *feeling* is gone"
+        },
+        {
+          "text": "same person, same problem. but the urge from last night faded, so \"let me think about it\" feels safe."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "psychologists call it the *hot-cold empathy gap*"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what the research *says*"
+        },
+        {
+          "text": "when we're calm, we underestimate how much a strong feeling drives our choices. in the moment, we think we'll feel the same tomorrow."
+        },
+        {
+          "caption": "George Loewenstein, Health Psychology, 2005."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "even *hunger* works like this"
+        },
+        {
+          "text": "in one study, hungry people picked more junk food for next week than people who had just eaten."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so finish *while* they're hot"
+        },
+        {
+          "list": [
+            "answer their last question.",
+            "check that they fit.",
+            "offer 2 or 3 times, right there.",
+            "if they go quiet, follow up."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it answers in your voice, checks the fit, and offers two or three times in the lead's time zone, right in the chat."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/price-then-question/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -114,6 +114,7 @@ Les 10 carrousels sont fabriqués (lot 1 le 19/10, puis les 7 autres d'un coup �
 
 ## Banque d'idées n° 2 (proposée le 20/10, v2 après le retour du fondateur, à valider)
 
+> Faits vérifiés à la source le 20/10 : `sources/banque-2.md` (formulations sûres, sources, et la liste « À ne pas écrire »). Carrousels : `07_PRET_A_PUBLIER/261020_CAR_*` ; reels : reel12 à reel21 (MANYSETTER REELS), dans l'ordre de publication.
 > Demande du 20/10 : 10 nouvelles idées, encore plus près des douleurs qu'un coach ou un infopreneur vit **chaque semaine**. Hooks aux 6 formes du fondateur (19/10), verbatims à l'appui. Pilier 2 : chaque étape du tuto et chaque conséquence se vérifie à sa source avant fabrication.
 
 ### Pilier 1 · Le business du coach

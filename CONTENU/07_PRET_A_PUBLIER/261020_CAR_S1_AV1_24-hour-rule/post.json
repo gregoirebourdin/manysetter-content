@@ -1,0 +1,160 @@
+{
+  "id": "261020_CAR_S1_AV1_24-hour-rule",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S1",
+  "avatar": "AV1",
+  "pilier": "2 · outils",
+  "idee": 16,
+  "reel_associe": "reel13 (Setty : « You've got ten thousand [bleep]ing contacts in Manychat, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "chiffre très précis (10 000 contacts)",
+    "écart de curiosité (« this is why »)",
+    "autorité (les docs de Meta)"
+  ],
+  "verbatims": [
+    "mc17",
+    "mc18",
+    "mc30"
+  ],
+  "sources": [
+    {
+      "fait": "fenêtre de 24 h (R1), relancée par chaque message du lead (R2), plus de messages automatiques ensuite (R3, R10), 7 jours de réponse à la main avec le tag Human Agent (R4), pas de promotion dans les tags (R6), modèles approuvés seulement sur WhatsApp (R8), règle de Meta et non de Manychat (R9), relances ManySetter dans la fenêtre (R12)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 16 (docs Meta et Manychat lues le 20/10/2026)"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "logo": {
+        "name": "instagram",
+        "corner": "bl",
+        "size": 800,
+        "angle": -14,
+        "out": 0.34
+      },
+      "blocks": [
+        {
+          "title": "if you have *10,000* Manychat contacts and nobody buys, this is why"
+        },
+        {
+          "caption": "it's a rule most coaches never read.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *24-hour* window"
+        },
+        {
+          "text": "when a lead messages you on Instagram or Messenger, a 24-hour window opens. inside it, you can reply freely, even with an offer."
+        }
+      ],
+      "logo": {
+        "name": "messenger",
+        "corner": "tr",
+        "size": 520,
+        "angle": 14,
+        "out": 0.42
+      }
+    },
+    {
+      "blocks": [
+        {
+          "heading": "every reply *restarts* the clock"
+        },
+        {
+          "text": "each new message from the lead gives you 24 more hours. the chat stays open while they keep talking."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "after 24 hours, *automation* stops"
+        },
+        {
+          "text": "automated messages aren't allowed anymore. Manychat won't send your scheduled ones once the window closes."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what's *left* after that"
+        },
+        {
+          "list": [
+            "7 more days, human replies only.",
+            "no offers inside message tags.",
+            "WhatsApp: approved templates only."
+          ]
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "\"i cant even message them *anymore*\""
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "this rule comes from *Meta*"
+        },
+        {
+          "text": "not from Manychat. every tool on Meta's official API plays by the same window."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it answers while the lead is talking and sends up to 3 follow-ups, between 1 and 23 hours after their last message."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/price-then-question/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what *changes*"
+        },
+        {
+          "list": [
+            "no lead goes cold at hour 25.",
+            "every follow-up stays inside Meta's rules.",
+            "the sale happens while they're talking.",
+            "your contacts finally hear from you, legally."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}

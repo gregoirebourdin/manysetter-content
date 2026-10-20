@@ -1,0 +1,164 @@
+{
+  "id": "261020_CAR_S2_AV2_human-vs-ai-setter",
+  "statut": "à valider (banque d'idées n° 2, validée le 20/10)",
+  "format": "carrousel",
+  "plateformes": [
+    "instagram"
+  ],
+  "segment": "S2",
+  "avatar": "AV2",
+  "pilier": "2 · outils",
+  "idee": 19,
+  "reel_associe": "reel21 (Setty : « You're about to hire a [bleep]ing setter, right? »)",
+  "funnel": "TOFU",
+  "style": "grid",
+  "biais": [
+    "duel (humain contre IA)",
+    "chiffre très précis (30 DM par jour)",
+    "honnêteté (ce qu'un humain fait mieux)"
+  ],
+  "verbatims": [
+    "cl056",
+    "rd35",
+    "cl123"
+  ],
+  "sources": [
+    {
+      "fait": "PayScale : setter aux États-Unis, 13 à 21 $ de l'heure de base, 9 000 à 15 000 $ de commission par an, mise à jour du 12/05/2026, 76 profils seulement (H1, P14) ; temps plein ≈ 2 250 à 3 640 $ par mois avant commission (calcul H2, 173 h par mois)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 19 ; https://www.payscale.com/research/US/Job=Appointment_Setter/Salary"
+    },
+    {
+      "fait": "ManySetter : 119 $ par mois par setter live, 1 500 réponses IA incluses, +500 réponses à 39 $ ; à 30 nouveaux chats par jour, le quota inclus ne suffit pas (piège du quota)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, P1, P2 et idée 19"
+    },
+    {
+      "fait": "ce qu'une personne fait mieux et « best of both » (H4, H5)",
+      "source": "site ManySetter, guide ai-vs-human-appointment-setter (lu le 20/10/2026)"
+    }
+  ],
+  "slides": [
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "title": "human setter or *AI setter*: which one for 30 DMs a day?"
+        },
+        {
+          "caption": "an honest answer, from someone who built one.",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *human* setter"
+        },
+        {
+          "list": [
+            "$13 to $21 an hour, plus commission.",
+            "months to get really good.",
+            "sleeps, has a life, sometimes leaves.",
+            "great on hard, high-value chats."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the *AI* setter"
+        },
+        {
+          "list": [
+            "$119 a month per live setter.",
+            "1,500 AI replies included.",
+            "replies at any hour, in your voice.",
+            "hands hard chats to a person."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "the math at *30 DMs* a day"
+        },
+        {
+          "text": "30 new chats a day is about 900 a month. at 4 or 5 replies each, plan for extra reply packs ($39 per 500)."
+        }
+      ]
+    },
+    {
+      "bg": "black",
+      "blocks": [
+        {
+          "heading": "full time, a human setter is about *$2,250 to $3,640* a month, before commission"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what a *person* does best"
+        },
+        {
+          "list": [
+            "the sales call itself.",
+            "high-value, tricky deals.",
+            "spotting brand new objections."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "what the *AI* does best"
+        },
+        {
+          "list": [
+            "answering every chat, day and night.",
+            "one fit question at a time.",
+            "booking the ones who fit.",
+            "following up inside 24 hours."
+          ]
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "my *honest* answer"
+        },
+        {
+          "text": "use both: the AI answers, qualifies and books, and a person takes the hard cases and the call."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "heading": "so i built *ManySetter*"
+        },
+        {
+          "text": "it's the AI half. it works inside your Manychat, and hands the chat to your team the moment it matters."
+        },
+        {
+          "image": "CONTENU/05_BANQUE_IMAGES/ecrans/setter-beginners/slide-01.png",
+          "width": 600
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "cta": {
+            "keyword": "SETTY",
+            "line": "and i'll show you how to set up your AI setter for free."
+          }
+        }
+      ]
+    }
+  ]
+}
