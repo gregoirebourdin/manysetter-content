@@ -69,6 +69,10 @@ S'y ajoute un plan sur l'écran 3D du portable, sur « fifteen minutes » et sur
 8. **Sur « Close the Zoom », le bras du coach cachait l'écran** : ses bras reviennent au repos pendant la réplique.
 9. **La carte « You are scheduled » ne restait que 1,7 s** : elle arrive plus tôt, le résumé reste lisible plus longtemps.
 10. **La barre de commentaire touchait les sourcils de Setty** : il est cadré plus bas sur le CTA.
+11. **Au final (après ta validation)** : dans le rendu 30 i/s, deux mouvements de caméra se battaient (le zoom de l'accroche
+    reculait d'un coup vers 1 s, et le plan sur l'écran de « Close the Zoom » ne durait que quelques images), un défaut que
+    les instantanés ne montrent pas. Le final 60 i/s passe avec la piste caméra (`"cam_track": true`, règle du 20/10) :
+    les deux plans sur l'écran durent ce qui était prévu, rien d'autre ne change.
 
 ## Ce qui peut encore monter le niveau
 
@@ -80,6 +84,6 @@ S'y ajoute un plan sur l'écran 3D du portable, sur « fifteen minutes » et sur
 
 ## Ce qui t'attend
 
-- Ton feu vert sur ce rendu, puis le final en 60 i/s et la passation à MANYSETTER POST.
+- Validé le 20/10 : final en 60 i/s (piste caméra), passé à MANYSETTER POST pour la programmation avec son carrousel.
 - L'étiquette « AI info » à ajouter dans l'appli après publication, comme pour les reels 2 et 3.
 - Rien n'est programmé sans ton go.

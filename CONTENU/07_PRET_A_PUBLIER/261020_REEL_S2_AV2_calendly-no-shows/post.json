@@ -50,9 +50,9 @@
   "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
  },
  "qa": {
-  "duree_s": 55.77,
+  "duree_s": 55.75,
   "lufs": -14.2,
   "true_peak_dbtp": -1.9
  },
- "statut": "rendu 30 i/s livré le 20/10 (voix validées et générées), à valider par le fondateur ; ensuite final 60 i/s et passation à MANYSETTER POST"
+ "statut": "validé par le fondateur le 20/10 ; final 60 i/s livré (piste caméra) ; transmis à MANYSETTER POST pour la programmation avec son carrousel"
 }
