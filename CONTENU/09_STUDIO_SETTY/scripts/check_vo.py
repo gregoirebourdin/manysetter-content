@@ -38,6 +38,8 @@ ALIASES = {
     "real": "reel",
     "red": "read",
     "ok": "okay",
+    "scene": "seen",  # the Instagram "Seen" (reel5)
+    "dollar": "dollars",
 }
 
 
@@ -79,13 +81,30 @@ def words(text: str) -> list[str]:
     text = re.sub(r"\b([A-Za-z])\*+([A-Za-z]*)", lambda m: CENSORED.get((m.group(1).lower(), m.group(2).lower()), m.group(1) + m.group(2)), text)
     text = re.sub(r"<[^>]+>|\([^)]*\)|\[[^\]]*\]|\*[^*]*\*", " ", text)  # vocal tags, (laughs), [sighs]
     text = " " + text.replace("-", " ").lower() + " "
+    text = re.sub(r"(\d)\s?%", r"\1 percent", text)
     for k in sorted(NUM, key=len, reverse=True):  # whole tokens only, longest first
         text = re.sub(r"(?<![\w$])" + re.escape(k) + r"(?![\w])", f" {NUM[k]} ", text)
     text = text.replace("many chat", "manychat").replace("many setter", "manysetter")
     text = text.replace("dot com", "dotcom").replace(".com", " dotcom").replace("any time", "anytime")
-    text = text.replace("dm's", "dms").replace("dm s ", "dms ")
+    text = text.replace("dm's", "dms").replace("dm s ", "dms ").replace("time zone", "timezone")
+    # every number left in digits is spelled out, on both sides: "9" == "nine", "2015" == "twenty fifteen" (20/10 lot:
+    # digits counted as errors made equal takes look worse than they were, and the pick went by length alone)
+    text = re.sub(r"\$(\d[\d,]*)", r" \1 dollars ", text)
+    text = re.sub(r"(?<![\w])\d[\d,]*(?:\.\d+)?(?![\w])", _spell, text)
     out = re.findall(r"[a-z0-9àâäéèêëïîôöùûüç$]+", text)
     return [ALIASES.get(w, w) for w in out]
+
+
+def _spell(m) -> str:
+    raw = m.group(0)
+    try:
+        from num2words import num2words
+    except ImportError:
+        return raw
+    digits = raw.replace(",", "")
+    n = float(digits) if "." in digits else int(digits)
+    spoken = num2words(n, to="year") if isinstance(n, int) and "," not in raw and 1100 <= n <= 2099 else num2words(n)
+    return " " + re.sub(r"[-,]|\band\b", " ", spoken) + " "
 
 
 def _wav16(wav: str, tmp: str) -> str:
@@ -126,8 +145,16 @@ def transcribe(wav: str, lang: str) -> str:
     return transcribe_faster(wav, lang)
 
 
-def diff(script: str, heard: str, optional: set[str]) -> list[tuple]:
+def diff(script: str, heard: str, optional: set[str], segments=None) -> list[tuple]:
+    """Problems (tag, script words, heard words[, line]): with segments, each problem says its line (index in the list)."""
     want, got = words(script), words(heard)
+    line_of = []
+    if segments:
+        want = []
+        for k, sg in enumerate(segments):
+            ws = words(sg["text"])
+            want += ws
+            line_of += [k] * len(ws)
     sm = difflib.SequenceMatcher(a=want, b=got, autojunk=False)
     problems = []
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
@@ -136,7 +163,10 @@ def diff(script: str, heard: str, optional: set[str]) -> list[tuple]:
         # a bleeped word may vanish ("delete") or come back as noise ("replace" by a short token)
         if want[i1:i2] and all(w in optional for w in want[i1:i2]) and (j2 - j1) <= (i2 - i1):
             continue
-        problems.append((tag, " ".join(want[i1:i2]), " ".join(got[j1:j2])))
+        p = (tag, " ".join(want[i1:i2]), " ".join(got[j1:j2]))
+        if line_of:
+            p += (line_of[min(i1, len(line_of) - 1)],)
+        problems.append(p)
     return problems
 
 
@@ -150,10 +180,11 @@ def main() -> None:
     a = ap.parse_args()
 
     raw = pathlib.Path(a.script).read_text()
-    script = " ".join(s["text"] for s in json.loads(raw)) if a.script.endswith(".json") else raw
+    segments = json.loads(raw) if a.script.endswith(".json") else None
+    script = " ".join(s["text"] for s in segments) if segments else raw
     optional = {w for o in a.optional.split(",") if o.strip() for w in words(o)}
     heard = transcribe(a.wav, a.lang)
-    problems = diff(script, heard, optional)
+    problems = diff(script, heard, optional, segments)
     if a.json:
         print(json.dumps({"heard": heard.strip(), "errors": len(problems), "problems": problems}))
         sys.exit(0 if not problems else 1)

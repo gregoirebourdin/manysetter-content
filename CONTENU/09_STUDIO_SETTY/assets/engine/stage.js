@@ -472,3 +472,7 @@ export function mcFlow(R, { id = "mcflow", at, out, title, rows }) {
     if (row.length > 1 && row[1].add != null) R.tl.fromTo(`#${id}-h${j}`, { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: "power2.out", immediateRender: true }, row[1].add - 0.16);
   });
 }
+
+// the building blocks, for the cards that live in their own file (assets/engine/card_<name>.js, 21/10): one file per card,
+// so parallel reel sessions never write in this file at the same time
+export { mount, inOut, popIn, stackIn, counter, icon, initials, clamp, ease3 };

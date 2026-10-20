@@ -137,6 +137,7 @@ class Mix:
         self.voice, self.VOX = self._voice()
         self.music = self.buf()
         self.sfx = self.buf()
+        self.events = []  # (sound, time of its hit): audio/sfx.json, read by studio.py's lint (an SFX on a word onset)
 
     def buf(self):
         return np.zeros((self.N, 2))
@@ -251,14 +252,17 @@ class Mix:
     def boom(self, t, gain=0.85, length=3.2):
         """His BOOM (sub, below the voice) on the word that lands."""
         place(self.sfx, cut_sample("boom", 0, length, fade_out=1.2), t - HIT["boom"], gain)
+        self.events.append(("boom", round(t, 3), gain))
 
     def fahhh(self, t, gain=0.8):
         """'Fahhh' once a roast has landed: give the line a pause in vo/<reel>_segments.json so it never covers a word."""
         place(self.sfx, cut_sample("fahhh", 0, 1.6, fade_out=0.4), t - HIT["fahhh"], gain)
+        self.events.append(("fahhh", round(t, 3), gain))
 
     def clic(self, t, gain=0.9):
         """His click on something that pops on screen (a card, the inbox, a typed letter)."""
         place(self.sfx, cut_sample("clic", 0.2, 0.5, fade_out=0.15), t - (HIT["clic"] - 0.2), gain)
+        self.events.append(("clic", round(t, 3), gain))
 
     def music_bed(self, name="music_01", drop=0.0, src_drop=136.2, play=None, gain=1.0):
         """His music: the track's own drop (src_drop, s) lands on `drop`; silent before it (the riser alone).
@@ -301,6 +305,7 @@ class Mix:
         mix = self.VOX * 1.0 + music * music_gain + sfx * sfx_gain
         master(mix, self.OUT / "mix.wav", tp_max=tp_max)
         master(self.VOX * 1.0 + sfx * sfx_gain, self.OUT / "mix_nomusic.wav", tp_max=tp_max)
+        (self.OUT / "sfx.json").write_text(json.dumps(self.events))
 
 
 def master(stem, path, target=-14.0, limit=-1.5, tp_max=-1.0):

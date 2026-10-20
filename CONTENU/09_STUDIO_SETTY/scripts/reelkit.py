@@ -29,6 +29,11 @@ class Reel:
         self.W = self.timing["words"]
         self.tail = tail  # end hold after the last word (CTA, loop)
         self.total = round(self.W[-1]["end"] + tail, 2)
+        self.LN = {}  # dialogue reels: line → (first word, last word)
+        for i, w in enumerate(self.W):
+            if "line" in w:
+                a, b = self.LN.get(w["line"], (i, i))
+                self.LN[w["line"]] = (min(a, i), max(b, i))
 
     def t(self, i):
         return self.W[i]["t"]
@@ -43,6 +48,25 @@ class Reel:
             if re.sub(r"[^a-z0-9']", "", self.W[i]["w"].lower()) == key:
                 return i
         raise KeyError(f"{word!r} not found after word {start}")
+
+    def F(self, L):
+        """First word of line L (dialogue reels)."""
+        return self.LN[L][0]
+
+    def Z(self, L):
+        """Last word of line L (dialogue reels)."""
+        return self.LN[L][1]
+
+    def word(self, L, word, nth=1):
+        """Index of `word` inside line L only (the nth time it is said there): find() from the line start ran on into
+        the next lines when the word was not in the line (20/10 lot)."""
+        i = self.F(L) - 1
+        for _ in range(nth):
+            i = self.find(word, i + 1)
+        if i > self.Z(L):
+            raise KeyError(f"{word!r} is not said {nth} time(s) in line {L}: "
+                           + " ".join(w["w"] for w in self.W[self.F(L):self.Z(L) + 1]))
+        return i
 
     def auto_chunks(self, a, b, max_words=4, **opts):
         """Caption chunks for words a..b: a new chunk after punctuation, or every `max_words` words.
@@ -78,6 +102,10 @@ class Reel:
     def build(self, CHUNKS, BLEEPS, CUES):
         lucide = json.loads((STUDIO / "assets/ui/lucide.json").read_text())
         lucide.setdefault("arrow-down", ARROW_DOWN)
+        if bad := [k for k in CUES if k in RESERVED]:  # reel5: a cue named "total" made the mix 17 s long
+            raise SystemExit(f"{self.id}: cue name(s) {bad} are reserved by the kit ({', '.join(RESERVED)}): rename them")
+        if bad := [k for k, v in CUES.items() if not isinstance(v, (int, float)) or not 0 <= v <= self.total + 3]:
+            raise SystemExit(f"{self.id}: cue(s) {bad} are not a time inside the reel (0–{self.total:.1f} s)")
         cues = {"total": self.total, **CUES}
         data = {"words": [{k: w[k] for k in ("w", "t", "end")} for w in self.W], "chunks": self.chunks(CHUNKS, BLEEPS),
                 "cues": cues, "bleeps": [{"i": i, "t": self.t(i), "end": self.e(i)} for i in BLEEPS], "icons": lucide}
@@ -102,16 +130,38 @@ class Reel:
         shell = (STUDIO / "assets/engine/shell.html").read_text()
         scenes = (self.here / "src/scenes.js").read_text().rstrip("\n")
         scenes = "\n".join(("      " + line) if line.strip() else "" for line in scenes.splitlines()).lstrip()
+        # a card in its own file (assets/engine/card_<name>.js + .css, exporting <name>) is loaded only by the reels whose
+        # scenes call st.<name>(…): a card being written in another session never breaks this reel's build
+        used = sorted(set(re.findall(r"\bst\.(\w+)\s*\(", scenes)))
+        cards = [n for n in used if (STUDIO / f"assets/engine/card_{n}.js").exists()]
+        shell = shell.replace("/*CARD_IMPORTS*/", "\n      ".join(f'import {{ {n} }} from "./assets/engine/card_{n}.js";' for n in cards))
+        shell = shell.replace("/*CARD_NAMES*/", "".join(f", {n}" for n in cards))
+        shell = shell.replace("<!--CARD_CSS-->", "\n    ".join(f'<link rel="stylesheet" href="assets/engine/card_{n}.css" />' for n in cards
+                                                                 if (STUDIO / f"assets/engine/card_{n}.css").exists()))
         html = shell.replace("/*DATA*/", "const DATA = " + json.dumps(data, ensure_ascii=False) + ";")
         html = html.replace("/*SCENES*/", scenes).replace("{{TOTAL}}", f"{self.total:.2f}").replace("{{ID}}", self.id)
         (self.here / "index.html").write_text(html)
         meta = self.here / "reel.json"
         hi = json.loads(meta.read_text()).get("voice_s", [25.5, 29.5])[1] if meta.exists() else 29.5
-        warn = lint(data, max_total=hi + 2.1)
+        warn = lint(data, max_total=hi + 2.1) + lint_code(self.here, data)
         print(f"{self.id}: {self.total:.2f}s, {len(data['chunks'])} caption chunks → index.html, cues.json")
         for w in warn:
             print(f"  ! {w}")
         return data
+
+
+RESERVED = ("total",)  # cue names the kit writes itself
+
+
+def lint_code(here, data):
+    """Drawing rules the render cannot show until it is too late (CLAUDE.md § 8)."""
+    warn = []
+    files = [here / "src/scenes.js"] + ([STUDIO / f"assets/sets/{data['set']}.js"] if data.get("set") else [])
+    for f in files:
+        if f.exists() and re.search(r"\.filter\s*=", f.read_text()):
+            warn.append(f"{f.relative_to(STUDIO)}: ctx.filter in a canvas painter: the render's Chrome ignores it and the "
+                        "texture comes out black (reel10); soften with gradients")
+    return warn
 
 
 def lips(wav, lines, total, fps=30):
@@ -154,4 +204,9 @@ def lint(data, max_total=31.6):
         warn.append(f"spoken words with no caption chunk: {missing}")
     if data["cues"]["total"] > max_total:
         warn.append(f"{data['cues']['total']:.1f}s: longer than the reel's target ({max_total:.1f} s max)")
+    if data["cues"]["total"] > 60.0 and data.get("layout") == "set":
+        warn.append(f"{data['cues']['total']:.1f}s: over 60.0 s (the one-minute format): cut a line (studio.py cut) or tighten tail_s")
+    if len(data.get("hook_title", [])) > 2:
+        warn.append(f"hook title on {len(data['hook_title'])} lines: it reaches below y 600 and eats the close-ups "
+                    "(reel8, reel11): 2 lines, or ask Grégoire before shortening the carousel's slide 1")
     return warn

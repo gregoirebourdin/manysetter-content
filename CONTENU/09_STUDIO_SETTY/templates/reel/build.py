@@ -2,8 +2,9 @@
 """Captions, bleeps and cues of this dialogue reel, from the two voices (kit: scripts/reelkit.py).
 
 Lines come from vo/<reel>_segments.json ("who" on each). F(L) / Z(L) = first / last word of line L; word(L, "text")
-finds a word inside line L. Name the cues the scenes and the sound use: drop (end of the hook), boomN (💥 a
-"dinguerie"), fahhhN (😩 after a roast), clicN (a card pops), howmuch-like beats, and the CTA cues.
+finds a word inside line L only (an error names the line's words if it is not there). Name the cues the scenes and the
+sound use: drop (end of the hook), boomN (💥 a "dinguerie"), fahhhN (😩 after a roast), clicN (a card pops: 0.1–0.3 s
+BEFORE the line or a word, never on a word onset), and the CTA cues. "total" is the kit's: never a cue name.
 Usage: python3 studio.py build <reel>
 """
 import pathlib
@@ -14,18 +15,8 @@ from reelkit import Reel  # noqa: E402
 
 R = Reel(__file__)
 t, e, find, W = R.t, R.e, R.find, R.W
-LN = {}
-for i, w in enumerate(W):
-    a, b = LN.get(w["line"], (i, i))
-    LN[w["line"]] = (min(a, i), max(b, i))
-F = lambda L: LN[L][0]  # noqa: E731
-Z = lambda L: LN[L][1]  # noqa: E731
+F, Z, word, LN = R.F, R.Z, R.word, R.LN
 LAST = max(LN)
-
-
-def word(L, txt):
-    return find(txt, F(L))
-
 
 B1 = find("fucking")
 SETTY = find("SETTY")
@@ -47,7 +38,7 @@ for L in sorted(LN):
 
 CUES = {
     "right_end": e(Z(0)), "drop": e(Z(0)) + 0.05,
-    # "boom1": t(word(3, "sixty-three")), "fahhh1": e(Z(6)) + 0.12, "clic1": t(F(3)) + 0.15,
+    # "boom1": t(word(3, "sixty-three")), "fahhh1": e(Z(6)) + 0.12, "clic1": t(F(3)) - 0.15,
     "comment": t(word(LAST, "comment")), "setty": t(SETTY), "setty_end": e(SETTY), "free": t(word(LAST, "free.")),
     "dms_end": e(Z(LAST)), "end": e(Z(LAST)),
 }
