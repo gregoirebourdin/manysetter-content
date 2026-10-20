@@ -74,8 +74,17 @@ Le reel réutilise aussi `st.igDM` et `st.igDMs`, ajoutés au kit par une autre 
 3. **La notification de fin** recouvre le haut du bonnet du coach dans le plan large (placement commun du kit) : un plan
    large un peu plus bas pour la fin réglerait ça pour tous les reels.
 
+## Final (20/10, après ton feu vert)
+
+- Piste caméra activée (`"cam_track": true`), puis final en 60 i/s (`renders/reel7_v1_60fps.mp4`) : 1080×1920, 54,9 s,
+  -14,2 LUFS, crête -2,1 dBTP.
+- Vérifié sur le MP4, image par image : l'accroche ne recule plus entre 0,5 et 1,6 s ; les deux inserts tiennent (carton
+  JUICER 1,4 s, smoothie 1,3 s, il vire au marron à l'écran) ; chaque réaction « Fahhh » reste sur le coach. Détection des
+  coupes sur toute la vidéo : aucun aller-retour de caméra, seulement le flash du drop et les coups de fouet voulus.
+- Transmis à MANYSETTER POST pour la programmation avec son carrousel, 6:30 pm ET.
+
 ## Ce qui t'attend
 
-- Ton feu vert sur ce rendu, puis le final en 60 i/s et la passation à MANYSETTER POST.
+- La programmation par MANYSETTER POST, le jour de son carrousel.
 - L'étiquette « AI info » à ajouter dans l'appli après publication, comme pour les reels 2 et 3.
 - Rien n'est programmé sans ton go.
