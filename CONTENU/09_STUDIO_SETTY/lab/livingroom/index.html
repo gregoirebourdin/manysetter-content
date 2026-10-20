@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+                     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/" } }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #161a26; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #three { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .hook { position: absolute; left: 20px; right: 20px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .hook .l { display: inline-block; background: #fff; color: #121110; font: 800 62px/1.08 Inter, sans-serif; letter-spacing: -0.035em;
+        padding: 0.14em 0.36em 0.2em; border-radius: 0.36em; box-shadow: 0 22px 46px -18px rgba(0, 0, 0, 0.8); white-space: nowrap; }
+      .hook .l b { color: #ff611d; }
+      .cap { position: absolute; left: 80px; right: 80px; top: 1185px; text-align: center; font: 600 96px/1.04 Nohemi, sans-serif;
+        letter-spacing: -0.045em; color: #fff; -webkit-text-stroke: 14px #0d0c0a; paint-order: stroke fill; text-shadow: 0 10px 0 #0d0c0a; opacity: 0; }
+      .cap b { color: #ff7a3a; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="livingroom" data-start="0" data-duration="9" data-fps="30" data-width="1080" data-height="1920">
+      <canvas id="three"></canvas>
+      <div class="hook"><span class="l">Your <b>5-day challenge</b></span><span class="l">is outdated because of this</span></div>
+      <div class="cap" id="c0">You did your <b>5-day</b> challenge?</div>
+      <div class="cap" id="c1">Five days live, bro.</div>
+      <div class="cap" id="c2">How many did you <b>answer</b>?</div>
+      <div class="cap" id="c3">Cold <b>pizza</b> at midnight?</div>
+      <div class="cap" id="c4">On since <b>Monday</b>.</div>
+      <div class="cap" id="c5">Day six, man.</div>
+      <div class="cap" id="c6"></div>
+      <div class="cap" id="c7"></div>
+      <div class="cap" id="c8"></div>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, pose as sPose } from "./assets/setty/setty.js";
+      import { createCoach, pose as cPose } from "./assets/coach/coach.js";
+      import { build } from "./assets/sets/livingroom.js";
+      import { shot as frameShot } from "./assets/sets/kit.js";
+
+      const W = 1080, H = 1920;
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("three"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      const scene = new THREE.Scene();
+      const set = await build({ renderer, scene });
+      const coach = createCoach(), setty = createSetty();
+      scene.add(coach.root, setty.root);
+      const camera = new THREE.PerspectiveCamera(40, W / H, 0.5, 80);
+      const SHOTS = [
+        { shot: "wide", c: cPose("defeated", { phone: 1, lookX: 0.4 }), s: sPose("smug", { lookX: -0.8 }) },
+        { shot: "coach", c: cPose("hyped", { phone: 1, talk: 0.6, lookX: 0.5 }), s: sPose("eyeRoll") },
+        { shot: "setty", c: cPose("stressed", { phone: 1 }), s: sPose("deadpan", { lookX: -0.7 }) },
+        { shot: "pizza", c: cPose("defeated", { phone: 1 }), s: sPose("sly") },
+        { shot: "ring", c: cPose("annoyed", { phone: 1 }), s: sPose("mocking") },
+        { shot: "side", c: cPose("mocking", { phone: 1, lookX: 0.6 }), s: sPose("excuseMe", { lookX: -0.6 }) },
+        { shot: "sideX", c: cPose("defeated", { phone: 1 }), s: sPose("smug") },
+        { shot: "sideL", c: cPose("panic", { phone: 1, sweat: 1 }), s: sPose("laughing") },
+        { shot: "top", c: cPose("thinking", { phone: 1 }), s: sPose("proud") },
+      ];
+      const EXTRA = { side: { pos: [7.5, 5.2, 7.5], at: [0.6, 2.2, -1.6], fov: 40 }, sideX: { pos: [-6.5, 1.3, 3.2], at: [-0.9, 1.0, -1.3], fov: 30 },
+        sideL: { pos: [-8, 4.2, 5], at: [0.2, 2.2, -1.7], fov: 40 }, top: { pos: [0.6, 13, 3.5], at: [0.6, 1, -1.2], fov: 44 } };
+      function renderAt(t) {
+        const k = Math.min(SHOTS.length - 1, Math.floor(t));
+        const S = SHOTS[k], sh = { ...(EXTRA[S.shot] || set.shots[S.shot]) };
+        coach.apply(Object.assign({}, S.c, set.coach, { turn: set.coach.turn + (S.c.turn || 0) }));
+        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0), armLr: S.s.armLr > 1 ? S.s.armLr : set.setty.armLr }));
+        if (S.shot === "coach" || S.shot === "setty") { // aim at the real heads, like the engine (engine.js)
+          scene.updateMatrixWorld(true);
+          const f = set.frames[S.shot];
+          const tg = S.shot === "coach" ? coach.head.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, 0.18, 0))
+            : new THREE.Vector3(set.setty.x, set.setty.y + 1.7 * set.setty.scale + 0.04, set.setty.z);
+          Object.assign(sh, frameShot(tg, f));
+        }
+        camera.position.set(...sh.pos);
+        camera.lookAt(...sh.at);
+        camera.fov = sh.fov;
+        camera.updateProjectionMatrix();
+        renderer.render(scene, camera);
+        document.querySelectorAll(".cap").forEach((el, i) => (el.style.opacity = i === k ? 1 : 0));
+      }
+      renderAt(0);
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 9 });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.livingroom = tl;
+    </script>
+  </body>
+</html>
