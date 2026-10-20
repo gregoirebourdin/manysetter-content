@@ -559,6 +559,8 @@ def cmd_deliver(a):
     shutil.copy(out / f"{a.reel}_nomusic.mp4", pdir / "reel_nomusic.mp4")
     if meta.get("caption"):
         (pdir / "caption.txt").write_text(meta["caption"].rstrip() + "\n")
+    if meta.get("caption_youtube"):  # the Short's caption (no keyword CTA on YouTube: manysetter.com, #shorts)
+        (pdir / "caption_youtube.txt").write_text(meta["caption_youtube"].rstrip() + "\n")
     post = {k: meta[k] for k in ("funnel", "segment", "avatar", "hook", "biais", "verbatims", "cta", "paire", "sources") if k in meta}
     post.update({
         "id": pub,

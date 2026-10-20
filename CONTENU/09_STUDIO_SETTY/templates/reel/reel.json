@@ -2,9 +2,15 @@
  "layout": "set",
  "set": "bedroom",
  "mood": "golden",
- "voices": {"setty": "Charon", "coach": "Fenrir"},
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
  "turn_gap": 0.2,
- "voice_s": [26, 36],
+ "voice_s": [
+  26,
+  36
+ ],
  "tail_s": 2.4,
  "id": "",
  "slug": "",
@@ -19,5 +25,6 @@
  "verbatims": [],
  "cta": "Comment SETTY",
  "caption": "",
+ "caption_youtube": "",
  "statut": "script à valider"
 }
