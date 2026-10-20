@@ -356,3 +356,7 @@ Format d'une règle :
 - Règle : le CTA parlé des reels de Setty dit **ce que le commentaire rapporte** : « Comment SETTY and I'll send you everything to build your AI setter for free. » (même promesse que le CTA des carrousels du 19/10). Plus de « slide into your DMs » seul. La légende et la notification de fin disent la même chose.
 - Retour : « Je veux vraiment que tu fasses un débrief complet sur ce que tu as fait pour avoir la meilleure version, trouve même les améliorations toi. »
 - Règle : chaque livraison de reel s'accompagne d'un **débrief** (ce qui a été fait, ce qui a été vérifié, ce que Claude a amélioré de lui-même, ce qui reste à améliorer), écrit dans `09_STUDIO_SETTY/writing/<reel>_debrief.md` et résumé au fondateur. Claude cherche lui-même les défauts avant de livrer.
+
+## 2026-10-20 · Reel 2 v3 validé
+- Retour : « Okay vas-y, et après donne-le à MANYSETTER POST pour qu'il puisse savoir où il est avant de le programmer. »
+- Règle : le reel 2 v3 (dialogue, `07_PRET_A_PUBLIER/261019_REEL_S1_AV1_the-webinar/`) est **validé** ; rendu final en 60 i/s. Une fois livré, un reel validé est **transmis à la session « MANYSETTER POST »** (chemin, fichiers, légende, horaire conseillé, points ouverts), qui s'occupe de la programmation.

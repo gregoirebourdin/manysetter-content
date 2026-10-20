@@ -36,7 +36,7 @@
  ],
  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
  "caption": "Webinar done, and now your DMs are full of \"how much?\" and people who vanish once you answer.\nMeet Setty, the AI setter I built for coaches who sell in the DMs: he learns your offer, talks like you, waits till they're done typing and only sends your calendar to the serious ones.\nComment SETTY and he'll send you everything to build your AI setter for free.\n#webinar #onlinecoach #dmsetter\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
- "statut": "v3 dialogue à valider (rendu 30 i/s du 19/10) ; voix Fenrir + Charon ; rien n'est programmé",
+ "statut": "validé par le fondateur le 20/10 (v3 dialogue), rendu final 60 i/s ; transmis à la session MANYSETTER POST pour la programmation",
  "created": "2026-10-19",
  "voice_s": [
   48.0,
@@ -54,5 +54,6 @@
  "voices": {
   "setty": "Charon",
   "coach": "Fenrir"
- }
+ },
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : source et licence à noter avant publication"
 }

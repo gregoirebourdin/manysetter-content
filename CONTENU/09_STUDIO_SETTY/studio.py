@@ -560,7 +560,14 @@ def cmd_deliver(a):
         (pdir / "caption.txt").write_text(meta["caption"].rstrip() + "\n")
     post = {k: meta[k] for k in ("funnel", "segment", "avatar", "hook", "biais", "verbatims", "cta") if k in meta}
     post.update({
-        "id": pub, "format": "reel Setty (mascotte 3D en code, voix Charon générée par IA)",
+        "id": pub,
+        "format": (f"reel Setty en dialogue dans un décor 3D (coach : voix {meta['voices'].get('coach')}, Setty : voix "
+                   f"{meta['voices'].get('setty')} ; personnages faits en code, voix générées par IA)") if meta.get("voices")
+                  else "reel Setty (mascotte 3D en code, voix Charon générée par IA)",
+        "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+        "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer "
+                   "la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+        **({"musique": meta["music"]} if meta.get("music") else {}),
         "source": {"studio": f"CONTENU/09_STUDIO_SETTY/{a.reel}", "script": f"CONTENU/09_STUDIO_SETTY/writing/{a.reel}_{meta.get('slug', '')}.md"},
         "etiquette_ia": "« AI info » à activer à la publication (voix réaliste générée par IA)",
         "fichiers": {"video": "reel.mp4 (hors Git)", "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"},
