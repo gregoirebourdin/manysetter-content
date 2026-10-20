@@ -370,3 +370,7 @@ Format d'une règle :
 - Retour : « Go pour le script et le décor, lance les voix. »
 - Règle : le script v1 de `09_STUDIO_SETTY/writing/reel3_claude-whatsapp.md` (dialogue coach ↔ Setty, environ 1 minute, 2 bips) est **validé**, et la génération des voix est autorisée pour lui (coach en Fenrir, Setty en Charon).
 - Règle : le décor « salle de sport du coach au matin » (`assets/sets/gym.js` : brique peinte anthracite, sol caoutchouc, Miami par une fenêtre d'atelier, Setty sur une box de saut) est **validé**. Ses meubles restent dans le kit pour les prochains reels de coachs fitness.
+
+## 2026-10-20 · Reel 3 de Setty « Claude on WhatsApp » validé
+- Retour : « Je valide, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
+- Règle : le reel 3 (`07_PRET_A_PUBLIER/261020_REEL_S2_AV2_claude-whatsapp/`, salle de sport, 61,5 s) est **validé** tel que livré en 30 i/s ; rendu final en 60 i/s, puis transmis à la session « MANYSETTER POST » pour la programmation avec son carrousel (`261019_CAR_S2_AV2_claude-whatsapp`).

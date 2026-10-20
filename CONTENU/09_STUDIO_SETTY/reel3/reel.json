@@ -43,7 +43,7 @@
  ],
  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
  "caption": "Plugging Claude into WhatsApp to answer your DMs sounds smart until you read the fine print.\nIt only replies when you open Claude and ask, it runs through WhatsApp Web instead of the official API, and its own README warns about private data leaking.\nSetty is the AI setter I built for coaches: he replies on his own in your voice, through Manychat on the official WhatsApp, Instagram and Messenger, and hands you the chat when he doesn't know.\nComment SETTY and he'll send you everything to build your AI setter for free.\n#claudeai #whatsappbusiness #aisetter\nManySetter is not affiliated with or endorsed by Anthropic, WhatsApp, Manychat or Meta.",
- "statut": "rendu 30 i/s à valider (script v1 et décor validés le 20/10)",
+ "statut": "validé par le fondateur le 20/10 (v1), rendu final 60 i/s ; transmis à la session MANYSETTER POST pour la programmation",
  "created": "2026-10-20",
  "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
  "sources": [
