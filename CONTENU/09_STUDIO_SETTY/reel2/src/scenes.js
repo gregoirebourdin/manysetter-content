@@ -43,7 +43,10 @@ line(4, face("eyeRoll"), faceC("stressed", { phone: 1, armRr: 0.25, armRf: 1.35,
 // ---- 5 coach: "Okay, I'll answer them tonight."
 line(5, faceC("proud", { phone: 0, lookX: 0.5 }), face("deadpan", { lookX: -0.7 }));
 // ---- 6 Setty roasts: "Tonight you'll fall asleep in that chair with your shoes on." → Fahhh on the coach's face
-line(6, face("mocking", { armRr: 1.3, armRf: 1.0 }), null);
+line(6, face("mocking", { armRr: 0.5, armRf: 0.9, armLr: 1.3, armLf: 1.0 }), null);
+// the cutaway: his sneakers on "shoes", then back on Setty
+shotTo(C.shoes - 0.08, "shoes", { dur: 0.12, ease: "power4.out" });
+shotTo(C.shoes + 0.3, "setty", { dur: 0.12, ease: "power4.out" });
 reaction(C.fahhh1, faceC("annoyed", { lookX: 0.6 }));
 // ---- 7 coach: "Last time I replied two days late and they all vanished." (the chat: Seen 2 days ago, BOOM on vanished)
 line(7, faceC("defeated"), face("deadpan", { lookX: -0.7 }), CARD_L);
@@ -94,18 +97,22 @@ st.followTimeline(R, { id: "fu", at: C.clic7, out: L[16].end + 0.05, fillTo: L[1
 reaction(C.fahhh3, faceC("disgusted", { lookX: 0.6 }));
 // ---- 17 coach: "Okay… how much?" (the music dies: the wide shot, silence)
 K(L[17].t - 0.25, 0.25, { cam: R.camOf("wide") }, "power3.inOut");
+{ // the silence: a slow push into the wide shot
+  const w = R.camOf("wide"), k = 0.14;
+  K(L[17].t + 0.02, L[17].end - L[17].t + 0.5, { cam: { px: w.px + (w.ax - w.px) * k, py: w.py + (w.ay - w.py) * k, pz: w.pz + (w.az - w.pz) * k } }, "sine.inOut");
+}
 KC(L[17].t - 0.1, 0.3, faceC("pleading", { lookX: 0.6, lookY: -0.2 }));
 K(L[17].t + 0.3, 0.3, face("sly", { lookX: -0.8 }));
 // ---- 18 Setty: "Look who's asking "how much" now." → Fahhh on the coach
-line(18, face("mocking", { armRr: 1.3, armRf: 1.0, lookX: -0.6 }), null);
+line(18, face("mocking", { armRr: 0.5, armRf: 0.9, armLr: 1.3, armLf: 1.0, lookX: -0.6 }), null);
 reaction(C.fahhh4, faceC("eyeRoll"));
-// ---- 19 Setty: "It's free to build, so comment SETTY and I'll slide into your DMs." → back to the wide (loops to frame 0)
+// ---- 19 Setty: "Comment SETTY and I'll send you everything to build your AI setter for free." → back to the wide (loops)
 line(19, face("smug", { lookX: 0.2 }), faceC("laughing"));
-K(C.slide - 0.1, 0.25, face("wink"), "back.out(2)");
+K(C.free - 0.1, 0.25, face("wink"), "back.out(2)");
 K(C.dms_end + 0.1, 0.9, { cam: R.camOf("wide") }, "power3.inOut");
 K(C.dms_end + 0.2, 0.4, face("smug", { lookX: -0.8 }));
 KC(C.dms_end + 0.2, 0.4, faceC("hyped", { mouthOpen: 0.3, lookX: 0.5 }));
 kit.commentBar(R, { keyword: "SETTY", at: C.comment - 0.12, caret: C.comment, type: C.setty_end + 0.06, step: 0.07,
-  send: C.setty_end + 0.45, out: C.slide - 0.1 });
-kit.notification(R, { title: "setty", text: "slid into your DMs", at: C.dms_end + 0.03 });
+  send: C.setty_end + 0.45, out: C.send - 0.1 });
+kit.notification(R, { title: "setty", text: "here's how to build your AI setter free 🎁", at: C.dms_end + 0.03 });
 kit.endCta(R, { text: "Comment SETTY", at: C.end + 0.6 });

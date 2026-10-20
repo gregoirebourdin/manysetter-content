@@ -28,11 +28,11 @@ flash(C.drop, 0.5, 0.18);
 
 // ---- the CTA (Setty): wink, the comment bar types SETTY, back to the wide (loops to frame 0)
 line(L.length - 1, face("smug", { lookX: 0.2 }), faceC("laughing"));
-K(C.slide - 0.1, 0.25, face("wink"), "back.out(2)");
+K(C.free - 0.1, 0.25, face("wink"), "back.out(2)");
 K(C.dms_end + 0.1, 0.9, { cam: R.camOf("wide") }, "power3.inOut");
 K(C.dms_end + 0.2, 0.4, face("smug", { lookX: -0.8 }));
 KC(C.dms_end + 0.2, 0.4, faceC("hyped", { mouthOpen: 0.3, lookX: 0.5 }));
 kit.commentBar(R, { keyword: "SETTY", at: C.comment - 0.12, caret: C.comment, type: C.setty_end + 0.06, step: 0.07,
-  send: C.setty_end + 0.45, out: C.slide - 0.1 });
-kit.notification(R, { title: "setty", text: "slid into your DMs", at: C.dms_end + 0.03 });
+  send: C.setty_end + 0.45, out: C.free - 0.4 });
+kit.notification(R, { title: "setty", text: "here's how to build your AI setter free 🎁", at: C.dms_end + 0.03 });
 kit.endCta(R, { text: "Comment SETTY", at: C.end + 0.6 });

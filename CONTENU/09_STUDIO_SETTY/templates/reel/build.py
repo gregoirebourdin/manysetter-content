@@ -31,7 +31,7 @@ B1 = find("fucking")
 SETTY = find("SETTY")
 BLEEPS = [B1]                       # 3 at most
 
-ACCENT = {0: [], LAST: ["SETTY"]}   # line → words in orange
+ACCENT = {0: [], LAST: ["SETTY", "free."]}   # line → words in orange
 HERO = {SETTY}                      # words that make their chunk big
 DISPLAY = {}                        # {i: "Manychat."} when the voice script says "ManyChat."
 
@@ -48,7 +48,7 @@ for L in sorted(LN):
 CUES = {
     "right_end": e(Z(0)), "drop": e(Z(0)) + 0.05,
     # "boom1": t(word(3, "sixty-three")), "fahhh1": e(Z(6)) + 0.12, "clic1": t(F(3)) + 0.15,
-    "comment": t(word(LAST, "comment")), "setty": t(SETTY), "setty_end": e(SETTY), "slide": t(word(LAST, "slide")),
+    "comment": t(word(LAST, "comment")), "setty": t(SETTY), "setty_end": e(SETTY), "free": t(word(LAST, "free.")),
     "dms_end": e(Z(LAST)), "end": e(Z(LAST)),
 }
 

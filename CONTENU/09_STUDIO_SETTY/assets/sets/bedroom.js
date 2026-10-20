@@ -185,11 +185,11 @@ export async function build({ renderer, scene, mood = "golden" }) {
     heads: { coach: coachHead, setty: settyFace },
     // close-up framing of each character (the engine's shotTo(t, "coach", { x, y, dist }) starts from these)
     frames: {
-      coach: { target: coachHead, dist: 12, yaw: 0.5, y: 820 },
+      coach: { target: coachHead, dist: 12, yaw: 0.5, y: 740 },
       setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 },
     },
     shots: {
-      wide: { pos: [0.2, 3.7, 13.2], at: [0.2, 2.3, -1.5], fov: 40 },
+      wide: { pos: [0.05, 3.8, 14.2], at: [0.05, 2.3, -1.5], fov: 40 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
       setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 }),
     },

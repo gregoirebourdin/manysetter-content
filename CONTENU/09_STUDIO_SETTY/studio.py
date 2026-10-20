@@ -250,8 +250,11 @@ def voice_dialogue(a, reel, segs):
             who, vs = part.split("=")
             cfg[who.strip()] = [v.strip() for v in vs.split("|") if v.strip()]
     whos = list(dict.fromkeys(sg["who"] for sg in segs))
+    rj = json.loads((STUDIO / reel / "reel.json").read_text()) if (STUDIO / reel / "reel.json").exists() else {}
     for w in whos:
-        cfg.setdefault(w, ["Charon"] if w == "setty" else [])
+        cfg.setdefault(w, [rj["voices"][w]] if rj.get("voices", {}).get(w) else (["Charon"] if w == "setty" else []))
+    if a.redo:
+        return redo_lines(a, reel, segs, cfg, [int(x) for x in a.redo.split(",")], rj)
     if missing := [w for w in whos if not cfg[w]]:
         sys.exit(f"no voice for {missing}: --voices \"{missing[0]}=Puck|Fenrir\" (casting) or one fixed voice")
     work = STUDIO / f"vo/_dialogue/{reel}"
@@ -331,11 +334,78 @@ def voice_dialogue(a, reel, segs):
     dest.mkdir(parents=True, exist_ok=True)
     for f in ("vo.wav", "timing.json"):
         shutil.copy(labels[choice] / f, dest / f)
+    combo = next(c for c in combos if "_".join(f"{w}-{v}" for w, v in c) == choice)
+    (work / "installed.json").write_text(json.dumps({"speakers": {w: str(best[(w, v)].relative_to(STUDIO)) for w, v in combo},
+                                                     "voices": {w: v for w, v in combo}, "overrides": {}}, indent=1))
     final = check_vo(dest / "vo.wav", STUDIO / f"vo/{reel}_script.txt")
     say(f"\ninstalled {choice} in vo/{reel}/ ({json.loads((dest / 'timing.json').read_text())['duration']:.1f}s), Whisper: "
         + ("OK" if final["errors"] == 0 else f"{final['errors']} issue(s): {final['problems'][:4]}"))
     if len(labels) > 1:
         say(f"other versions in vo/_dialogue/{reel}/mix/; install one with: python3 studio.py voice {reel} --reuse --pick <voice>")
+
+
+def redo_lines(a, reel, segs, cfg, lines, rj):
+    """Redo some lines of an installed dialogue alone (a rewritten line): new takes of just those lines in their
+    speaker's voice, Whisper, tightened; the other lines keep their takes (vo/_dialogue/<reel>/installed.json)."""
+    work = STUDIO / f"vo/_dialogue/{reel}"
+    inst_f = work / "installed.json"
+    if not inst_f.exists():
+        sys.exit(f"no {inst_f.relative_to(STUDIO)}: install a full dialogue first (studio.py voice {reel} --yes)")
+    inst = json.loads(inst_f.read_text())
+    takes_dir = STUDIO / "vo/takes"
+    todo, plan = [], {}
+    for L in lines:
+        sg = segs[L]
+        v = inst["voices"].get(sg["who"]) or cfg[sg["who"]][0]
+        d = work / f"redo/L{L}"
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "segments.json").write_text(json.dumps([{"text": sg["text"], "style": sg.get("style", "")}], ensure_ascii=False))
+        (d / "script.txt").write_text(sg["text"] + "\n")
+        n0 = len(list(takes_dir.glob(f"{reel}_L{L}_{v}_try*.wav")))
+        ts = [takes_dir / f"{reel}_L{L}_{v}_try{n0 + k + 1}.wav" for k in range(a.takes)] if not a.reuse else \
+            sorted(takes_dir.glob(f"{reel}_L{L}_{v}_try*.wav"))
+        plan[L] = (v, d, ts)
+        todo += [(v, d, t) for t in ts if not t.exists()]
+    if todo:
+        if not has_key():
+            sys.exit("no Gemini key: run `python3 studio.py doctor`")
+        if not a.yes:
+            sys.exit(f"the voice is paid (Gemini TTS, {len(todo)} short takes, under a cent): rerun with --yes once Grégoire has said go")
+        with cf.ThreadPoolExecutor(4) as ex:
+            futs = {ex.submit(run, [PY, "scripts/tts_gemini.py", "--voice", v, "--segments", str(d / "segments.json"), "--out", str(t),
+                                    "--no-fallback"], capture_output=True, text=True): t for v, d, t in todo}
+            for f in cf.as_completed(futs):
+                r = f.result()
+                say(f"  {futs[f].name}: " + (r.stdout.strip() or r.stderr.strip()[-300:]))
+    for L, (v, d, ts) in plan.items():
+        res = {}
+        for t in [t for t in ts if t.exists()]:
+            c = check_vo(t, d / "script.txt")
+            out = d / t.stem
+            r = run([PY, "scripts/voice.py", str(d / "segments.json"), str(t), str(out)], capture_output=True, text=True)
+            if r.returncode:
+                continue
+            tim = json.loads((out / "timing.json").read_text())
+            res[t] = (c["errors"], len([x for x in tim["words"] if x["score"] < 0.35]), tim["duration"], out)
+            say(f"  line {L} {t.name}: {tim['duration']:.1f}s, errors {c['errors']} {c['problems'][:2] if c['errors'] else ''}")
+        if not res:
+            sys.exit(f"line {L}: no usable take")
+        inst["overrides"][str(L)] = str(min(res.values(), key=lambda r: r[:3])[3].relative_to(STUDIO))
+    out = work / "mix/installed"
+    r = run([PY, "scripts/dialogue.py", str(STUDIO / f"vo/{reel}_segments.json"), str(out),
+             *[f"{w}={STUDIO / d}" for w, d in inst["speakers"].items()],
+             *sum([["--override", f"{L}={STUDIO / d}"] for L, d in inst["overrides"].items()], []),
+             "--turn-gap", str(rj.get("turn_gap", 0.2))], capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(r.stderr[-600:])
+    dest = STUDIO / f"vo/{reel}"
+    for f in ("vo.wav", "timing.json"):
+        shutil.copy(out / f, dest / f)
+    (STUDIO / f"vo/{reel}_script.txt").write_text(" ".join(sg["text"] for sg in segs) + "\n")
+    inst_f.write_text(json.dumps(inst, indent=1))
+    final = check_vo(dest / "vo.wav", STUDIO / f"vo/{reel}_script.txt")
+    say(f"vo/{reel}/vo.wav: {json.loads((dest / 'timing.json').read_text())['duration']:.1f}s with line(s) {lines} redone, Whisper: "
+        + ("OK" if final["errors"] == 0 else f"{final['errors']} issue(s): {final['problems'][:4]}"))
 
 
 # ---------------------------------------------------------------- build / audio / snap / check
@@ -543,6 +613,7 @@ def main():
     p.add_argument("--voices", help='dialogue reels: "coach=Puck|Fenrir|Zubenelgenubi,setty=Charon" (several = casting)')
     p.add_argument("--pick", help="dialogue reels: the voice combination to install (e.g. Fenrir)")
     p.add_argument("--reuse", action="store_true", help="dialogue reels: reuse the existing takes, generate nothing")
+    p.add_argument("--redo", help="dialogue reels: redo only these lines (e.g. 19 or 4,19) after rewriting them; the rest keeps its takes")
     for name in ("build", "check"):
         p = sub.add_parser(name); p.add_argument("reel")
     p = sub.add_parser("audio"); p.add_argument("reel"); p.add_argument("--no-whisper", action="store_true")

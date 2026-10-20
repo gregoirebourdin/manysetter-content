@@ -19,7 +19,7 @@ DROP = H("drop")
 M.music_bed(drop=DROP, play=[(DROP, H("howmuch") - 0.05), (H("setty_end") + 0.12, H("end") + 2.6)])
 M.tape_stop(H("howmuch") - 0.55, 0.5)
 
-M.riser_into(DROP, gain=0.45)  # his riser from frame 0, its climax + a BOOM on the drop
+M.riser_into(DROP)  # his riser from frame 0, its climax + a BOOM on the drop
 for k, t in C.items():
     if k.startswith("boom"):
         M.boom(t)
@@ -30,4 +30,4 @@ for k, t in C.items():
 for k in range(5):  # SETTY typed in the comment bar, once the word is said
     M.clic(H("setty_end") + 0.06 + k * 0.07, 0.45)
 
-M.finish(music_gain=0.5, tp_max=-1.5)
+M.finish(music_gain=MUSIC_BED_GAIN, tp_max=-1.5)  # his music well under the voices

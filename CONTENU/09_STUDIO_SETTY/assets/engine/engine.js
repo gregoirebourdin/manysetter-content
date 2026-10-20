@@ -99,6 +99,17 @@ export async function createReel(DATA, opts = {}) {
     const s = f ? frameShot(f.target, { ...f, ...o }) : set.shots[name];
     return { px: s.pos[0], py: s.pos[1], pz: s.pos[2], ax: s.at[0], ay: s.at[1], az: s.at[2], fov: s.fov };
   };
+  if (SETL) {
+    // aim the close-ups at the real heads (posed and seated), not at estimates: the face sits above the captions
+    setty.apply(P);
+    coach.apply(Q);
+    scene.updateMatrixWorld(true);
+    const v3 = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
+    set.frames.coach.target = coach.head.getWorldPosition(v3()).add(v3(0, 0.18, 0)); // head + beanie
+    set.frames.setty.target = v3(P.x, P.y + 1.7 * (P.scale ?? 1) + 0.04, P.z);
+    const [a1, a2] = coach.ankles.map((a) => a.getWorldPosition(v3()));
+    set.frames.shoes = { target: a1.add(a2).multiplyScalar(0.5).add(v3(0, 0.02, 0.12)), dist: 5.2, yaw: 0.45, pitch: 0.32, y: 900 };
+  }
   const CAM = SETL ? Object.assign({ roll: 0 }, camOf("wide"), opts.cam)
     : Object.assign({ z: 9.2, ly: 1.85, x: 0, roll: 0, lx: 0 }, DATA.layout === "stage" ? CAMS.STAGE : {}, opts.cam);
   if (DATA.layout) root.classList.add(`layout-${DATA.layout}`);

@@ -64,6 +64,8 @@ def riser(dur):
 SOUNDS = STUDIO / "assets/sounds"
 # where each sound "hits" (s into the file): its transient, its climax or its first syllable
 HIT = {"boom": 0.0, "clic": 0.29, "riser": 7.03, "fahhh": 0.17}
+# his music and riser stay well under the voices (Grégoire 20/10: "trop forts"): music ≈ 20 dB under a line once ducked
+MUSIC_BED_GAIN, RISER_GAIN = 0.17, 0.1
 _CACHE = {}
 
 
@@ -240,7 +242,7 @@ class Mix:
 
     # ---- Grégoire's patterns (19/10): his riser into the hook, his BOOM on every "dinguerie", "Fahhh" on every roast,
     # his click when something pops on screen, his music under it all (no synthesized beat in new reels)
-    def riser_into(self, hit, gain=0.7, tail=1.0):
+    def riser_into(self, hit, gain=RISER_GAIN, tail=1.0):
         """His riser, cut so its climax lands exactly on `hit` (it starts at frame 0 when the hook is short), then a BOOM."""
         lead = min(hit, HIT["riser"] - 0.2)
         place(self.sfx, cut_sample("riser", HIT["riser"] - lead, lead + tail, fade_in=0.01, fade_out=0.4), hit - lead, gain)

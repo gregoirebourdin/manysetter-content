@@ -1,6 +1,6 @@
 {
  "dialogue": true,
- "duration": 56.514,
+ "duration": 57.124,
  "lines": [
   {
    "id": 0,
@@ -99,7 +99,7 @@
   },
   {
    "id": 19,
-   "text": "It's free to build, so comment SETTY and I'll slide into your DMs.",
+   "text": "Comment SETTY and I'll send you everything to build your AI setter for free.",
    "who": "setty"
   }
  ],
@@ -1501,120 +1501,129 @@
   },
   {
    "i": 155,
-   "w": "It's",
+   "w": "Comment",
    "line": 19,
    "who": "setty",
    "t": 52.232,
-   "end": 52.372,
-   "score": 0.99
+   "end": 52.633,
+   "score": 0.66
   },
   {
    "i": 156,
-   "w": "free",
-   "line": 19,
-   "who": "setty",
-   "t": 52.504,
-   "end": 52.725,
-   "score": 0.94
-  },
-  {
-   "i": 157,
-   "w": "to",
-   "line": 19,
-   "who": "setty",
-   "t": 52.764,
-   "end": 52.825,
-   "score": 0.99
-  },
-  {
-   "i": 158,
-   "w": "build,",
-   "line": 19,
-   "who": "setty",
-   "t": 52.885,
-   "end": 53.185,
-   "score": 0.96
-  },
-  {
-   "i": 159,
-   "w": "so",
-   "line": 19,
-   "who": "setty",
-   "t": 53.417,
-   "end": 53.517,
-   "score": 1.0
-  },
-  {
-   "i": 160,
-   "w": "comment",
-   "line": 19,
-   "who": "setty",
-   "t": 53.649,
-   "end": 54.029,
-   "score": 0.99
-  },
-  {
-   "i": 161,
    "w": "SETTY",
    "line": 19,
    "who": "setty",
-   "t": 54.161,
-   "end": 54.481,
-   "score": 0.8
+   "t": 52.765,
+   "end": 53.066,
+   "score": 0.82
   },
   {
-   "i": 162,
+   "i": 157,
    "w": "and",
    "line": 19,
    "who": "setty",
-   "t": 54.613,
-   "end": 54.673,
+   "t": 53.198,
+   "end": 53.278,
    "score": 1.0
   },
   {
-   "i": 163,
+   "i": 158,
    "w": "I'll",
    "line": 19,
    "who": "setty",
-   "t": 54.733,
-   "end": 54.873,
+   "t": 53.379,
+   "end": 53.559,
+   "score": 0.93
+  },
+  {
+   "i": 159,
+   "w": "send",
+   "line": 19,
+   "who": "setty",
+   "t": 53.599,
+   "end": 53.82,
+   "score": 0.95
+  },
+  {
+   "i": 160,
+   "w": "you",
+   "line": 19,
+   "who": "setty",
+   "t": 53.9,
+   "end": 54.001,
+   "score": 1.0
+  },
+  {
+   "i": 161,
+   "w": "everything",
+   "line": 19,
+   "who": "setty",
+   "t": 54.133,
+   "end": 54.674,
+   "score": 0.98
+  },
+  {
+   "i": 162,
+   "w": "to",
+   "line": 19,
+   "who": "setty",
+   "t": 54.775,
+   "end": 54.855,
+   "score": 0.97
+  },
+  {
+   "i": 163,
+   "w": "build",
+   "line": 19,
+   "who": "setty",
+   "t": 54.915,
+   "end": 55.136,
    "score": 0.96
   },
   {
    "i": 164,
-   "w": "slide",
-   "line": 19,
-   "who": "setty",
-   "t": 54.953,
-   "end": 55.273,
-   "score": 0.58
-  },
-  {
-   "i": 165,
-   "w": "into",
-   "line": 19,
-   "who": "setty",
-   "t": 55.313,
-   "end": 55.453,
-   "score": 1.0
-  },
-  {
-   "i": 166,
    "w": "your",
    "line": 19,
    "who": "setty",
-   "t": 55.514,
-   "end": 55.614,
-   "score": 0.92
+   "t": 55.196,
+   "end": 55.357,
+   "score": 1.0
+  },
+  {
+   "i": 165,
+   "w": "AI",
+   "line": 19,
+   "who": "setty",
+   "t": 55.489,
+   "end": 55.789,
+   "score": 0.29
+  },
+  {
+   "i": 166,
+   "w": "setter",
+   "line": 19,
+   "who": "setty",
+   "t": 55.87,
+   "end": 56.151,
+   "score": 0.95
   },
   {
    "i": 167,
-   "w": "DMs.",
+   "w": "for",
    "line": 19,
    "who": "setty",
-   "t": 55.634,
-   "end": 56.094,
-   "score": 0.54
+   "t": 56.283,
+   "end": 56.383,
+   "score": 0.99
+  },
+  {
+   "i": 168,
+   "w": "free.",
+   "line": 19,
+   "who": "setty",
+   "t": 56.463,
+   "end": 56.704,
+   "score": 1.0
   }
  ]
 }

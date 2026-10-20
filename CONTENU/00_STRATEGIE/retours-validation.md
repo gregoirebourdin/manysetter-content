@@ -344,3 +344,15 @@ Format d'une règle :
 - Règle : **un logo ne passe jamais derrière un titre ni derrière le texte**, et plus aucun flou. Sur une slide à logo, le texte se décale pour laisser le coin du logo libre, et le logo se cale dans ce coin, aussi grand que possible sans toucher une lettre (`carrousel.py` le place seul). Remplace la règle du 19/10 « passe derrière le texte » et celle du flou.
 - Retour : « J'ai pas Calendly. »
 - Règle : sans fichier 3D fourni par le fondateur, la slide sort **sans logo** (on n'en prend pas ailleurs). Le carrousel `calendly-no-shows` part sans logo.
+
+## 2026-10-20 · Reel 2 v3 (dialogue), retour sur le rendu
+- Retour : « Le riser et la musique sont trop forts. »
+- Règle : le riser et la musique restent **nettement sous les voix** : la musique est un fond (environ 20 dB sous la voix pendant les répliques, comme la règle « cloudy » du 11/10), le riser ne passe jamais devant la réplique d'accroche. Réglages du kit baissés en conséquence.
+- Retour : « Quand ils parlent chacun leur tour, ça ne zoome pas sur eux en continu pendant qu'ils parlent, alors que c'est ce qui crée le mouvement. »
+- Règle : **pendant toute sa réplique, la caméra avance lentement et sans arrêt sur celui qui parle** (zoom continu, léger glissement), après le coup de zoom du début de réplique. Pas de plan figé pendant qu'un personnage parle.
+- Retour : « Le hook visuel doit aussi être en léger mouvement. »
+- Règle : le titre-hook bouge **légèrement et en continu** (il flotte, respire, penche à peine), sans jamais devenir illisible ni sortir de sa place.
+- Retour : « Pour le CTA, ne dis pas juste "slide into your DMs" : dis que tu vas lui envoyer de quoi créer son setter for free. »
+- Règle : le CTA parlé des reels de Setty dit **ce que le commentaire rapporte** : « Comment SETTY and I'll send you everything to build your AI setter for free. » (même promesse que le CTA des carrousels du 19/10). Plus de « slide into your DMs » seul. La légende et la notification de fin disent la même chose.
+- Retour : « Je veux vraiment que tu fasses un débrief complet sur ce que tu as fait pour avoir la meilleure version, trouve même les améliorations toi. »
+- Règle : chaque livraison de reel s'accompagne d'un **débrief** (ce qui a été fait, ce qui a été vérifié, ce que Claude a amélioré de lui-même, ce qui reste à améliorer), écrit dans `09_STUDIO_SETTY/writing/<reel>_debrief.md` et résumé au fondateur. Claude cherche lui-même les défauts avant de livrer.

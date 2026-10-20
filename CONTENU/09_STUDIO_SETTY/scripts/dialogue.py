@@ -6,7 +6,11 @@ end to end in script order: a short gap when the speaker changes (--turn-gap), a
 (--line-gap), plus the line's own "pause" from the segments (a "Fahhh" after a roast needs ~0.9 s).
 Writes vo.wav (48 kHz) and timing.json, whose words carry their line and their speaker ("who").
 
+A line can come from its own take (--override L=dir, a voice.py output of that one line): a line rewritten after the
+fact is redone alone, the other lines keep their validated takes (studio.py voice <reel> --redo L).
+
 Usage: python3 scripts/dialogue.py vo/reel2_segments.json out_dir setty=vo/_dialogue/reel2/setty_Charon coach=… [--turn-gap 0.2]
+       [--override 19=vo/_dialogue/reel2/redo/L19/<take>]
 """
 import argparse
 import json
@@ -26,6 +30,7 @@ def main():
     ap.add_argument("speakers", nargs="+", help="who=dir (a voice.py output: vo.wav + timing.json)")
     ap.add_argument("--turn-gap", type=float, default=0.2)
     ap.add_argument("--line-gap", type=float, default=0.28)
+    ap.add_argument("--override", action="append", default=[], help="L=dir: line L comes from that one-line take")
     a = ap.parse_args()
     segs = json.loads(pathlib.Path(a.segments).read_text())
     src = {}
@@ -36,6 +41,12 @@ def main():
         assert sr == SR, sr
         src[who] = {"x": x if x.ndim == 1 else x.mean(axis=1), "t": json.loads((d / "timing.json").read_text())}
 
+    over = {}
+    for o in a.override:
+        L, d = o.split("=", 1)
+        d = pathlib.Path(d)
+        x, sr = sf.read(d / "vo.wav", dtype="float64")
+        over[int(L)] = {"x": x if x.ndim == 1 else x.mean(axis=1), "t": json.loads((d / "timing.json").read_text())}
     local = {w: 0 for w in src}
     out, words, lines, pos = [], [], [], 0.0
     fade = int(0.005 * SR)
@@ -44,6 +55,8 @@ def main():
         S = src[who]
         k = local[who]
         local[who] += 1
+        if gi in over:  # this line was redone alone: its own take, local line 0
+            S, k = over[gi], 0
         ws = [w for w in S["t"]["words"] if w["line"] == k]
         prev = [w for w in S["t"]["words"] if w["line"] == k - 1]
         nxt = [w for w in S["t"]["words"] if w["line"] == k + 1]

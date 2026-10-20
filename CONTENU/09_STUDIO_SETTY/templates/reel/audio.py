@@ -37,4 +37,4 @@ for k, t in C.items():
 for k in range(5):
     M.clic(H("setty_end") + 0.05 + k * 0.07, 0.5)  # SETTY typed in the comment bar, once the word is said
 
-M.finish(tp_max=-1.5)  # the MP4 (AAC) then stays under -1 dBTP
+M.finish(music_gain=MUSIC_BED_GAIN, tp_max=-1.5)  # music well under the voices; the MP4 stays under -1 dBTP

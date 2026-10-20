@@ -2,7 +2,7 @@
 """Reel 2 "The webinar" v3 (dialogue: the coach at his desk, Setty in bed): captions, bleeps and cues from the voices.
 
 Kit: scripts/reelkit.py. Lines (vo/reel2_segments.json): 0 hook (Setty) · 3 the 63 messages (coach) · 6 roast · 8 roast ·
-10 Manychat · 14 calendar · 16 roast · 17 "how much?" (coach) · 18 the roast back · 19 the CTA.
+10 Manychat · 14 calendar · 16 roast · 17 "how much?" (coach) · 18 the roast back · 19 the CTA (the free setter kit).
 Usage: python3 studio.py build reel2
 """
 import pathlib
@@ -34,8 +34,8 @@ BLEEPS = [B1, B2]
 ACCENT = {0: ["webinar,"], 2: ["DMs."], 3: ["sixty-three"], 4: ['"how', 'much"'], 5: ["tonight."], 6: ["shoes"],
           7: ["vanished."], 8: ["first."], 9: ["disappeared."], 10: ["ManyChat."], 11: ["robotic"], 12: ["like", "you,"],
           13: ["free", "consulting?"], 14: ["calendar."], 15: ["think"], 16: ["beg."], 17: ["much?"], 18: ['"how', 'much"', "now."],
-          19: ["SETTY"]}
-HERO = {SIXTY, MC, find("calendar."), find("beg."), find("now."), SETTY}
+          19: ["SETTY", "free."]}
+HERO = {SIXTY, MC, find("calendar."), find("beg."), find("now."), SETTY, find("free.")}
 DISPLAY = {SIXTY: "63", MC: "Manychat."}
 
 CHUNKS = []
@@ -57,11 +57,11 @@ CUES = {
     "right_end": e(Z(0)), "drop": e(Z(0)) + 0.05,
     # 💥 the "dingueries" (his BOOM on the word), 😩 "Fahhh" after each roast, his click when a card pops
     "boom1": t(SIXTY), "boom2": t(word(7, "vanished.")), "boom3": t(MC), "boom4": t(word(14, "calendar.")),
-    "fahhh1": e(Z(6)) + 0.12, "fahhh2": e(Z(8)) + 0.12, "fahhh3": e(Z(16)) + 0.12, "fahhh4": e(Z(18)) + 0.12,
+    "shoes": t(word(6, "shoes")), "fahhh1": e(Z(6)) + 0.12, "fahhh2": e(Z(8)) + 0.12, "fahhh3": e(Z(16)) + 0.12, "fahhh4": e(Z(18)) + 0.12,
     "clic1": t(F(3)) + 0.15, "clic2": t(F(4)) + 0.1, "clic3": t(F(7)) + 0.1, "clic4": t(F(10)) - 0.05,
     "clic5": t(F(12)) + 0.1, "clic6": t(F(14)) - 0.05, "clic7": t(F(16)) - 0.05,
     "howmuch": t(F(17)), "comment": t(word(19, "comment")), "setty": t(SETTY), "setty_end": e(SETTY),
-    "slide": t(word(19, "slide")), "dms_end": e(Z(19)), "end": e(Z(19)),
+    "send": t(word(19, "send")), "free": t(find("free.")), "dms_end": e(Z(19)), "end": e(Z(19)),
 }
 
 if __name__ == "__main__":

@@ -601,5 +601,5 @@ export function createCoach() {
   }
 
   apply(basePose());
-  return { root, apply, head, upper };
+  return { root, apply, head, upper, ankles: legs.map((l) => l.ankle) };
 }
