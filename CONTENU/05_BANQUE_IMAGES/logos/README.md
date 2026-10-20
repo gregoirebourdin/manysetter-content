@@ -7,10 +7,10 @@ Jamais le logo de Manychat ni d'un concurrent.
 | Fichier | Outil | Source | Statut |
 | --- | --- | --- | --- |
 | `claude.png` | Claude | IconScout, fourni par le fondateur le 19/10 | présent |
-| `whatsapp.png` | WhatsApp | à fournir (claude-whatsapp, slides 2 et 6) | manquant |
+| `whatsapp.png` | WhatsApp | IconScout, fourni par le fondateur le 20/10 | présent |
 | `instagram.png` | Instagram | IconScout, fourni par le fondateur le 19/10 | présent |
 | `messenger.png` | Messenger | IconScout, fourni par le fondateur le 19/10 | présent |
-| `chatgpt.png` | ChatGPT | à fournir (chatgpt-or-claude, couverture ; envoyé dans la conversation, pas reçu en fichier) | manquant |
+| `chatgpt.png` | ChatGPT | IconScout, fourni par le fondateur le 20/10 | présent |
 | `facebook.png` | Facebook | IconScout, fourni par le fondateur le 19/10 | présent |
 | `meta.png` | Meta | à fournir (envoyé dans la conversation, pas reçu en fichier) | manquant |
 | `calendly.png` | Calendly | à fournir (calendly-no-shows, slides 1 et 2) | manquant |

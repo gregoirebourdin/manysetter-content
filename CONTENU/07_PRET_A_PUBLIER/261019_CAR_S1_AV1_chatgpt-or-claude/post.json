@@ -45,16 +45,12 @@
         {
           "name": "chatgpt",
           "corner": "tr",
-          "size": 620,
+          "size": 780,
           "angle": 12,
-          "out": 0.4
+          "out": 0.3
         }
       ],
       "blocks": [
-        {
-          "caption": "the answer will annoy you.",
-          "align": "center"
-        },
         {
           "title": "*ChatGPT* or *Claude*: which one should you use for setting?"
         }

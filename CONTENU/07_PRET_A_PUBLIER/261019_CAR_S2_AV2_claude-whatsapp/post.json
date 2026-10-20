@@ -72,9 +72,9 @@
       "logo": {
         "name": "whatsapp",
         "corner": "br",
-        "size": 560,
+        "size": 720,
         "angle": 12,
-        "out": 0.42
+        "out": 0.28
       }
     },
     {
@@ -138,9 +138,9 @@
       "logo": {
         "name": "whatsapp",
         "corner": "tr",
-        "size": 520,
+        "size": 660,
         "angle": 14,
-        "out": 0.45
+        "out": 0.3
       }
     },
     {
