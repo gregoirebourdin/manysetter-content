@@ -1,0 +1,79 @@
+{
+ "layout": "set",
+ "set": "kitchen",
+ "mood": "morning",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  45.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel7",
+ "slug": "comment-guide-flow",
+ "title": "The Comment GUIDE flow",
+ "pub_id": "261020_REEL_S2_AV2_comment-guide-flow",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, sitting on the kitchen island by the fruit bowl, to the coach behind it: You set up your [bleep]ing \"Comment GUIDE\" flow, right?",
+ "hook_title": [
+  "Why your Comment *GUIDE* flow",
+  "gets 400 comments and 0 sales"
+ ],
+ "biais": [
+  "chiffres qui se contredisent (400 commentaires, 0 vente)",
+  "pertinence pour soi (son propre flow « Comment GUIDE »)",
+  "contre-pied (« Manychat did its job » : le problème vient après le guide)"
+ ],
+ "verbatims": [
+  "cl005",
+  "rd30",
+  "mc36",
+  "mc37",
+  "rd22",
+  "mc07",
+  "mc33",
+  "rd21",
+  "mc47",
+  "mc01",
+  "rd47",
+  "cl131",
+  "rd12",
+  "rd57",
+  "rd65",
+  "mc05"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build an AI setter for your Manychat flow, for free. Follow so the DM lands 📩\n\n👇 READ BELOW: why a \"Comment GUIDE\" flow can get 400 comments and 0 sales, and what happens to the replies.\n\n1. Manychat does its job: everyone who comments GUIDE gets the guide in their DMs.\n\n2. Then a lead replies with a real question, like \"is this guide for beginners?\". A keyword flow answers the keyword, not the question, so it can send the same guide again.\n\n3. Everyone else who asked something sits in the inbox, collecting dust.\n\n4. Setty is the AI setter I built for coaches: you keep your Manychat flow and add two actions, with no code. He answers the real question in your voice, one question at a time, and only the serious ones get your calendar.\n\nThe catch: Setty doesn't replace Manychat, so you need a Manychat account. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#commenttodm #dmautomation #aisetter\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "caption_youtube": "Why your Comment GUIDE flow gets 400 comments and 0 sales\n\n👇 READ BELOW: why a \"Comment GUIDE\" flow can get 400 comments and 0 sales, and what happens to the replies.\n\n1. Manychat does its job: everyone who comments GUIDE gets the guide in their DMs.\n\n2. Then a lead replies with a real question, like \"is this guide for beginners?\". A keyword flow answers the keyword, not the question, so it can send the same guide again.\n\n3. Everyone else who asked something sits in the inbox, collecting dust.\n\n4. Setty is the AI setter I built for coaches: you keep your Manychat flow and add two actions, with no code. He answers the real question in your voice, one question at a time, and only the serious ones get your calendar.\n\nThe catch: Setty doesn't replace Manychat, so you need a Manychat account. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#commenttodm #dmautomation #shorts\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "script v1 à valider (phase 1 : script, décor cuisine, planche) ; aucune voix générée",
+ "created": "2026-10-20",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "sources": [
+  {
+   "fait": "Manychat garde le déclencheur (mot-clé en commentaire) et envoie le premier message ; ManySetter ajoute deux actions (« Start conversation » en fin d'automatisation, « Continue conversation » dans la Default Reply), sans code ni nouveau flow",
+   "source": "brief-de-marque.md, section 2 (site ManySetter)"
+  },
+  {
+   "fait": "un flow à mots-clés « answer the keyword, not the question »",
+   "source": "brief-de-marque.md, section 4 (site ManySetter)"
+  },
+  {
+   "fait": "« Keep your Manychat. Add the setter. », « Only the right leads get your calendar. »",
+   "source": "brief-de-marque.md, section 5 (site ManySetter)"
+  },
+  {
+   "fait": "400 commentaires, 400 guides, 0 vente : la situation du coach (hook du carrousel validé le 20/10), pas un résultat ManySetter ; les compteurs des cartes sont des exemples",
+   "source": "261019_CAR_S2_AV2_comment-guide-flow (slides 1, 2 et 5)"
+  },
+  {
+   "fait": "la réponse du setter montrée en exemple (« Totally fair, and thanks for saying it… »)",
+   "source": "261019_CAR_S2_AV2_comment-guide-flow (slide 8, validée)"
+  }
+ ],
+ "paire": "261019_CAR_S2_AV2_comment-guide-flow (idée 7, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+}
