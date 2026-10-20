@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+                     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/" } }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #161a26; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #three { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .hook { position: absolute; left: 20px; right: 20px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .hook .l { display: inline-block; background: #fff; color: #121110; font: 800 62px/1.08 Inter, sans-serif; letter-spacing: -0.035em;
+        padding: 0.14em 0.36em 0.2em; border-radius: 0.36em; box-shadow: 0 22px 46px -18px rgba(0, 0, 0, 0.8); white-space: nowrap; }
+      .hook .l b { color: #ff611d; }
+      .cap { position: absolute; left: 80px; right: 80px; top: 1185px; text-align: center; font: 600 96px/1.04 Nohemi, sans-serif;
+        letter-spacing: -0.045em; color: #fff; -webkit-text-stroke: 14px #0d0c0a; paint-order: stroke fill; text-shadow: 0 10px 0 #0d0c0a; opacity: 0; }
+      .cap b { color: #ff7a3a; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="rooftop" data-start="0" data-duration="6" data-fps="30" data-width="1080" data-height="1920">
+      <canvas id="three"></canvas>
+      <div class="hook"><span class="l">Your <b>DM funnel</b></span><span class="l">is stuck in 2015</span></div>
+      <div class="cap" id="c0">You built your DM funnel in <b>2015</b>?</div>
+      <div class="cap" id="c1">Bro, it works.</div>
+      <div class="cap" id="c2">Into the <b>inbox void</b>.</div>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, pose as sPose } from "./assets/setty/setty.js";
+      import { createCoach, pose as cPose } from "./assets/coach/coach.js";
+      import { build } from "./assets/sets/rooftop.js";
+
+      const W = 1080, H = 1920;
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("three"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      const scene = new THREE.Scene();
+      const set = await build({ renderer, scene });
+      const coach = createCoach(), setty = createSetty();
+      scene.add(coach.root, setty.root);
+      const camera = new THREE.PerspectiveCamera(40, W / H, 0.5, 80);
+      const SHOTS = [
+        { shot: "wide", c: cPose("smug", { turn: 0.15 }), s: sPose("smug") },
+        { shot: "coach", c: cPose("hyped", { talk: 0.6, armLf: 0.9, elbowL: 1.4 }), s: sPose("eyeRoll") },
+        { shot: "setty", c: cPose("confused"), s: sPose("deadpan", { lookX: -0.7 }) },
+        // checks (not on the board): the chair from his right side, Setty on the table from the side, from above
+        { shot: "sideC", c: cPose("smug"), s: sPose("smug") },
+        { shot: "sideS", c: cPose("neutral"), s: sPose("mocking", { armRr: 2.2 }) },
+        { shot: "top", c: cPose("defeated"), s: sPose("shocked") },
+      ];
+      const look = (t, d, yaw, pitch, fov = 34) => ({ pos: [t.x + Math.sin(yaw) * Math.cos(pitch) * d, t.y + Math.sin(pitch) * d, t.z + Math.cos(yaw) * Math.cos(pitch) * d], at: [t.x, t.y, t.z], fov });
+      set.shots.sideC = look(new THREE.Vector3(-1.2, 1.8, -0.55), 9, -1.25, 0.12);
+      set.shots.sideS = look(new THREE.Vector3(1.65, 1.3, -1.1), 6.5, 1.25, 0.2);
+      set.shots.top = look(new THREE.Vector3(0.1, 1.2, -0.8), 11, 0.3, 0.95, 40);
+      function renderAt(t) {
+        const k = Math.min(5, Math.floor(t));
+        const S = SHOTS[k], sh = set.shots[S.shot];
+        coach.apply(Object.assign({}, S.c, set.coach, { turn: set.coach.turn + (S.c.turn || 0) }));
+        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0), armLr: S.s.armLr > 1 ? S.s.armLr : set.setty.armLr }));
+        camera.position.set(...sh.pos);
+        camera.lookAt(...sh.at);
+        camera.fov = sh.fov;
+        camera.updateProjectionMatrix();
+        renderer.render(scene, camera);
+        document.querySelector(".hook").style.opacity = k < 3 ? 1 : 0;
+        document.querySelectorAll(".cap").forEach((el, i) => (el.style.opacity = i === k && k < 3 ? 1 : 0));
+      }
+      renderAt(0);
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 6 });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.rooftop = tl;
+    </script>
+  </body>
+</html>
