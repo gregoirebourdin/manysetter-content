@@ -70,5 +70,11 @@
     "lufs": -14.1,
     "true_peak_dbtp": -2.3
   },
-  "statut": "validé par le fondateur le 20/10 (« Je valide les reels 8, 4, 6, 7 et 9 ») ; final 60 i/s avec la piste caméra, transmis à MANYSETTER POST"
+  "statut": "validé par le fondateur le 20/10 (« Je valide les reels 8, 4, 6, 7 et 9 ») ; final 60 i/s avec la piste caméra, transmis à MANYSETTER POST",
+  "programmation": {
+    "date": "2026-10-27 6:30 pm ET",
+    "instagram": "6ad7cf3b6ea9481384051b50 (shareToFeed, couverture = image 0 ; « AI info » ajoutée par le fondateur dans l'appli après publication)",
+    "youtube": "6ad7cf456ea9481384051b89 (Short, containsSyntheticMedia true)",
+    "carrousel_associe": "261019_CAR_S1_AV1_dm-funnel-2015, même jour à 12:00 pm ET"
+  }
 }
