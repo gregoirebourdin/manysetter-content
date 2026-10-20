@@ -82,8 +82,15 @@ Le reel utilise deux cartes du kit ajoutées par les autres sessions : `st.igDM`
 (pas encore commitée quand j'ai rendu). Si `st.igDMs` change avant le 60 i/s, il faudra regarder ses deux passages
 (12 à 16 s et 26 à 28 s).
 
+## Final 60 i/s (validé le 20/10)
+
+Rendu avec la piste caméra du moteur (`"cam_track": true`), seule différence avec le 30 i/s validé. Vérifié image par
+image sur le MP4 : l'accroche ne recule plus (plan serré stable de 0,6 à 1,6 s), la coupe sur la pizza tient environ 1 s,
+la coupe sur le ring light environ 1,3 s, et les trois réactions « Fahhh » tombent sur le bon visage. QA : 1080×1920,
+60 i/s, 57,1 s, -14,2 LUFS, crête -2,0 dBTP.
+
 ## Ce qui t'attend
 
-- Ton feu vert sur ce rendu, puis le final en 60 i/s et la passation à MANYSETTER POST.
+- La programmation par MANYSETTER POST, avec son carrousel, le même jour (reel à 6:30 pm ET).
 - L'étiquette « AI info » à ajouter dans l'appli après publication, comme pour les reels 2 et 3.
 - Rien n'est programmé sans ton go.

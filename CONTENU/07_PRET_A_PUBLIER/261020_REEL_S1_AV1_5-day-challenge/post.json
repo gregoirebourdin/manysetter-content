@@ -68,5 +68,5 @@
     "lufs": -14.2,
     "true_peak_dbtp": -2.0
   },
-  "statut": "script v1 validé le 20/10 avec les 8 scripts ; rendu 30 i/s à valider (pas de 60 i/s avant la validation de Grégoire)"
+  "statut": "validé par le fondateur le 20/10 (30 i/s) ; final 60 i/s avec la piste caméra (cam_track), transmis à MANYSETTER POST"
 }

@@ -12,6 +12,7 @@
   58.0
  ],
  "tail_s": 2.4,
+ "cam_track": true,
  "id": "reel6",
  "slug": "5-day-challenge",
  "title": "The 5-day challenge",
@@ -56,7 +57,7 @@
  ],
  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
  "caption": "Comment \"SETTY\" and he'll send you everything to build your AI setter for free, for your challenge DMs. Follow so the DM lands 📩\n\n👇 READ BELOW: what really breaks on day 6 of a 5-day challenge.\n\n1. On day 5 you pitch the offer live, and on day 6 your DMs explode: \"is it still open?\", \"can I pay in two parts?\".\n\n2. You answer twenty, the rest wait, and the people who showed up five days straight end up on read.\n\n3. You're fried, so next month you blame the challenge. But the challenge worked: what's outdated is answering every DM by hand.\n\n4. Setty is the AI setter I built for coaches: plugged into Manychat, he learns your offer from your sales page, answers in your voice, qualifies one question at a time, and only the serious ones get your calendar.\n\nThe catch: Setty isn't free once he's live. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#5daychallenge #onlinecoach #aisetter\n\nManySetter is not affiliated with or endorsed by Instagram, Calendly, Manychat or Meta.",
- "statut": "script v1 validé le 20/10 avec les 8 scripts ; rendu 30 i/s à valider (pas de 60 i/s avant la validation de Grégoire)",
+ "statut": "validé par le fondateur le 20/10 (30 i/s) ; final 60 i/s avec la piste caméra (cam_track), transmis à MANYSETTER POST",
  "created": "2026-10-20",
  "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
  "sources": [
