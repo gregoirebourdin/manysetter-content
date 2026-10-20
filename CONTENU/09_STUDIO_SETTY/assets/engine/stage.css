@@ -413,3 +413,52 @@
 .dm-sep { align-self: center; font: 700 42px/1 Inter, sans-serif; color: #737373; padding: 6px 0 2px; opacity: 0; }
 .dm-stamp { position: absolute; left: 50%; top: 58%; padding: 14px 46px 18px; border: 12px solid #e11d48; border-radius: 26px; color: #e11d48;
   background: rgba(255, 255, 255, 0.82); font: 900 128px/1 Inter, sans-serif; letter-spacing: 0.06em; opacity: 0; white-space: nowrap; }
+
+/* Instagram comments in big type (st.igComments, the sets' card) */
+.igc { height: 760px; }
+.igc-head { height: 136px; display: flex; align-items: center; gap: 22px; padding: 0 40px; border-bottom: 2px solid #efefef; }
+.igc-head .s-app { --s: 76px; }
+.igc-head b { font-size: 60px; letter-spacing: -0.03em; color: #0c0c0d; }
+.igc-n { margin-left: auto; display: inline-flex; align-items: center; gap: 12px; font: 800 52px/1 Inter, sans-serif; color: #0c0c0d;
+  font-variant-numeric: tabular-nums; }
+.igc-n svg.i { width: 56px; height: 56px; }
+.igc-n i { font-style: normal; }
+.igc-list { position: absolute; left: 0; right: 0; top: 136px; bottom: 120px; overflow: hidden; }
+.igc-row { position: absolute; left: 0; right: 0; top: 0; height: 132px; display: flex; align-items: center; gap: 26px; padding: 0 40px; opacity: 0; background: #fff; }
+.igc-row .s-av { width: 96px; height: 96px; font-size: 36px; }
+.igc-row .t { flex: 1; min-width: 0; }
+.igc-row .u { font: 800 40px/1.15 Inter, sans-serif; color: #0c0c0d; letter-spacing: -0.02em; }
+.igc-row .u span { font-weight: 600; color: #8e8e8e; }
+.igc-row .m { font: 600 50px/1.2 Inter, sans-serif; color: #0c0c0d; white-space: nowrap; overflow: hidden; letter-spacing: -0.02em; }
+.igc-row .m b { font-weight: 900; }
+.igc-row > svg.i { width: 44px; height: 44px; color: #8e8e8e; }
+.igc-sent { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; display: flex; align-items: center; justify-content: center;
+  border-top: 2px solid #efefef; background: #fff; }
+.igc-sent .s-pill { font-size: 46px; padding: 16px 32px; gap: 14px; opacity: 0; font-variant-numeric: tabular-nums; }
+.igc-sent .s-pill i { font-style: normal; }
+.igc-sent .s-pill svg.i { width: 46px; height: 46px; }
+
+/* a Manychat flow (st.mcFlow, the sets' card): nodes on a dotted canvas, what ManySetter adds rings in orange */
+.mcf { background: #f4f5f7; }
+.mcf-head { height: 124px; display: flex; align-items: center; gap: 22px; padding: 0 40px; background: #fff; border-bottom: 2px solid #e6e8ec; }
+.mcf-head b { font: 800 48px/1.1 Inter, sans-serif; letter-spacing: -0.03em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mcf-tag { flex: none; padding: 12px 22px; border-radius: 16px; background: #17171a; color: #fff; font: 800 36px/1 Inter, sans-serif; letter-spacing: -0.02em; }
+.mcf-canvas { padding: 34px 40px 40px; background-image: radial-gradient(#cfd3da 3px, transparent 3.5px); background-size: 34px 34px; }
+.mcf-row { display: flex; align-items: center; }
+.mcf-row.two .mcf-node { flex: 1; min-width: 0; }
+.mcf-node { display: flex; align-items: center; gap: 24px; padding: 22px 28px; border-radius: 30px; background: #fff; flex: 1 1 0; min-width: 0;
+  box-shadow: 0 0 0 3px #e2e5ea, 0 18px 30px -18px rgba(0, 0, 0, 0.35); }
+.mcf-node.add { background: #fff7f2; box-shadow: 0 0 0 6px #ff611d; opacity: 0; }
+.mcf-ic { width: 92px; height: 92px; border-radius: 24px; background: #17171a; color: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
+.mcf-ic svg.i { width: 54px; height: 54px; }
+.mcf-ic .s-app { --s: 92px; }
+.mcf-node .t { min-width: 0; }
+.mcf-node .x { font: 800 46px/1.08 Inter, sans-serif; letter-spacing: -0.03em; color: #121110; }
+.mcf-node .s { font: 600 34px/1.2 Inter, sans-serif; color: #737373; margin-top: 6px; letter-spacing: -0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mcf-row.two .mcf-node .x { font-size: 40px; }
+.mcf-down { width: 8px; height: 46px; margin: 6px 0 6px 72px; border-radius: 4px; background: #b7bcc5; transform-origin: 50% 0; position: relative; }
+.mcf-down::after { content: ""; position: absolute; left: -10px; bottom: -8px; border: 14px solid transparent; border-top-color: #b7bcc5; border-bottom: 0; }
+.mcf-down.add, .mcf-down.add::after { background: #ff611d; }
+.mcf-down.add::after { background: none; border-top-color: #ff611d; }
+.mcf-right { flex: none; width: 70px; height: 8px; margin: 0 6px; border-radius: 4px; background: #ff611d; position: relative; transform-origin: 0 50%; }
+.mcf-right::after { content: ""; position: absolute; right: -12px; top: -10px; border: 14px solid transparent; border-left-color: #ff611d; border-right: 0; }

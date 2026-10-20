@@ -361,3 +361,54 @@ export function igDM(R, { id = "dm", at, out, user, color = "#d6249f", status = 
     R.tl.fromTo(`#${id}-x`, { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.4)" }, stamp.at);
   }
 }
+
+// ---------------------------------------------------------------- Instagram comments, Manychat flow (3D sets)
+
+/** The comments under an Instagram post, big type (the sets' card): comments arrive on top (the keyword in bold), the
+ *  count runs in the header; an optional pill at the bottom counts what the automation sent ("400 guides sent").
+ *  rows: [{ u, c, text, time }] in arrival order, times: arrival of each row, count: { from, to, t0, t1 },
+ *  sent: { from, to, t0, t1, text, at } (the pill pops at `at`, its number runs from t0 to t1). */
+export function igComments(R, { id = "cmts", at, out, title = "Comments", rows, times, count, sent }) {
+  const list = rows.map((r, k) => `<div class="igc-row" id="${id}-r${k}"><span class="s-av" style="background: ${r.c}">${initials(r.u)}</span>` +
+    `<div class="t"><div class="u">${r.u}<span> ${r.time || "now"}</span></div><div class="m">${r.text}</div></div>${icon(R, "heart")}</div>`).join("");
+  mount(R, id, "s-card igc", `<div class="igc-head">${app("instagram", 76)}<b>${title}</b>` +
+    `<span class="igc-n">${icon(R, "message-circle")}<i id="${id}-n">${count ? count.from : rows.length}</i></span></div>` +
+    `<div class="igc-list">${list}</div>` +
+    (sent ? `<div class="igc-sent"><span class="s-pill tone-green" id="${id}-s">${icon(R, "send")}<i id="${id}-sn">${sent.from}</i>${sent.text}</span></div>` : ""), { h: 760 });
+  inOut(R, id, at, out);
+  stackIn(R, rows.map((_, k) => document.getElementById(`${id}-r${k}`)), times, 132);
+  if (count) counter(R, document.getElementById(`${id}-n`), count);
+  if (sent) {
+    popIn(R, `#${id}-s`, sent.at, { scale: 0.4 });
+    counter(R, document.getElementById(`${id}-sn`), sent);
+  }
+}
+
+/** A Manychat flow, the way the coach built it (the sets' card): a header with the flow's name (Manychat written out,
+ *  never its logo), then rows of nodes joined by arrows; a row holds one node or two side by side. A node with `add`
+ *  pops in at that time with an orange ring (what ManySetter adds: "Start conversation", "Continue conversation").
+ *  rows: [[{ app | icon, title, sub, add }], [{…}, {…}]]. */
+export function mcFlow(R, { id = "mcflow", at, out, title, rows }) {
+  const node = (n, k) => `<div class="mcf-node${n.add != null ? " add" : ""}" id="${id}-n${k}">` +
+    `<span class="mcf-ic">${n.app ? app(n.app, 92) : icon(R, n.icon || "zap")}</span>` +
+    `<div class="t"><div class="x">${n.title}</div>${n.sub ? `<div class="s">${n.sub}</div>` : ""}</div></div>`;
+  let k = 0;
+  const added = [];
+  const html = rows.map((row, j) => {
+    const cells = row.map((n) => { if (n.add != null) added.push([k, n.add]); return node(n, k++); });
+    const arrowDown = j ? `<div class="mcf-down${row.some((n) => n.add != null) && row.length === 1 ? " add" : ""}" id="${id}-a${j}"></div>` : "";
+    return arrowDown + `<div class="mcf-row${row.length > 1 ? " two" : ""}">${cells.join(`<div class="mcf-right" id="${id}-h${j}"></div>`)}</div>`;
+  }).join("");
+  mount(R, id, "s-card mcf", `<div class="mcf-head"><span class="mcf-tag">Manychat</span><b>${title}</b></div><div class="mcf-canvas">${html}</div>`);
+  inOut(R, id, at, out);
+  added.forEach(([n, t]) => {
+    popIn(R, `#${id}-n${n}`, t, { scale: 0.3 }, 0.3);
+    R.tl.fromTo(`#${id}-n${n}`, { boxShadow: "0 0 0 6px #ff611d, 0 0 0 30px rgba(255, 97, 29, 0.35)" },
+      { boxShadow: "0 0 0 6px #ff611d, 0 0 0 0px rgba(255, 97, 29, 0)", duration: 0.6, ease: "power2.out", immediateRender: false }, t + 0.1);
+  });
+  rows.forEach((row, j) => { // an arrow into a row of added nodes draws itself just before them
+    const t = row.find((n) => n.add != null)?.add;
+    if (j && t != null && row.length === 1) R.tl.fromTo(`#${id}-a${j}`, { scaleY: 0 }, { scaleY: 1, duration: 0.18, ease: "power2.out", immediateRender: true }, t - 0.16);
+    if (row.length > 1 && row[1].add != null) R.tl.fromTo(`#${id}-h${j}`, { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: "power2.out", immediateRender: true }, row[1].add - 0.16);
+  });
+}
