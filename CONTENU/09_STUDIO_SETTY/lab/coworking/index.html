@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+                     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/" } }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0c0f17; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #three { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      /* the kit's hook title (stage.css) and its fitting (props.js hookTitle): each line fills the width, 120 px at most */
+      .hook { position: absolute; left: 20px; right: 20px; top: 250px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .hook .l { display: inline-block; background: #fff; color: #121110; font: 800 58px/1.08 Inter, sans-serif; letter-spacing: -0.035em;
+        padding: 0.14em 0.36em 0.2em; border-radius: 0.36em; box-shadow: 0 22px 46px -18px rgba(0, 0, 0, 0.8); white-space: nowrap; }
+      .hook .l b { color: #ff611d; font-weight: 800; }
+      .cap { position: absolute; left: 80px; right: 80px; top: 1185px; text-align: center; font: 600 108px/1.04 Nohemi, sans-serif;
+        letter-spacing: -0.045em; color: #fff; -webkit-text-stroke: 14px #0d0c0a; paint-order: stroke fill; text-shadow: 0 10px 0 #0d0c0a; opacity: 0; }
+      .cap b { color: #ff7a3a; font-weight: 600; }
+      /* where a card sits (dialogue.js side(): the stage box at 55 %, left or right) */
+      .card { position: absolute; top: 565px; width: 594px; height: 330px; border: 6px dashed rgba(255, 255, 255, 0.85); border-radius: 28px;
+        background: rgba(255, 255, 255, 0.12); opacity: 0; }
+      .card.L { left: -19px; } .card.R { left: 505px; }
+      .tag { position: absolute; left: 24px; bottom: 24px; font: 700 34px Inter, sans-serif; color: #fff; background: #000a; padding: 6px 14px; border-radius: 10px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="coworking" data-start="0" data-duration="16" data-fps="30" data-width="1080" data-height="1920">
+      <canvas id="three"></canvas>
+      <div class="hook" id="hook3"><span class="l">If <b>9 out of 10</b> leads</span><span class="l">ghost after you send</span><span class="l">your price, this is why</span></div>
+      <div class="hook" id="hook2"><span class="l">If <b>9 out of 10</b> leads ghost after</span><span class="l">you send your price, this is why</span></div>
+      <div class="card L" id="cardL"></div>
+      <div class="card R" id="cardR"></div>
+      <div class="cap" id="c0">You sent your <b>#@!%</b> price in the DM, right?</div>
+      <div class="cap" id="c1">You sent your <b>#@!%</b> price in the DM, right?</div>
+      <div class="cap" id="c2">He asked how much. <b>$1,500</b>, 12 weeks.</div>
+      <div class="cap" id="c3">And he said?</div>
+      <div class="cap" id="c4">Left me on <b>Seen</b> since Tuesday.</div>
+      <div class="cap" id="c5">I hate people wasting my <b>damn</b> time.</div>
+      <div class="cap" id="c6">Give the price, plus <b>one question</b>.</div>
+      <div class="cap" id="c7">Chasing comes off <b>desperate</b>.</div>
+      <div class="cap" id="c8">Plug me into <b>Manychat</b>.</div>
+      <div class="cap" id="c9">The lights are on a <b>motion sensor</b>, bro.</div>
+      <div class="cap" id="c10">You haven't moved since <b>#@!%</b> Tuesday.</div>
+      <div class="tag" id="tag"></div>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, pose as sPose } from "./assets/setty/setty.js";
+      import { createCoach, pose as cPose } from "./assets/coach/coach.js";
+      import { build } from "./assets/sets/coworking.js";
+      import { shot as frameShot } from "./assets/sets/kit.js";
+
+      await Promise.all([document.fonts.load('600 100px "Nohemi"'), document.fonts.load('800 40px "Inter"'), document.fonts.load('italic 700 40px "Inter"')]);
+      await document.fonts.ready;
+      document.querySelectorAll(".hook .l").forEach((el) => { // props.js hookTitle(): fit each line, 120 px at most
+        el.style.fontSize = "100px";
+        el.style.fontSize = `${Math.min(120, Math.floor((100 * 1020) / el.offsetWidth))}px`;
+      });
+
+      const W = 1080, H = 1920;
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("three"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      const scene = new THREE.Scene();
+      const set = await build({ renderer, scene });
+      const coach = createCoach(), setty = createSetty();
+      scene.add(coach.root, setty.root);
+      const camera = new THREE.PerspectiveCamera(40, W / H, 0.1, 100);
+      const KEY = set.key.intensity;
+      const CARD_L = { x: 800, dist: 15 }, CARD_R = { x: 310, dist: 17.5, y: 860 }; // dialogue.js
+      const SHOTS = [
+        { tag: "wide, 3-line title", shot: "wide", hook: 3, c: cPose("hyped", { turn: 0.15 }), s: sPose("smug") },
+        { tag: "wide, 2-line title", shot: "wide", hook: 2, c: cPose("smug"), s: sPose("smug") },
+        { tag: "coach, pushed in (dist × 0.8)", shot: "coach", o: { dist: 9.6 }, hook: 3, c: cPose("proud", { talk: 0.6, armRf: 0.9, elbowR: 1.4 }), s: sPose("deadpan") },
+        { tag: "setty, pushed in (dist × 0.8)", shot: "setty", o: { dist: 9.2 }, hook: 3, c: cPose("confused"), s: sPose("deadpan", { lookX: -0.7 }) },
+        { tag: "laptop insert", shot: "laptop", hook: 3, c: cPose("defeated"), s: sPose("smug") },
+        { tag: "coach + card left (CARD_L)", shot: "coach", o: CARD_L, card: "L", hook: 3, c: cPose("annoyed", { talk: 0.5, armRf: 1.0, elbowR: 1.2 }), s: sPose("sideEye") },
+        { tag: "setty + card right (CARD_R)", shot: "setty", o: CARD_R, card: "R", hook: 3, c: cPose("skeptical"), s: sPose("proud") },
+        { tag: "coach + card right (CARD_R)", shot: "coach", o: CARD_R, card: "R", hook: 3, c: cPose("stressed"), s: sPose("smug") },
+        { tag: "setty + card left (CARD_L), push 0.9", shot: "setty", o: { ...CARD_L, dist: 13.5 }, card: "L", hook: 3, c: cPose("skeptical"), s: sPose("smug") },
+        { tag: "wide, lights off (power 0, key 0.1)", shot: "wide", hook: 3, power: 0, key: 0.1, c: cPose("shocked"), s: sPose("mocking") },
+        { tag: "wide, power 0.5 (two pendants off)", shot: "wide", hook: 3, power: 0.5, key: 0.7, c: cPose("panic"), s: sPose("laughing") },
+        // QA views (not in the reel): every piece from the sides, from above, low, behind; no clipping
+        { tag: "QA left", cam: { pos: [-7.5, 3.0, 3.0], at: [-1.0, 1.6, -1.3], fov: 42 }, c: cPose("annoyed", { talk: 0.5, armRf: 1.0, elbowR: 1.2, armLf: 0.6 }), s: sPose("mocking") },
+        { tag: "QA right", cam: { pos: [7.5, 3.4, 2.0], at: [0.0, 1.8, -1.4], fov: 42 }, c: cPose("panic"), s: sPose("laughing") },
+        { tag: "QA top", cam: { pos: [0.2, 11, 2.2], at: [0.0, 1.2, -1.4], fov: 44 }, c: cPose("pleading"), s: sPose("sideEye") },
+        { tag: "QA low, the coach's seat", cam: { pos: [-0.4, 1.2, 3.6], at: [-1.6, 1.2, -1.2], fov: 42 }, c: cPose("deadpan"), s: sPose("smug") },
+        { tag: "QA from the glass wall", cam: { pos: [3.2, 4.2, -2.9], at: [-1.2, 2.2, -0.6], fov: 50 }, c: cPose("thinking"), s: sPose("smug") },
+      ];
+      const CAPS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 9];
+      function renderAt(t) {
+        const k = Math.min(SHOTS.length - 1, Math.floor(t));
+        const S = SHOTS[k];
+        coach.apply(Object.assign({}, S.c, set.coach, { turn: set.coach.turn + (S.c.turn || 0) }));
+        setty.apply(Object.assign({}, S.s, set.setty, { turn: set.setty.turn + (S.s.turn || 0) }));
+        set.power(S.power ?? 1);
+        set.key.intensity = KEY * (S.key ?? 1);
+        // aim the close-ups like the engine does: at the real (posed, seated) heads
+        scene.updateMatrixWorld(true);
+        const v3 = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
+        const P = set.setty;
+        const tgt = { coach: coach.head.getWorldPosition(v3()).add(v3(0, 0.18, 0)),
+          setty: v3(P.x, P.y + 1.7 * (P.scale ?? 1) + 0.04, P.z), laptop: set.heads.laptop };
+        const f = set.frames[S.shot];
+        const cam = S.cam || (f ? frameShot(tgt[S.shot], { ...f, ...(S.o || {}) }) : set.shots[S.shot]);
+        camera.position.set(...cam.pos);
+        camera.lookAt(...cam.at);
+        camera.fov = cam.fov;
+        camera.updateProjectionMatrix();
+        renderer.render(scene, camera);
+        document.querySelectorAll(".cap").forEach((el) => (el.style.opacity = 0));
+        const ci = CAPS[k];
+        if (!S.cam && ci != null) document.getElementById(`c${ci}`).style.opacity = 1;
+        document.getElementById("hook3").style.opacity = !S.cam && S.hook === 3 ? 1 : 0;
+        document.getElementById("hook2").style.opacity = !S.cam && S.hook === 2 ? 1 : 0;
+        document.getElementById("cardL").style.opacity = S.card === "L" ? 1 : 0;
+        document.getElementById("cardR").style.opacity = S.card === "R" ? 1 : 0;
+        document.getElementById("tag").textContent = `${k + 1}. ${S.tag}`;
+      }
+      renderAt(0);
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 16 });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.coworking = tl;
+    </script>
+  </body>
+</html>

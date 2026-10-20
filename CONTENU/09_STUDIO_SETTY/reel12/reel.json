@@ -1,0 +1,50 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "coworking",
+ "mood": "night",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  46.0,
+  57.5
+ ],
+ "tail_s": 2.4,
+ "id": "reel12",
+ "slug": "price-ghost",
+ "title": "The price ghost",
+ "pub_id": "261021_REEL_S1_AV1_price-ghost",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Setty, on a felt pouf in an empty coworking at night, to the coach alone at the long table: You sent your [bleep]ing price in the DM, right?",
+ "hook_title": [
+  "If *9 out of 10* leads",
+  "ghost after you send",
+  "your price, this is why"
+ ],
+ "biais": [
+  "chiffre très précis (9 sur 10, la situation du lecteur)",
+  "pertinence pour soi (son « how much? » de la semaine)",
+  "contre-pied (« it's not your price »)"
+ ],
+ "verbatims": [
+  "rd13",
+  "rd91",
+  "rd88",
+  "rd87",
+  "rd20",
+  "cl030",
+  "rd86",
+  "rd48",
+  "rd84"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script à valider",
+ "created": "2026-10-21"
+}

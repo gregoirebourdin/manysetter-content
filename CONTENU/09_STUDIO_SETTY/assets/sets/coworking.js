@@ -6,6 +6,8 @@
 // The gag: the lights are on a motion sensor. power(v) (1 = on, 0 = off) turns the pendants off one by one, from the far
 // end of the table to the coach, and dims the room fill; the laptop, the neon, the booth and the city stay on. Dim the
 // engine's key at the same time (K(t, d, { light: { key } })): the key is reset from LIGHT every frame.
+// Framings: the 3-line hook title ends at ~710 px, so the close-ups sit lower than in the other sets (coach y 850,
+// Setty y 1000 at dist 11.5): the beanie and Setty's top stay under the title, even with the 0.8 push.
 // build() adds the room and its lights to the scene and returns where the characters go and the camera shots.
 import * as THREE from "three";
 import * as K from "./kit.js";
@@ -14,14 +16,14 @@ const BACK = -3.4;
 const TABLE_H = 1.45;
 const TABLE = { x: 1.85, z: -1.65, l: 5.6, d: 1.6 };
 const COACH = { x: -1.75, y: -0.46, z: -1.3, turn: 0.85 };
-const SETTY = { x: 1.45, y: 0.97, z: -0.1, turn: -0.55, scale: 0.62 };
+const SETTY = { x: 1.45, y: 1.2, z: -0.1, turn: -0.55, scale: 0.62 };
 const steel = () => K.mat(0x16171a, { roughness: 0.35, metalness: 0.7 });
 const oak = () => K.mat(0xc49a6c, { roughness: 0.45, clearcoat: 0.3 });
 
 // ---------------------------------------------------------------- textures and painters
 
 /** polished concrete: soft trowel clouds, specks, a saw-cut joint on the tile edge (gradients only, no ctx.filter) */
-function concreteTex({ base = "#77777a", seed = 19 } = {}) {
+function concreteTex({ base = "#5f5f64", seed = 19 } = {}) {
   const R = K.rng(seed);
   return K.canvasTex(1024, 1024, (c, W, H) => {
     c.fillStyle = base;
@@ -324,7 +326,7 @@ function shellChair({ seat = 0.62, color = 0xe7e3dc, seed = 41 } = {}) {
 }
 
 /** Setty's seat: a big felt cube pouf, a leather pull tab */
-function pouf({ s = 1.2, h = 1.2, color = 0x5b626d } = {}) {
+function pouf({ s = 1.25, h = 1.42, color = 0x5b626d } = {}) {
   const g = new THREE.Group();
   const felt = K.mat(color, { roughness: 0.95, sheen: 0.7, sheenColor: new THREE.Color(0xb9c2cf), sheenRoughness: 0.6 });
   const b = K.soft(s, h, s, felt, { P: 3.4, puff: 0.1, wrinkle: 0.01, seed: 51 });
@@ -488,13 +490,13 @@ function neonLines(lines, { color = "#ff5a1f", w = 2.4, h = 1.3, font = "italic 
 export async function build({ renderer, scene, mood = "night" }) {
   const { RoomEnvironment } = await import("three/addons/environments/RoomEnvironment.js");
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  scene.environmentIntensity = 0.3;
+  scene.environmentIntensity = 0.26;
   scene.background = new THREE.Color(0x0c0f17);
   void mood;
 
@@ -518,9 +520,9 @@ export async function build({ renderer, scene, mood = "night" }) {
   const neonWash = K.wallGlow({ w: 4.4, h: 3.0, color: "#ff5a1f", strength: 0.42 });
   K.at(neonWash, -1.35, 5.35, BACK + 0.12);
   const board = whiteboard({ w: 2.2, h: 1.5, draw: planBoard });
-  K.at(board, -1.05, 0, -2.95, 0.06);
-  const plantL = K.plant({ h: 3.3, n: 11, seed: 71, pot: 0x2b2d33 });
-  K.at(plantL, 0.45, 0, -2.85);
+  K.at(board, -0.35, 0, -3.0, 0.04);
+  const plantL = K.plant({ h: 3.0, n: 11, seed: 71, pot: 0x2b2d33 });
+  K.at(plantL, -2.75, 0, -3.0);
   const booth = phoneBooth();
   K.at(booth, -3.75, 0, -2.25, 0.32);
   set.add(neon, neonWash, board, plantL, booth);
@@ -531,12 +533,12 @@ export async function build({ renderer, scene, mood = "night" }) {
   const chair = shellChair({ color: 0x1e1f23, seed: 45 }); // his: dark, so his white tank top reads
   K.at(chair, COACH.x, 0, COACH.z, COACH.turn);
   const lap = laptop({ screen: dmScreen() });
-  K.at(lap, -0.45, TABLE_H, -1.42, -1.25);
+  K.at(lap, -0.45, TABLE_H, -1.42, -0.95);
   lap.scale.setScalar(0.9);
   const mug = K.mug(0x23252a, 0xff611d);
-  K.at(mug, -0.55, TABLE_H, -0.98, 0.4);
+  K.at(mug, 0.35, TABLE_H, -1.05, 0.4);
   const can = K.can(0xeceff3, 0x3d8bff);
-  K.at(can, -0.2, TABLE_H, -2.05);
+  K.at(can, 0.15, TABLE_H, -2.1);
   set.add(table, chair, lap, mug, can);
   const others = [[0.75, 0xe7e3dc], [2.15, 0xb9c0c9], [3.55, 0xe7e3dc]];
   others.forEach(([x, col], k) => {
@@ -569,7 +571,7 @@ export async function build({ renderer, scene, mood = "night" }) {
   const PEND_X = [-0.25, 1.15, 2.55, 3.95];
   const pendants = PEND_X.map((x) => {
     const p = K.pendant({ cord: 5 });
-    K.at(p, x, 6.75, TABLE.z);
+    K.at(p, x, 6.2, TABLE.z);
     set.add(p);
     return p;
   });
@@ -579,7 +581,7 @@ export async function build({ renderer, scene, mood = "night" }) {
   // ---- lights: night. The pendants are the warm practicals (and justify the engine's soft key on the faces), the
   // city is the cool rim from behind (it casts the shadows), the laptop lights his face blue, the neon and the booth
   // add warm accents on the left.
-  const hemi = new THREE.HemisphereLight(0xa9bce6, 0x1b1916, 0.62);
+  const hemi = new THREE.HemisphereLight(0xa9bce6, 0x1b1916, 0.5);
   set.add(hemi);
   const key = new THREE.DirectionalLight(0xffe7cf, 1.3);
   key.position.set(-3, 9, 9);
@@ -599,7 +601,7 @@ export async function build({ renderer, scene, mood = "night" }) {
     set.add(l);
     return l;
   };
-  const pend = PEND_X.map((x) => pl(0xffd7a0, 4.6, x, 6.1, TABLE.z, 6.5));
+  const pend = PEND_X.map((x) => pl(0xffd7a0, 5.6, x, 5.6, TABLE.z, 6.5));
   const lights = {
     pend,
     screen: pl(0x9fbcff, 1.8, -0.85, 2.25, -1.2, 2.6),
@@ -607,7 +609,7 @@ export async function build({ renderer, scene, mood = "night" }) {
     booth: pl(0xffd9a8, 2.6, -3.75, 3.9, -2.25, 3.2),
     window: pl(0x7d9cff, 3.0, 3.0, 3.5, BACK + 1.2, 7),
   };
-  const PEND_I = pend.map((l) => l.intensity), HEMI_I = hemi.intensity;
+  const PEND_I = pend.map((l) => l.intensity), HEMI_I = hemi.intensity, ENV_I = scene.environmentIntensity;
   /** the motion sensor: v 1 = all on, 0 = all off; the pendants go off one by one from the far end to the coach */
   const power = (v) => {
     const n = pend.length;
@@ -619,7 +621,8 @@ export async function build({ renderer, scene, mood = "night" }) {
       bulbs[k].material.color.copy(bulbColor[k]).multiplyScalar(0.06 + 0.94 * lv);
       sum += lv;
     }
-    hemi.intensity = HEMI_I * (0.3 + (0.7 * sum) / n);
+    hemi.intensity = HEMI_I * (0.12 + (0.88 * sum) / n);
+    scene.environmentIntensity = ENV_I * (0.15 + (0.85 * sum) / n);
   };
 
   // the laptop screen, in the world: the insert shot looks at it
@@ -635,15 +638,15 @@ export async function build({ renderer, scene, mood = "night" }) {
     setty: { x: SETTY.x, y: SETTY.y, z: SETTY.z, turn: SETTY.turn, scale: SETTY.scale },
     heads: { coach: coachHead, setty: settyFace, laptop: screenAt },
     frames: {
-      coach: { target: coachHead, dist: 12, yaw: 0.5, y: 740 },
-      setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 },
-      laptop: { target: screenAt, dist: 3.6, yaw: -0.7, pitch: 0.22, y: 820 },
+      coach: { target: coachHead, dist: 12, yaw: 0.5, y: 850 },
+      setty: { target: settyFace, dist: 11.5, yaw: -0.32, pitch: 0.06, y: 1000 },
+      laptop: { target: screenAt, dist: 3.3, yaw: -0.55, pitch: 0.22, y: 1000 },
     },
     shots: {
-      wide: { pos: [-0.15, 3.9, 13.2], at: [-0.15, 2.4, -1.4], fov: 44 },
-      coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
-      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 }),
-      laptop: K.shot(screenAt, { dist: 3.6, yaw: -0.7, pitch: 0.22, y: 820 }),
+      wide: { pos: [-0.15, 4.4, 12.6], at: [-0.15, 3.05, -1.4], fov: 44 },
+      coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 850 }),
+      setty: K.shot(settyFace, { dist: 11.5, yaw: -0.32, pitch: 0.06, y: 1000 }),
+      laptop: K.shot(screenAt, { dist: 3.3, yaw: -0.55, pitch: 0.22, y: 1000 }),
     },
   };
 }
