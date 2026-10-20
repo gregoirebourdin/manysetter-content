@@ -414,6 +414,24 @@
 .dm-stamp { position: absolute; left: 50%; top: 58%; padding: 14px 46px 18px; border: 12px solid #e11d48; border-radius: 26px; color: #e11d48;
   background: rgba(255, 255, 255, 0.82); font: 900 128px/1 Inter, sans-serif; letter-spacing: 0.06em; opacity: 0; white-space: nowrap; }
 
+/* Instagram DMs in big type (st.igDMs, the sets' card) */
+.igd { height: 760px; }
+.igd-head { height: 136px; display: flex; align-items: center; gap: 22px; padding: 0 40px; border-bottom: 2px solid #efefef; }
+.igd-head .s-app { --s: 76px; }
+.igd-head b { font-size: 60px; letter-spacing: -0.03em; color: #0c0c0d; }
+.igd-n { margin-left: auto; display: inline-flex; align-items: center; gap: 14px; font: 700 38px/1 Inter, sans-serif; color: #0095f6; }
+.igd-n i { font-style: normal; min-width: 64px; height: 56px; padding: 0 16px; border-radius: 28px; background: #ff3040; color: #fff;
+  display: inline-flex; align-items: center; justify-content: center; font: 800 36px/1 Inter, sans-serif; font-variant-numeric: tabular-nums; }
+.igd-list { position: absolute; left: 0; right: 0; top: 136px; bottom: 0; overflow: hidden; }
+.igd-row { position: absolute; left: 0; right: 0; top: 0; height: 132px; display: flex; align-items: center; gap: 26px; padding: 0 40px; opacity: 0; background: #fff; }
+.igd-row .s-av { width: 100px; height: 100px; font-size: 38px; box-shadow: 0 0 0 5px #fff, 0 0 0 9px #d6249f; }
+.igd-row .t { flex: 1; min-width: 0; }
+.igd-row .u { font: 800 50px/1.15 Inter, sans-serif; color: #0c0c0d; letter-spacing: -0.02em; }
+.igd-row .m { font: 500 42px/1.3 Inter, sans-serif; color: #0c0c0d; white-space: nowrap; overflow: hidden; letter-spacing: -0.015em; }
+.igd-row .m b { font-weight: 800; }
+.igd-row .m span { color: #737373; }
+.igd-row .dot { width: 26px; height: 26px; border-radius: 50%; background: #0095f6; flex: none; }
+
 /* Instagram comments in big type (st.igComments, the sets' card) */
 .igc { height: 760px; }
 .igc-head { height: 136px; display: flex; align-items: center; gap: 22px; padding: 0 40px; border-bottom: 2px solid #efefef; }

@@ -325,6 +325,18 @@ export function docQuote(R, { id = "doc", at, out, source, sub, appSlug, srcIcon
   marks.forEach((m, k) => R.tl.fromTo(`#${id}-m${k}`, { backgroundSize: "0% 100%" }, { backgroundSize: "100% 100%", duration: 0.35, ease: "power2.out", immediateRender: true }, m.at));
 }
 
+/** Instagram DMs in big type (the sets' card, like waChats): rows arrive on top with the blue unread dot, the unread
+ *  count runs in the header. rows: [{ u, m, c, time }] in arrival order, times: arrival of each row, unread: { from, to, t0, t1 }. */
+export function igDMs(R, { id = "igdms", at, out, title = "Messages", rows, times, unread }) {
+  const list = rows.map((r, k) => `<div class="igd-row" id="${id}-r${k}"><span class="s-av" style="background: ${r.c}">${initials(r.u)}</span>` +
+    `<div class="t"><div class="u">${r.u}</div><div class="m"><b>${r.m}</b><span> · ${r.time || "now"}</span></div></div><i class="dot"></i></div>`).join("");
+  mount(R, id, "s-card igd", `<div class="igd-head">${app("instagram", 76)}<b>${title}</b>` +
+    `<span class="igd-n"><i id="${id}-n">${unread ? unread.from : rows.length}</i>unread</span></div><div class="igd-list">${list}</div>`, { h: 760 });
+  inOut(R, id, at, out);
+  stackIn(R, rows.map((_, k) => document.getElementById(`${id}-r${k}`)), times, 132);
+  if (unread) counter(R, document.getElementById(`${id}-n`), unread);
+}
+
 // ---------------------------------------------------------------- Instagram DM, big type (3D sets)
 
 /** An Instagram DM thread made for a 3D set (shown at 55 % beside the speaker): big bubbles, readable on a phone.
