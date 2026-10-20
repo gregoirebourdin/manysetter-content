@@ -1,0 +1,48 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "boxing",
+ "mood": "night",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  48.0,
+  57.4
+ ],
+ "tail_s": 2.4,
+ "id": "reel21",
+ "slug": "human-vs-ai-setter",
+ "title": "Human setter or AI setter",
+ "pub_id": "",
+ "funnel": "TOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Setty, on his towel stack in the blue corner, to the coach on his stool in the red corner: You're about to hire a [bleep]ing setter, right?",
+ "hook_title": [
+  "Human setter or *AI setter*:",
+  "which one for 30 DMs a day?"
+ ],
+ "biais": [
+  "duel (humain contre IA, mis en scène sur le ring)",
+  "chiffre très précis (30 DM par jour, 13 à 21 $ de l'heure, 119 $)",
+  "honnêteté (les réponses en plus, ce qu'un humain fait mieux)",
+  "pertinence pour soi (il est sur le point d'embaucher)"
+ ],
+ "verbatims": [
+  "rd40",
+  "rd04",
+  "rd38",
+  "rd31",
+  "mc05",
+  "rd65",
+  "rd39"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script à valider",
+ "created": "2026-10-21"
+}

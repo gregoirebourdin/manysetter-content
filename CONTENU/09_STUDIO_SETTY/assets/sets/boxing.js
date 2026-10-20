@@ -180,6 +180,10 @@ function towelStack({ n = 3, base = 0.62 } = {}) {
       sheenColor: new THREE.Color(0xffffff), sheenRoughness: 0.9 }), { P: 2.8, puff: 0.22, wrinkle: 0.015, seed: 11 + i });
     t.position.set((i % 2 ? 0.03 : -0.02), y + h / 2, (i % 2 ? -0.02 : 0.02));
     t.rotation.y = (i % 2 ? 0.06 : -0.05);
+    // a navy stripe across each towel, so the stack reads as gym towels
+    const st = K.box(0.07, h * 0.92, 0.78 - i * 0.03 + 0.012, 0.03, K.mat(0x18213a, { roughness: 1 }), false);
+    st.position.set(0.28, 0, 0);
+    t.add(st);
     g.add(t);
     y += h - 0.01;
   }
