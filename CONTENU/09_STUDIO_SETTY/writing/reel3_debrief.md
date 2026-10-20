@@ -43,7 +43,8 @@ cette réplique seule (3 courtes prises) et gardé la plus nette et la plus rapi
 - Chaque fait est à sa source, et les sources sont notées dans `post.json`. Setty dit « they can suspend » (ce que disent
   les conditions), jamais « they will » ; rien ne promet d'éviter un bannissement.
 - Whisper sur le mix final comprend chaque mot (le « you » de la fin est une hallucination connue sur la queue de musique).
-- Son : -14,1 LUFS, crête -2 dBTP.
+- Rendu 30 i/s : 1080×1920, 61,5 s, -14,2 LUFS, crête -2,1 dBTP, image 0 non noire (c'est la miniature : le plan large
+  avec le titre-hook).
 - Le reel 1 reste identique image par image après les ajouts au kit. La chambre du reel 2 n'a pas bougé.
 
 ## Ce que j'ai trouvé et corrigé moi-même pendant la revue

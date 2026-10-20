@@ -1,0 +1,6 @@
+Plugging Claude into WhatsApp to answer your DMs sounds smart until you read the fine print.
+It only replies when you open Claude and ask, it runs through WhatsApp Web instead of the official API, and its own README warns about private data leaking.
+Setty is the AI setter I built for coaches: he replies on his own in your voice, through Manychat on the official WhatsApp, Instagram and Messenger, and hands you the chat when he doesn't know.
+Comment SETTY and he'll send you everything to build your AI setter for free.
+#claudeai #whatsappbusiness #aisetter
+ManySetter is not affiliated with or endorsed by Anthropic, WhatsApp, Manychat or Meta.
