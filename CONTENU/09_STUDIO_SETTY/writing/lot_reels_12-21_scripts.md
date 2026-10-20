@@ -247,7 +247,7 @@ Un dialogue entre le coach (voix Fenrir) et Setty (voix Charon), environ 1 minut
 | 8 | Coach | Knockout. |
 | 9 | Setty | Easy, champ. Thirty new chats a day needs extra replies, thirty-nine per five hundred. |
 | 10 | Coach | Round two. AI sounds robotic. |
-| 11 | Setty | ~~Any hour, in your voice.~~ ✏️ In your voice, one question at a time. He sleeps, like a normal person. *(on ne vend pas la réponse à toute heure (motif 7 des verbatims))* |
+| 11 | Setty | ~~Any hour, in your voice. He sleeps, like a normal person.~~ ✏️ In your voice, one question at a time, like you'd do it yourself. *(on ne vend pas la réponse à toute heure (motif 7 des verbatims))* |
 | 12 | Coach | So you win. |
 | 13 | Setty | Nope. He's better on the sales call, big deals, new objections. |
 | 14 | Coach | Then who wins? |
