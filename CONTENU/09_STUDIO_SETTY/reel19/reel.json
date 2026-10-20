@@ -1,0 +1,55 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "set": "park",
+ "mood": "sunset",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  48,
+  57.4
+ ],
+ "tail_s": 2.4,
+ "id": "reel19",
+ "slug": "follow-up",
+ "title": "The follow-up",
+ "pub_id": "261021_REEL_S1_AV1_follow-up",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Setty, next to the coach on a park bench at sunset, pigeons at their feet: You let that [bleep]ing lead go cold, right?",
+ "hook_title": [
+  "This is the *follow-up* I send",
+  "when a lead stops replying"
+ ],
+ "biais": [
+  "valeur gratuite à enregistrer (les 3 relances, dites mot pour mot)",
+  "pertinence pour soi (son lead silencieux)",
+  "aversion à la perte (le lead qui refroidit)",
+  "contre-pied d'une croyance (« relancer, c'est passer pour un désespéré »)"
+ ],
+ "verbatims": [
+  "rd47",
+  "rd13",
+  "mc47",
+  "rd86",
+  "rd98",
+  "rd80",
+  "rd09",
+  "rd48",
+  "rd84",
+  "rd38",
+  "mc03",
+  "mc02",
+  "rd24"
+ ],
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 à valider (phase 1)",
+ "created": "2026-10-21",
+ "paire": "261020_CAR_S1_AV1_follow-up (idée 15, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+}

@@ -335,15 +335,15 @@ function hedge({ w = 6, h = 1.7, d = 1.2, seed = 4 } = {}) {
 function pigeon({ peck = 0, seed = 1 } = {}) {
   const R = K.rng(seed), g = new THREE.Group(), body = new THREE.Group();
   const grey = K.mat(0x9aa0ae, { roughness: 0.7 }), dark = K.mat(0x7a8090, { roughness: 0.7 }), head = K.mat(0x7f8696, { roughness: 0.6 });
-  const sheen = K.mat(0x5f8f7c, { roughness: 0.3, clearcoat: 0.8, iridescence: 1, iridescenceIOR: 1.8, iridescenceThicknessRange: [250, 700] });
+  const sheen = K.mat(0x6f8f86, { roughness: 0.3, clearcoat: 0.8, iridescence: 1, iridescenceIOR: 1.8, iridescenceThicknessRange: [250, 700] });
   const torso = K.ball(0.22, grey, 20);
   torso.scale.set(0.82, 0.8, 1.18);
   torso.position.set(0, 0.3, 0);
   const chest = K.ball(0.16, grey, 16);
   chest.position.set(0, 0.36, 0.13);
-  const neck = K.ball(0.115, sheen, 16); // the shiny collar, mostly hidden under the head
-  neck.scale.set(1, 0.9, 0.85);
-  neck.position.set(0, 0.45, 0.16);
+  const neck = K.ball(0.1, sheen, 16); // the shiny collar, mostly hidden under the head
+  neck.scale.set(1, 0.9, 0.8);
+  neck.position.set(0, 0.47, 0.17);
   for (const s of [-1, 1]) {
     const wing = K.ball(0.18, dark, 16);
     wing.scale.set(0.32, 0.58, 1.12);
@@ -351,7 +351,7 @@ function pigeon({ peck = 0, seed = 1 } = {}) {
     wing.rotation.x = 0.22;
     body.add(wing);
     for (const z of [-0.02, 0.06]) {
-      const bar = K.box(0.012, 0.03, 0.09, 0.006, K.mat(0x2a2c33), false);
+      const bar = K.box(0.01, 0.025, 0.07, 0.005, K.mat(0x454852), false);
       bar.position.set(s * 0.205, 0.31, z - 0.06);
       bar.rotation.x = 0.22;
       body.add(bar);
@@ -402,21 +402,27 @@ function pigeon({ peck = 0, seed = 1 } = {}) {
   return g;
 }
 
-/** a kraft paper bag of bread, its top folded over and crumpled, a crust sticking out */
+/** a kraft paper bag of bread, its top rolled down, a baguette sticking out */
 function breadBag() {
   const g = new THREE.Group(), kraft = K.mat(0xd2ab7c, { roughness: 0.95, map: K.noiseTex("#d2ab7c", 16, 8, 128) });
-  const bag = K.soft(0.4, 0.5, 0.26, kraft, { P: 6, puff: 0.06, wrinkle: 0.025, seed: 3 });
-  bag.position.y = 0.25;
-  const fold = K.soft(0.42, 0.12, 0.2, kraft, { P: 3, puff: 0.15, wrinkle: 0.03, seed: 5 });
-  fold.position.set(0, 0.52, -0.03);
-  fold.rotation.set(0.35, 0, 0.08);
-  const crust = K.box(0.22, 0.11, 0.12, 0.05, K.mat(0xc98a45, { roughness: 0.75 }));
-  crust.position.set(0.1, 0.56, 0.06);
-  crust.rotation.z = 0.45;
-  const crumb = K.box(0.12, 0.08, 0.08, 0.035, K.mat(0xf0dcae, { roughness: 0.9 }));
-  crumb.position.set(0.18, 0.62, 0.06);
-  crumb.rotation.z = 0.45;
-  g.add(bag, fold, crust, crumb);
+  const bag = K.soft(0.42, 0.46, 0.28, kraft, { P: 6, puff: 0.06, wrinkle: 0.025, seed: 3 });
+  bag.position.y = 0.23;
+  const roll = K.soft(0.44, 0.08, 0.3, kraft, { P: 3, puff: 0.1, wrinkle: 0.02, seed: 5 });
+  roll.position.y = 0.45;
+  const crust = K.mat(0xc98a45, { roughness: 0.7, clearcoat: 0.2 });
+  const baguette = new THREE.Group();
+  const loaf = new THREE.Mesh(new THREE.CapsuleGeometry(0.095, 0.78, 8, 16), crust);
+  loaf.castShadow = true;
+  baguette.add(loaf);
+  for (let i = 0; i < 4; i++) { // the scores on top
+    const cut = K.box(0.05, 0.1, 0.02, 0.008, K.mat(0xf0d39a, { roughness: 0.9 }), false);
+    cut.position.set(0.06, -0.22 + i * 0.16, 0.05);
+    cut.rotation.set(0.6, 0.6, 0);
+    baguette.add(cut);
+  }
+  baguette.position.set(0.12, 0.62, -0.02);
+  baguette.rotation.set(-0.15, 0, -0.5);
+  g.add(bag, roll, baguette);
   return g;
 }
 
@@ -498,13 +504,13 @@ export async function build({ renderer, scene, mood = "sunset" }) {
   // ---- trees: autumn gold and rust on the left (the sun behind them), evergreens and a hedge on the right (behind Setty)
   const trees = [
     [autumnTree({ h: 9.5, spread: 3.0, colors: ["#d9902e", "#f0bf55", "#b5551f"], seed: 3, n: 13 }), -8.6, -5.4],
-    [autumnTree({ h: 11, spread: 3.4, colors: ["#c4562a", "#e0883a", "#8e2f1d"], seed: 7, n: 14 }), -2.2, -9.5],
+    [autumnTree({ h: 11, spread: 3.4, colors: ["#c4562a", "#e0883a", "#8e2f1d"], seed: 7, n: 14 }), -4.8, -11],
     [autumnTree({ h: 8.5, spread: 2.6, colors: ["#e6b04a", "#f4d27a", "#c07a2a"], seed: 11, n: 11 }), -11.5, -9],
     [autumnTree({ h: 10, spread: 3.0, colors: ["#b8492a", "#d9773a", "#7d2a1c"], seed: 13, n: 12 }), -15, -3.5],
     [autumnTree({ h: 9, spread: 2.8, colors: ["#6f8a3a", "#93a64a", "#4f6a2c"], seed: 17, n: 12 }), 11.5, -8], // still green
   ];
   for (const [t, x, z] of trees) set.add(K.at(t, x, 0, z));
-  for (const [x, z, h, r, s] of [[4.4, -4.6, 7.5, 1.7, 2], [6.6, -7.4, 9, 2.0, 5], [2.6, -8.6, 8.2, 1.8, 8], [9.2, -4.2, 6.5, 1.5, 12]]) {
+  for (const [x, z, h, r, s] of [[4.4, -4.6, 7.5, 1.7, 2], [6.6, -7.4, 9, 2.0, 5], [2.6, -8.6, 8.2, 1.8, 8], [9.2, -4.2, 6.5, 1.5, 12], [-0.4, -7.4, 8, 1.9, 14]]) {
     set.add(K.at(evergreen({ h, r, seed: s }), x, 0, z));
   }
   const hg = hedge({ w: 7.5, h: 1.8, d: 1.3, seed: 4 });
@@ -598,12 +604,12 @@ export async function build({ renderer, scene, mood = "sunset" }) {
     heads: { coach: coachHead, setty: settyFace },
     frames: {
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 740 },
-      setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 },
+      setty: { target: settyFace, dist: 10.5, yaw: 0.2, pitch: 0.06, y: 800 }, // from the front right: the coach never between
     },
     shots: {
       wide: { pos: [0.3, 4.0, 14.6], at: [0.3, 2.3, -1.5], fov: 44 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
-      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 800 }),
+      setty: K.shot(settyFace, { dist: 10.5, yaw: 0.2, pitch: 0.06, y: 800 }),
       // cut-in: the pigeons pecking at the crumbs by his sneakers (the punchline)
       pigeons: K.shot(pigeons, { dist: 6.2, yaw: 0.3, pitch: 0.3, y: 900 }),
     },
