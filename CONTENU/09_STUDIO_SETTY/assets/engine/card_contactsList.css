@@ -1,0 +1,29 @@
+/* Card "contactsList" (reel13): a coach's Manychat contacts in big type (read at 66–70 % beside a speaker). */
+.ctl { color: #121110; }
+.ctl .ctl-hd { height: 116px; display: flex; align-items: center; gap: 18px; padding: 0 40px; border-bottom: 2px solid #efefef; }
+.ctl .ctl-ic { width: 76px; height: 76px; border-radius: 22px; background: #17171a; color: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
+.ctl .ctl-ic svg.i { width: 44px; height: 44px; }
+.ctl .ctl-hd b { font: 800 56px/1 Inter, sans-serif; letter-spacing: -0.035em; }
+.ctl .ctl-t { font: 700 52px/1 Inter, sans-serif; color: #8a857e; letter-spacing: -0.03em; }
+.ctl .ctl-tot { margin-left: auto; font: 800 48px/1 Inter, sans-serif; color: #121110; letter-spacing: -0.03em; white-space: nowrap; }
+/* the counter mode */
+.ctl.ctl-count { text-align: center; }
+.ctl .ctl-n { margin-top: 34px; font: 800 200px/1.08 Inter, sans-serif; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+.ctl .ctl-lb { margin-top: 8px; font: 700 70px/1 Inter, sans-serif; color: #8a857e; letter-spacing: -0.03em; }
+.ctl .ctl-btn { display: inline-flex; align-items: center; gap: 18px; margin-top: 34px; padding: 24px 46px; border-radius: 999px;
+  background: linear-gradient(#ff8a4d, #e64b15); color: #fff; font: 800 86px/1 Inter, sans-serif; letter-spacing: -0.035em; opacity: 0;
+  box-shadow: 0 18px 40px -16px rgba(230, 75, 21, 0.9); }
+.ctl .ctl-btn svg.i { width: 64px; height: 64px; stroke-width: 2.6; }
+/* the list mode */
+.ctl .ctl-list { padding: 14px 40px 0; }
+.ctl .ctl-row { display: flex; align-items: center; gap: 24px; height: 128px; opacity: 0; }
+.ctl .ctl-row .s-av { width: 100px; height: 100px; font: 800 40px/1 Inter, sans-serif; }
+.ctl .ctl-row .u { flex: 1; font: 800 86px/1 Inter, sans-serif; letter-spacing: -0.035em; white-space: nowrap; }
+.ctl .ctl-row .d { font: 800 80px/1 Inter, sans-serif; color: #8a857e; letter-spacing: -0.03em; white-space: nowrap; }
+.ctl .ctl-row .lk { width: 76px; height: 76px; border-radius: 50%; background: #e0182d; color: #fff; display: flex; align-items: center;
+  justify-content: center; flex: none; opacity: 0; }
+.ctl .ctl-row .lk svg.i { width: 44px; height: 44px; stroke-width: 2.6; }
+.ctl .ctl-chips { position: relative; height: 130px; margin-top: 26px; }
+.ctl .ctl-chip { position: absolute; left: 50%; top: 0; height: 120px; padding: 0 46px; gap: 18px; font: 800 86px/1 Inter, sans-serif;
+  letter-spacing: -0.035em; opacity: 0; }
+.ctl .ctl-chip svg.i { width: 64px; height: 64px; stroke-width: 2.6; }

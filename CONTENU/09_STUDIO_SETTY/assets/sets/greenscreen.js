@@ -321,6 +321,12 @@ function promoShot(c, W, H) {
   c.beginPath();
   c.ellipse(bx, by - 262, 44, 20, 0, 0, Math.PI); // stubble
   c.fill();
+  c.fillStyle = "#1a1210"; // eyes, and his promo grin
+  for (const ex of [bx - 22, bx + 22]) { c.beginPath(); c.arc(ex, by - 300, 7, 0, Math.PI * 2); c.fill(); }
+  c.fillStyle = "#fbf8f2";
+  c.beginPath();
+  c.ellipse(bx, by - 270, 24, 11, 0, 0, Math.PI);
+  c.fill();
   // the monitor overlay: safe-frame corners, REC, timecode, take
   c.strokeStyle = "rgba(255,255,255,0.85)";
   c.lineWidth = 5;
@@ -658,9 +664,8 @@ export async function build({ renderer, scene, mood = "night" }) {
       wide: { pos: [0.2, 4.6, 15.6], at: [0.2, 3.2, -1.4], fov: 44 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.55, y: 880 }),
       setty: K.shot(settyFace, { dist: 10.5, yaw: -0.45, pitch: 0.06, y: 900 }),
-      // the punchline: Setty and the fake promo on the monitor beside him
-      monitor: K.shot(V(1.2, 3.1, -1.4), { dist: 11.5, yaw: -0.25, pitch: 0.05, y: 860 }),
-      promo: K.shot(screen, { dist: 6.2, yaw: -0.12, pitch: 0.02, y: 800 }),
+      // the punchline: the fake promo on the monitor, the screen filling the width between the title and the captions
+      promo: K.shot(screen, { dist: 9.5, yaw: -0.12, pitch: 0.02, y: 920 }),
     },
   };
 }

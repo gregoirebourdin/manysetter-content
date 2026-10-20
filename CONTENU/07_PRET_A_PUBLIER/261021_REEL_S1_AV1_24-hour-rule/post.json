@@ -1,0 +1,64 @@
+{
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, on his two road cases in a green-screen studio, to the coach on his apple box: You've got ten thousand [bleep]ing contacts in Manychat, right?",
+  "biais": [
+    "chiffre très précis (10 000 contacts)",
+    "écart de curiosité (« this is why »)",
+    "autorité (la règle de Meta)",
+    "aversion à la perte (les contacts de mars hors d'atteinte)"
+  ],
+  "verbatims": [
+    "mc17",
+    "mc16",
+    "mc18",
+    "mc30",
+    "rd66",
+    "cl030"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261020_CAR_S1_AV1_24-hour-rule (idée 16, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "fenêtre de 24 h quand le lead écrit, réponse libre dedans, même une offre (R1) ; chaque message du lead la relance (R2) ; plus de messages automatiques après, Manychat n'envoie pas les messages programmés (R3, R10)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 16 (docs Meta et Manychat lues le 20/10/2026)"
+    },
+    {
+      "fait": "7 jours de réponse à la main (tag Human Agent, jamais automatisé) et aucune promotion dans un tag (R4, R6) ; la règle vient de Meta, pas de Manychat (R9)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 16"
+    },
+    {
+      "fait": "le setter attend la fin du message (au moins 30 s), puis jusqu'à 3 relances entre 1 et 23 h après le dernier message du lead, toutes dans la fenêtre (P4, P8, R12)",
+      "source": "CONTENU/00_STRATEGIE/sources/banque-2.md, faits produit communs"
+    },
+    {
+      "fait": "« 10,000 contacts » et « nobody buys » : la situation du lecteur (mc17 : 13 000 contacts), pas une statistique",
+      "source": "banque-2.md, idée 16 ; verbatims mc17, mc18"
+    },
+    {
+      "fait": "prix et essai : 119 $ par mois par setter live, construire et tester gratuit sans carte, essai de 14 jours au passage en live",
+      "source": "brief-de-marque.md, section 3"
+    }
+  ],
+  "id": "261021_REEL_S1_AV1_24-hour-rule",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel13",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel13_24-hour-rule.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel13/reel13_nomusic.mp4"
+  },
+  "qa": {
+    "duree_s": 59.3,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.1
+  },
+  "statut": "script et décor validés le 21/10 ; rendu 30 i/s à valider"
+}

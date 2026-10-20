@@ -1,4 +1,4 @@
-# reel13, "24-hour-rule" (v1, dialogue, for approval)
+# reel13, "24-hour-rule" (v1, dialogue, validated on 21/10)
 
 Idea 16 of the editorial line (`00_STRATEGIE/ligne-edito.md`, banque n° 2), paired with the carousel
 `261020_CAR_S1_AV1_24-hour-rule` (same topic, same day). A real conversation (CLAUDE.md § 2b): the coach is shooting a
@@ -14,8 +14,8 @@ with cyc lights, a softbox, a fresnel and an LED panel on stands, a C-stand with
 gaffer-tape marks. The coach sits on an apple box in front of the green, phone in hand, the clapperboard at his feet
 ("BLACK FRIDAY BLAST, scene 10K, take 47"); Setty sits on two stacked road cases ("CAM B", "FRAGILE"), against the
 green (orange on green, never orange on orange). Between them, a playback monitor on a cart shows the coach keyed onto
-a fake dusk with a white sports car, "REC 00:24:00:00": the promo nobody will receive (the punchline; extra shots
-`monitor` and `promo` in the set). Look test: `lab/greenscreen` (engine framings, card framings, top, side, behind, seat
+a fake dusk with a white sports car, "REC 00:24:00:00": the promo nobody will receive (the punchline; extra shot
+`promo` in the set). Look test: `lab/greenscreen` (engine framings, card framings, top, side, behind, seat
 level), board `deliverables/duo/greenscreen_v1.jpg`.
 
 Sound (his files): his riser from frame 0 → BOOM + his music on "right?"; 💥 BOOM on each "dinguerie"; 😩 Fahhh after each
@@ -32,13 +32,13 @@ and comes back after "SETTY".
 | 6 | Coach | Wait, so I can't even message them anymore? | Attends, donc je peux même plus leur écrire ? | CU coach, shocked | | mc18 (presque mot pour mot) |
 | 7 | Setty | By hand, within seven days, no promo. March is a graveyard, bro. | À la main, dans les sept jours, sans promo. Mars, c'est un cimetière, frère. | CU Setty, sly; card: his contact list, "last message: Mar 12" greyed out, a lock; cut to the coach's face during the Fahhh | 😩 Fahhh after "bro" | R4, R6, mc30 |
 | 8 | Coach | So Manychat locked my own list? | Donc c'est Manychat qui a bloqué ma propre liste ? | CU coach, annoyed | | fausse croyance (R9) |
-| 9 | Setty | Nope, Meta did. Manychat just follows the rules. | Non, c'est Meta. Manychat suit juste les règles. | Push-in on Setty, deadpan; card: the line of Manychat's help page, "These rules are set by Meta" | 💥 "Meta did" | R9 |
+| 9 | Setty | Nope, Meta did. Manychat just follows the rules. | Non, c'est Meta. Manychat suit juste les règles. | Push-in on Setty, deadpan, BOOM punch (the help-page card was dropped in the edit: the line lasts 2.1 s, under the 2.5 s a card needs) | 💥 "Meta did" | R9 |
 | 10 | Coach | So how do I sell to them? | Alors comment je leur vends ? | CU coach, pleading | | mc17 |
 | 11 | Setty | While they're talking. Every message buys you twenty-four fresh hours. | Pendant qu'ils te parlent. Chaque message t'offre vingt-quatre heures de plus. | CU Setty, proud; card: a new DM pops, the clock jumps back to 24:00 | clic (card) | R2 |
 | 12 | Coach | I film all day. I reply two days later. | Je tourne toute la journée. Je réponds deux jours après. | CU coach, defeated, a thumb at the camera behind him | | rd66, cl030 |
 | 13 | Setty | Plug me into Manychat. I answer once they're done typing, then send up to three follow-ups inside those twenty-four hours. | Branche-moi sur Manychat. Je réponds quand ils ont fini d'écrire, puis j'envoie jusqu'à trois relances dans ces vingt-quatre heures. | Push-in on Setty, sly; card: the follow-up timeline (reply once they're done typing, follow-ups between 1 and 23 h, all before 24 h) | 💥 "inside those twenty-four hours" | P4, P8, R12 |
 | 14 | Coach | Okay. How do I set you up? | Ok. Comment je t'installe ? | Wide, the music cuts: silence | music cut | |
-| 15 | Setty | Step off the green screen. You're pitching nobody next to a fake [bleep]ing Lambo. | Descends du fond vert. Tu fais ton pitch à personne, à côté d'une [bip] de fausse Lambo. | Shot `monitor`: Setty, mocking, and the playback monitor beside him (the coach keyed next to the fake sports car); the coach's face during the Fahhh | 😩 Fahhh after "Lambo" | carrousel (la promo que personne ne recevra) |
+| 15 | Setty | Step off the green screen. You're pitching nobody next to a fake [bleep]ing Lambo. | Descends du fond vert. Tu fais ton pitch à personne, à côté d'une [bip] de fausse Lambo. | CU Setty, mocking; on "pitching" a cut to the shot `promo`: the playback monitor fills the frame (the coach keyed next to the fake sports car, the bleep's bar in the captions); the coach's face during the Fahhh | 😩 Fahhh after "Lambo" | carrousel (la promo que personne ne recevra) |
 | 16 | Setty | Comment SETTY and I'll send you everything to build your AI setter for free. | Commente SETTY et je t'envoie tout pour construire ton setter IA gratuitement. | CU Setty, wink; comment bar types SETTY; back to the wide (loops to frame 0) | clics on SETTY · music back | série, brief § 3 |
 
 Words: 164 · Estimated length: ~55 to 56 s of voice (the 2 Fahhh pauses included) + 2.4 s ≈ 58 s, under 60.0 s

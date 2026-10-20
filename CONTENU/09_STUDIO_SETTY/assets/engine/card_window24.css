@@ -1,0 +1,34 @@
+/* Card "window24" (reel13): Meta's 24-hour window in big type (read at 66–70 % beside a speaker). card_window24.js */
+.w24 { background: rgba(16, 15, 21, 0.95); border-radius: 48px; color: #fff; overflow: hidden;
+  box-shadow: 0 34px 90px -24px rgba(0, 0, 0, 0.8), inset 0 0 0 2px rgba(255, 255, 255, 0.09); }
+.w24 .w24-hd { position: absolute; left: 0; right: 0; top: 0; height: 116px; display: flex; align-items: center; justify-content: center; gap: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
+.w24 .w24-hd b { font: 800 58px/1 Inter, sans-serif; letter-spacing: -0.035em; white-space: nowrap; }
+.w24 .w24-clk { position: absolute; left: 0; right: 0; top: 132px; text-align: center; font: 800 156px/1 Inter, sans-serif;
+  letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.w24 .w24-clk.zero { color: #ff4d4d; }
+.w24 .w24-bar { position: absolute; left: 64px; right: 64px; top: 312px; height: 26px; border-radius: 13px; background: rgba(255, 255, 255, 0.14); overflow: hidden; }
+.w24 .w24-bar i { position: absolute; inset: 0; border-radius: 13px; background: #22c55e; transform-origin: left center; }
+.w24 .w24-st { position: absolute; left: 0; right: 0; top: 366px; height: 112px; }
+.w24 .w24-pill { position: absolute; left: 50%; top: 0; height: 112px; padding: 0 46px; gap: 18px;
+  font: 800 86px/1 Inter, sans-serif; letter-spacing: -0.035em; opacity: 0; }
+.w24 .w24-pill svg.i { width: 68px; height: 68px; stroke-width: 2.6; }
+.w24 .w24-ln { position: absolute; left: 0; right: 0; top: 500px; height: 120px; }
+.w24 .w24-line { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: center; gap: 18px;
+  font: 800 86px/1.1 Inter, sans-serif; letter-spacing: -0.035em; white-space: nowrap; opacity: 0; }
+.w24 .w24-line svg.i { width: 70px; height: 70px; color: #22c55e; stroke-width: 2.6; }
+.w24 .w24-line.t-red svg.i { color: #ff4d4d; }
+.w24 .w24-line.t-amber svg.i { color: #f59e0b; }
+.w24 .w24-line.w24-dm { top: -6px; gap: 22px; }
+.w24 .w24-dm .s-av { width: 108px; height: 108px; font: 800 48px/1 Inter, sans-serif; background: #d6249f; box-shadow: 0 0 0 5px #101015, 0 0 0 9px #d6249f; }
+.w24 .w24-dm .b { padding: 18px 34px; border-radius: 40px; border-bottom-left-radius: 10px; background: #2c2b33;
+  font: 700 86px/1.1 Inter, sans-serif; letter-spacing: -0.03em; white-space: nowrap; }
+/* the follow-ups mode: a smaller clock, the rows under the bar */
+.w24.w24-fu .w24-clk { top: 126px; font-size: 112px; }
+.w24.w24-fu .w24-bar { top: 250px; }
+.w24 .w24-rows { position: absolute; left: 48px; right: 48px; top: 290px; }
+.w24 .w24-row { display: flex; align-items: center; gap: 22px; height: 88px; font: 800 80px/1 Inter, sans-serif; letter-spacing: -0.035em;
+  white-space: nowrap; opacity: 0; }
+.w24 .w24-row svg.i { width: 64px; height: 64px; color: #ff8a4d; stroke-width: 2.6; }
+.w24 .w24-row .x { flex: 1; }
+.w24 .w24-row b { color: #ffb48a; font-weight: 800; }

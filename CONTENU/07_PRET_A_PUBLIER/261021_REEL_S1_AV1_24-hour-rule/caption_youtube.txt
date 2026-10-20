@@ -1,0 +1,19 @@
+If you have 10,000 Manychat contacts and nobody buys, this is why
+
+👇 READ BELOW: why you can't just message your 10,000 Manychat contacts, from Meta's and Manychat's own docs.
+
+1. When a lead messages you on Instagram or Messenger, a 24-hour window opens, and every new message from them restarts it.
+
+2. Inside the window you can reply freely, even with an offer. After it, automated messages aren't allowed, and Manychat won't send your scheduled ones.
+
+3. For 7 more days a person can still reply by hand (Meta calls it the Human Agent tag), and message tags can't carry promotions.
+
+4. Setty is the AI setter I built for coaches: he answers once the lead is done typing, then sends up to 3 follow-ups, all inside the 24 hours, through Manychat.
+
+The catch: ManySetter doesn't bend Meta's rules. Once the window closes, Setty waits until the lead writes again. Building and testing are free with no card, then going live starts a 14-day trial at $119/month per live setter.
+
+Build your AI setter free at manysetter.com.
+
+#manychat #instagramdms #shorts
+
+ManySetter is not affiliated with or endorsed by Manychat or Meta.
