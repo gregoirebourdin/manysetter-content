@@ -26,7 +26,6 @@ function marbleTex({ seed = 5 } = {}) {
     for (let i = 0; i < 26; i++) {
       c.strokeStyle = `rgba(${120 + R() * 40}, ${122 + R() * 40}, ${128 + R() * 40}, ${0.08 + R() * 0.22})`;
       c.lineWidth = 0.6 + R() * (i < 5 ? 5 : 2.2);
-      c.filter = `blur(${R() < 0.5 ? 0 : 1.2}px)`;
       c.beginPath();
       let x = R() * W, y = -20;
       c.moveTo(x, y);
@@ -38,7 +37,6 @@ function marbleTex({ seed = 5 } = {}) {
       }
       c.stroke();
     }
-    c.filter = "none";
   });
 }
 
@@ -281,6 +279,7 @@ function smoothieGlass() {
   straw.position.set(0.05, 0.5, 0);
   straw.rotation.z = -0.22;
   g.add(gl, drink, straw);
+  g.userData.drink = drink.material;
   return g;
 }
 
@@ -431,10 +430,12 @@ function globePendant({ rod = 3.2, color = 0xfff0d6 } = {}) {
 /** the morning sun through the window panes, laid on the floor (additive, soft edges) */
 function windowLight({ w = 4, d = 2.4, cols = 3, rows = 2, color = 0xffe3b6, strength = 0.4 } = {}) {
   const tex = K.canvasTex(512, 320, (c, W, H) => {
-    c.filter = "blur(7px)";
-    c.fillStyle = "#ffffff";
+    // soft edges without ctx.filter (ignored by the render Chrome): stacked rects, each a little smaller
     const pw = (W - 40) / cols, ph = (H - 40) / rows;
-    for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) c.fillRect(20 + i * pw + 5, 20 + j * ph + 5, pw - 10, ph - 10);
+    c.fillStyle = "rgba(255, 255, 255, 0.14)";
+    for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+      for (let k = 0; k < 7; k++) c.fillRect(20 + i * pw + 2 + k * 2, 20 + j * ph + 2 + k * 2, pw - 4 - k * 4, ph - 4 - k * 4);
+    }
   });
   const m = new THREE.Mesh(new THREE.PlaneGeometry(w, d), K.glow(color, { map: tex, transparent: true, opacity: strength,
     blending: THREE.AdditiveBlending, depthWrite: false }));
@@ -639,6 +640,7 @@ export async function build({ renderer, scene, mood = "morning" }) {
   const settyFace = new THREE.Vector3(1.85, TOP + 1.25, -0.05);
   return {
     key, rim, lights, root: set,
+    drink: glassS.userData.drink, // his smoothie's material (reel7 turns it brown on "brown")
     coach: { x: -0.85, y: 0, z: -1.35, turn: 0.18, phone: 1 },
     setty: { x: 1.85, y: TOP - 0.3, z: -0.05, turn: -0.3, scale: 0.62 },
     heads: { coach: coachHead, setty: settyFace },
@@ -652,7 +654,7 @@ export async function build({ renderer, scene, mood = "morning" }) {
       setty: K.shot(settyFace, { dist: 10.5, yaw: -0.3, pitch: 0.08, y: 800 }),
       // inserts for the gags: the juicer still in its box (line 9), his green smoothie (line 15)
       juicer: K.shot(new THREE.Vector3(-2.95, 6.0, BACK + 0.3), { dist: 6.5, yaw: 0.2, pitch: -0.12, y: 760 }),
-      smoothie: K.shot(new THREE.Vector3(-0.15, TOP + 0.3, 0.55), { dist: 3.4, yaw: 0.1, pitch: 0.16, y: 860 }),
+      smoothie: K.shot(new THREE.Vector3(-0.15, TOP + 0.3, 0.55), { dist: 2.7, yaw: 0.9, pitch: 0.55, y: 720 }), // from above, on the marble
     },
   };
 }

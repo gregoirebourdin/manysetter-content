@@ -1,0 +1,73 @@
+{
+  "funnel": "TOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "hook": "Setty, sitting on the kitchen island by the fruit bowl, to the coach behind it: You set up your [bleep]ing \"Comment GUIDE\" flow, right?",
+  "biais": [
+    "chiffres qui se contredisent (400 commentaires, 0 vente)",
+    "pertinence pour soi (son propre flow « Comment GUIDE »)",
+    "contre-pied (« Manychat did its job » : le problème vient après le guide)"
+  ],
+  "verbatims": [
+    "cl005",
+    "rd30",
+    "mc36",
+    "mc37",
+    "rd22",
+    "mc07",
+    "mc33",
+    "rd21",
+    "mc47",
+    "mc01",
+    "rd47",
+    "cl131",
+    "rd12",
+    "rd57",
+    "rd65",
+    "mc05"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261019_CAR_S2_AV2_comment-guide-flow (idée 7, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "Manychat garde le déclencheur (mot-clé en commentaire) et envoie le premier message ; ManySetter ajoute deux actions (« Start conversation » en fin d'automatisation, « Continue conversation » dans la Default Reply), sans code ni nouveau flow",
+      "source": "brief-de-marque.md, section 2 (site ManySetter)"
+    },
+    {
+      "fait": "un flow à mots-clés « answer the keyword, not the question »",
+      "source": "brief-de-marque.md, section 4 (site ManySetter)"
+    },
+    {
+      "fait": "« Keep your Manychat. Add the setter. », « Only the right leads get your calendar. »",
+      "source": "brief-de-marque.md, section 5 (site ManySetter)"
+    },
+    {
+      "fait": "400 commentaires, 400 guides, 0 vente : la situation du coach (hook du carrousel validé le 20/10), pas un résultat ManySetter ; les compteurs des cartes sont des exemples",
+      "source": "261019_CAR_S2_AV2_comment-guide-flow (slides 1, 2 et 5)"
+    },
+    {
+      "fait": "la réponse du setter montrée en exemple (« Totally fair, and thanks for saying it… »)",
+      "source": "261019_CAR_S2_AV2_comment-guide-flow (slide 8, validée)"
+    }
+  ],
+  "id": "261020_REEL_S2_AV2_comment-guide-flow",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel7",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel7_comment-guide-flow.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "reel_nomusic.mp4 (hors Git, pour un son tendance ajouté dans l'appli)"
+  },
+  "qa": {
+    "duree_s": 54.9,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.1
+  },
+  "statut": "script v1 validé le 20/10 (voix lancées) ; rendu v1 en 30 i/s à valider par le fondateur, rien n'est programmé"
+}
