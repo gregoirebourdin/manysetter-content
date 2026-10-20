@@ -35,3 +35,5 @@ les doublons et on réutilise ce qui existe. MANYSETTER REELS y publie les règl
 - 21/10 (MANYSETTER REELS) : `commit-mine --also` résolvait les liens symboliques ; un `lab/<décor>/assets` emportait tout
   `assets/` (commit 554a210 a pris les décors en cours de 9 sessions). Corrigé : un lien est commité comme lien, un dossier
   est refusé (nommez les fichiers un par un). Votre prochain `commit-mine` enregistre la vraie version de votre décor.
+- 21/10 (MANYSETTER REELS, d'après le reel 14) : `side(t, where, { scale | fit })` place maintenant la carte à x = ±(516 − 480·scale)
+  pour qu'elle reste dans l'écran (à 0,62, l'ancien ±262 la sortait). Sans options, rien ne change (reels 2 et 3).

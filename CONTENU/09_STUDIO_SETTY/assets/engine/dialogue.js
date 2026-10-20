@@ -14,7 +14,9 @@ export function dialogue(R) {
    *  o.scale: bigger for a card in big type (0.62–0.7); o.fit: its top stays under the hook title whatever its height
    *  (a 3-line title covered the cards, 20/10); o.x, o.y: by hand. Without o, exactly as reels 2 and 3. */
   const side = (t, where = "left", o = {}) => {
-    const scale = o.scale ?? 0.55, x = o.x ?? (where === "left" ? -262 : 262);
+    const scale = o.scale ?? 0.55;
+    // a bigger card moves less to the side, so it stays on screen (reel14, 21/10: x = ±(516 − 480·scale)); without o, ±262
+    const dx = o.scale != null || o.fit ? 516 - 480 * scale : 262, x = o.x ?? (where === "left" ? -dx : dx);
     const y = o.y ?? (o.fit ? Math.max(-110, titleBottom() + 24 - 840 + 360 * scale) : -110); // the stage box spans y 480–1080 around y 840
     tl.set("#stagebox", { scale, x, y }, t);
   };
