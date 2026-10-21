@@ -451,3 +451,7 @@ Format d'une règle :
 - Règle : les 8 Shorts YouTube tirés des carrousels du 21 au 28/10 sont **supprimés de Zernio** le 21/10, avant toute publication. Les posts Instagram des carrousels et les 10 reels (Instagram et Short YouTube) restent programmés.
 - Retour : « Je valide les carrousels. »
 - Règle : les 10 carrousels de la banque n° 2 (`07_PRET_A_PUBLIER/261020_CAR_*` : price-ghost, 24-hour-rule, free-coaching-dms, ai-2-seconds, 600-setter, make-chatgpt-setter, dm-ads, follow-up, hot-lead, human-vs-ai-setter) sont **validés** tels qu'ils sont sur la planche du 21/10. Chacun est programmé, sur Instagram seulement, le même jour que son reel, dès que ce reel est validé et transmis, dans l'ordre de publication (11 · 16 · 12 · 18 · 13 · 17 · 14 · 15 · 20 · 19 à partir du 31/10).
+
+## 2026-10-21 · « Programme tout »
+- Retour : « Programme tout. »
+- Règle : tout ce qui est validé et prêt part dans Zernio sans attendre la paire complète : les 10 carrousels de la banque n° 2 sont programmés à leurs dates (31/10 puis du 1/11 au 9/11, 12:00 pm ET, Instagram seulement). Chaque reel de Setty est ajouté à son jour (6:30 pm ET, Instagram et Short YouTube) dès qu'il est validé par le fondateur et finalisé par MANYSETTER REELS. Un reel non validé n'est jamais programmé.
