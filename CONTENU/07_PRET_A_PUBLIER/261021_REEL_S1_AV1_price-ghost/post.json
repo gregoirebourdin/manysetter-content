@@ -57,9 +57,9 @@
     "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel12/reel12_nomusic.mp4"
   },
   "qa": {
-    "duree_s": 54.1,
+    "duree_s": 56.0,
     "lufs": -14.2,
-    "true_peak_dbtp": -2.3
+    "true_peak_dbtp": -2.1
   },
-  "statut": "phase 2 : rendu 30 i/s à valider (voix des répliques 3, 12 et 14 à reprendre par MANYSETTER REELS)"
+  "statut": "rendu 30 i/s livré, à valider"
 }

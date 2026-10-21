@@ -31,7 +31,7 @@ line(1, faceC("proud", { lookX: 0.4, armRr: 0.3, armRf: 1.1, elbowR: 1.5 }), fac
 side(C.clic1 - 0.01, "left", LEFT);
 st.bigDM(R, { id: "dm", at: C.clic1, out: L[4].t - 0.38, user: "kev.trains", color: "#2563eb",
   status2: { text: "Active 2d ago", at: C.tue },
-  msgs: [{ text: "how much?", at: C.how },
+  msgs: [{ text: "how much?", at: C.clic1 + 0.12 }, // never an empty card: the first bubble comes with it
     { me: true, text: "{swap}, 12 weeks", swap: { from: "$1,500", to: "$999?", at: C.nine }, at: C.fifteen,
       seen: { text: "Seen Tuesday", at: C.seen } }] });
 K(L[2].t - 0.1, 0.25, face("deadpan", { lookX: -0.6 }));
@@ -68,7 +68,7 @@ shake(C.damn + 0.06, 0.45);
 line(9, face("proud", { lookX: -0.3 }), faceC("thinking", { lookX: 0.5 }), SR);
 side(C.clic3 - 0.01, "right", RIGHT);
 st.bigDM(R, { id: "fix", at: C.clic3, out: L[10].t - 0.38, head: false,
-  msgs: [{ me: true, text: "$1,500, 12 weeks", at: C.price9 }, { me: true, text: "what made you<br>reach out?", at: C.what9 },
+  msgs: [{ me: true, text: "$1,500, 12 weeks", at: C.clic3 + 0.12 }, { me: true, text: "what made you<br>reach out?", at: C.what9 },
     { text: null, typing: C.typing9 }] });
 
 // ---- 10 coach: "I'm on calls all day. Who's asking that?"
@@ -79,7 +79,7 @@ K(L[11].t - 0.05, 0.2, face("proud", { armRr: 2.2 }), "back.out(2)");
 punch(C.boom3, 25);
 side(C.clic4 - 0.01, "left", LEFT);
 st.checklist(R, { id: "plug", at: C.clic4, out: L[12].t - 0.38, title: "Plug me in", appSlug: "manysetter",
-  items: [{ icon: "message-circle", text: "Manychat", sub: "your flows stay", at: C.boom3 },
+  items: [{ icon: "message-circle", text: "Manychat", sub: "your flows stay", at: C.clic4 + 0.12 },
     { app: "instagram", text: "Price + question", sub: "from your offer", at: C.answer }] });
 
 // ---- 12 coach: "And when he goes quiet? Chasing comes off desperate."
@@ -88,7 +88,7 @@ line(12, faceC("stressed", { lookX: 0.4, lookY: -0.15 }), face("smug", { lookX: 
 line(13, face("smug", { lookX: -0.3 }), faceC("thinking", { lookX: 0.5 }), SR);
 side(C.clic5 - 0.01, "right", RIGHT);
 st.bigDM(R, { id: "nudge", at: C.clic5, out: L[14].t - 0.38, title: "Within 24 hours",
-  msgs: [{ me: true, time: "+3 h", text: "still keen? 👀", at: C.n1 }, { me: true, time: "+9 h", text: "busy week? 😅", at: C.n2 },
+  msgs: [{ me: true, time: "+3 h", text: "still keen? 👀", at: C.clic5 + 0.12 }, { me: true, time: "+9 h", text: "busy week? 😅", at: C.n2 },
     { me: true, time: "+20 h", text: "no rush 🙌", at: C.n3 }] });
 
 // ---- 14 coach: "Okay. How do I get you?" (the music dies: the wide shot, silence, a slow push)

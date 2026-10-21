@@ -55,10 +55,11 @@ Le gag du décor : les lumières sont sur détecteur de mouvement (`R.set.power(
   - pas de `ctx.filter`, rien devant une bouche, le coach assis sans traverser sa chaise.
 - `check` passe : pas d'erreur de mise en page ni de contraste. Les sons respectent les règles : aucun clic sur le début
   d'un mot, et les Fahhh tombent dans les pauses.
-- Rendu 30 i/s livré (`deliver`) : 1080×1920, 54,1 s (60,0 s au plus), -14,2 LUFS, crête à -2,3 dBTP. L'image 0 n'est
-  pas noire : c'est la miniature (le plan large avec le titre-hook).
-- `frames` sur le MP4 : un seul aller-retour signalé, à 48,07 s. C'est la pulsation voulue du titre sur « SETTY », pas
-  deux mouvements de caméra qui se battent.
+- Rendu 30 i/s v3 livré (`deliver`, `renders/reel12_v3_30fps.mp4`) : 1080×1920, 56,0 s (60,0 s au plus), -14,2 LUFS,
+  crête à -2,1 dBTP. L'image 0 n'est pas noire : c'est la miniature (le plan large avec le titre-hook).
+- Whisper sur le mix final : seulement de l'orthographe (« dollars » ajouté, « Seen » écrit « C »).
+- `frames` sur le MP4 : un seul aller-retour signalé, à 49,9 s. C'est la pulsation voulue du titre sur « SETTY », pas
+  deux mouvements de caméra qui se battent. Chaque carte montre son premier élément dès qu'elle est à l'écran.
 
 ## Ce que j'ai trouvé et corrigé moi-même pendant la revue
 
@@ -76,15 +77,14 @@ Le gag du décor : les lumières sont sur détecteur de mouvement (`R.set.power(
 8. **Les initiales blanches sur bleu clair** ne passaient pas le contraste : le bleu est plus foncé.
 9. **La traîne du 3e BOOM masquait « then »** deux secondes plus tard : elle est raccourcie à 1,6 s.
 10. **Deux clics tombaient sur le début d'un mot** (« Plug », « motion ») : ils sont déplacés dans des creux.
+11. **Trois répliques de Setty étaient mal dites** dans la première voix : « And you said? », « praise » au lieu de
+    « price », « Maybe you just forgot ». MANYSETTER REELS les a refaites. Sur le mix final, Whisper ne relève plus que de
+    l'orthographe : « dollars » ajouté, et « Seen » écrit « C ».
+12. **Trois cartes restaient vides un instant** avant leur premier élément : « Plug me in » 0,9 s, les relances 1,5 s,
+    et le DM du début 0,5 s. Leur premier élément arrive maintenant avec la carte.
 
 ## Ce qui reste
 
-- **La voix des répliques 3, 12 et 14** (Setty) est à reprendre par MANYSETTER REELS, vers 9 h 05 :
-  - « And you said? » au lieu de « And he said? » ;
-  - « praise » au lieu de « price » ;
-  - « Maybe you just forgot » au lieu de « Maybe he just forgot ».
-
-  Une fois la voix installée : `go`, un nouveau rendu, `frames`, puis la livraison. Tout est calé sur des noms de repères.
 - La notification de fin n'a pas de place entre le titre de 3 lignes et les têtes. La solution de secours du kit la
   pose petite, juste sous le titre, et elle touche le haut du bonnet.
 
