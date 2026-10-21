@@ -90,7 +90,8 @@ def words(text: str) -> list[str]:
     text = text.replace("dm's", "dms").replace("dm s ", "dms ").replace("time zone", "timezone")
     # spoken forms Whisper writes either way (reels 14, 15): one spelling on both sides
     for k, v in ((" a.i. ", " ai "), (" a i ", " ai "), (" kind of ", " kinda "), (" want to ", " wanna "), (" going to ", " gonna "),
-                 (" lead jen ", " lead gen ")):
+                 (" lead jen ", " lead gen "), (" open ai ", " openai "), (" guest book ", " guestbook "), (" board room ", " boardroom "),
+                 (" pay scale ", " payscale "), (" a hundred ", " one hundred ")):
         text = text.replace(k, v)
     # every number left in digits is spelled out, on both sides: "9" == "nine", "2015" == "twenty fifteen" (20/10 lot:
     # digits counted as errors made equal takes look worse than they were, and the pick went by length alone)
