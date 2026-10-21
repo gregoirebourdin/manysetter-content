@@ -19,15 +19,19 @@ H = lambda key: C[key]  # noqa: E731
 # play=[(t0, t1), …] (it keeps its own time, like a mute) and M.tape_stop(t1 - 0.5) where a joke kills it
 DROP = H("right_end") + 0.05
 M.music_bed(drop=DROP, play=[
-    (DROP, H("comment") - 0.12),
-    (H("setty_end") + 0.08, H("end") + 0.6),  # the music stops under "Comment SETTY." so the keyword lands clean
+    (DROP, H("cut") - 0.05),                  # it dies on "Okay." (the setup, then the lights go off in silence)
+    (H("back") + 0.12, H("comment") - 0.12),  # back with the lights
+    (H("setty_end") + 0.08, H("end") + 2.6),  # the music stops under "Comment SETTY." so the keyword lands clean
 ])
+M.tape_stop(H("cut") - 0.55, 0.5)
 
 # ---------------- SFX: only his sounds, each one carries a moment (no cute chimes, no tick under every word)
 M.riser_into(DROP)                       # his riser from frame 0, its climax + a BOOM on the drop
+for k in ("off1", "off2", "off3", "off4", "back"):  # the switch: each pendant off, then all back on after the Fahhh
+    M.clic(H(k), 0.55)
 for k, t in C.items():
     if k.startswith("boom"):             # build.py: "boom1": t(find("word")) on every "dinguerie"
-        M.boom(t)
+        M.boom(t, length=1.6 if k == "boom3" else 3.2)  # boom3's sub tail ate "then" two seconds later
     elif k.startswith("fahhh"):          # build.py: "fahhh1": e(last word of the roast) + 0.08
         M.fahhh(t)
     elif k.startswith("clic"):           # build.py: "clic1": the moment a card pops on screen

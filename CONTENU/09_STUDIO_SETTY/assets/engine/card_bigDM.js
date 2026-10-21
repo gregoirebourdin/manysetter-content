@@ -23,7 +23,7 @@ export function bigDM(R, { id = "bdm", at, out, user = "lead", color = "#d6249f"
   const dots = `<span class="dots"><i></i><i></i><i></i></span>`;
   const body = msgs.map((m, k) => {
     const txt = m.text == null ? "" : m.swap
-      ? m.text.replace("{swap}", `<span class="sw"><span class="o">${m.swap.from}<i id="${id}-x${k}"></i></span><span class="n" id="${id}-n${k}">${m.swap.to}</span></span>`)
+      ? m.text.replace("{swap}", `<span class="sw"><span class="o">${m.swap.from}<i id="${id}-x${k}"></i></span><span class="n" id="${id}-n${k}" data-layout-allow-overlap>${m.swap.to}</span></span>`)
       : m.text;
     return `<div class="bdm-m ${m.me ? "me" : "them"}" id="${id}-m${k}"><div class="row">` +
       (m.time ? `<span class="tm">${m.time}</span>` : "") +

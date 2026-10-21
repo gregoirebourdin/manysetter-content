@@ -1,0 +1,65 @@
+{
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, on a felt pouf in an empty coworking at night, to the coach alone at the long table: You sent your [bleep]ing price in the DM, right?",
+  "biais": [
+    "chiffre très précis (9 sur 10, la situation du lecteur)",
+    "pertinence pour soi (son « how much? » de la semaine)",
+    "contre-pied (« it's not your price »)"
+  ],
+  "verbatims": [
+    "rd13",
+    "rd91",
+    "rd88",
+    "rd87",
+    "rd20",
+    "cl030",
+    "rd86",
+    "rd48",
+    "rd84"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "sources": [
+    {
+      "fait": "l'argumentaire et le titre-hook : le DM « how much is it? », « $1,500 for 12 weeks », le « Seen » ; un prix sans contexte ; personne ne dit non ; le prix plus « what made you reach out today? » ; une relance quelques heures après",
+      "source": "carrousel 261020_CAR_S1_AV1_price-ghost, slides 1 à 7 ; « 9 out of 10 » est la situation du lecteur, pas une statistique (sources/banque-2.md, idée 11)"
+    },
+    {
+      "fait": "il répond au prix depuis le playbook (sinon il dit que le prix se donne pendant l'appel), puis pose une seule question",
+      "source": "sources/banque-2.md, P12 (site : writer-prompts.ts) et P6 (how-it-works.ts, human-texting.ts)"
+    },
+    {
+      "fait": "jusqu'à 3 relances, entre 1 et 23 h après le dernier message du lead, dans la fenêtre de 24 h ; elles s'arrêtent dès que le lead répond ou réserve",
+      "source": "sources/banque-2.md, P8 et P8b (site : follow-ups.ts, pricing.ts)"
+    },
+    {
+      "fait": "les DM des cartes (kev.trains, « still keen? », « busy week? », « no rush ») et les délais +3 h, +9 h, +20 h : valeurs de démonstration, pas un cas client",
+      "source": "exemple, comme les conversations du site (brief, section 7)"
+    },
+    {
+      "fait": "le prix : $119 par mois par setter live ; gratuit à construire et tester sans carte ; essai de 14 jours au passage en live",
+      "source": "brief-de-marque.md, section 3 ; sources/banque-2.md, P1 et P3"
+    }
+  ],
+  "id": "261021_REEL_S1_AV1_price-ghost",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel12",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel12_price-ghost.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel12/reel12_nomusic.mp4"
+  },
+  "qa": {
+    "duree_s": 54.1,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.3
+  },
+  "statut": "phase 2 : rendu 30 i/s à valider (voix des répliques 3, 12 et 14 à reprendre par MANYSETTER REELS)"
+}

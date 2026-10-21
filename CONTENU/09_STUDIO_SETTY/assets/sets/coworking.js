@@ -610,7 +610,8 @@ export async function build({ renderer, scene, mood = "night" }) {
     window: pl(0x7d9cff, 3.0, 3.0, 3.5, BACK + 1.2, 7),
   };
   const PEND_I = pend.map((l) => l.intensity), HEMI_I = hemi.intensity, ENV_I = scene.environmentIntensity;
-  /** the motion sensor: v 1 = all on, 0 = all off; the pendants go off one by one from the far end to the coach */
+  /** the motion sensor: v 1 = all on, 0 = all off; the pendants go off one by one from the far end to the coach
+   *  (v 0.75: one off, 0.5: two, 0.25: three) */
   const power = (v) => {
     const n = pend.length;
     let sum = 0;
@@ -632,6 +633,7 @@ export async function build({ renderer, scene, mood = "night" }) {
   // where the characters go (engine pose fields), and the camera shots ({ pos, at, fov })
   const coachHead = new THREE.Vector3(-1.6, 4.0, -1.15);
   const settyFace = new THREE.Vector3(SETTY.x, SETTY.y + 1.7 * SETTY.scale + 0.04, SETTY.z);
+  const lampsAt = new THREE.Vector3(1.85, 5.6, TABLE.z); // the row of pendants, seen from below (the gag)
   return {
     key, rim, lights, power, root: set,
     coach: { x: COACH.x, y: COACH.y, z: COACH.z, turn: COACH.turn, sit: 1 },
@@ -641,12 +643,14 @@ export async function build({ renderer, scene, mood = "night" }) {
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 850 },
       setty: { target: settyFace, dist: 11.5, yaw: -0.32, pitch: 0.06, y: 1000 },
       laptop: { target: screenAt, dist: 3.3, yaw: -0.55, pitch: 0.22, y: 1000 },
+      lamps: { target: lampsAt, dist: 7, yaw: 0.1, pitch: -0.38, fov: 60, y: 980 },
     },
     shots: {
       wide: { pos: [-0.15, 4.4, 12.6], at: [-0.15, 3.05, -1.4], fov: 44 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 850 }),
       setty: K.shot(settyFace, { dist: 11.5, yaw: -0.32, pitch: 0.06, y: 1000 }),
       laptop: K.shot(screenAt, { dist: 3.3, yaw: -0.55, pitch: 0.22, y: 1000 }),
+      lamps: K.shot(lampsAt, { dist: 7, yaw: 0.1, pitch: -0.38, fov: 60, y: 980 }),
     },
   };
 }
