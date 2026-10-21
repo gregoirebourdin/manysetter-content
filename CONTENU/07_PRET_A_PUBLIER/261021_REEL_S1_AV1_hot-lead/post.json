@@ -1,60 +1,60 @@
 {
- "funnel": "TOFU",
- "segment": "S1",
- "avatar": "AV1",
- "hook": "Setty, sitting on a diner table next to the napkin dispenser, to the coach in the booth at 1 a.m., phone in hand behind a huge order: You let a [bleep]ing hot lead sleep on it, right?",
- "biais": [
-  "autorité (une étude, un chercheur nommé : Loewenstein, 2005)",
-  "écart de curiosité (« there's a name for it »)",
-  "pertinence pour soi (son lead chaud de la semaine, « tonight »)",
-  "ancrage dans le décor (il vit l'étude de la faim en direct)"
- ],
- "verbatims": [
-  "rd47",
-  "rd84",
-  "rd78",
-  "rd86",
-  "rd98",
-  "rd65"
- ],
- "cta": "Comment SETTY",
- "paire": "261020_CAR_S1_AV1_hot-lead",
- "sources": [
-  {
-   "fait": "Psychologists call it the hot-cold empathy gap. When we're calm, we underestimate how much a strong feeling drives our choices; in the moment, we think we'll feel the same tomorrow.",
-   "source": "Loewenstein, G. (2005), Health Psychology 24(4 Suppl.), S49-S56, doi:10.1037/0278-6133.24.4.S49 (00_STRATEGIE/sources/banque-2.md, idée 20, L1 et L3)"
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, sitting on a diner table next to the napkin dispenser, to the coach in the booth at 1 a.m., phone in hand behind a huge order: You let a [bleep]ing hot lead sleep on it, right?",
+  "biais": [
+    "autorité (une étude, un chercheur nommé : Loewenstein, 2005)",
+    "écart de curiosité (« there's a name for it »)",
+    "pertinence pour soi (son lead chaud de la semaine, « tonight »)",
+    "ancrage dans le décor (il vit l'étude de la faim en direct)"
+  ],
+  "verbatims": [
+    "rd47",
+    "rd84",
+    "rd78",
+    "rd86",
+    "rd98",
+    "rd65"
+  ],
+  "cta": "Comment SETTY",
+  "paire": "261020_CAR_S1_AV1_hot-lead",
+  "sources": [
+    {
+      "fait": "Psychologists call it the hot-cold empathy gap. When we're calm, we underestimate how much a strong feeling drives our choices; in the moment, we think we'll feel the same tomorrow.",
+      "source": "Loewenstein, G. (2005), Health Psychology 24(4 Suppl.), S49-S56, doi:10.1037/0278-6133.24.4.S49 (00_STRATEGIE/sources/banque-2.md, idée 20, L1 et L3)"
+    },
+    {
+      "fait": "In one study, hungry people picked more junk food for next week than people who had just eaten.",
+      "source": "Read, D. et van Leeuwen, B. (1998), Predicting hunger, OBHDP 76(2), 189-205, doi:10.1006/obhd.1998.2803 (banque-2.md, idée 20, L5)"
+    },
+    {
+      "fait": "Aucune étude ne porte sur des leads en DM : lecture par analogie, sans durée ; l'oubli (rd84) reste une autre cause.",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 20"
+    },
+    {
+      "fait": "It asks one question at a time, offers two or three open times in the lead's time zone and books on Cal.com, Calendly or iClosed; on Calendly Free or another tool it sends the booking link.",
+      "source": "banque-2.md, faits produit P6, P9, P9b (site ManySetter, commit 4437fc1)"
+    }
+  ],
+  "id": "261021_REEL_S1_AV1_hot-lead",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel20",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel20_hot-lead.md"
   },
-  {
-   "fait": "In one study, hungry people picked more junk food for next week than people who had just eaten.",
-   "source": "Read, D. et van Leeuwen, B. (1998), Predicting hunger, OBHDP 76(2), 189-205, doi:10.1006/obhd.1998.2803 (banque-2.md, idée 20, L5)"
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel20/reel20_nomusic.mp4"
   },
-  {
-   "fait": "Aucune étude ne porte sur des leads en DM : lecture par analogie, sans durée ; l'oubli (rd84) reste une autre cause.",
-   "source": "00_STRATEGIE/sources/banque-2.md, idée 20"
+  "qa": {
+    "duree_s": 56.2,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.2
   },
-  {
-   "fait": "It asks one question at a time, offers two or three open times in the lead's time zone and books on Cal.com, Calendly or iClosed; on Calendly Free or another tool it sends the booking link.",
-   "source": "banque-2.md, faits produit P6, P9, P9b (site ManySetter, commit 4437fc1)"
-  }
- ],
- "id": "261021_REEL_S1_AV1_hot-lead",
- "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
- "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
- "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
- "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
- "source": {
-  "studio": "CONTENU/09_STUDIO_SETTY/reel20",
-  "script": "CONTENU/09_STUDIO_SETTY/writing/reel20_hot-lead.md"
- },
- "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
- "fichiers": {
-  "video": "reel.mp4 (hors Git)",
-  "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel20/reel20_nomusic.mp4"
- },
- "qa": {
-  "duree_s": 56.2,
-  "lufs": -14.2,
-  "true_peak_dbtp": -2.2
- },
- "statut": "rendu 30 i/s livré le 21/10 (56,2 s, -14,2 LUFS, -2,2 dBTP), à valider par le fondateur ; publié tel quel en 30 i/s après validation (règle du 21/10), dim. 8/11 à 6:30 pm ET"
+  "statut": "contrôlé par MANYSETTER REELS le 21/10 (QA, images du MP4, Whisper, légendes) ; publié tel que livré en 30 i/s sur l'ordre du fondateur « vas-y programme tout et fini tout » ; dim. 8/11 à 6:30 pm ET"
 }
