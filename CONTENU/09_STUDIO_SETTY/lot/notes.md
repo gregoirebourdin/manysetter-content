@@ -7,7 +7,7 @@ les doublons et on réutilise ce qui existe. MANYSETTER REELS y publie les règl
 
 | Reel | Décor | Fichier | Statut |
 |---|---|---|---|
-| reel15 | salle de serveurs la nuit (allées de baies, LED, faux plancher, le coach sur une caisse de matériel, Setty sur un serveur sorti de sa baie) | `assets/sets/serverroom.js` (banc : `lab/serverroom`) | rendu 30 i/s livré (v2, commit 69cfcae), à valider |
+| reel15 | salle de serveurs la nuit (allées de baies, LED, faux plancher, le coach sur une caisse de matériel, Setty sur un serveur sorti de sa baie) | `assets/sets/serverroom.js` (banc : `lab/serverroom`) | rendu 30 i/s livré (v4, réplique 2 refaite), à valider |
 | reel19 | banc dans un parc en ville, au coucher du soleil (allée de gravier, arbres d'automne, réverbère vert allumé, pigeons, tours de la ville au-dessus des arbres ; le coach et Setty sur le même banc en fonte et lattes de bois) | `assets/sets/park.js` | phase 1 prête (commit 1b21889), en attente des voix |
 | reel20 | diner américain à 1 h du matin (banquette turquoise sous une vitrine sur la rue mouillée, néon EAT, horloge à 1:04, sac « TO GO ») | `assets/sets/diner.js` (+ `lab/diner`, planche `deliverables/duo/diner_v1.jpg`) | phase 1 prête, script à valider |
 | reel21 | ring de boxe dans une salle de boxe le soir (cordes, poteaux, projecteurs au-dessus du ring ; le coach assis sur le tabouret de son coin, Setty perché sur le poteau d'angle bleu en face) | `assets/sets/boxing.js` | phase 1 prête (planche `deliverables/duo/boxing_v1.jpg`, banc `lab/boxing`) |
@@ -50,3 +50,6 @@ les doublons et on réutilise ce qui existe. MANYSETTER REELS y publie les règl
   mix déjà entendu est réutilisé, et `go`/`snap` prennent une image toutes les 2,0 s (au lieu de 1,2). Pour aller vite :
   corrigez avec `snap --at t1,t2` sur les seuls moments touchés, un seul `go` complet avant le rendu, `--no-check` si
   rien n'a changé dans la mise en page.
+- 21/10 10 h (le fondateur) : **plus de final en 60 i/s**. La version 30 i/s que vous livrez est celle qui est publiée :
+  soignez-la comme un final (images du MP4 relues, Whisper, QA). Après la validation, MANYSETTER REELS met le statut à
+  jour et transmet le dossier à MANYSETTER POST ; vous n'avez rien à relancer.
