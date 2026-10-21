@@ -440,3 +440,8 @@ Format d'une règle :
 ## 2026-10-21 · Reel 14 de Setty « Free coaching in the DMs » validé
 - Retour : « Je valide le reel 14, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
 - Règle : le reel 14 (`07_PRET_A_PUBLIER/261021_REEL_S2_AV2_free-coaching-dms/`, cabinet de coach, 50,0 s) est **validé** tel que livré en 30 i/s ; final en 60 i/s avec `studio.py final` (piste caméra, CRF 20), puis transmis à MANYSETTER POST, qui le programme le même jour que son carrousel (`261020_CAR_S2_AV2_free-coaching-dms`).
+
+## 2026-10-21 · Reel 13 de Setty « The 24-hour rule » validé, finals faits par MANYSETTER REELS
+- Retour : « Je valide le reel 13, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
+- Règle : le reel 13 (`07_PRET_A_PUBLIER/261021_REEL_S1_AV1_24-hour-rule/`, studio fond vert, 59,3 s) est **validé** tel que livré en 30 i/s ; final en 60 i/s, puis transmis à MANYSETTER POST pour le même jour que son carrousel (`261020_CAR_S1_AV1_24-hour-rule`).
+- Règle : le garde-fou des sessions refuse un accord du fondateur transmis par une autre session (reel 14, 21/10). **MANYSETTER REELS fait donc lui-même le final** (`studio.py final reelN`) de chaque reel que le fondateur lui valide, et le transmet à MANYSETTER POST.
