@@ -16,7 +16,7 @@
  "id": "reel21",
  "slug": "human-vs-ai-setter",
  "title": "Human setter or AI setter",
- "pub_id": "",
+ "pub_id": "261021_REEL_S2_AV2_human-vs-ai-setter",
  "funnel": "TOFU",
  "segment": "S2",
  "avatar": "AV2",
@@ -41,8 +41,28 @@
   "rd39"
  ],
  "cta": "Comment SETTY",
- "caption": "",
- "caption_youtube": "",
- "statut": "script à valider",
- "created": "2026-10-21"
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that works next to your human team. Follow so the DM lands 📩\n\n👇 READ BELOW: human setter or AI setter at 30 DMs a day, an honest side-by-side with PayScale's numbers.\n\n1. PayScale puts a US appointment setter at $13 to $21 an hour in base pay, plus commission. Full time, that's roughly $2,250 to $3,640 a month before commission.\n\n2. ManySetter costs $119 a month per live setter, with 1,500 AI replies included. At 30 new chats a day, plan for extra replies too ($39 per 500).\n\n3. A person is still better at the sales call, big deals and spotting brand new objections.\n\n4. The best setup is both: Setty answers in your voice, one question at a time, finds the serious leads and books them, and a person takes the hard cases and the call.\n\nThe catch: an AI setter only knows what you give it. When the answer isn't in your sources, or the lead asks for a person, it hands the chat to your team. Building and testing are free with no card, then going live starts a 14-day trial.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#appointmentsetter #aisetter #highticket\n\nManySetter is not affiliated with or endorsed by Manychat, Meta, Calendly or PayScale.",
+ "caption_youtube": "Human setter or AI setter: which one for 30 DMs a day?\n\n👇 READ BELOW: human setter or AI setter at 30 DMs a day, an honest side-by-side with PayScale's numbers.\n\n1. PayScale puts a US appointment setter at $13 to $21 an hour in base pay, plus commission. Full time, that's roughly $2,250 to $3,640 a month before commission.\n\n2. ManySetter costs $119 a month per live setter, with 1,500 AI replies included. At 30 new chats a day, plan for extra replies too ($39 per 500).\n\n3. A person is still better at the sales call, big deals and spotting brand new objections.\n\n4. The best setup is both: Setty answers in your voice, one question at a time, finds the serious leads and books them, and a person takes the hard cases and the call.\n\nThe catch: an AI setter only knows what you give it. When the answer isn't in your sources, or the lead asks for a person, it hands the chat to your team. Building and testing are free with no card, then going live starts a 14-day trial.\n\nBuild your AI setter free at manysetter.com.\n\n#appointmentsetter #aisetter #shorts\n\nManySetter is not affiliated with or endorsed by Manychat, Meta, Calendly or PayScale.",
+ "statut": "script validé le 21/10 ; rendu 30 i/s à valider",
+ "created": "2026-10-21",
+ "paire": "261020_CAR_S2_AV2_human-vs-ai-setter",
+ "sources": [
+  {
+   "fait": "PayScale : setter aux États-Unis, 13 à 21 $ de l'heure de base plus commission (mise à jour du 12/05/2026, 76 profils) ; à plein temps ≈ 2 250 à 3 640 $ par mois avant commission (calcul, 173 h par mois) : « over two grand a month » reste en dessous (H1, H2, P14).",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 19 ; https://www.payscale.com/research/US/Job=Appointment_Setter/Salary"
+  },
+  {
+   "fait": "ManySetter : 119 $ par mois par setter live, 1 500 réponses IA incluses, +500 réponses à 39 $ ; à 30 nouvelles conversations par jour et 4 ou 5 réponses chacune, le quota inclus ne suffit pas (piège du quota, dit à l'écran et à l'oral).",
+   "source": "00_STRATEGIE/sources/banque-2.md, P1, P2 et idée 19 (site ManySetter, commit 4437fc1)"
+  },
+  {
+   "fait": "Ce qu'une personne fait mieux (l'appel de vente, les gros deals, les nouvelles objections) et « best of both » : l'IA répond, qualifie et réserve, une personne prend les cas difficiles et l'appel (H4, H5) ; passage de relais (P11) ; une question à la fois (P6).",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 19 ; site ManySetter, guide ai-vs-human-appointment-setter"
+  },
+  {
+   "fait": "« 30 DMs a day » est la situation du lecteur (hook du carrousel), pas un chiffre sourcé.",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 19"
+  }
+ ],
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter"
 }

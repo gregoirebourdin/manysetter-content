@@ -295,29 +295,44 @@ function table({ w = 1.8, d = 0.8, h = 2.5 } = {}) {
   return g;
 }
 
-/** the gym's round timer: a black LED panel, "ROUND 1" over red digits "3:00" */
+/** the gym's round timer: a black LED panel, "ROUND n" over red digits. g.userData.show(round, secs) redraws it (only when
+ *  the text changes), so a reel can run the clock: R.onFrame((t) => R.set.timer.show(1, 180 - t)) */
 function roundTimer({ w = 1.7, h = 0.86 } = {}) {
   const g = new THREE.Group();
   const body = K.box(w, h, 0.14, 0.04, K.mat(0x0c0d10, { roughness: 0.4, clearcoat: 0.5 }));
-  const face = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h - 0.1), K.glow(0xffffff, { map: K.canvasTex(512, 256, (c, W, H) => {
+  let ctx, last = "";
+  const tex = K.canvasTex(512, 256, (c) => (ctx = c));
+  const show = (round = 1, secs = 180) => {
+    const s = Math.max(0, Math.ceil(secs)), txt = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`, key = `${round} ${txt}`;
+    if (key === last) return;
+    last = key;
+    const c = ctx, W = 512, H = 256;
+    c.save();
+    c.globalAlpha = 1;
+    c.shadowBlur = 0;
     c.fillStyle = "#050506";
     c.fillRect(0, 0, W, H);
     c.textAlign = "center";
     c.textBaseline = "middle";
     c.fillStyle = "#d9dbe0";
     c.font = "800 34px Inter, sans-serif";
-    c.fillText("ROUND 1", W / 2, H * 0.17);
+    c.fillText(`ROUND ${round}`, W / 2, H * 0.17);
     for (const [blur, a] of [[24, 0.55], [8, 0.9], [0, 1]]) { // LED glow with shadows, never ctx.filter
       c.shadowColor = "#ff2d2d";
       c.shadowBlur = blur;
       c.globalAlpha = a;
       c.fillStyle = "#ff3b3b";
       c.font = "800 150px Inter, sans-serif";
-      c.fillText("3:00", W / 2, H * 0.62);
+      c.fillText(txt, W / 2, H * 0.62);
     }
-  }) }));
+    c.restore();
+    tex.needsUpdate = true;
+  };
+  show(1, 180);
+  const face = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h - 0.1), K.glow(0xffffff, { map: tex }));
   face.position.z = 0.072;
   g.add(body, face);
+  g.userData.show = show;
   return g;
 }
 
@@ -548,7 +563,7 @@ export async function build({ renderer, scene, mood = "night" }) {
   const settyFace = new THREE.Vector3(2.3, 2.15, -2.3);
   const sTop = stack.userData.top;
   return {
-    key, rim, lights, root: set,
+    key, rim, lights, root: set, timer: { show: timer.userData.show },
     coach: { x: -2.6, y: -0.46, z: -2.1, turn: 0.6, sit: 1, phone: 1 },
     setty: { x: 2.3, y: sTop - 0.3, z: -2.3, turn: -0.4, scale: 0.66 },
     heads: { coach: coachHead, setty: settyFace },

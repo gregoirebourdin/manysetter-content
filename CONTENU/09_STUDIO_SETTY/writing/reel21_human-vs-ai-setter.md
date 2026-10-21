@@ -33,17 +33,16 @@ comes back after "SETTY".
 | 8 | Coach | Knockout. | K.-O. | CU coach, hyped, both fists up | | |
 | 9 | Setty | Easy, champ. Thirty new chats a day needs extra replies, thirty-nine per five hundred. | Doucement, champion. Trente nouvelles conversations par jour, il faut des réponses en plus, 39 $ les 500. | CU Setty, calm, one hand up; card: the math, "30 new chats a day ≈ 900 a month", "× 4 or 5 replies each", "more than the 1,500 included", "+500 replies: $39" | clic (card) | piège du quota (banque-2, idée 19 ; P2) ; carrousel slide 4 |
 | 10 | Coach | Round two. AI sounds robotic. | Deuxième round. L'IA, ça sonne robot. | CU coach, arms crossed; card: "ROUND 2 · the voice" | clic (card) | rd38, rd31, mc05 |
-| 11 | Setty | In your voice, one question at a time, like you'd do it yourself. | À toute heure, avec ta voix. Lui, il dort, comme une personne normale. | CU Setty, sly; card: an Instagram chat, a lead's question and a short reply in the coach's own words (demo), "Replies at any hour, in your voice" | clic (card) | P13 (par défaut, à toute heure) ; brief § 2 et § 5 ; carrousel slides 2 et 3 |
+| 11 | Setty | In your voice, one question at a time, like you'd do it yourself. | Avec ta voix, une question à la fois, comme tu le ferais toi-même. | CU Setty, sly; card: an Instagram DM (demo), the lead's "is this for me? 👀", then a reply in the coach's own words and one question ("yo! for sure 🙌", "what's your goal?") | clic (card) | P6 (une question à la fois) ; brief § 2 et § 5 ; rd38, rd31 |
 | 12 | Coach | So you win. | Donc tu gagnes. | CU coach, convinced | | |
 | 13 | Setty | Nope. He's better on the sales call, big deals, new objections. | Non. Lui, il est meilleur sur l'appel de vente, les gros deals, les nouvelles objections. | CU Setty, dead serious; card: "What a person does best": the sales call, high-value deals, brand new objections | 💥 "Nope." · clic (card) | H4 ; carrousel slide 6 |
 | 14 | Coach | Then who wins? | Alors qui gagne ? | CU coach, confused | | |
-| 15 | Setty | Both. Plug me into Manychat, I find the serious ones and book them. He takes the hard cases and the call. | Les deux. Branche-moi sur Manychat, je qualifie et je réserve. Lui prend les cas difficiles et l'appel. | Push-in on Setty, proud; card: Instagram DMs → Manychat → ManySetter (answers, qualifies, books) → your team (hard cases, the call), with the Calendly logo on the booking step | 💥 "Both." · clic (card) | H5 ; P11 (passage de relais) ; brief § 2 ; rd65, rd39 ; carrousel slides 8 et 9 |
+| 15 | Setty | Both. Plug me into Manychat, I find the serious ones and book them. He takes the hard cases and the call. | Les deux. Branche-moi sur Manychat, je trouve les sérieux et je les réserve. Lui prend les cas difficiles et l'appel. | Push-in on Setty, proud; card: Instagram DMs → Manychat → ManySetter (answers, qualifies, books) → your team (hard cases, the call), with the Calendly logo on the booking step | 💥 "Both." · clic (card) | H5 ; P11 (passage de relais) ; brief § 2 ; rd65, rd39 ; carrousel slides 8 et 9 |
 | 16 | Coach | Okay. How do I set you up? | Ok. Comment je t'installe ? | Wide, the music cuts: silence | music cut | |
 | 17 | Setty | You paid for a fight and got a [bleep]ing group hug. | T'as payé pour un combat et t'as eu un [bip] de câlin collectif. | CU Setty, mocking; the coach's face during the Fahhh (he looks at the empty ring) | 😩 Fahhh | blague du décor |
 | 18 | Setty | Comment SETTY and I'll send you everything to build your AI setter for free. | Commente SETTY et je t'envoie tout pour construire ton setter IA gratuitement. | CU Setty, wink; comment bar types SETTY; back to the wide (loops to frame 0) | clics on SETTY · music back | série, brief § 3, CTA du 20/10 |
 
-Words: 158 (coach 37, Setty 121) · Estimated length: ~56 s (reel5: 162 words, 18 lines, 2 Fahhh made 55.7 s; the
-numbers said in words are long, so a margin is kept under 60.0 s).
+Words: 164 after the retouches (coach 37, Setty 127) · Voice installed: 54.6 s (Setty take 3, coach take 1); reel 56.6 s.
 Hook title (all reel, slide 1 of the carousel, word for word): "Human setter or *AI setter*: / which one for 30 DMs a
 day?" (2 lines, "AI setter" in orange).
 Biases: duel (humain contre IA, mis en scène sur le ring), chiffre très précis (30 DM par jour, 13 à 21 $ de l'heure,
@@ -65,10 +64,9 @@ hook's.
 - Line 9, the quota trap: 30 new chats a day is about 900 a month; at 4 or 5 replies each (follow-ups included, one reply
   = one message the setter sends) that is 3,600 to 4,500 replies, well past the 1,500 included; +500 replies cost $39
   (P2). Same wording as the carousel's slide 4. The reel never says "$119 for 30 DMs a day".
-- Line 11: by default it replies at any hour (P13; the "When it replies" setting is not public, not mentioned). In the
-  brand's voice (brief § 2). Never "instantly": it waits for the lead to finish (30 s to 5 min, P4, P5); nothing said
-  here about speed. "He sleeps, like a normal person": the carousel's "sleeps, has a life" (slide 2), said warmly; the
-  human setter is never put down.
+- Line 11 (retouched by MANYSETTER REELS, validated on 21/10): in the brand's voice (brief § 2), one question at a time
+  (P6). Nothing about the hours (the "any hour" of v1 was taken out) nor about speed (it waits for the lead to finish,
+  30 s to 5 min, P4, P5). The human setter is never put down.
 - Line 13: H4, the site's guide, "What a person does best": the sales call, high-value deals, spotting new objections.
 - Line 15: H5, "Best of both: the AI answers, qualifies and books. A person takes the hard cases and the call." Plug into
   Manychat: brief § 2 (it works with your Manychat account, it does not replace it). Hand-off: P11 (a person when the
