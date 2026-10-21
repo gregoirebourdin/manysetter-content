@@ -361,7 +361,7 @@ function dinerTable({ w = 4.2, d = 1.4, legs = [-1.5, 1.5] } = {}) {
 
 // ---------------------------------------------------------------- the order
 
-/** a stack of pancakes on a plate: butter pat, syrup on top and running down, a pool of syrup */
+/** a stack of pancakes on a plate: butter pat, syrup glazed on top, a pool of syrup on the plate */
 function pancakes() {
   const g = new THREE.Group();
   const plate = K.cyl(0.46, 0.4, 0.04, china(), 48);
@@ -377,12 +377,6 @@ function pancakes() {
   const glaze = K.cyl(0.25, 0.27, 0.014, syrup, 40);
   glaze.position.y = 0.075 + 3 * 0.074 + 0.044;
   g.add(glaze);
-  for (const a of [0.4, 1.9, 3.3, 4.8]) { // drips down the side
-    const d = K.ball(0.035, syrup, 12);
-    d.scale.set(1, 2.6, 1);
-    d.position.set(Math.cos(a) * 0.305, 0.2 + (a % 1) * 0.06, Math.sin(a) * 0.305);
-    g.add(d);
-  }
   const pool = K.cyl(0.38, 0.38, 0.006, syrup, 40);
   pool.position.y = 0.043;
   const butter = K.box(0.13, 0.07, 0.11, 0.015, K.mat(0xffe9a3, { roughness: 0.35 }));
@@ -721,6 +715,7 @@ export async function build({ renderer, scene, mood = "night" }) {
   set.updateMatrixWorld(true);
   const bagAt = bag.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, 0.3, 0));
   const clockAt = clock.getWorldPosition(new THREE.Vector3());
+  const cakesAt = cakes.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, 0.22, 0));
 
   // where the characters go (engine pose fields), and the camera shots ({ pos, at, fov })
   const coachHead = new THREE.Vector3(-1.25, 3.85, -2.2);
@@ -729,19 +724,21 @@ export async function build({ renderer, scene, mood = "night" }) {
     key, rim, lights, root: set,
     coach: { x: -1.4, y: SEAT - 1.08, z: -2.32, turn: 0.32, sit: 1, phone: 1 },
     setty: { x: 1.0, y: TOP - 0.3, z: -1.0, turn: -0.42, scale: 0.6 },
-    heads: { coach: coachHead, setty: settyFace, bag: bagAt, clock: clockAt },
+    heads: { coach: coachHead, setty: settyFace, bag: bagAt, clock: clockAt, cakes: cakesAt },
     frames: {
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 860 }, // lower: the hook title runs on 3 lines
       setty: { target: settyFace, dist: 10.5, yaw: -0.32, pitch: 0.06, y: 860 },
       bag: { target: bagAt, dist: 2.8, yaw: -0.35, pitch: 0.28, y: 900 }, // tight, from the left: Setty and the mug stay out
-      clock: { target: clockAt, dist: 5.0, yaw: 0.5, pitch: -0.05, y: 860 }, // from the right: the coach's head stays out of it
+      clock: { target: clockAt, dist: 3.3, yaw: 0.55, pitch: -0.05, y: 1010 }, // from the right (the coach's beanie stays out), under the title
+      cakes: { target: cakesAt, dist: 2.7, yaw: 0.25, pitch: 0.42, y: 980 }, // his pancakes from above, his tank top behind
     },
     shots: {
       wide: { pos: [-0.2, 3.7, 12.8], at: [-0.2, 2.45, -1.6], fov: 44 },
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 860 }),
       setty: K.shot(settyFace, { dist: 10.5, yaw: -0.32, pitch: 0.06, y: 860 }),
       bag: K.shot(bagAt, { dist: 2.8, yaw: -0.35, pitch: 0.28, y: 900 }),
-      clock: K.shot(clockAt, { dist: 5.0, yaw: 0.5, pitch: -0.05, y: 860 }),
+      clock: K.shot(clockAt, { dist: 3.3, yaw: 0.55, pitch: -0.05, y: 1010 }),
+      cakes: K.shot(cakesAt, { dist: 2.7, yaw: 0.25, pitch: 0.42, y: 980 }),
     },
   };
 }

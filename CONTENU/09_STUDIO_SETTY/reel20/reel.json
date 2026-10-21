@@ -16,7 +16,7 @@
  "id": "reel20",
  "slug": "hot-lead",
  "title": "The hot lead",
- "pub_id": "",
+ "pub_id": "261021_REEL_S1_AV1_hot-lead",
  "funnel": "TOFU",
  "segment": "S1",
  "avatar": "AV1",
@@ -41,11 +41,28 @@
   "rd65"
  ],
  "cta": "Comment SETTY",
- "caption": "",
- "caption_youtube": "",
- "statut": "script à valider",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that books hot leads right in the DM. Follow so the DM lands 📩\n\n👇 READ BELOW: what happens in a hot lead's head, from George Loewenstein's research on the hot-cold empathy gap.\n\n1. In the DM, she feels it: \"this is exactly what I need\". She says she'll book tonight, and tonight never comes.\n\n2. Psychologists call it the hot-cold empathy gap. When we're calm, we underestimate how much a strong feeling drives our choices, and in the moment we think we'll feel the same tomorrow (Loewenstein, 2005).\n\n3. In one study, hungry people picked more junk food for next week than people who had just eaten (Read and van Leeuwen, 1998). It's a good way to read a lead who goes quiet overnight, along with plain old busy and forgot.\n\n4. So finish in the DM while she's hot. Setty is the AI setter I built for coaches: through Manychat, he answers her last question in your voice, checks the fit, and offers two or three times in her time zone, right in the chat.\n\nThe catch: no study measured DM leads, so read this as a lens, not a law. Setty books on Cal.com, paid Calendly or iClosed, and with any other tool he sends your booking link. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#salespsychology #onlinecoach #instagramdms\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "caption_youtube": "Why your hottest lead ghosted you, even after \"this is exactly what I need\"\n\n👇 READ BELOW: what happens in a hot lead's head, from George Loewenstein's research on the hot-cold empathy gap.\n\n1. In the DM, she feels it: \"this is exactly what I need\". She says she'll book tonight, and tonight never comes.\n\n2. Psychologists call it the hot-cold empathy gap. When we're calm, we underestimate how much a strong feeling drives our choices, and in the moment we think we'll feel the same tomorrow (Loewenstein, 2005).\n\n3. In one study, hungry people picked more junk food for next week than people who had just eaten (Read and van Leeuwen, 1998). It's a good way to read a lead who goes quiet overnight, along with plain old busy and forgot.\n\n4. So finish in the DM while she's hot. Setty is the AI setter I built for coaches: through Manychat, he answers her last question in your voice, checks the fit, and offers two or three times in her time zone, right in the chat.\n\nThe catch: no study measured DM leads, so read this as a lens, not a law. Setty books on Cal.com, paid Calendly or iClosed, and with any other tool he sends your booking link. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#salespsychology #onlinecoach #shorts\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "rendu 30 i/s livré le 21/10 (56,2 s, -14,2 LUFS, -2,2 dBTP), à valider par le fondateur ; publié tel quel en 30 i/s après validation (règle du 21/10), dim. 8/11 à 6:30 pm ET",
  "created": "2026-10-21",
  "sources": [
-  "CONTENU/00_STRATEGIE/sources/banque-2.md, idée 20 (L1 Loewenstein 2005, L3, L5 Read et van Leeuwen 1998) et faits produit P6, P9, P9b"
- ]
+  {
+   "fait": "Psychologists call it the hot-cold empathy gap. When we're calm, we underestimate how much a strong feeling drives our choices; in the moment, we think we'll feel the same tomorrow.",
+   "source": "Loewenstein, G. (2005), Health Psychology 24(4 Suppl.), S49-S56, doi:10.1037/0278-6133.24.4.S49 (00_STRATEGIE/sources/banque-2.md, idée 20, L1 et L3)"
+  },
+  {
+   "fait": "In one study, hungry people picked more junk food for next week than people who had just eaten.",
+   "source": "Read, D. et van Leeuwen, B. (1998), Predicting hunger, OBHDP 76(2), 189-205, doi:10.1006/obhd.1998.2803 (banque-2.md, idée 20, L5)"
+  },
+  {
+   "fait": "Aucune étude ne porte sur des leads en DM : lecture par analogie, sans durée ; l'oubli (rd84) reste une autre cause.",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 20"
+  },
+  {
+   "fait": "It asks one question at a time, offers two or three open times in the lead's time zone and books on Cal.com, Calendly or iClosed; on Calendly Free or another tool it sends the booking link.",
+   "source": "banque-2.md, faits produit P6, P9, P9b (site ManySetter, commit 4437fc1)"
+  }
+ ],
+ "paire": "261020_CAR_S1_AV1_hot-lead",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter"
 }
