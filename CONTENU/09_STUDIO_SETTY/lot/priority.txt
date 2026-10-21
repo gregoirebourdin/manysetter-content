@@ -1,0 +1,9 @@
+# reels in publication order: the heavy lock serves the earliest post first (scripts/heavy.py)
+reel12
+reel15
+reel16
+reel17
+reel18
+reel19
+reel20
+reel21

@@ -11,11 +11,13 @@ import fcntl
 import json
 import os
 import pathlib
+import re
 import subprocess
 import time
 import uuid
 
 DIR = pathlib.Path("/tmp/setty-heavy")
+PRIO = pathlib.Path(__file__).resolve().parents[1] / "lot/priority.txt"  # reels in publication order (21/10)
 LEGACY = pathlib.Path("/tmp/setty-heavy.lock")
 _held = 0
 
@@ -64,6 +66,17 @@ def _under_legacy():
     return False
 
 
+def _prio(what):
+    """Rank of the step's reel in lot/priority.txt (publication order): the reel that posts first goes first, the
+    unlisted ones after. The founder, 21/10: « fais en sorte qu'ils aillent plus vite »."""
+    m = re.match(r"(reel\d+)", what)
+    try:
+        order = [l.strip() for l in PRIO.read_text().splitlines() if l.strip() and not l.startswith("#")]
+    except OSError:
+        order = []
+    return order.index(m.group(1)) if m and m.group(1) in order else len(order) + 1
+
+
 def _ago(t):
     s = int(time.time() - t)
     return f"{s // 60} min {s % 60:02d} s" if s >= 60 else f"{s} s"
@@ -87,7 +100,10 @@ def heavy(what):
             with _queue() as box:
                 q = box[0]
                 if not any(e["id"] == me["id"] for e in q):
-                    q.append(me)
+                    # in priority order, before any waiting step of a later reel (never before the running one);
+                    # same priority: order of arrival. Old-style waiters (no "prio") count as last.
+                    me["prio"] = _prio(what)
+                    q.insert(next((k for k, e in enumerate(q) if not e.get("start") and e.get("prio", 99) > me["prio"]), len(q)), me)
                 pos = next(k for k, e in enumerate(q) if e["id"] == me["id"])
                 if pos == 0:
                     q[0]["start"] = time.time()

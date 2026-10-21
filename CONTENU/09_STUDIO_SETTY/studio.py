@@ -455,8 +455,17 @@ def cmd_audio(a):
     swears = ",".join(data["words"][b["i"]]["w"] for b in data["bleeps"])
     script = STUDIO / f"vo/{a.reel}_script.txt"
     if script.exists() and not getattr(a, "no_whisper", False):
-        with heavy(f"{a.reel} Whisper on the mix"):
-            c = check_vo(d / "audio/mix.wav", script, swears)
+        import hashlib
+        cache = d / "audio/mix_whisper.json"
+        sig = hashlib.sha1((d / "audio/mix.wav").read_bytes() + script.read_bytes() + swears.encode()).hexdigest()
+        old = json.loads(cache.read_text()) if cache.exists() else {}
+        if old.get("sig") == sig:  # the same mix was already heard: no second Whisper pass (21/10)
+            c = old["result"]
+            say("  Whisper on the mix: same mix as last time, result reused")
+        else:
+            with heavy(f"{a.reel} Whisper on the mix"):
+                c = check_vo(d / "audio/mix.wav", script, swears)
+            cache.write_text(json.dumps({"sig": sig, "result": c}))
         if c["errors"]:
             say(f"  ! Whisper on the mix: {c['problems']} (listen: a word masked by an SFX or the beat?)")
         else:
@@ -664,9 +673,9 @@ def cmd_frames(a):
         sys.exit(f"no render of {a.reel} yet: python3 studio.py render {a.reel}")
     src = src if src.is_absolute() else STUDIO / src
     out = STUDIO / f"renders/{src.stem}_frames.jpg"
-    with heavy(f"{a.reel} frames"):
-        r = run([PY, "scripts/frames.py", str(src), str(out), "--cues", str(d / "cues.json")]
-                + (["--at", a.at] if getattr(a, "at", None) else []), capture_output=True, text=True)
+    # no lock: decoding one MP4 takes ~20 s of CPU, it waited 12 min behind two renders (reel14, 21/10)
+    r = run([PY, "scripts/frames.py", str(src), str(out), "--cues", str(d / "cues.json")]
+            + (["--at", a.at] if getattr(a, "at", None) else []), capture_output=True, text=True)
     if r.returncode:
         sys.exit(r.stderr[-800:])
     res = json.loads(r.stdout.strip().splitlines()[-1])
@@ -843,8 +852,8 @@ def main():
     for name in ("build", "check"):
         p = sub.add_parser(name); p.add_argument("reel")
     p = sub.add_parser("audio"); p.add_argument("reel"); p.add_argument("--no-whisper", action="store_true")
-    p = sub.add_parser("snap"); p.add_argument("reel"); p.add_argument("--at"); p.add_argument("--every", type=float, default=1.2)
-    p = sub.add_parser("go"); p.add_argument("reel"); p.add_argument("--at"); p.add_argument("--every", type=float, default=1.2)
+    p = sub.add_parser("snap"); p.add_argument("reel"); p.add_argument("--at"); p.add_argument("--every", type=float, default=2.0)
+    p = sub.add_parser("go"); p.add_argument("reel"); p.add_argument("--at"); p.add_argument("--every", type=float, default=2.0)
     p.add_argument("--no-whisper", action="store_true"); p.add_argument("--no-check", action="store_true")
     for name in ("render", "final"):
         p = sub.add_parser(name); p.add_argument("reel"); p.add_argument("--fps", type=int, default=30 if name == "render" else 60)
