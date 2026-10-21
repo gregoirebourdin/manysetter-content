@@ -445,3 +445,9 @@ Format d'une règle :
 - Retour : « Je valide le reel 13, fais le final en 60 i/s et passe-le à MANYSETTER POST. »
 - Règle : le reel 13 (`07_PRET_A_PUBLIER/261021_REEL_S1_AV1_24-hour-rule/`, studio fond vert, 59,3 s) est **validé** tel que livré en 30 i/s ; final en 60 i/s, puis transmis à MANYSETTER POST pour le même jour que son carrousel (`261020_CAR_S1_AV1_24-hour-rule`).
 - Règle : le garde-fou des sessions refuse un accord du fondateur transmis par une autre session (reel 14, 21/10). **MANYSETTER REELS fait donc lui-même le final** (`studio.py final reelN`) de chaque reel que le fondateur lui valide, et le transmet à MANYSETTER POST.
+
+## 2026-10-21 · Shorts des carrousels retirés de Zernio, 10 carrousels de la banque n° 2 validés
+- Retour : « Les carrousels transformés en vidéo, enlève-les de Zernio stp. »
+- Règle : les 8 Shorts YouTube tirés des carrousels du 21 au 28/10 sont **supprimés de Zernio** le 21/10, avant toute publication. Les posts Instagram des carrousels et les 10 reels (Instagram et Short YouTube) restent programmés.
+- Retour : « Je valide les carrousels. »
+- Règle : les 10 carrousels de la banque n° 2 (`07_PRET_A_PUBLIER/261020_CAR_*` : price-ghost, 24-hour-rule, free-coaching-dms, ai-2-seconds, 600-setter, make-chatgpt-setter, dm-ads, follow-up, hot-lead, human-vs-ai-setter) sont **validés** tels qu'ils sont sur la planche du 21/10. Chacun est programmé, sur Instagram seulement, le même jour que son reel, dès que ce reel est validé et transmis, dans l'ordre de publication (11 · 16 · 12 · 18 · 13 · 17 · 14 · 15 · 20 · 19 à partir du 31/10).
