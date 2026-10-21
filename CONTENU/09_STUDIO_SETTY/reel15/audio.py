@@ -15,13 +15,11 @@ M = Mix(__file__)
 C, WORDS, sfx = M.C, M.WORDS, M.sfx
 H = lambda key: C[key]  # noqa: E731
 
-# ---------------- music: Grégoire's track, its drop on the end of the hook line; cut it on the comedic beats with
-# play=[(t0, t1), …] (it keeps its own time, like a mute) and M.tape_stop(t1 - 0.5) where a joke kills it
-DROP = H("right_end") + 0.05
-M.music_bed(drop=DROP, play=[
-    (DROP, H("comment") - 0.12),
-    (H("setty_end") + 0.08, H("end") + 0.6),  # the music stops under "Comment SETTY." so the keyword lands clean
-])
+# ---------------- music: Grégoire's track, its drop right after the hook; it dies like a tape on "Never." (the setup
+# "Okay. How do I set you up?" and the server-room roast play in silence) and comes back once "SETTY" is said
+DROP = H("drop")
+M.music_bed(drop=DROP, play=[(DROP, H("never") + 0.3), (H("setty_end") + 0.12, H("end") + 2.6)])
+M.tape_stop(H("never") - 0.2, 0.5)
 
 # ---------------- SFX: only his sounds, each one carries a moment (no cute chimes, no tick under every word)
 M.riser_into(DROP)                       # his riser from frame 0, its climax + a BOOM on the drop
@@ -31,7 +29,7 @@ for k, t in C.items():
     elif k.startswith("fahhh"):          # build.py: "fahhh1": e(last word of the roast) + 0.08
         M.fahhh(t)
     elif k.startswith("clic"):           # build.py: "clic1": the moment a card pops on screen
-        M.clic(t)
+        M.clic(t, 0.8)
 
 # ---------------- SFX: CTA (the keyword is typed after it is said, so the clicks never mask "SETTY")
 for k in range(5):

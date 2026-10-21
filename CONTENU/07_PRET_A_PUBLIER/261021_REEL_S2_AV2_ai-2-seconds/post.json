@@ -1,0 +1,77 @@
+{
+  "funnel": "TOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "hook": "Setty, on a server pulled out of its rack, to the coach on his flight case in the server aisle: You turned on your [bleep]ing AI auto-reply, right?",
+  "biais": [
+    "chiffre très précis (2 secondes)",
+    "contre-pied (la vitesse fait fuir)",
+    "pertinence pour soi (son auto-reply)"
+  ],
+  "verbatims": [
+    "rd06",
+    "rd63",
+    "cl095",
+    "rd71",
+    "mc10",
+    "mc19",
+    "mc11",
+    "mc23",
+    "mc05",
+    "mc22",
+    "cl145",
+    "mc29"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261020_CAR_S2_AV2_ai-2-seconds (idée 18, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+  "sources": [
+    {
+      "fait": "le setter attend que le lead ait fini d'écrire, puis envoie une seule réponse à tout ce qu'il a écrit (au moins 30 s de silence, chaque nouveau message relance l'attente)",
+      "source": "sources/banque-2.md, P4 (site : how-it-works.ts:232 ; policy.ts:28-34)"
+    },
+    {
+      "fait": "l'attente après le dernier message se règle de 30 secondes à 5 minutes (jamais vendue comme de la vitesse)",
+      "source": "sources/banque-2.md, P5 (site : setters/lib/config.ts:186-190)"
+    },
+    {
+      "fait": "une question à la fois",
+      "source": "sources/banque-2.md, P6 (site : how-it-works.ts:240 ; human-texting.ts:96)"
+    },
+    {
+      "fait": "il se souvient de ce que le lead a déjà dit et ne pose jamais deux fois la même question",
+      "source": "sources/banque-2.md, P7 (site : ai-dm-setter.ts:151 ; engine/lib/memory.ts)"
+    },
+    {
+      "fait": "les conversations des cartes (« hey », « How can I help? 😊 », « Booking link! 📅 », « i wanna drop 20 lbs », « yes, fully online 🙂 how many days can you train? ») sont des exemples de démonstration, jamais une vraie conversation de client",
+      "source": "carrousel 261020_CAR_S2_AV2_ai-2-seconds, slides 2 à 4 (démo)"
+    },
+    {
+      "fait": "prix et essai : 119 $ par mois par setter live, construire et tester gratuit sans carte, essai de 14 jours au passage en live",
+      "source": "brief-de-marque.md, section 3 ; sources/banque-2.md, P1 et P3"
+    },
+    {
+      "fait": "mc22 (« the number one complaint I get is the AI instantly answering ») vise l'IA de Manychat : le coach dit « my AI », rien ne vise Manychat",
+      "source": "sources/banque-2.md, idée 18 ; verbatims règle 3"
+    }
+  ],
+  "id": "261021_REEL_S2_AV2_ai-2-seconds",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel15",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel15_ai-2-seconds.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel15/reel15_nomusic.mp4"
+  },
+  "qa": {
+    "duree_s": 53.93,
+    "lufs": -14.2,
+    "true_peak_dbtp": -1.9
+  },
+  "statut": "rendu 30 i/s à valider (lot des reels 12 à 21)"
+}

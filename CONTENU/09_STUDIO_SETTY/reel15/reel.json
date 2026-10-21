@@ -45,9 +45,40 @@
   "mc29"
  ],
  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
- "caption": "",
- "caption_youtube": "",
- "statut": "script v1 à valider (lot des reels 12 à 21)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that waits for your lead to finish typing. Follow so the DM lands 📩\n\n👇 READ BELOW: why an AI that replies to every DM in 2 seconds makes leads leave, and what a human-sounding reply does instead.\n\n1. People send one thought in three messages. An instant auto-reply answers each piece, and can drop your booking link before they've even finished their sentence.\n\n2. Then it asks for things they already told it, so the chat starts to feel like a form.\n\n3. Real people read the whole thing, then reply once, to what was actually asked, with one question.\n\n4. Setty is the AI setter I built for coaches: through Manychat, he waits until the lead has finished typing, sends one reply in your voice and asks one question at a time, never the same one twice. You choose how long he waits after their last message, from 30 seconds to 5 minutes.\n\nThe catch: Setty is never the fastest reply in your inbox, on purpose. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#aisetter #dmautomation #instagramdms\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "caption_youtube": "If your AI replies in 2 seconds, this is why your leads leave\n\n👇 READ BELOW: why an AI that replies to every DM in 2 seconds makes leads leave, and what a human-sounding reply does instead.\n\n1. People send one thought in three messages. An instant auto-reply answers each piece, and can drop your booking link before they've even finished their sentence.\n\n2. Then it asks for things they already told it, so the chat starts to feel like a form.\n\n3. Real people read the whole thing, then reply once, to what was actually asked, with one question.\n\n4. Setty is the AI setter I built for coaches: through Manychat, he waits until the lead has finished typing, sends one reply in your voice and asks one question at a time, never the same one twice. You choose how long he waits after their last message, from 30 seconds to 5 minutes.\n\nThe catch: Setty is never the fastest reply in your inbox, on purpose. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#aisetter #dmautomation #shorts\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "rendu 30 i/s à valider (lot des reels 12 à 21)",
  "created": "2026-10-21",
- "paire": "261020_CAR_S2_AV2_ai-2-seconds (idée 18, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+ "paire": "261020_CAR_S2_AV2_ai-2-seconds (idée 18, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "sources": [
+  {
+   "fait": "le setter attend que le lead ait fini d'écrire, puis envoie une seule réponse à tout ce qu'il a écrit (au moins 30 s de silence, chaque nouveau message relance l'attente)",
+   "source": "sources/banque-2.md, P4 (site : how-it-works.ts:232 ; policy.ts:28-34)"
+  },
+  {
+   "fait": "l'attente après le dernier message se règle de 30 secondes à 5 minutes (jamais vendue comme de la vitesse)",
+   "source": "sources/banque-2.md, P5 (site : setters/lib/config.ts:186-190)"
+  },
+  {
+   "fait": "une question à la fois",
+   "source": "sources/banque-2.md, P6 (site : how-it-works.ts:240 ; human-texting.ts:96)"
+  },
+  {
+   "fait": "il se souvient de ce que le lead a déjà dit et ne pose jamais deux fois la même question",
+   "source": "sources/banque-2.md, P7 (site : ai-dm-setter.ts:151 ; engine/lib/memory.ts)"
+  },
+  {
+   "fait": "les conversations des cartes (« hey », « How can I help? 😊 », « Booking link! 📅 », « i wanna drop 20 lbs », « yes, fully online 🙂 how many days can you train? ») sont des exemples de démonstration, jamais une vraie conversation de client",
+   "source": "carrousel 261020_CAR_S2_AV2_ai-2-seconds, slides 2 à 4 (démo)"
+  },
+  {
+   "fait": "prix et essai : 119 $ par mois par setter live, construire et tester gratuit sans carte, essai de 14 jours au passage en live",
+   "source": "brief-de-marque.md, section 3 ; sources/banque-2.md, P1 et P3"
+  },
+  {
+   "fait": "mc22 (« the number one complaint I get is the AI instantly answering ») vise l'IA de Manychat : le coach dit « my AI », rien ne vise Manychat",
+   "source": "sources/banque-2.md, idée 18 ; verbatims règle 3"
+  }
+ ]
 }

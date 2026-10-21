@@ -620,7 +620,7 @@ export async function build({ renderer, scene, mood = "night" }) {
       coach: K.shot(coachHead, { dist: 12, yaw: 0.62, y: 820 }),
       setty: K.shot(settyFace, { dist: 10.5, yaw: -0.5, pitch: 0.06, y: 800 }),
       // insert: his rack's "2.0 s" label
-      label: K.shot(new THREE.Vector3(-AISLE, 3.55, ROW0 + 0.42), { dist: 4.2, yaw: 0.9, pitch: 0.02, y: 900 }),
+      label: K.shot(new THREE.Vector3(-AISLE, 3.55, ROW0 + 0.42), { dist: 4.2, yaw: 0.78, pitch: 0.02, x: 640, y: 900 }),
     },
   };
 }
