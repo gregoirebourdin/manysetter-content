@@ -1,16 +1,74 @@
 [
- {"who": "setty", "text": "You built your own fucking AI setter with Make, right?", "style": "Cheeky and mocking, quick, like a best friend about to roast you."},
- {"who": "coach", "text": "All weekend, bro. ManyChat sends the DM to Make, ChatGPT writes the reply, Make sends it back.", "style": "Proud and hyped, showing off his weekend build to his buddy, a casual American guy, quick and rhythmic through the steps."},
- {"who": "setty", "text": "Cute. Now a lead sends three messages in a row.", "style": "Flat and deadpan, setting a trap."},
- {"who": "coach", "text": "So it answers all three? Like a robot on espresso.", "style": "Realizing it as he talks, the confidence cracking, then a nervous laugh on the last words."},
- {"who": "setty", "text": "And does it remember what they said?", "style": "Dry and slow, another trap question."},
- {"who": "coach", "text": "Uh, it asked her name twice.", "style": "Sheepish and quieter, admitting it."},
- {"who": "setty", "text": "Memory doesn't wire itself, you save each lead's Conversation ID and send it back. The right questions, the booking, the follow-ups? You build those too.", "style": "Mocking and matter-of-fact, a short beat after 'itself', then listing the rest slowly and savoring 'You build those too.'"},
- {"who": "coach", "text": "At least it's cheap.", "style": "Hopeful, trying to save face."},
- {"who": "setty", "text": "Make credits, OpenAI tokens, and your Saturday nights in a garage.", "style": "A mocking roast, listing the costs, slow and smug on the last words.", "pause": 0.95},
- {"who": "coach", "text": "Bro, I'm not a developer. I didn't want another thing to maintain.", "style": "Deflated and tired, venting to a friend."},
- {"who": "setty", "text": "The model isn't the setter, I am. The wait, the memory, the questions, the booking, the follow-ups, already built. Plug me into ManyChat.", "style": "Suddenly confident and smooth, a short beat after 'I am', then listing easily like flexes, a sly little offer at the end."},
- {"who": "coach", "text": "Okay. How do I set you up?", "style": "Hesitant and a bit sheepish, a small pause after okay."},
- {"who": "setty", "text": "Step one, go to bed. You smell like fucking webhooks.", "style": "Mocking, laughing at him, slow and smug.", "pause": 0.95},
- {"who": "setty", "text": "Comment SETTY and I'll send you everything to build your AI setter for free.", "style": "Smooth and smug, then warm and generous on the offer, like handing over a gift."}
+ {
+  "who": "setty",
+  "text": "You built your own fucking AI setter with Make, right?",
+  "style": "Cheeky and mocking, quick, like a best friend about to roast you."
+ },
+ {
+  "who": "coach",
+  "text": "All weekend, bro. ManyChat sends the DM to Make, ChatGPT writes the reply, Make sends it back.",
+  "style": "Proud and hyped, showing off his weekend build to his buddy, a casual American guy, quick and rhythmic through the steps. Say ChatGPT clearly as Chat G-P-T, each letter distinct"
+ },
+ {
+  "who": "setty",
+  "text": "Cute. Now a lead sends three messages in a row.",
+  "style": "Flat and deadpan, setting a trap."
+ },
+ {
+  "who": "coach",
+  "text": "So it answers all three? Like a robot on espresso.",
+  "style": "Realizing it as he talks, the confidence cracking, then a nervous laugh on the last words."
+ },
+ {
+  "who": "setty",
+  "text": "And does it remember what they said?",
+  "style": "Dry and slow, another trap question."
+ },
+ {
+  "who": "coach",
+  "text": "Uh, it asked her name twice.",
+  "style": "Sheepish and quieter, admitting it."
+ },
+ {
+  "who": "setty",
+  "text": "Memory doesn't wire itself, you save each lead's Conversation ID and send it back. The right questions, the booking, the follow-ups? You build those too.",
+  "style": "Mocking and matter-of-fact, a short beat after 'itself', then listing the rest slowly and savoring 'You build those too.'"
+ },
+ {
+  "who": "coach",
+  "text": "At least it's cheap.",
+  "style": "Hopeful, trying to save face."
+ },
+ {
+  "who": "setty",
+  "text": "Make credits, OpenAI tokens, and your Saturday nights in a garage.",
+  "style": "A mocking roast, listing the costs, slow and smug on the last words.",
+  "pause": 0.95
+ },
+ {
+  "who": "coach",
+  "text": "Bro, I'm not a developer. I didn't want another thing to maintain.",
+  "style": "Deflated and tired, venting to a friend."
+ },
+ {
+  "who": "setty",
+  "text": "The model isn't the setter, I am. The wait, the memory, the questions, the booking, the follow-ups, already built. Plug me into ManyChat.",
+  "style": "Suddenly confident and smooth, a short beat after 'I am', then listing easily like flexes, a sly little offer at the end. Say ManyChat clearly, Many as in many people, then chat"
+ },
+ {
+  "who": "coach",
+  "text": "Okay. How do I set you up?",
+  "style": "Hesitant and a bit sheepish, a small pause after okay."
+ },
+ {
+  "who": "setty",
+  "text": "Step one, go to bed. You smell like fucking webhooks.",
+  "style": "Mocking, laughing at him, slow and smug.",
+  "pause": 0.95
+ },
+ {
+  "who": "setty",
+  "text": "Comment SETTY and I'll send you everything to build your AI setter for free.",
+  "style": "Smooth and smug, then warm and generous on the offer, like handing over a gift."
+ }
 ]
