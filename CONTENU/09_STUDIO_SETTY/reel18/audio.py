@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sound of this reel: the voices with bleeps, Grégoire's music, riser, BOOMs, Fahhh and clicks (kit: scripts/sound.py).
+"""Sound of reel 18 "DM ads": the voices with bleeps, Grégoire's music, riser, BOOMs, Fahhh and clicks (kit: scripts/sound.py).
 
 Starter from templates/reel: hook and CTA sounds are placed; place the middle on its cues (PROPS.md gives
 each prop's sound). Never an SFX on a word onset: ticks 0.07 s before, blips 0.1–0.3 s before, taps after.
@@ -19,9 +19,10 @@ H = lambda key: C[key]  # noqa: E731
 # play=[(t0, t1), …] (it keeps its own time, like a mute) and M.tape_stop(t1 - 0.5) where a joke kills it
 DROP = H("right_end") + 0.05
 M.music_bed(drop=DROP, play=[
-    (DROP, H("comment") - 0.12),
-    (H("setty_end") + 0.08, H("end") + 0.6),  # the music stops under "Comment SETTY." so the keyword lands clean
+    (DROP, H("cut")),                          # it dies on the setup ("Okay. How do I set you up?"): silence for the punchline
+    (H("setty_end") + 0.08, H("end") + 0.6),  # and comes back once "SETTY" is said, so the keyword lands clean
 ])
+M.tape_stop(H("cut") - 0.5)
 
 # ---------------- SFX: only his sounds, each one carries a moment (no cute chimes, no tick under every word)
 M.riser_into(DROP)                       # his riser from frame 0, its climax + a BOOM on the drop

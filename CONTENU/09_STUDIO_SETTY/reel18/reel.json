@@ -43,9 +43,29 @@
   "rd62",
   "rd57"
  ],
- "cta": "Comment SETTY",
- "caption": "",
- "caption_youtube": "",
- "statut": "script à valider",
- "created": "2026-10-21"
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that answers the DMs your ads bring in. Follow so the DM lands 📩\n\n👇 READ BELOW: what \"Messaging conversations started\" really counts, from Meta's own help center.\n\n1. In Ads Manager, \"Messaging conversations started\" counts people who messaged you after your ad. It doesn't tell you if anyone answered.\n\n2. So 300 conversations started can mean 300 hellos sitting in your inbox. Lots of people click with no real need, and the serious ones move on to whoever answers first.\n\n3. The ad did its job: it opened the chat. What happens next decides the sale.\n\n4. Setty is the AI setter I built for coaches: Manychat keeps your ad trigger and sends the first message, and Setty takes over when the lead replies. He asks your questions one at a time, in your voice, and only the right leads get your calendar.\n\nThe catch: Setty can't make a bad ad profitable, and no tool can promise a number of calls. He answers the conversations your ad already started. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#metaads #onlinecoach #instagramdms\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "caption_youtube": "Why your DM ads flopped, even with 300 conversations started\n\n👇 READ BELOW: what \"Messaging conversations started\" really counts, from Meta's own help center.\n\n1. In Ads Manager, \"Messaging conversations started\" counts people who messaged you after your ad. It doesn't tell you if anyone answered.\n\n2. So 300 conversations started can mean 300 hellos sitting in your inbox. Lots of people click with no real need, and the serious ones move on to whoever answers first.\n\n3. The ad did its job: it opened the chat. What happens next decides the sale.\n\n4. Setty is the AI setter I built for coaches: Manychat keeps your ad trigger and sends the first message, and Setty takes over when the lead replies. He asks your questions one at a time, in your voice, and only the right leads get your calendar.\n\nThe catch: Setty can't make a bad ad profitable, and no tool can promise a number of calls. He answers the conversations your ad already started. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#metaads #onlinecoach #shorts\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "rendu 30 i/s livré le 21/10, à valider par le fondateur",
+ "created": "2026-10-21",
+ "paire": "261020_CAR_S1_AV1_dm-ads",
+ "sources": [
+  {
+   "fait": "« Messaging conversations started » compte les personnes qui vous ont écrit après la pub ; la métrique ne dit pas si quelqu'un a répondu (A1, A2).",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 14 (Centre d'aide Business de Meta, lu le 20/10/2026)"
+  },
+  {
+   "fait": "Manychat démarre une automatisation depuis une pub Instagram ou Facebook et envoie le premier message ; le setter prend le relais quand le lead répond (A6, A8).",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 14 (help.manychat.com ; brief § 2)"
+  },
+  {
+   "fait": "Une question à la fois ; seuls les bons leads ont l'agenda, les autres une réponse utile (P6, P10).",
+   "source": "00_STRATEGIE/sources/banque-2.md, faits produit communs (site ManySetter, commit 4437fc1)"
+  },
+  {
+   "fait": "« 300 » est la situation du lecteur (hook du carrousel), pas un chiffre sourcé ; les valeurs du tableau de bord et des cartes sont des démos.",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 14"
+  }
+ ],
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter"
 }

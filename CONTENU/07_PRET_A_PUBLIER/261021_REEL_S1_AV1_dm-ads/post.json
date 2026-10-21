@@ -1,0 +1,64 @@
+{
+  "funnel": "TOFU",
+  "segment": "S1",
+  "avatar": "AV1",
+  "hook": "Setty, sitting on the boardroom table, to the coach standing by his ad dashboard: You paid Meta to fill your [bleep]ing DMs, right?",
+  "biais": [
+    "chiffre très précis (300)",
+    "contre-pied (sa métrique préférée)",
+    "aversion à la perte (l'argent des pubs, les sérieux qui partent chez un autre)",
+    "pertinence pour soi (son tableau de bord)"
+  ],
+  "verbatims": [
+    "cl028",
+    "rd88",
+    "rd06",
+    "rd19",
+    "rd42",
+    "cl030",
+    "rd36",
+    "rd38",
+    "rd62",
+    "rd57"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261020_CAR_S1_AV1_dm-ads",
+  "sources": [
+    {
+      "fait": "« Messaging conversations started » compte les personnes qui vous ont écrit après la pub ; la métrique ne dit pas si quelqu'un a répondu (A1, A2).",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 14 (Centre d'aide Business de Meta, lu le 20/10/2026)"
+    },
+    {
+      "fait": "Manychat démarre une automatisation depuis une pub Instagram ou Facebook et envoie le premier message ; le setter prend le relais quand le lead répond (A6, A8).",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 14 (help.manychat.com ; brief § 2)"
+    },
+    {
+      "fait": "Une question à la fois ; seuls les bons leads ont l'agenda, les autres une réponse utile (P6, P10).",
+      "source": "00_STRATEGIE/sources/banque-2.md, faits produit communs (site ManySetter, commit 4437fc1)"
+    },
+    {
+      "fait": "« 300 » est la situation du lecteur (hook du carrousel), pas un chiffre sourcé ; les valeurs du tableau de bord et des cartes sont des démos.",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 14"
+    }
+  ],
+  "id": "261021_REEL_S1_AV1_dm-ads",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel18",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel18_dm-ads.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel18/reel18_nomusic.mp4"
+  },
+  "qa": {
+    "duree_s": 54.53,
+    "lufs": -14.2,
+    "true_peak_dbtp": -1.8
+  },
+  "statut": "rendu 30 i/s livré le 21/10, à valider par le fondateur"
+}
