@@ -463,9 +463,10 @@ Format d'une règle :
 
 ## 2026-10-21 · « Vas-y programme tout et fini tout »
 - Retour : « Vas-y programme tout et fini tout. »
-- Règle : les reels 12 (le prix), 17 (Make + ChatGPT) et 18 (les pubs vers les DM), livrés en 30 i/s et contrôlés par Claude (images, son à -14 LUFS, durée sous 60 s, légendes), sont **programmés** (le fondateur les a aussi validés dans la session MANYSETTER REELS : « Je valide les reels 12, 17 et 18 ») : le 31/10, le 5/11 et le 6/11 à 6:30 pm ET, sur Instagram et en Short YouTube. Les reels 16, 19, 20 et 21 suivent la même règle dès qu'ils sont livrés : Claude les contrôle et les programme à leur jour.
+- Règle : les reels 12 (le prix), 17 (Make + ChatGPT) et 18 (les pubs vers les DM), livrés en 30 i/s et contrôlés par Claude (images, son à -14 LUFS, durée sous 60 s, légendes), sont **programmés** (le fondateur les a aussi validés dans la session MANYSETTER REELS : « Je valide les reels 12, 17 et 18 ») : le 31/10, le 5/11 et le 6/11 à 6:30 pm ET, sur Instagram et en Short YouTube. Les reels 16, 19, 20 et 21 sont contrôlés par Claude dès leur livraison, puis programmés à leur jour dès que le fondateur les valide (ou s'il dit de les programmer sans validation, reel par reel ou pour le lot).
 - Règle : les sessions de reels arrêtées en cours de route sont relancées par Claude jusqu'à la livraison. Claude ne lance jamais de génération payante (voix) sans l'accord du fondateur donné dans la session qui la génère.
 
 ## 2026-10-21 · Reels 12, 17 et 18 de Setty validés
 - Retour : « Je valide les reels 12, 17 et 18, passe-les à MANYSETTER POST. »
 - Règle : les reels 12 (« The price ghost », coworking, 56,0 s, v3), 17 (« Make and ChatGPT », garage, 58,1 s) et 18 (« DM ads », salle de réunion, 54,5 s) sont **validés** tels que livrés en 30 i/s, et transmis à MANYSETTER POST pour le 31/10, le 5/11 et le 6/11 à 6:30 pm ET.
+- Décision (21/10, choix « Programme dès livraison ») : les reels 16, 19, 20 et 21 sont **programmés dès leur livraison**, sans validation reel par reel. Claude les contrôle d'abord (images, son, durée, légendes) ; le fondateur n'ajoute que l'étiquette « AI info » après publication.
