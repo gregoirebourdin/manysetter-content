@@ -455,3 +455,8 @@ Format d'une règle :
 ## 2026-10-21 · « Programme tout »
 - Retour : « Programme tout. »
 - Règle : tout ce qui est validé et prêt part dans Zernio sans attendre la paire complète : les 10 carrousels de la banque n° 2 sont programmés à leurs dates (31/10 puis du 1/11 au 9/11, 12:00 pm ET, Instagram seulement). Chaque reel de Setty est ajouté à son jour (6:30 pm ET, Instagram et Short YouTube) dès qu'il est validé par le fondateur et finalisé par MANYSETTER REELS. Un reel non validé n'est jamais programmé.
+
+## 2026-10-21 · Reel 15 de Setty « AI in 2 seconds » validé, plus de final en 60 i/s
+- Retour : « Je valide le reel 15. Publie directement la version 30 i/s, plus de final en 60 i/s pour les reels suivants. »
+- Règle : le reel 15 (`07_PRET_A_PUBLIER/261021_REEL_S2_AV2_ai-2-seconds/`, salle de serveurs, 53,8 s, v4 avec la réplique 2 refaite) est **validé** et part **tel que livré en 30 i/s**.
+- Règle : **plus de final en 60 i/s**. La version 30 i/s que le fondateur valide est celle qui est publiée : après sa validation, MANYSETTER REELS met le statut à jour, commite et transmet le dossier à MANYSETTER POST, sans nouveau rendu (environ 8 min de calcul et une passation gagnées par reel). Remplace « final en 60 i/s » des règles des 20 et 21/10 pour les reels suivants.
