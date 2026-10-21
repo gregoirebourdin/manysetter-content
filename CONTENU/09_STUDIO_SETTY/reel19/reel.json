@@ -47,9 +47,36 @@
   "rd24"
  ],
  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
- "caption": "",
- "caption_youtube": "",
- "statut": "script v1 à valider (phase 1)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter that sends these follow-ups for you. Follow so the DM lands 📩\n\n👇 READ BELOW: the 3 follow-ups I send when a lead stops replying, word for word.\n\n1. A few hours later: \"hey! did you still want the details on the program?\" Short, easy to answer, zero pressure.\n\n2. A bit later: \"no stress if now's not the time. What's holding you back, timing or budget?\"\n\n3. The last one: \"I'll stop bugging you, promise. If you ever want help with your goal, just reply here.\"\n\n4. Setty is the AI setter I built for coaches: you write your follow-ups once, he sends them through Manychat, between 1 and 23 hours after the lead's last message, and stops as soon as the lead replies or books.\n\nThe catch: follow-ups bring back leads who forgot, not leads who were never interested. Building and testing Setty are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#followup #onlinecoach #aisetter\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "caption_youtube": "This is the follow-up I send when a lead stops replying (3 messages, word for word)\n\n👇 READ BELOW: the 3 follow-ups I send when a lead stops replying, word for word.\n\n1. A few hours later: \"hey! did you still want the details on the program?\" Short, easy to answer, zero pressure.\n\n2. A bit later: \"no stress if now's not the time. What's holding you back, timing or budget?\"\n\n3. The last one: \"I'll stop bugging you, promise. If you ever want help with your goal, just reply here.\"\n\n4. Setty is the AI setter I built for coaches: you write your follow-ups once, he sends them through Manychat, between 1 and 23 hours after the lead's last message, and stops as soon as the lead replies or books.\n\nThe catch: follow-ups bring back leads who forgot, not leads who were never interested. Building and testing Setty are free with no card, then going live starts a 14-day trial at $119/month per live setter.\n\nBuild your AI setter free at manysetter.com.\n\n#followup #onlinecoach #shorts\n\nManySetter is not affiliated with or endorsed by Manychat or Meta.",
+ "statut": "rendu 30 i/s livré le 21/10 (v1, la version publiée), à valider par le fondateur ; transmis à MANYSETTER REELS",
  "created": "2026-10-21",
- "paire": "261020_CAR_S1_AV1_follow-up (idée 15, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)"
+ "paire": "261020_CAR_S1_AV1_follow-up (idée 15, même jour : carrousel 12:00 pm ET, reel 6:30 pm ET)",
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+ "sources": [
+  {
+   "fait": "les 3 relances, mot pour mot, et leurs moments (« a few hours later », « a bit later », « the last one »)",
+   "source": "carrousel 261020_CAR_S1_AV1_follow-up, slides 4 à 6 (validé le 21/10)"
+  },
+  {
+   "fait": "un lead silencieux n'a pas dit non, il était occupé et a oublié",
+   "source": "carrousel, slide 3 ; verbatim rd84"
+  },
+  {
+   "fait": "jusqu'à 3 relances, entre 1 et 23 h après le dernier message du lead, toutes dans la fenêtre de 24 h ; elles s'arrêtent dès que le lead répond ou réserve ; on peut les écrire soi-même",
+   "source": "sources/banque-2.md : P8, P8b, P8c, R12 (site ManySetter, follow-ups.ts, pricing.ts)"
+  },
+  {
+   "fait": "Manychat garde le déclencheur et le premier message, ManySetter prend le relais quand le lead répond",
+   "source": "brief-de-marque.md, section 2"
+  },
+  {
+   "fait": "prix et essai : 119 $ par mois par setter live, construire et tester gratuit sans carte, essai de 14 jours au passage en live",
+   "source": "brief-de-marque.md, section 3 ; banque-2 P1, P3"
+  },
+  {
+   "fait": "la conversation (marcus.fit, « so here's how it works », « Seen », « Active 3h ago ») est une fiction d'exemple, aucun résultat",
+   "source": "brief, section 7"
+  }
+ ]
 }

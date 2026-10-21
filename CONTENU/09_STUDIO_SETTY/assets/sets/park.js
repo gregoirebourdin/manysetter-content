@@ -605,6 +605,7 @@ export async function build({ renderer, scene, mood = "sunset" }) {
     frames: {
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 740 },
       setty: { target: settyFace, dist: 10.5, yaw: 0.2, pitch: 0.06, y: 800 }, // from the front right: the coach never between
+      pigeons: { target: pigeons, dist: 6.2, yaw: 0.3, pitch: 0.3, y: 900 }, // the cut-in, as a frame so a push can change its dist
     },
     shots: {
       wide: { pos: [0.3, 4.0, 14.6], at: [0.3, 2.3, -1.5], fov: 44 },
