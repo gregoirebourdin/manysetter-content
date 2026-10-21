@@ -1,7 +1,7 @@
 // {{REEL}}: a conversation in a 3D set (layout "set"). The camera goes to whoever talks (D.line), the other one reacts,
 // cards pop beside the speaker (D.side + an st.* module), BOOMs punch in (D.punch), the roasted one gets the camera for
 // the "Fahhh" (D.reaction). Scope: R, C, K (Setty), KC (coach), face / faceC, shotTo, shake, flash, tl, D, T(i), E(i), kit, st.
-const { L, line, reaction, side, punch, bleep, ending, CARD_L, CARD_R } = D;
+const { L, line, reaction, side, punch, bleep, cut, ending, CARD_L, CARD_R } = D;
 
 kit.hookTitle(R, { lines: R.DATA.hook_title || ["Your hook,", "the *key* word in orange."], pulses: [C.drop] });
 
@@ -26,7 +26,7 @@ flash(C.drop, 0.5, 0.18);
 // line(3, faceC("panic", { phone: 1 }), face("sly"), CARD_L); side(C.clic1 - 0.01, "left", { fit: true }); st.igInbox(R, { … });
 // punch(C.boom1);
 // line(6, face("mocking", { armRr: 1.3, armRf: 1.0 }), null); reaction(C.fahhh1, faceC("annoyed"));
-// a bleep in the middle: bleep(R.DATA.bleeps[1]);
+// a bleep in the middle: bleep(R.DATA.bleeps[1]); a hard cut to another shot: cut(C.bench, "coach", { dist: 21 }) (never a 0.001 s shotTo)
 
 // ---- the CTA (Setty), then the common ending (dialogue.js): wink on "free", the comment bar types SETTY under the title,
 // back to the wide (loops to frame 0), the notification between the title and the heads, the end pill

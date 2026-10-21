@@ -31,7 +31,16 @@ export const SPOT = { L: -2.0, C: 0, R: 2.0 };
 const FACE_SKIP = new Set(["x", "y", "z", "scale", "squash", "turn", "tilt", "lean", "dotsPhase"]);
 
 export async function createReel(DATA, opts = {}) {
-  const C = DATA.cues, TOTAL = C.total;
+  // a cue missing from cues.json (a typo, a cue swallowed by a "#" in build.py) used to drop its card at the end of the
+  // reel without a word (reel21, 21/10): each missing cue is now a console error, shown by `studio.py check`
+  const MISSING = new Set(), QUIET = new Set(["then", "toJSON", "constructor", "valueOf", "toString"]);
+  const C = new Proxy(DATA.cues, { get(o, k) {
+    if (typeof k === "string" && !(k in o) && !QUIET.has(k) && !MISSING.has(k)) {
+      MISSING.add(k);
+      console.error(`missing cue C.${k}: it is not in cues.json (build.py)`);
+    }
+    return o[k];
+  } }), TOTAL = DATA.cues.total;
   const root = document.getElementById("root");
   const $ = (s) => document.querySelector(s);
   const LUCIDE = DATA.icons;

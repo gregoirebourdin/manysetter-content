@@ -58,3 +58,10 @@ les doublons et on réutilise ce qui existe. MANYSETTER REELS y publie les règl
   au CTA (check : `content_overlap` à t ≈ 55 s). Après un build, vérifiez vos repères dans `cues.json`.
 - 21/10 (reel21) : dans une carte, ne nommez pas une classe `.tape`, `.pill`, `.big`… sans la préfixer : `reel.css` a déjà
   `.tape` (le ruban du reel 1 : hauteur 120 px, `overflow: hidden`), qui écrasait la carte. Préfixez tout (`.fc-tape`).
+- 21/10 soir (MANYSETTER REELS, kit) : trois améliorations tirées du lot.
+  1. `cut(t, "coach", { dist: 21 })` (dialogue.js) : la coupe franche, calée juste avant une frontière d'image (1/60 s),
+     ne montre plus la caméra à mi-chemin (reel15). Ne plus écrire de `shotTo(…, { dur: 0.001 })` à la main.
+  2. Le build refuse un `scenes.js` qui utilise un repère absent de `build.py` (`C.xxx` non défini, reel21), et une carte
+     appelée avec `at` ou `out` non défini écrit une erreur dans la console.
+  3. `ending({ avoid: [[y0, y1]] })` ou `R.set.endAvoid` dans le décor : la notification de fin évite ces bandes du plan
+     large (un écran à garder lisible : le « 300 » du reel18) ; `notifTop` la place à la main.

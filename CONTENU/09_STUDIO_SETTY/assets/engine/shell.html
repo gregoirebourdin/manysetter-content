@@ -52,6 +52,10 @@
       import { dialogue } from "./assets/engine/dialogue.js";
 
       const st = { ...stage/*CARD_NAMES*/ }; // the stage modules + this reel's own cards (assets/engine/card_<name>.js)
+      for (const [k, f] of Object.entries(st)) if (typeof f === "function") st[k] = (r, o, ...rest) => { // a card at an undefined time
+        if (o && typeof o === "object") for (const key of ["at", "out"]) if (key in o && !Number.isFinite(o[key])) console.error(`st.${k}: ${key} is ${o[key]} (a cue missing from cues.json?)`);
+        return f(r, o, ...rest);
+      };
       const R = await createReel(window.DATA);
       const { C, K, face, shake, beat, flash, bg, zoom, unzoom, drift, tl, CAMS, SPOT } = R;
       const { KC, faceC, shotTo } = R; // layout "set": the coach's acting and the shot / reverse-shot camera

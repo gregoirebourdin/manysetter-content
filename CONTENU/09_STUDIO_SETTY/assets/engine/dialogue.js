@@ -59,6 +59,13 @@ export function dialogue(R) {
     }
   };
 
+  /** a hard cut to a shot at t, snapped just before a frame boundary (1/60 s, so in 30 as in 60 fps): no frame shows the
+   *  camera half-way (reel15: a 0.001 s move that began on a frame showed the coach at 30 % of the way, his face on a card) */
+  const cut = (t, name, o = {}) => {
+    const b = Math.round(t * 60) / 60;
+    shotTo(b - 0.0015, name, { ...o, dur: 0.001, ease: "none" });
+  };
+
   /** where a point of the set lands on screen in a named shot (its final framing, not the current camera) */
   const screenIn = (shot, p) => {
     const c = R.camOf(shot), cam = new R.THREE.PerspectiveCamera(c.fov, R.W / R.H, 0.1, 100);
@@ -74,11 +81,11 @@ export function dialogue(R) {
    *  the wide; the notification lands once the camera has stopped, where it covers no head; the end pill once the last
    *  caption has gone. Cues: comment, setty_end, free, dms_end, end (templates/reel/build.py). */
   function ending({ settyFace = face("smug", { lookX: -0.8 }), coachFace = faceC("proud", { lookX: 0.5 }), keyword = "SETTY",
-    text = "here's how to build your AI setter free 🎁", pill = "Comment SETTY" } = {}) {
-    const C = R.C, tb = titleBottom();
-    if (C.free != null) K(C.free - 0.1, 0.25, face("wink"), "back.out(2)");
+    text = "here's how to build your AI setter free 🎁", pill = "Comment SETTY", avoid, notifTop } = {}) {
+    const C = R.C, tb = titleBottom(), free = "free" in C ? C.free : null;
+    if (free != null) K(free - 0.1, 0.25, face("wink"), "back.out(2)");
     commentBar(R, { keyword, at: C.comment - 0.12, caret: C.comment, type: C.setty_end + 0.06, step: 0.07,
-      send: C.setty_end + 0.45, out: C.free != null ? Math.max(C.setty_end + 0.7, C.free - 0.4) : C.setty_end + 0.9 });
+      send: C.setty_end + 0.45, out: free != null ? Math.max(C.setty_end + 0.7, free - 0.4) : C.setty_end + 0.9 });
     const cb = document.getElementById("comment");
     if (cb) cb.style.top = `${Math.max(565, tb + 24)}px`;
     const stop = C.dms_end + 1.0; // the camera is on the wide from here
@@ -89,14 +96,20 @@ export function dialogue(R) {
     const V = (p, dy) => p.clone().add(new R.THREE.Vector3(0, dy, 0));
     const heads = ["coach", "setty"].map((n) => R.set.frames[n]?.target).filter(Boolean)
       .map((p) => [screenIn("wide", V(p, 0.62))[1] - 20, screenIn("wide", V(p, -0.45))[1] + 12]);
-    // the notification (150 px) goes in the room between the title and the highest head, centred, smaller if it must;
-    // else under the lowest chin, over the bodies, above the end pill (reel4: it sat on the coach's beanie)
-    const H = 150, room = Math.min(...heads.map(([a]) => a), 1170) - tb, below = Math.max(...heads.map(([, b]) => b)) + 20;
+    // the notification (150 px) goes in the first free room from the top, between the title and the end pill, that no
+    // head and nothing to keep in sight covers (avoid / R.set.endAvoid: [y0, y1] bands in px of the wide shot, e.g. a
+    // wall screen: reel18's "300" sat under it), centred, smaller if it must (reel4: it sat on the coach's beanie)
+    const H = 150, bands = [...heads, ...(avoid || R.set.endAvoid || [])].map(([a, b]) => [Math.min(a, b), Math.max(a, b)])
+      .sort((x, y) => x[0] - y[0]);
+    const gaps = [];
+    let y = tb + 8;
+    for (const [a, b] of bands) { if (a > y) gaps.push([y, a]); y = Math.max(y, b); }
+    if (y < 1275) gaps.push([y, 1275]);
+    const g = gaps.find(([a, b]) => b - a >= H * 0.75 + 16);
     let top = tb + 8, sc = 0.7;
-    if (room >= H + 30) [top, sc] = [tb + (room - H) / 2, 1];
-    else if (room >= H * 0.75 + 16) { sc = Math.min(1, (room - 16) / H); top = tb + (room - H * sc) / 2; }
-    else if (below + H <= 1275) [top, sc] = [below, 1];
-    else console.warn(`ending: no room for the notification between the title and the heads (room ${Math.round(room)} px)`);
+    if (notifTop != null) [top, sc] = [notifTop, 1];
+    else if (g) { sc = Math.min(1, (g[1] - g[0] - 16) / H); top = g[0] + (g[1] - g[0] - H * sc) / 2; }
+    else console.warn(`ending: no free room for the notification (bands ${JSON.stringify(bands.map((b) => b.map(Math.round)))})`);
     notification(R, { title: "setty", text, at: stop });
     const nf = document.getElementById("notif");
     if (nf) { // parked above the screen until it slides in
@@ -106,5 +119,5 @@ export function dialogue(R) {
     endCta(R, { text: pill, at: C.end + 1.2 }); // after the last caption (it holds 0.9 s)
   }
 
-  return { L, line, reaction, side, punch, push, bleep, ending, screenIn, CARD_L, CARD_R };
+  return { L, line, reaction, side, punch, push, bleep, cut, ending, screenIn, CARD_L, CARD_R };
 }

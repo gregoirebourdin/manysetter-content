@@ -129,6 +129,15 @@ class Reel:
         (self.here / "cues.json").write_text(json.dumps(data, indent=1, ensure_ascii=False))
         shell = (STUDIO / "assets/engine/shell.html").read_text()
         scenes = (self.here / "src/scenes.js").read_text().rstrip("\n")
+        # every cue the scenes use must exist: a missing one (a typo, a cue swallowed by a "#" in build.py) put its card or
+        # its move at the end of the reel without a word (reel21, 21/10), so the build refuses it
+        code = re.sub(r"/\*.*?\*/", "", re.sub(r"//[^\n]*", "", scenes), flags=re.S)
+        used = set(re.findall(r"\bC\.([A-Za-z_]\w*)", code))
+        if re.search(r"\bending\(", code):  # the common ending (dialogue.js) runs on these
+            used |= {"comment", "setty_end", "dms_end", "end"}
+        if missing := sorted(used - set(cues)):
+            raise SystemExit(f"{self.id}: src/scenes.js uses cue(s) {missing} that build.py does not define (a typo, or a cue "
+                             "swallowed by a '#'): a card or a move on them would land at the end of the reel")
         scenes = "\n".join(("      " + line) if line.strip() else "" for line in scenes.splitlines()).lstrip()
         # a card in its own file (assets/engine/card_<name>.js + .css, exporting <name>) is loaded only by the reels whose
         # scenes call st.<name>(…): a card being written in another session never breaks this reel's build
