@@ -69,9 +69,9 @@
     "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel15/reel15_nomusic.mp4"
   },
   "qa": {
-    "duree_s": 53.93,
+    "duree_s": 53.8,
     "lufs": -14.2,
-    "true_peak_dbtp": -1.9
+    "true_peak_dbtp": -2.0
   },
   "statut": "rendu 30 i/s à valider (lot des reels 12 à 21)"
 }

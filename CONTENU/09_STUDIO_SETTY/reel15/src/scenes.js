@@ -129,15 +129,18 @@ K(L[13].t + 0.3, 0.3, face("sly", { lookX: -0.8 }));
 // (cut to his rack's "2.0 s" screen on "servers", then his face on "wrong") → Fahhh
 {
   const l14 = L[14], lb = R.camOf("label"), CU = { dist: 15, y: 860 };
+  // a hard cut ends just before a 1/60 s frame boundary (good for 30 and 60 fps): a 0.001 s cut that started on a frame
+  // (44.933 s = frame 1348 of v3) showed the camera 30 % of the way, with his face at the edge
+  const cutAt = (t) => Math.ceil(t * 60) / 60 - 0.0004;
   shotTo(l14.t - 0.2, "setty", { dur: 0.28 });
   K(l14.t - 0.2, 0.001, { cam: { fov: 30 } });
   push(l14.t + 0.08, C.servers - 0.1, "setty", {}, 0.8);
   K(l14.t - 0.12, 0.25, face("mocking", { armRr: 0.5, armRf: 0.9, lookX: -0.6 }), "back.out(1.6)");
   K(C.room - 0.05, 0.25, face("mocking", { armRr: 0.5, armRf: 0.9, armLr: 1.3, armLf: 1.0, lookX: -0.6 }), "back.out(2)");
   bleep(B2);
-  shotTo(C.servers - 0.06, "label", { dur: 0.001 }); // hard cuts: a 0.1 s move flew through his head (frame 43.93 of v1)
-  K(C.servers + 0.06, C.wrong - 0.1 - (C.servers + 0.06), { cam: { px: lb.px - 0.35, pz: lb.pz - 0.6 } }, "sine.out");
-  shotTo(C.wrong - 0.08, "coach", { ...CU, dur: 0.001 });
+  shotTo(cutAt(C.servers - 0.06), "label", { dur: 0.0002 }); // hard cuts: a 0.1 s move flew through his head (frame 43.93 of v1)
+  K(C.servers + 0.06, C.wrong - 0.1 - (C.servers + 0.06), { cam: { px: lb.px - 0.3, pz: lb.pz - 0.3 } }, "sine.out"); // along the view: further back, his face came in on the right
+  shotTo(cutAt(C.wrong - 0.08), "coach", { ...CU, dur: 0.0002 });
   push(C.wrong + 0.06, C.fahhh2 - 0.1, "coach", CU, 0.9);
   KC(C.wrong - 0.05, 0.2, faceC("defeated", { lookY: -0.5, lookX: -0.3 }));
 }
