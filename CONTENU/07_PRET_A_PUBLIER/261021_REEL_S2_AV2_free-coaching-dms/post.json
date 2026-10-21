@@ -1,60 +1,60 @@
 {
- "funnel": "TOFU",
- "segment": "S2",
- "avatar": "AV2",
- "hook": "Setty, in the coach's armchair like a therapist, to the coach slumped on his own clients' couch with his phone: You coached a stranger for [bleep]ing free in your DMs again, right?",
- "biais": [
-  "chiffre très précis (5 heures)",
-  "aversion à la perte (son temps donné pour rien)",
-  "pertinence pour soi (sa semaine)",
-  "interruption du schéma (le coach sur le divan, Setty en psy)"
- ],
- "verbatims": [
-  "rd93",
-  "rd88",
-  "rd49",
-  "rd50",
-  "rd89",
-  "rd92",
-  "rd46",
-  "rd94",
-  "rd45",
-  "rd24",
-  "rd65",
-  "rd76",
-  "rd77",
-  "rd36"
- ],
- "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
- "paire": "261020_CAR_S2_AV2_free-coaching-dms",
- "sources": [
-  {
-   "fait": "It checks fit first. Leads who don't fit get a helpful answer, like your free guide, instead of your calendar (P6, P9, P10).",
-   "source": "00_STRATEGIE/sources/banque-2.md, idée 12 (site ManySetter, commit 4437fc1)"
+  "funnel": "TOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "hook": "Setty, in the coach's armchair like a therapist, to the coach slumped on his own clients' couch with his phone: You coached a stranger for [bleep]ing free in your DMs again, right?",
+  "biais": [
+    "chiffre très précis (5 heures)",
+    "aversion à la perte (son temps donné pour rien)",
+    "pertinence pour soi (sa semaine)",
+    "interruption du schéma (le coach sur le divan, Setty en psy)"
+  ],
+  "verbatims": [
+    "rd93",
+    "rd88",
+    "rd49",
+    "rd50",
+    "rd89",
+    "rd92",
+    "rd46",
+    "rd94",
+    "rd45",
+    "rd24",
+    "rd65",
+    "rd76",
+    "rd77",
+    "rd36"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261020_CAR_S2_AV2_free-coaching-dms",
+  "sources": [
+    {
+      "fait": "It checks fit first. Leads who don't fit get a helpful answer, like your free guide, instead of your calendar (P6, P9, P10).",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 12 (site ManySetter, commit 4437fc1)"
+    },
+    {
+      "fait": "« 5 hours » est la situation du lecteur (hook du carrousel), pas un chiffre sourcé.",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 12"
+    }
+  ],
+  "id": "261021_REEL_S2_AV2_free-coaching-dms",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel14",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel14_free-coaching-dms.md"
   },
-  {
-   "fait": "« 5 hours » est la situation du lecteur (hook du carrousel), pas un chiffre sourcé.",
-   "source": "00_STRATEGIE/sources/banque-2.md, idée 12"
-  }
- ],
- "id": "261021_REEL_S2_AV2_free-coaching-dms",
- "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
- "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
- "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
- "source": {
-  "studio": "CONTENU/09_STUDIO_SETTY/reel14",
-  "script": "CONTENU/09_STUDIO_SETTY/writing/reel14_free-coaching-dms.md"
- },
- "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
- "fichiers": {
-  "video": "reel.mp4 (hors Git)",
-  "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel14/reel14_nomusic.mp4"
- },
- "qa": {
-  "duree_s": 50.03,
-  "lufs": -14.2,
-  "true_peak_dbtp": -2.3
- },
- "statut": "script et décor validés le 21/10 ; rendu v1 en 30 i/s livré le 21/10, à valider par le fondateur (puis final en 60 i/s)",
- "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter"
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel14/reel14_nomusic.mp4"
+  },
+  "qa": {
+    "duree_s": 50.03,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.3
+  },
+  "statut": "script et décor validés le 21/10 ; rendu v1 en 30 i/s livré le 21/10, à valider par le fondateur (puis final en 60 i/s)"
 }
