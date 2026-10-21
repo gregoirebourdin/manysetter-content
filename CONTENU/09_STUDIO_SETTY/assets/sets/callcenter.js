@@ -505,7 +505,7 @@ export async function build({ renderer, scene, mood = "dusk" }) {
   set.add(col, clock, board, cooler, plantR, plantL);
 
   // ---- the coach's chair, swiveled toward Setty
-  const COACH = { x: -1.25, z: -0.45, turn: 0.55 };
+  const COACH = { x: -1.45, z: -0.45, turn: 0.55 };
   const chair = taskChair();
   K.at(chair, COACH.x, 0, COACH.z - 0.03, COACH.turn);
   set.add(chair);
@@ -541,7 +541,7 @@ export async function build({ renderer, scene, mood = "dusk" }) {
 
   // where the characters go (engine pose fields), and the camera shots ({ pos, at, fov })
   const PERCH = 2.23; // top of the front row's right end panel (x 0.75 + 1.25 + 0.05)
-  const coachHead = new THREE.Vector3(-1.05, 4.05, -0.25);
+  const coachHead = new THREE.Vector3(-1.25, 4.05, -0.25);
   const settyFace = new THREE.Vector3(2.05, PERCH + 1.1, -2.45);
   // two cutaways for R.camOf(): the sticky note on the locked monitor (the punchline), the LED board
   set.updateMatrixWorld(true);
@@ -554,12 +554,12 @@ export async function build({ renderer, scene, mood = "dusk" }) {
     heads: { coach: coachHead, setty: settyFace },
     frames: {
       coach: { target: coachHead, dist: 12, yaw: 0.5, y: 740 },
-      setty: { target: settyFace, dist: 10.5, yaw: -0.22, pitch: 0.06, y: 800 },
+      setty: { target: settyFace, dist: 10.5, yaw: -0.08, pitch: 0.06, y: 800 },
     },
     shots: {
-      wide: { pos: [0.2, 4.1, 15.0], at: [0.2, 2.5, -2.0], fov: 44 },
+      wide: { pos: [0.2, 4.1, 15.0], at: [0.2, 2.95, -2.0], fov: 44 }, // the heads a bit low: room for the end notification under the title
       coach: K.shot(coachHead, { dist: 12, yaw: 0.5, y: 820 }),
-      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.22, pitch: 0.06, y: 800 }),
+      setty: K.shot(settyFace, { dist: 10.5, yaw: -0.08, pitch: 0.06, y: 800 }),
       note: K.shot(notePos, { dist: 3.6, yaw: -0.5, pitch: 0.05, y: 780 }), // from the left: the coach is on the right
       board: K.shot(boardPos, { dist: 10, yaw: 0.05, pitch: -0.05, y: 760 }),
     },

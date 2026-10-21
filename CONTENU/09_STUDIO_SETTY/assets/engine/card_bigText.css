@@ -1,0 +1,12 @@
+/* Card "bigText" (card_bigText.js): the carousel's black slide, very big white lines, one part on the orange highlighter */
+.st.btx { padding: 64px 60px 70px; border-radius: 48px; background: #0d0d10; box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.9),
+  inset 0 0 0 3px rgba(255, 255, 255, 0.06); overflow: hidden; }
+.st.btx::before { content: ""; position: absolute; right: -180px; top: -200px; width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 97, 29, 0.55), rgba(255, 97, 29, 0) 68%); pointer-events: none; }
+.st.btx .btx-l { position: relative; font: 800 104px/1.12 Inter, sans-serif; letter-spacing: -0.045em; color: #fff; white-space: nowrap; }
+.st.btx .btx-l + .btx-l { margin-top: 10px; }
+.st.btx mark { color: #fff; padding: 0 0.12em 0.04em; margin: 0 -0.06em; border-radius: 0.14em; background: linear-gradient(#ff611d, #ff611d)
+  no-repeat 0 62% / 0% 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.st.btx.light { background: #fffaf2; box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.85), inset 0 -10px 0 rgba(0, 0, 0, 0.05); }
+.st.btx.light::before { background: radial-gradient(circle, rgba(255, 97, 29, 0.28), rgba(255, 97, 29, 0) 68%); }
+.st.btx.light .btx-l { color: #121110; }
