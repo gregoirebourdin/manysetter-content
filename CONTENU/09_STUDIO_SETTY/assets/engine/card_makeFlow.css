@@ -1,0 +1,18 @@
+/* Card "makeFlow" (reel17): a scenario in Make's look, in big type. Sizes are stage units, read at ~62 % beside a speaker. */
+.mf { display: flex; flex-direction: column; gap: 18px; padding: 30px 40px 36px;
+  background: radial-gradient(circle, #dcd8e6 2.5px, transparent 3px) 0 0 / 34px 34px, #f6f5fa; }
+.mf .mf-head { display: flex; align-items: center; gap: 24px; height: 116px; flex: none; padding-bottom: 8px; border-bottom: 3px solid #e6e3ee; }
+.mf .mf-head b { font: 800 97px/1 Inter, sans-serif; letter-spacing: -0.04em; color: #1f1a2e; white-space: nowrap; }
+.mf .mf-tile { width: 104px; height: 104px; border-radius: 28px; flex: none; display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.18), 0 10px 22px -10px rgba(0, 0, 0, 0.5); }
+.mf .mf-tile svg.i { width: 62px; height: 62px; stroke: #fff; stroke-width: 2.6; }
+.mf .mf-steps { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+.mf .mf-step { position: relative; flex: 1; display: flex; align-items: center; gap: 26px; padding: 0 4px; opacity: 0; }
+.mf .mf-step b { font: 800 97px/1.02 Inter, sans-serif; letter-spacing: -0.04em; color: #1f1a2e; white-space: nowrap; }
+.mf .mf-dot { position: relative; z-index: 1; width: 120px; height: 120px; border-radius: 50%; flex: none; display: inline-flex;
+  align-items: center; justify-content: center; box-shadow: inset 0 -7px 0 rgba(0, 0, 0, 0.2), 0 12px 24px -10px rgba(0, 0, 0, 0.55); }
+.mf .mf-dot svg.i { width: 66px; height: 66px; stroke: #fff; stroke-width: 2.6; }
+.mf .mf-step .s-app { z-index: 1; }
+/* the dotted link from the previous badge's centre to this one's: one step's height up (the steps share the room equally) */
+.mf .mf-line { position: absolute; left: 59px; bottom: 50%; width: 0; height: calc(100% + 14px); border-left: 10px dotted #8f87ad;
+  transform-origin: 50% 0; }

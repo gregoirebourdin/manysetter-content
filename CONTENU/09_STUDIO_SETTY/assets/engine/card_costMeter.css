@@ -1,0 +1,12 @@
+/* Card "costMeter" (reel17): running costs in big type. Sizes are stage units, read at ~62 % beside a speaker. */
+.cmt { display: flex; flex-direction: column; gap: 18px; padding: 30px 40px 36px; }
+.cmt .cmt-head { display: flex; align-items: center; height: 116px; flex: none; padding-bottom: 8px; border-bottom: 3px solid #efefef; }
+.cmt .cmt-head b { font: 800 97px/1 Inter, sans-serif; letter-spacing: -0.04em; color: #0c0c0d; white-space: nowrap; }
+.cmt .cmt-row { flex: 1; display: flex; align-items: center; gap: 30px; padding: 0 26px; border-radius: 34px; background: #f5f5f4; opacity: 0; }
+.cmt .cmt-dot { width: 120px; height: 120px; border-radius: 50%; flex: none; display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 -7px 0 rgba(0, 0, 0, 0.2), 0 12px 24px -10px rgba(0, 0, 0, 0.55); }
+.cmt .cmt-dot svg.i { width: 66px; height: 66px; stroke: #fff; stroke-width: 2.6; }
+.cmt .cmt-txt { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.cmt .cmt-n { font: 800 112px/1 Inter, sans-serif; letter-spacing: -0.045em; color: #0c0c0d; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cmt .cmt-n.bad { color: #e5484d; }
+.cmt .cmt-u { font: 700 97px/1 Inter, sans-serif; letter-spacing: -0.04em; color: #52525b; white-space: nowrap; }

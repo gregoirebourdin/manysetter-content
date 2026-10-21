@@ -1,0 +1,61 @@
+{
+  "funnel": "TOFU",
+  "segment": "S2",
+  "avatar": "AV2",
+  "hook": "Setty, on the tool chest in the coach's garage, to the coach at his workbench in front of his Make scenario: You built your own [bleep]ing AI setter with Make, right?",
+  "biais": [
+    "pertinence pour soi (le tuto qu'il cherche)",
+    "valeur gratuite (les vraies étapes, dites et montrées)",
+    "contre-pied (« the model isn't the setter »)",
+    "aversion à la perte (ses crédits, ses week-ends)"
+  ],
+  "verbatims": [
+    "mc34",
+    "mc10",
+    "mc22",
+    "cl095",
+    "mc11",
+    "mc23",
+    "rd67"
+  ],
+  "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+  "paire": "261020_CAR_S2_AV2_make-chatgpt-setter",
+  "sources": [
+    {
+      "fait": "Étapes : External Request de Manychat dans la Default Reply (K8) vers un Custom webhook de Make (K4), module OpenAI « Generate a response » (K6), Webhook Response (K4) ; mémoire par le Conversation ID à stocker soi-même (K6, K5) ; crédits Make et tokens OpenAI payés à part (K1, K2). Assemblage non testé (niveau « en partie »).",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 17 (apps.make.com et help.manychat.com lus le 20/10/2026)"
+    },
+    {
+      "fait": "« Three messages, three replies » : déduction (chaque message déclenche la Default Reply, donc sa propre requête), présentée comme ce que le coach découvre, jamais comme un fait mesuré.",
+      "source": "00_STRATEGIE/sources/banque-2.md, idée 17, tableau « Ce qu'un tel scénario ne fait pas tout seul »"
+    },
+    {
+      "fait": "Il attend la fin du message (P4), se souvient de ce que le lead a dit (P7), une question à la fois (P6), réserve l'appel (P9, P9b), jusqu'à 3 relances dans les 24 h (P8).",
+      "source": "00_STRATEGIE/sources/banque-2.md, faits produit communs (site ManySetter, commit 4437fc1)"
+    },
+    {
+      "fait": "Les nombres des cartes (1,284 crédits, 48,210 tokens, conv_8f3a) sont des valeurs de démonstration.",
+      "source": "reel17/src/scenes.js"
+    }
+  ],
+  "id": "261021_REEL_S2_AV2_make-chatgpt-setter",
+  "format": "reel Setty en dialogue dans un décor 3D (coach : voix Fenrir, Setty : voix Charon ; personnages faits en code, voix générées par IA)",
+  "horaire_conseille": "6:30 pm ET (America/New_York), un post Instagram + le même en Short YouTube à la même heure",
+  "youtube": "même vidéo en Short ; le mot-clé SETTY ne déclenche rien sur YouTube : dans la légende YouTube, remplacer la ligne « Comment SETTY… » par « Build your AI setter free at manysetter.com »",
+  "musique": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter",
+  "source": {
+    "studio": "CONTENU/09_STUDIO_SETTY/reel17",
+    "script": "CONTENU/09_STUDIO_SETTY/writing/reel17_make-chatgpt-setter.md"
+  },
+  "etiquette_ia": "« AI info » (voix réalistes générées par IA) : Zernio n'a pas ce champ pour Instagram, le fondateur l'ajoute dans l'appli après publication (décision du 20/10) ; sur YouTube, containsSyntheticMedia: true dans le post Zernio",
+  "fichiers": {
+    "video": "reel.mp4 (hors Git)",
+    "sans_musique": "sur demande : CONTENU/09_STUDIO_SETTY/deliverables/reel17/reel17_nomusic.mp4"
+  },
+  "qa": {
+    "duree_s": 58.13,
+    "lufs": -14.1,
+    "true_peak_dbtp": -2.0
+  },
+  "statut": "rendu 30 i/s livré le 21/10, à valider (la version 30 i/s est celle qui sera publiée, pas de final 60 i/s)"
+}

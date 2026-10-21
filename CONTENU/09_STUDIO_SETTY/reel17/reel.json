@@ -16,7 +16,7 @@
  "id": "reel17",
  "slug": "make-chatgpt-setter",
  "title": "Make and ChatGPT",
- "pub_id": "",
+ "pub_id": "261021_REEL_S2_AV2_make-chatgpt-setter",
  "funnel": "TOFU",
  "segment": "S2",
  "avatar": "AV2",
@@ -40,9 +40,29 @@
   "mc23",
   "rd67"
  ],
- "cta": "Comment SETTY",
- "caption": "",
- "caption_youtube": "",
- "statut": "script à valider",
- "created": "2026-10-21"
+ "cta": "Comment SETTY (he sends everything to build your AI setter for free)",
+ "caption": "Comment \"SETTY\" and he'll send you everything to build a free AI setter without wiring Make and ChatGPT yourself. Follow so the DM lands 📩\n\n👇 READ BELOW: the real steps of a homemade AI setter with Make and ChatGPT, put together from Make's and Manychat's own docs (not a tested tutorial), and what they still leave to you.\n\n1. In Manychat, an External Request in your Default Reply sends each lead message to a Make Custom webhook.\n\n2. In Make, a ChatGPT \"Generate a response\" module writes the reply, and Webhook Response sends it back so Manychat posts it in the DM.\n\n3. Memory doesn't wire itself: you store each lead's Conversation ID in a custom field and send it back with every message. Each message also starts its own run, so three quick messages can get three replies unless you build a wait.\n\n4. You still build the questions, the booking and the follow-ups, and you pay Make credits plus OpenAI tokens on top.\n\nThe catch: Setty isn't free once he's live. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter. He answers from the offer and sources you give him, and hands the chat to you when it matters.\n\nComment \"SETTY\" and he'll send you everything to build your AI setter for free.\n\n#nocode #chatgpt #aisetter\n\nManySetter is not affiliated with or endorsed by Make, OpenAI, Manychat or Meta.",
+ "caption_youtube": "How to build your own AI setter with Make and ChatGPT\n\n👇 READ BELOW: the real steps of a homemade AI setter with Make and ChatGPT, put together from Make's and Manychat's own docs (not a tested tutorial), and what they still leave to you.\n\n1. In Manychat, an External Request in your Default Reply sends each lead message to a Make Custom webhook.\n\n2. In Make, a ChatGPT \"Generate a response\" module writes the reply, and Webhook Response sends it back so Manychat posts it in the DM.\n\n3. Memory doesn't wire itself: you store each lead's Conversation ID in a custom field and send it back with every message. Each message also starts its own run, so three quick messages can get three replies unless you build a wait.\n\n4. You still build the questions, the booking and the follow-ups, and you pay Make credits plus OpenAI tokens on top.\n\nThe catch: Setty isn't free once he's live. Building and testing him are free with no card, then going live starts a 14-day trial at $119/month per live setter. He answers from the offer and sources you give him, and hands the chat to you when it matters.\n\nBuild your AI setter free at manysetter.com.\n\n#nocode #chatgpt #shorts\n\nManySetter is not affiliated with or endorsed by Make, OpenAI, Manychat or Meta.",
+ "statut": "rendu 30 i/s livré le 21/10, à valider (la version 30 i/s est celle qui sera publiée, pas de final 60 i/s)",
+ "created": "2026-10-21",
+ "paire": "261020_CAR_S2_AV2_make-chatgpt-setter",
+ "sources": [
+  {
+   "fait": "Étapes : External Request de Manychat dans la Default Reply (K8) vers un Custom webhook de Make (K4), module OpenAI « Generate a response » (K6), Webhook Response (K4) ; mémoire par le Conversation ID à stocker soi-même (K6, K5) ; crédits Make et tokens OpenAI payés à part (K1, K2). Assemblage non testé (niveau « en partie »).",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 17 (apps.make.com et help.manychat.com lus le 20/10/2026)"
+  },
+  {
+   "fait": "« Three messages, three replies » : déduction (chaque message déclenche la Default Reply, donc sa propre requête), présentée comme ce que le coach découvre, jamais comme un fait mesuré.",
+   "source": "00_STRATEGIE/sources/banque-2.md, idée 17, tableau « Ce qu'un tel scénario ne fait pas tout seul »"
+  },
+  {
+   "fait": "Il attend la fin du message (P4), se souvient de ce que le lead a dit (P7), une question à la fois (P6), réserve l'appel (P9, P9b), jusqu'à 3 relances dans les 24 h (P8).",
+   "source": "00_STRATEGIE/sources/banque-2.md, faits produit communs (site ManySetter, commit 4437fc1)"
+  },
+  {
+   "fait": "Les nombres des cartes (1,284 crédits, 48,210 tokens, conv_8f3a) sont des valeurs de démonstration.",
+   "source": "reel17/src/scenes.js"
+  }
+ ],
+ "music": "musique fournie par le fondateur (« Musique (1).mp3 », assets/sounds/music_01.mp3) : libre de droits, usage commercial (déclaration du fondateur du 20/10) ; source précise à noter"
 }
