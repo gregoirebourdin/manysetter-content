@@ -18,3 +18,6 @@ Les sous-titres automatiques de YouTube (`fr-orig`) donnent l'heure de chaque mo
 - `transcript_fr.txt`, `mots_fr.json` : le script.
 - `analyse.md` : les passages candidats, classés, avec timecodes, hook, verbatims, garde-fous.
 - `maquettes_*.png` : essais de mise en page.
+- `montage.json` (vidéo horizontale rendue dynamique, `06_GABARITS/montage_ecran.py`) : coupes, zooms, plans visage, booms ; `coupes.json` : le contrôle des coupes ; `debrief.md` : ce qui a été fait.
+
+Un dossier sans identifiant YouTube (`ads-to-dm/`) est une vidéo enregistrée en local, pas encore publiée.

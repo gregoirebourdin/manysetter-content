@@ -84,3 +84,18 @@ Voix off (`voix.wav` dans le dossier du post) → découpe des blancs de plus de
 
 La fiche `script.json` : `title` (titre fixe, option), `voice`, `lines[]` = `{text, shot, fit, zoom}`. Un plan `HOOK/…`, `BODY/…`, `CTA/…` vient de `04_BANQUE_BROLL` (liste et prompts : `02_AVATARS/banque-plans-seth.md`).
 
+
+## `montage_ecran.py` : une vidéo horizontale du fondateur rendue dynamique (1920 × 1080)
+
+Pour un enregistrement d'écran avec sa bulle webcam incrustée (demande du 26/10/2026, première vidéo : `08_YOUTUBE/ads-to-dm/`).
+
+```bash
+.venv/bin/python CONTENU/06_GABARITS/montage_ecran.py CONTENU/08_YOUTUBE/<dossier>/montage.json --apercu   # planche des zooms
+lockf /tmp/setty-heavy.lock .venv/bin/python CONTENU/06_GABARITS/montage_ecran.py CONTENU/08_YOUTUBE/<dossier>/montage.json
+```
+
+- **Coupes** : mêmes règles que les reels YouTube (jamais dans un mot, blancs de plus de 0,45 s raccourcis, `couper` pour les faux départs et les reprises) ; `coupes.json` liste toute coupe où la voix serait encore audible.
+- **Cadres** : `cadre` (la page sans la barre d'outils, bulle entière) ; à chaque jump cut, alternance 100 % et `pousse` ; `zooms` sur les éléments de la page nommés dans `elements` ; `visage` met la bulle en grand sur la page floutée.
+- **Un zoom ne tranche jamais une ligne de texte** (`lignes`, mesurées au pixel par page ; un titre se montre en entier ou pas du tout), garde la bulle entière ou l'évite, et reste dans la fenêtre. Un élément coincé entre le titre et la bulle prend un `zoom` imposé (2,2).
+- **Son** : voix traitée, le BOOM du fondateur sur `booms` (calé sur l'attaque réelle du mot), son clic à chaque page, -14 LUFS.
+- Chaque plan est encodé à part dans `_build/plans/` : une retouche ne refait que les plans changés.

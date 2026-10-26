@@ -1,0 +1,103 @@
+   5.40    8.00 Bonjour à tous et à toutes, j'espère que vous allez bien.
+   8.16   11.28 Aujourd'hui on se retrouve pour une nouvelle vidéo ultra importante puisque aujourd'hui
+  11.28   16.08 je vais vous montrer toute la stratégie étape, par étape que j'utilise pour moi-même
+  16.08   20.58 et pour tous mes clients de AD2DM.
+  21.16   25.24 Alors on va commencer très très simple, déjà je vais essayer de vous montrer dans
+  25.24   29.68 la globalité qu'est-ce qui va se passer lorsque vous allez envoyer des personnes
+  29.68   34.32 dans votre WhatsApp, mais ça peut être aussi Instagram, ça peut être Messenger,
+  34.76   40.50 n'importe quel canal fonctionne, à partir du moment où vous suivez exactement ces étapes là.
+  40.86   47.52 L'objectif, vous vous doutez bien, c'est d'avoir derrière un setting IA automatisé qui va vous
+  47.52   54.32 permettre d'avoir des rendez-vous qualifiés. Donc pour faire un rapide topo de ce qu'on peut
+  54.32   62.34 avoir aujourd'hui. Déjà, il vous faut une ad meta qui vous permet donc d'avoir comme CTA
+  66.14   73.10 d'envoyer directement un message sur WhatsApp. Alors bien évidemment, quand je vous l'ai dit,
+  73.20   77.42 ça peut être WhatsApp, comme ça peut être Instagram, comme ça peut être Messenger. L'objectif
+  77.42   85.18 et qui est une première action de la part du lead qui va venir rentrer en contact avec vous.
+  85.58   91.08 Donc vous pouvez utiliser ça et ce qui va être super pertinent c'est que lorsque vous allez faire ça,
+  91.26   94.88 la personne va donc cliquer, se retrouver sur son application
+  94.88  100.80 et vous allez pouvoir sélectionner le premier message en gros pré-rempli qui peut être envoyé.
+ 101.32  107.70 Donc si vous le souhaitez pour que votre seteur puisse comprendre est-ce qu'il
+ 107.70  111.86 doit s'activer ou non, vous pouvez mettre dans ce message pré-enregistré un mot
+ 111.86  117.36 clé. Par exemple si vous voulez donner par exemple un guide, d'abord ça peut
+ 117.36  120.48 être le mot guide. Mais en gros ce qui va se passer c'est que quand ils vont
+ 120.48  124.80 cliquer pour envoyer un nouveau message, ils vont directement, l'événement
+ 124.80  128.36 va directement passer par mini chat et qui est lui du coup va l'envoyer à
+ 128.36  132.62 mini setter. Mini setter qu'est ce que c'est ? C'est un outil que j'ai créé pour que vous
+ 132.62  139.32 puissiez avoir votre setter IA qui parle exactement comme vous. Ça veut dire avec votre script
+ 139.32  143.42 de setting qui va pouvoir être amélioré en fonction des résultats qu'il arrive à avoir
+ 143.42  150.28 et de pouvoir gagner derrière des rendez-vous qualifiés. Donc l'objectif c'est d'avoir
+ 150.28  156.16 à chaque fois un setter IA sur mini setter qui va venir faire le job des setter que
+ 156.16  163.08 vous payer avant à la commission ou en fixe. Donc une fois que Manny Chat a envoyé cet
+ 163.08  170.36 événement à Manny Setter, Manny Setter va pouvoir répondre et les qualifier. Alors généralement,
+ 170.40  174.72 ça vous allez pouvoir le voir dans Manny Setter. L'objectif, c'est de pas avoir un script qui est
+ 174.72  179.40 trop long pour que la personne, vu qu'elle est à son pic d'émotion lorsqu'elle vous découvre,
+ 179.44  184.78 lorsqu'elle tombe sur votre pub, de directement pouvoir rentrer en contact avec vous, de ne pas
+ 184.78  189.72 perdre une seule seconde dont pas Calaille se coucher entre temps ou Calaille manger et
+ 189.72  194.32 de directement rentrer avec vous en contact et d'être qualifié.
+ 195.62  200.06 Généralement, ça boucle l'appel donc ce qui se passe c'est que vous dans
+ 200.06  204.30 Mennicetteur vous avez directement un résumé de ce qui est de ce qui a été
+ 204.30  208.32 dit dans la conversation et un résumé de la qualité du lead et
+ 208.32  213.54 directement l'appel est programmé. Si il n'est pas donc dans ce cas là si
+ 213.54  220.62 Si le lead n'est pas qualifié, dans ce cas-là, il n'y a absolument aucune raison de lui faire prendre un appel.
+ 221.04  226.62 Donc dans ce cas-là, soit on la renvoie vers une personne, donc dans Manicettere vous pourrez reprendre la main
+ 226.62  231.94 sur les conversations qui n'ont pas été qualifiées ou qui n'ont pas été menées jusqu'au bout,
+ 232.26  235.98 ou alors vous pouvez directement, si la personne ne répond plus,
+ 236.60  241.28 faire des follow-ups dans la fenêtre de 24 heures de mini-chat.
+ 241.98  246.20 donc pourquoi est-ce qu'aujourd'hui on utilise mini chat et mini setter pour la simple et bonne
+ 246.20  252.10 raison que les deux sont partenaires meta donc ça veut dire que c'est les plus simples à utiliser si
+ 252.10  258.44 aujourd'hui vous avez pas envie de construire un flow ou un scénario custom avec Claude ou
+ 258.44  263.84 chat gpt que vous deviez tester d'une manière bizarre vos conversations aujourd'hui dites-vous
+ 263.84  269.82 que tout ça c'est fini vous avez juste besoin de mini chat et de mini setter donc
+ 269.82  276.86 Donc l'objectif c'est ça, c'est que pour chaque conversation que les ads vont vous
+ 276.86  284.72 amener directement, la personne écrit le premier message, donc si imaginons le premier
+ 284.72  291.06 message qui est déjà pré-filled dans l'ADS, c'est celui-ci, directement nous on va pouvoir
+ 291.06  294.98 répondre et qualifier avec Manicetteur tout en automatique.
+ 295.34  298.44 Je vous ai mis un exemple très très simple pour que vous puissiez comprendre mais
+ 298.44  303.26 il n'y a absolument aucun délai entre la personne qui envoie un message et la réponse.
+ 303.78  308.44 Ça veut dire que vous pouvez aussi configurer ce délai-là, à savoir est-ce que vous voulez
+ 308.44  314.20 20 à 30 secondes avant que votre seteur réponde, vous pouvez absolument l'humaniser.
+ 314.34  320.18 D'accord, l'objectif c'est qu'il réponde comme vous et qu'il est un maximum de retours
+ 320.18  320.88 positifs.
+ 321.36  325.56 Vous pourrez bien évidemment le tester avant même de le mettre en ligne dans les,
+ 327.00  331.72 dans votre dashboard vous avez un endroit qui est fait pour ça et comme vous pouvez le voir directement,
+ 332.62  340.20 l'IA va pouvoir proposer des créneaux et ils vont être bouqués automatiquement. Dans
+ 340.20  348.36 Mini7r vous pourrez intégrer vos outils que ce soit iClose, calenly, cal.com, vous allez pouvoir
+ 348.36  353.78 faire en sorte que les rendez-vous soient pris de cette manière, c'est à dire pas envoyer
+ 353.78  358.94 lien que le mec reclique encore quelque part et soit perdu sur un calenne lit où il doit
+ 358.94  362.02 répondre à des questions. L'objectif c'est pas ça, c'est que tout se passe sur Whatsapp,
+ 362.28  370.42 là où la personne est prête à rester suite à votre publicité. Donc pour faire un recap,
+ 371.10  375.58 vous avez donc la publicité dans le meta-advanager qui dit bah là, la destination ça doit
+ 375.58  380.74 être au Whatsapp. Donc le bouton Send Whatsapp Message et du coup le First Message, là vous
+ 380.74  387.00 vous pouvez directement le configurer donc ça passe par mini chat donc ça veut dire que vous
+ 387.54  391.58 l'intégration elle est faite directement via mini chat donc en fait vous n'avez pas besoin d'acheter
+ 391.58  397.48 un numéro whatsapp compliqué vous avez juste besoin d'avoir un compte mini chat avec le
+ 397.48  404.30 numéro whatsapp ou dessus vous pouvez l'avoir pour 50 centimes il ya deux paramètres à mettre
+ 404.30  411.20 en place qui sont ultra simples c'est le default replay de le mettre sur every time et l'action
+ 411.20  417.36 en mini setter sur start conversion. J'ai fait d'autres tutoriels sur cette chaîne où vous
+ 417.36  421.78 pourrez voir exactement pas comment on le fait mais pour que vous puissiez le savoir il y a juste
+ 421.78  426.10 deux étapes d'accord juste après tout est renvoyé vers mini setter et là vous pouvez
+ 426.10  430.50 absolument tout gérer donc votre offre votre prix comment est-ce qu'on qualifie un prospect et
+ 430.50  434.76 surtout votre calendrier et comment est-ce que vous allez pouvoir tester ce set-à-heure pour
+ 434.76  440.60 qui soit le plus performant possible et qui vous ramène des appels. Il faut aussi que je vous parle
+ 440.60  446.88 de la règle des 24 heures de WhatsApp. Ça veut dire qu'aujourd'hui sur WhatsApp, quand une personne
+ 446.88  451.44 a une interaction avec vous, vous avez 24 heures pour qu'elle vous réponde à chaque fois et
+ 451.44  458.92 qu'une autre fenêtre s'ouvre. L'objectif avec ça c'est que déjà WhatsApp prévient le spam
+ 459.32  464.46 mais vous, vous allez pouvoir travailler dans cette fenêtre là. Sur Mani7er vous
+ 464.46  468.96 pourrez mettre ce que l'on appelle donc des follow-ups, vous pourrez les
+ 469.70  474.08 recontacter et ces follow-ups sont travaillés avec l'IA. Ça veut dire que
+ 474.08  477.32 quand vous allez faire un follow-up, ça va pas être un truc débile en mode
+ 477.32  480.84 « Hey, est-ce que tu as bien vu mon message ? » ça va être ok. Avec ce que
+ 480.84  487.38 tu m'as dit, j'ai quand même l'impression que XXX. Donc toujours dans
+ 487.38  492.00 l'apport de valeur est toujours dans la personnalisation du message parce qu'il
+ 492.00  499.18 faut que ça ressemble à votre voix. Donc ce que vous devez faire c'est vous
+ 499.18  505.14 joindre sur mini-setter.com vous pouvez très facilement créer votre premier
+ 505.14  510.36 setter il y a totalement gratuitement vous pouvez le tester et en plus vous
+ 510.36  516.60 avez 14 jours décès pour pouvoir le mettre en ligne, tester sur des vraies
+ 516.60  523.12 conversion etc vous avez le droit à 500 réponses qui sont totalement offertes pour
+ 523.12  526.90 pouvoir déjà avoir vos premières rendez-vous qualifiées et les tester si vous
+ 526.90  536.50 faites aujourd'hui un BM, un AdStudium ou autre vous devez absolument tester cette
+ 536.50  540.86 nouvelle stratégie qui fonctionne incroyablement bien et qui surtout
+ 540.86  545.68 peut être mise en place en même pas cinq minutes. Donc si vous avez des
+ 545.68  549.36 n'hésitez pas à me les poser dans les commentaires. J'y répondrai avec grand plaisir.
+ 549.94  552.38 En attendant, je vous souhaite une bonne journée. Tchao !
+
+[exited with code 0]
