@@ -479,3 +479,18 @@ Format d'une règle :
 - Retour : « J'ai vu aussi que c'étaient les titres courts qui marchaient mieux. »
 - Règle : **le titre-hook affiché est court** : 9 mots au plus, 2 lignes au plus. Vérifié dans les chiffres du 8/11 : sur YouTube, médiane de 339 vues avec un titre de 9 mots ou moins, contre 29 avec un titre plus long, et le temps de visionnage baisse quand le titre s'allonge. Sur Instagram, pas d'écart de vues.
 - Règle : MANYSETTER REELS reçoit le débrief chiffré `09_STUDIO_SETTY/writing/debrief_stats_reels_2-19.md` pour en tirer le pattern gagnant des prochains reels.
+
+## 2026-11-08 · Plus de carrousels : 14 reels de Setty, un par jour
+- Retour : « Okay mais là tu as repris un décor qui existe déjà nan ? Là je veux des nouveaux reels bro, je veux pouvoir abandonner les carrousels et sortir 14 reels, soit un par jour, okay ? Donc donne-moi les idées à valider juste en cliquant, propose-les-moi, et je veux que les scripts soient ultra convertissants. »
+- Précision de Claude : les images du 8/11 venaient d'un test du kit sur une copie du reel 21 (le ring de boxe), supprimée ensuite. Aucun nouveau reel n'a été fait avec un ancien décor.
+- Règle : **plus de carrousels** à partir du prochain lot. La grille passe à **un reel de Setty par jour** (6:30 pm ET, Instagram et Short YouTube). Remplace « 1 idée = 1 carrousel + 1 reel » du 19/10. Le carrousel déjà programmé du 9/11 n'est pas touché sans l'accord du fondateur.
+- Règle : le prochain lot compte **14 reels**, un par jour à partir du 10/11 (s'il en manque un, les suivants glissent d'un jour, sans trou). Chaque reel a un **décor neuf**, jamais un des 21 déjà faits.
+- Règle : les idées se proposent **à valider en un clic** (une liste à cocher), puis les scripts. Ils sont écrits **pour convertir** : le pattern v1 du 8/11, une info vraie qu'on a envie d'enregistrer (le signal du reel18), et le CTA SETTY tôt puis à la fin.
+
+## 2026-11-08 · Banque d'idées n° 3 : 10 idées validées
+- Retour : « Idées validées : 23, 25, 26, 27, 28, 29, 30, 32, 34, 35 » (formulaire à cocher).
+- Règle : les idées 23, 25, 26, 27, 28, 29, 30, 32, 34 et 35 de `ligne-edito.md` (banque n° 3) sont **validées**. Les idées 22 (onglet Général), 24 (Default Reply), 31 (pas de setter IA à 5 DM) et 33 (agences) sont **écartées**. Les 4 places restantes pour arriver à 14 reels se proposent de la même façon, à cocher.
+- Règle : le numéro du reel est celui de l'idée (reel23 = idée 23). Les idées de remplacement prennent les numéros libérés (22, 24, 31, 33).
+- Constat (ce que le fondateur garde) : l'argent des pubs (25, 26), une étude (23), des réponses à copier mot pour mot (27, 28, 29), des règles de DM (30, 35), les duels (26, 34), les vacances (32). Ce qu'il écarte : les réglages techniques d'outil (22, 24), le contre-pied d'honnêteté (31), la cible agence (33).
+- Retour : « Remplacements : B, C, D, E » (formulaire à cocher, 6 idées proposées).
+- Règle : les 4 idées de remplacement **validées** prennent les numéros libérés : 22 = « The 3 questions I ask before sending my calendar » (cabinet médical), 24 = « Booking link or 3 time slots in the DM? » (hall d'hôtel), 31 = « Boost or Ads Manager: which one fills your DMs? » (cinéma drive-in), 33 = « Voice note or text: which one wins a lead? » (station de radio). Écartées : « too expensive » et « ask my partner ». Le lot compte 14 reels (22 à 35).

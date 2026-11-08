@@ -184,3 +184,35 @@ Les 10 carrousels sont fabriqués (lot 1 le 19/10, puis les 7 autres d'un coup �
 - Solution : l'IA tient les conversations, une personne reprend quand ça compte. On ne dénigre jamais les setters.
 
 Ordre proposé (piliers en alternance) : 11 · 16 · 12 · 18 · 13 · 17 · 14 · 15 · 20 · 19, à partir du sam. 31/10. Le 13 et le 19 parlent tous deux du setter humain : ils sont à 5 jours d'écart.
+
+## Banque d'idées n° 3 (proposée le 8/11, reels seulement ; validées le 8/11 : 23, 25, 26, 27, 28, 29, 30, 32, 34, 35 ; écartées : 22, 24, 31, 33)
+
+> Décision du 8/11 : plus de carrousels, 14 reels de Setty, un par jour, chacun dans un décor neuf. Pattern v1 (débrief `09_STUDIO_SETTY/writing/debrief_stats_reels_2-19.md`) : la phrase la plus forte de 0 à 2 s, « Comment SETTY » dit et affiché avant 5 s puis à la fin, titre-hook de 9 mots et 2 lignes au plus, 25 à 35 s, une info vraie qu'on a envie d'enregistrer (le signal du reel18). Chaque fait est revérifié à sa source avant le script.
+
+| # | Titre-hook (≤ 9 mots) | L'info à enregistrer | Source à revérifier | Décor neuf | Seg. |
+| --- | --- | --- | --- | --- | --- |
+| 22 | Your leads hide in a tab you never check | Compte pro : les DM sont rangés en « Principal » et « Général », et « Général » n'envoie aucune notification par défaut | Aide Instagram | salon de barbier | S1 |
+| 23 | Why your next-day DM replies lose the lead | Étude de 2 241 entreprises US : contacter dans l'heure plutôt que le lendemain change tout (7x, 60x, à citer mot pour mot) ; on vend « pendant qu'il est là », jamais l'instantané | HBR, mars 2011 (Oldroyd, McElheran, Elkington) | salon d'aéroport | S1 |
+| 24 | Your Manychat flow ends, then the lead replies | Le message qui ne correspond à aucun mot-clé tombe dans la Default Reply ; réglée sur « une fois par 24 h », elle se tait | Aide et forum Manychat | ascenseur en panne | S2 |
+| 25 | You paid Meta for every DM you ignore | Le « coût par conversation commencée » dans le Gestionnaire de publicités : chaque DM laissé sans réponse a déjà été payé (variante du reel18) | Aide Meta Business | casino de Las Vegas | S1 |
+| 26 | Lead form or DM ad: which one for coaches? | Le formulaire instantané est pré-rempli et « Plus de volume » par défaut ; la pub DM ouvre une conversation mais il faut quelqu'un pour répondre | Aide Meta Business | salle des marchés | S1 |
+| 27 | My reply when a lead says "let me think" | 3 réponses mot pour mot à « let me think about it » (verbatims rd14, rd93, rd97) | script | showroom de voitures de sport | S2 |
+| 28 | What I reply when a lead just says "info" | La réponse à un DM d'un mot (« info », « price », « hey ») : une question, pas un pavé | script | food truck | S1 |
+| 29 | Your free guide is why nobody books a call | Le message à envoyer juste après le guide, dans la fenêtre de 24 h | script | librairie | S2 |
+| 30 | Your 30-line DM is why nobody replies | Les règles d'un DM qui se lit : une idée, une question, court | conseil | laverie automatique | S1 |
+| 31 | Don't get an AI setter if you get 5 DMs | Quand un setter (humain ou IA) ne sert à rien : peu de DM, surtout du support, pas d'offre claire (filtre d'honnêteté du site) | brief, site | studio de yoga | S1 |
+| 32 | Going on vacation? Your DMs need this first | Le message d'absence de Meta Business Suite, et ses limites | Aide Meta Business | villa à Bali | S1 |
+| 33 | You built your client's flow. Who answers replies? | Pour les agences : le flow répond au mot-clé, pas à la question ; ce que le client demande ensuite | brief | studio photo | S3 |
+| 34 | Instagram or WhatsApp: where should leads DM you? | Les deux ont la fenêtre de 24 h ; hors fenêtre, WhatsApp demande des modèles payants | Aide Meta (tarifs WhatsApp) | yacht | S1 |
+| 35 | Never ask a lead two questions in one DM | Une question par message : le lead répond à la plus facile et oublie l'autre | conseil | spa, bain froid | S1 |
+
+Remplacements validés le 8/11 (numéros libérés) :
+
+| # | Titre-hook | L'info à enregistrer | Décor neuf | Seg. |
+| --- | --- | --- | --- | --- |
+| 22 | The 3 questions I ask before sending my calendar | Les 3 questions à poser avant de donner l'agenda | cabinet médical | S2 |
+| 24 | Booking link or 3 time slots in the DM? | Un lien = des devoirs ; 3 créneaux dans son fuseau = une réponse d'un mot | hall d'hôtel | S2 |
+| 31 | Boost or Ads Manager: which one fills your DMs? | Ce que le bouton Booster permet pour les messages, et ce que le Gestionnaire de publicités ajoute | cinéma drive-in | S1 |
+| 33 | Voice note or text: which one wins a lead? | Le texte pour la 1re réponse, l'info et le prix ; le vocal quand le lead est chaud | station de radio | S1 |
+
+Écartées après vérification du 8/11 : la limite de 200 DM automatisés par heure (non publiée par Meta, chiffres contradictoires) et la fenêtre gratuite de 72 h des pubs vers WhatsApp (72 h ou 7 jours selon les sources).
