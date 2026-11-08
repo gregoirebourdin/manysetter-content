@@ -470,3 +470,12 @@ Format d'une règle :
 - Retour : « Je valide les reels 12, 17 et 18, passe-les à MANYSETTER POST. »
 - Règle : les reels 12 (« The price ghost », coworking, 56,0 s, v3), 17 (« Make and ChatGPT », garage, 58,1 s) et 18 (« DM ads », salle de réunion, 54,5 s) sont **validés** tels que livrés en 30 i/s, et transmis à MANYSETTER POST pour le 31/10, le 5/11 et le 6/11 à 6:30 pm ET.
 - Décision (21/10, choix « Programme dès livraison ») : les reels 16, 19, 20 et 21 sont **programmés dès leur livraison**, sans validation reel par reel. Claude les contrôle d'abord (images, son, durée, légendes) ; le fondateur n'ajoute que l'étiquette « AI info » après publication.
+
+## 2026-11-08 · Récap des statistiques, stratégie des prochains reels
+- Retour : « Non, je veux rien sponsoriser. »
+- Règle : **aucune publicité payante** (pas de reel sponsorisé, pas de boost). La croissance passe par le contenu organique.
+- Retour : « Oui pour les CTA au tout début et la phrase la plus forte. »
+- Règle : dans chaque reel de Setty, **la phrase la plus forte ouvre le reel** (0 à 2 s), et **le CTA « Comment SETTY » arrive tout de suite après** (dans les 5 premières secondes, dit et affiché), puis il est répété à la fin. Constat du 8/11 : le CTA tombait vers 49 s, alors qu'on regarde en moyenne 11 s.
+- Retour : « J'ai vu aussi que c'étaient les titres courts qui marchaient mieux. »
+- Règle : **le titre-hook affiché est court** : 9 mots au plus, 2 lignes au plus. Vérifié dans les chiffres du 8/11 : sur YouTube, médiane de 339 vues avec un titre de 9 mots ou moins, contre 29 avec un titre plus long, et le temps de visionnage baisse quand le titre s'allonge. Sur Instagram, pas d'écart de vues.
+- Règle : MANYSETTER REELS reçoit le débrief chiffré `09_STUDIO_SETTY/writing/debrief_stats_reels_2-19.md` pour en tirer le pattern gagnant des prochains reels.
