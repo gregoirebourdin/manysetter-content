@@ -15,11 +15,11 @@ M = Mix(__file__)
 C, WORDS, sfx = M.C, M.WORDS, M.sfx
 H = lambda key: C[key]  # noqa: E731
 
-# ---------------- music: Grégoire's track, its drop on the end of the hook line; cut it on the comedic beats with
+# ---------------- music: Grégoire's track, its drop on the end of the strongest line; cut it on the comedic beats with
 # play=[(t0, t1), …] (it keeps its own time, like a mute) and M.tape_stop(t1 - 0.5) where a joke kills it
-DROP = H("right_end") + 0.05
+DROP = H("hook_end") + 0.05
 M.music_bed(drop=DROP, play=[
-    (DROP, H("comment") - 0.12),
+    (H("cta_setty_end") + 0.08, H("comment") - 0.12),  # it comes in once the early « Comment SETTY » has landed
     (H("setty_end") + 0.08, H("end") + 0.6),  # the music stops under "Comment SETTY." so the keyword lands clean
 ])
 
@@ -34,7 +34,8 @@ for k, t in C.items():
         M.clic(t)
 
 # ---------------- SFX: CTA (the keyword is typed after it is said, so the clicks never mask "SETTY")
-for k in range(5):
-    M.clic(H("setty_end") + 0.05 + k * 0.07, 0.5)  # SETTY typed in the comment bar, once the word is said
+for end in (H("cta_setty_end"), H("setty_end")):  # the early CTA and the last one
+    for k in range(5):
+        M.clic(end + 0.05 + k * 0.07, 0.5)  # SETTY typed in the comment bar, once the word is said
 
 M.finish(music_gain=MUSIC_BED_GAIN, tp_max=-1.5)  # music well under the voices; the MP4 stays under -1 dBTP

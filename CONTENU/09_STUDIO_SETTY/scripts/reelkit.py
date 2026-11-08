@@ -118,6 +118,8 @@ class Reel:
             data["set"], data["mood"] = rj.get("set", "bedroom"), rj.get("mood", "golden")
         if rj.get("hook_title"):
             data["hook_title"] = rj["hook_title"]
+        if rj.get("pattern"):  # "v1": Grégoire's rules of 8/11, checked on the real timing by lint()
+            data["pattern"] = rj["pattern"]
         if rj.get("cam_track"):  # each camera move takes over from the previous one (engine.js, 20/10)
             data["cam_track"] = True
         if self.timing.get("dialogue"):  # who says each line, and the mouths follow the voice
@@ -135,6 +137,8 @@ class Reel:
         used = set(re.findall(r"\bC\.([A-Za-z_]\w*)", code))
         if re.search(r"\bending\(", code):  # the common ending (dialogue.js) runs on these
             used |= {"comment", "setty_end", "dms_end", "end"}
+        if re.search(r"\bctaEarly\(", code):  # the early CTA (dialogue.js, pattern v1)
+            used |= {"cta", "cta_setty_end", "cta_end"}
         if missing := sorted(used - set(cues)):
             raise SystemExit(f"{self.id}: src/scenes.js uses cue(s) {missing} that build.py does not define (a typo, or a cue "
                              "swallowed by a '#'): a card or a move on them would land at the end of the reel")
@@ -215,6 +219,16 @@ def lint(data, max_total=31.6):
         warn.append(f"{data['cues']['total']:.1f}s: longer than the reel's target ({max_total:.1f} s max)")
     if data["cues"]["total"] > 60.0 and data.get("layout") == "set":
         warn.append(f"{data['cues']['total']:.1f}s: over 60.0 s (the one-minute format): cut a line (studio.py cut) or tighten tail_s")
+    if data.get("pattern") == "v1":  # Grégoire, 8/11: CTA within 5 s and again at the end, a short hook title
+        keys = [w for w in data["words"] if re.sub(r"[^A-Za-z]", "", w["w"]) == "SETTY"]
+        if not keys or keys[0]["t"] > 5.0:
+            warn.append(f"PATTERN V1: « SETTY » said at {keys[0]['t']:.1f} s: within 5 s (Grégoire, 8/11)" if keys
+                        else "PATTERN V1: « SETTY » is never said")
+        if len(keys) < 2 or keys[-1]["t"] < data["words"][-1]["t"] - 8:
+            warn.append("PATTERN V1: the CTA is not repeated at the end")
+        n = len(re.findall(r"[A-Za-z0-9$%][\w$%,.'’/-]*", " ".join(data.get("hook_title", [])).replace("*", "")))
+        if n > 9:
+            warn.append(f"PATTERN V1: hook title of {n} words: 9 at most (Grégoire, 8/11)")
     if len(data.get("hook_title", [])) > 2:
         warn.append(f"hook title on {len(data['hook_title'])} lines: it reaches below y 600 and eats the close-ups "
                     "(reel8, reel11): 2 lines, or ask Grégoire before shortening the carousel's slide 1")

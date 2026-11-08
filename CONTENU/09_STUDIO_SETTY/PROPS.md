@@ -26,7 +26,7 @@ Reference calls with real values: `reel1/src/scenes.js` and `reel1/audio.py`. Se
 | `confetti` | brand-colour confetti burst | `{ at, x, y, n }` | any | (with bookedCard) |
 | `weekCalendar` | real week calendar (Calendly chip), the booked event drops in, others pop | `{ at, drop, out, tool, events }` | TOP | `whoosh` in, `thump(200)`, 3 `pop()` |
 | `moonZzz` | moon + floating "z z" | `{ at, out }` | close | `sparkle(0.9, 80, 96)` |
-| `commentBar` | IG comment bar typing the keyword, send | `{ keyword: "SETTY", at, caret, type, step, send, out }` (type after the word is said) | MID | 5 `key_click` on the typing, `blip("send")` |
+| `commentBar` | IG comment bar typing the keyword, send | `{ keyword: "SETTY", at, caret, type, step, send, out, id }` (type after the word is said; `id: "comment0"` for a second bar in the reel; dialogue reels: `D.ctaEarly()` for the early CTA of pattern v1, `D.ending()` for the last one) | MID | 5 `key_click` on the typing, `blip("send")` |
 | `toast` | small app-style pill with an icon: "Mom left the webinar", "6 calls booked · 0 clients", "Handed to you"; several per reel (`id`) | `{ id, icon, text, tone: "" \| "red" \| "green" \| "light", y: 1010, at, out }` | between Setty and the captions | `blip("recv")` 0.25 s before |
 | `chatBubbles` | a stack of chat bubbles popping in (gags, follow-ups "After 2 hours"); "me" orange right, "lead" white left, `meta` grey line | `{ id, x, y, w, items: [{ text, from, at, meta, small }], out }` | MID (y 900–1150) / TOP (y 670–1150) | `blip("send")` / `blip("recv")` per bubble, before the next word |
 | `notification` | phone notification sliding down ("setty · slid into your DMs") | `{ title, text, at }` + flash | any | 2 `ping` |

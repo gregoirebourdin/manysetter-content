@@ -319,19 +319,22 @@ export function confetti(R, { at, x = 540, y = 900, n = 34 }) {
 
 /** Instagram comment bar: the keyword is typed letter by letter (`step` s apart), then sent.
  *  Type it once Setty has said it (type: end of the word): key clicks on the word mask it ("SETTY" → "setting"). */
-export function commentBar(R, { keyword = "SETTY", at, caret = at + 0.12, type, step = 0.065, send = type + 0.4, out }) {
-  const el = R.mount("front", "comment", `<div id="comment"><div class="av"><img src="assets/ui/logo-icon.svg" /></div><span class="ph" id="ph">Add a comment…</span><div class="txt"><span id="typed"></span><i class="caret" id="caret"></i></div><div class="send" id="send"></div></div>`);
-  el.querySelector("#send").innerHTML = R.ico("arrow-up");
+export function commentBar(R, { keyword = "SETTY", at, caret = at + 0.12, type, step = 0.065, send = type + 0.4, out, id = "comment" }) {
+  // id: a second bar in the same reel (the early CTA, pattern v1 of 8/11: "comment0"); the first keeps reel1's ids
+  const p = id === "comment" ? "" : `${id}-`;
+  const el = R.mount("front", "comment", `<div id="${id}" class="cbar"><div class="av"><img src="assets/ui/logo-icon.svg" /></div><span class="ph" id="${p}ph">Add a comment…</span><div class="txt"><span id="${p}typed"></span><i class="caret" id="${p}caret"></i></div><div class="send" id="${p}send"></div></div>`);
+  el.querySelector(`#${p}send`).innerHTML = R.ico("arrow-up");
   const { tl } = R;
-  tl.fromTo("#comment", { opacity: 0, y: 240 }, { opacity: 1, y: 0, duration: 0.32, ease: "back.out(1.6)" }, at);
-  const typed = document.getElementById("typed");
-  tl.set("#ph", { opacity: 1 }, 0);
-  tl.set("#ph", { opacity: 0 }, type);
+  tl.fromTo(`#${id}`, { opacity: 0, y: 240 }, { opacity: 1, y: 0, duration: 0.32, ease: "back.out(1.6)" }, at);
+  const typed = document.getElementById(`${p}typed`);
+  tl.set(`#${p}ph`, { opacity: 1 }, 0);
+  tl.set(`#${p}ph`, { opacity: 0 }, type);
   keyword.split("").forEach((ch, k) => tl.set(typed, { textContent: keyword.slice(0, k + 1) }, type + k * step));
   tl.set(typed, { textContent: "" }, 0);
-  tl.to("#caret", { opacity: 0, duration: 0.01, repeat: 9, yoyo: true, repeatDelay: 0.25 }, caret);
-  tl.fromTo("#send", { scale: 1 }, { scale: 0.8, duration: 0.07, yoyo: true, repeat: 1 }, send);
-  tl.to("#comment", { y: 30, opacity: 0, duration: 0.2, ease: "power2.in" }, out);
+  tl.to(`#${p}caret`, { opacity: 0, duration: 0.01, repeat: 9, yoyo: true, repeatDelay: 0.25 }, caret);
+  tl.fromTo(`#${p}send`, { scale: 1 }, { scale: 0.8, duration: 0.07, yoyo: true, repeat: 1 }, send);
+  tl.to(`#${id}`, { y: 30, opacity: 0, duration: 0.2, ease: "power2.in" }, out);
+  return el;
 }
 
 /** Phone notification sliding down from the top. */

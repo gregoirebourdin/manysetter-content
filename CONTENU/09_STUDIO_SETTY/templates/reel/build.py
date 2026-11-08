@@ -3,7 +3,8 @@
 
 Lines come from vo/<reel>_segments.json ("who" on each). F(L) / Z(L) = first / last word of line L; word(L, "text")
 finds a word inside line L only (an error names the line's words if it is not there). Name the cues the scenes and the
-sound use: drop (end of the hook), boomN (💥 a "dinguerie"), fahhhN (😩 after a roast), clicN (a card pops: 0.1–0.3 s
+sound use: drop (end of the strongest line), the early CTA (cta, cta_setty_end, cta_end: pattern v1, Grégoire 8/11),
+boomN (💥 a "dinguerie"), fahhhN (😩 after a roast), clicN (a card pops: 0.1–0.3 s
 BEFORE the line or a word, never on a word onset), and the CTA cues. "total" is the kit's: never a cue name.
 Usage: python3 studio.py build <reel>
 """
@@ -19,11 +20,12 @@ F, Z, word, LN = R.F, R.Z, R.word, R.LN
 LAST = max(LN)
 
 B1 = find("fucking")
-SETTY = find("SETTY")
+SETTY0 = word(1, "SETTY")           # the early CTA, said within 5 s (pattern v1: the build warns otherwise)
+SETTY = word(LAST, "SETTY")         # the CTA again at the end
 BLEEPS = [B1]                       # 3 at most
 
-ACCENT = {0: [], LAST: ["SETTY", "free."]}   # line → words in orange
-HERO = {SETTY}                      # words that make their chunk big
+ACCENT = {0: [], 1: ["SETTY", "free."], LAST: ["SETTY", "free."]}   # line → words in orange
+HERO = {SETTY0, SETTY}              # words that make their chunk big
 DISPLAY = {}                        # {i: "Manychat."} when the voice script says "ManyChat."
 
 CHUNKS = []
@@ -37,7 +39,8 @@ for L in sorted(LN):
                                       "display": {i: d for i, d in DISPLAY.items() if x <= i <= y}}))
 
 CUES = {
-    "right_end": e(Z(0)), "drop": e(Z(0)) + 0.05,
+    "hook_end": e(Z(0)), "drop": e(Z(0)) + 0.05,
+    "cta": t(word(1, "comment")), "cta_setty_end": e(SETTY0), "cta_end": e(Z(1)),
     # "boom1": t(word(3, "sixty-three")), "fahhh1": e(Z(6)) + 0.12, "clic1": t(F(3)) - 0.15,
     "comment": t(word(LAST, "comment")), "setty": t(SETTY), "setty_end": e(SETTY), "free": t(word(LAST, "free.")),
     "dms_end": e(Z(LAST)), "end": e(Z(LAST)),

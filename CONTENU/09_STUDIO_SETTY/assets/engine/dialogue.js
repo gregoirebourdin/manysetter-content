@@ -1,6 +1,6 @@
 // Dialogue helpers (layout "set", Grégoire 19/10): the camera goes to whoever talks, the other one reacts, cards (real
 // tools) pop beside the speaker, his BOOMs punch in, and after a roast the camera cuts to the roasted one for the "Fahhh".
-// In scenes.js (shell.html): const { L, line, reaction, side, punch, bleep, ending, CARD_L, CARD_R } = D;
+// In scenes.js (shell.html): const { L, line, reaction, side, punch, bleep, ctaEarly, ending, CARD_L, CARD_R } = D;
 import { commentBar, notification, endCta } from "./props.js";
 
 export function dialogue(R) {
@@ -119,5 +119,15 @@ export function dialogue(R) {
     endCta(R, { text: pill, at: C.end + 1.2 }); // after the last caption (it holds 0.9 s)
   }
 
-  return { L, line, reaction, side, punch, push, bleep, cut, ending, screenIn, CARD_L, CARD_R };
+  /** The CTA said right after the strongest line (pattern v1, Grégoire 8/11: within 5 s, said and shown): the comment bar
+   *  types the keyword under the hook title once it is said, sends, and leaves at the end of the line; ending() repeats it
+   *  at the end. Call it right after that line's line(). Cues: cta (its "comment"), cta_setty_end, cta_end (build.py). */
+  function ctaEarly({ keyword = "SETTY" } = {}) {
+    const C = R.C;
+    const el = commentBar(R, { id: "comment0", keyword, at: C.cta - 0.12, caret: C.cta, type: C.cta_setty_end + 0.06, step: 0.07,
+      send: C.cta_setty_end + 0.45, out: Math.max(C.cta_setty_end + 0.9, C.cta_end - 0.1) }); // gone before the cut to the next speaker
+    if (el) el.style.top = `${Math.max(565, titleBottom() + 24)}px`;
+  }
+
+  return { L, line, reaction, side, punch, push, bleep, cut, ctaEarly, ending, screenIn, CARD_L, CARD_R };
 }

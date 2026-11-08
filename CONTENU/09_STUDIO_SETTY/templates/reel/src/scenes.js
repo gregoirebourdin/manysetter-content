@@ -1,7 +1,7 @@
 // {{REEL}}: a conversation in a 3D set (layout "set"). The camera goes to whoever talks (D.line), the other one reacts,
 // cards pop beside the speaker (D.side + an st.* module), BOOMs punch in (D.punch), the roasted one gets the camera for
 // the "Fahhh" (D.reaction). Scope: R, C, K (Setty), KC (coach), face / faceC, shotTo, shake, flash, tl, D, T(i), E(i), kit, st.
-const { L, line, reaction, side, punch, bleep, cut, ending, CARD_L, CARD_R } = D;
+const { L, line, reaction, side, punch, bleep, cut, ctaEarly, ending, CARD_L, CARD_R } = D;
 
 kit.hookTitle(R, { lines: R.DATA.hook_title || ["Your hook,", "the *key* word in orange."], pulses: [C.drop] });
 
@@ -9,7 +9,7 @@ kit.hookTitle(R, { lines: R.DATA.hook_title || ["Your hook,", "the *key* word in
 R.place({ ...face("smug", { lookX: -0.8, dotsBounce: 1 }) });
 Object.assign(R.Q, faceC("hyped", { mouthOpen: 0.3, lookX: 0.5 }));
 
-// ---- the hook (Setty): a slow push from the wide, a punch onto Setty, the censor bar, BOOM + the drop after it
+// ---- the strongest line (pattern v1, Grégoire 8/11: it opens the reel, 0–2 s): a slow push from the wide, a punch onto Setty, the censor bar, BOOM + the drop after it
 K(0, 1.4, { cam: R.camOf("setty", { dist: 16, y: 900 }) }, "sine.in");
 const B1 = R.DATA.bleeps[0];
 K(B1.t - 0.1, 0.2, { cam: R.camOf("setty") }, "power4.out");
@@ -18,6 +18,11 @@ K(B1.end + 0.1, 0.25, face("mocking", { armRr: 0.5, armRf: 0.9 }));
 KC(1.0, 0.3, faceC("confused", { lookX: 0.6 }));
 punch(C.drop, 26);
 flash(C.drop, 0.5, 0.18);
+
+// ---- the CTA right after it (pattern v1: said and shown within 5 s), the comment bar under the title; ending() repeats it
+line(1, face("smug", { lookX: 0.2, armRr: 0.6 }), faceC("confused", { lookX: 0.6 }));
+K(C.cta_end - 0.3, 0.25, face("wink"), "back.out(2)");
+ctaEarly();
 
 // ---- the middle: one line() per line (speaker face, listener face, framing); a card: side() + a module + CARD_L/CARD_R.
 // Cards in big type, under the title whatever its height: side(t, "left", { fit: true, scale: 0.62 }); a card stays 2.5 s

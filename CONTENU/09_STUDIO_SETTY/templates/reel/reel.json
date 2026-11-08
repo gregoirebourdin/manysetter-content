@@ -1,6 +1,7 @@
 {
  "layout": "set",
  "cam_track": true,
+ "pattern": "v1",
  "set": "bedroom",
  "mood": "golden",
  "voices": {

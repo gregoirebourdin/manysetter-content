@@ -92,6 +92,42 @@ def target(reel):
     return tuple(json.loads(f.read_text()).get("voice_s", TARGET)) if f.exists() else TARGET
 
 
+PATTERN_V1 = {"cta_by": 5.0, "title_words": 9, "title_lines": 2}  # Grégoire, 8/11 (retours-validation.md)
+
+
+def title_words(lines):
+    return len(re.findall(r"[A-Za-z0-9$%][\w$%,.'’/-]*", " ".join(lines).replace("*", "")))
+
+
+def pattern_problems(reel, segs):
+    """Pattern v1 (Grégoire, 8/11, from the stats of reels 2 to 19): the strongest line opens, « Comment SETTY » is said
+    within 5 s and again at the end, the hook title on screen has 9 words and 2 lines at most. Checked on the script,
+    before the voice is paid (the CTA's place cannot be fixed after the voice without a new one)."""
+    rj = json.loads((STUDIO / reel / "reel.json").read_text()) if (STUDIO / reel / "reel.json").exists() else {}
+    if rj.get("pattern") != "v1":
+        return []
+    out, words, t, who = [], 0, 0.0, None
+    said = [k for k, sg in enumerate(segs) if re.search(r"\bSETTY\b", sg["text"])]
+    if not said:
+        return ["« Comment SETTY » is never said"]
+    for sg in segs[:said[0]]:
+        t += len(sg["text"].split()) / 3.1 + (0.2 if who and sg.get("who") != who else 0) + sg.get("pause", 0)
+        who = sg.get("who")
+    sg_words = segs[said[0]]["text"].split()
+    t += next(k for k, w in enumerate(sg_words) if "SETTY" in w) / 3.1 + (0.2 if who and segs[said[0]].get("who") != who else 0)
+    if t > PATTERN_V1["cta_by"] - 0.4:
+        out.append(f"« SETTY » would be said at ~{t:.1f} s, it must be within {PATTERN_V1['cta_by']:.0f} s: the CTA line right after "
+                   "the strongest line (line 2)")
+    if said[-1] < len(segs) - 2 or len(said) < 2:
+        out.append("the CTA is not repeated at the end (the last line or the one before)")
+    ht = rj.get("hook_title") or []
+    if ht and (n := title_words(ht)) > PATTERN_V1["title_words"]:
+        out.append(f"hook title of {n} words: {PATTERN_V1['title_words']} at most ({' '.join(ht).replace('*', '')})")
+    if len(ht) > PATTERN_V1["title_lines"]:
+        out.append(f"hook title on {len(ht)} lines: 2 at most")
+    return out
+
+
 def has_key():
     if os.environ.get("GEMINI_API_KEY"):
         return True
@@ -177,6 +213,8 @@ def cmd_voice(a):
     if not seg.exists():
         sys.exit(f"missing {seg.relative_to(STUDIO)} (one segment per line, each with its delivery direction)")
     segs = json.loads(seg.read_text())
+    if probs := pattern_problems(reel, segs):  # before anything is paid
+        sys.exit(f"{reel}: the script breaks pattern v1 (Grégoire, 8/11):\n  - " + "\n  - ".join(probs))
     if any("who" in sg for sg in segs):
         return voice_dialogue(a, reel, segs)
     script = STUDIO / f"vo/{reel}_script.txt"
