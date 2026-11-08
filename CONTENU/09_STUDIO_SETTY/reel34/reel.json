@@ -1,0 +1,45 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "yacht",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel34",
+ "slug": "instagram-or-whatsapp",
+ "title": "Instagram or WhatsApp: where should leads DM you?",
+ "pub_id": "261108_REEL_S1_AV1_instagram-or-whatsapp",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "You're picking between Instagram and WhatsApp while your leads [bleep] wait on both.",
+ "hook_title": [
+  "*Instagram* or WhatsApp: where",
+  "should leads DM you?"
+ ],
+ "biais": [
+  "duel",
+  "contre-pied"
+ ],
+ "verbatims": [
+  "mc18",
+  "rd06"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "Your mentor says move everything to WhatsApp? Read this first.",
+ "publication": "lun. 16/11/2026, 6:30 pm ET",
+ "sources": "Règles de messagerie Instagram (fenêtre de 24 h) et tarifs de la plateforme WhatsApp Business (developers.facebook.com/docs/whatsapp/pricing) à revérifier avant la voix."
+}

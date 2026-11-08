@@ -65,3 +65,7 @@ les doublons et on réutilise ce qui existe. MANYSETTER REELS y publie les règl
      appelée avec `at` ou `out` non défini écrit une erreur dans la console.
   3. `ending({ avoid: [[y0, y1]] })` ou `R.set.endAvoid` dans le décor : la notification de fin évite ces bandes du plan
      large (un écran à garder lisible : le « 300 » du reel18) ; `notifTop` la place à la main.
+
+## Lot 22 à 35 (8/11) : décors et cartes déclarés
+
+Consigne : `writing/lot_reels_22-35_brief.md`. Décors prévus (un fichier chacun dans `assets/sets/`) : casino, airport, showroom, tradingfloor, clinic, foodtruck, yacht, hotellobby, bookstore, drivein, laundromat, radio, spa, bali. Déclarez ici toute nouvelle carte (`card_<nom>.js`) avant de l'écrire.

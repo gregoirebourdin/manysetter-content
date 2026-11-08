@@ -1,0 +1,46 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "radio",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel33",
+ "slug": "voice-note-or-text",
+ "title": "Voice note or text: which one wins a lead?",
+ "pub_id": "261108_REEL_S1_AV1_voice-note-or-text",
+ "funnel": "MOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "You answered \"how much\" with a three-minute [bleep] voice note.",
+ "hook_title": [
+  "*Voice note* or text: which",
+  "one wins a lead?"
+ ],
+ "biais": [
+  "duel",
+  "pertinence pour soi"
+ ],
+ "verbatims": [
+  "cl045",
+  "rd13",
+  "rd85"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "You answered \"how much?\" with a 3-minute voice note? Here's when to use text.",
+ "publication": "sam. 21/11/2026, 6:30 pm ET",
+ "sources": "Conseil (aucun chiffre). Verbatims rd85 et cl045 (le vocal fait plus humain). Pas de note vocale du setter sur Instagram ni WhatsApp (brief, § 7) : le setter passe la main au coach."
+}

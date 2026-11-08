@@ -1,0 +1,50 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "clinic",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel22",
+ "slug": "3-questions-calendar",
+ "title": "The 3 questions I ask before sending my calendar",
+ "pub_id": "261108_REEL_S2_AV2_3-questions-calendar",
+ "funnel": "MOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Sending your calendar to everyone is [bleep] killing your week.",
+ "hook_title": [
+  "The 3 questions I ask",
+  "before sending my *calendar*"
+ ],
+ "biais": [
+  "chiffre précis",
+  "pertinence pour soi"
+ ],
+ "verbatims": [
+  "rd43",
+  "rd44",
+  "rd45",
+  "rd75",
+  "rd76",
+  "rd92",
+  "rd94"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "Six calls this week and not one real client? Ask these 3 questions first.",
+ "publication": "sam. 14/11/2026, 6:30 pm ET",
+ "sources": "Script. « Only the right leads get your calendar » et une réponse utile pour les autres (brief, § 2 et § 5)."
+}

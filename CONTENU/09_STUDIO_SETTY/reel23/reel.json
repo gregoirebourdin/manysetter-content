@@ -1,0 +1,46 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "airport",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel23",
+ "slug": "next-day-replies",
+ "title": "Why your next-day DM replies lose the lead",
+ "pub_id": "261108_REEL_S1_AV1_next-day-replies",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "That lead you'll answer tomorrow morning is already [bleep] gone.",
+ "hook_title": [
+  "Why your *next-day* DM",
+  "replies lose the lead"
+ ],
+ "biais": [
+  "autorité (étude HBR)",
+  "aversion à la perte"
+ ],
+ "verbatims": [
+  "rd06",
+  "rd19",
+  "rd84"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "You'll answer that DM tomorrow? A study of 2,241 companies says no.",
+ "publication": "mer. 11/11/2026, 6:30 pm ET",
+ "sources": "hbr.org/2011/03/the-short-life-of-online-sales-leads (Oldroyd, McElheran, Elkington). Les chiffres « 7 fois » et « 60 fois » ne sont pas utilisés : pas lus sur la page de HBR."
+}

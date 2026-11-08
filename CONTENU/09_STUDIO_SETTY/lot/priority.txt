@@ -1,9 +1,15 @@
-# reels in publication order: the heavy lock serves the earliest post first (scripts/heavy.py)
-reel12
-reel15
-reel16
-reel17
-reel18
-reel19
-reel20
-reel21
+# publication order of the batch 22-35 (one a day from Tue 10/11, 6:30 pm ET)
+reel25
+reel23
+reel27
+reel26
+reel22
+reel28
+reel34
+reel24
+reel29
+reel31
+reel30
+reel33
+reel35
+reel32

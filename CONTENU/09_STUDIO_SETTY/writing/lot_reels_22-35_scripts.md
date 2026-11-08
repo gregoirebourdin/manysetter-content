@@ -78,7 +78,7 @@ Les durées tombent entre 37 et 43 s : deux CTA complets prennent 28 mots. Une v
 
 | # | Qui | Réplique (EN, à l'écran) | Sens (FR) | Plan et écran | Son | Verbatims |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Setty | "Let me think about it" is a polite [bip] no, unless you reply this. | « Je vais réfléchir », c'est un putain de non poli, sauf si tu réponds comme ça. | Large, coup de zoom sur Setty ; titre | riser → 💥 + drop | rd14 |
+| 1 | Setty | "Let me think" is a polite [bip] no, unless you reply this. | « Je vais réfléchir », c'est un putain de non poli, sauf si tu réponds ça. | Large, coup de zoom sur Setty ; titre | riser → 💥 + drop | rd14 |
 | 2 | Setty | Comment SETTY and I'll send you everything to build your AI setter for free. | Commente SETTY et je t'envoie tout pour créer ton setter IA gratuitement. | Barre de commentaire sous le titre | clics sur SETTY | série |
 | 3 | Coach | He said that after twenty minutes. I said cool, take your time, and never heard back. | Il a dit ça après 20 minutes. J'ai dit cool, prends ton temps, et plus de nouvelles. | Gros plan coach ; bulle « let me think about it » |  | rd93, rd97 |
 | 4 | Setty | You said take your time, and he took all of it, [bip]. | Tu as dit prends ton temps, et il l'a pris en entier, crétin. | Setty le montre | 😩 Fahhh |  |
@@ -121,7 +121,7 @@ Les durées tombent entre 37 et 43 s : deux CTA complets prennent 28 mots. Une v
 
 | # | Qui | Réplique (EN, à l'écran) | Sens (FR) | Plan et écran | Son | Verbatims |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Setty | You send your calendar to anyone who says hi, and it's [bip] killing you. | Tu envoies ton agenda à quiconque dit salut, et ça te tue, putain. | Large, coup de zoom sur Setty ; titre | riser → 💥 + drop | rd75 |
+| 1 | Setty | Sending your calendar to everyone is [bip] killing your week. | Envoyer ton agenda à tout le monde, ça te bousille ta semaine, putain. | Large, coup de zoom sur Setty ; titre | riser → 💥 + drop | rd75 |
 | 2 | Setty | Comment SETTY and I'll send you everything to build your AI setter for free. | Commente SETTY et je t'envoie tout pour créer ton setter IA gratuitement. | Barre de commentaire sous le titre | clics sur SETTY | série |
 | 3 | Coach | Six calls this week, bro. Not one real client. | Six appels cette semaine. Pas un seul vrai client. | Gros plan coach ; agenda plein | clic | rd43 |
 | 4 | Setty | Three questions before the link. One: what are you trying to fix, and why now? | Trois questions avant le lien. Un : qu'est-ce que tu veux régler, et pourquoi maintenant ? | Carte « 1 » en bulle orange | clic | rd94, rd45 |
@@ -167,7 +167,7 @@ Les durées tombent entre 37 et 43 s : deux CTA complets prennent 28 mots. Une v
 | 1 | Setty | You're picking between Instagram and WhatsApp while your leads [bip] wait on both. | Tu hésites entre Instagram et WhatsApp pendant que tes leads attendent sur les deux, putain. | Large, coup de zoom sur Setty ; titre | riser → 💥 + drop | rd06 |
 | 2 | Setty | Comment SETTY and I'll send you everything to build your AI setter for free. | Commente SETTY et je t'envoie tout pour créer ton setter IA gratuitement. | Barre de commentaire sous le titre | clics sur SETTY | série |
 | 3 | Coach | Bro, my mentor says WhatsApp is way more personal. | Mon mentor dit que WhatsApp, c'est bien plus perso. | Gros plan coach, deux téléphones |  |  |
-| 4 | Setty | Same rule on both: your automation gets twenty-four hours after their last message. | Même règle sur les deux : ton automatisation a 24 h après leur dernier message. | Carte duel : deux colonnes, horloge 24 h | clic | mc18 |
+| 4 | Setty | For a normal DM, same rule on both: your automation gets twenty-four hours after their last message. | Pour un DM normal, même règle sur les deux : ton automatisation a 24 h après leur dernier message. | Carte duel : deux colonnes, horloge 24 h | clic | mc18 |
 | 5 | Setty | After that, your Instagram automation goes quiet, and WhatsApp only takes an approved template, billed by Meta. | Après, ton automatisation Instagram se tait, et WhatsApp n'accepte qu'un modèle approuvé, facturé par Meta. | Colonnes : « silence » / « modèle payant » | 💥 sur « billed by Meta » |  |
 | 6 | Setty | So the winner is the one where somebody answers inside those twenty-four hours. | Donc le gagnant, c'est celui où quelqu'un répond dans ces 24 heures. | Coupe sur les deux colonnes |  |  |
 | 7 | Setty | You're on a yacht with two phones and you answer neither, [bip]. | Tu es sur un yacht avec deux téléphones et tu ne réponds sur aucun, crétin. | Le coach lève ses deux téléphones | 😩 Fahhh |  |
@@ -268,7 +268,7 @@ Les durées tombent entre 37 et 43 s : deux CTA complets prennent 28 mots. Une v
 
 | # | Qui | Réplique (EN, à l'écran) | Sens (FR) | Plan et écran | Son | Verbatims |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Setty | You sent a three-minute voice note to a guy who asked the [bip] price. | Tu as envoyé un vocal de trois minutes à un gars qui demandait le putain de prix. | Large, coup de zoom sur Setty ; titre | riser → 💥 + drop | rd13 |
+| 1 | Setty | You answered "how much" with a three-minute [bip] voice note. | Tu as répondu à « combien ? » avec un putain de vocal de trois minutes. | Large, coup de zoom sur Setty ; titre | riser → 💥 + drop | rd13 |
 | 2 | Setty | Comment SETTY and I'll send you everything to build your AI setter for free. | Commente SETTY et je t'envoie tout pour créer ton setter IA gratuitement. | Barre de commentaire sous le titre | clics sur SETTY | série |
 | 3 | Coach | Bro, voice notes are personal. People love my voice. | Les vocaux, c'est perso. Les gens adorent ma voix. | Gros plan coach au micro, ON AIR |  | rd85 |
 | 4 | Setty | First reply, info, price, links: text, he reads it in two seconds. | Première réponse, infos, prix, liens : du texte, il le lit en deux secondes. | Carte duel : colonne TEXT | clic |  |

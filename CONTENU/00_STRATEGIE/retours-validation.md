@@ -494,3 +494,9 @@ Format d'une règle :
 - Constat (ce que le fondateur garde) : l'argent des pubs (25, 26), une étude (23), des réponses à copier mot pour mot (27, 28, 29), des règles de DM (30, 35), les duels (26, 34), les vacances (32). Ce qu'il écarte : les réglages techniques d'outil (22, 24), le contre-pied d'honnêteté (31), la cible agence (33).
 - Retour : « Remplacements : B, C, D, E » (formulaire à cocher, 6 idées proposées).
 - Règle : les 4 idées de remplacement **validées** prennent les numéros libérés : 22 = « The 3 questions I ask before sending my calendar » (cabinet médical), 24 = « Booking link or 3 time slots in the DM? » (hall d'hôtel), 31 = « Boost or Ads Manager: which one fills your DMs? » (cinéma drive-in), 33 = « Voice note or text: which one wins a lead? » (station de radio). Écartées : « too expensive » et « ask my partner ». Le lot compte 14 reels (22 à 35).
+
+## 2026-11-08 · Lot des reels 22 à 35 : scripts v1 validés, « lance tout »
+- Retour : « Oui, lance tout » (question : « Tu valides les 14 scripts et le coût des voix (~0,60 $) ? »).
+- Règle : les 14 scripts v1 de `09_STUDIO_SETTY/writing/lot_reels_22-35_scripts.md` et leurs décors neufs sont **validés**. La génération des voix est autorisée pour ces 14 scripts (environ 0,60 $, moins de 1 $ avec les reprises). C'est MANYSETTER REELS qui les génère, dans l'ordre de publication (quota Gemini : 100 requêtes par jour, les voix peuvent s'étaler sur deux jours).
+- Règle : avant chaque voix, les faits marqués « à revérifier » sont relus à leur source ; une réplique dont le fait ne tient pas est corrigée au plus près du sens validé, et la correction est signalée au fondateur.
+- Règle : la fabrication (décor, scènes, son, rendu) se lance comme pour les lots précédents, une session par reel, par vagues pour ménager les 8 Go du Mac. Chaque rendu reste à valider un par un, puis il passe à MANYSETTER POST.

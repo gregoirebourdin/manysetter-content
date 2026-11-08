@@ -1,0 +1,45 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "hotellobby",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel24",
+ "slug": "link-or-slots",
+ "title": "Booking link or 3 time slots in the DM?",
+ "pub_id": "261108_REEL_S2_AV2_link-or-slots",
+ "funnel": "MOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Your booking link is homework, and nobody does [bleep] homework.",
+ "hook_title": [
+  "*Booking link* or 3 time",
+  "slots in the DM?"
+ ],
+ "biais": [
+  "contre-pied",
+  "duel"
+ ],
+ "verbatims": [
+  "rd07",
+  "rd96"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "You drop your Calendly link and they never book? Send 3 time slots instead.",
+ "publication": "mar. 17/11/2026, 6:30 pm ET",
+ "sources": "Script (avis, aucun chiffre). Le setter propose 2 ou 3 créneaux dans le fuseau du lead avec Cal.com, iClosed ou Calendly payant (brief, § 2)."
+}

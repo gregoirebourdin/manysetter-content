@@ -1,0 +1,48 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "showroom",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel27",
+ "slug": "let-me-think",
+ "title": "My reply when a lead says \"let me think\"",
+ "pub_id": "261108_REEL_S2_AV2_let-me-think",
+ "funnel": "MOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "\"Let me think\" is a polite [bleep] no, unless you reply this.",
+ "hook_title": [
+  "My reply when a lead",
+  "says \"*let me think*\""
+ ],
+ "biais": [
+  "contre-pied",
+  "pertinence pour soi"
+ ],
+ "verbatims": [
+  "rd14",
+  "rd44",
+  "rd86",
+  "rd93",
+  "rd97"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "He said \"let me think about it\" and you said \"take your time\"? Here's what to reply.",
+ "publication": "jeu. 12/11/2026, 6:30 pm ET",
+ "sources": "Script (aucun fait chiffré). Le setter gère l'objection « I'll think about it » (CLAUDE.md du studio, § 1)."
+}

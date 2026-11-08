@@ -1,0 +1,48 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "bookstore",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel29",
+ "slug": "free-guide",
+ "title": "Your free guide is why nobody books a call",
+ "pub_id": "261108_REEL_S2_AV2_free-guide",
+ "funnel": "MOFU",
+ "segment": "S2",
+ "avatar": "AV2",
+ "hook": "Your free guide is why nobody books a [bleep] call.",
+ "hook_title": [
+  "Your *free guide* is why",
+  "nobody books a call"
+ ],
+ "biais": [
+  "contre-pied",
+  "aversion à la perte"
+ ],
+ "verbatims": [
+  "mc01",
+  "mc03",
+  "mc36",
+  "mc47",
+  "rd08"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "300 people took your free guide and zero booked? Send this right after.",
+ "publication": "mer. 18/11/2026, 6:30 pm ET",
+ "sources": "Script. Relances : jusqu'à 3, dans la fenêtre de 24 h (brief, § 2)."
+}

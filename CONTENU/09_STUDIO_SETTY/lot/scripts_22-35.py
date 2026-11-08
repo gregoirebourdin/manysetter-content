@@ -43,7 +43,7 @@ REELS = [
   info="3 réponses à copier mot pour mot quand un lead dit « let me think about it ».",
   sources="Script (aucun fait chiffré). Le setter gère l'objection « I'll think about it » (CLAUDE.md du studio, § 1).",
   lines=[
-   (S, "\"Let me think about it\" is a polite fucking no, unless you reply this.", "« Je vais réfléchir », c'est un putain de non poli, sauf si tu réponds comme ça.", "Large, coup de zoom sur Setty ; titre", "riser → 💥 + drop", "rd14", "The strongest line first: a cheeky verdict, punchy and sure of itself."),
+   (S, "\"Let me think\" is a polite fucking no, unless you reply this.", "« Je vais réfléchir », c'est un putain de non poli, sauf si tu réponds ça.", "Large, coup de zoom sur Setty ; titre", "riser → 💥 + drop", "rd14", "The strongest line first: a cheeky verdict, punchy and sure of itself."),
    (S, CTA, CTA_FR, "Barre de commentaire sous le titre", "clics sur SETTY", "série", CTA1_STYLE),
    (C, "He said that after twenty minutes. I said cool, take your time, and never heard back.", "Il a dit ça après 20 minutes. J'ai dit cool, prends ton temps, et plus de nouvelles.", "Gros plan coach ; bulle « let me think about it »", "", "rd93, rd97", "A little hurt, trying to sound chill, a casual American guy."),
    (S, "You said take your time, and he took all of it, dumbass.", "Tu as dit prends ton temps, et il l'a pris en entier, crétin.", "Setty le montre", "😩 Fahhh", "", "A mocking roast, slow and smug.", 0.95),
@@ -96,7 +96,7 @@ REELS = [
    (S, "You're picking between Instagram and WhatsApp while your leads fucking wait on both.", "Tu hésites entre Instagram et WhatsApp pendant que tes leads attendent sur les deux, putain.", "Large, coup de zoom sur Setty ; titre", "riser → 💥 + drop", "rd06", "The strongest line first: a cheeky verdict, punchy and sure of itself."),
    (S, CTA, CTA_FR, "Barre de commentaire sous le titre", "clics sur SETTY", "série", CTA1_STYLE),
    (C, "Bro, my mentor says WhatsApp is way more personal.", "Mon mentor dit que WhatsApp, c'est bien plus perso.", "Gros plan coach, deux téléphones", "", "", "Convinced, a casual American guy talking to his buddy."),
-   (S, "Same rule on both: your automation gets twenty-four hours after their last message.", "Même règle sur les deux : ton automatisation a 24 h après leur dernier message.", "Carte duel : deux colonnes, horloge 24 h", "clic", "mc18", "Clear and serious, like explaining the rules of a game."),
+   (S, "For a normal DM, same rule on both: your automation gets twenty-four hours after their last message.", "Pour un DM normal, même règle sur les deux : ton automatisation a 24 h après leur dernier message.", "Carte duel : deux colonnes, horloge 24 h", "clic", "mc18", "Clear and serious, like explaining the rules of a game."),
    (S, "After that, your Instagram automation goes quiet, and WhatsApp only takes an approved template, billed by Meta.", "Après, ton automatisation Instagram se tait, et WhatsApp n'accepte qu'un modèle approuvé, facturé par Meta.", "Colonnes : « silence » / « modèle payant »", "💥 sur « billed by Meta »", "", "Serious, landing on 'billed by Meta'."),
    (S, "So the winner is the one where somebody answers inside those twenty-four hours.", "Donc le gagnant, c'est celui où quelqu'un répond dans ces 24 heures.", "Coupe sur les deux colonnes", "", "", "Dry, the verdict."),
    (S, "You're on a yacht with two phones and you answer neither, dumbass.", "Tu es sur un yacht avec deux téléphones et tu ne réponds sur aucun, crétin.", "Le coach lève ses deux téléphones", "😩 Fahhh", "", "A mocking roast, slow and smug.", 0.95),
@@ -175,7 +175,7 @@ REELS += [
   info="Les 3 questions à poser avant d'envoyer l'agenda : ce qu'il veut régler et pourquoi maintenant, ce qu'il a déjà essayé, s'il est prêt à investir ce mois-ci. Les autres reçoivent une réponse utile, pas un appel.",
   sources="Script. « Only the right leads get your calendar » et une réponse utile pour les autres (brief, § 2 et § 5).",
   lines=[
-   (S, "You send your calendar to anyone who says hi, and it's fucking killing you.", "Tu envoies ton agenda à quiconque dit salut, et ça te tue, putain.", "Large, coup de zoom sur Setty ; titre", "riser → 💥 + drop", "rd75", "The strongest line first: a cheeky verdict, punchy and sure of itself."),
+   (S, "Sending your calendar to everyone is fucking killing your week.", "Envoyer ton agenda à tout le monde, ça te bousille ta semaine, putain.", "Large, coup de zoom sur Setty ; titre", "riser → 💥 + drop", "rd75", "The strongest line first: a cheeky verdict, punchy and sure of itself."),
    (S, CTA, CTA_FR, "Barre de commentaire sous le titre", "clics sur SETTY", "série", CTA1_STYLE),
    (C, "Six calls this week, bro. Not one real client.", "Six appels cette semaine. Pas un seul vrai client.", "Gros plan coach ; agenda plein", "clic", "rd43", "Exhausted, a casual American guy talking to his buddy."),
    (S, "Three questions before the link. One: what are you trying to fix, and why now?", "Trois questions avant le lien. Un : qu'est-ce que tu veux régler, et pourquoi maintenant ?", "Carte « 1 » en bulle orange", "clic", "rd94, rd45", "Fast and clear, like a doctor's checklist."),
@@ -223,7 +223,7 @@ REELS += [
   info="Le texte pour la 1re réponse, l'info, le prix et les liens (ça se lit en deux secondes) ; le vocal, court, quand le lead est chaud et parle déjà.",
   sources="Conseil (aucun chiffre). Verbatims rd85 et cl045 (le vocal fait plus humain). Pas de note vocale du setter sur Instagram ni WhatsApp (brief, § 7) : le setter passe la main au coach.",
   lines=[
-   (S, "You sent a three-minute voice note to a guy who asked the fucking price.", "Tu as envoyé un vocal de trois minutes à un gars qui demandait le putain de prix.", "Large, coup de zoom sur Setty ; titre", "riser → 💥 + drop", "rd13", "The strongest line first: a cheeky verdict, punchy and sure of itself."),
+   (S, "You answered \"how much\" with a three-minute fucking voice note.", "Tu as répondu à « combien ? » avec un putain de vocal de trois minutes.", "Large, coup de zoom sur Setty ; titre", "riser → 💥 + drop", "rd13", "The strongest line first: a cheeky verdict, punchy and sure of itself."),
    (S, CTA, CTA_FR, "Barre de commentaire sous le titre", "clics sur SETTY", "série", CTA1_STYLE),
    (C, "Bro, voice notes are personal. People love my voice.", "Les vocaux, c'est perso. Les gens adorent ma voix.", "Gros plan coach au micro, ON AIR", "", "rd85", "Smooth radio-host voice, proud, a casual American guy."),
    (S, "First reply, info, price, links: text, he reads it in two seconds.", "Première réponse, infos, prix, liens : du texte, il le lit en deux secondes.", "Carte duel : colonne TEXT", "clic", "", "Fast and clear, like listing rules."),

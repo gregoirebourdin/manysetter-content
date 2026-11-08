@@ -1,0 +1,47 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "laundromat",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel30",
+ "slug": "30-line-dm",
+ "title": "Your 30-line DM is why nobody replies",
+ "pub_id": "261108_REEL_S1_AV1_30-line-dm",
+ "funnel": "MOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "You wrote a thirty-line DM and wondered why nobody [bleep] replied.",
+ "hook_title": [
+  "Your *30-line DM* is",
+  "why nobody replies"
+ ],
+ "biais": [
+  "chiffre précis",
+  "contre-pied"
+ ],
+ "verbatims": [
+  "mc10",
+  "mc11",
+  "rd23",
+  "rd38"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "You sent a lead your whole life story in one DM? Here are the 3 rules.",
+ "publication": "ven. 20/11/2026, 6:30 pm ET",
+ "sources": "Conseil (aucun fait chiffré). Le setter envoie une réponse courte, une fois que le lead a fini d'écrire (brief, § 2)."
+}

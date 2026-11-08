@@ -1,0 +1,46 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "foodtruck",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel28",
+ "slug": "info-reply",
+ "title": "What I reply when a lead just says \"info\"",
+ "pub_id": "261108_REEL_S1_AV1_info-reply",
+ "funnel": "MOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "A lead texts you \"info\" and you send him a [bleep] essay.",
+ "hook_title": [
+  "What I reply when a",
+  "lead just says \"*info*\""
+ ],
+ "biais": [
+  "interruption du schéma",
+  "pertinence pour soi"
+ ],
+ "verbatims": [
+  "rd13",
+  "rd22",
+  "rd23"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "A lead texts you \"info\" and you send the whole program? Reply this instead.",
+ "publication": "dim. 15/11/2026, 6:30 pm ET",
+ "sources": "Script (aucun fait chiffré). Le setter pose une question à la fois (brief, § 2)."
+}

@@ -1,0 +1,45 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "bali",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel32",
+ "slug": "vacation-dms",
+ "title": "Going on vacation? Your DMs need this first",
+ "pub_id": "261108_REEL_S1_AV1_vacation-dms",
+ "funnel": "MOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "You're in Bali, and your DMs think you're [bleep] dead.",
+ "hook_title": [
+  "Going on *vacation*? Your",
+  "DMs need this first"
+ ],
+ "biais": [
+  "pertinence pour soi",
+  "aversion à la perte"
+ ],
+ "verbatims": [
+  "cl135",
+  "rd61"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "Going to Bali and leaving your DMs on read for a week? Do this first.",
+ "publication": "lun. 23/11/2026, 6:30 pm ET",
+ "sources": "Aide Meta Business, « Inbox automations » (facebook.com/business/help/395965998733706) à revérifier : chemin des menus et disponibilité pour Instagram."
+}

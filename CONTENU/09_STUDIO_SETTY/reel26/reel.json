@@ -1,0 +1,46 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "tradingfloor",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel26",
+ "slug": "lead-form-vs-dm-ad",
+ "title": "Lead form or DM ad: which one for coaches?",
+ "pub_id": "261108_REEL_S1_AV1_lead-form-vs-dm-ad",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Your lead form fills itself, and that's the [bleep] problem.",
+ "hook_title": [
+  "*Lead form* or DM ad:",
+  "which one for coaches?"
+ ],
+ "biais": [
+  "contre-pied",
+  "duel"
+ ],
+ "verbatims": [
+  "cl028",
+  "rd61",
+  "rd89"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "300 leads from your form and nobody picks up? Here's why.",
+ "publication": "ven. 13/11/2026, 6:30 pm ET",
+ "sources": "Aide Meta Business (formulaires instantanés, types « More volume » et « Higher intent ») à revérifier ; guide Jon Loomer (jonloomer.com/instant-forms)."
+}

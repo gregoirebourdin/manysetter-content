@@ -1,0 +1,45 @@
+{
+ "layout": "set",
+ "cam_track": true,
+ "pattern": "v1",
+ "set": "drivein",
+ "mood": "golden",
+ "voices": {
+  "setty": "Charon",
+  "coach": "Fenrir"
+ },
+ "turn_gap": 0.2,
+ "voice_s": [
+  33,
+  41
+ ],
+ "tail_s": 2.4,
+ "id": "reel31",
+ "slug": "boost-or-ads-manager",
+ "title": "Boost or Ads Manager: which one fills your DMs?",
+ "pub_id": "261108_REEL_S1_AV1_boost-or-ads-manager",
+ "funnel": "TOFU",
+ "segment": "S1",
+ "avatar": "AV1",
+ "hook": "Boost or Ads Manager? Both fill your DMs, and neither [bleep] answers them.",
+ "hook_title": [
+  "*Boost* or Ads Manager: which",
+  "one fills your DMs?"
+ ],
+ "biais": [
+  "duel",
+  "écart de curiosité"
+ ],
+ "verbatims": [
+  "rd23",
+  "rd24"
+ ],
+ "cta": "Comment SETTY",
+ "caption": "",
+ "caption_youtube": "",
+ "statut": "script v1 validé le 8/11, voix à générer",
+ "created": "2026-11-08",
+ "youtube_title": "Boost or Ads Manager for DM ads? Both work, here's the catch.",
+ "publication": "jeu. 19/11/2026, 6:30 pm ET",
+ "sources": "Aide Instagram (objectifs du boost : profile visits, website visits, messages) et aide Meta Business (boost et Gestionnaire, même enchère ; tests A/B) à revérifier."
+}
